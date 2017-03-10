@@ -1,0 +1,1887 @@
+["module"; "Mpfr"; ["Mty_signature"; ["Sig_type"; "tt"; 1; ["Type_abstract"]]; 
+                   ["Sig_type"; "round"; 0; ["Type_variant"; ["constructor"; 
+                                                             "Near"; 
+                                                             ["tuple"]]; 
+                                            ["constructor"; "Zero"; ["tuple"]]; 
+                                            ["constructor"; "Up"; ["tuple"]]; 
+                                            ["constructor"; "Down"; ["tuple"]]; 
+                                            ["constructor"; "Away"; ["tuple"]]; 
+                                            ["constructor"; "Faith"; 
+                                            ["tuple"]]; ["constructor"; 
+                                                        "NearAway"; ["tuple"]]]]; 
+                   ["Sig_type"; "m"; 0; ["Type_abstract"]]; ["Sig_type"; 
+                                                            "f"; 0; [
+                                                                    "Type_abstract"]]; 
+                   ["Sig_type"; "t"; 0; ["Type_alias"; ["Tconstr"; ["Pident"; 
+                                                                   "tt"]; 
+                                                       ["Tconstr"; ["Pident"; 
+                                                                   "m"]]]]]; 
+                   ["Sig_value"; "print"; ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Format"]; 
+                                                                 "formatter"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tconstr"; ["Pident"; "unit"]]]]]; 
+                   ["Sig_value"; "print_round"; ["Tarrow"; ["Tconstr"; 
+                                                           ["Pdot"; [
+                                                                    "Pident"; 
+                                                                    "Format"]; 
+                                                           "formatter"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "round"]]; 
+                                                ["Tconstr"; ["Pident"; 
+                                                            "unit"]]]]]; 
+                   ["Sig_value"; "string_of_round"; ["Tarrow"; ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "round"]]; 
+                                                    ["Tconstr"; ["Pident"; 
+                                                                "string"]]]]; 
+                   ["Sig_value"; "set_default_rounding_mode"; ["Tarrow"; 
+                                                              ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "round"]]; 
+                                                              ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "unit"]]]]; 
+                   ["Sig_value"; "get_default_rounding_mode"; ["Tarrow"; 
+                                                              ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "unit"]]; 
+                                                              ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "round"]]]]; 
+                   ["Sig_value"; "round_prec"; ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "t"]]; 
+                                               ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "round"]]; 
+                                               ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "int"]]; 
+                                               ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "get_emin"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "unit"]]; 
+                                             ["Tconstr"; ["Pident"; "int"]]]]; 
+                   ["Sig_value"; "get_emax"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "unit"]]; 
+                                             ["Tconstr"; ["Pident"; "int"]]]]; 
+                   ["Sig_value"; "set_emin"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "int"]]; 
+                                             ["Tconstr"; ["Pident"; "unit"]]]]; 
+                   ["Sig_value"; "set_emax"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "int"]]; 
+                                             ["Tconstr"; ["Pident"; "unit"]]]]; 
+                   ["Sig_value"; "check_range"; ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "t"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "int"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "round"]]; 
+                                                ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "clear_underflow"; ["Tarrow"; ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "unit"]]; 
+                                                    ["Tconstr"; ["Pident"; 
+                                                                "unit"]]]]; 
+                   ["Sig_value"; "clear_overflow"; ["Tarrow"; ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "unit"]]; 
+                                                   ["Tconstr"; ["Pident"; 
+                                                               "unit"]]]]; 
+                   ["Sig_value"; "clear_nanflag"; ["Tarrow"; ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "unit"]]; 
+                                                  ["Tconstr"; ["Pident"; 
+                                                              "unit"]]]]; 
+                   ["Sig_value"; "clear_inexflag"; ["Tarrow"; ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "unit"]]; 
+                                                   ["Tconstr"; ["Pident"; 
+                                                               "unit"]]]]; 
+                   ["Sig_value"; "clear_flags"; ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "unit"]]; 
+                                                ["Tconstr"; ["Pident"; 
+                                                            "unit"]]]]; 
+                   ["Sig_value"; "underflow_p"; ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "unit"]]; 
+                                                ["Tconstr"; ["Pident"; 
+                                                            "bool"]]]]; 
+                   ["Sig_value"; "overflow_p"; ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "unit"]]; 
+                                               ["Tconstr"; ["Pident"; "bool"]]]]; 
+                   ["Sig_value"; "nanflag_p"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "unit"]]; 
+                                              ["Tconstr"; ["Pident"; "bool"]]]]; 
+                   ["Sig_value"; "inexflag_p"; ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "unit"]]; 
+                                               ["Tconstr"; ["Pident"; "bool"]]]]; 
+                   ["Sig_value"; "set_default_prec"; ["Tarrow"; ["Tconstr"; 
+                                                                ["Pident"; 
+                                                                "int"]]; 
+                                                     ["Tconstr"; ["Pident"; 
+                                                                 "unit"]]]]; 
+                   ["Sig_value"; "get_default_prec"; ["Tarrow"; ["Tconstr"; 
+                                                                ["Pident"; 
+                                                                "unit"]]; 
+                                                     ["Tconstr"; ["Pident"; 
+                                                                 "int"]]]]; 
+                   ["Sig_value"; "init"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "unit"]]; 
+                                         ["Tconstr"; ["Pident"; "tt"]; 
+                                         ["Tpoly"; "a"]]]]; ["Sig_value"; 
+                                                            "init2"; 
+                                                            ["Tarrow"; 
+                                                            ["Tconstr"; 
+                                                            ["Pident"; "int"]]; 
+                                                            ["Tconstr"; 
+                                                            ["Pident"; "tt"]; 
+                                                            ["Tpoly"; "a"]]]]; 
+                   ["Sig_value"; "get_prec"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                        ["Tpoly"; "a"]]; 
+                                             ["Tconstr"; ["Pident"; "int"]]]]; 
+                   ["Sig_value"; "set_prec"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "t"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "int"]]; 
+                                             ["Tconstr"; ["Pident"; "unit"]]]]]; 
+                   ["Sig_value"; "set_prec_raw"; ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; "t"]]; 
+                                                 ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; "int"]]; 
+                                                 ["Tconstr"; ["Pident"; 
+                                                             "unit"]]]]]; 
+                   ["Sig_value"; "set"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "t"]]; 
+                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]; 
+                   ["Sig_value"; "set_si"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "t"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "int"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "round"]]; 
+                                           ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "set_d"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "float"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "set_z"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Mpz"]; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "set_q"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Mpq"]; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "_set_str"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "t"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "string"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "int"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                             ["Tconstr"; ["Pident"; "unit"]]]]]]]; 
+                   ["Sig_value"; "set_str"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "t"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "string"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "int"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "round"]]; 
+                                            ["Tconstr"; ["Pident"; "unit"]]]]]]]; 
+                   ["Sig_value"; "_strtofr"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "t"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "string"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "int"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                             ["Ttuple"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "int"]]; 
+                                             ["Tconstr"; ["Pident"; "int"]]]]]]]]; 
+                   ["Sig_value"; "strtofr"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "t"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "string"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "int"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "round"]]; 
+                                            ["Ttuple"; ["Tconstr"; ["Pident"; 
+                                                                   "int"]]; 
+                                            ["Tconstr"; ["Pident"; "int"]]]]]]]]; 
+                   ["Sig_value"; "set_f"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Mpf"]; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "set_si_2exp"; ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "t"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "int"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "int"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "round"]]; 
+                                                ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "set_inf"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "t"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "int"]]; 
+                                            ["Tconstr"; ["Pident"; "unit"]]]]]; 
+                   ["Sig_value"; "set_nan"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "t"]]; 
+                                            ["Tconstr"; ["Pident"; "unit"]]]]; 
+                   ["Sig_value"; "swap"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tconstr"; ["Pident"; "unit"]]]]]; 
+                   ["Sig_value"; "init_set"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                        ["Tpoly"; "a"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                             ["Ttuple"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "int"]]; 
+                                             ["Tconstr"; ["Pident"; "tt"]; 
+                                             ["Tpoly"; "b"]]]]]]; ["Sig_value"; 
+                                                                  "init_set_si"; 
+                                                                  ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "int"]]; 
+                                                                  ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "round"]]; 
+                                                                  ["Ttuple"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "int"]]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "tt"]; 
+                                                                  ["Tpoly"; 
+                                                                  "a"]]]]]]; 
+                   ["Sig_value"; "init_set_d"; ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "float"]]; 
+                                               ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "round"]]; 
+                                               ["Ttuple"; ["Tconstr"; 
+                                                          ["Pident"; "int"]]; 
+                                               ["Tconstr"; ["Pident"; "tt"]; 
+                                               ["Tpoly"; "a"]]]]]]; [
+                                                                    "Sig_value"; 
+                                                                    "init_set_f"; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Mpf"]; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "a"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Ttuple"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]]]]]; 
+                   ["Sig_value"; "init_set_z"; ["Tarrow"; ["Tconstr"; 
+                                                          ["Pdot"; ["Pident"; 
+                                                                   "Mpz"]; 
+                                                          "tt"]; ["Tpoly"; 
+                                                                 "a"]]; 
+                                               ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "round"]]; 
+                                               ["Ttuple"; ["Tconstr"; 
+                                                          ["Pident"; "int"]]; 
+                                               ["Tconstr"; ["Pident"; "tt"]; 
+                                               ["Tpoly"; "b"]]]]]]; [
+                                                                    "Sig_value"; 
+                                                                    "init_set_q"; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Mpq"]; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "a"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Ttuple"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]]]]]; 
+                   ["Sig_value"; "_init_set_str"; ["Tarrow"; ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "string"]]; 
+                                                  ["Tarrow"; ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "int"]]; 
+                                                  ["Tarrow"; ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "round"]]; 
+                                                  ["Tconstr"; ["Pident"; 
+                                                              "tt"]; 
+                                                  ["Tpoly"; "a"]]]]]]; 
+                   ["Sig_value"; "init_set_str"; ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; 
+                                                            "string"]]; 
+                                                 ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; "int"]]; 
+                                                 ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; 
+                                                            "round"]]; 
+                                                 ["Tconstr"; ["Pident"; "tt"]; 
+                                                 ["Tpoly"; "a"]]]]]]; 
+                   ["Sig_value"; "get_d"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "float"]]]]]; 
+                   ["Sig_value"; "get_d1"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "tt"]; 
+                                                      ["Tpoly"; "a"]]; 
+                                           ["Tconstr"; ["Pident"; "float"]]]]; 
+                   ["Sig_value"; "get_z_exp"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pdot"; ["Pident"; 
+                                                                  "Mpz"]; 
+                                                         "t"]]; ["Tarrow"; 
+                                                                ["Tconstr"; 
+                                                                ["Pident"; 
+                                                                "tt"]; 
+                                                                ["Tpoly"; 
+                                                                "a"]]; 
+                                                                ["Tconstr"; 
+                                                                ["Pident"; 
+                                                                "int"]]]]]; 
+                   ["Sig_value"; "get_z"; ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Mpz"]; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "unit"]]]]]]; 
+                   ["Sig_value"; "_get_str"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "int"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "int"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                        ["Tpoly"; "a"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                             ["Ttuple"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "string"]]; 
+                                             ["Tconstr"; ["Pident"; "int"]]]]]]]]; 
+                   ["Sig_value"; "get_str"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "int"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "int"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "t"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "round"]]; 
+                                            ["Ttuple"; ["Tconstr"; ["Pident"; 
+                                                                   "string"]]; 
+                                            ["Tconstr"; ["Pident"; "int"]]]]]]]]; 
+                   ["Sig_value"; "to_string"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "tt"]; 
+                                                         ["Tpoly"; "a"]]; 
+                                              ["Tconstr"; ["Pident"; 
+                                                          "string"]]]]; 
+                   ["Sig_value"; "to_float"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                        ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "round"]]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                        ["Tpoly"; "a"]]; 
+                                             ["Tconstr"; ["Pident"; "float"]]]]]; 
+                   ["Sig_value"; "to_mpq"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "tt"]; 
+                                                      ["Tpoly"; "a"]]; 
+                                           ["Tconstr"; ["Pdot"; ["Pident"; 
+                                                                "Mpq"]; 
+                                                       "tt"]; ["Tpoly"; "b"]]]]; 
+                   ["Sig_value"; "of_string"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "string"]]; 
+                                              ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "round"]]; 
+                                              ["Tconstr"; ["Pident"; "tt"]; 
+                                              ["Tpoly"; "a"]]]]]; ["Sig_value"; 
+                                                                  "of_float"; 
+                                                                  ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "float"]]; 
+                                                                  ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "round"]]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "tt"]; 
+                                                                  ["Tpoly"; 
+                                                                  "a"]]]]]; 
+                   ["Sig_value"; "of_int"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "int"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "round"]]; 
+                                           ["Tconstr"; ["Pident"; "tt"]; 
+                                           ["Tpoly"; "a"]]]]]; ["Sig_value"; 
+                                                               "of_frac"; 
+                                                               ["Tarrow"; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "int"]]; 
+                                                               ["Tarrow"; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "int"]]; 
+                                                               ["Tarrow"; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "round"]]; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "tt"]; 
+                                                               ["Tpoly"; "a"]]]]]]; 
+                   ["Sig_value"; "of_mpz"; ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                                  ["Pident"; 
+                                                                  "Mpz"]; 
+                                                                  "tt"]; 
+                                                      ["Tpoly"; "a"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "round"]]; 
+                                           ["Tconstr"; ["Pident"; "tt"]; 
+                                           ["Tpoly"; "b"]]]]]; ["Sig_value"; 
+                                                               "of_mpz2"; 
+                                                               ["Tarrow"; 
+                                                               ["Tconstr"; 
+                                                               ["Pdot"; 
+                                                               ["Pident"; 
+                                                               "Mpz"]; 
+                                                               "tt"]; 
+                                                               ["Tpoly"; "a"]]; 
+                                                               ["Tarrow"; 
+                                                               ["Tconstr"; 
+                                                               ["Pdot"; 
+                                                               ["Pident"; 
+                                                               "Mpz"]; 
+                                                               "tt"]; 
+                                                               ["Tpoly"; "b"]]; 
+                                                               ["Tarrow"; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "round"]]; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "tt"]; 
+                                                               ["Tpoly"; "c"]]]]]]; 
+                   ["Sig_value"; "of_mpq"; ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                                  ["Pident"; 
+                                                                  "Mpq"]; 
+                                                                  "tt"]; 
+                                                      ["Tpoly"; "a"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "round"]]; 
+                                           ["Tconstr"; ["Pident"; "tt"]; 
+                                           ["Tpoly"; "b"]]]]]; ["Sig_value"; 
+                                                               "add"; 
+                                                               ["Tarrow"; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "t"]]; 
+                                                               ["Tarrow"; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "tt"]; 
+                                                               ["Tpoly"; "a"]]; 
+                                                               ["Tarrow"; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "tt"]; 
+                                                               ["Tpoly"; "b"]]; 
+                                                               ["Tarrow"; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "round"]]; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "int"]]]]]]]; 
+                   ["Sig_value"; "add_ui"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "t"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "tt"]; 
+                                                      ["Tpoly"; "a"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "int"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "round"]]; 
+                                           ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "add_z"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Mpz"]; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "add_q"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Mpq"]; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "sub"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "t"]]; 
+                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]]; 
+                   ["Sig_value"; "ui_sub"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "t"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "int"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "tt"]; 
+                                                      ["Tpoly"; "a"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "round"]]; 
+                                           ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "sub_ui"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "t"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "tt"]; 
+                                                      ["Tpoly"; "a"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "int"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "round"]]; 
+                                           ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "sub_z"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Mpz"]; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "sub_q"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Mpq"]; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "mul"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "t"]]; 
+                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]]; 
+                   ["Sig_value"; "mul_ui"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "t"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "tt"]; 
+                                                      ["Tpoly"; "a"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "int"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "round"]]; 
+                                           ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "mul_z"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Mpz"]; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "mul_q"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Mpq"]; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "mul_2ui"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "t"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "tt"]; 
+                                                       ["Tpoly"; "a"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "int"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "round"]]; 
+                                            ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "mul_2si"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "t"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "tt"]; 
+                                                       ["Tpoly"; "a"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "int"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "round"]]; 
+                                            ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "mul_2exp"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "t"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                        ["Tpoly"; "a"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "int"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                             ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "div"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "t"]]; 
+                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]]; 
+                   ["Sig_value"; "ui_div"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "t"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "int"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "tt"]; 
+                                                      ["Tpoly"; "a"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "round"]]; 
+                                           ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "div_ui"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "t"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "tt"]; 
+                                                      ["Tpoly"; "a"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "int"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "round"]]; 
+                                           ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "div_z"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Mpz"]; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "div_q"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Mpq"]; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "div_2ui"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "t"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "tt"]; 
+                                                       ["Tpoly"; "a"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "int"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "round"]]; 
+                                            ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "div_2si"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "t"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "tt"]; 
+                                                       ["Tpoly"; "a"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "int"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "round"]]; 
+                                            ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "div_2exp"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "t"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "t"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "int"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                             ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "sqrt"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "bool"]]]]]]; 
+                   ["Sig_value"; "sqrt_ui"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "t"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "int"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "round"]]; 
+                                            ["Tconstr"; ["Pident"; "bool"]]]]]]; 
+                   ["Sig_value"; "pow_ui"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "t"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "tt"]; 
+                                                      ["Tpoly"; "a"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "int"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "round"]]; 
+                                           ["Tconstr"; ["Pident"; "bool"]]]]]]]; 
+                   ["Sig_value"; "pow_si"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "t"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "tt"]; 
+                                                      ["Tpoly"; "a"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "int"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "round"]]; 
+                                           ["Tconstr"; ["Pident"; "bool"]]]]]]]; 
+                   ["Sig_value"; "ui_pow_ui"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "t"]]; 
+                                              ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "int"]]; 
+                                              ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "int"]]; 
+                                              ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "round"]]; 
+                                              ["Tconstr"; ["Pident"; "bool"]]]]]]]; 
+                   ["Sig_value"; "ui_pow"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "t"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "int"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "tt"]; 
+                                                      ["Tpoly"; "a"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "round"]]; 
+                                           ["Tconstr"; ["Pident"; "bool"]]]]]]]; 
+                   ["Sig_value"; "pow"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "t"]]; 
+                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "bool"]]]]]]]; 
+                   ["Sig_value"; "neg"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "t"]]; 
+                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]; 
+                   ["Sig_value"; "abs"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "t"]]; 
+                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]; 
+                   ["Sig_value"; "cmp"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]; 
+                   ["Sig_value"; "cmp_si"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "tt"]; 
+                                                      ["Tpoly"; "a"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "int"]]; 
+                                           ["Tconstr"; ["Pident"; "int"]]]]]; 
+                   ["Sig_value"; "cmp_si_2exp"; ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "tt"]; 
+                                                           ["Tpoly"; "a"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "int"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "int"]]; 
+                                                ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "sgn"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]; 
+                   ["Sig_value"; "_equal"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "tt"]; 
+                                                      ["Tpoly"; "a"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "tt"]; 
+                                                      ["Tpoly"; "b"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "int"]]; 
+                                           ["Tconstr"; ["Pident"; "bool"]]]]]]; 
+                   ["Sig_value"; "equal"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "b"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "int"]]; 
+                                          ["Tconstr"; ["Pident"; "bool"]]]]]]; 
+                   ["Sig_value"; "nan_p"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tconstr"; ["Pident"; "bool"]]]]; 
+                   ["Sig_value"; "inf_p"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tconstr"; ["Pident"; "bool"]]]]; 
+                   ["Sig_value"; "number_p"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                        ["Tpoly"; "a"]]; 
+                                             ["Tconstr"; ["Pident"; "bool"]]]]; 
+                   ["Sig_value"; "reldiff"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "t"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "tt"]; 
+                                                       ["Tpoly"; "a"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "tt"]; 
+                                                       ["Tpoly"; "b"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "round"]]; 
+                                            ["Tconstr"; ["Pident"; "unit"]]]]]]]; 
+                   ["Sig_value"; "log"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "t"]]; 
+                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]; 
+                   ["Sig_value"; "log2"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "log10"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "exp"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "t"]]; 
+                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]; 
+                   ["Sig_value"; "exp2"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "exp10"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "cos"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]; 
+                   ["Sig_value"; "sin"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]; 
+                   ["Sig_value"; "tan"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]; 
+                   ["Sig_value"; "sec"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]; 
+                   ["Sig_value"; "csc"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]; 
+                   ["Sig_value"; "cot"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]; 
+                   ["Sig_value"; "sin_cos"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "tt"]; 
+                                                       ["Tpoly"; "a"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "tt"]; 
+                                                       ["Tpoly"; "b"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "tt"]; 
+                                                       ["Tpoly"; "c"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "round"]]; 
+                                            ["Tconstr"; ["Pident"; "bool"]]]]]]]; 
+                   ["Sig_value"; "acos"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "asin"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "atan"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "atan2"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "b"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "cosh"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "b"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "sinh"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "b"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "tanh"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "b"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "sech"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "b"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "csch"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "b"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "coth"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "b"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "acosh"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "asinh"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "atanh"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "fac_ui"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "t"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "int"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "round"]]; 
+                                           ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "log1p"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "expm1"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "eint"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "gamma"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "lngamma"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "t"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "tt"]; 
+                                                       ["Tpoly"; "a"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "round"]]; 
+                                            ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "zeta"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "erf"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "t"]]; 
+                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]; 
+                   ["Sig_value"; "erfc"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "j0"; ["Tarrow"; ["Tconstr"; ["Pident"; "t"]]; 
+                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                              "tt"]; 
+                                                  ["Tpoly"; "a"]]; ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "round"]]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "int"]]]]]]; 
+                   ["Sig_value"; "j1"; ["Tarrow"; ["Tconstr"; ["Pident"; "t"]]; 
+                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                              "tt"]; 
+                                                  ["Tpoly"; "a"]]; ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "round"]]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "int"]]]]]]; 
+                   ["Sig_value"; "jn"; ["Tarrow"; ["Tconstr"; ["Pident"; "t"]]; 
+                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                              "int"]]; 
+                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                              "tt"]; 
+                                                  ["Tpoly"; "a"]]; ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "round"]]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "int"]]]]]]]; 
+                   ["Sig_value"; "y0"; ["Tarrow"; ["Tconstr"; ["Pident"; "t"]]; 
+                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                              "tt"]; 
+                                                  ["Tpoly"; "a"]]; ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "round"]]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "int"]]]]]]; 
+                   ["Sig_value"; "y1"; ["Tarrow"; ["Tconstr"; ["Pident"; "t"]]; 
+                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                              "tt"]; 
+                                                  ["Tpoly"; "a"]]; ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "round"]]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "int"]]]]]]; 
+                   ["Sig_value"; "yn"; ["Tarrow"; ["Tconstr"; ["Pident"; "t"]]; 
+                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                              "int"]]; 
+                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                              "tt"]; 
+                                                  ["Tpoly"; "a"]]; ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "round"]]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "int"]]]]]]]; 
+                   ["Sig_value"; "fma"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "t"]]; 
+                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "c"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]]]; 
+                   ["Sig_value"; "fms"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "t"]]; 
+                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "c"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]]]; 
+                   ["Sig_value"; "agm"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "t"]]; 
+                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]]; 
+                   ["Sig_value"; "hypot"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "b"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "round"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "const_log2"; ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "t"]]; 
+                                               ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "round"]]; 
+                                               ["Tconstr"; ["Pident"; "int"]]]]]; 
+                   ["Sig_value"; "const_pi"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "t"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                             ["Tconstr"; ["Pident"; "int"]]]]]; 
+                   ["Sig_value"; "const_euler"; ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "t"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "round"]]; 
+                                                ["Tconstr"; ["Pident"; "int"]]]]]; 
+                   ["Sig_value"; "const_catalan"; ["Tarrow"; ["Tconstr"; 
+                                                             ["Pident"; "t"]]; 
+                                                  ["Tarrow"; ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "round"]]; 
+                                                  ["Tconstr"; ["Pident"; 
+                                                              "int"]]]]]; 
+                   ["Sig_value"; "rint"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "ceil"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]; 
+                   ["Sig_value"; "floor"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]; 
+                   ["Sig_value"; "round"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]; 
+                   ["Sig_value"; "trunc"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "t"]]; 
+                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                 "tt"]; 
+                                                     ["Tpoly"; "a"]]; 
+                                          ["Tconstr"; ["Pident"; "int"]]]]]; 
+                   ["Sig_value"; "frac"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]; 
+                   ["Sig_value"; "modf"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "fmod"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "t"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "a"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "tt"]; 
+                                                    ["Tpoly"; "b"]]; 
+                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                "round"]]; 
+                                         ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "remainder"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "t"]]; 
+                                              ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "tt"]; 
+                                                         ["Tpoly"; "a"]]; 
+                                              ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "tt"]; 
+                                                         ["Tpoly"; "b"]]; 
+                                              ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "round"]]; 
+                                              ["Tconstr"; ["Pident"; "int"]]]]]]]; 
+                   ["Sig_value"; "integer_p"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "tt"]; 
+                                                         ["Tpoly"; "a"]]; 
+                                              ["Tconstr"; ["Pident"; "bool"]]]]; 
+                   ["Sig_value"; "nexttoward"; ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "t"]]; 
+                                               ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "tt"]; 
+                                                          ["Tpoly"; "a"]]; 
+                                               ["Tconstr"; ["Pident"; "unit"]]]]]; 
+                   ["Sig_value"; "nextabove"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "t"]]; 
+                                              ["Tconstr"; ["Pident"; "unit"]]]]; 
+                   ["Sig_value"; "nextbelow"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "t"]]; 
+                                              ["Tconstr"; ["Pident"; "unit"]]]]; 
+                   ["Sig_value"; "min"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "t"]]; 
+                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]]; 
+                   ["Sig_value"; "max"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "t"]]; 
+                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                               "tt"]; 
+                                                   ["Tpoly"; "a"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "tt"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "b"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "round"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]]]]]; 
+                   ["Sig_value"; "get_exp"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "tt"]; 
+                                                       ["Tpoly"; "a"]]; 
+                                            ["Tconstr"; ["Pident"; "int"]]]]; 
+                   ["Sig_value"; "set_exp"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "t"]]; 
+                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "int"]]; 
+                                            ["Tconstr"; ["Pident"; "int"]]]]]]]

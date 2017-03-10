@@ -1,0 +1,281 @@
+["module"; "Procord_protocol"; ["Mty_signature"; ["Sig_type"; "error"; 
+                                                 0; ["Type_variant"; 
+                                                    ["constructor"; "E_task_not_supported"; 
+                                                    ["tuple"]]; ["constructor"; 
+                                                                "E_unexpected_message"; 
+                                                                ["tuple"]]; 
+                                                    ["constructor"; "E_ill_formed_message"; 
+                                                    ["tuple"]]; ["constructor"; 
+                                                                "E_message_too_long"; 
+                                                                ["tuple"]]; 
+                                                    ["constructor"; "E_disconnected"; 
+                                                    ["tuple"]]; ["constructor"; 
+                                                                "E_invalid_print_destination"; 
+                                                                ["tuple"]]]]; 
+                               ["Sig_unknown"]; ["Sig_value"; "error"; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "error"]]; 
+                                                ["Tpoly"; "a"]]]; ["Sig_value"; 
+                                                                  "error_message"; 
+                                                                  ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "error"]]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "string"]]]]; 
+                               ["Sig_type"; "custom_destination"; 0; 
+                               ["Type_alias"; ["Tconstr"; ["Pident"; "char"]]]]; 
+                               ["Sig_type"; "print_destination"; 0; [
+                                                                    "Type_variant"; 
+                                                                    [
+                                                                    "constructor"; 
+                                                                    "D_stdout"; 
+                                                                    ["tuple"]]; 
+                                                                    [
+                                                                    "constructor"; 
+                                                                    "D_stderr"; 
+                                                                    ["tuple"]]; 
+                                                                    [
+                                                                    "constructor"; 
+                                                                    "D_custom"; 
+                                                                    [
+                                                                    "tuple"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "custom_destination"]]]]]]; 
+                               ["Sig_type"; "message"; 0; ["Type_variant"; 
+                                                          ["constructor"; 
+                                                          "M_none"; ["tuple"]]; 
+                                                          ["constructor"; 
+                                                          "M_value"; 
+                                                          ["tuple"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]]]; 
+                                                          ["constructor"; 
+                                                          "M_task_name"; 
+                                                          ["tuple"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]]]; 
+                                                          ["constructor"; 
+                                                          "M_exception"; 
+                                                          ["tuple"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]]]; 
+                                                          ["constructor"; 
+                                                          "M_unknown_exception"; 
+                                                          ["tuple"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]]]; 
+                                                          ["constructor"; 
+                                                          "M_error"; 
+                                                          ["tuple"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "error"]]]]; 
+                                                          ["constructor"; 
+                                                          "M_print"; 
+                                                          ["tuple"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "print_destination"]]; 
+                                                          ["Tconstr"; 
+                                                          ["Pident"; 
+                                                          "string"]]]]; 
+                                                          ["constructor"; 
+                                                          "M_flush"; 
+                                                          ["tuple"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "print_destination"]]]]]]; 
+                               ["Sig_value"; "set_max_message_size"; 
+                               ["Tarrow"; ["Tconstr"; ["Pident"; "int"]]; 
+                               ["Tconstr"; ["Pident"; "unit"]]]]; ["Sig_value"; 
+                                                                  "send"; 
+                                                                  ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pdot"; 
+                                                                  ["Pident"; 
+                                                                  "Procord_connection"]; 
+                                                                  "t"]; 
+                                                                  ["Tpoly"; 
+                                                                  "a"]]; 
+                                                                  ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "message"]]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "unit"]]]]]; 
+                               ["Sig_value"; "send_value"; ["Tarrow"; 
+                                                           ["Tconstr"; 
+                                                           ["Pdot"; [
+                                                                    "Pident"; 
+                                                                    "Procord_connection"]; 
+                                                           "t"]; ["Tpoly"; 
+                                                                 "a"]]; 
+                                                           ["Tarrow"; 
+                                                           ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "string"]]; 
+                                                           ["Tconstr"; 
+                                                           ["Pident"; "unit"]]]]]; 
+                               ["Sig_value"; "send_task_name"; ["Tarrow"; 
+                                                               ["Tconstr"; 
+                                                               ["Pdot"; 
+                                                               ["Pident"; 
+                                                               "Procord_connection"]; 
+                                                               "t"]; 
+                                                               ["Tpoly"; "a"]]; 
+                                                               ["Tarrow"; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "string"]]; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "unit"]]]]]; 
+                               ["Sig_value"; "send_exception"; ["Tarrow"; 
+                                                               ["Tconstr"; 
+                                                               ["Pdot"; 
+                                                               ["Pident"; 
+                                                               "Procord_connection"]; 
+                                                               "t"]; 
+                                                               ["Tpoly"; "a"]]; 
+                                                               ["Tarrow"; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "string"]]; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "unit"]]]]]; 
+                               ["Sig_value"; "send_unknown_exception"; 
+                               ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
+                                                               "Procord_connection"]; 
+                                                      "t"]; ["Tpoly"; "a"]]; 
+                               ["Tarrow"; ["Tconstr"; ["Pident"; "string"]]; 
+                               ["Tconstr"; ["Pident"; "unit"]]]]]; ["Sig_value"; 
+                                                                   "send_error"; 
+                                                                   ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Procord_connection"]; 
+                                                                   "t"]; 
+                                                                   ["Tpoly"; 
+                                                                   "a"]]; 
+                                                                   ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "error"]]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "unit"]]]]]; 
+                               ["Sig_value"; "send_print"; ["Tarrow"; 
+                                                           ["Tconstr"; 
+                                                           ["Pdot"; [
+                                                                    "Pident"; 
+                                                                    "Procord_connection"]; 
+                                                           "t"]; ["Tpoly"; 
+                                                                 "a"]]; 
+                                                           ["Tarrow"; 
+                                                           ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "print_destination"]]; 
+                                                           ["Tarrow"; 
+                                                           ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "string"]]; 
+                                                           ["Tconstr"; 
+                                                           ["Pident"; "unit"]]]]]]; 
+                               ["Sig_value"; "send_flush"; ["Tarrow"; 
+                                                           ["Tconstr"; 
+                                                           ["Pdot"; [
+                                                                    "Pident"; 
+                                                                    "Procord_connection"]; 
+                                                           "t"]; ["Tpoly"; 
+                                                                 "a"]]; 
+                                                           ["Tarrow"; 
+                                                           ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "print_destination"]]; 
+                                                           ["Tconstr"; 
+                                                           ["Pident"; "unit"]]]]]; 
+                               ["Sig_value"; "receive"; ["Tarrow"; ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Procord_connection"]; 
+                                                                   "t"]; 
+                                                                   ["Tpoly"; 
+                                                                   "a"]]; 
+                                                        ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "message"]]]]; 
+                               ["Sig_value"; "blocking_receive"; ["Tarrow"; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Procord_connection"]; 
+                                                                 "t"]; 
+                                                                 ["Tpoly"; 
+                                                                 "a"]]; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "message"]]]]; 
+                               ["Sig_value"; "blocking_receive_task_name"; 
+                               ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
+                                                               "Procord_connection"]; 
+                                                      "t"]; ["Tpoly"; "a"]]; 
+                               ["Tconstr"; ["Pident"; "string"]]]]; [
+                                                                    "Sig_value"; 
+                                                                    "blocking_receive_value"; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Procord_connection"]; 
+                                                                    "t"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "a"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]]]; 
+                               ["Sig_value"; "register_destination"; 
+                               ["Tarrow"; ["Tconstr"; ["Pident"; "custom_destination"]]; 
+                               ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
+                                                               "Format"]; 
+                                                      "formatter"]]; 
+                               ["Tconstr"; ["Pident"; "unit"]]]]]; ["Sig_value"; 
+                                                                   "formatter_of_destination"; 
+                                                                   ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "print_destination"]]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "option"]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Format"]; 
+                                                                   "formatter"]]]]]]]

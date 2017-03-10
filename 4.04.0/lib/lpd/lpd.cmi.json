@@ -1,0 +1,373 @@
+["module"; "Lpd"; ["Mty_signature"; ["Sig_type"; "banner"; 0; ["Type_record"; 
+                                                              ["label"; 
+                                                              "user_name"; 
+                                                              ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "string"]]]; 
+                                                              ["label"; 
+                                                              "class_name"; 
+                                                              ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "string"]]]; 
+                                                              ["label"; 
+                                                              "job_name"; 
+                                                              ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "string"]]]]]; 
+                  ["Sig_type"; "file_type"; 0; ["Type_variant"; ["constructor"; 
+                                                                "Text"; 
+                                                                ["tuple"; 
+                                                                ["Tconstr"; 
+                                                                ["Pident"; 
+                                                                "int"]]; 
+                                                                ["Tconstr"; 
+                                                                ["Pident"; 
+                                                                "int"]]]]; 
+                                               ["constructor"; "Bin"; 
+                                               ["tuple"]]; ["constructor"; 
+                                                           "PS"; ["tuple"]]; 
+                                               ["constructor"; "DVI"; 
+                                               ["tuple"]]; ["constructor"; 
+                                                           "Troff"; [
+                                                                    "tuple"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]]]; 
+                                               ["constructor"; "Ditroff"; 
+                                               ["tuple"]]; ["constructor"; 
+                                                           "CIF"; ["tuple"]]; 
+                                               ["constructor"; "Plot"; 
+                                               ["tuple"]]; ["constructor"; 
+                                                           "Pr"; ["tuple"; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "string"]]; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "int"]]]]; 
+                                               ["constructor"; "Fortran"; 
+                                               ["tuple"]]; ["constructor"; 
+                                                           "Raster"; 
+                                                           ["tuple"]]]]; 
+                  ["Sig_type"; "file"; 0; ["Type_record"; ["label"; "name"; 
+                                                          ["Tconstr"; 
+                                                          ["Pident"; 
+                                                          "string"]]]; 
+                                          ["label"; "size"; ["Tconstr"; 
+                                                            ["Pident"; "int"]]]; 
+                                          ["label"; "nbcopies"; ["Tconstr"; 
+                                                                ["Pident"; 
+                                                                "int"]]]; 
+                                          ["label"; "storage"; ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "string"]]]; 
+                                          ["label"; "of_type"; ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "file_type"]]]]]; 
+                  ["Sig_type"; "job"; 0; ["Type_record"; ["label"; "number"; 
+                                                         ["Tconstr"; 
+                                                         ["Pident"; "int"]]]; 
+                                         ["label"; "user"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "string"]]]; 
+                                         ["label"; "host"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "string"]]]; 
+                                         ["label"; "mailto"; ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "string"]]]; 
+                                         ["label"; "banner"; ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "option"]; 
+                                                             ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "banner"]]]]; 
+                                         ["label"; "files"; ["Tconstr"; 
+                                                            ["Pident"; 
+                                                            "list"]; 
+                                                            ["Tconstr"; 
+                                                            ["Pident"; 
+                                                            "file"]]]]; 
+                                         ["label"; "addr"; ["Tconstr"; 
+                                                           ["Pdot"; [
+                                                                    "Pident"; 
+                                                                    "Unix"]; 
+                                                           "sockaddr"]]]]]; 
+                  ["Sig_type"; "jobref"; 0; ["Type_variant"; ["constructor"; 
+                                                             "User"; 
+                                                             ["tuple"; 
+                                                             ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "string"]]]]; 
+                                            ["constructor"; "Num"; ["tuple"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "int"]]]]]]; 
+                  ["Sig_type"; "queue_actions"; 0; ["Type_record"; ["label"; 
+                                                                   "print"; 
+                                                                   ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "unit"]]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "unit"]]]]; 
+                                                   ["label"; "on_reception"; 
+                                                   ["Tarrow"; ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "job"]]; 
+                                                   ["Tconstr"; ["Pident"; 
+                                                               "unit"]]]]; 
+                                                   ["label"; "send_queue"; 
+                                                   ["Tarrow"; ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "list"]; 
+                                                              ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "jobref"]]]; 
+                                                   ["Tarrow"; ["Tconstr"; 
+                                                              ["Pdot"; 
+                                                              ["Pident"; 
+                                                              "Socket"]; 
+                                                              "out_channel"]]; 
+                                                   ["Tconstr"; ["Pident"; 
+                                                               "unit"]]]]]; 
+                                                   ["label"; "send_queue_long"; 
+                                                   ["Tarrow"; ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "list"]; 
+                                                              ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "jobref"]]]; 
+                                                   ["Tarrow"; ["Tconstr"; 
+                                                              ["Pdot"; 
+                                                              ["Pident"; 
+                                                              "Socket"]; 
+                                                              "out_channel"]]; 
+                                                   ["Tconstr"; ["Pident"; 
+                                                               "unit"]]]]]; 
+                                                   ["label"; "remove"; 
+                                                   ["Tarrow"; ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "string"]]; 
+                                                   ["Tarrow"; ["Tconstr"; 
+                                                              ["Pdot"; 
+                                                              ["Pident"; 
+                                                              "Unix"]; 
+                                                              "sockaddr"]]; 
+                                                   ["Tarrow"; ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "list"]; 
+                                                              ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "jobref"]]]; 
+                                                   ["Tconstr"; ["Pident"; 
+                                                               "unit"]]]]]]]]; 
+                  ["Sig_unknown"]; ["Sig_module"; "Make"; ["Mty_functor"; 
+                                                          "C"; ["Some"; 
+                                                               ["Mty_unknown"]]; 
+                                                          ["Mty_signature"; 
+                                                          ["Sig_value"; 
+                                                          "socket"; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "unit"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Unix"]; 
+                                                                    "file_descr"]]]]]; 
+                                                          ["Sig_value"; 
+                                                          "accept"; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "unit"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "unit"]]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "unit"]]]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Unix"]; 
+                                                                    "file_descr"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Unix"]; 
+                                                                    "sockaddr"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Socket"]; 
+                                                                    "in_channel"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Socket"]; 
+                                                                    "out_channel"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "unit"]]]]]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "a"]]]]]; 
+                                                          ["Sig_value"; 
+                                                          "daemon"; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Unix"]; 
+                                                                    "sockaddr"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Socket"]; 
+                                                                    "in_channel"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Socket"]; 
+                                                                    "out_channel"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "unit"]]]]]]]]]; 
+                  ["Sig_value"; "string_of_current_time"; ["Tarrow"; 
+                                                          ["Tconstr"; 
+                                                          ["Pident"; "unit"]]; 
+                                                          ["Tconstr"; 
+                                                          ["Pident"; 
+                                                          "string"]]]]; 
+                  ["Sig_value"; "header_of_job"; ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; 
+                                                            "string"]]; 
+                                                 ["Tconstr"; ["Pident"; 
+                                                             "string"]]]]; 
+                  ["Sig_value"; "string_of_job"; ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; "int"]]; 
+                                                 ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; "job"]]; 
+                                                 ["Tconstr"; ["Pident"; 
+                                                             "string"]]]]]; 
+                  ["Sig_value"; "long_string_of_job"; ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "int"]]; 
+                                                      ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "job"]]; 
+                                                      ["Tconstr"; ["Pident"; 
+                                                                  "string"]]]]]; 
+                  ["Sig_value"; "any_host"; ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Unix"]; 
+                                                                   "sockaddr"]]; 
+                                            ["Tconstr"; ["Pident"; "bool"]]]]; 
+                  ["Sig_value"; "these_hosts"; ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; 
+                                                          "option"]; 
+                                                          ["Tconstr"; 
+                                                          ["Pident"; 
+                                                          "string"]]]; 
+                                               ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "list"]; 
+                                                          ["Tconstr"; 
+                                                          ["Pident"; 
+                                                          "string"]]]; 
+                                               ["Tarrow"; ["Tconstr"; 
+                                                          ["Pdot"; ["Pident"; 
+                                                                   "Unix"]; 
+                                                          "sockaddr"]]; 
+                                               ["Tconstr"; ["Pident"; "bool"]]]]]]]]

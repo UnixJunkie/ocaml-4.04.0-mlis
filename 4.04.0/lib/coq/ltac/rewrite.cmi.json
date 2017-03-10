@@ -1,0 +1,770 @@
+["module"; "Rewrite"; ["Mty_signature"; ["Sig_type"; "unary_strategy"; 
+                                        0; ["Type_variant"; ["constructor"; 
+                                                            "Subterms"; 
+                                                            ["tuple"]]; 
+                                           ["constructor"; "Subterm"; 
+                                           ["tuple"]]; ["constructor"; 
+                                                       "Innermost"; ["tuple"]]; 
+                                           ["constructor"; "Outermost"; 
+                                           ["tuple"]]; ["constructor"; 
+                                                       "Bottomup"; ["tuple"]]; 
+                                           ["constructor"; "Topdown"; 
+                                           ["tuple"]]; ["constructor"; 
+                                                       "Progress"; ["tuple"]]; 
+                                           ["constructor"; "Try"; ["tuple"]]; 
+                                           ["constructor"; "Any"; ["tuple"]]; 
+                                           ["constructor"; "Repeat"; 
+                                           ["tuple"]]]]; ["Sig_type"; 
+                                                         "binary_strategy"; 
+                                                         0; ["Type_variant"; 
+                                                            ["constructor"; 
+                                                            "Compose"; 
+                                                            ["tuple"]]; 
+                                                            ["constructor"; 
+                                                            "Choice"; 
+                                                            ["tuple"]]]]; 
+                      ["Sig_type"; "strategy_ast"; 2; ["Type_variant"; 
+                                                      ["constructor"; 
+                                                      "StratId"; ["tuple"]]; 
+                                                      ["constructor"; 
+                                                      "StratFail"; ["tuple"]]; 
+                                                      ["constructor"; 
+                                                      "StratRefl"; ["tuple"]]; 
+                                                      ["constructor"; 
+                                                      "StratUnary"; [
+                                                                    "tuple"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "unary_strategy"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "strategy_ast"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "constr"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "redexpr"]]]]; 
+                                                      ["constructor"; 
+                                                      "StratBinary"; 
+                                                      ["tuple"; ["Tconstr"; 
+                                                                ["Pident"; 
+                                                                "binary_strategy"]]; 
+                                                      ["Tconstr"; ["Pident"; 
+                                                                  "strategy_ast"]; 
+                                                      ["Tpoly"; "constr"]; 
+                                                      ["Tpoly"; "redexpr"]]; 
+                                                      ["Tconstr"; ["Pident"; 
+                                                                  "strategy_ast"]; 
+                                                      ["Tpoly"; "constr"]; 
+                                                      ["Tpoly"; "redexpr"]]]]; 
+                                                      ["constructor"; 
+                                                      "StratConstr"; 
+                                                      ["tuple"; ["Tpoly"; 
+                                                                "constr"]; 
+                                                      ["Tconstr"; ["Pident"; 
+                                                                  "bool"]]]]; 
+                                                      ["constructor"; 
+                                                      "StratTerms"; [
+                                                                    "tuple"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "list"]; 
+                                                                    [
+                                                                    "Tpoly"; 
+                                                                    "constr"]]]]; 
+                                                      ["constructor"; 
+                                                      "StratHints"; [
+                                                                    "tuple"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "bool"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]]]; 
+                                                      ["constructor"; 
+                                                      "StratEval"; ["tuple"; 
+                                                                   ["Tpoly"; 
+                                                                   "redexpr"]]]; 
+                                                      ["constructor"; 
+                                                      "StratFold"; ["tuple"; 
+                                                                   ["Tpoly"; 
+                                                                   "constr"]]]]]; 
+                      ["Sig_type"; "rewrite_proof"; 0; ["Type_variant"; 
+                                                       ["constructor"; 
+                                                       "RewPrf"; ["tuple"; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Constr"]; 
+                                                                 "constr"]]; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Constr"]; 
+                                                                 "constr"]]]]; 
+                                                       ["constructor"; 
+                                                       "RewCast"; ["tuple"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pdot"; 
+                                                                  ["Pident"; 
+                                                                  "Constr"]; 
+                                                                  "cast_kind"]]]]]]; 
+                      ["Sig_type"; "evars"; 0; ["Type_alias"; ["Ttuple"; 
+                                                              ["Tconstr"; 
+                                                              ["Pdot"; 
+                                                              ["Pident"; 
+                                                              "Evd"]; 
+                                                              "evar_map"]]; 
+                                                              ["Tconstr"; 
+                                                              ["Pdot"; 
+                                                              ["Pdot"; 
+                                                              ["Pident"; 
+                                                              "Evar"]; 
+                                                              "Set"]; 
+                                                              "t"]]]]]; 
+                      ["Sig_type"; "rewrite_result_info"; 0; ["Type_record"; 
+                                                             ["label"; 
+                                                             "rew_car"; 
+                                                             ["Tconstr"; 
+                                                             ["Pdot"; 
+                                                             ["Pident"; 
+                                                             "Constr"]; 
+                                                             "constr"]]]; 
+                                                             ["label"; 
+                                                             "rew_from"; 
+                                                             ["Tconstr"; 
+                                                             ["Pdot"; 
+                                                             ["Pident"; 
+                                                             "Constr"]; 
+                                                             "constr"]]]; 
+                                                             ["label"; 
+                                                             "rew_to"; 
+                                                             ["Tconstr"; 
+                                                             ["Pdot"; 
+                                                             ["Pident"; 
+                                                             "Constr"]; 
+                                                             "constr"]]]; 
+                                                             ["label"; 
+                                                             "rew_prf"; 
+                                                             ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "rewrite_proof"]]]; 
+                                                             ["label"; 
+                                                             "rew_evars"; 
+                                                             ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "evars"]]]]]; 
+                      ["Sig_type"; "rewrite_result"; 0; ["Type_variant"; 
+                                                        ["constructor"; 
+                                                        "Fail"; ["tuple"]]; 
+                                                        ["constructor"; 
+                                                        "Identity"; ["tuple"]]; 
+                                                        ["constructor"; 
+                                                        "Success"; ["tuple"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "rewrite_result_info"]]]]]]; 
+                      ["Sig_type"; "strategy"; 0; ["Type_abstract"]]; 
+                      ["Sig_value"; "strategy_of_ast"; ["Tarrow"; ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "strategy_ast"]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pdot"; 
+                                                                  ["Pident"; 
+                                                                  "Tacexpr"]; 
+                                                                  "glob_constr_and_expr"]]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pdot"; 
+                                                                  ["Pident"; 
+                                                                  "Tacexpr"]; 
+                                                                  "raw_red_expr"]]]; 
+                                                       ["Tconstr"; ["Pident"; 
+                                                                   "strategy"]]]]; 
+                      ["Sig_value"; "map_strategy"; ["Tarrow"; ["Tarrow"; 
+                                                               ["Tpoly"; "a"]; 
+                                                               ["Tpoly"; "b"]]; 
+                                                    ["Tarrow"; ["Tarrow"; 
+                                                               ["Tpoly"; "c"]; 
+                                                               ["Tpoly"; "d"]]; 
+                                                    ["Tarrow"; ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "strategy_ast"]; 
+                                                               ["Tpoly"; "a"]; 
+                                                               ["Tpoly"; "c"]]; 
+                                                    ["Tconstr"; ["Pident"; 
+                                                                "strategy_ast"]; 
+                                                    ["Tpoly"; "b"]; [
+                                                                    "Tpoly"; 
+                                                                    "d"]]]]]]; 
+                      ["Sig_value"; "pr_strategy"; ["Tarrow"; ["Tarrow"; 
+                                                              ["Tpoly"; "a"]; 
+                                                              ["Tconstr"; 
+                                                              ["Pdot"; 
+                                                              ["Pident"; 
+                                                              "Pp"]; 
+                                                              "std_ppcmds"]]]; 
+                                                   ["Tarrow"; ["Tarrow"; 
+                                                              ["Tpoly"; "b"]; 
+                                                              ["Tconstr"; 
+                                                              ["Pdot"; 
+                                                              ["Pident"; 
+                                                              "Pp"]; 
+                                                              "std_ppcmds"]]]; 
+                                                   ["Tarrow"; ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "strategy_ast"]; 
+                                                              ["Tpoly"; "a"]; 
+                                                              ["Tpoly"; "b"]]; 
+                                                   ["Tconstr"; ["Pdot"; 
+                                                               ["Pident"; 
+                                                               "Pp"]; 
+                                                               "std_ppcmds"]]]]]]; 
+                      ["Sig_value"; "cl_rewrite_clause_strat"; ["Tarrow"; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "strategy"]]; 
+                                                               ["Tarrow"; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "option"]; 
+                                                               ["Tconstr"; 
+                                                               ["Pdot"; 
+                                                               ["Pdot"; 
+                                                               ["Pident"; 
+                                                               "Names"]; 
+                                                               "Id"]; 
+                                                               "t"]]]; 
+                                                               ["Tconstr"; 
+                                                               ["Pdot"; 
+                                                               ["Pident"; 
+                                                               "Proofview"]; 
+                                                               "tactic"]; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "unit"]]]]]]; 
+                      ["Sig_value"; "cl_rewrite_clause"; ["Tarrow"; [
+                                                                    "Ttuple"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Tacinterp"]; 
+                                                                    "interp_sign"]]; 
+                                                                    [
+                                                                    "Ttuple"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Tacexpr"]; 
+                                                                    "glob_constr_and_expr"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Misctypes"]; 
+                                                                    "bindings"]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Tacexpr"]; 
+                                                                    "glob_constr_and_expr"]]]]]; 
+                                                         ["Tarrow"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "bool"]]; 
+                                                         ["Tarrow"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Locus"]; 
+                                                                    "occurrences"]]; 
+                                                         ["Tarrow"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Names"]; 
+                                                                    "Id"]; 
+                                                                    "t"]]]; 
+                                                         ["Tconstr"; 
+                                                         ["Pdot"; ["Pident"; 
+                                                                  "Proofview"]; 
+                                                         "tactic"]; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "unit"]]]]]]]]; 
+                      ["Sig_value"; "is_applied_rewrite_relation"; ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Environ"]; 
+                                                                   "env"]]; 
+                                                                   ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Evd"]; 
+                                                                   "evar_map"]]; 
+                                                                   ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Context"]; 
+                                                                   "Rel"]; 
+                                                                   "t"]]; 
+                                                                   ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Constr"]; 
+                                                                   "constr"]]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "option"]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Constr"]; 
+                                                                   "types"]]]]]]]]; 
+                      ["Sig_value"; "declare_relation"; ["Tarrow"; ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "option"]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "list"]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Constrexpr"]; 
+                                                                   "local_binder"]]]]; 
+                                                        ["Tarrow"; ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Constrexpr"]; 
+                                                                   "constr_expr"]]; 
+                                                        ["Tarrow"; ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Constrexpr"]; 
+                                                                   "constr_expr"]]; 
+                                                        ["Tarrow"; ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Names"]; 
+                                                                   "Id"]; 
+                                                                   "t"]]; 
+                                                        ["Tarrow"; ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "option"]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Constrexpr"]; 
+                                                                   "constr_expr"]]]; 
+                                                        ["Tarrow"; ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "option"]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Constrexpr"]; 
+                                                                   "constr_expr"]]]; 
+                                                        ["Tarrow"; ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "option"]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Constrexpr"]; 
+                                                                   "constr_expr"]]]; 
+                                                        ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "unit"]]]]]]]]]]; 
+                      ["Sig_value"; "add_setoid"; ["Tarrow"; ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "bool"]]; 
+                                                  ["Tarrow"; ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "list"]; 
+                                                             ["Tconstr"; 
+                                                             ["Pdot"; 
+                                                             ["Pident"; 
+                                                             "Constrexpr"]; 
+                                                             "local_binder"]]]; 
+                                                  ["Tarrow"; ["Tconstr"; 
+                                                             ["Pdot"; 
+                                                             ["Pident"; 
+                                                             "Constrexpr"]; 
+                                                             "constr_expr"]]; 
+                                                  ["Tarrow"; ["Tconstr"; 
+                                                             ["Pdot"; 
+                                                             ["Pident"; 
+                                                             "Constrexpr"]; 
+                                                             "constr_expr"]]; 
+                                                  ["Tarrow"; ["Tconstr"; 
+                                                             ["Pdot"; 
+                                                             ["Pident"; 
+                                                             "Constrexpr"]; 
+                                                             "constr_expr"]]; 
+                                                  ["Tarrow"; ["Tconstr"; 
+                                                             ["Pdot"; 
+                                                             ["Pdot"; 
+                                                             ["Pident"; 
+                                                             "Names"]; 
+                                                             "Id"]; "t"]]; 
+                                                  ["Tconstr"; ["Pident"; 
+                                                              "unit"]]]]]]]]]; 
+                      ["Sig_value"; "add_morphism_infer"; ["Tarrow"; 
+                                                          ["Tconstr"; 
+                                                          ["Pident"; "bool"]]; 
+                                                          ["Tarrow"; 
+                                                          ["Tconstr"; 
+                                                          ["Pdot"; ["Pident"; 
+                                                                   "Constrexpr"]; 
+                                                          "constr_expr"]]; 
+                                                          ["Tarrow"; 
+                                                          ["Tconstr"; 
+                                                          ["Pdot"; ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Names"]; 
+                                                                   "Id"]; 
+                                                          "t"]]; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "unit"]]]]]]; 
+                      ["Sig_value"; "add_morphism"; ["Tarrow"; ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "bool"]]; 
+                                                    ["Tarrow"; ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "list"]; 
+                                                               ["Tconstr"; 
+                                                               ["Pdot"; 
+                                                               ["Pident"; 
+                                                               "Constrexpr"]; 
+                                                               "local_binder"]]]; 
+                                                    ["Tarrow"; ["Tconstr"; 
+                                                               ["Pdot"; 
+                                                               ["Pident"; 
+                                                               "Constrexpr"]; 
+                                                               "constr_expr"]]; 
+                                                    ["Tarrow"; ["Tconstr"; 
+                                                               ["Pdot"; 
+                                                               ["Pident"; 
+                                                               "Constrexpr"]; 
+                                                               "constr_expr"]]; 
+                                                    ["Tarrow"; ["Tconstr"; 
+                                                               ["Pdot"; 
+                                                               ["Pdot"; 
+                                                               ["Pident"; 
+                                                               "Names"]; 
+                                                               "Id"]; 
+                                                               "t"]]; 
+                                                    ["Tconstr"; ["Pident"; 
+                                                                "unit"]]]]]]]]; 
+                      ["Sig_value"; "get_reflexive_proof"; ["Tarrow"; 
+                                                           ["Tconstr"; 
+                                                           ["Pdot"; [
+                                                                    "Pident"; 
+                                                                    "Environ"]; 
+                                                           "env"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Evd"]; 
+                                                                    "evar_map"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Constr"]; 
+                                                                    "constr"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Constr"]; 
+                                                                    "constr"]]; 
+                                                                    [
+                                                                    "Ttuple"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Evd"]; 
+                                                                    "evar_map"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Constr"]; 
+                                                                    "constr"]]]]]]]]; 
+                      ["Sig_value"; "get_symmetric_proof"; ["Tarrow"; 
+                                                           ["Tconstr"; 
+                                                           ["Pdot"; [
+                                                                    "Pident"; 
+                                                                    "Environ"]; 
+                                                           "env"]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Evd"]; 
+                                                                    "evar_map"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Constr"]; 
+                                                                    "constr"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Constr"]; 
+                                                                    "constr"]]; 
+                                                                    [
+                                                                    "Ttuple"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Evd"]; 
+                                                                    "evar_map"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Constr"]; 
+                                                                    "constr"]]]]]]]]; 
+                      ["Sig_value"; "get_transitive_proof"; ["Tarrow"; 
+                                                            ["Tconstr"; 
+                                                            ["Pdot"; 
+                                                            ["Pident"; 
+                                                            "Environ"]; 
+                                                            "env"]]; 
+                                                            ["Tarrow"; 
+                                                            ["Tconstr"; 
+                                                            ["Pdot"; 
+                                                            ["Pident"; "Evd"]; 
+                                                            "evar_map"]]; 
+                                                            ["Tarrow"; 
+                                                            ["Tconstr"; 
+                                                            ["Pdot"; 
+                                                            ["Pident"; 
+                                                            "Constr"]; 
+                                                            "constr"]]; 
+                                                            ["Tarrow"; 
+                                                            ["Tconstr"; 
+                                                            ["Pdot"; 
+                                                            ["Pident"; 
+                                                            "Constr"]; 
+                                                            "constr"]]; 
+                                                            ["Ttuple"; 
+                                                            ["Tconstr"; 
+                                                            ["Pdot"; 
+                                                            ["Pident"; "Evd"]; 
+                                                            "evar_map"]]; 
+                                                            ["Tconstr"; 
+                                                            ["Pdot"; 
+                                                            ["Pident"; 
+                                                            "Constr"]; 
+                                                            "constr"]]]]]]]]; 
+                      ["Sig_value"; "default_morphism"; ["Tarrow"; ["Ttuple"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "list"]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "option"]; 
+                                                                   ["Ttuple"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Constr"]; 
+                                                                   "types"]]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "option"]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Constr"]; 
+                                                                   "constr"]]]]]]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "option"]; 
+                                                                   ["Ttuple"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Constr"]; 
+                                                                   "types"]]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "option"]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Constr"]; 
+                                                                   "types"]]]]]]; 
+                                                        ["Tarrow"; ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Constr"]; 
+                                                                   "constr"]]; 
+                                                        ["Ttuple"; ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Constr"]; 
+                                                                   "constr"]]; 
+                                                        ["Tconstr"; [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Constr"]; 
+                                                                    "constr"]]]]]]; 
+                      ["Sig_value"; "setoid_symmetry"; ["Tconstr"; ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Proofview"]; 
+                                                                   "tactic"]; 
+                                                       ["Tconstr"; ["Pident"; 
+                                                                   "unit"]]]]; 
+                      ["Sig_value"; "setoid_symmetry_in"; ["Tarrow"; 
+                                                          ["Tconstr"; 
+                                                          ["Pdot"; ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Names"]; 
+                                                                   "Id"]; 
+                                                          "t"]]; ["Tconstr"; 
+                                                                 ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Proofview"]; 
+                                                                 "tactic"]; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "unit"]]]]]; 
+                      ["Sig_value"; "setoid_reflexivity"; ["Tconstr"; 
+                                                          ["Pdot"; ["Pident"; 
+                                                                   "Proofview"]; 
+                                                          "tactic"]; 
+                                                          ["Tconstr"; 
+                                                          ["Pident"; "unit"]]]]; 
+                      ["Sig_value"; "setoid_transitivity"; ["Tarrow"; 
+                                                           ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "option"]; 
+                                                           ["Tconstr"; 
+                                                           ["Pdot"; [
+                                                                    "Pident"; 
+                                                                    "Constr"]; 
+                                                           "constr"]]]; 
+                                                           ["Tconstr"; 
+                                                           ["Pdot"; [
+                                                                    "Pident"; 
+                                                                    "Proofview"]; 
+                                                           "tactic"]; 
+                                                           ["Tconstr"; 
+                                                           ["Pident"; "unit"]]]]]; 
+                      ["Sig_value"; "apply_strategy"; ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "strategy"]]; 
+                                                      ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Environ"]; 
+                                                                 "env"]]; 
+                                                      ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "list"]; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pdot"; 
+                                                                 ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Names"]; 
+                                                                 "Id"]; 
+                                                                 "t"]]]; 
+                                                      ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Term"]; 
+                                                                 "constr"]]; 
+                                                      ["Tarrow"; ["Ttuple"; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "bool"]]; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pdot"; 
+                                                                 ["Pident"; 
+                                                                 "Term"]; 
+                                                                 "constr"]]]; 
+                                                      ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "evars"]]; 
+                                                      ["Tconstr"; ["Pident"; 
+                                                                  "rewrite_result"]]]]]]]]]]]

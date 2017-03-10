@@ -1,0 +1,296 @@
+["module"; "Zip"; ["Mty_signature"; ["Sig_type"; "compression_method"; 
+                                    0; ["Type_variant"; ["constructor"; 
+                                                        "Stored"; ["tuple"]]; 
+                                       ["constructor"; "Deflated"; ["tuple"]]]]; 
+                  ["Sig_type"; "entry"; 0; ["Type_record"; ["label"; 
+                                                           "filename"; 
+                                                           ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "string"]]]; 
+                                           ["label"; "extra"; ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "string"]]]; 
+                                           ["label"; "comment"; ["Tconstr"; 
+                                                                ["Pident"; 
+                                                                "string"]]]; 
+                                           ["label"; "methd"; ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "compression_method"]]]; 
+                                           ["label"; "mtime"; ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "float"]]]; 
+                                           ["label"; "crc"; ["Tconstr"; 
+                                                            ["Pident"; 
+                                                            "int32"]]]; 
+                                           ["label"; "uncompressed_size"; 
+                                           ["Tconstr"; ["Pident"; "int"]]]; 
+                                           ["label"; "compressed_size"; 
+                                           ["Tconstr"; ["Pident"; "int"]]]; 
+                                           ["label"; "is_directory"; 
+                                           ["Tconstr"; ["Pident"; "bool"]]]; 
+                                           ["label"; "file_offset"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int64"]]]]]; 
+                  ["Sig_type"; "in_file"; 0; ["Type_abstract"]]; ["Sig_value"; 
+                                                                 "open_in"; 
+                                                                 ["Tarrow"; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "string"]]; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "in_file"]]]]; 
+                  ["Sig_value"; "entries"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "in_file"]]; 
+                                           ["Tconstr"; ["Pident"; "list"]; 
+                                           ["Tconstr"; ["Pident"; "entry"]]]]]; 
+                  ["Sig_value"; "comment"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "in_file"]]; 
+                                           ["Tconstr"; ["Pident"; "string"]]]]; 
+                  ["Sig_value"; "find_entry"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "in_file"]]; 
+                                              ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "string"]]; 
+                                              ["Tconstr"; ["Pident"; "entry"]]]]]; 
+                  ["Sig_value"; "read_entry"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "in_file"]]; 
+                                              ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "entry"]]; 
+                                              ["Tconstr"; ["Pident"; 
+                                                          "string"]]]]]; 
+                  ["Sig_value"; "copy_entry_to_channel"; ["Tarrow"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "in_file"]]; 
+                                                         ["Tarrow"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "entry"]]; 
+                                                         ["Tarrow"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Pervasives"]; 
+                                                                    "out_channel"]]; 
+                                                         ["Tconstr"; 
+                                                         ["Pident"; "unit"]]]]]]; 
+                  ["Sig_value"; "copy_entry_to_file"; ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "in_file"]]; 
+                                                      ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "entry"]]; 
+                                                      ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "string"]]; 
+                                                      ["Tconstr"; ["Pident"; 
+                                                                  "unit"]]]]]]; 
+                  ["Sig_value"; "close_in"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                   "in_file"]]; 
+                                            ["Tconstr"; ["Pident"; "unit"]]]]; 
+                  ["Sig_type"; "out_file"; 0; ["Type_abstract"]]; ["Sig_value"; 
+                                                                  "open_out"; 
+                                                                  ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "option"]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "string"]]]; 
+                                                                  ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "string"]]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "out_file"]]]]]; 
+                  ["Sig_value"; "add_entry"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "string"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "out_file"]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                        ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "string"]]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                        ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "string"]]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                        ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "int"]]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                        ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "float"]]]; 
+                                             ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "string"]]; 
+                                             ["Tconstr"; ["Pident"; "unit"]]]]]]]]]]; 
+                  ["Sig_value"; "copy_channel_to_entry"; ["Tarrow"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Pervasives"]; 
+                                                                    "in_channel"]]; 
+                                                         ["Tarrow"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "out_file"]]; 
+                                                         ["Tarrow"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]]; 
+                                                         ["Tarrow"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]]; 
+                                                         ["Tarrow"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]; 
+                                                         ["Tarrow"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "float"]]]; 
+                                                         ["Tarrow"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]; 
+                                                         ["Tconstr"; 
+                                                         ["Pident"; "unit"]]]]]]]]]]; 
+                  ["Sig_value"; "copy_file_to_entry"; ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "string"]]; 
+                                                      ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "out_file"]]; 
+                                                      ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "option"]; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "string"]]]; 
+                                                      ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "option"]; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "string"]]]; 
+                                                      ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "option"]; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "int"]]]; 
+                                                      ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "option"]; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "float"]]]; 
+                                                      ["Tarrow"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "string"]]; 
+                                                      ["Tconstr"; ["Pident"; 
+                                                                  "unit"]]]]]]]]]]; 
+                  ["Sig_value"; "add_entry_generator"; ["Tarrow"; ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "out_file"]]; 
+                                                       ["Tarrow"; ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "option"]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "string"]]]; 
+                                                       ["Tarrow"; ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "option"]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "string"]]]; 
+                                                       ["Tarrow"; ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "option"]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "int"]]]; 
+                                                       ["Tarrow"; ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "option"]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "float"]]]; 
+                                                       ["Tarrow"; ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "string"]]; 
+                                                       ["Ttuple"; ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "bytes"]]; 
+                                                                  ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "int"]]; 
+                                                                  ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "int"]]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "unit"]]]]]; 
+                                                       ["Tarrow"; ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "unit"]]; 
+                                                       ["Tconstr"; ["Pident"; 
+                                                                   "unit"]]]]]]]]]]]; 
+                  ["Sig_value"; "close_out"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "out_file"]]; 
+                                             ["Tconstr"; ["Pident"; "unit"]]]]; 
+                  ["Sig_unknown"]]]

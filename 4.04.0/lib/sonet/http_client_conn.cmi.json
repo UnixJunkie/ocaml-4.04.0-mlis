@@ -1,0 +1,216 @@
+["module"; "Http_client_conn"; ["Mty_signature"; ["Sig_unknown"]; ["Sig_type"; 
+                                                                  "payload_send_callback"; 
+                                                                  0; 
+                                                                  ["Type_alias"; 
+                                                                  ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "unit"]]; 
+                                                                  ["Ttuple"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "bool"]]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "string"]]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "int"]]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "int"]]]]]]; 
+                               ["Sig_type"; "payload_recv_callback"; 
+                               0; ["Type_alias"; ["Tconstr"; ["Pdot"; 
+                                                             ["Pident"; 
+                                                             "Http"]; 
+                                                             "payload_callback"]]]]; 
+                               ["Sig_type"; "request"; 0; ["Type_variant"; 
+                                                          ["constructor"; 
+                                                          "Small"; ["tuple"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Http"]; 
+                                                                   "Request"]; 
+                                                                   "t"]]]]; 
+                                                          ["constructor"; 
+                                                          "StreamingSend"; 
+                                                          ["tuple"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Http"]; 
+                                                                    "Request_header"]; 
+                                                                    "t"]]; 
+                                                          ["Tconstr"; 
+                                                          ["Pident"; 
+                                                          "payload_send_callback"]]]]; 
+                                                          ["constructor"; 
+                                                          "StreamingRecv"; 
+                                                          ["tuple"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Http"]; 
+                                                                    "Request"]; 
+                                                                    "t"]]; 
+                                                          ["Tconstr"; 
+                                                          ["Pident"; 
+                                                          "payload_recv_callback"]]]]; 
+                                                          ["constructor"; 
+                                                          "Streaming"; 
+                                                          ["tuple"; [
+                                                                    "Ttuple"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Http"]; 
+                                                                    "Request_header"]; 
+                                                                    "t"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "payload_send_callback"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "payload_recv_callback"]]]]]]]; 
+                               ["Sig_unknown"]; ["Sig_module"; "Make"; 
+                                                ["Mty_functor"; "Callback"; 
+                                                ["Some"; ["Mty_unknown"]]; 
+                                                ["Mty_signature"; ["Sig_type"; 
+                                                                  "t"; 
+                                                                  0; 
+                                                                  ["Type_abstract"]]; 
+                                                ["Sig_type"; "callback"; 
+                                                0; ["Type_alias"; ["Tconstr"; 
+                                                                  ["Pdot"; 
+                                                                  ["Pident"; 
+                                                                  "Callback"]; 
+                                                                  "t"]]]]; 
+                                                ["Sig_value"; "send_request"; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "request"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "callback"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "t"]]; 
+                                                ["Tconstr"; ["Pident"; 
+                                                            "unit"]]]]]]; 
+                                                ["Sig_type"; "error"; 
+                                                0; ["Type_variant"; [
+                                                                    "constructor"; 
+                                                                    "Error_eventloop"; 
+                                                                    [
+                                                                    "tuple"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Eventloop"]; 
+                                                                    "error"]]]]; 
+                                                   ["constructor"; "Error_http"; 
+                                                   ["tuple"; ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "callback"]]; 
+                                                   ["Tconstr"; ["Pident"; 
+                                                               "string"]]]]]]; 
+                                                ["Sig_value"; "string_of_error"; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "error"]]; 
+                                                ["Tconstr"; ["Pident"; 
+                                                            "string"]]]]; 
+                                                ["Sig_type"; "callbacks"; 
+                                                0; ["Type_record"; ["label"; 
+                                                                   "connect_callback"; 
+                                                                   ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "t"]]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "unit"]]]]; 
+                                                   ["label"; "response_callback"; 
+                                                   ["Tarrow"; ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "callback"]]; 
+                                                   ["Tarrow"; ["Tconstr"; 
+                                                              ["Pident"; "t"]]; 
+                                                   ["Tarrow"; ["Tconstr"; 
+                                                              ["Pdot"; 
+                                                              ["Pdot"; 
+                                                              ["Pident"; 
+                                                              "Http"]; 
+                                                              "Response"]; 
+                                                              "t"]]; 
+                                                   ["Tconstr"; ["Pident"; 
+                                                               "unit"]]]]]]; 
+                                                   ["label"; "shutdown_callback"; 
+                                                   ["Tarrow"; ["Tconstr"; 
+                                                              ["Pident"; "t"]]; 
+                                                   ["Tconstr"; ["Pident"; 
+                                                               "unit"]]]]; 
+                                                   ["label"; "error_callback"; 
+                                                   ["Tarrow"; ["Tconstr"; 
+                                                              ["Pident"; "t"]]; 
+                                                   ["Tarrow"; ["Tconstr"; 
+                                                              ["Pident"; 
+                                                              "error"]]; 
+                                                   ["Tconstr"; ["Pident"; 
+                                                               "unit"]]]]]]]; 
+                                                ["Sig_value"; "connect"; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pdot"; [
+                                                                    "Pident"; 
+                                                                    "Eventloop"]; 
+                                                           "t"]]; ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pdot"; 
+                                                                  ["Pident"; 
+                                                                  "Unix"]; 
+                                                                  "sockaddr"]]; 
+                                                                  ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "callbacks"]]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "t"]]]]]]; 
+                                                ["Sig_value"; "detach"; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "t"]]; 
+                                                ["Tconstr"; ["Pident"; 
+                                                            "unit"]]]]; 
+                                                ["Sig_value"; "close"; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "t"]]; 
+                                                ["Tconstr"; ["Pident"; 
+                                                            "unit"]]]]; 
+                                                ["Sig_value"; "get_eventloop"; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "t"]]; 
+                                                ["Tconstr"; ["Pdot"; 
+                                                            ["Pident"; 
+                                                            "Eventloop"]; 
+                                                            "t"]]]]]]]]]

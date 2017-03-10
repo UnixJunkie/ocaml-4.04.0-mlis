@@ -1,0 +1,260 @@
+["module"; "Sfi"; ["Mty_signature"; ["Sig_module"; "E"; ["Mty_alias"; 
+                                                        ["Pident"; "Errormsg"]]]; 
+                  ["Sig_module"; "H"; ["Mty_alias"; ["Pident"; "Hashtbl"]]]; 
+                  ["Sig_value"; "doSfi"; ["Tconstr"; ["Pdot"; ["Pident"; 
+                                                              "Pervasives"]; 
+                                                     "ref"]; ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "bool"]]]]; 
+                  ["Sig_value"; "doSfiReads"; ["Tconstr"; ["Pdot"; ["Pident"; 
+                                                                   "Pervasives"]; 
+                                                          "ref"]; ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "bool"]]]]; 
+                  ["Sig_value"; "doSfiWrites"; ["Tconstr"; ["Pdot"; [
+                                                                    "Pident"; 
+                                                                    "Pervasives"]; 
+                                                           "ref"]; ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "bool"]]]]; 
+                  ["Sig_value"; "skipFunctions"; ["Tconstr"; ["Pdot"; 
+                                                             ["Pident"; "H"]; 
+                                                             "t"]; ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "string"]]; 
+                                                 ["Tconstr"; ["Pident"; 
+                                                             "unit"]]]]; 
+                  ["Sig_value"; "mustSfiFunction"; ["Tarrow"; ["Tconstr"; 
+                                                              ["Pdot"; 
+                                                              ["Pident"; 
+                                                              "Cil"]; 
+                                                              "fundec"]]; 
+                                                   ["Tconstr"; ["Pident"; 
+                                                               "bool"]]]]; 
+                  ["Sig_type"; "dataLocation"; 0; ["Type_variant"; ["constructor"; 
+                                                                   "InResult"; 
+                                                                   ["tuple"]]; 
+                                                  ["constructor"; "InArg"; 
+                                                  ["tuple"; ["Tconstr"; 
+                                                            ["Pident"; "int"]]]]; 
+                                                  ["constructor"; "InArgTimesArg"; 
+                                                  ["tuple"; ["Tconstr"; 
+                                                            ["Pident"; "int"]]; 
+                                                  ["Tconstr"; ["Pident"; 
+                                                              "int"]]]]; 
+                                                  ["constructor"; "PointedToByArg"; 
+                                                  ["tuple"; ["Tconstr"; 
+                                                            ["Pident"; "int"]]]]]]; 
+                  ["Sig_value"; "extractData"; ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; 
+                                                          "dataLocation"]]; 
+                                               ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "list"]; 
+                                                          ["Tconstr"; 
+                                                          ["Pdot"; ["Pident"; 
+                                                                   "Cil"]; 
+                                                          "exp"]]]; [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Cil"]; 
+                                                                    "lval"]]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Cil"]; 
+                                                                    "exp"]]]]]]; 
+                  ["Sig_value"; "allocators"; ["Tconstr"; ["Pdot"; ["Pident"; 
+                                                                   "H"]; 
+                                                          "t"]; ["Tconstr"; 
+                                                                ["Pident"; 
+                                                                "string"]]; 
+                                              ["Ttuple"; ["Tconstr"; 
+                                                         ["Pident"; "dataLocation"]]; 
+                                              ["Tconstr"; ["Pident"; 
+                                                          "dataLocation"]]]]]; 
+                  ["Sig_value"; "deallocators"; ["Tconstr"; ["Pdot"; 
+                                                            ["Pident"; "H"]; 
+                                                            "t"]; ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "string"]]; 
+                                                ["Tconstr"; ["Pident"; 
+                                                            "dataLocation"]]]]; 
+                  ["Sig_value"; "is_bitfield"; ["Tarrow"; ["Tconstr"; 
+                                                          ["Pdot"; ["Pident"; 
+                                                                   "Cil"]; 
+                                                          "offset"]]; 
+                                               ["Tconstr"; ["Pident"; "bool"]]]]; 
+                  ["Sig_value"; "addr_of_lv"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pdot"; ["Pident"; 
+                                                                  "Cil"]; 
+                                                         "lval"]]; ["Tconstr"; 
+                                                                   ["Pdot"; 
+                                                                   ["Pident"; 
+                                                                   "Cil"]; 
+                                                                   "exp"]]]]; 
+                  ["Sig_value"; "mustLogLval"; ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "bool"]]; 
+                                               ["Tarrow"; ["Tconstr"; 
+                                                          ["Pdot"; ["Pident"; 
+                                                                   "Cil"]; 
+                                                          "lval"]]; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "bool"]]]]]; 
+                  ["Sig_value"; "mkProto"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "string"]]; 
+                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "list"]; 
+                                                      ["Ttuple"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "string"]]; 
+                                                      ["Tconstr"; ["Pdot"; 
+                                                                  ["Pident"; 
+                                                                  "Cil"]; 
+                                                                  "typ"]]; 
+                                                      ["Tconstr"; ["Pdot"; 
+                                                                  ["Pident"; 
+                                                                  "Cil"]; 
+                                                                  "attributes"]]]]; 
+                                           ["Tconstr"; ["Pdot"; ["Pident"; 
+                                                                "Cil"]; 
+                                                       "fundec"]]]]]; 
+                  ["Sig_value"; "logReads"; ["Tconstr"; ["Pdot"; ["Pident"; 
+                                                                 "Cil"]; 
+                                                        "fundec"]]]; 
+                  ["Sig_value"; "callLogRead"; ["Tarrow"; ["Tconstr"; 
+                                                          ["Pdot"; ["Pident"; 
+                                                                   "Cil"]; 
+                                                          "lval"]]; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Cil"]; 
+                                                                    "instr"]]]]; 
+                  ["Sig_value"; "logWrites"; ["Tconstr"; ["Pdot"; ["Pident"; 
+                                                                  "Cil"]; 
+                                                         "fundec"]]]; 
+                  ["Sig_value"; "callLogWrite"; ["Tarrow"; ["Tconstr"; 
+                                                           ["Pdot"; [
+                                                                    "Pident"; 
+                                                                    "Cil"]; 
+                                                           "lval"]]; 
+                                                ["Tconstr"; ["Pdot"; 
+                                                            ["Pident"; "Cil"]; 
+                                                            "instr"]]]]; 
+                  ["Sig_value"; "logStackFrame"; ["Tconstr"; ["Pdot"; 
+                                                             ["Pident"; 
+                                                             "Cil"]; 
+                                                             "fundec"]]]; 
+                  ["Sig_value"; "callLogStack"; ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "string"]]; 
+                                                ["Tconstr"; ["Pdot"; 
+                                                            ["Pident"; "Cil"]; 
+                                                            "instr"]]]]; 
+                  ["Sig_value"; "logAlloc"; ["Tconstr"; ["Pdot"; ["Pident"; 
+                                                                 "Cil"]; 
+                                                        "fundec"]]]; 
+                  ["Sig_value"; "callLogAlloc"; ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "dataLocation"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "dataLocation"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "list"]; 
+                                                           ["Tconstr"; 
+                                                           ["Pdot"; [
+                                                                    "Pident"; 
+                                                                    "Cil"]; 
+                                                           "exp"]]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "option"]; 
+                                                           ["Tconstr"; 
+                                                           ["Pdot"; [
+                                                                    "Pident"; 
+                                                                    "Cil"]; 
+                                                           "lval"]]]; 
+                                                ["Tconstr"; ["Pdot"; 
+                                                            ["Pident"; "Cil"]; 
+                                                            "instr"]]]]]]]; 
+                  ["Sig_value"; "logFree"; ["Tconstr"; ["Pdot"; ["Pident"; 
+                                                                "Cil"]; 
+                                                       "fundec"]]]; [
+                                                                    "Sig_value"; 
+                                                                    "callLogFree"; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "dataLocation"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "list"]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Cil"]; 
+                                                                    "exp"]]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Cil"]; 
+                                                                    "lval"]]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Cil"]; 
+                                                                    "instr"]]]]]]; 
+                  ["Sig_unknown"]; ["Sig_unknown"]; ["Sig_type"; "sfiVisitorClass"; 
+                                                    0; ["Type_alias"; 
+                                                       ["Tobject"]]]; 
+                  ["Sig_type"; "#sfiVisitorClass"; 0; ["Type_alias"; 
+                                                      ["Tobject"]]]; 
+                  ["Sig_value"; "doit"; ["Tarrow"; ["Tconstr"; ["Pdot"; 
+                                                               ["Pident"; 
+                                                               "Cil"]; 
+                                                               "file"]]; 
+                                        ["Tconstr"; ["Pident"; "unit"]]]]; 
+                  ["Sig_value"; "feature"; ["Tconstr"; ["Pdot"; ["Pident"; 
+                                                                "Cil"]; 
+                                                       "featureDescr"]]]]]

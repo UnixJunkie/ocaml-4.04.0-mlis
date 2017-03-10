@@ -1,0 +1,582 @@
+["module"; "Milter"; ["Mty_signature"; ["Sig_type"; "ctx"; 0; ["Type_abstract"]]; 
+                     ["Sig_type"; "stat"; 0; ["Type_variant"; ["constructor"; 
+                                                              "Continue"; 
+                                                              ["tuple"]]; 
+                                             ["constructor"; "Reject"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "Discard"; ["tuple"]]; 
+                                             ["constructor"; "Accept"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "Tempfail"; 
+                                                         ["tuple"]]; 
+                                             ["constructor"; "No_reply"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "Skip"; ["tuple"]]; 
+                                             ["constructor"; "All"; ["tuple"]]]]; 
+                     ["Sig_type"; "flag"; 0; ["Type_variant"; ["constructor"; 
+                                                              "ADDHDRS"; 
+                                                              ["tuple"]]; 
+                                             ["constructor"; "CHGHDRS"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "CHGBODY"; ["tuple"]]; 
+                                             ["constructor"; "ADDRCPT"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "ADDRCPT_PAR"; 
+                                                         ["tuple"]]; 
+                                             ["constructor"; "DELRCPT"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "QUARANTINE"; 
+                                                         ["tuple"]]; 
+                                             ["constructor"; "CHGFROM"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "SETSYMLIST"; 
+                                                         ["tuple"]]]]; 
+                     ["Sig_type"; "stage"; 0; ["Type_variant"; ["constructor"; 
+                                                               "CONNECT"; 
+                                                               ["tuple"]]; 
+                                              ["constructor"; "HELO"; 
+                                              ["tuple"]]; ["constructor"; 
+                                                          "ENVFROM"; 
+                                                          ["tuple"]]; 
+                                              ["constructor"; "ENVRCPT"; 
+                                              ["tuple"]]; ["constructor"; 
+                                                          "DATA"; ["tuple"]]; 
+                                              ["constructor"; "EOM"; 
+                                              ["tuple"]]; ["constructor"; 
+                                                          "EOH"; ["tuple"]]]]; 
+                     ["Sig_type"; "step"; 0; ["Type_variant"; ["constructor"; 
+                                                              "NOCONNECT"; 
+                                                              ["tuple"]]; 
+                                             ["constructor"; "NOHELO"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "NOMAIL"; ["tuple"]]; 
+                                             ["constructor"; "NORCPT"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "NOBODY"; ["tuple"]]; 
+                                             ["constructor"; "NOHDRS"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "NOEOH"; ["tuple"]]; 
+                                             ["constructor"; "NR_HDR"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "NOUNKNOWN"; 
+                                                         ["tuple"]]; 
+                                             ["constructor"; "NODATA"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "SKIP"; ["tuple"]]; 
+                                             ["constructor"; "RCPT_REJ"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "NR_CONN"; ["tuple"]]; 
+                                             ["constructor"; "NR_HELO"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "NR_MAIL"; ["tuple"]]; 
+                                             ["constructor"; "NR_RCPT"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "NR_DATA"; ["tuple"]]; 
+                                             ["constructor"; "NR_UNKN"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "NR_EOH"; ["tuple"]]; 
+                                             ["constructor"; "NR_BODY"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "HDR_LEADSPC"; 
+                                                         ["tuple"]]; 
+                                             ["constructor"; "MDS_256K"; 
+                                             ["tuple"]]; ["constructor"; 
+                                                         "MDS_1M"; ["tuple"]]]]; 
+                     ["Sig_type"; "bytes"; 0; ["Type_alias"; ["Tconstr"; 
+                                                             ["Pdot"; 
+                                                             ["Pdot"; 
+                                                             ["Pident"; 
+                                                             "Bigarray"]; 
+                                                             "Array1"]; 
+                                                             "t"]; ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "char"]]; 
+                                                             ["Tconstr"; 
+                                                             ["Pdot"; 
+                                                             ["Pident"; 
+                                                             "Bigarray"]; 
+                                                             "int8_unsigned_elt"]]; 
+                                                             ["Tconstr"; 
+                                                             ["Pdot"; 
+                                                             ["Pident"; 
+                                                             "Bigarray"]; 
+                                                             "c_layout"]]]]]; 
+                     ["Sig_type"; "filter"; 0; ["Type_record"; ["label"; 
+                                                               "name"; 
+                                                               ["Tconstr"; 
+                                                               ["Pident"; 
+                                                               "string"]]]; 
+                                               ["label"; "version"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "int"]]]; 
+                                               ["label"; "flags"; ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "list"]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "flag"]]]]; 
+                                               ["label"; "connect"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "ctx"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pdot"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "Unix"]; 
+                                                                    "sockaddr"]]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "stat"]]]]]]]; 
+                                               ["label"; "helo"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "option"]; 
+                                                                 ["Tarrow"; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "ctx"]]; 
+                                                                 ["Tarrow"; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "string"]]; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "stat"]]]]]]; 
+                                               ["label"; "envfrom"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "ctx"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "list"]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "stat"]]]]]]]; 
+                                               ["label"; "envrcpt"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "ctx"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "list"]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "stat"]]]]]]]; 
+                                               ["label"; "header"; ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "option"]; 
+                                                                   ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "ctx"]]; 
+                                                                   ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "string"]]; 
+                                                                   ["Tarrow"; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "string"]]; 
+                                                                   ["Tconstr"; 
+                                                                   ["Pident"; 
+                                                                   "stat"]]]]]]]; 
+                                               ["label"; "eoh"; ["Tconstr"; 
+                                                                ["Pident"; 
+                                                                "option"]; 
+                                                                ["Tarrow"; 
+                                                                ["Tconstr"; 
+                                                                ["Pident"; 
+                                                                "ctx"]]; 
+                                                                ["Tconstr"; 
+                                                                ["Pident"; 
+                                                                "stat"]]]]]; 
+                                               ["label"; "body"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "option"]; 
+                                                                 ["Tarrow"; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "ctx"]]; 
+                                                                 ["Tarrow"; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "bytes"]]; 
+                                                                 ["Tarrow"; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "int"]]; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "stat"]]]]]]]; 
+                                               ["label"; "eom"; ["Tconstr"; 
+                                                                ["Pident"; 
+                                                                "option"]; 
+                                                                ["Tarrow"; 
+                                                                ["Tconstr"; 
+                                                                ["Pident"; 
+                                                                "ctx"]]; 
+                                                                ["Tconstr"; 
+                                                                ["Pident"; 
+                                                                "stat"]]]]]; 
+                                               ["label"; "abort"; ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "option"]; 
+                                                                  ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "ctx"]]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "stat"]]]]]; 
+                                               ["label"; "close"; ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "option"]; 
+                                                                  ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "ctx"]]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "stat"]]]]]; 
+                                               ["label"; "unknown"; [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "option"]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "ctx"]]; 
+                                                                    [
+                                                                    "Tarrow"; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "string"]]; 
+                                                                    [
+                                                                    "Tconstr"; 
+                                                                    [
+                                                                    "Pident"; 
+                                                                    "stat"]]]]]]; 
+                                               ["label"; "data"; ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "option"]; 
+                                                                 ["Tarrow"; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "ctx"]]; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "stat"]]]]]; 
+                                               ["label"; "negotiate"; 
+                                               ["Tconstr"; ["Pident"; 
+                                                           "option"]; 
+                                               ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "ctx"]]; 
+                                               ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "list"]; 
+                                                          ["Tconstr"; 
+                                                          ["Pident"; "flag"]]]; 
+                                               ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "list"]; 
+                                                          ["Tconstr"; 
+                                                          ["Pident"; "step"]]]; 
+                                               ["Ttuple"; ["Tconstr"; 
+                                                          ["Pident"; "stat"]]; 
+                                               ["Tconstr"; ["Pident"; "list"]; 
+                                               ["Tconstr"; ["Pident"; "flag"]]]; 
+                                               ["Tconstr"; ["Pident"; "list"]; 
+                                               ["Tconstr"; ["Pident"; "step"]]]]]]]]]]]; 
+                     ["Sig_unknown"]; ["Sig_value"; "opensocket"; ["Tarrow"; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "bool"]]; 
+                                                                  ["Tconstr"; 
+                                                                  ["Pident"; 
+                                                                  "unit"]]]]; 
+                     ["Sig_value"; "register"; ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; 
+                                                          "filter"]]; 
+                                               ["Tconstr"; ["Pident"; "unit"]]]]; 
+                     ["Sig_value"; "setconn"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "string"]]; 
+                                              ["Tconstr"; ["Pident"; "unit"]]]]; 
+                     ["Sig_value"; "settimeout"; ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; "int"]]; 
+                                                 ["Tconstr"; ["Pident"; 
+                                                             "unit"]]]]; 
+                     ["Sig_value"; "setbacklog"; ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; "int"]]; 
+                                                 ["Tconstr"; ["Pident"; 
+                                                             "unit"]]]]; 
+                     ["Sig_value"; "setdbg"; ["Tarrow"; ["Tconstr"; [
+                                                                    "Pident"; 
+                                                                    "int"]]; 
+                                             ["Tconstr"; ["Pident"; "unit"]]]]; 
+                     ["Sig_value"; "stop"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "unit"]]; 
+                                           ["Tconstr"; ["Pident"; "unit"]]]]; 
+                     ["Sig_value"; "main"; ["Tarrow"; ["Tconstr"; ["Pident"; 
+                                                                  "unit"]]; 
+                                           ["Tconstr"; ["Pident"; "unit"]]]]; 
+                     ["Sig_value"; "getsymval"; ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "ctx"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "string"]]; 
+                                                ["Tconstr"; ["Pident"; 
+                                                            "option"]; 
+                                                ["Tconstr"; ["Pident"; 
+                                                            "string"]]]]]]; 
+                     ["Sig_value"; "getpriv"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "ctx"]]; 
+                                              ["Tconstr"; ["Pident"; 
+                                                          "option"]; 
+                                              ["Tpoly"; "a"]]]]; ["Sig_value"; 
+                                                                 "setpriv"; 
+                                                                 ["Tarrow"; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "ctx"]]; 
+                                                                 ["Tarrow"; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "option"]; 
+                                                                 ["Tpoly"; 
+                                                                 "a"]]; 
+                                                                 ["Tconstr"; 
+                                                                 ["Pident"; 
+                                                                 "unit"]]]]]; 
+                     ["Sig_value"; "setreply"; ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "ctx"]]; 
+                                               ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; 
+                                                          "string"]]; 
+                                               ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; 
+                                                          "option"]; 
+                                                          ["Tconstr"; 
+                                                          ["Pident"; 
+                                                          "string"]]]; 
+                                               ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; 
+                                                          "option"]; 
+                                                          ["Tconstr"; 
+                                                          ["Pident"; 
+                                                          "string"]]]; 
+                                               ["Tconstr"; ["Pident"; "unit"]]]]]]]; 
+                     ["Sig_value"; "setmlreply"; ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; "ctx"]]; 
+                                                 ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; 
+                                                            "string"]]; 
+                                                 ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; 
+                                                            "option"]; 
+                                                            ["Tconstr"; 
+                                                            ["Pident"; 
+                                                            "string"]]]; 
+                                                 ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; 
+                                                            "list"]; 
+                                                            ["Tconstr"; 
+                                                            ["Pident"; 
+                                                            "string"]]]; 
+                                                 ["Tconstr"; ["Pident"; 
+                                                             "unit"]]]]]]]; 
+                     ["Sig_value"; "addheader"; ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "ctx"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "string"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "string"]]; 
+                                                ["Tconstr"; ["Pident"; 
+                                                            "unit"]]]]]]; 
+                     ["Sig_value"; "chgheader"; ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "ctx"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "string"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "int"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "option"]; 
+                                                           ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "string"]]]; 
+                                                ["Tconstr"; ["Pident"; 
+                                                            "unit"]]]]]]]; 
+                     ["Sig_value"; "insheader"; ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "ctx"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; "int"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "string"]]; 
+                                                ["Tarrow"; ["Tconstr"; 
+                                                           ["Pident"; 
+                                                           "string"]]; 
+                                                ["Tconstr"; ["Pident"; 
+                                                            "unit"]]]]]]]; 
+                     ["Sig_value"; "chgfrom"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "ctx"]]; 
+                                              ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "string"]]; 
+                                              ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "option"]; 
+                                                         ["Tconstr"; 
+                                                         ["Pident"; "string"]]]; 
+                                              ["Tconstr"; ["Pident"; "unit"]]]]]]; 
+                     ["Sig_value"; "addrcpt"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "ctx"]]; 
+                                              ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "string"]]; 
+                                              ["Tconstr"; ["Pident"; "unit"]]]]]; 
+                     ["Sig_value"; "addrcpt_par"; ["Tarrow"; ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "ctx"]]; 
+                                                  ["Tarrow"; ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "string"]]; 
+                                                  ["Tarrow"; ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "option"]; 
+                                                             ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "string"]]]; 
+                                                  ["Tconstr"; ["Pident"; 
+                                                              "unit"]]]]]]; 
+                     ["Sig_value"; "delrcpt"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "ctx"]]; 
+                                              ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "string"]]; 
+                                              ["Tconstr"; ["Pident"; "unit"]]]]]; 
+                     ["Sig_value"; "replacebody"; ["Tarrow"; ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "ctx"]]; 
+                                                  ["Tarrow"; ["Tconstr"; 
+                                                             ["Pident"; 
+                                                             "bytes"]]; 
+                                                  ["Tconstr"; ["Pident"; 
+                                                              "unit"]]]]]; 
+                     ["Sig_value"; "progress"; ["Tarrow"; ["Tconstr"; 
+                                                          ["Pident"; "ctx"]]; 
+                                               ["Tconstr"; ["Pident"; "unit"]]]]; 
+                     ["Sig_value"; "quarantine"; ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; "ctx"]]; 
+                                                 ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; 
+                                                            "string"]]; 
+                                                 ["Tconstr"; ["Pident"; 
+                                                             "unit"]]]]]; 
+                     ["Sig_value"; "version"; ["Tarrow"; ["Tconstr"; 
+                                                         ["Pident"; "unit"]]; 
+                                              ["Ttuple"; ["Tconstr"; 
+                                                         ["Pident"; "int"]]; 
+                                              ["Tconstr"; ["Pident"; "int"]]; 
+                                              ["Tconstr"; ["Pident"; "int"]]]]]; 
+                     ["Sig_value"; "setsymlist"; ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; "ctx"]]; 
+                                                 ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; 
+                                                            "stage"]]; 
+                                                 ["Tarrow"; ["Tconstr"; 
+                                                            ["Pident"; 
+                                                            "string"]]; 
+                                                 ["Tconstr"; ["Pident"; 
+                                                             "unit"]]]]]]; 
+                     ["Sig_value"; "version_code"; ["Tconstr"; ["Pident"; 
+                                                               "int"]]]; 
+                     ["Sig_value"; "empty"; ["Tconstr"; ["Pident"; "filter"]]]]]
