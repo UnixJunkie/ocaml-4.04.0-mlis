@@ -1,548 +1,170 @@
-["module"; "Decl_expr"; ["Mty_signature"; ["Sig_type"; "statement"; 1; 
-                                          ["Type_record"; ["label"; "st_label"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "Name"]; 
-                                                          "t"]]]; ["label"; 
-                                                                  "st_it"; 
-                                                                  ["Tpoly"; 
-                                                                  "it"]]]]; 
-                        ["Sig_type"; "thesis_kind"; 0; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "Plain"; ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "For"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "Id"]; 
-                                                              "t"]]]]]]; 
-                        ["Sig_type"; "or_thesis"; 1; ["Type_variant"; 
-                                                     ["constructor"; 
-                                                     "This"; ["tuple"; 
-                                                             ["Tpoly"; 
-                                                             "this"]]]; 
-                                                     ["constructor"; 
-                                                     "Thesis"; ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "thesis_kind"]]]]]]; 
-                        ["Sig_type"; "side"; 0; ["Type_variant"; ["constructor"; 
-                                                                 "Lhs"; 
-                                                                 ["tuple"]]; 
-                                                ["constructor"; "Rhs"; 
-                                                ["tuple"]]]]; ["Sig_type"; 
-                                                              "elim_type"; 
-                                                              0; ["Type_variant"; 
-                                                                 ["constructor"; 
-                                                                 "ET_Case_analysis"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "ET_Induction"; 
-                                                                 ["tuple"]]]]; 
-                        ["Sig_type"; "block_type"; 0; ["Type_variant"; 
-                                                      ["constructor"; 
-                                                      "B_proof"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "B_claim"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "B_focus"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "B_elim"; ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "elim_type"]]]]]]; 
-                        ["Sig_type"; "cut"; 3; ["Type_record"; ["label"; 
-                                                               "cut_stat"; 
-                                                               ["Tpoly"; 
-                                                               "it"]]; 
-                                               ["label"; "cut_by"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tpoly"; 
-                                                                   "constr"]]]]; 
-                                               ["label"; "cut_using"; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "option"]; 
-                                               ["Tpoly"; "tac"]]]]]; 
-                        ["Sig_type"; "hyp"; 2; ["Type_variant"; ["constructor"; 
-                                                                "Hvar"; 
-                                                                ["tuple"; 
-                                                                ["Tpoly"; 
-                                                                "var"]]]; 
-                                               ["constructor"; "Hprop"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "statement"]; 
-                                                         ["Tpoly"; "constr"]]]]]]; 
-                        ["Sig_type"; "casee"; 2; ["Type_variant"; ["constructor"; 
-                                                                  "Real"; 
-                                                                  ["tuple"; 
-                                                                  ["Tpoly"; 
-                                                                  "constr"]]]; 
-                                                 ["constructor"; "Virtual"; 
-                                                 ["tuple"; ["Tconstr"; 
-                                                           ["Pident"; "cut"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "statement"]; 
-                                                           ["Tpoly"; 
-                                                           "constr"]]; 
-                                                           ["Tpoly"; 
-                                                           "constr"]; 
-                                                           ["Tpoly"; "tac"]]]]]]; 
-                        ["Sig_type"; "bare_proof_instr"; 4; ["Type_variant"; 
-                                                            ["constructor"; 
-                                                            "Pthen"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bare_proof_instr"]; 
-                                                            ["Tpoly"; "var"]; 
-                                                            ["Tpoly"; 
-                                                            "constr"]; 
-                                                            ["Tpoly"; "pat"]; 
-                                                            ["Tpoly"; "tac"]]]]; 
-                                                            ["constructor"; 
-                                                            "Pthus"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bare_proof_instr"]; 
-                                                            ["Tpoly"; "var"]; 
-                                                            ["Tpoly"; 
-                                                            "constr"]; 
-                                                            ["Tpoly"; "pat"]; 
-                                                            ["Tpoly"; "tac"]]]]; 
-                                                            ["constructor"; 
-                                                            "Phence"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bare_proof_instr"]; 
-                                                            ["Tpoly"; "var"]; 
-                                                            ["Tpoly"; 
-                                                            "constr"]; 
-                                                            ["Tpoly"; "pat"]; 
-                                                            ["Tpoly"; "tac"]]]]; 
-                                                            ["constructor"; 
-                                                            "Pcut"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "cut"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "statement"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "or_thesis"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "constr"]]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "constr"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "tac"]]]]; 
-                                                            ["constructor"; 
-                                                            "Prew"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "side"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "cut"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "statement"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "constr"]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "constr"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "tac"]]]]; 
-                                                            ["constructor"; 
-                                                            "Psuffices"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "cut"]; 
-                                                            ["Ttuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "hyp"]; 
-                                                            ["Tpoly"; "var"]; 
-                                                            ["Tpoly"; 
-                                                            "constr"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "or_thesis"]; 
-                                                            ["Tpoly"; 
-                                                            "constr"]]]; 
-                                                            ["Tpoly"; 
-                                                            "constr"]; 
-                                                            ["Tpoly"; "tac"]]]]; 
-                                                            ["constructor"; 
-                                                            "Passume"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "hyp"]; 
-                                                            ["Tpoly"; "var"]; 
-                                                            ["Tpoly"; 
-                                                            "constr"]]]]]; 
-                                                            ["constructor"; 
-                                                            "Plet"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "hyp"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "var"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "constr"]]]]]; 
-                                                            ["constructor"; 
-                                                            "Pgiven"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "hyp"]; 
-                                                            ["Tpoly"; "var"]; 
-                                                            ["Tpoly"; 
-                                                            "constr"]]]]]; 
-                                                            ["constructor"; 
-                                                            "Pconsider"; 
-                                                            ["tuple"; 
-                                                            ["Tpoly"; 
-                                                            "constr"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "hyp"]; 
-                                                            ["Tpoly"; "var"]; 
-                                                            ["Tpoly"; 
-                                                            "constr"]]]]]; 
-                                                            ["constructor"; 
-                                                            "Pclaim"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "statement"]; 
-                                                            ["Tpoly"; 
-                                                            "constr"]]]]; 
-                                                            ["constructor"; 
-                                                            "Pfocus"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "statement"]; 
-                                                            ["Tpoly"; 
-                                                            "constr"]]]]; 
-                                                            ["constructor"; 
-                                                            "Pdefine"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Names"]; 
-                                                            "Id"]; "t"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tpoly"; "var"]]; 
-                                                            ["Tpoly"; 
-                                                            "constr"]]]; 
-                                                            ["constructor"; 
-                                                            "Pcast"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "or_thesis"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Names"]; 
-                                                            "Id"]; "t"]]]; 
-                                                            ["Tpoly"; 
-                                                            "constr"]]]; 
-                                                            ["constructor"; 
-                                                            "Psuppose"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "hyp"]; 
-                                                            ["Tpoly"; "var"]; 
-                                                            ["Tpoly"; 
-                                                            "constr"]]]]]; 
-                                                            ["constructor"; 
-                                                            "Pcase"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tpoly"; "var"]]; 
-                                                            ["Tpoly"; "pat"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "hyp"]; 
-                                                            ["Tpoly"; "var"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "or_thesis"]; 
-                                                            ["Tpoly"; 
-                                                            "constr"]]]]]]; 
-                                                            ["constructor"; 
-                                                            "Ptake"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tpoly"; 
-                                                            "constr"]]]]; 
-                                                            ["constructor"; 
-                                                            "Pper"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "elim_type"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "casee"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "constr"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "tac"]]]]; 
-                                                            ["constructor"; 
-                                                            "Pend"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "block_type"]]]]; 
-                                                            ["constructor"; 
-                                                            "Pescape"; 
-                                                            ["tuple"]]]]; 
-                        ["Sig_type"; "emphasis"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]; 
-                        ["Sig_type"; "gen_proof_instr"; 4; ["Type_record"; 
-                                                           ["label"; 
-                                                           "emph"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "emphasis"]]]; 
-                                                           ["label"; 
-                                                           "instr"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "bare_proof_instr"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "var"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "constr"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "pat"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "tac"]]]]]; 
-                        ["Sig_type"; "raw_proof_instr"; 0; ["Type_alias"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "gen_proof_instr"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Loc"]; 
-                                                           "located"]; 
-                                                           ["Ttuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Id"]; 
-                                                           "t"]]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "option"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Constrexpr"]; 
-                                                                  "constr_expr"]]]]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Constrexpr"]; 
-                                                           "constr_expr"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Constrexpr"]; 
-                                                           "cases_pattern_expr"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Tacexpr"]; 
-                                                           "raw_tactic_expr"]]]]]; 
-                        ["Sig_type"; "glob_proof_instr"; 0; ["Type_alias"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "gen_proof_instr"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; "Loc"]; 
-                                                            "located"]; 
-                                                            ["Ttuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Names"]; 
-                                                            "Id"]; "t"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Tacexpr"]; 
-                                                            "glob_constr_and_expr"]]]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Tacexpr"]; 
-                                                            "glob_constr_and_expr"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Constrexpr"]; 
-                                                            "cases_pattern_expr"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Tacexpr"]; 
-                                                            "glob_tactic_expr"]]]]]; 
-                        ["Sig_type"; "proof_pattern"; 0; ["Type_record"; 
-                                                         ["label"; "pat_vars"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "list"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "statement"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Term"]; 
-                                                         "types"]]]]]; 
-                                                         ["label"; "pat_aliases"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "list"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "statement"]; 
-                                                         ["Ttuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Term"]; 
-                                                         "types"]]]]]]; 
-                                                         ["label"; "pat_constr"; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Term"]; 
-                                                         "constr"]]]; 
-                                                         ["label"; "pat_typ"; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Term"]; 
-                                                         "types"]]]; 
-                                                         ["label"; "pat_pat"; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Glob_term"]; 
-                                                         "cases_pattern"]]]; 
-                                                         ["label"; "pat_expr"; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Constrexpr"]; 
-                                                         "cases_pattern_expr"]]]]]; 
-                        ["Sig_type"; "proof_instr"; 0; ["Type_alias"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "gen_proof_instr"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "statement"]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Term"]; 
-                                                                   "constr"]]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Term"]; 
-                                                                   "constr"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "proof_pattern"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Geninterp"]; 
-                                                                   "Val"]; 
-                                                                   "t"]]]]]]]
+["module", "Decl_expr",
+["Mty_signature",
+["Sig_type", "statement", 1,
+["Type_record",
+["label", "st_label",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Name"], "t"]]],
+["label", "st_it", ["Tpoly", "it"]]]],
+["Sig_type", "thesis_kind", 0,
+["Type_variant", ["constructor", "Plain", ["tuple"]],
+["constructor", "For",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]]]],
+["Sig_type", "or_thesis", 1,
+["Type_variant", ["constructor", "This", ["tuple", ["Tpoly", "this"]]],
+["constructor", "Thesis", ["tuple", ["Tconstr", ["Pident", "thesis_kind"]]]]]],
+["Sig_type", "side", 0,
+["Type_variant", ["constructor", "Lhs", ["tuple"]],
+["constructor", "Rhs", ["tuple"]]]],
+["Sig_type", "elim_type", 0,
+["Type_variant", ["constructor", "ET_Case_analysis", ["tuple"]],
+["constructor", "ET_Induction", ["tuple"]]]],
+["Sig_type", "block_type", 0,
+["Type_variant", ["constructor", "B_proof", ["tuple"]],
+["constructor", "B_claim", ["tuple"]], ["constructor", "B_focus", ["tuple"]],
+["constructor", "B_elim", ["tuple", ["Tconstr", ["Pident", "elim_type"]]]]]],
+["Sig_type", "cut", 3,
+["Type_record", ["label", "cut_stat", ["Tpoly", "it"]],
+["label", "cut_by",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "list"], ["Tpoly", "constr"]]]],
+["label", "cut_using", ["Tconstr", ["Pident", "option"], ["Tpoly", "tac"]]]]],
+["Sig_type", "hyp", 2,
+["Type_variant", ["constructor", "Hvar", ["tuple", ["Tpoly", "var"]]],
+["constructor", "Hprop",
+["tuple", ["Tconstr", ["Pident", "statement"], ["Tpoly", "constr"]]]]]],
+["Sig_type", "casee", 2,
+["Type_variant", ["constructor", "Real", ["tuple", ["Tpoly", "constr"]]],
+["constructor", "Virtual",
+["tuple",
+["Tconstr", ["Pident", "cut"],
+["Tconstr", ["Pident", "statement"], ["Tpoly", "constr"]],
+["Tpoly", "constr"], ["Tpoly", "tac"]]]]]],
+["Sig_type", "bare_proof_instr", 4,
+["Type_variant",
+["constructor", "Pthen",
+["tuple",
+["Tconstr", ["Pident", "bare_proof_instr"], ["Tpoly", "var"],
+["Tpoly", "constr"], ["Tpoly", "pat"], ["Tpoly", "tac"]]]],
+["constructor", "Pthus",
+["tuple",
+["Tconstr", ["Pident", "bare_proof_instr"], ["Tpoly", "var"],
+["Tpoly", "constr"], ["Tpoly", "pat"], ["Tpoly", "tac"]]]],
+["constructor", "Phence",
+["tuple",
+["Tconstr", ["Pident", "bare_proof_instr"], ["Tpoly", "var"],
+["Tpoly", "constr"], ["Tpoly", "pat"], ["Tpoly", "tac"]]]],
+["constructor", "Pcut",
+["tuple",
+["Tconstr", ["Pident", "cut"],
+["Tconstr", ["Pident", "statement"],
+["Tconstr", ["Pident", "or_thesis"], ["Tpoly", "constr"]]],
+["Tpoly", "constr"], ["Tpoly", "tac"]]]],
+["constructor", "Prew",
+["tuple", ["Tconstr", ["Pident", "side"]],
+["Tconstr", ["Pident", "cut"],
+["Tconstr", ["Pident", "statement"], ["Tpoly", "constr"]],
+["Tpoly", "constr"], ["Tpoly", "tac"]]]],
+["constructor", "Psuffices",
+["tuple",
+["Tconstr", ["Pident", "cut"],
+["Ttuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "hyp"], ["Tpoly", "var"], ["Tpoly", "constr"]]],
+["Tconstr", ["Pident", "or_thesis"], ["Tpoly", "constr"]]],
+["Tpoly", "constr"], ["Tpoly", "tac"]]]],
+["constructor", "Passume",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "hyp"], ["Tpoly", "var"], ["Tpoly", "constr"]]]]],
+["constructor", "Plet",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "hyp"], ["Tpoly", "var"], ["Tpoly", "constr"]]]]],
+["constructor", "Pgiven",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "hyp"], ["Tpoly", "var"], ["Tpoly", "constr"]]]]],
+["constructor", "Pconsider",
+["tuple", ["Tpoly", "constr"],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "hyp"], ["Tpoly", "var"], ["Tpoly", "constr"]]]]],
+["constructor", "Pclaim",
+["tuple", ["Tconstr", ["Pident", "statement"], ["Tpoly", "constr"]]]],
+["constructor", "Pfocus",
+["tuple", ["Tconstr", ["Pident", "statement"], ["Tpoly", "constr"]]]],
+["constructor", "Pdefine",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tconstr", ["Pident", "list"], ["Tpoly", "var"]], ["Tpoly", "constr"]]],
+["constructor", "Pcast",
+["tuple",
+["Tconstr", ["Pident", "or_thesis"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]],
+["Tpoly", "constr"]]],
+["constructor", "Psuppose",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "hyp"], ["Tpoly", "var"], ["Tpoly", "constr"]]]]],
+["constructor", "Pcase",
+["tuple", ["Tconstr", ["Pident", "list"], ["Tpoly", "var"]],
+["Tpoly", "pat"],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "hyp"], ["Tpoly", "var"],
+["Tconstr", ["Pident", "or_thesis"], ["Tpoly", "constr"]]]]]],
+["constructor", "Ptake",
+["tuple", ["Tconstr", ["Pident", "list"], ["Tpoly", "constr"]]]],
+["constructor", "Pper",
+["tuple", ["Tconstr", ["Pident", "elim_type"]],
+["Tconstr", ["Pident", "casee"], ["Tpoly", "constr"], ["Tpoly", "tac"]]]],
+["constructor", "Pend", ["tuple", ["Tconstr", ["Pident", "block_type"]]]],
+["constructor", "Pescape", ["tuple"]]]],
+["Sig_type", "emphasis", 0, ["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_type", "gen_proof_instr", 4,
+["Type_record", ["label", "emph", ["Tconstr", ["Pident", "emphasis"]]],
+["label", "instr",
+["Tconstr", ["Pident", "bare_proof_instr"], ["Tpoly", "var"],
+["Tpoly", "constr"], ["Tpoly", "pat"], ["Tpoly", "tac"]]]]],
+["Sig_type", "raw_proof_instr", 0,
+["Type_alias",
+["Tconstr", ["Pident", "gen_proof_instr"],
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "constr_expr"]]]]],
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "constr_expr"]],
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "cases_pattern_expr"]],
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "raw_tactic_expr"]]]]],
+["Sig_type", "glob_proof_instr", 0,
+["Type_alias",
+["Tconstr", ["Pident", "gen_proof_instr"],
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_constr_and_expr"]]]]],
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_constr_and_expr"]],
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "cases_pattern_expr"]],
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_tactic_expr"]]]]],
+["Sig_type", "proof_pattern", 0,
+["Type_record",
+["label", "pat_vars",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "statement"],
+["Tconstr", ["Pdot", ["Pident", "Term"], "types"]]]]],
+["label", "pat_aliases",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "statement"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "types"]]]]]],
+["label", "pat_constr", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]],
+["label", "pat_typ", ["Tconstr", ["Pdot", ["Pident", "Term"], "types"]]],
+["label", "pat_pat",
+["Tconstr", ["Pdot", ["Pident", "Glob_term"], "cases_pattern"]]],
+["label", "pat_expr",
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "cases_pattern_expr"]]]]],
+["Sig_type", "proof_instr", 0,
+["Type_alias",
+["Tconstr", ["Pident", "gen_proof_instr"],
+["Tconstr", ["Pident", "statement"],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pident", "proof_pattern"]],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Geninterp"], "Val"], "t"]]]]]]]

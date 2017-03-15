@@ -1,1800 +1,533 @@
-["module"; "Rmltop_implem"; ["Mty_signature"; ["Sig_module"; "Sig_env"; 
-                                              ["Mty_signature"; ["Sig_type"; 
-                                                                "kind"; 
-                                                                0; ["Type_variant"; 
-                                                                   ["constructor"; 
-                                                                   "Default"; 
-                                                                   ["tuple"]]; 
-                                                                   ["constructor"; 
-                                                                   "Memory"; 
-                                                                   ["tuple"]]]]; 
-                                              ["Sig_type"; "t"; 2; ["Type_record"; 
-                                                                   ["label"; 
-                                                                   "status"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "value"; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]]; 
-                                                                   ["label"; 
-                                                                   "pre_status"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "last"; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]]; 
-                                                                   ["label"; 
-                                                                   "default"; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]]; 
-                                                                   ["label"; 
-                                                                   "combine"; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]]]]; 
-                                                                   ["label"; 
-                                                                   "kind"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "kind"]]]]]; 
-                                              ["Sig_value"; "instant"; 
-                                              ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                   "Pervasives"]; 
-                                                          "ref"]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]]; 
-                                              ["Sig_value"; "absent"; 
-                                              ["Tconstr"; ["Pident"; "int"]]]; 
-                                              ["Sig_value"; "create"; 
-                                              ["Tarrow"; ["Tvar"; 1]; 
-                                              ["Tarrow"; ["Tarrow"; [
-                                                                    "Tvar"; 
-                                                                    0]; 
-                                                         ["Tarrow"; [
-                                                                    "Tvar"; 
-                                                                    1]; 
-                                                         ["Tvar"; 1]]]; 
-                                              ["Tconstr"; ["Pident"; "t"]; 
-                                              ["Tvar"; 0]; ["Tvar"; 1]]]]]; 
-                                              ["Sig_value"; "create_memory"; 
-                                              ["Tarrow"; ["Tvar"; 3]; 
-                                              ["Tarrow"; ["Tarrow"; [
-                                                                    "Tvar"; 
-                                                                    2]; 
-                                                         ["Tarrow"; [
-                                                                    "Tvar"; 
-                                                                    3]; 
-                                                         ["Tvar"; 3]]]; 
-                                              ["Tconstr"; ["Pident"; "t"]; 
-                                              ["Tvar"; 2]; ["Tvar"; 3]]]]]; 
-                                              ["Sig_value"; "default"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]; 
-                                                         ["Tvar"; 5]; 
-                                                         ["Tvar"; 4]]; 
-                                              ["Tvar"; 4]]]; ["Sig_value"; 
-                                                             "status"; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; "t"]; 
-                                                             ["Tvar"; 6]; 
-                                                             ["Tvar"; 7]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bool"]]]]; 
-                                              ["Sig_value"; "value"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]; 
-                                                         ["Tvar"; 9]; 
-                                                         ["Tvar"; 8]]; 
-                                              ["Tvar"; 8]]]; ["Sig_value"; 
-                                                             "pre_status"; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; "t"]; 
-                                                             ["Tvar"; 10]; 
-                                                             ["Tvar"; 11]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bool"]]]]; 
-                                              ["Sig_value"; "last"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "t"]; 
-                                                                    [
-                                                                    "Tvar"; 
-                                                                    13]; 
-                                                                    [
-                                                                    "Tvar"; 
-                                                                    12]]; 
-                                                                    [
-                                                                    "Tvar"; 
-                                                                    12]]]; 
-                                              ["Sig_value"; "pre_value"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]; 
-                                                         ["Tvar"; 15]; 
-                                                         ["Tvar"; 14]]; 
-                                              ["Tvar"; 14]]]; ["Sig_value"; 
-                                                              "one"; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; "t"]; 
-                                                              ["Tvar"; 17]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "list"]; 
-                                                              ["Tvar"; 16]]]; 
-                                                              ["Tvar"; 16]]]; 
-                                              ["Sig_value"; "emit"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "t"]; 
-                                                                    [
-                                                                    "Tvar"; 
-                                                                    18]; 
-                                                                    [
-                                                                    "Tvar"; 
-                                                                    19]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tvar"; 
-                                                                    18]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]; 
-                                              ["Sig_value"; "next"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]]; 
-                            ["Sig_module"; "Machine_controler_machine"; 
-                            ["Mty_signature"; ["Sig_unknown"]; ["Sig_type"; 
-                                                               "event"; 
-                                                               2; ["Type_alias"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Papply"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Lco_ctrl_tree"]; 
-                                                                  "Rml_interpreter"]; 
-                                                                  ["Pident"; 
-                                                                  "Sig_env"]]; 
-                                                                  "event"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]]]; 
-                            ["Sig_type"; "event_cfg"; 1; ["Type_alias"; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Papply"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Lco_ctrl_tree"]; 
-                                                                  "Rml_interpreter"]; 
-                                                                  ["Pident"; 
-                                                                  "Sig_env"]]; 
-                                                         "event_cfg"]; 
-                                                         ["Tpoly"; "a"]]]]; 
-                            ["Sig_type"; "expr"; 1; ["Type_alias"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Papply"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Lco_ctrl_tree"]; 
-                                                                   "Rml_interpreter"]; 
-                                                                   ["Pident"; 
-                                                                   "Sig_env"]]; 
-                                                                   "expr"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]]]; 
-                            ["Sig_type"; "process"; 1; ["Type_alias"; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "expr"]; 
-                                                       ["Tpoly"; "a"]]]]]; 
-                            ["Sig_value"; "rml_make"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "process"]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "option"]; 
-                                                      ["Tpoly"; "a"]]]]]; 
-                            ["Sig_value"; "rml_make_unit"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "process"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]]; 
-                                                           ["Ttuple"; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "option"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "process"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]]]]]; 
-                            ["Sig_value"; "rml_make_exec_process"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "process"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "process"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]]]; 
-                            ["Sig_value"; "rml_pre_status"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "event"]; 
-                                                            ["Tpoly"; "a"]; 
-                                                            ["Tpoly"; "b"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                            ["Sig_value"; "rml_pre_value"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "event"]; 
-                                                           ["Tpoly"; "a"]; 
-                                                           ["Tpoly"; "b"]]; 
-                                                           ["Tpoly"; "b"]]]; 
-                            ["Sig_value"; "rml_last"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "event"]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]; 
-                                                                 ["Tpoly"; 
-                                                                 "b"]]; 
-                                                      ["Tpoly"; "b"]]]; 
-                            ["Sig_value"; "rml_default"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "event"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]; 
-                                                         ["Tpoly"; "b"]]]; 
-                            ["Sig_value"; "rml_expr_emit"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "event"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]; 
-                                                           ["Tpoly"; "b"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]]]; 
-                            ["Sig_value"; "rml_expr_emit_val"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "event"]; 
-                                                               ["Tpoly"; "a"]; 
-                                                               ["Tpoly"; "b"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tpoly"; "a"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]; 
-                            ["Sig_value"; "rml_global_signal"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "event"]; 
-                                                               ["Tpoly"; "a"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tpoly"; "a"]]]]]; 
-                            ["Sig_value"; "rml_global_signal_combine"; 
-                            ["Tarrow"; ["Tpoly"; "b"]; ["Tarrow"; ["Tarrow"; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "event"]; 
-                                                       ["Tpoly"; "a"]; 
-                                                       ["Tpoly"; "b"]]]]]; 
-                            ["Sig_value"; "rml_global_signal_memory_combine"; 
-                            ["Tarrow"; ["Tpoly"; "b"]; ["Tarrow"; ["Tarrow"; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "event"]; 
-                                                       ["Tpoly"; "a"]; 
-                                                       ["Tpoly"; "b"]]]]]; 
-                            ["Sig_value"; "cfg_present'"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "event"]; 
-                                                          ["Tpoly"; "a"]; 
-                                                          ["Tpoly"; "b"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "event_cfg"]; 
-                                                          ["Tpoly"; "b"]]]]; 
-                            ["Sig_value"; "cfg_present"; ["Tarrow"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "event"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "event_cfg"]; 
-                                                         ["Tpoly"; "b"]]]]; 
-                            ["Sig_value"; "cfg_and"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "event_cfg"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "event_cfg"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "event_cfg"]; 
-                                                     ["Ttuple"; ["Tpoly"; 
-                                                                "a"]; 
-                                                     ["Tpoly"; "b"]]]]]]; 
-                            ["Sig_value"; "cfg_or_option"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "event_cfg"]; 
-                                                           ["Tpoly"; "a"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "event_cfg"]; 
-                                                           ["Tpoly"; "b"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "event_cfg"]; 
-                                                           ["Ttuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "option"]; 
-                                                           ["Tpoly"; "a"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "option"]; 
-                                                           ["Tpoly"; "b"]]]]]]]; 
-                            ["Sig_value"; "rml_nothing"; ["Tconstr"; 
-                                                         ["Pident"; "expr"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "unit"]]]]; 
-                            ["Sig_value"; "rml_compute"; ["Tarrow"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "expr"]; 
-                                                         ["Tpoly"; "a"]]]]; 
-                            ["Sig_value"; "rml_pause"; ["Tconstr"; ["Pident"; 
-                                                                   "expr"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]; 
-                            ["Sig_value"; "rml_halt"; ["Tconstr"; ["Pident"; 
-                                                                  "expr"]; 
-                                                      ["Tpoly"; "a"]]]; 
-                            ["Sig_value"; "rml_pause_kboi"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "expr"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]]]; 
-                            ["Sig_value"; "rml_halt_kboi"; ["Tconstr"; 
-                                                           ["Pident"; "expr"]; 
-                                                           ["Tpoly"; "a"]]]; 
-                            ["Sig_value"; "rml_emit'"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "event"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "expr"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]]; 
-                            ["Sig_value"; "rml_emit"; ["Tarrow"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "event"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]; 
-                                                                 ["Tpoly"; 
-                                                                 "b"]]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "expr"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]]; 
-                            ["Sig_value"; "rml_emit_val'"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "event"]; 
-                                                           ["Tpoly"; "a"]; 
-                                                           ["Tpoly"; "b"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]; 
-                                                           ["Tpoly"; "a"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "expr"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]]]]]; 
-                            ["Sig_value"; "rml_emit_val"; ["Tarrow"; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "event"]; 
-                                                          ["Tpoly"; "a"]; 
-                                                          ["Tpoly"; "b"]]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]; 
-                                                          ["Tpoly"; "a"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "expr"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]]]]]; 
-                            ["Sig_value"; "rml_get"; ["Tarrow"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "event"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]]; 
-                                                     ["Tarrow"; ["Tarrow"; 
-                                                                ["Tpoly"; 
-                                                                "b"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "expr"]; 
-                                                                ["Tpoly"; 
-                                                                "c"]]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "expr"]; 
-                                                     ["Tpoly"; "c"]]]]]; 
-                            ["Sig_value"; "rml_await'"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "event"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]; 
-                            ["Sig_value"; "rml_await"; ["Tarrow"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "event"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "expr"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]]; 
-                            ["Sig_value"; "rml_await_conf"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "event_cfg"]; 
-                                                            ["Tpoly"; "a"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "expr"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]]]]; 
-                            ["Sig_value"; "rml_await_immediate'"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "event"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "expr"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]]; 
-                            ["Sig_value"; "rml_await_immediate"; ["Tarrow"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "event"]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]; 
-                                                                 ["Tpoly"; 
-                                                                 "b"]]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "expr"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                            ["Sig_value"; "rml_await_immediate_conf"; 
-                            ["Tarrow"; ["Tconstr"; ["Pident"; "event_cfg"]; 
-                                       ["Tpoly"; "a"]]; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]; 
-                            ["Sig_value"; "rml_await_all'"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "event"]; 
-                                                            ["Tpoly"; "a"]; 
-                                                            ["Tpoly"; "b"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tarrow"; 
-                                                            ["Tpoly"; "b"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "expr"]; 
-                                                            ["Tpoly"; "c"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "expr"]; 
-                                                            ["Tpoly"; "c"]]]]]; 
-                            ["Sig_value"; "rml_await_all"; ["Tarrow"; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "event"]; 
-                                                           ["Tpoly"; "a"]; 
-                                                           ["Tpoly"; "b"]]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tarrow"; 
-                                                           ["Tpoly"; "b"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "expr"]; 
-                                                           ["Tpoly"; "c"]]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "expr"]; 
-                                                           ["Tpoly"; "c"]]]]]; 
-                            ["Sig_value"; "rml_await_all_conf"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "event_cfg"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tarrow"; 
-                                                                ["Tpoly"; 
-                                                                "b"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "expr"]; 
-                                                                ["Tpoly"; 
-                                                                "c"]]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "expr"]; 
-                                                                ["Tpoly"; 
-                                                                "c"]]]]]; 
-                            ["Sig_value"; "rml_await_all_match'"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "event"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "expr"]; 
-                                                                  ["Tpoly"; 
-                                                                  "c"]]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "expr"]; 
-                                                                  ["Tpoly"; 
-                                                                  "c"]]]]]]; 
-                            ["Sig_value"; "rml_await_all_match"; ["Tarrow"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "event"]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]; 
-                                                                 ["Tpoly"; 
-                                                                 "b"]]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tpoly"; 
-                                                                 "b"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bool"]]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tpoly"; 
-                                                                 "b"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "expr"]; 
-                                                                 ["Tpoly"; 
-                                                                 "c"]]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "expr"]; 
-                                                                 ["Tpoly"; 
-                                                                 "c"]]]]]]; 
-                            ["Sig_value"; "rml_await_all_match_conf"; 
-                            ["Tarrow"; ["Tconstr"; ["Pident"; "event_cfg"]; 
-                                       ["Tpoly"; "b"]]; ["Tarrow"; ["Tarrow"; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bool"]]]; 
-                                                        ["Tarrow"; ["Tarrow"; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "expr"]; 
-                                                                   ["Tpoly"; 
-                                                                   "c"]]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                        ["Tpoly"; "c"]]]]]]; 
-                            ["Sig_value"; "rml_await_one'"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "event"]; 
-                                                            ["Tpoly"; "a"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tpoly"; "a"]]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tarrow"; 
-                                                            ["Tpoly"; "a"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "expr"]; 
-                                                            ["Tpoly"; "c"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "expr"]; 
-                                                            ["Tpoly"; "c"]]]]]; 
-                            ["Sig_value"; "rml_await_one"; ["Tarrow"; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "event"]; 
-                                                           ["Tpoly"; "a"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tpoly"; "a"]]]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tarrow"; 
-                                                           ["Tpoly"; "a"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "expr"]; 
-                                                           ["Tpoly"; "c"]]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "expr"]; 
-                                                           ["Tpoly"; "c"]]]]]; 
-                            ["Sig_value"; "rml_await_immediate_one'"; 
-                            ["Tarrow"; ["Tconstr"; ["Pident"; "event"]; 
-                                       ["Tpoly"; "a"]; ["Tconstr"; ["Pident"; 
-                                                                   "list"]; 
-                                                       ["Tpoly"; "a"]]]; 
-                            ["Tarrow"; ["Tarrow"; ["Tpoly"; "a"]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "expr"]; 
-                                                                  ["Tpoly"; 
-                                                                  "c"]]]; 
-                            ["Tconstr"; ["Pident"; "expr"]; ["Tpoly"; "c"]]]]]; 
-                            ["Sig_value"; "rml_await_immediate_one"; 
-                            ["Tarrow"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                              "unit"]]; 
-                                       ["Tconstr"; ["Pident"; "event"]; 
-                                       ["Tpoly"; "a"]; ["Tconstr"; ["Pident"; 
-                                                                   "list"]; 
-                                                       ["Tpoly"; "a"]]]]; 
-                            ["Tarrow"; ["Tarrow"; ["Tpoly"; "a"]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "expr"]; 
-                                                                  ["Tpoly"; 
-                                                                  "c"]]]; 
-                            ["Tconstr"; ["Pident"; "expr"]; ["Tpoly"; "c"]]]]]; 
-                            ["Sig_value"; "rml_await_one_match'"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "event"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "list"]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "expr"]; 
-                                                                  ["Tpoly"; 
-                                                                  "c"]]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "expr"]; 
-                                                                  ["Tpoly"; 
-                                                                  "c"]]]]]]; 
-                            ["Sig_value"; "rml_await_one_match"; ["Tarrow"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "event"]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "list"]; 
-                                                                 ["Tpoly"; 
-                                                                 "b"]]]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tpoly"; 
-                                                                 "b"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bool"]]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tpoly"; 
-                                                                 "b"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "expr"]; 
-                                                                 ["Tpoly"; 
-                                                                 "c"]]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "expr"]; 
-                                                                 ["Tpoly"; 
-                                                                 "c"]]]]]]; 
-                            ["Sig_value"; "rml_present'"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "event"]; 
-                                                          ["Tpoly"; "a"]; 
-                                                          ["Tpoly"; "b"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "expr"]; 
-                                                          ["Tpoly"; "c"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "expr"]; 
-                                                          ["Tpoly"; "c"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "expr"]; 
-                                                          ["Tpoly"; "c"]]]]]]; 
-                            ["Sig_value"; "rml_present"; ["Tarrow"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "event"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "c"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "c"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "expr"]; 
-                                                         ["Tpoly"; "c"]]]]]]; 
-                            ["Sig_value"; "rml_present_conf"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "event_cfg"]; 
-                                                              ["Tpoly"; "a"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "expr"]; 
-                                                              ["Tpoly"; "a"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "expr"]; 
-                                                              ["Tpoly"; "a"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "expr"]; 
-                                                              ["Tpoly"; "a"]]]]]]; 
-                            ["Sig_value"; "rml_seq"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "expr"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "expr"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "expr"]; 
-                                                     ["Tpoly"; "b"]]]]]; 
-                            ["Sig_value"; "rml_par"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "expr"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "expr"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "expr"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]]]; 
-                            ["Sig_value"; "rml_merge"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "expr"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "expr"]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "expr"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]]]; 
-                            ["Sig_value"; "rml_loop"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "expr"]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "expr"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]]; 
-                            ["Sig_value"; "rml_loop_n"; ["Tarrow"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "expr"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]]; 
-                            ["Sig_value"; "rml_while"; ["Tarrow"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "expr"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "expr"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]]]; 
-                            ["Sig_value"; "rml_for"; ["Tarrow"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]; 
-                                                     ["Tarrow"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]; 
-                                                     ["Tarrow"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "expr"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "expr"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]]]]]; 
-                            ["Sig_value"; "rml_fordopar"; ["Tarrow"; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "bool"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "expr"]; 
-                                                          ["Tpoly"; "a"]]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "expr"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]]]]]]]; 
-                            ["Sig_value"; "rml_signal"; ["Tarrow"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "event"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "expr"]; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                        ["Tpoly"; "b"]]]]; 
-                            ["Sig_value"; "rml_signal_combine"; ["Tarrow"; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tarrow"; 
-                                                                ["Tpoly"; 
-                                                                "b"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "event"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "expr"]; 
-                                                                ["Tpoly"; 
-                                                                "c"]]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "expr"]; 
-                                                                ["Tpoly"; 
-                                                                "c"]]]]]]; 
-                            ["Sig_value"; "rml_signal_memory_combine"; 
-                            ["Tarrow"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                              "unit"]]; 
-                                       ["Tpoly"; "b"]]; ["Tarrow"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]]]]; 
-                                                        ["Tarrow"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "event"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "expr"]; 
-                                                                   ["Tpoly"; 
-                                                                   "c"]]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                        ["Tpoly"; "c"]]]]]]; 
-                            ["Sig_value"; "rml_def"; ["Tarrow"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]; 
-                                                     ["Tarrow"; ["Tarrow"; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "expr"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "expr"]; 
-                                                     ["Tpoly"; "b"]]]]]; 
-                            ["Sig_value"; "rml_def_dyn"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "expr"]; 
-                                                         ["Tpoly"; "b"]]]]]; 
-                            ["Sig_value"; "rml_match"; ["Tarrow"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]]; 
-                                                       ["Tarrow"; ["Tarrow"; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "expr"]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "expr"]; 
-                                                       ["Tpoly"; "b"]]]]]; 
-                            ["Sig_value"; "rml_run"; ["Tarrow"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "process"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "expr"]; 
-                                                     ["Tpoly"; "a"]]]]; 
-                            ["Sig_value"; "rml_until'"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "event"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "expr"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]]; 
-                            ["Sig_value"; "rml_until"; ["Tarrow"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "event"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "expr"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "expr"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]]]; 
-                            ["Sig_value"; "rml_until_conf"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "event_cfg"]; 
-                                                            ["Tpoly"; "a"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "expr"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "expr"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]]]]]; 
-                            ["Sig_value"; "rml_until_handler'"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "event"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "expr"]; 
-                                                                ["Tpoly"; 
-                                                                "c"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tarrow"; 
-                                                                ["Tpoly"; 
-                                                                "b"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "expr"]; 
-                                                                ["Tpoly"; 
-                                                                "c"]]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "expr"]; 
-                                                                ["Tpoly"; 
-                                                                "c"]]]]]]; 
-                            ["Sig_value"; "rml_until_handler"; ["Tarrow"; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "event"]; 
-                                                               ["Tpoly"; "a"]; 
-                                                               ["Tpoly"; "b"]]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "expr"]; 
-                                                               ["Tpoly"; "c"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tarrow"; 
-                                                               ["Tpoly"; "b"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "expr"]; 
-                                                               ["Tpoly"; "c"]]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "expr"]; 
-                                                               ["Tpoly"; "c"]]]]]]; 
-                            ["Sig_value"; "rml_until_handler_conf"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "event_cfg"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "c"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "c"]]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "c"]]]]]]; 
-                            ["Sig_value"; "rml_until_handler_match'"; 
-                            ["Tarrow"; ["Tconstr"; ["Pident"; "event"]; 
-                                       ["Tpoly"; "a"]; ["Tpoly"; "b"]]; 
-                            ["Tarrow"; ["Tarrow"; ["Tpoly"; "b"]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]]; 
-                            ["Tarrow"; ["Tconstr"; ["Pident"; "expr"]; 
-                                       ["Tpoly"; "c"]]; ["Tarrow"; ["Tarrow"; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "expr"]; 
-                                                                   ["Tpoly"; 
-                                                                   "c"]]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                        ["Tpoly"; "c"]]]]]]]; 
-                            ["Sig_value"; "rml_until_handler_match"; 
-                            ["Tarrow"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                              "unit"]]; 
-                                       ["Tconstr"; ["Pident"; "event"]; 
-                                       ["Tpoly"; "a"]; ["Tpoly"; "b"]]]; 
-                            ["Tarrow"; ["Tarrow"; ["Tpoly"; "b"]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]]; 
-                            ["Tarrow"; ["Tconstr"; ["Pident"; "expr"]; 
-                                       ["Tpoly"; "c"]]; ["Tarrow"; ["Tarrow"; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "expr"]; 
-                                                                   ["Tpoly"; 
-                                                                   "c"]]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                        ["Tpoly"; "c"]]]]]]]; 
-                            ["Sig_value"; "rml_until_handler_match_conf"; 
-                            ["Tarrow"; ["Tconstr"; ["Pident"; "event_cfg"]; 
-                                       ["Tpoly"; "b"]]; ["Tarrow"; ["Tarrow"; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bool"]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "expr"]; 
-                                                                   ["Tpoly"; 
-                                                                   "c"]]; 
-                                                        ["Tarrow"; ["Tarrow"; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "expr"]; 
-                                                                   ["Tpoly"; 
-                                                                   "c"]]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                        ["Tpoly"; "c"]]]]]]]; 
-                            ["Sig_value"; "rml_until_match'"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "event"]; 
-                                                              ["Tpoly"; "a"]; 
-                                                              ["Tpoly"; "b"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tarrow"; 
-                                                              ["Tpoly"; "b"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "bool"]]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "expr"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "expr"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]]]]]]; 
-                            ["Sig_value"; "rml_until_match"; ["Tarrow"; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "event"]; 
-                                                             ["Tpoly"; "a"]; 
-                                                             ["Tpoly"; "b"]]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tarrow"; 
-                                                             ["Tpoly"; "b"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bool"]]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "expr"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "expr"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]]]]]]; 
-                            ["Sig_value"; "rml_until_match_conf"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "event_cfg"]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "expr"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "expr"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]]]]; 
-                            ["Sig_value"; "rml_control'"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "event"]; 
-                                                          ["Tpoly"; "a"]; 
-                                                          ["Tpoly"; "b"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "expr"]; 
-                                                          ["Tpoly"; "c"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "expr"]; 
-                                                          ["Tpoly"; "c"]]]]]; 
-                            ["Sig_value"; "rml_control"; ["Tarrow"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "event"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "c"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "expr"]; 
-                                                         ["Tpoly"; "c"]]]]]; 
-                            ["Sig_value"; "rml_control_conf"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "event_cfg"]; 
-                                                              ["Tpoly"; "a"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "expr"]; 
-                                                              ["Tpoly"; "c"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "expr"]; 
-                                                              ["Tpoly"; "c"]]]]]; 
-                            ["Sig_value"; "rml_control_match'"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "event"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tarrow"; 
-                                                                ["Tpoly"; 
-                                                                "b"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "expr"]; 
-                                                                ["Tpoly"; 
-                                                                "c"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "expr"]; 
-                                                                ["Tpoly"; 
-                                                                "c"]]]]]]; 
-                            ["Sig_value"; "rml_control_match"; ["Tarrow"; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "event"]; 
-                                                               ["Tpoly"; "a"]; 
-                                                               ["Tpoly"; "b"]]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tarrow"; 
-                                                               ["Tpoly"; "b"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "bool"]]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "expr"]; 
-                                                               ["Tpoly"; "c"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "expr"]; 
-                                                               ["Tpoly"; "c"]]]]]]; 
-                            ["Sig_value"; "rml_control_match_conf"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "event_cfg"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "bool"]]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "c"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "expr"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "c"]]]]]]; 
-                            ["Sig_value"; "rml_when'"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "event"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "expr"]; 
-                                                                  ["Tpoly"; 
-                                                                  "c"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "expr"]; 
-                                                       ["Tpoly"; "c"]]]]]; 
-                            ["Sig_value"; "rml_when"; ["Tarrow"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "event"]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]; 
-                                                                 ["Tpoly"; 
-                                                                 "b"]]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "expr"]; 
-                                                                 ["Tpoly"; 
-                                                                 "c"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "expr"]; 
-                                                      ["Tpoly"; "c"]]]]]; 
-                            ["Sig_value"; "rml_when_conf"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "event_cfg"]; 
-                                                           ["Tpoly"; "a"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "expr"]; 
-                                                           ["Tpoly"; "c"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "expr"]; 
-                                                           ["Tpoly"; "c"]]]]]; 
-                            ["Sig_value"; "rml_if"; ["Tarrow"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "bool"]]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "expr"]; 
-                                                               ["Tpoly"; "a"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "expr"]; 
-                                                               ["Tpoly"; "a"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "expr"]; 
-                                                    ["Tpoly"; "a"]]]]]]; 
-                            ["Sig_value"; "rml_par_n"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "list"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "expr"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "expr"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]]]]]]
+["module", "Rmltop_implem",
+["Mty_signature",
+["Sig_module", "Sig_env",
+["Mty_signature",
+["Sig_type", "kind", 0,
+["Type_variant", ["constructor", "Default", ["tuple"]],
+["constructor", "Memory", ["tuple"]]]],
+["Sig_type", "t", 2,
+["Type_record", ["label", "status", ["Tconstr", ["Pident", "int"]]],
+["label", "value", ["Tpoly", "b"]],
+["label", "pre_status", ["Tconstr", ["Pident", "int"]]],
+["label", "last", ["Tpoly", "b"]], ["label", "default", ["Tpoly", "b"]],
+["label", "combine",
+["Tarrow", ["Tpoly", "a"], ["Tarrow", ["Tpoly", "b"], ["Tpoly", "b"]]]],
+["label", "kind", ["Tconstr", ["Pident", "kind"]]]]],
+["Sig_value", "instant",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "absent", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "create",
+["Tarrow", ["Tvar", 1],
+["Tarrow", ["Tarrow", ["Tvar", 0], ["Tarrow", ["Tvar", 1], ["Tvar", 1]]],
+["Tconstr", ["Pident", "t"], ["Tvar", 0], ["Tvar", 1]]]]],
+["Sig_value", "create_memory",
+["Tarrow", ["Tvar", 3],
+["Tarrow", ["Tarrow", ["Tvar", 2], ["Tarrow", ["Tvar", 3], ["Tvar", 3]]],
+["Tconstr", ["Pident", "t"], ["Tvar", 2], ["Tvar", 3]]]]],
+["Sig_value", "default",
+["Tarrow", ["Tconstr", ["Pident", "t"], ["Tvar", 5], ["Tvar", 4]],
+["Tvar", 4]]],
+["Sig_value", "status",
+["Tarrow", ["Tconstr", ["Pident", "t"], ["Tvar", 6], ["Tvar", 7]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "value",
+["Tarrow", ["Tconstr", ["Pident", "t"], ["Tvar", 9], ["Tvar", 8]],
+["Tvar", 8]]],
+["Sig_value", "pre_status",
+["Tarrow", ["Tconstr", ["Pident", "t"], ["Tvar", 10], ["Tvar", 11]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "last",
+["Tarrow", ["Tconstr", ["Pident", "t"], ["Tvar", 13], ["Tvar", 12]],
+["Tvar", 12]]],
+["Sig_value", "pre_value",
+["Tarrow", ["Tconstr", ["Pident", "t"], ["Tvar", 15], ["Tvar", 14]],
+["Tvar", 14]]],
+["Sig_value", "one",
+["Tarrow",
+["Tconstr", ["Pident", "t"], ["Tvar", 17],
+["Tconstr", ["Pident", "list"], ["Tvar", 16]]], ["Tvar", 16]]],
+["Sig_value", "emit",
+["Tarrow", ["Tconstr", ["Pident", "t"], ["Tvar", 18], ["Tvar", 19]],
+["Tarrow", ["Tvar", 18], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "next",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_module", "Machine_controler_machine",
+["Mty_signature", ["Sig_unknown"],
+["Sig_type", "event", 2,
+["Type_alias",
+["Tconstr",
+["Pdot",
+["Papply", ["Pdot", ["Pident", "Lco_ctrl_tree"], "Rml_interpreter"],
+["Pident", "Sig_env"]], "event"], ["Tpoly", "a"], ["Tpoly", "b"]]]],
+["Sig_type", "event_cfg", 1,
+["Type_alias",
+["Tconstr",
+["Pdot",
+["Papply", ["Pdot", ["Pident", "Lco_ctrl_tree"], "Rml_interpreter"],
+["Pident", "Sig_env"]], "event_cfg"], ["Tpoly", "a"]]]],
+["Sig_type", "expr", 1,
+["Type_alias",
+["Tconstr",
+["Pdot",
+["Papply", ["Pdot", ["Pident", "Lco_ctrl_tree"], "Rml_interpreter"],
+["Pident", "Sig_env"]], "expr"], ["Tpoly", "a"]]]],
+["Sig_type", "process", 1,
+["Type_alias",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]]]]],
+["Sig_value", "rml_make",
+["Tarrow", ["Tconstr", ["Pident", "process"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "option"], ["Tpoly", "a"]]]]],
+["Sig_value", "rml_make_unit",
+["Tarrow",
+["Tconstr", ["Pident", "process"], ["Tconstr", ["Pident", "unit"]]],
+["Ttuple",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "unit"]]]],
+["Tarrow",
+["Tconstr", ["Pident", "process"], ["Tconstr", ["Pident", "unit"]]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "rml_make_exec_process",
+["Tarrow",
+["Tconstr", ["Pident", "process"], ["Tconstr", ["Pident", "unit"]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "process"], ["Tconstr", ["Pident", "unit"]]]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "rml_pre_status",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "rml_pre_value",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tpoly", "b"]]],
+["Sig_value", "rml_last",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tpoly", "b"]]],
+["Sig_value", "rml_default",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tpoly", "b"]]],
+["Sig_value", "rml_expr_emit",
+["Tarrow",
+["Tconstr", ["Pident", "event"], ["Tconstr", ["Pident", "unit"]],
+["Tpoly", "b"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "rml_expr_emit_val",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tpoly", "a"], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "rml_global_signal",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"],
+["Tconstr", ["Pident", "list"], ["Tpoly", "a"]]]]],
+["Sig_value", "rml_global_signal_combine",
+["Tarrow", ["Tpoly", "b"],
+["Tarrow",
+["Tarrow", ["Tpoly", "a"], ["Tarrow", ["Tpoly", "b"], ["Tpoly", "b"]]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]]]],
+["Sig_value", "rml_global_signal_memory_combine",
+["Tarrow", ["Tpoly", "b"],
+["Tarrow",
+["Tarrow", ["Tpoly", "a"], ["Tarrow", ["Tpoly", "b"], ["Tpoly", "b"]]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]]]],
+["Sig_value", "cfg_present'",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "b"]]]],
+["Sig_value", "cfg_present",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "b"]]]],
+["Sig_value", "cfg_and",
+["Tarrow", ["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "event_cfg"],
+["Ttuple", ["Tpoly", "a"], ["Tpoly", "b"]]]]]],
+["Sig_value", "cfg_or_option",
+["Tarrow", ["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "event_cfg"],
+["Ttuple", ["Tconstr", ["Pident", "option"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "option"], ["Tpoly", "b"]]]]]]],
+["Sig_value", "rml_nothing",
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "rml_compute",
+["Tarrow", ["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]]]],
+["Sig_value", "rml_pause",
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "rml_halt", ["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]]],
+["Sig_value", "rml_pause_kboi",
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "rml_halt_kboi",
+["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]]],
+["Sig_value", "rml_emit'",
+["Tarrow",
+["Tconstr", ["Pident", "event"], ["Tconstr", ["Pident", "unit"]],
+["Tpoly", "b"]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "rml_emit",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tconstr", ["Pident", "unit"]],
+["Tpoly", "b"]]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "rml_emit_val'",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "rml_emit_val",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tarrow", ["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "rml_get",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tarrow",
+["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]],
+["Sig_value", "rml_await'",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "rml_await",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "rml_await_conf",
+["Tarrow", ["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "rml_await_immediate'",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "rml_await_immediate",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "rml_await_immediate_conf",
+["Tarrow", ["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "rml_await_all'",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow",
+["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]],
+["Sig_value", "rml_await_all",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tarrow",
+["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]],
+["Sig_value", "rml_await_all_conf",
+["Tarrow", ["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "b"]],
+["Tarrow",
+["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]],
+["Sig_value", "rml_await_all_match'",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow",
+["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]],
+["Sig_value", "rml_await_all_match",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tarrow", ["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow",
+["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]],
+["Sig_value", "rml_await_all_match_conf",
+["Tarrow", ["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "b"]],
+["Tarrow", ["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow",
+["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]],
+["Sig_value", "rml_await_one'",
+["Tarrow",
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"],
+["Tconstr", ["Pident", "list"], ["Tpoly", "a"]]],
+["Tarrow",
+["Tarrow", ["Tpoly", "a"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]],
+["Sig_value", "rml_await_one",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"],
+["Tconstr", ["Pident", "list"], ["Tpoly", "a"]]]],
+["Tarrow",
+["Tarrow", ["Tpoly", "a"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]],
+["Sig_value", "rml_await_immediate_one'",
+["Tarrow",
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"],
+["Tconstr", ["Pident", "list"], ["Tpoly", "a"]]],
+["Tarrow",
+["Tarrow", ["Tpoly", "a"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]],
+["Sig_value", "rml_await_immediate_one",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"],
+["Tconstr", ["Pident", "list"], ["Tpoly", "a"]]]],
+["Tarrow",
+["Tarrow", ["Tpoly", "a"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]],
+["Sig_value", "rml_await_one_match'",
+["Tarrow",
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"],
+["Tconstr", ["Pident", "list"], ["Tpoly", "b"]]],
+["Tarrow", ["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow",
+["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]],
+["Sig_value", "rml_await_one_match",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"],
+["Tconstr", ["Pident", "list"], ["Tpoly", "b"]]]],
+["Tarrow", ["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow",
+["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]],
+["Sig_value", "rml_present'",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]],
+["Sig_value", "rml_present",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]],
+["Sig_value", "rml_present_conf",
+["Tarrow", ["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]]]]]],
+["Sig_value", "rml_seq",
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "b"]]]]],
+["Sig_value", "rml_par",
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "rml_merge",
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "rml_loop",
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "rml_loop_n",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "int"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "rml_while",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "rml_for",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "int"]]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "int"]]],
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]]]]],
+["Sig_value", "rml_fordopar",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "int"]]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "int"]]],
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]]]]],
+["Sig_value", "rml_signal",
+["Tarrow",
+["Tarrow",
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"],
+["Tconstr", ["Pident", "list"], ["Tpoly", "a"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "b"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "b"]]]],
+["Sig_value", "rml_signal_combine",
+["Tarrow", ["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tpoly", "b"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tarrow", ["Tpoly", "a"], ["Tarrow", ["Tpoly", "b"], ["Tpoly", "b"]]]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]],
+["Sig_value", "rml_signal_memory_combine",
+["Tarrow", ["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tpoly", "b"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tarrow", ["Tpoly", "a"], ["Tarrow", ["Tpoly", "b"], ["Tpoly", "b"]]]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]],
+["Sig_value", "rml_def",
+["Tarrow", ["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tpoly", "a"]],
+["Tarrow",
+["Tarrow", ["Tpoly", "a"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "b"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "b"]]]]],
+["Sig_value", "rml_def_dyn",
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]],
+["Tarrow",
+["Tarrow", ["Tpoly", "a"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "b"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "b"]]]]],
+["Sig_value", "rml_match",
+["Tarrow", ["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tpoly", "a"]],
+["Tarrow",
+["Tarrow", ["Tpoly", "a"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "b"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "b"]]]]],
+["Sig_value", "rml_run",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "process"], ["Tpoly", "a"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]]]],
+["Sig_value", "rml_until'",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "rml_until",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "rml_until_conf",
+["Tarrow", ["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "rml_until_handler'",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tarrow",
+["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]],
+["Sig_value", "rml_until_handler",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tarrow",
+["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]],
+["Sig_value", "rml_until_handler_conf",
+["Tarrow", ["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "b"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tarrow",
+["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]],
+["Sig_value", "rml_until_handler_match'",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tarrow",
+["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]]],
+["Sig_value", "rml_until_handler_match",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tarrow", ["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tarrow",
+["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]]],
+["Sig_value", "rml_until_handler_match_conf",
+["Tarrow", ["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "b"]],
+["Tarrow", ["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tarrow",
+["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]]],
+["Sig_value", "rml_until_match'",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "rml_until_match",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tarrow", ["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "rml_until_match_conf",
+["Tarrow", ["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "b"]],
+["Tarrow", ["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "rml_control'",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]],
+["Sig_value", "rml_control",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]],
+["Sig_value", "rml_control_conf",
+["Tarrow", ["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]],
+["Sig_value", "rml_control_match'",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]],
+["Sig_value", "rml_control_match",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tarrow", ["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]],
+["Sig_value", "rml_control_match_conf",
+["Tarrow", ["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "b"]],
+["Tarrow", ["Tarrow", ["Tpoly", "b"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]]],
+["Sig_value", "rml_when'",
+["Tarrow", ["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]],
+["Sig_value", "rml_when",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]],
+["Sig_value", "rml_when_conf",
+["Tarrow", ["Tconstr", ["Pident", "event_cfg"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "c"]]]]],
+["Sig_value", "rml_if",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "expr"], ["Tpoly", "a"]]]]]],
+["Sig_value", "rml_par_n",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]],
+["Tconstr", ["Pident", "expr"], ["Tconstr", ["Pident", "unit"]]]]]]]]]

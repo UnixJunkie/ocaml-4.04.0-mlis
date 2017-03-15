@@ -1,334 +1,136 @@
-["module"; "MachExports"; ["Mty_signature"; ["Sig_value"; "kEXPORT_SYMBOL_FLAGS_KIND_MASK"; 
-                                            ["Tconstr"; ["Pident"; "int"]]]; 
-                          ["Sig_value"; "kEXPORT_SYMBOL_FLAGS_KIND_REGULAR"; 
-                          ["Tconstr"; ["Pident"; "int"]]]; ["Sig_value"; 
-                                                           "kEXPORT_SYMBOL_FLAGS_KIND_ABSOLUTE"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                          ["Sig_value"; "kEXPORT_SYMBOL_FLAGS_KIND_THREAD_LOCAL"; 
-                          ["Tconstr"; ["Pident"; "int"]]]; ["Sig_value"; 
-                                                           "kEXPORT_SYMBOL_FLAGS_WEAK_DEFINITION"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                          ["Sig_value"; "kEXPORT_SYMBOL_FLAGS_REEXPORT"; 
-                          ["Tconstr"; ["Pident"; "int"]]]; ["Sig_value"; 
-                                                           "kEXPORT_SYMBOL_FLAGS_STUB_AND_RESOLVER"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                          ["Sig_type"; "symbol_kind"; 0; ["Type_variant"; 
-                                                         ["constructor"; 
-                                                         "REGULAR"; ["tuple"]]; 
-                                                         ["constructor"; 
-                                                         "ABSOLUTE"; 
-                                                         ["tuple"]]; 
-                                                         ["constructor"; 
-                                                         "THREAD_LOCAL"; 
-                                                         ["tuple"]]; 
-                                                         ["constructor"; 
-                                                         "UNKNOWN_SYMBOL_KIND"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]]]; 
-                          ["Sig_unknown"]; ["Sig_value"; "get_symbol_kind"; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "int"]]; 
-                                           ["Tconstr"; ["Pident"; "symbol_kind"]]]]; 
-                          ["Sig_type"; "stub_symbol_info"; 0; ["Type_record"; 
-                                                              ["label"; 
-                                                              "stub_offset"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                                                              ["label"; 
-                                                              "resolver_offset"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                                                              ["label"; 
-                                                              "flags"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]]]; 
-                          ["Sig_type"; "reexport_symbol_info"; 0; ["Type_record"; 
-                                                                  ["label"; 
-                                                                  "lib"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]; 
-                                                                  ["label"; 
-                                                                  "lib_symbol_name"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "option"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]; 
-                                                                  ["label"; 
-                                                                  "flags"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]]]; 
-                          ["Sig_type"; "regular_symbol_info"; 0; ["Type_record"; 
-                                                                 ["label"; 
-                                                                 "address"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                                                 ["label"; 
-                                                                 "flags"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]]; 
-                          ["Sig_type"; "export_info"; 0; ["Type_variant"; 
-                                                         ["constructor"; 
-                                                         "Regular"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "regular_symbol_info"]]]]; 
-                                                         ["constructor"; 
-                                                         "Reexport"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "reexport_symbol_info"]]]]; 
-                                                         ["constructor"; 
-                                                         "Stub"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "stub_symbol_info"]]]]]]; 
-                          ["Sig_type"; "export"; 0; ["Type_record"; [
-                                                                    "label"; 
-                                                                    "info"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "export_info"]]]; 
-                                                    ["label"; "name"; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "string"]]]; 
-                                                    ["label"; "size"; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]; 
-                                                    ["label"; "offset"; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]]; 
-                          ["Sig_type"; "t"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "list"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "export"]]]]]; 
-                          ["Sig_unknown"]; ["Sig_value"; "export_info_to_string"; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "export_info"]]; 
-                                           ["Tconstr"; ["Pident"; "string"]]]]; 
-                          ["Sig_value"; "export_to_string"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "export"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]; 
-                          ["Sig_value"; "exports_to_string"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "export"]]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]; 
-                          ["Sig_value"; "print_export"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "export"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]; 
-                          ["Sig_value"; "print"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "export"]]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]; 
-                          ["Sig_value"; "length"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tvar"; 0]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "int"]]]]; 
-                          ["Sig_value"; "compute_size"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "export"]]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]]]; 
-                          ["Sig_value"; "empty"; ["Tconstr"; ["Pident"; 
-                                                             "list"]; 
-                                                 ["Tvar"; 1]]]; ["Sig_value"; 
-                                                                "sort"; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "export"]]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "export"]]]]]; 
-                          ["Sig_value"; "get_export"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bytes"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "array"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "export_info"]]]]]]]; 
-                          ["Sig_value"; "interp"; ["Tconstr"; ["Pident"; 
-                                                              "bool"]]]; 
-                          ["Sig_value"; "debug"; ["Tconstr"; ["Pident"; 
-                                                             "bool"]]]; 
-                          ["Sig_value"; "get_exports_it"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "bytes"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "array"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "export"]]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "export"]]]]]]]]]]]; 
-                          ["Sig_value"; "get_nodes"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bytes"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "array"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Ttuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "export"]]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "list"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "export"]]]]]]]]]]; 
-                          ["Sig_value"; "get_branches"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bytes"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Ttuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                        ["Ttuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]]]]]]]]; 
-                          ["Sig_value"; "get_exports"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bytes"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "MachLoadCommand"]; 
-                                                                  "Types"]; 
-                                                                  "dyld_info_command"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "array"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "t"]]]]]]]]
+["module", "MachExports",
+["Mty_signature",
+["Sig_value", "kEXPORT_SYMBOL_FLAGS_KIND_MASK",
+["Tconstr", ["Pident", "int"]]],
+["Sig_value", "kEXPORT_SYMBOL_FLAGS_KIND_REGULAR",
+["Tconstr", ["Pident", "int"]]],
+["Sig_value", "kEXPORT_SYMBOL_FLAGS_KIND_ABSOLUTE",
+["Tconstr", ["Pident", "int"]]],
+["Sig_value", "kEXPORT_SYMBOL_FLAGS_KIND_THREAD_LOCAL",
+["Tconstr", ["Pident", "int"]]],
+["Sig_value", "kEXPORT_SYMBOL_FLAGS_WEAK_DEFINITION",
+["Tconstr", ["Pident", "int"]]],
+["Sig_value", "kEXPORT_SYMBOL_FLAGS_REEXPORT",
+["Tconstr", ["Pident", "int"]]],
+["Sig_value", "kEXPORT_SYMBOL_FLAGS_STUB_AND_RESOLVER",
+["Tconstr", ["Pident", "int"]]],
+["Sig_type", "symbol_kind", 0,
+["Type_variant", ["constructor", "REGULAR", ["tuple"]],
+["constructor", "ABSOLUTE", ["tuple"]],
+["constructor", "THREAD_LOCAL", ["tuple"]],
+["constructor", "UNKNOWN_SYMBOL_KIND",
+["tuple", ["Tconstr", ["Pident", "int"]]]]]], ["Sig_unknown"],
+["Sig_value", "get_symbol_kind",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "symbol_kind"]]]],
+["Sig_type", "stub_symbol_info", 0,
+["Type_record", ["label", "stub_offset", ["Tconstr", ["Pident", "int"]]],
+["label", "resolver_offset", ["Tconstr", ["Pident", "int"]]],
+["label", "flags", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "reexport_symbol_info", 0,
+["Type_record", ["label", "lib", ["Tconstr", ["Pident", "string"]]],
+["label", "lib_symbol_name",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]],
+["label", "flags", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "regular_symbol_info", 0,
+["Type_record", ["label", "address", ["Tconstr", ["Pident", "int"]]],
+["label", "flags", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "export_info", 0,
+["Type_variant",
+["constructor", "Regular",
+["tuple", ["Tconstr", ["Pident", "regular_symbol_info"]]]],
+["constructor", "Reexport",
+["tuple", ["Tconstr", ["Pident", "reexport_symbol_info"]]]],
+["constructor", "Stub",
+["tuple", ["Tconstr", ["Pident", "stub_symbol_info"]]]]]],
+["Sig_type", "export", 0,
+["Type_record", ["label", "info", ["Tconstr", ["Pident", "export_info"]]],
+["label", "name", ["Tconstr", ["Pident", "string"]]],
+["label", "size", ["Tconstr", ["Pident", "int"]]],
+["label", "offset", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "t", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "export"]]]]],
+["Sig_unknown"],
+["Sig_value", "export_info_to_string",
+["Tarrow", ["Tconstr", ["Pident", "export_info"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "export_to_string",
+["Tarrow", ["Tconstr", ["Pident", "export"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "exports_to_string",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "export"]]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "print_export",
+["Tarrow", ["Tconstr", ["Pident", "export"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "print",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "export"]]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "length",
+["Tarrow", ["Tconstr", ["Pident", "list"], ["Tvar", 0]],
+["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "compute_size",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "export"]]],
+["Tconstr", ["Pident", "t"]]]],
+["Sig_value", "empty", ["Tconstr", ["Pident", "list"], ["Tvar", 1]]],
+["Sig_value", "sort",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "export"]]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "export"]]]]],
+["Sig_value", "get_export",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "export_info"]]]]]]],
+["Sig_value", "interp", ["Tconstr", ["Pident", "bool"]]],
+["Sig_value", "debug", ["Tconstr", ["Pident", "bool"]]],
+["Sig_value", "get_exports_it",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "export"]]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "export"]]]]]]]]]]],
+["Sig_value", "get_nodes",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "int"]]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "export"]]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "export"]]]]]]]]]],
+["Sig_value", "get_branches",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "int"]]]],
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "int"]]]]]]]]]]]],
+["Sig_value", "get_exports",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow",
+["Tconstr",
+["Pdot", ["Pdot", ["Pident", "MachLoadCommand"], "Types"],
+"dyld_info_command"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pident", "t"]]]]]]]]

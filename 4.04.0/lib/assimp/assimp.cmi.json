@@ -1,650 +1,291 @@
-["module"; "Assimp"; ["Mty_signature"; ["Sig_type"; "result"; 1; ["Type_alias"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Result"]; 
-                                                                 "result"]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]; 
-                                                                 ["Tunknown"]]]]; 
-                     ["Sig_value"; "get_legal_string"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "string"]]]]; 
-                     ["Sig_value"; "get_version_major"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                     ["Sig_value"; "get_version_minor"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                     ["Sig_value"; "get_version_revision"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]]]; 
-                     ["Sig_value"; "get_compile_flags"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                     ["Sig_type"; "raw_scene"; 0; ["Type_abstract"]]; 
-                     ["Sig_value"; "import_file"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "result"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "raw_scene"]]]]]]; 
-                     ["Sig_value"; "import_memory"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Bigarray"]; 
-                                                               "Array1"]; 
-                                                               "t"]; 
-                                                               ["Tvar"; 0]; 
-                                                               ["Tvar"; 1]; 
-                                                               ["Tvar"; 2]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "result"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "raw_scene"]]]]]]]; 
-                     ["Sig_value"; "release_scene"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "raw_scene"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "unit"]]]]; 
-                     ["Sig_value"; "postprocess_scene"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "raw_scene"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]; 
-                     ["Sig_type"; "color3"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "array"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "float"]]]]]; 
-                     ["Sig_type"; "color4"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "array"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "float"]]]]]; 
-                     ["Sig_type"; "vec3"; 0; ["Type_alias"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "float"]]]]]; 
-                     ["Sig_type"; "vec4"; 0; ["Type_alias"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "float"]]]]]; 
-                     ["Sig_type"; "quat"; 0; ["Type_alias"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "float"]]]]]; 
-                     ["Sig_type"; "mat3"; 0; ["Type_alias"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "float"]]]]]; 
-                     ["Sig_type"; "mat4"; 0; ["Type_alias"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "float"]]]]]; 
-                     ["Sig_type"; "node"; 0; ["Type_record"; ["label"; 
-                                                             "node_name"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]; 
-                                             ["label"; "node_transformation"; 
-                                             ["Tconstr"; ["Pident"; "mat4"]]]; 
-                                             ["label"; "node_children"; 
-                                             ["Tconstr"; ["Pident"; "array"]; 
-                                             ["Tconstr"; ["Pident"; "node"]]]]; 
-                                             ["label"; "node_meshes"; 
-                                             ["Tconstr"; ["Pident"; "array"]; 
-                                             ["Tconstr"; ["Pident"; "int"]]]]]]; 
-                     ["Sig_type"; "anim_behaviour"; 0; ["Type_alias"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "int"]]]]; 
-                     ["Sig_value"; "anim_behaviour_default"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]; 
-                     ["Sig_value"; "anim_behaviour_constant"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                     ["Sig_value"; "anim_behaviour_linear"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                     ["Sig_value"; "anim_behaviour_repeat"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                     ["Sig_type"; "primitive_type"; 0; ["Type_alias"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "int"]]]]; 
-                     ["Sig_value"; "primitive_type_POINT"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                     ["Sig_value"; "primitive_type_LINE"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                     ["Sig_value"; "primitive_type_TRIANGLE"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                     ["Sig_value"; "primitive_type_POLYGON"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]; 
-                     ["Sig_type"; "face"; 0; ["Type_alias"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]]]; 
-                     ["Sig_type"; "anim_mesh"; 0; ["Type_record"; ["label"; 
-                                                                  "anim_mesh_vertices"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "array"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "vec3"]]]]; 
-                                                  ["label"; "anim_mesh_normals"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "array"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "vec3"]]]]; 
-                                                  ["label"; "anim_mesh_tangents"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "array"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "vec3"]]]]; 
-                                                  ["label"; "anim_mesh_bitangents"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "array"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "vec3"]]]]; 
-                                                  ["label"; "anim_mesh_colors"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "array"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "array"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "color4"]]]]]; 
-                                                  ["label"; "anim_mesh_texture_coords"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "array"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "array"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "vec3"]]]]]]]; 
-                     ["Sig_type"; "vertex_weight"; 0; ["Type_record"; 
-                                                      ["label"; "vw_id"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]; 
-                                                      ["label"; "vw_weight"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "float"]]]]]; 
-                     ["Sig_type"; "bone"; 0; ["Type_record"; ["label"; 
-                                                             "bone_name"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]; 
-                                             ["label"; "bone_weights"; 
-                                             ["Tconstr"; ["Pident"; "array"]; 
-                                             ["Tconstr"; ["Pident"; "vertex_weight"]]]]; 
-                                             ["label"; "bone_offset"; 
-                                             ["Tconstr"; ["Pident"; "mat4"]]]]]; 
-                     ["Sig_type"; "mesh"; 0; ["Type_record"; ["label"; 
-                                                             "mesh_type"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "primitive_type"]]]; 
-                                             ["label"; "mesh_vertices"; 
-                                             ["Tconstr"; ["Pident"; "array"]; 
-                                             ["Tconstr"; ["Pident"; "vec3"]]]]; 
-                                             ["label"; "mesh_normals"; 
-                                             ["Tconstr"; ["Pident"; "array"]; 
-                                             ["Tconstr"; ["Pident"; "vec3"]]]]; 
-                                             ["label"; "mesh_tangents"; 
-                                             ["Tconstr"; ["Pident"; "array"]; 
-                                             ["Tconstr"; ["Pident"; "vec3"]]]]; 
-                                             ["label"; "mesh_bitangents"; 
-                                             ["Tconstr"; ["Pident"; "array"]; 
-                                             ["Tconstr"; ["Pident"; "vec3"]]]]; 
-                                             ["label"; "mesh_colors"; 
-                                             ["Tconstr"; ["Pident"; "array"]; 
-                                             ["Tconstr"; ["Pident"; "array"]; 
-                                             ["Tconstr"; ["Pident"; "color4"]]]]]; 
-                                             ["label"; "mesh_texture_coords"; 
-                                             ["Tconstr"; ["Pident"; "array"]; 
-                                             ["Tconstr"; ["Pident"; "array"]; 
-                                             ["Tconstr"; ["Pident"; "vec3"]]]]]; 
-                                             ["label"; "mesh_uv_components"; 
-                                             ["Tconstr"; ["Pident"; "array"]; 
-                                             ["Tconstr"; ["Pident"; "int"]]]]; 
-                                             ["label"; "mesh_faces"; 
-                                             ["Tconstr"; ["Pident"; "array"]; 
-                                             ["Tconstr"; ["Pident"; "face"]]]]; 
-                                             ["label"; "mesh_bones"; 
-                                             ["Tconstr"; ["Pident"; "array"]; 
-                                             ["Tconstr"; ["Pident"; "bone"]]]]; 
-                                             ["label"; "mesh_name"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]; 
-                                             ["label"; "mesh_animations"; 
-                                             ["Tconstr"; ["Pident"; "array"]; 
-                                             ["Tconstr"; ["Pident"; "anim_mesh"]]]]]]; 
-                     ["Sig_type"; "property_type_info"; 0; ["Type_alias"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]]]; 
-                     ["Sig_value"; "pti_float"; ["Tconstr"; ["Pident"; "int"]]]; 
-                     ["Sig_value"; "pti_string"; ["Tconstr"; ["Pident"; 
-                                                             "int"]]]; 
-                     ["Sig_value"; "pti_integer"; ["Tconstr"; ["Pident"; 
-                                                              "int"]]]; 
-                     ["Sig_value"; "pti_buffer"; ["Tconstr"; ["Pident"; 
-                                                             "int"]]]; 
-                     ["Sig_type"; "texture_op"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]]; 
-                     ["Sig_value"; "texture_op_multiply"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                     ["Sig_value"; "texture_op_add"; ["Tconstr"; ["Pident"; 
-                                                                 "int"]]]; 
-                     ["Sig_value"; "texture_op_subtract"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                     ["Sig_value"; "texture_op_divide"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                     ["Sig_value"; "texture_op_smooth_add"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                     ["Sig_value"; "texture_op_signed_add"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                     ["Sig_type"; "texture_map_mode"; 0; ["Type_alias"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "int"]]]]; 
-                     ["Sig_value"; "texture_map_mode_wrap"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                     ["Sig_value"; "texture_map_mode_clamp"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]; 
-                     ["Sig_value"; "texture_map_mode_decal"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]; 
-                     ["Sig_value"; "texture_map_mode_mirror"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                     ["Sig_type"; "texture_mapping_mode"; 0; ["Type_alias"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]]; 
-                     ["Sig_value"; "texture_mapping_uv"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]]; 
-                     ["Sig_value"; "texture_mapping_sphere"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]; 
-                     ["Sig_value"; "texture_mapping_cylinder"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]]; 
-                     ["Sig_value"; "texture_mapping_box"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                     ["Sig_value"; "texture_mapping_plane"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                     ["Sig_value"; "texture_mapping_other"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                     ["Sig_type"; "texture_type"; 0; ["Type_alias"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                     ["Sig_value"; "texture_type_none"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                     ["Sig_value"; "texture_type_diffuse"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                     ["Sig_value"; "texture_type_specular"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                     ["Sig_value"; "texture_type_ambient"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                     ["Sig_value"; "texture_type_emissive"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                     ["Sig_value"; "texture_type_height"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                     ["Sig_value"; "texture_type_normals"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                     ["Sig_value"; "texture_type_shininess"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]; 
-                     ["Sig_value"; "texture_type_opacity"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                     ["Sig_value"; "texture_type_displacement"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]; 
-                     ["Sig_value"; "texture_type_lightmap"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                     ["Sig_value"; "texture_type_reflection"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                     ["Sig_value"; "texture_type_unknown"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                     ["Sig_type"; "shading_mode"; 0; ["Type_alias"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                     ["Sig_value"; "shading_mode_flat"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                     ["Sig_value"; "shading_mode_gouraud"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                     ["Sig_value"; "shading_mode_phong"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]]; 
-                     ["Sig_value"; "shading_mode_blinn"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]]; 
-                     ["Sig_value"; "shading_mode_toon"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                     ["Sig_value"; "shading_mode_oren_nayar"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                     ["Sig_value"; "shading_mode_minnaert"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                     ["Sig_value"; "shading_mode_cook_torrance"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                     ["Sig_value"; "shading_mode_no_shading"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                     ["Sig_value"; "shading_mode_fresnel"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                     ["Sig_type"; "texture_flags"; 0; ["Type_alias"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]]; 
-                     ["Sig_value"; "texture_flags_invert"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                     ["Sig_value"; "texture_flags_use_alpha"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                     ["Sig_value"; "texture_flags_ignore_alpha"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                     ["Sig_type"; "blend_mode"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]]; 
-                     ["Sig_value"; "blend_mode_default"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]]; 
-                     ["Sig_value"; "blend_mode_additive"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                     ["Sig_type"; "material_property"; 0; ["Type_record"; 
-                                                          ["label"; "prop_key"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]; 
-                                                          ["label"; "prop_semantic"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                                          ["label"; "prop_index"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                                          ["label"; "prop_type"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "property_type_info"]]]; 
-                                                          ["label"; "prop_data"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]]; 
-                     ["Sig_type"; "material"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "array"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "material_property"]]]]]; 
-                     ["Sig_type"; "key"; 1; ["Type_record"; ["label"; 
-                                                            "time"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "float"]]]; 
-                                            ["label"; "data"; ["Tpoly"; "a"]]]]; 
-                     ["Sig_type"; "node_anim"; 0; ["Type_record"; ["label"; 
-                                                                  "nanim_name"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]; 
-                                                  ["label"; "nanim_positions"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "array"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "key"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "vec3"]]]]]; 
-                                                  ["label"; "nanim_rotations"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "array"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "key"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "quat"]]]]]; 
-                                                  ["label"; "nanim_scaling"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "array"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "key"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "vec3"]]]]]]]; 
-                     ["Sig_type"; "mesh_anim"; 0; ["Type_record"; ["label"; 
-                                                                  "manim_name"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]; 
-                                                  ["label"; "manim_keys"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "array"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "key"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "int"]]]]]]]; 
-                     ["Sig_type"; "animation"; 0; ["Type_record"; ["label"; 
-                                                                  "anim_name"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]; 
-                                                  ["label"; "anim_duration"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "float"]]]; 
-                                                  ["label"; "anim_tickspersecond"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "float"]]]; 
-                                                  ["label"; "anim_channels"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "array"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "node_anim"]]]]; 
-                                                  ["label"; "anim_mesh_channels"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "array"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "mesh_anim"]]]]]]; 
-                     ["Sig_type"; "hint"; 0; ["Type_alias"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]; 
-                     ["Sig_type"; "buffer"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Bigarray"]; 
-                                                              "Array1"]; 
-                                                              "t"]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Bigarray"]; 
-                                                              "int8_unsigned_elt"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Bigarray"]; 
-                                                              "c_layout"]]]]]; 
-                     ["Sig_type"; "image"; 0; ["Type_record"; ["label"; 
-                                                              "width"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                                              ["label"; "height"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]; 
-                                              ["label"; "hint"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "hint"]]]; 
-                                              ["label"; "data"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "buffer"]]]]]; 
-                     ["Sig_type"; "texture"; 0; ["Type_variant"; ["constructor"; 
-                                                                 "Decoded"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "image"]]]]; 
-                                                ["constructor"; "Raw"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; "hint"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "buffer"]]]]]]; 
-                     ["Sig_type"; "light_source_type"; 0; ["Type_alias"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]]; 
-                     ["Sig_value"; "light_source_type_UNDEFINED"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]; 
-                     ["Sig_value"; "light_source_type_DIRECTIONAL"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                     ["Sig_value"; "light_source_type_POINT"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                     ["Sig_value"; "light_source_type_SPOT"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]; 
-                     ["Sig_type"; "light"; 0; ["Type_record"; ["label"; 
-                                                              "light_name"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]; 
-                                              ["label"; "light_source_type"; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "light_source_type"]]]; 
-                                              ["label"; "light_position"; 
-                                              ["Tconstr"; ["Pident"; "vec3"]]]; 
-                                              ["label"; "light_direction"; 
-                                              ["Tconstr"; ["Pident"; "vec3"]]]; 
-                                              ["label"; "light_attenuation_constant"; 
-                                              ["Tconstr"; ["Pident"; "float"]]]; 
-                                              ["label"; "light_attenuation_linear"; 
-                                              ["Tconstr"; ["Pident"; "float"]]]; 
-                                              ["label"; "light_attenuation_quadratic"; 
-                                              ["Tconstr"; ["Pident"; "float"]]]; 
-                                              ["label"; "light_color_diffuse"; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "color3"]]]; 
-                                              ["label"; "light_color_specular"; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "color3"]]]; 
-                                              ["label"; "light_color_ambient"; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "color3"]]]; 
-                                              ["label"; "light_angle_inner_cone"; 
-                                              ["Tconstr"; ["Pident"; "float"]]]; 
-                                              ["label"; "light_angle_outer_cone"; 
-                                              ["Tconstr"; ["Pident"; "float"]]]]]; 
-                     ["Sig_type"; "camera"; 0; ["Type_record"; ["label"; 
-                                                               "camera_name"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]]; 
-                                               ["label"; "camera_position"; 
-                                               ["Tconstr"; ["Pident"; "vec3"]]]; 
-                                               ["label"; "camera_up"; 
-                                               ["Tconstr"; ["Pident"; "vec3"]]]; 
-                                               ["label"; "camera_look_at"; 
-                                               ["Tconstr"; ["Pident"; "vec3"]]]; 
-                                               ["label"; "camera_horizontal_fov"; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "float"]]]; 
-                                               ["label"; "camera_clip_plane_near"; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "float"]]]; 
-                                               ["label"; "camera_clip_plane_far"; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "float"]]]; 
-                                               ["label"; "camera_aspect"; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "float"]]]]]; 
-                     ["Sig_type"; "scene"; 0; ["Type_record"; ["label"; 
-                                                              "scene_flags"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                                              ["label"; "scene_root"; 
-                                              ["Tconstr"; ["Pident"; "node"]]]; 
-                                              ["label"; "scene_meshes"; 
-                                              ["Tconstr"; ["Pident"; "array"]; 
-                                              ["Tconstr"; ["Pident"; "mesh"]]]]; 
-                                              ["label"; "scene_materials"; 
-                                              ["Tconstr"; ["Pident"; "array"]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "material"]]]]; 
-                                              ["label"; "scene_animations"; 
-                                              ["Tconstr"; ["Pident"; "array"]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "animation"]]]]; 
-                                              ["label"; "scene_textures"; 
-                                              ["Tconstr"; ["Pident"; "array"]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "texture"]]]]; 
-                                              ["label"; "scene_lights"; 
-                                              ["Tconstr"; ["Pident"; "array"]; 
-                                              ["Tconstr"; ["Pident"; "light"]]]]; 
-                                              ["label"; "scene_cameras"; 
-                                              ["Tconstr"; ["Pident"; "array"]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "camera"]]]]]]; 
-                     ["Sig_value"; "view_scene"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "raw_scene"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "scene"]]]]]]
+["module", "Assimp",
+["Mty_signature",
+["Sig_type", "result", 1,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Result"], "result"], ["Tpoly", "a"],
+["Tunknown"]]]],
+["Sig_value", "get_legal_string",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "get_version_major",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "get_version_minor",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "get_version_revision",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "get_compile_flags",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_type", "raw_scene", 0, ["Type_abstract"]],
+["Sig_value", "import_file",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "result"], ["Tconstr", ["Pident", "raw_scene"]]]]]],
+["Sig_value", "import_memory",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Bigarray"], "Array1"], "t"],
+["Tvar", 0], ["Tvar", 1], ["Tvar", 2]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "result"], ["Tconstr", ["Pident", "raw_scene"]]]]]]],
+["Sig_value", "release_scene",
+["Tarrow", ["Tconstr", ["Pident", "raw_scene"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "postprocess_scene",
+["Tarrow", ["Tconstr", ["Pident", "raw_scene"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_type", "color3", 0,
+["Type_alias",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]]]],
+["Sig_type", "color4", 0,
+["Type_alias",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]]]],
+["Sig_type", "vec3", 0,
+["Type_alias",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]]]],
+["Sig_type", "vec4", 0,
+["Type_alias",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]]]],
+["Sig_type", "quat", 0,
+["Type_alias",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]]]],
+["Sig_type", "mat3", 0,
+["Type_alias",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]]]],
+["Sig_type", "mat4", 0,
+["Type_alias",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]]]],
+["Sig_type", "node", 0,
+["Type_record", ["label", "node_name", ["Tconstr", ["Pident", "string"]]],
+["label", "node_transformation", ["Tconstr", ["Pident", "mat4"]]],
+["label", "node_children",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "node"]]]],
+["label", "node_meshes",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_type", "anim_behaviour", 0,
+["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "anim_behaviour_default", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "anim_behaviour_constant", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "anim_behaviour_linear", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "anim_behaviour_repeat", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "primitive_type", 0,
+["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "primitive_type_POINT", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "primitive_type_LINE", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "primitive_type_TRIANGLE", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "primitive_type_POLYGON", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "face", 0,
+["Type_alias",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "anim_mesh", 0,
+["Type_record",
+["label", "anim_mesh_vertices",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "vec3"]]]],
+["label", "anim_mesh_normals",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "vec3"]]]],
+["label", "anim_mesh_tangents",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "vec3"]]]],
+["label", "anim_mesh_bitangents",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "vec3"]]]],
+["label", "anim_mesh_colors",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "color4"]]]]],
+["label", "anim_mesh_texture_coords",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "vec3"]]]]]]],
+["Sig_type", "vertex_weight", 0,
+["Type_record", ["label", "vw_id", ["Tconstr", ["Pident", "int"]]],
+["label", "vw_weight", ["Tconstr", ["Pident", "float"]]]]],
+["Sig_type", "bone", 0,
+["Type_record", ["label", "bone_name", ["Tconstr", ["Pident", "string"]]],
+["label", "bone_weights",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "vertex_weight"]]]],
+["label", "bone_offset", ["Tconstr", ["Pident", "mat4"]]]]],
+["Sig_type", "mesh", 0,
+["Type_record",
+["label", "mesh_type", ["Tconstr", ["Pident", "primitive_type"]]],
+["label", "mesh_vertices",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "vec3"]]]],
+["label", "mesh_normals",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "vec3"]]]],
+["label", "mesh_tangents",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "vec3"]]]],
+["label", "mesh_bitangents",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "vec3"]]]],
+["label", "mesh_colors",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "color4"]]]]],
+["label", "mesh_texture_coords",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "vec3"]]]]],
+["label", "mesh_uv_components",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "int"]]]],
+["label", "mesh_faces",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "face"]]]],
+["label", "mesh_bones",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "bone"]]]],
+["label", "mesh_name", ["Tconstr", ["Pident", "string"]]],
+["label", "mesh_animations",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "anim_mesh"]]]]]],
+["Sig_type", "property_type_info", 0,
+["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "pti_float", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "pti_string", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "pti_integer", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "pti_buffer", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "texture_op", 0, ["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "texture_op_multiply", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_op_add", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_op_subtract", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_op_divide", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_op_smooth_add", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_op_signed_add", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "texture_map_mode", 0,
+["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "texture_map_mode_wrap", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_map_mode_clamp", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_map_mode_decal", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_map_mode_mirror", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "texture_mapping_mode", 0,
+["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "texture_mapping_uv", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_mapping_sphere", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_mapping_cylinder", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_mapping_box", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_mapping_plane", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_mapping_other", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "texture_type", 0,
+["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "texture_type_none", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_type_diffuse", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_type_specular", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_type_ambient", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_type_emissive", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_type_height", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_type_normals", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_type_shininess", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_type_opacity", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_type_displacement", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_type_lightmap", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_type_reflection", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_type_unknown", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "shading_mode", 0,
+["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "shading_mode_flat", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "shading_mode_gouraud", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "shading_mode_phong", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "shading_mode_blinn", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "shading_mode_toon", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "shading_mode_oren_nayar", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "shading_mode_minnaert", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "shading_mode_cook_torrance", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "shading_mode_no_shading", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "shading_mode_fresnel", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "texture_flags", 0,
+["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "texture_flags_invert", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_flags_use_alpha", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "texture_flags_ignore_alpha", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "blend_mode", 0, ["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "blend_mode_default", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "blend_mode_additive", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "material_property", 0,
+["Type_record", ["label", "prop_key", ["Tconstr", ["Pident", "string"]]],
+["label", "prop_semantic", ["Tconstr", ["Pident", "int"]]],
+["label", "prop_index", ["Tconstr", ["Pident", "int"]]],
+["label", "prop_type", ["Tconstr", ["Pident", "property_type_info"]]],
+["label", "prop_data", ["Tconstr", ["Pident", "string"]]]]],
+["Sig_type", "material", 0,
+["Type_alias",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "material_property"]]]]],
+["Sig_type", "key", 1,
+["Type_record", ["label", "time", ["Tconstr", ["Pident", "float"]]],
+["label", "data", ["Tpoly", "a"]]]],
+["Sig_type", "node_anim", 0,
+["Type_record", ["label", "nanim_name", ["Tconstr", ["Pident", "string"]]],
+["label", "nanim_positions",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "key"], ["Tconstr", ["Pident", "vec3"]]]]],
+["label", "nanim_rotations",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "key"], ["Tconstr", ["Pident", "quat"]]]]],
+["label", "nanim_scaling",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "key"], ["Tconstr", ["Pident", "vec3"]]]]]]],
+["Sig_type", "mesh_anim", 0,
+["Type_record", ["label", "manim_name", ["Tconstr", ["Pident", "string"]]],
+["label", "manim_keys",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "key"], ["Tconstr", ["Pident", "int"]]]]]]],
+["Sig_type", "animation", 0,
+["Type_record", ["label", "anim_name", ["Tconstr", ["Pident", "string"]]],
+["label", "anim_duration", ["Tconstr", ["Pident", "float"]]],
+["label", "anim_tickspersecond", ["Tconstr", ["Pident", "float"]]],
+["label", "anim_channels",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "node_anim"]]]],
+["label", "anim_mesh_channels",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "mesh_anim"]]]]]],
+["Sig_type", "hint", 0, ["Type_alias", ["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "buffer", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Bigarray"], "Array1"], "t"],
+["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "Bigarray"], "int8_unsigned_elt"]],
+["Tconstr", ["Pdot", ["Pident", "Bigarray"], "c_layout"]]]]],
+["Sig_type", "image", 0,
+["Type_record", ["label", "width", ["Tconstr", ["Pident", "int"]]],
+["label", "height", ["Tconstr", ["Pident", "int"]]],
+["label", "hint", ["Tconstr", ["Pident", "hint"]]],
+["label", "data", ["Tconstr", ["Pident", "buffer"]]]]],
+["Sig_type", "texture", 0,
+["Type_variant",
+["constructor", "Decoded", ["tuple", ["Tconstr", ["Pident", "image"]]]],
+["constructor", "Raw",
+["tuple", ["Tconstr", ["Pident", "hint"]], ["Tconstr", ["Pident", "buffer"]]]]]],
+["Sig_type", "light_source_type", 0,
+["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "light_source_type_UNDEFINED", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "light_source_type_DIRECTIONAL",
+["Tconstr", ["Pident", "int"]]],
+["Sig_value", "light_source_type_POINT", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "light_source_type_SPOT", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "light", 0,
+["Type_record", ["label", "light_name", ["Tconstr", ["Pident", "string"]]],
+["label", "light_source_type", ["Tconstr", ["Pident", "light_source_type"]]],
+["label", "light_position", ["Tconstr", ["Pident", "vec3"]]],
+["label", "light_direction", ["Tconstr", ["Pident", "vec3"]]],
+["label", "light_attenuation_constant", ["Tconstr", ["Pident", "float"]]],
+["label", "light_attenuation_linear", ["Tconstr", ["Pident", "float"]]],
+["label", "light_attenuation_quadratic", ["Tconstr", ["Pident", "float"]]],
+["label", "light_color_diffuse", ["Tconstr", ["Pident", "color3"]]],
+["label", "light_color_specular", ["Tconstr", ["Pident", "color3"]]],
+["label", "light_color_ambient", ["Tconstr", ["Pident", "color3"]]],
+["label", "light_angle_inner_cone", ["Tconstr", ["Pident", "float"]]],
+["label", "light_angle_outer_cone", ["Tconstr", ["Pident", "float"]]]]],
+["Sig_type", "camera", 0,
+["Type_record", ["label", "camera_name", ["Tconstr", ["Pident", "string"]]],
+["label", "camera_position", ["Tconstr", ["Pident", "vec3"]]],
+["label", "camera_up", ["Tconstr", ["Pident", "vec3"]]],
+["label", "camera_look_at", ["Tconstr", ["Pident", "vec3"]]],
+["label", "camera_horizontal_fov", ["Tconstr", ["Pident", "float"]]],
+["label", "camera_clip_plane_near", ["Tconstr", ["Pident", "float"]]],
+["label", "camera_clip_plane_far", ["Tconstr", ["Pident", "float"]]],
+["label", "camera_aspect", ["Tconstr", ["Pident", "float"]]]]],
+["Sig_type", "scene", 0,
+["Type_record", ["label", "scene_flags", ["Tconstr", ["Pident", "int"]]],
+["label", "scene_root", ["Tconstr", ["Pident", "node"]]],
+["label", "scene_meshes",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "mesh"]]]],
+["label", "scene_materials",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "material"]]]],
+["label", "scene_animations",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "animation"]]]],
+["label", "scene_textures",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "texture"]]]],
+["label", "scene_lights",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "light"]]]],
+["label", "scene_cameras",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "camera"]]]]]],
+["Sig_value", "view_scene",
+["Tarrow", ["Tconstr", ["Pident", "raw_scene"]],
+["Tconstr", ["Pident", "scene"]]]]]]

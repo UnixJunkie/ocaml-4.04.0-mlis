@@ -1,287 +1,136 @@
-["module"; "BatISet"; ["Mty_signature"; ["Sig_type"; "t"; 0; ["Type_alias"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "BatAvlTree"]; 
-                                                             "tree"]; 
-                                                             ["Ttuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]]]]; 
-                      ["Sig_type"; "elt"; 0; ["Type_alias"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]]; 
-                      ["Sig_value"; "empty"; ["Tconstr"; ["Pident"; "t"]]]; 
-                      ["Sig_value"; "is_empty"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bool"]]]]; 
-                      ["Sig_value"; "mem"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "int"]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "t"]]; 
-                                           ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                      ["Sig_value"; "add"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "int"]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "t"]]; 
-                                           ["Tconstr"; ["Pident"; "t"]]]]]; 
-                      ["Sig_value"; "add_range"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "t"]]; 
-                                                 ["Tconstr"; ["Pident"; "t"]]]]]]; 
-                      ["Sig_value"; "singleton"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                 ["Tconstr"; ["Pident"; "t"]]]]; 
-                      ["Sig_value"; "remove"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; "t"]]]]]; 
-                      ["Sig_value"; "remove_range"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "t"]]]]]]; 
-                      ["Sig_value"; "union"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "t"]]]]]; 
-                      ["Sig_value"; "inter"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "t"]]]]]; 
-                      ["Sig_value"; "diff"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "t"]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "t"]]; 
-                                            ["Tconstr"; ["Pident"; "t"]]]]]; 
-                      ["Sig_value"; "compl"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "t"]]]]; 
-                      ["Sig_value"; "compare"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                               ["Tconstr"; ["Pident"; "int"]]]]]; 
-                      ["Sig_value"; "equal"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                      ["Sig_value"; "ord"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "t"]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "t"]]; 
-                                           ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                "BatOrd"]; 
-                                                       "order"]]]]]; 
-                      ["Sig_value"; "subset"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                      ["Sig_value"; "from"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "int"]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "t"]]; 
-                                            ["Tconstr"; ["Pident"; "t"]]]]]; 
-                      ["Sig_value"; "after"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "t"]]]]]; 
-                      ["Sig_value"; "until"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "t"]]]]]; 
-                      ["Sig_value"; "before"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; "t"]]]]]; 
-                      ["Sig_value"; "iter"; ["Tarrow"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "t"]]; 
-                                            ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                      ["Sig_value"; "iter_range"; ["Tarrow"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "unit"]]]]]; 
-                      ["Sig_value"; "fold"; ["Tarrow"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                       ["Tarrow"; ["Tpoly"; 
-                                                                  "a"]; 
-                                                       ["Tpoly"; "a"]]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "t"]]; 
-                                            ["Tarrow"; ["Tpoly"; "a"]; 
-                                            ["Tpoly"; "a"]]]]]; ["Sig_value"; 
-                                                                "fold_range"; 
-                                                                ["Tarrow"; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "t"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]]]]; 
-                      ["Sig_value"; "for_all"; ["Tarrow"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "bool"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                               ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                      ["Sig_value"; "exists"; ["Tarrow"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "bool"]]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                      ["Sig_value"; "filter"; ["Tarrow"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "bool"]]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; "t"]]]]]; 
-                      ["Sig_value"; "partition"; ["Tarrow"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "t"]]; 
-                                                 ["Ttuple"; ["Tconstr"; 
-                                                            ["Pident"; "t"]]; 
-                                                 ["Tconstr"; ["Pident"; "t"]]]]]]; 
-                      ["Sig_value"; "cardinal"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; "int"]]]]; 
-                      ["Sig_value"; "elements"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "list"]; 
-                                                ["Tconstr"; ["Pident"; "int"]]]]]; 
-                      ["Sig_value"; "ranges"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; "list"]; 
-                                              ["Ttuple"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                              ["Tconstr"; ["Pident"; "int"]]]]]]; 
-                      ["Sig_value"; "min_elt"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                               ["Tconstr"; ["Pident"; "int"]]]]; 
-                      ["Sig_value"; "max_elt"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                               ["Tconstr"; ["Pident"; "int"]]]]; 
-                      ["Sig_value"; "choose"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; "int"]]]]; 
-                      ["Sig_value"; "enum"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "t"]]; 
-                                            ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                 "BatEnum"]; 
-                                                        "t"]; ["Ttuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]]]]; 
-                      ["Sig_value"; "of_enum"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "BatEnum"]; 
-                                                          "t"]; ["Ttuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]; 
-                                               ["Tconstr"; ["Pident"; "t"]]]]; 
-                      ["Sig_value"; "of_list"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Ttuple"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]]; 
-                                               ["Tconstr"; ["Pident"; "t"]]]]; 
-                      ["Sig_value"; "print"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "BatIO"]; 
-                                                                    "output"]; 
-                                                        ["Tvar"; 0]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]]]]
+["module", "BatISet",
+["Mty_signature",
+["Sig_type", "t", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "BatAvlTree"], "tree"],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_type", "elt", 0, ["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "empty", ["Tconstr", ["Pident", "t"]]],
+["Sig_value", "is_empty",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "mem",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "add",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "add_range",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]]],
+["Sig_value", "singleton",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "t"]]]],
+["Sig_value", "remove",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "remove_range",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]]],
+["Sig_value", "union",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "inter",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "diff",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "compl",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]],
+["Sig_value", "compare",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "equal",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "ord",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pdot", ["Pident", "BatOrd"], "order"]]]]],
+["Sig_value", "subset",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "from",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "after",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "until",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "before",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "iter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "iter_range",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "fold",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tpoly", "a"], ["Tpoly", "a"]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tpoly", "a"], ["Tpoly", "a"]]]]],
+["Sig_value", "fold_range",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tpoly", "a"], ["Tpoly", "a"]]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tpoly", "a"], ["Tpoly", "a"]]]]],
+["Sig_value", "for_all",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "exists",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "filter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "partition",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Ttuple", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]]],
+["Sig_value", "cardinal",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "elements",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "ranges",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_value", "min_elt",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "max_elt",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "choose",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "enum",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pdot", ["Pident", "BatEnum"], "t"],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_value", "of_enum",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "BatEnum"], "t"],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]],
+["Tconstr", ["Pident", "t"]]]],
+["Sig_value", "of_list",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]],
+["Tconstr", ["Pident", "t"]]]],
+["Sig_value", "print",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "BatIO"], "output"], ["Tvar", 0]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]]]]]

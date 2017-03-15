@@ -1,541 +1,200 @@
-["module"; "Dbus_message"; ["Mty_signature"; ["Sig_type"; "flag"; 0; 
-                                             ["Type_variant"; ["constructor"; 
-                                                              "Msg_flag_no_reply_expected"; 
-                                                              ["tuple"]]; 
-                                             ["constructor"; "Msg_flag_no_auto_start"; 
-                                             ["tuple"]]]]; ["Sig_type"; 
-                                                           "header"; 
-                                                           0; ["Type_variant"; 
-                                                              ["constructor"; 
-                                                              "Hdr_path"; 
-                                                              ["tuple"]]; 
-                                                              ["constructor"; 
-                                                              "Hdr_interface"; 
-                                                              ["tuple"]]; 
-                                                              ["constructor"; 
-                                                              "Hdr_member"; 
-                                                              ["tuple"]]; 
-                                                              ["constructor"; 
-                                                              "Hdr_error_name"; 
-                                                              ["tuple"]]; 
-                                                              ["constructor"; 
-                                                              "Hdr_reply_serial"; 
-                                                              ["tuple"]]; 
-                                                              ["constructor"; 
-                                                              "Hdr_destination"; 
-                                                              ["tuple"]]; 
-                                                              ["constructor"; 
-                                                              "Hdr_sender"; 
-                                                              ["tuple"]]; 
-                                                              ["constructor"; 
-                                                              "Hdr_signature"; 
-                                                              ["tuple"]]]]; 
-                           ["Sig_value"; "header_to_string"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "header"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]; 
-                           ["Sig_type"; "method_call"; 0; ["Type_record"; 
-                                                          ["label"; "method_call_flags"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "flag"]]]]; 
-                                                          ["label"; "method_call_serial"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int64"]]]; 
-                                                          ["label"; "method_call_path"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]; 
-                                                          ["label"; "method_call_member"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]; 
-                                                          ["label"; "method_call_interface"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]; 
-                                                          ["label"; "method_call_destination"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]; 
-                                                          ["label"; "method_call_sender"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]; 
-                                                          ["label"; "method_call_signature"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Dbus_type"]; 
-                                                          "t"]]]]; ["label"; 
-                                                                   "method_call_payload"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Dbus_value"]; 
-                                                                   "t"]]]]]]; 
-                           ["Sig_type"; "method_return"; 0; ["Type_record"; 
-                                                            ["label"; 
-                                                            "method_return_flags"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "flag"]]]]; 
-                                                            ["label"; 
-                                                            "method_return_serial"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "int64"]]]; 
-                                                            ["label"; 
-                                                            "method_return_reply_serial"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "int64"]]]; 
-                                                            ["label"; 
-                                                            "method_return_destination"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]; 
-                                                            ["label"; 
-                                                            "method_return_sender"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]; 
-                                                            ["label"; 
-                                                            "method_return_signature"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Dbus_type"]; 
-                                                            "t"]]]]; 
-                                                            ["label"; 
-                                                            "method_return_payload"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Dbus_value"]; 
-                                                            "t"]]]]]]; 
-                           ["Sig_type"; "error"; 0; ["Type_record"; [
-                                                                    "label"; 
-                                                                    "error_flags"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "flag"]]]]; 
-                                                    ["label"; "error_serial"; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int64"]]]; 
-                                                    ["label"; "error_name"; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "string"]]]; 
-                                                    ["label"; "error_reply_serial"; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int64"]]]; 
-                                                    ["label"; "error_destination"; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "option"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "string"]]]]; 
-                                                    ["label"; "error_sender"; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "option"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "string"]]]]; 
-                                                    ["label"; "error_signature"; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "list"]; 
-                                                    ["Tconstr"; ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Dbus_type"]; 
-                                                                "t"]]]]; 
-                                                    ["label"; "error_payload"; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "list"]; 
-                                                    ["Tconstr"; ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Dbus_value"]; 
-                                                                "t"]]]]]]; 
-                           ["Sig_type"; "signal"; 0; ["Type_record"; 
-                                                     ["label"; "signal_flags"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "list"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "flag"]]]]; 
-                                                     ["label"; "signal_serial"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "int64"]]]; 
-                                                     ["label"; "signal_path"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "string"]]]; 
-                                                     ["label"; "signal_interface"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "string"]]]; 
-                                                     ["label"; "signal_member"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "string"]]]; 
-                                                     ["label"; "signal_destination"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "option"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "string"]]]]; 
-                                                     ["label"; "signal_sender"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "option"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "string"]]]]; 
-                                                     ["label"; "signal_signature"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "list"]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Dbus_type"]; 
-                                                                 "t"]]]]; 
-                                                     ["label"; "signal_payload"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "list"]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Dbus_value"]; 
-                                                                 "t"]]]]]]; 
-                           ["Sig_type"; "msg_type"; 0; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "Msg_type_method_call"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "Msg_type_method_return"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "Msg_type_error"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "Msg_type_signal"; 
-                                                                   ["tuple"]]]]; 
-                           ["Sig_value"; "msg_type_to_string"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "msg_type"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]]]; 
-                           ["Sig_type"; "t"; 0; ["Type_variant"; ["constructor"; 
-                                                                 "Msg_method_call"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "method_call"]]]]; 
-                                                ["constructor"; "Msg_method_return"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "method_return"]]]]; 
-                                                ["constructor"; "Msg_error"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; "error"]]]]; 
-                                                ["constructor"; "Msg_signal"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "signal"]]]]]]; 
-                           ["Sig_value"; "get_type"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "t"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "msg_type"]]]]; 
-                           ["Sig_value"; "get_flags"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "flag"]]]]]; 
-                           ["Sig_value"; "get_serial"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "int64"]]]]; 
-                           ["Sig_value"; "get_destination"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "t"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]]; 
-                           ["Sig_value"; "get_sender"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "option"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "string"]]]]]; 
-                           ["Sig_value"; "get_signature"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Dbus_type"]; 
-                                                          "t"]]]]]; [
-                                                                    "Sig_value"; 
-                                                                    "get_payload"; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Dbus_value"]; 
-                                                                    "t"]]]]]; 
-                           ["Sig_value"; "get_headers"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "t"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                        ["Ttuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "header"]]; 
-                                                        ["Ttuple"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Dbus_type"]; 
-                                                                   "t"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Dbus_value"]; 
-                                                                    "t"]]]]]]]; 
-                           ["Sig_value"; "method_call"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "flag"]]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int64"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Dbus_type"]; 
-                                                                   "t"]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Dbus_value"]; 
-                                                                   "t"]]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]]]]]]]]]]; 
-                           ["Sig_value"; "method_return"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "flag"]]]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int64"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int64"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Dbus_type"]; 
-                                                          "t"]]]; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "list"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Dbus_value"]; 
-                                                                  "t"]]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]]]]]]]]; 
-                           ["Sig_value"; "error"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "option"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "flag"]]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int64"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "option"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int64"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Dbus_type"]; 
-                                                             "t"]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Dbus_value"]; 
-                                                             "t"]]]; 
-                                                  ["Tconstr"; ["Pident"; "t"]]]]]]]]]]; 
-                           ["Sig_value"; "signal"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "list"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "flag"]]]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int64"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "list"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Dbus_type"]; 
-                                                              "t"]]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "list"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Dbus_value"]; 
-                                                              "t"]]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "t"]]]]]]]]]]]; 
-                           ["Sig_value"; "pr_msg"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Format"]; 
-                                                              "formatter"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; "t"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "unit"]]]]]]]
+["module", "Dbus_message",
+["Mty_signature",
+["Sig_type", "flag", 0,
+["Type_variant", ["constructor", "Msg_flag_no_reply_expected", ["tuple"]],
+["constructor", "Msg_flag_no_auto_start", ["tuple"]]]],
+["Sig_type", "header", 0,
+["Type_variant", ["constructor", "Hdr_path", ["tuple"]],
+["constructor", "Hdr_interface", ["tuple"]],
+["constructor", "Hdr_member", ["tuple"]],
+["constructor", "Hdr_error_name", ["tuple"]],
+["constructor", "Hdr_reply_serial", ["tuple"]],
+["constructor", "Hdr_destination", ["tuple"]],
+["constructor", "Hdr_sender", ["tuple"]],
+["constructor", "Hdr_signature", ["tuple"]]]],
+["Sig_value", "header_to_string",
+["Tarrow", ["Tconstr", ["Pident", "header"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "method_call", 0,
+["Type_record",
+["label", "method_call_flags",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "flag"]]]],
+["label", "method_call_serial", ["Tconstr", ["Pident", "int64"]]],
+["label", "method_call_path", ["Tconstr", ["Pident", "string"]]],
+["label", "method_call_member", ["Tconstr", ["Pident", "string"]]],
+["label", "method_call_interface",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]],
+["label", "method_call_destination",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]],
+["label", "method_call_sender",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]],
+["label", "method_call_signature",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_type"], "t"]]]],
+["label", "method_call_payload",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_value"], "t"]]]]]],
+["Sig_type", "method_return", 0,
+["Type_record",
+["label", "method_return_flags",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "flag"]]]],
+["label", "method_return_serial", ["Tconstr", ["Pident", "int64"]]],
+["label", "method_return_reply_serial", ["Tconstr", ["Pident", "int64"]]],
+["label", "method_return_destination",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]],
+["label", "method_return_sender",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]],
+["label", "method_return_signature",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_type"], "t"]]]],
+["label", "method_return_payload",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_value"], "t"]]]]]],
+["Sig_type", "error", 0,
+["Type_record",
+["label", "error_flags",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "flag"]]]],
+["label", "error_serial", ["Tconstr", ["Pident", "int64"]]],
+["label", "error_name", ["Tconstr", ["Pident", "string"]]],
+["label", "error_reply_serial", ["Tconstr", ["Pident", "int64"]]],
+["label", "error_destination",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]],
+["label", "error_sender",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]],
+["label", "error_signature",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_type"], "t"]]]],
+["label", "error_payload",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_value"], "t"]]]]]],
+["Sig_type", "signal", 0,
+["Type_record",
+["label", "signal_flags",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "flag"]]]],
+["label", "signal_serial", ["Tconstr", ["Pident", "int64"]]],
+["label", "signal_path", ["Tconstr", ["Pident", "string"]]],
+["label", "signal_interface", ["Tconstr", ["Pident", "string"]]],
+["label", "signal_member", ["Tconstr", ["Pident", "string"]]],
+["label", "signal_destination",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]],
+["label", "signal_sender",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]],
+["label", "signal_signature",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_type"], "t"]]]],
+["label", "signal_payload",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_value"], "t"]]]]]],
+["Sig_type", "msg_type", 0,
+["Type_variant", ["constructor", "Msg_type_method_call", ["tuple"]],
+["constructor", "Msg_type_method_return", ["tuple"]],
+["constructor", "Msg_type_error", ["tuple"]],
+["constructor", "Msg_type_signal", ["tuple"]]]],
+["Sig_value", "msg_type_to_string",
+["Tarrow", ["Tconstr", ["Pident", "msg_type"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "t", 0,
+["Type_variant",
+["constructor", "Msg_method_call",
+["tuple", ["Tconstr", ["Pident", "method_call"]]]],
+["constructor", "Msg_method_return",
+["tuple", ["Tconstr", ["Pident", "method_return"]]]],
+["constructor", "Msg_error", ["tuple", ["Tconstr", ["Pident", "error"]]]],
+["constructor", "Msg_signal", ["tuple", ["Tconstr", ["Pident", "signal"]]]]]],
+["Sig_value", "get_type",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "msg_type"]]]],
+["Sig_value", "get_flags",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "flag"]]]]],
+["Sig_value", "get_serial",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int64"]]]],
+["Sig_value", "get_destination",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "get_sender",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "get_signature",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_type"], "t"]]]]],
+["Sig_value", "get_payload",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_value"], "t"]]]]],
+["Sig_value", "get_headers",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "header"]],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Dbus_type"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Dbus_value"], "t"]]]]]]],
+["Sig_value", "method_call",
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "flag"]]]],
+["Tarrow", ["Tconstr", ["Pident", "int64"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_type"], "t"]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_value"], "t"]]],
+["Tconstr", ["Pident", "t"]]]]]]]]]]],
+["Sig_value", "method_return",
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "flag"]]]],
+["Tarrow", ["Tconstr", ["Pident", "int64"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow", ["Tconstr", ["Pident", "int64"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_type"], "t"]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_value"], "t"]]],
+["Tconstr", ["Pident", "t"]]]]]]]]],
+["Sig_value", "error",
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "flag"]]]],
+["Tarrow", ["Tconstr", ["Pident", "int64"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int64"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_type"], "t"]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_value"], "t"]]],
+["Tconstr", ["Pident", "t"]]]]]]]]]],
+["Sig_value", "signal",
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "flag"]]]],
+["Tarrow", ["Tconstr", ["Pident", "int64"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_type"], "t"]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Dbus_value"], "t"]]],
+["Tconstr", ["Pident", "t"]]]]]]]]]]],
+["Sig_value", "pr_msg",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]]]]]

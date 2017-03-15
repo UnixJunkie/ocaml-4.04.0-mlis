@@ -1,203 +1,80 @@
-["module"; "Sgf"; ["Mty_signature"; ["Sig_type"; "pvalue"; 0; ["Type_variant"; 
-                                                              ["constructor"; 
-                                                              "Empty"; 
-                                                              ["tuple"]]; 
-                                                              ["constructor"; 
-                                                              "Number"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]]; 
-                                                              ["constructor"; 
-                                                              "Real"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "float"]]]]; 
-                                                              ["constructor"; 
-                                                              "Normal"; 
-                                                              ["tuple"]]; 
-                                                              ["constructor"; 
-                                                              "Emph"; 
-                                                              ["tuple"]]; 
-                                                              ["constructor"; 
-                                                              "Black"; 
-                                                              ["tuple"]]; 
-                                                              ["constructor"; 
-                                                              "White"; 
-                                                              ["tuple"]]; 
-                                                              ["constructor"; 
-                                                              "Text"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]]; 
-                                                              ["constructor"; 
-                                                              "Point"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "char"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "char"]]]]; 
-                                                              ["constructor"; 
-                                                              "Move"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Ttuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "char"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "char"]]]]]]; 
-                                                              ["constructor"; 
-                                                              "Compose"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "pvalue"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "pvalue"]]]]]]; 
-                  ["Sig_type"; "pvalues"; 0; ["Type_variant"; ["constructor"; 
-                                                              "One"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "pvalue"]]]]; 
-                                             ["constructor"; "List"; 
-                                             ["tuple"; ["Tconstr"; ["Pident"; 
-                                                                   "list"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "pvalue"]]]]]]]; 
-                  ["Sig_type"; "property"; 0; ["Type_alias"; ["Ttuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "pvalues"]]]]]; 
-                  ["Sig_type"; "node"; 0; ["Type_alias"; ["Tconstr"; 
-                                                         ["Pident"; "list"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "property"]]]]]; 
-                  ["Sig_type"; "sequence"; 0; ["Type_alias"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "node"]]]]]; 
-                  ["Sig_type"; "gametree"; 0; ["Type_variant"; ["constructor"; 
-                                                               "Node"; 
-                                                               ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "sequence"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "gametree"]]]]]; 
-                                              ["constructor"; "Leaf"; 
-                                              ["tuple"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "sequence"]]]]]]; 
-                  ["Sig_type"; "collection"; 0; ["Type_alias"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "gametree"]]]]]; 
-                  ["Sig_type"; "err"; 0; ["Type_variant"; ["constructor"; 
-                                                          "Lexing_error"; 
-                                                          ["tuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Lexing"]; 
-                                                                    "position"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]; 
-                                         ["constructor"; "Parsing_error"; 
-                                         ["tuple"; ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Lexing"]; 
-                                                               "position"]]]]]]; 
-                  ["Sig_value"; "of_string"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                             ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                  "Rresult"]; 
-                                                         "result"]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "collection"]]; 
-                                             ["Tconstr"; ["Pident"; "err"]]]]]; 
-                  ["Sig_value"; "of_channel"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Pervasives"]; 
-                                                         "in_channel"]]; 
-                                              ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                   "Rresult"]; 
-                                                          "result"]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "collection"]]; 
-                                              ["Tconstr"; ["Pident"; "err"]]]]]; 
-                  ["Sig_value"; "of_file"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "string"]]; 
-                                           ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                "Rresult"]; 
-                                                       "result"]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "collection"]]; 
-                                           ["Tconstr"; ["Pident"; "err"]]]]]; 
-                  ["Sig_value"; "pp_property"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Format"]; 
-                                                          "formatter"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "property"]]; 
-                                               ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                  ["Sig_value"; "pp_node"; ["Tarrow"; ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Format"]; 
-                                                                  "formatter"]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "node"]]; 
-                                           ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                  ["Sig_value"; "pp_sequence"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Format"]; 
-                                                          "formatter"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "sequence"]]; 
-                                               ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                  ["Sig_value"; "pp_gametree"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Format"]; 
-                                                          "formatter"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "gametree"]]; 
-                                               ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                  ["Sig_value"; "pp_collection"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Format"]; 
-                                                            "formatter"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "collection"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]]]]
+["module", "Sgf",
+["Mty_signature",
+["Sig_type", "pvalue", 0,
+["Type_variant", ["constructor", "Empty", ["tuple"]],
+["constructor", "Number", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Real", ["tuple", ["Tconstr", ["Pident", "float"]]]],
+["constructor", "Normal", ["tuple"]], ["constructor", "Emph", ["tuple"]],
+["constructor", "Black", ["tuple"]], ["constructor", "White", ["tuple"]],
+["constructor", "Text", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Point",
+["tuple", ["Tconstr", ["Pident", "char"]], ["Tconstr", ["Pident", "char"]]]],
+["constructor", "Move",
+["tuple",
+["Tconstr", ["Pident", "option"],
+["Ttuple", ["Tconstr", ["Pident", "char"]], ["Tconstr", ["Pident", "char"]]]]]],
+["constructor", "Compose",
+["tuple", ["Tconstr", ["Pident", "pvalue"]],
+["Tconstr", ["Pident", "pvalue"]]]]]],
+["Sig_type", "pvalues", 0,
+["Type_variant",
+["constructor", "One", ["tuple", ["Tconstr", ["Pident", "pvalue"]]]],
+["constructor", "List",
+["tuple", ["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "pvalue"]]]]]]],
+["Sig_type", "property", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "pvalues"]]]]],
+["Sig_type", "node", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "property"]]]]],
+["Sig_type", "sequence", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "node"]]]]],
+["Sig_type", "gametree", 0,
+["Type_variant",
+["constructor", "Node",
+["tuple", ["Tconstr", ["Pident", "sequence"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "gametree"]]]]],
+["constructor", "Leaf", ["tuple", ["Tconstr", ["Pident", "sequence"]]]]]],
+["Sig_type", "collection", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "gametree"]]]]],
+["Sig_type", "err", 0,
+["Type_variant",
+["constructor", "Lexing_error",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Lexing"], "position"]],
+["Tconstr", ["Pident", "string"]]]],
+["constructor", "Parsing_error",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Lexing"], "position"]]]]]],
+["Sig_value", "of_string",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Rresult"], "result"],
+["Tconstr", ["Pident", "collection"]], ["Tconstr", ["Pident", "err"]]]]],
+["Sig_value", "of_channel",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pervasives"], "in_channel"]],
+["Tconstr", ["Pdot", ["Pident", "Rresult"], "result"],
+["Tconstr", ["Pident", "collection"]], ["Tconstr", ["Pident", "err"]]]]],
+["Sig_value", "of_file",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Rresult"], "result"],
+["Tconstr", ["Pident", "collection"]], ["Tconstr", ["Pident", "err"]]]]],
+["Sig_value", "pp_property",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pident", "property"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "pp_node",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pident", "node"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "pp_sequence",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pident", "sequence"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "pp_gametree",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pident", "gametree"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "pp_collection",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pident", "collection"]],
+["Tconstr", ["Pident", "unit"]]]]]]]

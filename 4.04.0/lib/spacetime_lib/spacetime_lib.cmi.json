@@ -1,233 +1,88 @@
-["module"; "Spacetime_lib"; ["Mty_signature"; ["Sig_module"; "Position"; 
-                                              ["Mty_signature"; ["Sig_type"; 
-                                                                "t"; 
-                                                                0; ["Type_abstract"]]; 
-                                              ["Sig_value"; "filename"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "string"]]]]; 
-                                              ["Sig_value"; "line_number"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; "int"]]]]; 
-                                              ["Sig_value"; "start_char"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; "int"]]]]; 
-                                              ["Sig_value"; "end_char"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; "int"]]]]]]; 
-                            ["Sig_module"; "Location"; ["Mty_signature"; 
-                                                       ["Sig_type"; "t"; 
-                                                       0; ["Type_abstract"]]; 
-                                                       ["Sig_value"; 
-                                                       "address"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Int64"]; 
-                                                                  "t"]]]]; 
-                                                       ["Sig_value"; 
-                                                       "symbol"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]]]; 
-                                                       ["Sig_value"; 
-                                                       "position"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "t"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Position"]; 
-                                                                   "t"]]]]]; 
-                                                       ["Sig_value"; 
-                                                       "foreign"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]]]]]; 
-                            ["Sig_module"; "Backtrace"; ["Mty_signature"; 
-                                                        ["Sig_type"; 
-                                                        "t"; 0; ["Type_alias"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Location"]; 
-                                                                "t"]]]]]]]; 
-                            ["Sig_module"; "Entry"; ["Mty_signature"; 
-                                                    ["Sig_type"; "t"; 
-                                                    0; ["Type_abstract"]]; 
-                                                    ["Sig_value"; "backtrace"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Backtrace"]; 
-                                                                "t"]]]]; 
-                                                    ["Sig_value"; "blocks"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]; 
-                                                    ["Sig_value"; "words"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]; 
-                                                    ["Sig_value"; "allocations"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]]]; 
-                            ["Sig_module"; "Stats"; ["Mty_signature"; 
-                                                    ["Sig_type"; "t"; 
-                                                    0; ["Type_abstract"]]; 
-                                                    ["Sig_value"; "minor_words"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]; 
-                                                    ["Sig_value"; "promoted_words"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]; 
-                                                    ["Sig_value"; "major_words"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]; 
-                                                    ["Sig_value"; "minor_collections"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]; 
-                                                    ["Sig_value"; "major_collections"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]; 
-                                                    ["Sig_value"; "heap_words"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]; 
-                                                    ["Sig_value"; "heap_chunks"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]; 
-                                                    ["Sig_value"; "compactions"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]; 
-                                                    ["Sig_value"; "top_heap_words"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]; 
-                                                    ["Sig_value"; "words_scanned"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]; 
-                                                    ["Sig_value"; "words_scanned_with_profinfo"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]]]; 
-                            ["Sig_module"; "Snapshot"; ["Mty_signature"; 
-                                                       ["Sig_type"; "t"; 
-                                                       0; ["Type_abstract"]]; 
-                                                       ["Sig_value"; 
-                                                       "time"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "float"]]]]; 
-                                                       ["Sig_value"; 
-                                                       "stats"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "t"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Stats"]; 
-                                                                "t"]]]]; 
-                                                       ["Sig_value"; 
-                                                       "entries"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "list"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Entry"]; 
-                                                                  "t"]]]]]]]; 
-                            ["Sig_module"; "Series"; ["Mty_signature"; 
-                                                     ["Sig_type"; "t"; 
-                                                     0; ["Type_alias"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Snapshot"]; 
-                                                                    "t"]]]]]; 
-                                                     ["Sig_value"; "create"; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "t"]]]]]]]]]
+["module", "Spacetime_lib",
+["Mty_signature",
+["Sig_module", "Position",
+["Mty_signature", ["Sig_type", "t", 0, ["Type_abstract"]],
+["Sig_value", "filename",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "line_number",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "start_char",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "end_char",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_module", "Location",
+["Mty_signature", ["Sig_type", "t", 0, ["Type_abstract"]],
+["Sig_value", "address",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pdot", ["Pident", "Int64"], "t"]]]],
+["Sig_value", "symbol",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "position",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Position"], "t"]]]]],
+["Sig_value", "foreign",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]]]]]],
+["Sig_module", "Backtrace",
+["Mty_signature",
+["Sig_type", "t", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Location"], "t"]]]]]]],
+["Sig_module", "Entry",
+["Mty_signature", ["Sig_type", "t", 0, ["Type_abstract"]],
+["Sig_value", "backtrace",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pdot", ["Pident", "Backtrace"], "t"]]]],
+["Sig_value", "blocks",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "words",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "allocations",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_module", "Stats",
+["Mty_signature", ["Sig_type", "t", 0, ["Type_abstract"]],
+["Sig_value", "minor_words",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "promoted_words",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "major_words",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "minor_collections",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "major_collections",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "heap_words",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "heap_chunks",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "compactions",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "top_heap_words",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "words_scanned",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "words_scanned_with_profinfo",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_module", "Snapshot",
+["Mty_signature", ["Sig_type", "t", 0, ["Type_abstract"]],
+["Sig_value", "time",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "float"]]]],
+["Sig_value", "stats",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pdot", ["Pident", "Stats"], "t"]]]],
+["Sig_value", "entries",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Entry"], "t"]]]]]]],
+["Sig_module", "Series",
+["Mty_signature",
+["Sig_type", "t", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Snapshot"], "t"]]]]],
+["Sig_value", "create",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "t"]]]]]]]]]

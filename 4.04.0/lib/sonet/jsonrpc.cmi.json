@@ -1,249 +1,97 @@
-["module"; "Jsonrpc"; ["Mty_signature"; ["Sig_value"; "code_error_parse"; 
-                                        ["Tconstr"; ["Pident"; "int"]]]; 
-                      ["Sig_value"; "code_error_invalid_req"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                      ["Sig_value"; "code_error_not_found"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                      ["Sig_value"; "code_error_invalid_params"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                      ["Sig_value"; "code_error_internal_error"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                      ["Sig_type"; "req_error"; 0; ["Type_variant"; [
-                                                                    "constructor"; 
-                                                                    "Request_json_conv_error"; 
-                                                                    [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Json_conv"]; 
-                                                                    "error"]]]]; 
-                                                   ["constructor"; "Request_invalid_params"; 
-                                                   ["tuple"]]]]; ["Sig_value"; 
-                                                                 "string_of_req_error"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "req_error"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]]; 
-                      ["Sig_type"; "resp_error"; 0; ["Type_variant"; 
-                                                    ["constructor"; "Response_json_conv_error"; 
-                                                    ["tuple"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Json_conv"]; 
-                                                              "error"]]]]; 
-                                                    ["constructor"; "Response_no_result_or_error"; 
-                                                    ["tuple"]]; ["constructor"; 
-                                                                "Response_both_result_and_error"; 
-                                                                ["tuple"]]]]; 
-                      ["Sig_value"; "string_of_resp_error"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "resp_error"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]; 
-                      ["Sig_unknown"]; ["Sig_unknown"]; ["Sig_unknown"]; 
-                      ["Sig_unknown"]; ["Sig_type"; "rpc_request"; 0; 
-                                       ["Type_record"; ["label"; "request_id"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "option"]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Json"]; 
-                                                                   "t"]]]]; 
-                                       ["label"; "method_name"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]]; 
-                                       ["label"; "params"; ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Json"]; 
-                                                           "t"]]]]]; 
-                      ["Sig_type"; "rpc_error"; 0; ["Type_alias"; ["Ttuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "option"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Json"]; 
-                                                                  "t"]]]]]]; 
-                      ["Sig_type"; "rpc_response_payload"; 0; ["Type_variant"; 
-                                                              ["constructor"; 
-                                                              "Result"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Json"]; 
-                                                              "t"]]]]; 
-                                                              ["constructor"; 
-                                                              "Error"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "rpc_error"]]]]]]; 
-                      ["Sig_type"; "rpc_response"; 0; ["Type_record"; 
-                                                      ["label"; "response_id"; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Json"]; 
-                                                                  "t"]]]; 
-                                                      ["label"; "response"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "rpc_response_payload"]]]]]; 
-                      ["Sig_value"; "response_make_error"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Json"]; 
-                                                           "t"]]; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "option"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Json"]; 
-                                                                  "t"]]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "rpc_response"]]]]]]]; 
-                      ["Sig_value"; "response_make_success"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Json"]; 
-                                                             "t"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Json"]; 
-                                                                    "t"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "rpc_response"]]]]]; 
-                      ["Sig_value"; "request_of_json"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Json"]; 
-                                                                  "t"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "rpc_request"]]]]; 
-                      ["Sig_value"; "request_to_json"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "rpc_request"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Json"]; 
-                                                                   "t"]]]]; 
-                      ["Sig_value"; "response_of_json"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Json"]; 
-                                                                   "t"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "rpc_response"]]]]; 
-                      ["Sig_value"; "response_to_json"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "rpc_response"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Json"]; 
-                                                                    "t"]]]]; 
-                      ["Sig_value"; "request_of_string"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "rpc_request"]]]]; 
-                      ["Sig_value"; "request_to_string"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "rpc_request"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "string"]]]]; 
-                      ["Sig_value"; "response_of_string"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "rpc_response"]]]]; 
-                      ["Sig_value"; "response_to_string"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "rpc_response"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]; 
-                      ["Sig_type"; "rpc_type"; 0; ["Type_variant"; ["constructor"; 
-                                                                   "Non_JSONRPC"; 
-                                                                   ["tuple"]]; 
-                                                  ["constructor"; "Request"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Json"]; 
-                                                            "t"]]; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "rpc_request"]]]]; 
-                                                  ["constructor"; "Notification"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "rpc_request"]]]]; 
-                                                  ["constructor"; "Response"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "rpc_response"]]]]]]; 
-                      ["Sig_value"; "rpc_type_of_json"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Json"]; 
-                                                                   "t"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "rpc_type"]]]]; 
-                      ["Sig_value"; "is_jsonrpc_value"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Json"]; 
-                                                                   "t"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "bool"]]]]]]
+["module", "Jsonrpc",
+["Mty_signature",
+["Sig_value", "code_error_parse", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "code_error_invalid_req", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "code_error_not_found", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "code_error_invalid_params", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "code_error_internal_error", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "req_error", 0,
+["Type_variant",
+["constructor", "Request_json_conv_error",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Json_conv"], "error"]]]],
+["constructor", "Request_invalid_params", ["tuple"]]]],
+["Sig_value", "string_of_req_error",
+["Tarrow", ["Tconstr", ["Pident", "req_error"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "resp_error", 0,
+["Type_variant",
+["constructor", "Response_json_conv_error",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Json_conv"], "error"]]]],
+["constructor", "Response_no_result_or_error", ["tuple"]],
+["constructor", "Response_both_result_and_error", ["tuple"]]]],
+["Sig_value", "string_of_resp_error",
+["Tarrow", ["Tconstr", ["Pident", "resp_error"]],
+["Tconstr", ["Pident", "string"]]]], ["Sig_unknown"], ["Sig_unknown"],
+["Sig_unknown"], ["Sig_unknown"],
+["Sig_type", "rpc_request", 0,
+["Type_record",
+["label", "request_id",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Json"], "t"]]]],
+["label", "method_name", ["Tconstr", ["Pident", "string"]]],
+["label", "params", ["Tconstr", ["Pdot", ["Pident", "Json"], "t"]]]]],
+["Sig_type", "rpc_error", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Json"], "t"]]]]]],
+["Sig_type", "rpc_response_payload", 0,
+["Type_variant",
+["constructor", "Result",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Json"], "t"]]]],
+["constructor", "Error", ["tuple", ["Tconstr", ["Pident", "rpc_error"]]]]]],
+["Sig_type", "rpc_response", 0,
+["Type_record",
+["label", "response_id", ["Tconstr", ["Pdot", ["Pident", "Json"], "t"]]],
+["label", "response", ["Tconstr", ["Pident", "rpc_response_payload"]]]]],
+["Sig_value", "response_make_error",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Json"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Json"], "t"]]],
+["Tconstr", ["Pident", "rpc_response"]]]]]]],
+["Sig_value", "response_make_success",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Json"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Json"], "t"]],
+["Tconstr", ["Pident", "rpc_response"]]]]],
+["Sig_value", "request_of_json",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Json"], "t"]],
+["Tconstr", ["Pident", "rpc_request"]]]],
+["Sig_value", "request_to_json",
+["Tarrow", ["Tconstr", ["Pident", "rpc_request"]],
+["Tconstr", ["Pdot", ["Pident", "Json"], "t"]]]],
+["Sig_value", "response_of_json",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Json"], "t"]],
+["Tconstr", ["Pident", "rpc_response"]]]],
+["Sig_value", "response_to_json",
+["Tarrow", ["Tconstr", ["Pident", "rpc_response"]],
+["Tconstr", ["Pdot", ["Pident", "Json"], "t"]]]],
+["Sig_value", "request_of_string",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "rpc_request"]]]],
+["Sig_value", "request_to_string",
+["Tarrow", ["Tconstr", ["Pident", "rpc_request"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "response_of_string",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "rpc_response"]]]],
+["Sig_value", "response_to_string",
+["Tarrow", ["Tconstr", ["Pident", "rpc_response"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "rpc_type", 0,
+["Type_variant", ["constructor", "Non_JSONRPC", ["tuple"]],
+["constructor", "Request",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Json"], "t"]],
+["Tconstr", ["Pident", "rpc_request"]]]],
+["constructor", "Notification",
+["tuple", ["Tconstr", ["Pident", "rpc_request"]]]],
+["constructor", "Response",
+["tuple", ["Tconstr", ["Pident", "rpc_response"]]]]]],
+["Sig_value", "rpc_type_of_json",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Json"], "t"]],
+["Tconstr", ["Pident", "rpc_type"]]]],
+["Sig_value", "is_jsonrpc_value",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Json"], "t"]],
+["Tconstr", ["Pident", "bool"]]]]]]

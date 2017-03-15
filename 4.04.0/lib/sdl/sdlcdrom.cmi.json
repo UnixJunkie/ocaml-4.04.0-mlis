@@ -1,149 +1,67 @@
-["module"; "Sdlcdrom"; ["Mty_signature"; ["Sig_unknown"]; ["Sig_unknown"]; 
-                       ["Sig_type"; "cdrom_drive"; 0; ["Type_abstract"]]; 
-                       ["Sig_type"; "cdrom_drive_status"; 0; ["Type_variant"; 
-                                                             ["constructor"; 
-                                                             "CD_TRAYEMPTY"; 
-                                                             ["tuple"]]; 
-                                                             ["constructor"; 
-                                                             "CD_STOPPED"; 
-                                                             ["tuple"]]; 
-                                                             ["constructor"; 
-                                                             "CD_PLAYING"; 
-                                                             ["tuple"]]; 
-                                                             ["constructor"; 
-                                                             "CD_PAUSED"; 
-                                                             ["tuple"]]]]; 
-                       ["Sig_type"; "track_type"; 0; ["Type_variant"; 
-                                                     ["constructor"; 
-                                                     "TRACK_AUDIO"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "TRACK_DATA"; ["tuple"]]]]; 
-                       ["Sig_type"; "track"; 0; ["Type_record"; ["label"; 
-                                                                "id"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]; 
-                                                ["label"; "kind"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "track_type"]]]; 
-                                                ["label"; "length"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                ["label"; "offset"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                       ["Sig_type"; "cdrom_info"; 0; ["Type_record"; 
-                                                     ["label"; "num_tracks"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "int"]]]; 
-                                                     ["label"; "curr_track"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "int"]]]; 
-                                                     ["label"; "curr_frame"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "int"]]]; 
-                                                     ["label"; "tracks"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "array"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "track"]]]]]]; 
-                       ["Sig_value"; "get_num_drives"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "int"]]]]; 
-                       ["Sig_value"; "drive_name"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]]; 
-                       ["Sig_value"; "cd_open"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "cdrom_drive"]]]]; 
-                       ["Sig_value"; "cd_close"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "cdrom_drive"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]; 
-                       ["Sig_value"; "cd_status"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "cdrom_drive"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "cdrom_drive_status"]]]]; 
-                       ["Sig_value"; "cd_info"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "cdrom_drive"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "cdrom_info"]]]]; 
-                       ["Sig_value"; "msf_of_frames"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                      ["Ttuple"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]]]; 
-                       ["Sig_value"; "frames_of_msf"; ["Tarrow"; ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]]; 
-                       ["Sig_value"; "cd_play_tracks"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "cdrom_drive"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]]]]]; 
-                       ["Sig_value"; "cd_play_track"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "cdrom_drive"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "track"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]]; 
-                       ["Sig_value"; "cd_pause"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "cdrom_drive"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]; 
-                       ["Sig_value"; "cd_resume"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "cdrom_drive"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "unit"]]]]; 
-                       ["Sig_value"; "cd_stop"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "cdrom_drive"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "unit"]]]]; 
-                       ["Sig_value"; "cd_eject"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "cdrom_drive"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]]]
+["module", "Sdlcdrom",
+["Mty_signature", ["Sig_unknown"], ["Sig_unknown"],
+["Sig_type", "cdrom_drive", 0, ["Type_abstract"]],
+["Sig_type", "cdrom_drive_status", 0,
+["Type_variant", ["constructor", "CD_TRAYEMPTY", ["tuple"]],
+["constructor", "CD_STOPPED", ["tuple"]],
+["constructor", "CD_PLAYING", ["tuple"]],
+["constructor", "CD_PAUSED", ["tuple"]]]],
+["Sig_type", "track_type", 0,
+["Type_variant", ["constructor", "TRACK_AUDIO", ["tuple"]],
+["constructor", "TRACK_DATA", ["tuple"]]]],
+["Sig_type", "track", 0,
+["Type_record", ["label", "id", ["Tconstr", ["Pident", "int"]]],
+["label", "kind", ["Tconstr", ["Pident", "track_type"]]],
+["label", "length", ["Tconstr", ["Pident", "int"]]],
+["label", "offset", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "cdrom_info", 0,
+["Type_record", ["label", "num_tracks", ["Tconstr", ["Pident", "int"]]],
+["label", "curr_track", ["Tconstr", ["Pident", "int"]]],
+["label", "curr_frame", ["Tconstr", ["Pident", "int"]]],
+["label", "tracks",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "track"]]]]]],
+["Sig_value", "get_num_drives",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "drive_name",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "cd_open",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "cdrom_drive"]]]],
+["Sig_value", "cd_close",
+["Tarrow", ["Tconstr", ["Pident", "cdrom_drive"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "cd_status",
+["Tarrow", ["Tconstr", ["Pident", "cdrom_drive"]],
+["Tconstr", ["Pident", "cdrom_drive_status"]]]],
+["Sig_value", "cd_info",
+["Tarrow", ["Tconstr", ["Pident", "cdrom_drive"]],
+["Tconstr", ["Pident", "cdrom_info"]]]],
+["Sig_value", "msf_of_frames",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "frames_of_msf",
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "int"]]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "cd_play_tracks",
+["Tarrow", ["Tconstr", ["Pident", "cdrom_drive"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]]]],
+["Sig_value", "cd_play_track",
+["Tarrow", ["Tconstr", ["Pident", "cdrom_drive"]],
+["Tarrow", ["Tconstr", ["Pident", "track"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "cd_pause",
+["Tarrow", ["Tconstr", ["Pident", "cdrom_drive"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "cd_resume",
+["Tarrow", ["Tconstr", ["Pident", "cdrom_drive"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "cd_stop",
+["Tarrow", ["Tconstr", ["Pident", "cdrom_drive"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "cd_eject",
+["Tarrow", ["Tconstr", ["Pident", "cdrom_drive"]],
+["Tconstr", ["Pident", "unit"]]]]]]

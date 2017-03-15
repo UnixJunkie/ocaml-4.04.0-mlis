@@ -1,106 +1,39 @@
-["module"; "Profile_ltac"; ["Mty_signature"; ["Sig_value"; "do_profile"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                        ["Ttuple"; ["Tpoly"; 
-                                                                   "a"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Tacexpr"]; 
-                                                                    "ltac_call_kind"]]]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Proofview"]; 
-                                                                    "tactic"]; 
-                                                        ["Tpoly"; "b"]]; 
-                                             ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                  "Proofview"]; 
-                                                         "tactic"]; [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]]]]; 
-                           ["Sig_value"; "set_profiling"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "bool"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]]]; 
-                           ["Sig_value"; "print_results"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "float"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]]]; 
-                           ["Sig_value"; "print_results_tactic"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]; 
-                           ["Sig_value"; "reset_profile"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]]]; 
-                           ["Sig_value"; "do_print_results_at_close"; 
-                           ["Tarrow"; ["Tconstr"; ["Pident"; "unit"]]; 
-                           ["Tconstr"; ["Pident"; "unit"]]]]; ["Sig_type"; 
-                                                              "treenode"; 
-                                                              0; ["Type_record"; 
-                                                                 ["label"; 
-                                                                 "name"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "CString"]; 
-                                                                 "Map"]; 
-                                                                 "key"]]]; 
-                                                                 ["label"; 
-                                                                 "total"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "float"]]]; 
-                                                                 ["label"; 
-                                                                 "local"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "float"]]]; 
-                                                                 ["label"; 
-                                                                 "ncalls"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                                                 ["label"; 
-                                                                 "max_total"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "float"]]]; 
-                                                                 ["label"; 
-                                                                 "children"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "CString"]; 
-                                                                 "Map"]; 
-                                                                 "t"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "treenode"]]]]]]; 
-                           ["Sig_value"; "get_local_profiling_results"; 
-                           ["Tarrow"; ["Tconstr"; ["Pident"; "unit"]]; 
-                           ["Tconstr"; ["Pident"; "treenode"]]]]; ["Sig_value"; 
-                                                                  "feedback_results"; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "treenode"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]]]
+["module", "Profile_ltac",
+["Mty_signature",
+["Sig_value", "do_profile",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tpoly", "a"],
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "ltac_call_kind"]]]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Proofview"], "tactic"], ["Tpoly", "b"]],
+["Tconstr", ["Pdot", ["Pident", "Proofview"], "tactic"], ["Tpoly", "b"]]]]]],
+["Sig_value", "set_profiling",
+["Tarrow", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "print_results",
+["Tarrow", ["Tconstr", ["Pident", "float"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "print_results_tactic",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "reset_profile",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "do_print_results_at_close",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_type", "treenode", 0,
+["Type_record",
+["label", "name",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "CString"], "Map"], "key"]]],
+["label", "total", ["Tconstr", ["Pident", "float"]]],
+["label", "local", ["Tconstr", ["Pident", "float"]]],
+["label", "ncalls", ["Tconstr", ["Pident", "int"]]],
+["label", "max_total", ["Tconstr", ["Pident", "float"]]],
+["label", "children",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "CString"], "Map"], "t"],
+["Tconstr", ["Pident", "treenode"]]]]]],
+["Sig_value", "get_local_profiling_results",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "treenode"]]]],
+["Sig_value", "feedback_results",
+["Tarrow", ["Tconstr", ["Pident", "treenode"]],
+["Tconstr", ["Pident", "unit"]]]]]]

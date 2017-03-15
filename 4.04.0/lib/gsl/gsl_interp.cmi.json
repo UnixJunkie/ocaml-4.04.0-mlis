@@ -1,239 +1,103 @@
-["module"; "Gsl_interp"; ["Mty_signature"; ["Sig_type"; "t"; 0; ["Type_abstract"]]; 
-                         ["Sig_type"; "accel"; 0; ["Type_abstract"]]; 
-                         ["Sig_type"; "interp_type"; 0; ["Type_variant"; 
-                                                        ["constructor"; 
-                                                        "LINEAR"; ["tuple"]]; 
-                                                        ["constructor"; 
-                                                        "POLYNOMIAL"; 
-                                                        ["tuple"]]; [
-                                                                    "constructor"; 
-                                                                    "CSPLINE"; 
-                                                                    ["tuple"]]; 
-                                                        ["constructor"; 
-                                                        "CSPLINE_PERIODIC"; 
-                                                        ["tuple"]]; [
-                                                                    "constructor"; 
-                                                                    "AKIMA"; 
-                                                                    ["tuple"]]; 
-                                                        ["constructor"; 
-                                                        "AKIMA_PERIODIC"; 
-                                                        ["tuple"]]]]; 
-                         ["Sig_value"; "make"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "interp_type"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                               ["Tconstr"; ["Pident"; "t"]]]]]; 
-                         ["Sig_value"; "init"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "array"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "float"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "array"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "float"]]]; 
-                                               ["Tconstr"; ["Pident"; "unit"]]]]]]; 
-                         ["Sig_value"; "name"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "string"]]]]; 
-                         ["Sig_value"; "min_size"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; "t"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int"]]]]; 
-                         ["Sig_value"; "make_accel"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "accel"]]]]; 
-                         ["Sig_value"; "i_eval"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "t"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "float"]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "float"]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "float"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "accel"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "float"]]]]]]]]; 
-                         ["Sig_value"; "i_eval_deriv"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "array"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "float"]]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "array"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "float"]]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "float"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "accel"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "float"]]]]]]]]; 
-                         ["Sig_value"; "i_eval_deriv2"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "t"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "array"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "float"]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "array"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "float"]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "float"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "accel"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "float"]]]]]]]]; 
-                         ["Sig_value"; "i_eval_integ"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "array"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "float"]]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "array"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "float"]]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "float"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "float"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "accel"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "float"]]]]]]]]]; 
-                         ["Sig_type"; "interp"; 0; ["Type_record"; ["label"; 
-                                                                   "interp"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "t"]]]; 
-                                                   ["label"; "accel"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "accel"]]]; 
-                                                   ["label"; "xa"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "array"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "float"]]]]; 
-                                                   ["label"; "ya"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "array"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "float"]]]]; 
-                                                   ["label"; "size"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int"]]]; 
-                                                   ["label"; "i_type"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "interp_type"]]]]]; 
-                         ["Sig_value"; "make_interp"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "interp_type"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "array"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "float"]]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "array"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "float"]]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "interp"]]]]]]; 
-                         ["Sig_value"; "eval"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "interp"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "float"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "float"]]]]]; 
-                         ["Sig_value"; "eval_array"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "interp"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "array"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "float"]]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "array"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "float"]]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]]]; 
-                         ["Sig_value"; "eval_deriv"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "interp"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "float"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "float"]]]]]; 
-                         ["Sig_value"; "eval_deriv2"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "interp"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "float"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "float"]]]]]; 
-                         ["Sig_value"; "eval_integ"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "interp"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "float"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "float"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "float"]]]]]]]]
+["module", "Gsl_interp",
+["Mty_signature", ["Sig_type", "t", 0, ["Type_abstract"]],
+["Sig_type", "accel", 0, ["Type_abstract"]],
+["Sig_type", "interp_type", 0,
+["Type_variant", ["constructor", "LINEAR", ["tuple"]],
+["constructor", "POLYNOMIAL", ["tuple"]],
+["constructor", "CSPLINE", ["tuple"]],
+["constructor", "CSPLINE_PERIODIC", ["tuple"]],
+["constructor", "AKIMA", ["tuple"]],
+["constructor", "AKIMA_PERIODIC", ["tuple"]]]],
+["Sig_value", "make",
+["Tarrow", ["Tconstr", ["Pident", "interp_type"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "init",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "name",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "min_size",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "make_accel",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "accel"]]]],
+["Sig_value", "i_eval",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]],
+["Tarrow", ["Tconstr", ["Pident", "float"]],
+["Tarrow", ["Tconstr", ["Pident", "accel"]],
+["Tconstr", ["Pident", "float"]]]]]]]],
+["Sig_value", "i_eval_deriv",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]],
+["Tarrow", ["Tconstr", ["Pident", "float"]],
+["Tarrow", ["Tconstr", ["Pident", "accel"]],
+["Tconstr", ["Pident", "float"]]]]]]]],
+["Sig_value", "i_eval_deriv2",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]],
+["Tarrow", ["Tconstr", ["Pident", "float"]],
+["Tarrow", ["Tconstr", ["Pident", "accel"]],
+["Tconstr", ["Pident", "float"]]]]]]]],
+["Sig_value", "i_eval_integ",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]],
+["Tarrow", ["Tconstr", ["Pident", "float"]],
+["Tarrow", ["Tconstr", ["Pident", "float"]],
+["Tarrow", ["Tconstr", ["Pident", "accel"]],
+["Tconstr", ["Pident", "float"]]]]]]]]],
+["Sig_type", "interp", 0,
+["Type_record", ["label", "interp", ["Tconstr", ["Pident", "t"]]],
+["label", "accel", ["Tconstr", ["Pident", "accel"]]],
+["label", "xa",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]]],
+["label", "ya",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]]],
+["label", "size", ["Tconstr", ["Pident", "int"]]],
+["label", "i_type", ["Tconstr", ["Pident", "interp_type"]]]]],
+["Sig_value", "make_interp",
+["Tarrow", ["Tconstr", ["Pident", "interp_type"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]],
+["Tconstr", ["Pident", "interp"]]]]]],
+["Sig_value", "eval",
+["Tarrow", ["Tconstr", ["Pident", "interp"]],
+["Tarrow", ["Tconstr", ["Pident", "float"]],
+["Tconstr", ["Pident", "float"]]]]],
+["Sig_value", "eval_array",
+["Tarrow", ["Tconstr", ["Pident", "interp"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "float"]]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "eval_deriv",
+["Tarrow", ["Tconstr", ["Pident", "interp"]],
+["Tarrow", ["Tconstr", ["Pident", "float"]],
+["Tconstr", ["Pident", "float"]]]]],
+["Sig_value", "eval_deriv2",
+["Tarrow", ["Tconstr", ["Pident", "interp"]],
+["Tarrow", ["Tconstr", ["Pident", "float"]],
+["Tconstr", ["Pident", "float"]]]]],
+["Sig_value", "eval_integ",
+["Tarrow", ["Tconstr", ["Pident", "interp"]],
+["Tarrow", ["Tconstr", ["Pident", "float"]],
+["Tarrow", ["Tconstr", ["Pident", "float"]],
+["Tconstr", ["Pident", "float"]]]]]]]]

@@ -1,736 +1,373 @@
-["module"; "ScmTypes"; ["Mty_signature"; ["Sig_type"; "environment"; 
-                                         0; ["Type_record"; ["label"; 
-                                                            "stack"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Ttuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Pervasives"]; 
-                                                            "ref"]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "datum"]]]]]]]; 
-                                            ["label"; "top"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Hashtbl"]; 
-                                                             "t"]; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Pervasives"]; 
-                                                             "ref"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "datum"]]]]]]]; 
-                       ["Sig_type"; "datum"; 0; ["Type_variant"; ["constructor"; 
-                                                                 "Symbol"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]]; 
-                                                ["constructor"; "SymbolInEnv"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "environment"]]]]; 
-                                                ["constructor"; "Ref"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Pervasives"]; 
-                                                          "ref"]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "datum"]]]]]; 
-                                                ["constructor"; "Pair"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; "pair"]]]]; 
-                                                ["constructor"; "Vector"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; "array"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "datum"]]]]]; 
-                                                ["constructor"; "Nil"; 
-                                                ["tuple"]]; ["constructor"; 
-                                                            "Number"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "ScmDynnum"]; 
-                                                            "t"]]]]; 
-                                                ["constructor"; "String"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]; 
-                                                ["constructor"; "Character"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; "char"]]]]; 
-                                                ["constructor"; "Boolean"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; "bool"]]]]; 
-                                                ["constructor"; "Procedure"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "datum"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "environment"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "list"]; 
-                                                ["Tconstr"; ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Pervasives"]; 
-                                                            "ref"]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "datum"]]]]]]; 
-                                                ["constructor"; "ML_EagerProcedure"; 
-                                                ["tuple"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "datum"]]]]]; 
-                                                ["constructor"; "ML_LazyProcedure"; 
-                                                ["tuple"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "environment"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "datum"]]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "datum"]]]]]]]; 
-                                                ["constructor"; "Delayed"; 
-                                                ["tuple"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "datum"]]]]]; 
-                                                ["constructor"; "Values"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; "pair"]]]]; 
-                                                ["constructor"; "InputPort"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Pervasives"]; 
-                                                          "in_channel"]]]]; 
-                                                ["constructor"; "OutputPort"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Pervasives"]; 
-                                                          "out_channel"]]]]; 
-                                                ["constructor"; "Eof"; 
-                                                ["tuple"]]; ["constructor"; 
-                                                            "Unspecified"; 
-                                                            ["tuple"]]]]; 
-                       ["Sig_type"; "pair"; 0; ["Type_record"; ["label"; 
-                                                               "car"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "datum"]]]; 
-                                               ["label"; "cdr"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "datum"]]]]]; 
-                       ["Sig_value"; "is_pair"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bool"]]]]; 
-                       ["Sig_value"; "is_boolean"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "datum"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "bool"]]]]; 
-                       ["Sig_value"; "is_symbol"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "datum"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bool"]]]]; 
-                       ["Sig_value"; "is_number"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "datum"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bool"]]]]; 
-                       ["Sig_value"; "is_vector"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "datum"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bool"]]]]; 
-                       ["Sig_value"; "is_procedure"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "datum"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "bool"]]]]; 
-                       ["Sig_value"; "is_port"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bool"]]]]; 
-                       ["Sig_value"; "is_input_port"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "datum"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "bool"]]]]; 
-                       ["Sig_value"; "is_output_port"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "datum"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "bool"]]]]; 
-                       ["Sig_value"; "is_eof"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; "bool"]]]]; 
-                       ["Sig_value"; "is_string"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "datum"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bool"]]]]; 
-                       ["Sig_value"; "is_list"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bool"]]]]; 
-                       ["Sig_value"; "is_char"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bool"]]]]; 
-                       ["Sig_value"; "scm_false"; ["Tconstr"; ["Pident"; 
-                                                              "datum"]]]; 
-                       ["Sig_value"; "scm_true"; ["Tconstr"; ["Pident"; 
-                                                             "datum"]]]; 
-                       ["Sig_value"; "scm_zero"; ["Tconstr"; ["Pident"; 
-                                                             "datum"]]]; 
-                       ["Sig_value"; "scm_one"; ["Tconstr"; ["Pident"; 
-                                                            "datum"]]]; 
-                       ["Sig_value"; "scm_nil"; ["Tconstr"; ["Pident"; 
-                                                            "datum"]]]; 
-                       ["Sig_value"; "gen_symbol"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "datum"]]]]; 
-                       ["Sig_value"; "char_of_datum"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "datum"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "char"]]]]; 
-                       ["Sig_value"; "datum_of_char"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "char"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "datum"]]]]; 
-                       ["Sig_value"; "string_of_datum"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "datum"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]]]; 
-                       ["Sig_value"; "datum_of_string"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]]]; 
-                       ["Sig_value"; "string_of_symbol"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "string"]]]]; 
-                       ["Sig_value"; "datum_of_in_channel"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Pervasives"]; 
-                                                            "in_channel"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "datum"]]]]; 
-                       ["Sig_value"; "datum_of_out_channel"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Pervasives"]; 
-                                                             "out_channel"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "datum"]]]]; 
-                       ["Sig_value"; "in_channel_of_datum"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "datum"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Pervasives"]; 
-                                                            "in_channel"]]]]; 
-                       ["Sig_value"; "out_channel_of_datum"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "datum"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Pervasives"]; 
-                                                             "out_channel"]]]]; 
-                       ["Sig_value"; "datum_of_bool"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bool"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "datum"]]]]; 
-                       ["Sig_value"; "bool_of_datum"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "datum"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "bool"]]]]; 
-                       ["Sig_value"; "string_of_scm_string"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "datum"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]; 
-                       ["Sig_value"; "number_of_datum"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "datum"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "ScmDynnum"]; 
-                                                                    "t"]]]]; 
-                       ["Sig_value"; "symbol_of_datum"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "datum"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]]]; 
-                       ["Sig_value"; "datum_of_int"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "datum"]]]]; 
-                       ["Sig_value"; "datum_of_number"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "ScmDynnum"]; 
-                                                                   "t"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]]]; 
-                       ["Sig_value"; "exact_int_of_datum"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]]]; 
-                       ["Sig_value"; "vector_of_datum"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "datum"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "array"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]]]]; 
-                       ["Sig_value"; "vector_of_list"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "datum"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "datum"]]]]; 
-                       ["Sig_value"; "list_of_vector"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "datum"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "datum"]]]]; 
-                       ["Sig_value"; "values_of_list"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "datum"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "datum"]]]]; 
-                       ["Sig_value"; "list_of_values"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "datum"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "datum"]]]]; 
-                       ["Sig_value"; "list_of_improper_list"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "datum"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "list"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "datum"]]]]]; 
-                       ["Sig_value"; "cons"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                             ["Tconstr"; ["Pident"; "datum"]]]]]; 
-                       ["Sig_value"; "car"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "datum"]]; 
-                                            ["Tconstr"; ["Pident"; "datum"]]]]; 
-                       ["Sig_value"; "cdr"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "datum"]]; 
-                                            ["Tconstr"; ["Pident"; "datum"]]]]; 
-                       ["Sig_value"; "cadr"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                             ["Tconstr"; ["Pident"; "datum"]]]]; 
-                       ["Sig_value"; "caar"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                             ["Tconstr"; ["Pident"; "datum"]]]]; 
-                       ["Sig_value"; "cddr"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                             ["Tconstr"; ["Pident"; "datum"]]]]; 
-                       ["Sig_value"; "cdar"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                             ["Tconstr"; ["Pident"; "datum"]]]]; 
-                       ["Sig_value"; "caaar"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "datum"]]; 
-                                              ["Tconstr"; ["Pident"; "datum"]]]]; 
-                       ["Sig_value"; "caadr"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "datum"]]; 
-                                              ["Tconstr"; ["Pident"; "datum"]]]]; 
-                       ["Sig_value"; "cadar"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "datum"]]; 
-                                              ["Tconstr"; ["Pident"; "datum"]]]]; 
-                       ["Sig_value"; "cdaar"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "datum"]]; 
-                                              ["Tconstr"; ["Pident"; "datum"]]]]; 
-                       ["Sig_value"; "caddr"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "datum"]]; 
-                                              ["Tconstr"; ["Pident"; "datum"]]]]; 
-                       ["Sig_value"; "cdadr"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "datum"]]; 
-                                              ["Tconstr"; ["Pident"; "datum"]]]]; 
-                       ["Sig_value"; "cddar"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "datum"]]; 
-                                              ["Tconstr"; ["Pident"; "datum"]]]]; 
-                       ["Sig_value"; "cdddr"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "datum"]]; 
-                                              ["Tconstr"; ["Pident"; "datum"]]]]; 
-                       ["Sig_value"; "caaaar"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]; 
-                       ["Sig_value"; "caaadr"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]; 
-                       ["Sig_value"; "caadar"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]; 
-                       ["Sig_value"; "cadaar"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]; 
-                       ["Sig_value"; "cdaaar"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]; 
-                       ["Sig_value"; "caaddr"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]; 
-                       ["Sig_value"; "cadadr"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]; 
-                       ["Sig_value"; "caddar"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]; 
-                       ["Sig_value"; "cdaadr"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]; 
-                       ["Sig_value"; "cdadar"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]; 
-                       ["Sig_value"; "cddaar"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]; 
-                       ["Sig_value"; "cadddr"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]; 
-                       ["Sig_value"; "cdaddr"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]; 
-                       ["Sig_value"; "cddadr"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]; 
-                       ["Sig_value"; "cdddar"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]; 
-                       ["Sig_value"; "cddddr"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]; 
-                       ["Sig_value"; "set_car"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "unit"]]]]]; 
-                       ["Sig_value"; "set_cdr"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "unit"]]]]]; 
-                       ["Sig_value"; "list_of_datum"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "datum"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "datum"]]]]]; 
-                       ["Sig_value"; "simple_cell"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "datum"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "bool"]]]]; 
-                       ["Sig_value"; "is_true"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bool"]]]]; 
-                       ["Sig_value"; "reduce"; ["Tarrow"; ["Tarrow"; 
-                                                          ["Tpoly"; "a"]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                                          ["Tpoly"; "a"]]]; 
-                                               ["Tarrow"; ["Tpoly"; "a"]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tpoly"; "a"]]]]]; ["Sig_value"; 
-                                                                   "exists"; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "datum"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "datum"]]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "datum"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "datum"]]]]]; 
-                       ["Sig_value"; "for_all"; ["Tarrow"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "datum"]]]]]; 
-                       ["Sig_value"; "reduce2"; ["Tarrow"; ["Tarrow"; 
-                                                           ["Tpoly"; "a"]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                           ["Tpoly"; "a"]]]]; 
-                                                ["Tarrow"; ["Tpoly"; "a"]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                ["Tpoly"; "a"]]]]]]; 
-                       ["Sig_value"; "append"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]]; 
-                       ["Sig_value"; "map"; ["Tarrow"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "datum"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "datum"]]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "datum"]]; 
-                                            ["Tconstr"; ["Pident"; "datum"]]]]]; 
-                       ["Sig_value"; "copy"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                             ["Tconstr"; ["Pident"; "datum"]]]]; 
-                       ["Sig_value"; "iter"; ["Tarrow"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "datum"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                       ["Sig_value"; "mem"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "datum"]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "datum"]]; 
-                                            ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                       ["Sig_value"; "length"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; "int"]]]]; 
-                       ["Sig_value"; "reverse"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "datum"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "datum"]]]]; 
-                       ["Sig_value"; "list_tail"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "datum"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "datum"]]]]]; 
-                       ["Sig_value"; "nth"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "datum"]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "int"]]; 
-                                            ["Tconstr"; ["Pident"; "datum"]]]]]; 
-                       ["Sig_value"; "eqv"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "datum"]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "datum"]]; 
-                                            ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                       ["Sig_value"; "eq"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "datum"]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "datum"]]; 
-                                           ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                       ["Sig_value"; "equal"; ["Tarrow"; ["Tpoly"; "a"]; 
-                                              ["Tarrow"; ["Tpoly"; "a"]; 
-                                              ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                       ["Sig_value"; "member_search"; ["Tarrow"; ["Tarrow"; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "datum"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bool"]]]]; 
-                                                      ["Tarrow"; ["Tpoly"; 
-                                                                 "a"]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "datum"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "datum"]]]]]]; 
-                       ["Sig_value"; "memq"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                             ["Tconstr"; ["Pident"; "datum"]]]]]; 
-                       ["Sig_value"; "memv"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                             ["Tconstr"; ["Pident"; "datum"]]]]]; 
-                       ["Sig_value"; "member"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "datum"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "datum"]]]]]; 
-                       ["Sig_value"; "assoc_search"; ["Tarrow"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "datum"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]]]; 
-                                                     ["Tarrow"; ["Tpoly"; 
-                                                                "a"]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "datum"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "datum"]]]]]]; 
-                       ["Sig_value"; "assq"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                             ["Tconstr"; ["Pident"; "datum"]]]]]; 
-                       ["Sig_value"; "assv"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "datum"]]; 
-                                             ["Tconstr"; ["Pident"; "datum"]]]]]; 
-                       ["Sig_value"; "assoc"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "datum"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "datum"]]; 
-                                              ["Tconstr"; ["Pident"; "datum"]]]]]]]
+["module", "ScmTypes",
+["Mty_signature",
+["Sig_type", "environment", 0,
+["Type_record",
+["label", "stack",
+["Tconstr", ["Pident", "list"],
+["Ttuple",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "datum"]]]]]]],
+["label", "top",
+["Tconstr", ["Pdot", ["Pident", "Hashtbl"], "t"],
+["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "datum"]]]]]]],
+["Sig_type", "datum", 0,
+["Type_variant",
+["constructor", "Symbol", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "SymbolInEnv",
+["tuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "environment"]]]],
+["constructor", "Ref",
+["tuple",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "datum"]]]]],
+["constructor", "Pair", ["tuple", ["Tconstr", ["Pident", "pair"]]]],
+["constructor", "Vector",
+["tuple", ["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "datum"]]]]],
+["constructor", "Nil", ["tuple"]],
+["constructor", "Number",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "ScmDynnum"], "t"]]]],
+["constructor", "String", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Character", ["tuple", ["Tconstr", ["Pident", "char"]]]],
+["constructor", "Boolean", ["tuple", ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "Procedure",
+["tuple", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "environment"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "datum"]]]]]],
+["constructor", "ML_EagerProcedure",
+["tuple",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]]],
+["constructor", "ML_LazyProcedure",
+["tuple",
+["Tarrow", ["Tconstr", ["Pident", "environment"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]]]]],
+["constructor", "Delayed",
+["tuple",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "datum"]]]]],
+["constructor", "Values", ["tuple", ["Tconstr", ["Pident", "pair"]]]],
+["constructor", "InputPort",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Pervasives"], "in_channel"]]]],
+["constructor", "OutputPort",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Pervasives"], "out_channel"]]]],
+["constructor", "Eof", ["tuple"]], ["constructor", "Unspecified", ["tuple"]]]],
+["Sig_type", "pair", 0,
+["Type_record", ["label", "car", ["Tconstr", ["Pident", "datum"]]],
+["label", "cdr", ["Tconstr", ["Pident", "datum"]]]]],
+["Sig_value", "is_pair",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_boolean",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_symbol",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_number",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_vector",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_procedure",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_port",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_input_port",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_output_port",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_eof",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_string",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_list",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_char",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "scm_false", ["Tconstr", ["Pident", "datum"]]],
+["Sig_value", "scm_true", ["Tconstr", ["Pident", "datum"]]],
+["Sig_value", "scm_zero", ["Tconstr", ["Pident", "datum"]]],
+["Sig_value", "scm_one", ["Tconstr", ["Pident", "datum"]]],
+["Sig_value", "scm_nil", ["Tconstr", ["Pident", "datum"]]],
+["Sig_value", "gen_symbol",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "char_of_datum",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "char"]]]],
+["Sig_value", "datum_of_char",
+["Tarrow", ["Tconstr", ["Pident", "char"]], ["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "string_of_datum",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "datum_of_string",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "string_of_symbol",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "datum_of_in_channel",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pervasives"], "in_channel"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "datum_of_out_channel",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pervasives"], "out_channel"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "in_channel_of_datum",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "in_channel"]]]],
+["Sig_value", "out_channel_of_datum",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "out_channel"]]]],
+["Sig_value", "datum_of_bool",
+["Tarrow", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "bool_of_datum",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "string_of_scm_string",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "number_of_datum",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pdot", ["Pident", "ScmDynnum"], "t"]]]],
+["Sig_value", "symbol_of_datum",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "datum_of_int",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "datum_of_number",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "ScmDynnum"], "t"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "exact_int_of_datum",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "vector_of_datum",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "datum"]]]]],
+["Sig_value", "vector_of_list",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "list_of_vector",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "values_of_list",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "list_of_values",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "list_of_improper_list",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "datum"]]]]],
+["Sig_value", "cons",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]]],
+["Sig_value", "car",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cdr",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cadr",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "caar",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cddr",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cdar",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "caaar",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "caadr",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cadar",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cdaar",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "caddr",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cdadr",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cddar",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cdddr",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "caaaar",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "caaadr",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "caadar",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cadaar",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cdaaar",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "caaddr",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cadadr",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "caddar",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cdaadr",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cdadar",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cddaar",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cadddr",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cdaddr",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cddadr",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cdddar",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "cddddr",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "set_car",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "set_cdr",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "list_of_datum",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "datum"]]]]],
+["Sig_value", "simple_cell",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_true",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "reduce",
+["Tarrow",
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tpoly", "a"]]],
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tpoly", "a"]]]]],
+["Sig_value", "exists",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]]],
+["Sig_value", "for_all",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]]],
+["Sig_value", "reduce2",
+["Tarrow",
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tpoly", "a"]]]],
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tpoly", "a"]]]]]],
+["Sig_value", "append",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]]],
+["Sig_value", "map",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]]],
+["Sig_value", "copy",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "iter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "unit"]]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "mem",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "length",
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "reverse",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]],
+["Sig_value", "list_tail",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "datum"]]]]],
+["Sig_value", "nth",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "datum"]]]]],
+["Sig_value", "eqv",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "eq",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "equal",
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tpoly", "a"], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "member_search",
+["Tarrow",
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tconstr", ["Pident", "datum"]], ["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]]]],
+["Sig_value", "memq",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]]],
+["Sig_value", "memv",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]]],
+["Sig_value", "member",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]]],
+["Sig_value", "assoc_search",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tpoly", "a"], ["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]]]],
+["Sig_value", "assq",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]]],
+["Sig_value", "assv",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]]],
+["Sig_value", "assoc",
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tarrow", ["Tconstr", ["Pident", "datum"]],
+["Tconstr", ["Pident", "datum"]]]]]]]

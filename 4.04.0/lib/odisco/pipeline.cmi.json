@@ -1,142 +1,56 @@
-["module"; "Pipeline"; ["Mty_signature"; ["Sig_type"; "stage"; 0; ["Type_alias"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]; 
-                       ["Sig_type"; "label"; 0; ["Type_alias"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]]]; 
-                       ["Sig_type"; "grouping"; 0; ["Type_variant"; [
-                                                                    "constructor"; 
-                                                                    "Split"; 
-                                                                    ["tuple"]]; 
-                                                   ["constructor"; "Group_label"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "Group_node"; 
-                                                               ["tuple"]]; 
-                                                   ["constructor"; "Group_node_label"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "Group_all"; 
-                                                               ["tuple"]]]]; 
-                       ["Sig_value"; "grouping_of_string"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "grouping"]]]]; 
-                       ["Sig_value"; "string_of_grouping"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "grouping"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]; 
-                       ["Sig_type"; "pipeline"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "list"]; 
-                                                                  ["Ttuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "stage"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "grouping"]]]]]]; 
-                       ["Sig_value"; "pipeline_of_string"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "pipeline"]]]]; 
-                       ["Sig_value"; "pipeline_of_json"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Json"]; 
-                                                                    "t"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "pipeline"]]]]; 
-                       ["Sig_value"; "json_of_pipeline"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "pipeline"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Json"]; 
-                                                         "t"]]]]; ["Sig_type"; 
-                                                                  "pipeline_error"; 
-                                                                  0; 
-                                                                  ["Type_variant"; 
-                                                                  ["constructor"; 
-                                                                  "Invalid_grouping"; 
-                                                                  ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]; 
-                                                                  ["constructor"; 
-                                                                  "Invalid_pipeline_json"; 
-                                                                  ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Json"]; 
-                                                                  "t"]]]]; 
-                                                                  ["constructor"; 
-                                                                  "Invalid_pipeline_stage"; 
-                                                                  ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]; 
-                                                                  ["constructor"; 
-                                                                  "Invalid_pipeline"; 
-                                                                  ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]]]; 
-                       ["Sig_unknown"]; ["Sig_value"; "string_of_pipeline_error"; 
-                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                               "pipeline_error"]]; 
-                                        ["Tconstr"; ["Pident"; "string"]]]]; 
-                       ["Sig_type"; "task_input"; 0; ["Type_variant"; 
-                                                     ["constructor"; 
-                                                     "Data"; ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "label"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Uri"]; 
-                                                             "t"]]]]; 
-                                                     ["constructor"; 
-                                                     "Dir_indexed"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "label"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Uri"]; 
-                                                                    "t"]]]]; 
-                                                     ["constructor"; 
-                                                     "Dir"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; "Uri"]; 
-                                                            "t"]]]]]]; 
-                       ["Sig_value"; "uri_of"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "task_input"]]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Uri"]; 
-                                                           "t"]]]]]]
+["module", "Pipeline",
+["Mty_signature",
+["Sig_type", "stage", 0, ["Type_alias", ["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "label", 0, ["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_type", "grouping", 0,
+["Type_variant", ["constructor", "Split", ["tuple"]],
+["constructor", "Group_label", ["tuple"]],
+["constructor", "Group_node", ["tuple"]],
+["constructor", "Group_node_label", ["tuple"]],
+["constructor", "Group_all", ["tuple"]]]],
+["Sig_value", "grouping_of_string",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "grouping"]]]],
+["Sig_value", "string_of_grouping",
+["Tarrow", ["Tconstr", ["Pident", "grouping"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "pipeline", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "stage"]],
+["Tconstr", ["Pident", "grouping"]]]]]],
+["Sig_value", "pipeline_of_string",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "pipeline"]]]],
+["Sig_value", "pipeline_of_json",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Json"], "t"]],
+["Tconstr", ["Pident", "pipeline"]]]],
+["Sig_value", "json_of_pipeline",
+["Tarrow", ["Tconstr", ["Pident", "pipeline"]],
+["Tconstr", ["Pdot", ["Pident", "Json"], "t"]]]],
+["Sig_type", "pipeline_error", 0,
+["Type_variant",
+["constructor", "Invalid_grouping",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Invalid_pipeline_json",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Json"], "t"]]]],
+["constructor", "Invalid_pipeline_stage",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Invalid_pipeline",
+["tuple", ["Tconstr", ["Pident", "string"]]]]]], ["Sig_unknown"],
+["Sig_value", "string_of_pipeline_error",
+["Tarrow", ["Tconstr", ["Pident", "pipeline_error"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "task_input", 0,
+["Type_variant",
+["constructor", "Data",
+["tuple", ["Tconstr", ["Pident", "label"]],
+["Tconstr", ["Pdot", ["Pident", "Uri"], "t"]]]],
+["constructor", "Dir_indexed",
+["tuple", ["Tconstr", ["Pident", "label"]],
+["Tconstr", ["Pdot", ["Pident", "Uri"], "t"]]]],
+["constructor", "Dir",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Uri"], "t"]]]]]],
+["Sig_value", "uri_of",
+["Tarrow", ["Tconstr", ["Pident", "task_input"]],
+["Tconstr", ["Pdot", ["Pident", "Uri"], "t"]]]]]]

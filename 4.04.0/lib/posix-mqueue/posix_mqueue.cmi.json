@@ -1,216 +1,69 @@
-["module"; "Posix_mqueue"; ["Mty_signature"; ["Sig_type"; "t"; 0; ["Type_abstract"]]; 
-                           ["Sig_type"; "flag"; 0; ["Type_variant"; [
-                                                                    "constructor"; 
-                                                                    "O_RDONLY"; 
-                                                                    ["tuple"]]; 
-                                                   ["constructor"; "O_WRONLY"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "O_RDWR"; 
-                                                               ["tuple"]]; 
-                                                   ["constructor"; "O_NONBLOCK"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "O_CREAT"; 
-                                                               ["tuple"]]; 
-                                                   ["constructor"; "O_EXCL"; 
-                                                   ["tuple"]]]]; ["Sig_type"; 
-                                                                 "mq_attr"; 
-                                                                 0; [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "mq_flags"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "mq_maxmsg"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "mq_msgsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "mq_curmsgs"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                           ["Sig_type"; "message"; 0; ["Type_record"; 
-                                                      ["label"; "payload"; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Bytes"]; 
-                                                                  "t"]]]; 
-                                                      ["label"; "priority"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]]]; 
-                           ["Sig_value"; "mq_open"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "flag"]]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Unix"]; 
-                                                               "file_perm"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "mq_attr"]]; 
-                                                    ["Tconstr"; ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Result"]; 
-                                                                "result"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "t"]]; 
-                                                    ["Tunknown"]]]]]]]; 
-                           ["Sig_value"; "mq_send"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "message"]]; 
-                                                    ["Tconstr"; ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Result"]; 
-                                                                "result"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "unit"]]; 
-                                                    ["Tunknown"]]]]]; 
-                           ["Sig_value"; "mq_timedsend"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "message"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Posix_time"]; 
-                                                                    "Timespec"]; 
-                                                                    "t"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Result"]; 
-                                                         "result"]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]; 
-                                                         ["Tunknown"]]]]]]; 
-                           ["Sig_value"; "mq_receive"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Result"]; 
-                                                                   "result"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "message"]]; 
-                                                       ["Tunknown"]]]]]; 
-                           ["Sig_value"; "mq_timedreceive"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "t"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Posix_time"]; 
-                                                            "Timespec"]; 
-                                                            "t"]]; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Result"]; 
-                                                                   "result"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "message"]]; 
-                                                                   ["Tunknown"]]]]]]; 
-                           ["Sig_value"; "mq_close"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "t"]]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Result"]; 
-                                                                 "result"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]; 
-                                                     ["Tunknown"]]]]; 
-                           ["Sig_value"; "mq_unlink"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Result"]; 
-                                                                  "result"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]; 
-                                                      ["Tunknown"]]]]; 
-                           ["Sig_value"; "mq_setattr"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "mq_attr"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Result"]; 
-                                                                   "result"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "mq_attr"]]; 
-                                                       ["Tunknown"]]]]]; 
-                           ["Sig_value"; "mq_getattr"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Result"]; 
-                                                                   "result"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "mq_attr"]]; 
-                                                       ["Tunknown"]]]]; 
-                           ["Sig_value"; "mq_prio_max"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                           ["Sig_value"; "mq_name_max"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                           ["Sig_value"; "fd_of"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                  ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Unix"]; 
-                                                              "file_descr"]]]]]]
+["module", "Posix_mqueue",
+["Mty_signature", ["Sig_type", "t", 0, ["Type_abstract"]],
+["Sig_type", "flag", 0,
+["Type_variant", ["constructor", "O_RDONLY", ["tuple"]],
+["constructor", "O_WRONLY", ["tuple"]], ["constructor", "O_RDWR", ["tuple"]],
+["constructor", "O_NONBLOCK", ["tuple"]],
+["constructor", "O_CREAT", ["tuple"]], ["constructor", "O_EXCL", ["tuple"]]]],
+["Sig_type", "mq_attr", 0,
+["Type_record", ["label", "mq_flags", ["Tconstr", ["Pident", "int"]]],
+["label", "mq_maxmsg", ["Tconstr", ["Pident", "int"]]],
+["label", "mq_msgsize", ["Tconstr", ["Pident", "int"]]],
+["label", "mq_curmsgs", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "message", 0,
+["Type_record",
+["label", "payload", ["Tconstr", ["Pdot", ["Pident", "Bytes"], "t"]]],
+["label", "priority", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "mq_open",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "flag"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_perm"]],
+["Tarrow", ["Tconstr", ["Pident", "mq_attr"]],
+["Tconstr", ["Pdot", ["Pident", "Result"], "result"],
+["Tconstr", ["Pident", "t"]], ["Tunknown"]]]]]]],
+["Sig_value", "mq_send",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "message"]],
+["Tconstr", ["Pdot", ["Pident", "Result"], "result"],
+["Tconstr", ["Pident", "unit"]], ["Tunknown"]]]]],
+["Sig_value", "mq_timedsend",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "message"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Posix_time"], "Timespec"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Result"], "result"],
+["Tconstr", ["Pident", "unit"]], ["Tunknown"]]]]]],
+["Sig_value", "mq_receive",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "Result"], "result"],
+["Tconstr", ["Pident", "message"]], ["Tunknown"]]]]],
+["Sig_value", "mq_timedreceive",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Posix_time"], "Timespec"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Result"], "result"],
+["Tconstr", ["Pident", "message"]], ["Tunknown"]]]]]],
+["Sig_value", "mq_close",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pdot", ["Pident", "Result"], "result"],
+["Tconstr", ["Pident", "unit"]], ["Tunknown"]]]],
+["Sig_value", "mq_unlink",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Result"], "result"],
+["Tconstr", ["Pident", "unit"]], ["Tunknown"]]]],
+["Sig_value", "mq_setattr",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "mq_attr"]],
+["Tconstr", ["Pdot", ["Pident", "Result"], "result"],
+["Tconstr", ["Pident", "mq_attr"]], ["Tunknown"]]]]],
+["Sig_value", "mq_getattr",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pdot", ["Pident", "Result"], "result"],
+["Tconstr", ["Pident", "mq_attr"]], ["Tunknown"]]]],
+["Sig_value", "mq_prio_max", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "mq_name_max", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "fd_of",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]]]]]]

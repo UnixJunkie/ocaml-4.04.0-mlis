@@ -1,199 +1,68 @@
-["module"; "Linearize"; ["Mty_signature"; ["Sig_type"; "label"; 0; ["Type_alias"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Cmm"]; 
-                                                                   "label"]]]]; 
-                        ["Sig_type"; "instruction"; 0; ["Type_record"; 
-                                                       ["label"; "desc"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "instruction_desc"]]]; 
-                                                       ["label"; "next"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "instruction"]]]; 
-                                                       ["label"; "arg"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "array"]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Reg"]; 
-                                                                   "t"]]]]; 
-                                                       ["label"; "res"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "array"]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Reg"]; 
-                                                                   "t"]]]]; 
-                                                       ["label"; "dbg"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Debuginfo"]; 
-                                                                   "t"]]]; 
-                                                       ["label"; "live"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Reg"]; 
-                                                                   "Set"]; 
-                                                                   "t"]]]]]; 
-                        ["Sig_type"; "instruction_desc"; 0; ["Type_variant"; 
-                                                            ["constructor"; 
-                                                            "Lend"; ["tuple"]]; 
-                                                            ["constructor"; 
-                                                            "Lop"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Mach"]; 
-                                                                   "operation"]]]]; 
-                                                            ["constructor"; 
-                                                            "Lreloadretaddr"; 
-                                                            ["tuple"]]; 
-                                                            ["constructor"; 
-                                                            "Lreturn"; 
-                                                            ["tuple"]]; 
-                                                            ["constructor"; 
-                                                            "Llabel"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "label"]]]]; 
-                                                            ["constructor"; 
-                                                            "Lbranch"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "label"]]]]; 
-                                                            ["constructor"; 
-                                                            "Lcondbranch"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Mach"]; 
-                                                            "test"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "label"]]]]; 
-                                                            ["constructor"; 
-                                                            "Lcondbranch3"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "label"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "label"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "label"]]]]]; 
-                                                            ["constructor"; 
-                                                            "Lswitch"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "label"]]]]]; 
-                                                            ["constructor"; 
-                                                            "Lsetuptrap"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "label"]]]]; 
-                                                            ["constructor"; 
-                                                            "Lpushtrap"; 
-                                                            ["tuple"]]; 
-                                                            ["constructor"; 
-                                                            "Lpoptrap"; 
-                                                            ["tuple"]]; 
-                                                            ["constructor"; 
-                                                            "Lraise"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; "Cmm"]; 
-                                                            "raise_kind"]]]]]]; 
-                        ["Sig_value"; "has_fallthrough"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "instruction_desc"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "bool"]]]]; 
-                        ["Sig_value"; "end_instr"; ["Tconstr"; ["Pident"; 
-                                                               "instruction"]]]; 
-                        ["Sig_value"; "instr_cons"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "instruction_desc"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "array"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Reg"]; 
-                                                               "t"]]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "array"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Reg"]; 
-                                                               "t"]]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "instruction"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "instruction"]]]]]]]; 
-                        ["Sig_value"; "invert_test"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Mach"]; 
-                                                                "test"]]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Mach"]; 
-                                                                 "test"]]]]; 
-                        ["Sig_type"; "fundecl"; 0; ["Type_record"; ["label"; 
-                                                                   "fun_name"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                   ["label"; "fun_body"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "instruction"]]]; 
-                                                   ["label"; "fun_fast"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "bool"]]]; 
-                                                   ["label"; "fun_dbg"; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Debuginfo"]; 
-                                                               "t"]]]; 
-                                                   ["label"; "fun_spacetime_shape"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "option"]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Mach"]; 
-                                                               "spacetime_shape"]]]]]]; 
-                        ["Sig_value"; "fundecl"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Mach"]; 
-                                                            "fundecl"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "fundecl"]]]]]]
+["module", "Linearize",
+["Mty_signature",
+["Sig_type", "label", 0,
+["Type_alias", ["Tconstr", ["Pdot", ["Pident", "Cmm"], "label"]]]],
+["Sig_type", "instruction", 0,
+["Type_record",
+["label", "desc", ["Tconstr", ["Pident", "instruction_desc"]]],
+["label", "next", ["Tconstr", ["Pident", "instruction"]]],
+["label", "arg",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pdot", ["Pident", "Reg"], "t"]]]],
+["label", "res",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pdot", ["Pident", "Reg"], "t"]]]],
+["label", "dbg", ["Tconstr", ["Pdot", ["Pident", "Debuginfo"], "t"]]],
+["label", "live",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Reg"], "Set"], "t"]]]]],
+["Sig_type", "instruction_desc", 0,
+["Type_variant", ["constructor", "Lend", ["tuple"]],
+["constructor", "Lop",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Mach"], "operation"]]]],
+["constructor", "Lreloadretaddr", ["tuple"]],
+["constructor", "Lreturn", ["tuple"]],
+["constructor", "Llabel", ["tuple", ["Tconstr", ["Pident", "label"]]]],
+["constructor", "Lbranch", ["tuple", ["Tconstr", ["Pident", "label"]]]],
+["constructor", "Lcondbranch",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Mach"], "test"]],
+["Tconstr", ["Pident", "label"]]]],
+["constructor", "Lcondbranch3",
+["tuple",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "label"]]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "label"]]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "label"]]]]],
+["constructor", "Lswitch",
+["tuple", ["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "label"]]]]],
+["constructor", "Lsetuptrap", ["tuple", ["Tconstr", ["Pident", "label"]]]],
+["constructor", "Lpushtrap", ["tuple"]],
+["constructor", "Lpoptrap", ["tuple"]],
+["constructor", "Lraise",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cmm"], "raise_kind"]]]]]],
+["Sig_value", "has_fallthrough",
+["Tarrow", ["Tconstr", ["Pident", "instruction_desc"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "end_instr", ["Tconstr", ["Pident", "instruction"]]],
+["Sig_value", "instr_cons",
+["Tarrow", ["Tconstr", ["Pident", "instruction_desc"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pdot", ["Pident", "Reg"], "t"]]],
+["Tarrow",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pdot", ["Pident", "Reg"], "t"]]],
+["Tarrow", ["Tconstr", ["Pident", "instruction"]],
+["Tconstr", ["Pident", "instruction"]]]]]]],
+["Sig_value", "invert_test",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Mach"], "test"]],
+["Tconstr", ["Pdot", ["Pident", "Mach"], "test"]]]],
+["Sig_type", "fundecl", 0,
+["Type_record", ["label", "fun_name", ["Tconstr", ["Pident", "string"]]],
+["label", "fun_body", ["Tconstr", ["Pident", "instruction"]]],
+["label", "fun_fast", ["Tconstr", ["Pident", "bool"]]],
+["label", "fun_dbg", ["Tconstr", ["Pdot", ["Pident", "Debuginfo"], "t"]]],
+["label", "fun_spacetime_shape",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Mach"], "spacetime_shape"]]]]]],
+["Sig_value", "fundecl",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Mach"], "fundecl"]],
+["Tconstr", ["Pident", "fundecl"]]]]]]

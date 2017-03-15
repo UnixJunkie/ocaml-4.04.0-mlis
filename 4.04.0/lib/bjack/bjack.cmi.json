@@ -1,266 +1,113 @@
-["module"; "Bjack"; ["Mty_signature"; ["Sig_type"; "t"; 0; ["Type_abstract"]]; 
-                    ["Sig_type"; "converter"; 0; ["Type_variant"; ["constructor"; 
-                                                                  "Best_quality"; 
-                                                                  ["tuple"]]; 
-                                                 ["constructor"; "Medium_quality"; 
-                                                 ["tuple"]]; ["constructor"; 
-                                                             "Fastest"; 
-                                                             ["tuple"]]; 
-                                                 ["constructor"; "Zero_order_hold"; 
-                                                 ["tuple"]]; ["constructor"; 
-                                                             "Linear"; 
-                                                             ["tuple"]]]]; 
-                    ["Sig_unknown"]; ["Sig_unknown"]; ["Sig_unknown"]; 
-                    ["Sig_unknown"]; ["Sig_unknown"]; ["Sig_unknown"]; 
-                    ["Sig_unknown"]; ["Sig_unknown"]; ["Sig_value"; "set_conversion_function"; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "converter"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]; 
-                    ["Sig_type"; "port_flag"; 0; ["Type_variant"; ["constructor"; 
-                                                                  "Input"; 
-                                                                  ["tuple"]]; 
-                                                 ["constructor"; "Output"; 
-                                                 ["tuple"]]; ["constructor"; 
-                                                             "Physical"; 
-                                                             ["tuple"]]; 
-                                                 ["constructor"; "Monitor"; 
-                                                 ["tuple"]]; ["constructor"; 
-                                                             "Terminal"; 
-                                                             ["tuple"]]]]; 
-                    ["Sig_value"; "open_t"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "option"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "int"]]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "option"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "string"]]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "int"]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "int"]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "int"]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "int"]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "list"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "port_flag"]]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "string"]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]; 
-                                            ["Tconstr"; ["Pident"; "t"]]]]]]]]]]]]; 
-                    ["Sig_value"; "close"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "t"]]; 
-                                           ["Tconstr"; ["Pident"; "unit"]]]]; 
-                    ["Sig_value"; "write"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "t"]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "string"]]; 
-                                           ["Tconstr"; ["Pident"; "int"]]]]]; 
-                    ["Sig_value"; "read"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                 "t"]]; 
-                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                 "int"]]; 
-                                          ["Tconstr"; ["Pident"; "string"]]]]]; 
-                    ["Sig_value"; "reset"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "t"]]; 
-                                           ["Tconstr"; ["Pident"; "unit"]]]]; 
-                    ["Sig_type"; "position_unit"; 0; ["Type_variant"; 
-                                                     ["constructor"; 
-                                                     "Bytes"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "Milliseconds"; 
-                                                     ["tuple"]]]]; ["Sig_type"; 
-                                                                   "position_type"; 
-                                                                   0; 
-                                                                   ["Type_variant"; 
-                                                                   ["constructor"; 
-                                                                   "Played"; 
-                                                                   ["tuple"]]; 
-                                                                   ["constructor"; 
-                                                                   "Written_to_jack"; 
-                                                                   ["tuple"]]; 
-                                                                   ["constructor"; 
-                                                                   "Written"; 
-                                                                   ["tuple"]]]]; 
-                    ["Sig_value"; "get_position"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "position_unit"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "position_type"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "int"]]]]]]; 
-                    ["Sig_value"; "set_position"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "position_unit"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "unit"]]]]]]; 
-                    ["Sig_value"; "get_output_latency"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "t"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                    ["Sig_value"; "get_input_latency"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "int"]]]]; 
-                    ["Sig_type"; "playing_state"; 0; ["Type_variant"; 
-                                                     ["constructor"; 
-                                                     "Playing"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "Paused"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "Stopped"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "Closed"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "Reset"; ["tuple"]]]]; 
-                    ["Sig_value"; "set_state"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "playing_state"]]; 
-                                               ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                    ["Sig_value"; "get_state"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "playing_state"]]]]; 
-                    ["Sig_value"; "get_max_output_buffered_bytes"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "t"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]; 
-                    ["Sig_value"; "get_max_input_buffered_bytes"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]]; 
-                    ["Sig_value"; "get_jack_buffered_bytes"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]]; 
-                    ["Sig_type"; "volume"; 0; ["Type_variant"; ["constructor"; 
-                                                               "Linear"; 
-                                                               ["tuple"]]; 
-                                              ["constructor"; "Decibel"; 
-                                              ["tuple"]]]]; ["Sig_value"; 
-                                                            "set_volume_effect_type"; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "t"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "volume"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "volume"]]]]]; 
-                    ["Sig_value"; "set_all_volume"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "unit"]]]]]; 
-                    ["Sig_value"; "set_channel_volume"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "t"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]]; 
-                    ["Sig_value"; "get_channel_volume"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "t"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                    ["Sig_value"; "get_output_bytes_per_second"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]; 
-                    ["Sig_value"; "get_input_bytes_per_second"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "t"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]; 
-                    ["Sig_value"; "get_bytes_stored"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]]; 
-                    ["Sig_value"; "get_bytes_free_space"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]]; 
-                    ["Sig_value"; "get_bytes_used_space"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]]; 
-                    ["Sig_value"; "get_bytes_per_output_frame"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "t"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]; 
-                    ["Sig_value"; "get_bytes_per_input_frame"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]]]; 
-                    ["Sig_value"; "get_num_output_channels"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]]; 
-                    ["Sig_value"; "get_num_input_channels"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "t"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]]; 
-                    ["Sig_value"; "get_sample_rate"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "t"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "int"]]]]]]
+["module", "Bjack",
+["Mty_signature", ["Sig_type", "t", 0, ["Type_abstract"]],
+["Sig_type", "converter", 0,
+["Type_variant", ["constructor", "Best_quality", ["tuple"]],
+["constructor", "Medium_quality", ["tuple"]],
+["constructor", "Fastest", ["tuple"]],
+["constructor", "Zero_order_hold", ["tuple"]],
+["constructor", "Linear", ["tuple"]]]], ["Sig_unknown"], ["Sig_unknown"],
+["Sig_unknown"], ["Sig_unknown"], ["Sig_unknown"], ["Sig_unknown"],
+["Sig_unknown"], ["Sig_unknown"],
+["Sig_value", "set_conversion_function",
+["Tarrow", ["Tconstr", ["Pident", "converter"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_type", "port_flag", 0,
+["Type_variant", ["constructor", "Input", ["tuple"]],
+["constructor", "Output", ["tuple"]], ["constructor", "Physical", ["tuple"]],
+["constructor", "Monitor", ["tuple"]],
+["constructor", "Terminal", ["tuple"]]]],
+["Sig_value", "open_t",
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "port_flag"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "t"]]]]]]]]]]]],
+["Sig_value", "close",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "write",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "read",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "reset",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_type", "position_unit", 0,
+["Type_variant", ["constructor", "Bytes", ["tuple"]],
+["constructor", "Milliseconds", ["tuple"]]]],
+["Sig_type", "position_type", 0,
+["Type_variant", ["constructor", "Played", ["tuple"]],
+["constructor", "Written_to_jack", ["tuple"]],
+["constructor", "Written", ["tuple"]]]],
+["Sig_value", "get_position",
+["Tarrow", ["Tconstr", ["Pident", "position_unit"]],
+["Tarrow", ["Tconstr", ["Pident", "position_type"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_value", "set_position",
+["Tarrow", ["Tconstr", ["Pident", "position_unit"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "get_output_latency",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "get_input_latency",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_type", "playing_state", 0,
+["Type_variant", ["constructor", "Playing", ["tuple"]],
+["constructor", "Paused", ["tuple"]], ["constructor", "Stopped", ["tuple"]],
+["constructor", "Closed", ["tuple"]], ["constructor", "Reset", ["tuple"]]]],
+["Sig_value", "set_state",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "playing_state"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "get_state",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "playing_state"]]]],
+["Sig_value", "get_max_output_buffered_bytes",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "get_max_input_buffered_bytes",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "get_jack_buffered_bytes",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_type", "volume", 0,
+["Type_variant", ["constructor", "Linear", ["tuple"]],
+["constructor", "Decibel", ["tuple"]]]],
+["Sig_value", "set_volume_effect_type",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "volume"]],
+["Tconstr", ["Pident", "volume"]]]]],
+["Sig_value", "set_all_volume",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "set_channel_volume",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "get_channel_volume",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "get_output_bytes_per_second",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "get_input_bytes_per_second",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "get_bytes_stored",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "get_bytes_free_space",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "get_bytes_used_space",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "get_bytes_per_output_frame",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "get_bytes_per_input_frame",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "get_num_output_channels",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "get_num_input_channels",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "get_sample_rate",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]]]]

@@ -1,361 +1,132 @@
-["module"; "Misctypes"; ["Mty_signature"; ["Sig_type"; "patvar"; 0; [
-                                                                    "Type_alias"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Id"]; 
-                                                                    "t"]]]]; 
-                        ["Sig_type"; "intro_pattern_expr"; 1; ["Type_variant"; 
-                                                              ["constructor"; 
-                                                              "IntroForthcoming"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "bool"]]]]; 
-                                                              ["constructor"; 
-                                                              "IntroNaming"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "intro_pattern_naming_expr"]]]]; 
-                                                              ["constructor"; 
-                                                              "IntroAction"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "intro_pattern_action_expr"]; 
-                                                              ["Tpoly"; 
-                                                              "constr"]]]]]]; 
-                        ["Sig_type"; "intro_pattern_naming_expr"; 0; 
-                        ["Type_variant"; ["constructor"; "IntroIdentifier"; 
-                                         ["tuple"; ["Tconstr"; ["Pdot"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Names"]; 
-                                                               "Id"]; 
-                                                               "t"]]]]; 
-                        ["constructor"; "IntroFresh"; ["tuple"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Names"]; 
-                                                                "Id"]; 
-                                                                "t"]]]]; 
-                        ["constructor"; "IntroAnonymous"; ["tuple"]]]]; 
-                        ["Sig_type"; "intro_pattern_action_expr"; 1; 
-                        ["Type_variant"; ["constructor"; "IntroWildcard"; 
-                                         ["tuple"]]; ["constructor"; 
-                                                     "IntroOrAndPattern"; 
-                                                     ["tuple"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "or_and_intro_pattern_expr"]; 
-                                                               ["Tpoly"; 
-                                                               "constr"]]]]; 
-                        ["constructor"; "IntroInjection"; ["tuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Loc"]; 
-                                                                    "t"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "intro_pattern_expr"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "constr"]]]]]]; 
-                        ["constructor"; "IntroApplyOn"; ["tuple"; ["Tpoly"; 
-                                                                  "constr"]; 
-                                                        ["Ttuple"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Loc"]; 
-                                                                   "t"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "intro_pattern_expr"]; 
-                                                        ["Tpoly"; "constr"]]]]]; 
-                        ["constructor"; "IntroRewrite"; ["tuple"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]]]]]; 
-                        ["Sig_type"; "or_and_intro_pattern_expr"; 1; 
-                        ["Type_variant"; ["constructor"; "IntroOrPattern"; 
-                                         ["tuple"; ["Tconstr"; ["Pident"; 
-                                                               "list"]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "list"]; 
-                                                   ["Ttuple"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Loc"]; 
-                                                              "t"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "intro_pattern_expr"]; 
-                                                   ["Tpoly"; "constr"]]]]]]]; 
-                        ["constructor"; "IntroAndPattern"; ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Ttuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Loc"]; 
-                                                           "t"]]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "intro_pattern_expr"]; 
-                                                                  ["Tpoly"; 
-                                                                  "constr"]]]]]]]]; 
-                        ["Sig_type"; "move_location"; 1; ["Type_variant"; 
-                                                         ["constructor"; 
-                                                         "MoveAfter"; 
-                                                         ["tuple"; ["Tpoly"; 
-                                                                   "id"]]]; 
-                                                         ["constructor"; 
-                                                         "MoveBefore"; 
-                                                         ["tuple"; ["Tpoly"; 
-                                                                   "id"]]]; 
-                                                         ["constructor"; 
-                                                         "MoveFirst"; 
-                                                         ["tuple"]]; 
-                                                         ["constructor"; 
-                                                         "MoveLast"; 
-                                                         ["tuple"]]]]; 
-                        ["Sig_type"; "glob_sort_gen"; 1; ["Type_variant"; 
-                                                         ["constructor"; 
-                                                         "GProp"; ["tuple"]]; 
-                                                         ["constructor"; 
-                                                         "GSet"; ["tuple"]]; 
-                                                         ["constructor"; 
-                                                         "GType"; ["tuple"; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]]]]]; 
-                        ["Sig_type"; "sort_info"; 0; ["Type_alias"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Loc"]; 
-                                                                    "located"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]]]]; 
-                        ["Sig_type"; "level_info"; 0; ["Type_alias"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "option"]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Loc"]; 
-                                                                  "located"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "string"]]]]]]; 
-                        ["Sig_type"; "glob_sort"; 0; ["Type_alias"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "glob_sort_gen"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "sort_info"]]]]]; 
-                        ["Sig_type"; "glob_level"; 0; ["Type_alias"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "glob_sort_gen"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "level_info"]]]]]; 
-                        ["Sig_type"; "existential_key"; 0; ["Type_alias"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Evar"]; 
-                                                           "t"]]]]; [
-                                                                    "Sig_type"; 
-                                                                    "case_style"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_variant"; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "LetStyle"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "IfStyle"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "LetPatternStyle"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "MatchStyle"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "RegularStyle"; 
-                                                                    ["tuple"]]]]; 
-                        ["Sig_type"; "cast_type"; 1; ["Type_variant"; 
-                                                     ["constructor"; 
-                                                     "CastConv"; ["tuple"; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]]]; 
-                                                     ["constructor"; 
-                                                     "CastVM"; ["tuple"; 
-                                                               ["Tpoly"; "a"]]]; 
-                                                     ["constructor"; 
-                                                     "CastCoerce"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "CastNative"; ["tuple"; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]]]]; 
-                        ["Sig_type"; "quantified_hypothesis"; 0; ["Type_variant"; 
-                                                                 ["constructor"; 
-                                                                 "AnonHyp"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "NamedHyp"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Names"]; 
-                                                                 "Id"]; 
-                                                                 "t"]]]]]]; 
-                        ["Sig_type"; "explicit_bindings"; 1; ["Type_alias"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Ttuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Loc"]; 
-                                                             "t"]]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "quantified_hypothesis"]]; 
-                                                             ["Tpoly"; "a"]]]]]; 
-                        ["Sig_type"; "bindings"; 1; ["Type_variant"; 
-                                                    ["constructor"; "ImplicitBindings"; 
-                                                    ["tuple"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "list"]; 
-                                                              ["Tpoly"; "a"]]]]; 
-                                                    ["constructor"; "ExplicitBindings"; 
-                                                    ["tuple"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "explicit_bindings"]; 
-                                                              ["Tpoly"; "a"]]]]; 
-                                                    ["constructor"; "NoBindings"; 
-                                                    ["tuple"]]]]; ["Sig_type"; 
-                                                                  "with_bindings"; 
-                                                                  1; 
-                                                                  ["Type_alias"; 
-                                                                  ["Ttuple"; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bindings"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]]]]]; 
-                        ["Sig_type"; "or_var"; 1; ["Type_variant"; ["constructor"; 
-                                                                   "ArgArg"; 
-                                                                   ["tuple"; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]]; 
-                                                  ["constructor"; "ArgVar"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; "Loc"]; 
-                                                            "located"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Names"]; 
-                                                            "Id"]; "t"]]]]]]]; 
-                        ["Sig_type"; "and_short_name"; 1; ["Type_alias"; 
-                                                          ["Ttuple"; 
-                                                          ["Tpoly"; "a"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Loc"]; 
-                                                          "located"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "Id"]; 
-                                                          "t"]]]]]]]; 
-                        ["Sig_type"; "or_by_notation"; 1; ["Type_variant"; 
-                                                          ["constructor"; 
-                                                          "AN"; ["tuple"; 
-                                                                ["Tpoly"; 
-                                                                "a"]]]; 
-                                                          ["constructor"; 
-                                                          "ByNotation"; 
-                                                          ["tuple"; [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Loc"]; 
-                                                                    "t"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]]]]]]; 
-                        ["Sig_type"; "module_kind"; 0; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "Module"; ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "ModType"; ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "ModAny"; ["tuple"]]]]]]
+["module", "Misctypes",
+["Mty_signature",
+["Sig_type", "patvar", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]],
+["Sig_type", "intro_pattern_expr", 1,
+["Type_variant",
+["constructor", "IntroForthcoming",
+["tuple", ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "IntroNaming",
+["tuple", ["Tconstr", ["Pident", "intro_pattern_naming_expr"]]]],
+["constructor", "IntroAction",
+["tuple",
+["Tconstr", ["Pident", "intro_pattern_action_expr"], ["Tpoly", "constr"]]]]]],
+["Sig_type", "intro_pattern_naming_expr", 0,
+["Type_variant",
+["constructor", "IntroIdentifier",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]],
+["constructor", "IntroFresh",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]],
+["constructor", "IntroAnonymous", ["tuple"]]]],
+["Sig_type", "intro_pattern_action_expr", 1,
+["Type_variant", ["constructor", "IntroWildcard", ["tuple"]],
+["constructor", "IntroOrAndPattern",
+["tuple",
+["Tconstr", ["Pident", "or_and_intro_pattern_expr"], ["Tpoly", "constr"]]]],
+["constructor", "IntroInjection",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tconstr", ["Pident", "intro_pattern_expr"], ["Tpoly", "constr"]]]]]],
+["constructor", "IntroApplyOn",
+["tuple", ["Tpoly", "constr"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tconstr", ["Pident", "intro_pattern_expr"], ["Tpoly", "constr"]]]]],
+["constructor", "IntroRewrite", ["tuple", ["Tconstr", ["Pident", "bool"]]]]]],
+["Sig_type", "or_and_intro_pattern_expr", 1,
+["Type_variant",
+["constructor", "IntroOrPattern",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tconstr", ["Pident", "intro_pattern_expr"], ["Tpoly", "constr"]]]]]]],
+["constructor", "IntroAndPattern",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tconstr", ["Pident", "intro_pattern_expr"], ["Tpoly", "constr"]]]]]]]],
+["Sig_type", "move_location", 1,
+["Type_variant", ["constructor", "MoveAfter", ["tuple", ["Tpoly", "id"]]],
+["constructor", "MoveBefore", ["tuple", ["Tpoly", "id"]]],
+["constructor", "MoveFirst", ["tuple"]],
+["constructor", "MoveLast", ["tuple"]]]],
+["Sig_type", "glob_sort_gen", 1,
+["Type_variant", ["constructor", "GProp", ["tuple"]],
+["constructor", "GSet", ["tuple"]],
+["constructor", "GType", ["tuple", ["Tpoly", "a"]]]]],
+["Sig_type", "sort_info", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pident", "string"]]]]]],
+["Sig_type", "level_info", 0,
+["Type_alias",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pident", "string"]]]]]],
+["Sig_type", "glob_sort", 0,
+["Type_alias",
+["Tconstr", ["Pident", "glob_sort_gen"],
+["Tconstr", ["Pident", "sort_info"]]]]],
+["Sig_type", "glob_level", 0,
+["Type_alias",
+["Tconstr", ["Pident", "glob_sort_gen"],
+["Tconstr", ["Pident", "level_info"]]]]],
+["Sig_type", "existential_key", 0,
+["Type_alias", ["Tconstr", ["Pdot", ["Pident", "Evar"], "t"]]]],
+["Sig_type", "case_style", 0,
+["Type_variant", ["constructor", "LetStyle", ["tuple"]],
+["constructor", "IfStyle", ["tuple"]],
+["constructor", "LetPatternStyle", ["tuple"]],
+["constructor", "MatchStyle", ["tuple"]],
+["constructor", "RegularStyle", ["tuple"]]]],
+["Sig_type", "cast_type", 1,
+["Type_variant", ["constructor", "CastConv", ["tuple", ["Tpoly", "a"]]],
+["constructor", "CastVM", ["tuple", ["Tpoly", "a"]]],
+["constructor", "CastCoerce", ["tuple"]],
+["constructor", "CastNative", ["tuple", ["Tpoly", "a"]]]]],
+["Sig_type", "quantified_hypothesis", 0,
+["Type_variant",
+["constructor", "AnonHyp", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "NamedHyp",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]]]],
+["Sig_type", "explicit_bindings", 1,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tconstr", ["Pident", "quantified_hypothesis"]], ["Tpoly", "a"]]]]],
+["Sig_type", "bindings", 1,
+["Type_variant",
+["constructor", "ImplicitBindings",
+["tuple", ["Tconstr", ["Pident", "list"], ["Tpoly", "a"]]]],
+["constructor", "ExplicitBindings",
+["tuple", ["Tconstr", ["Pident", "explicit_bindings"], ["Tpoly", "a"]]]],
+["constructor", "NoBindings", ["tuple"]]]],
+["Sig_type", "with_bindings", 1,
+["Type_alias",
+["Ttuple", ["Tpoly", "a"],
+["Tconstr", ["Pident", "bindings"], ["Tpoly", "a"]]]]],
+["Sig_type", "or_var", 1,
+["Type_variant", ["constructor", "ArgArg", ["tuple", ["Tpoly", "a"]]],
+["constructor", "ArgVar",
+["tuple",
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]]]]],
+["Sig_type", "and_short_name", 1,
+["Type_alias",
+["Ttuple", ["Tpoly", "a"],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]]]]],
+["Sig_type", "or_by_notation", 1,
+["Type_variant", ["constructor", "AN", ["tuple", ["Tpoly", "a"]]],
+["constructor", "ByNotation",
+["tuple",
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]]]],
+["Sig_type", "module_kind", 0,
+["Type_variant", ["constructor", "Module", ["tuple"]],
+["constructor", "ModType", ["tuple"]], ["constructor", "ModAny", ["tuple"]]]]]]

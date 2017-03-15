@@ -1,730 +1,229 @@
-["module"; "Toploop"; ["Mty_signature"; ["Sig_value"; "getvalue"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Obj"]; 
-                                                                  "t"]]]]; 
-                      ["Sig_value"; "setvalue"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Obj"]; 
-                                                           "t"]]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]]; 
-                      ["Sig_value"; "set_paths"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]; 
-                      ["Sig_value"; "loop"; ["Tarrow"; ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Format"]; 
-                                                                   "formatter"]]; 
-                                            ["Tconstr"; ["Pident"; "unit"]]]]; 
-                      ["Sig_value"; "run_script"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Format"]; 
-                                                             "formatter"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "array"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bool"]]]]]]; 
-                      ["Sig_type"; "directive_fun"; 0; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "Directive_none"; 
-                                                       ["tuple"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                                       ["constructor"; 
-                                                       "Directive_string"; 
-                                                       ["tuple"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                                       ["constructor"; 
-                                                       "Directive_int"; 
-                                                       ["tuple"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                                       ["constructor"; 
-                                                       "Directive_ident"; 
-                                                       ["tuple"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Longident"]; 
-                                                                 "t"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                                       ["constructor"; 
-                                                       "Directive_bool"; 
-                                                       ["tuple"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bool"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]]]; 
-                      ["Sig_type"; "directive_info"; 0; ["Type_record"; 
-                                                        ["label"; "section"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]]; 
-                                                        ["label"; "doc"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]]]]; 
-                      ["Sig_value"; "add_directive"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "directive_fun"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "directive_info"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]]]; 
-                      ["Sig_value"; "directive_table"; ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Hashtbl"]; 
-                                                                   "t"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "string"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "directive_fun"]]]]; 
-                      ["Sig_value"; "directive_info_table"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Hashtbl"]; 
-                                                            "t"]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "directive_info"]]]]; 
-                      ["Sig_value"; "toplevel_env"; ["Tconstr"; ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Pervasives"]; 
-                                                                "ref"]; 
-                                                    ["Tconstr"; ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Env"]; 
-                                                                "t"]]]]; 
-                      ["Sig_value"; "initialize_toplevel_env"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                      ["Sig_value"; "print_exception_outcome"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Format"]; 
-                                                               "formatter"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "exn"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]; 
-                      ["Sig_value"; "execute_phrase"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bool"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Format"]; 
-                                                                 "formatter"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Parsetree"]; 
-                                                                 "toplevel_phrase"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "bool"]]]]]]; 
-                      ["Sig_value"; "preprocess_phrase"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Format"]; 
-                                                                    "formatter"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Parsetree"]; 
-                                                                    "toplevel_phrase"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Parsetree"]; 
-                                                         "toplevel_phrase"]]]]]; 
-                      ["Sig_value"; "use_file"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Format"]; 
-                                                           "formatter"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bool"]]]]]; 
-                      ["Sig_value"; "use_silently"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Format"]; 
-                                                               "formatter"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "bool"]]]]]; 
-                      ["Sig_value"; "mod_use_file"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Format"]; 
-                                                               "formatter"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "bool"]]]]]; 
-                      ["Sig_value"; "eval_path"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; "Env"]; 
-                                                            "t"]]; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Path"]; 
-                                                                   "t"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Obj"]; 
-                                                                   "t"]]]]]; 
-                      ["Sig_value"; "record_backtrace"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]; 
-                      ["Sig_value"; "print_value"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Env"]; 
-                                                              "t"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Obj"]; 
-                                                              "t"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Format"]; 
-                                                              "formatter"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Types"]; 
-                                                              "type_expr"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "unit"]]]]]]]; 
-                      ["Sig_value"; "print_untyped_exception"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Format"]; 
-                                                               "formatter"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Obj"]; 
-                                                               "t"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]; 
-                      ["Sig_type"; "gen_printer"; 2; ["Type_variant"; 
-                                                     ["constructor"; 
-                                                     "Zero"; ["tuple"; 
-                                                             ["Tpoly"; "b"]]]; 
-                                                     ["constructor"; 
-                                                     "Succ"; ["tuple"; 
-                                                             ["Tarrow"; 
-                                                             ["Tpoly"; "a"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "gen_printer"]; 
-                                                             ["Tpoly"; "a"]; 
-                                                             ["Tpoly"; "b"]]]]]]]; 
-                      ["Sig_value"; "install_printer"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Path"]; 
-                                                                  "t"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Types"]; 
-                                                                  "type_expr"]]; 
-                                                       ["Tarrow"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Format"]; 
-                                                                  "formatter"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Obj"]; 
-                                                                  "t"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]]]; 
-                      ["Sig_value"; "install_generic_printer"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Path"]; 
-                                                               "t"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Path"]; 
-                                                               "t"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "gen_printer"]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Obj"]; 
-                                                               "t"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Outcometree"]; 
-                                                               "out_value"]]]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Obj"]; 
-                                                               "t"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Outcometree"]; 
-                                                               "out_value"]]]]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]]; 
-                      ["Sig_value"; "install_generic_printer'"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Path"]; 
-                                                                "t"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Path"]; 
-                                                                "t"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "gen_printer"]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Format"]; 
-                                                                "formatter"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Obj"]; 
-                                                                "t"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Format"]; 
-                                                                "formatter"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Obj"]; 
-                                                                "t"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]]]; 
-                      ["Sig_value"; "remove_printer"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Path"]; 
-                                                                 "t"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]; 
-                      ["Sig_value"; "max_printer_depth"; ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Pervasives"]; 
-                                                         "ref"]; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]; 
-                      ["Sig_value"; "max_printer_steps"; ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Pervasives"]; 
-                                                         "ref"]; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]; 
-                      ["Sig_value"; "parse_toplevel_phrase"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Pervasives"]; 
-                                                             "ref"]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Lexing"]; 
-                                                             "lexbuf"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Parsetree"]; 
-                                                             "toplevel_phrase"]]]]]; 
-                      ["Sig_value"; "parse_use_file"; ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Pervasives"]; 
-                                                                  "ref"]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Lexing"]; 
-                                                                 "lexbuf"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Parsetree"]; 
-                                                                  "toplevel_phrase"]]]]]]; 
-                      ["Sig_value"; "print_location"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Format"]; 
-                                                                 "formatter"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Location"]; 
-                                                                 "t"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]]; 
-                      ["Sig_value"; "print_error"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Format"]; 
-                                                              "formatter"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Location"]; 
-                                                              "t"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "unit"]]]]]; 
-                      ["Sig_value"; "print_warning"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Location"]; 
-                                                                "t"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Format"]; 
-                                                                "formatter"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Warnings"]; 
-                                                                "t"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]]]; 
-                      ["Sig_value"; "input_name"; ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Pervasives"]; 
-                                                              "ref"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "string"]]]]; 
-                      ["Sig_value"; "print_out_value"; ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Pervasives"]; 
-                                                                   "ref"]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Format"]; 
-                                                                  "formatter"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Outcometree"]; 
-                                                                  "out_value"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]]]; 
-                      ["Sig_value"; "print_out_type"; ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Pervasives"]; 
-                                                                  "ref"]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Format"]; 
-                                                                 "formatter"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Outcometree"]; 
-                                                                 "out_type"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]]]; 
-                      ["Sig_value"; "print_out_class_type"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Pervasives"]; 
-                                                            "ref"]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Format"]; 
-                                                                    "formatter"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Outcometree"]; 
-                                                                    "out_class_type"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]]; 
-                      ["Sig_value"; "print_out_module_type"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Pervasives"]; 
-                                                             "ref"]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Format"]; 
-                                                             "formatter"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Outcometree"]; 
-                                                             "out_module_type"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]]]]]; 
-                      ["Sig_value"; "print_out_type_extension"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Pervasives"]; 
-                                                                "ref"]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Format"]; 
-                                                                "formatter"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Outcometree"]; 
-                                                                "out_type_extension"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]]]; 
-                      ["Sig_value"; "print_out_sig_item"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Pervasives"]; 
-                                                          "ref"]; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Format"]; 
-                                                                  "formatter"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Outcometree"]; 
-                                                                  "out_sig_item"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]]]; 
-                      ["Sig_value"; "print_out_signature"; ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Pervasives"]; 
-                                                           "ref"]; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Format"]; 
-                                                                   "formatter"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Outcometree"]; 
-                                                                   "out_sig_item"]]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]]]; 
-                      ["Sig_value"; "print_out_phrase"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Pervasives"]; 
-                                                                    "ref"]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Format"]; 
-                                                                   "formatter"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Outcometree"]; 
-                                                                   "out_phrase"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]]; 
-                      ["Sig_value"; "read_interactive_input"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Pervasives"]; 
-                                                              "ref"]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "bytes"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]; 
-                                                              ["Ttuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "bool"]]]]]]]]; 
-                      ["Sig_value"; "toplevel_startup_hook"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Pervasives"]; 
-                                                             "ref"]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]]]]; 
-                      ["Sig_value"; "may_trace"; ["Tconstr"; ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Pervasives"]; 
-                                                             "ref"]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "bool"]]]]; 
-                      ["Sig_value"; "override_sys_argv"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "array"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "unit"]]]]]]
+["module", "Toploop",
+["Mty_signature",
+["Sig_value", "getvalue",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]]]],
+["Sig_value", "setvalue",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "set_paths",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "loop",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "run_script",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pident", "bool"]]]]]],
+["Sig_type", "directive_fun", 0,
+["Type_variant",
+["constructor", "Directive_none",
+["tuple",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]]],
+["constructor", "Directive_string",
+["tuple",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["constructor", "Directive_int",
+["tuple",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]],
+["constructor", "Directive_ident",
+["tuple",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Longident"], "t"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["constructor", "Directive_bool",
+["tuple",
+["Tarrow", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_type", "directive_info", 0,
+["Type_record", ["label", "section", ["Tconstr", ["Pident", "string"]]],
+["label", "doc", ["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "add_directive",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "directive_fun"]],
+["Tarrow", ["Tconstr", ["Pident", "directive_info"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "directive_table",
+["Tconstr", ["Pdot", ["Pident", "Hashtbl"], "t"],
+["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "directive_fun"]]]],
+["Sig_value", "directive_info_table",
+["Tconstr", ["Pdot", ["Pident", "Hashtbl"], "t"],
+["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "directive_info"]]]],
+["Sig_value", "toplevel_env",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pdot", ["Pident", "Env"], "t"]]]],
+["Sig_value", "initialize_toplevel_env",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "print_exception_outcome",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pident", "exn"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "execute_phrase",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Parsetree"], "toplevel_phrase"]],
+["Tconstr", ["Pident", "bool"]]]]]],
+["Sig_value", "preprocess_phrase",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Parsetree"], "toplevel_phrase"]],
+["Tconstr", ["Pdot", ["Pident", "Parsetree"], "toplevel_phrase"]]]]],
+["Sig_value", "use_file",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "use_silently",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "mod_use_file",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "eval_path",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Env"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Path"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]]]]],
+["Sig_value", "record_backtrace",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "print_value",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Env"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Types"], "type_expr"]],
+["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "print_untyped_exception",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_type", "gen_printer", 2,
+["Type_variant", ["constructor", "Zero", ["tuple", ["Tpoly", "b"]]],
+["constructor", "Succ",
+["tuple",
+["Tarrow", ["Tpoly", "a"],
+["Tconstr", ["Pident", "gen_printer"], ["Tpoly", "a"], ["Tpoly", "b"]]]]]]],
+["Sig_value", "install_printer",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Path"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Types"], "type_expr"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tconstr", ["Pident", "unit"]]]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "install_generic_printer",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Path"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Path"], "t"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "gen_printer"],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Outcometree"], "out_value"]]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Outcometree"], "out_value"]]]]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "install_generic_printer'",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Path"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Path"], "t"]],
+["Tarrow",
+["Tconstr", ["Pident", "gen_printer"],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tconstr", ["Pident", "unit"]]]]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "remove_printer",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Path"], "t"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "max_printer_depth",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "max_printer_steps",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "parse_toplevel_phrase",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Lexing"], "lexbuf"]],
+["Tconstr", ["Pdot", ["Pident", "Parsetree"], "toplevel_phrase"]]]]],
+["Sig_value", "parse_use_file",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Lexing"], "lexbuf"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Parsetree"], "toplevel_phrase"]]]]]],
+["Sig_value", "print_location",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Location"], "t"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "print_error",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Location"], "t"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "print_warning",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Location"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Warnings"], "t"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "input_name",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "print_out_value",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Outcometree"], "out_value"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "print_out_type",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Outcometree"], "out_type"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "print_out_class_type",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Outcometree"], "out_class_type"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "print_out_module_type",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Outcometree"], "out_module_type"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "print_out_type_extension",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Outcometree"], "out_type_extension"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "print_out_sig_item",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Outcometree"], "out_sig_item"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "print_out_signature",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Outcometree"], "out_sig_item"]]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "print_out_phrase",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Outcometree"], "out_phrase"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "read_interactive_input",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "bool"]]]]]]]],
+["Sig_value", "toplevel_startup_hook",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "may_trace",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "override_sys_argv",
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pident", "unit"]]]]]]

@@ -1,82 +1,35 @@
-["module"; "Dbus_auth"; ["Mty_signature"; ["Sig_type"; "error"; 0; ["Type_variant"; 
-                                                                   ["constructor"; 
-                                                                   "Internal_error"; 
-                                                                   ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]]; 
-                                                                   ["constructor"; 
-                                                                   "Unexpected_char"; 
-                                                                   ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "char"]]]]; 
-                                                                   ["constructor"; 
-                                                                   "Unrecognized_server_protocol"; 
-                                                                   ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]]]]; 
-                        ["Sig_unknown"]; ["Sig_type"; "auth_mechanism"; 
-                                         0; ["Type_variant"; ["constructor"; 
-                                                             "External"; 
-                                                             ["tuple"]]; 
-                                            ["constructor"; "Anonymous"; 
-                                            ["tuple"]]]]; ["Sig_type"; 
-                                                          "auth_state"; 
-                                                          0; ["Type_variant"; 
-                                                             ["constructor"; 
-                                                             "Auth_in_progress"; 
-                                                             ["tuple"]]; 
-                                                             ["constructor"; 
-                                                             "Auth_failed"; 
-                                                             ["tuple"]]; 
-                                                             ["constructor"; 
-                                                             "Auth_succeeded"; 
-                                                             ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]]]]; 
-                        ["Sig_type"; "client_context"; 0; ["Type_abstract"]]; 
-                        ["Sig_type"; "protocol_sender"; 0; ["Type_alias"; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]]]]; 
-                        ["Sig_value"; "init_client_context"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "auth_mechanism"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "protocol_sender"]]; 
-                                                             ["Ttuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "client_context"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "auth_state"]]]]]]; 
-                        ["Sig_value"; "parse_input"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "client_context"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "protocol_sender"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "auth_state"]]]]]]]]]]
+["module", "Dbus_auth",
+["Mty_signature",
+["Sig_type", "error", 0,
+["Type_variant",
+["constructor", "Internal_error",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Unexpected_char",
+["tuple", ["Tconstr", ["Pident", "char"]]]],
+["constructor", "Unrecognized_server_protocol",
+["tuple", ["Tconstr", ["Pident", "string"]]]]]], ["Sig_unknown"],
+["Sig_type", "auth_mechanism", 0,
+["Type_variant", ["constructor", "External", ["tuple"]],
+["constructor", "Anonymous", ["tuple"]]]],
+["Sig_type", "auth_state", 0,
+["Type_variant", ["constructor", "Auth_in_progress", ["tuple"]],
+["constructor", "Auth_failed", ["tuple"]],
+["constructor", "Auth_succeeded",
+["tuple", ["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_type", "client_context", 0, ["Type_abstract"]],
+["Sig_type", "protocol_sender", 0,
+["Type_alias",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "init_client_context",
+["Tarrow", ["Tconstr", ["Pident", "auth_mechanism"]],
+["Tarrow", ["Tconstr", ["Pident", "protocol_sender"]],
+["Ttuple", ["Tconstr", ["Pident", "client_context"]],
+["Tconstr", ["Pident", "auth_state"]]]]]],
+["Sig_value", "parse_input",
+["Tarrow", ["Tconstr", ["Pident", "client_context"]],
+["Tarrow", ["Tconstr", ["Pident", "protocol_sender"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "auth_state"]]]]]]]]]]

@@ -1,337 +1,145 @@
-["module"; "Extend"; ["Mty_signature"; ["Sig_type"; "entry"; 1; ["Type_alias"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Papply"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Compat"]; 
-                                                                "GrammarMake"]; 
-                                                                ["Pident"; 
-                                                                "CLexer"]]; 
-                                                                "entry"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]]]; 
-                     ["Sig_type"; "side"; 0; ["Type_variant"; ["constructor"; 
-                                                              "Left"; 
-                                                              ["tuple"]]; 
-                                             ["constructor"; "Right"; 
-                                             ["tuple"]]]]; ["Sig_type"; 
-                                                           "gram_assoc"; 
-                                                           0; ["Type_variant"; 
-                                                              ["constructor"; 
-                                                              "NonA"; 
-                                                              ["tuple"]]; 
-                                                              ["constructor"; 
-                                                              "RightA"; 
-                                                              ["tuple"]]; 
-                                                              ["constructor"; 
-                                                              "LeftA"; 
-                                                              ["tuple"]]]]; 
-                     ["Sig_type"; "gram_position"; 0; ["Type_variant"; 
-                                                      ["constructor"; 
-                                                      "First"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Last"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Before"; ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]]]; 
-                                                      ["constructor"; 
-                                                      "After"; ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]]]; 
-                                                      ["constructor"; 
-                                                      "Level"; ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]]]]]; 
-                     ["Sig_type"; "production_position"; 0; ["Type_variant"; 
-                                                            ["constructor"; 
-                                                            "BorderProd"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "side"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "gram_assoc"]]]]]; 
-                                                            ["constructor"; 
-                                                            "InternalProd"; 
-                                                            ["tuple"]]]]; 
-                     ["Sig_type"; "production_level"; 0; ["Type_variant"; 
-                                                         ["constructor"; 
-                                                         "NextLevel"; 
-                                                         ["tuple"]]; 
-                                                         ["constructor"; 
-                                                         "NumLevel"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]]]; 
-                     ["Sig_type"; "constr_entry_key_gen"; 2; ["Type_variant"; 
-                                                             ["constructor"; 
-                                                             "ETName"; 
-                                                             ["tuple"]]; 
-                                                             ["constructor"; 
-                                                             "ETReference"; 
-                                                             ["tuple"]]; 
-                                                             ["constructor"; 
-                                                             "ETBigint"; 
-                                                             ["tuple"]]; 
-                                                             ["constructor"; 
-                                                             "ETBinder"; 
-                                                             ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bool"]]]]; 
-                                                             ["constructor"; 
-                                                             "ETConstr"; 
-                                                             ["tuple"; 
-                                                             ["Ttuple"; 
-                                                             ["Tpoly"; "lev"]; 
-                                                             ["Tpoly"; "pos"]]]]; 
-                                                             ["constructor"; 
-                                                             "ETPattern"; 
-                                                             ["tuple"]]; 
-                                                             ["constructor"; 
-                                                             "ETOther"; 
-                                                             ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]; 
-                                                             ["constructor"; 
-                                                             "ETConstrList"; 
-                                                             ["tuple"; 
-                                                             ["Ttuple"; 
-                                                             ["Tpoly"; "lev"]; 
-                                                             ["Tpoly"; "pos"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Tok"]; 
-                                                             "t"]]]]]; 
-                                                             ["constructor"; 
-                                                             "ETBinderList"; 
-                                                             ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bool"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Tok"]; 
-                                                             "t"]]]]]]]; 
-                     ["Sig_type"; "constr_entry_key"; 0; ["Type_alias"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "constr_entry_key_gen"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "unit"]]]]]; 
-                     ["Sig_type"; "constr_prod_entry_key"; 0; ["Type_alias"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "constr_entry_key_gen"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "production_level"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "production_position"]]]]]; 
-                     ["Sig_type"; "simple_constr_prod_entry_key"; 0; 
-                     ["Type_alias"; ["Tconstr"; ["Pident"; "constr_entry_key_gen"]; 
-                                    ["Tconstr"; ["Pident"; "production_level"]]; 
-                                    ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                     ["Sig_type"; "user_symbol"; 1; ["Type_variant"; 
-                                                    ["constructor"; "Ulist1"; 
-                                                    ["tuple"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "user_symbol"]; 
-                                                              ["Tpoly"; "a"]]]]; 
-                                                    ["constructor"; "Ulist1sep"; 
-                                                    ["tuple"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "user_symbol"]; 
-                                                              ["Tpoly"; "a"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "string"]]]]; 
-                                                    ["constructor"; "Ulist0"; 
-                                                    ["tuple"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "user_symbol"]; 
-                                                              ["Tpoly"; "a"]]]]; 
-                                                    ["constructor"; "Ulist0sep"; 
-                                                    ["tuple"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "user_symbol"]; 
-                                                              ["Tpoly"; "a"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "string"]]]]; 
-                                                    ["constructor"; "Uopt"; 
-                                                    ["tuple"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "user_symbol"]; 
-                                                              ["Tpoly"; "a"]]]]; 
-                                                    ["constructor"; "Uentry"; 
-                                                    ["tuple"; ["Tpoly"; "a"]]]; 
-                                                    ["constructor"; "Uentryl"; 
-                                                    ["tuple"; ["Tpoly"; "a"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]]]; 
-                     ["Sig_type"; "symbol"; 2; ["Type_variant"; ["constructor"; 
-                                                                "Atoken"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Tok"]; 
-                                                                "t"]]]]; 
-                                               ["constructor"; "Alist1"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "symbol"]; 
-                                                         ["Tpoly"; "self"]; 
-                                                         ["Tpoly"; "a"]]]]; 
-                                               ["constructor"; "Alist1sep"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "symbol"]; 
-                                                         ["Tpoly"; "self"]; 
-                                                         ["Tpoly"; "a"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "symbol"]; 
-                                               ["Tpoly"; "self"]; ["Tvar"; 0]]]]; 
-                                               ["constructor"; "Alist0"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "symbol"]; 
-                                                         ["Tpoly"; "self"]; 
-                                                         ["Tpoly"; "a"]]]]; 
-                                               ["constructor"; "Alist0sep"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "symbol"]; 
-                                                         ["Tpoly"; "self"]; 
-                                                         ["Tpoly"; "a"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "symbol"]; 
-                                               ["Tpoly"; "self"]; ["Tvar"; 1]]]]; 
-                                               ["constructor"; "Aopt"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "symbol"]; 
-                                                         ["Tpoly"; "self"]; 
-                                                         ["Tpoly"; "a"]]]]; 
-                                               ["constructor"; "Aself"; 
-                                               ["tuple"]]; ["constructor"; 
-                                                           "Anext"; ["tuple"]]; 
-                                               ["constructor"; "Aentry"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "entry"]; 
-                                                         ["Tpoly"; "a"]]]]; 
-                                               ["constructor"; "Aentryl"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "entry"]; 
-                                                         ["Tpoly"; "a"]]; 
-                                               ["Tconstr"; ["Pident"; "int"]]]]; 
-                                               ["constructor"; "Arules"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "list"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "rules"]; 
-                                                         ["Tpoly"; "a"]]]]]]]; 
-                     ["Sig_type"; "rule"; 3; ["Type_variant"; ["constructor"; 
-                                                              "Stop"; 
-                                                              ["tuple"]]; 
-                                             ["constructor"; "Next"; 
-                                             ["tuple"; ["Tconstr"; ["Pident"; 
-                                                                   "rule"]; 
-                                                       ["Tpoly"; "self"]; 
-                                                       ["Tpoly"; "a"]; 
-                                                       ["Tpoly"; "r"]]; 
-                                             ["Tconstr"; ["Pident"; "symbol"]; 
-                                             ["Tpoly"; "self"]; ["Tpoly"; 
-                                                                "b"]]]]]]; 
-                     ["Sig_type"; "norec_rule"; 2; ["Type_record"; ["label"; 
-                                                                   "norec_rule"; 
-                                                                   ["Tunknown"]]]]; 
-                     ["Sig_type"; "rules"; 1; ["Type_variant"; ["constructor"; 
-                                                               "Rules"; 
-                                                               ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "norec_rule"]; 
-                                                               ["Tpoly"; 
-                                                               "act"]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Loc"]; 
-                                                               "t"]]; 
-                                                               ["Tpoly"; "a"]]]; 
-                                                               ["Tpoly"; 
-                                                               "act"]]]]]; 
-                     ["Sig_type"; "production_rule"; 1; ["Type_variant"; 
-                                                        ["constructor"; 
-                                                        "Rule"; ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "rule"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tpoly"; 
-                                                                "act"]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Loc"]; 
-                                                                "t"]]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]]; 
-                                                                ["Tpoly"; 
-                                                                "act"]]]]]; 
-                     ["Sig_type"; "single_extend_statment"; 1; ["Type_alias"; 
-                                                               ["Ttuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "option"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "option"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "gram_assoc"]]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "production_rule"]; 
-                                                               ["Tpoly"; "a"]]]]]]; 
-                     ["Sig_type"; "extend_statment"; 1; ["Type_alias"; 
-                                                        ["Ttuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gram_position"]]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "single_extend_statment"]; 
-                                                        ["Tpoly"; "a"]]]]]]]]
+["module", "Extend",
+["Mty_signature",
+["Sig_type", "entry", 1,
+["Type_alias",
+["Tconstr",
+["Pdot",
+["Papply", ["Pdot", ["Pident", "Compat"], "GrammarMake"],
+["Pident", "CLexer"]], "entry"], ["Tpoly", "a"]]]],
+["Sig_type", "side", 0,
+["Type_variant", ["constructor", "Left", ["tuple"]],
+["constructor", "Right", ["tuple"]]]],
+["Sig_type", "gram_assoc", 0,
+["Type_variant", ["constructor", "NonA", ["tuple"]],
+["constructor", "RightA", ["tuple"]], ["constructor", "LeftA", ["tuple"]]]],
+["Sig_type", "gram_position", 0,
+["Type_variant", ["constructor", "First", ["tuple"]],
+["constructor", "Last", ["tuple"]],
+["constructor", "Before", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "After", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Level", ["tuple", ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_type", "production_position", 0,
+["Type_variant",
+["constructor", "BorderProd",
+["tuple", ["Tconstr", ["Pident", "side"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "gram_assoc"]]]]],
+["constructor", "InternalProd", ["tuple"]]]],
+["Sig_type", "production_level", 0,
+["Type_variant", ["constructor", "NextLevel", ["tuple"]],
+["constructor", "NumLevel", ["tuple", ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_type", "constr_entry_key_gen", 2,
+["Type_variant", ["constructor", "ETName", ["tuple"]],
+["constructor", "ETReference", ["tuple"]],
+["constructor", "ETBigint", ["tuple"]],
+["constructor", "ETBinder", ["tuple", ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "ETConstr",
+["tuple", ["Ttuple", ["Tpoly", "lev"], ["Tpoly", "pos"]]]],
+["constructor", "ETPattern", ["tuple"]],
+["constructor", "ETOther",
+["tuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]]],
+["constructor", "ETConstrList",
+["tuple", ["Ttuple", ["Tpoly", "lev"], ["Tpoly", "pos"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Tok"], "t"]]]]],
+["constructor", "ETBinderList",
+["tuple", ["Tconstr", ["Pident", "bool"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Tok"], "t"]]]]]]],
+["Sig_type", "constr_entry_key", 0,
+["Type_alias",
+["Tconstr", ["Pident", "constr_entry_key_gen"],
+["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_type", "constr_prod_entry_key", 0,
+["Type_alias",
+["Tconstr", ["Pident", "constr_entry_key_gen"],
+["Tconstr", ["Pident", "production_level"]],
+["Tconstr", ["Pident", "production_position"]]]]],
+["Sig_type", "simple_constr_prod_entry_key", 0,
+["Type_alias",
+["Tconstr", ["Pident", "constr_entry_key_gen"],
+["Tconstr", ["Pident", "production_level"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_type", "user_symbol", 1,
+["Type_variant",
+["constructor", "Ulist1",
+["tuple", ["Tconstr", ["Pident", "user_symbol"], ["Tpoly", "a"]]]],
+["constructor", "Ulist1sep",
+["tuple", ["Tconstr", ["Pident", "user_symbol"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "string"]]]],
+["constructor", "Ulist0",
+["tuple", ["Tconstr", ["Pident", "user_symbol"], ["Tpoly", "a"]]]],
+["constructor", "Ulist0sep",
+["tuple", ["Tconstr", ["Pident", "user_symbol"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "string"]]]],
+["constructor", "Uopt",
+["tuple", ["Tconstr", ["Pident", "user_symbol"], ["Tpoly", "a"]]]],
+["constructor", "Uentry", ["tuple", ["Tpoly", "a"]]],
+["constructor", "Uentryl",
+["tuple", ["Tpoly", "a"], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_type", "symbol", 2,
+["Type_variant",
+["constructor", "Atoken",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Tok"], "t"]]]],
+["constructor", "Alist1",
+["tuple",
+["Tconstr", ["Pident", "symbol"], ["Tpoly", "self"], ["Tpoly", "a"]]]],
+["constructor", "Alist1sep",
+["tuple",
+["Tconstr", ["Pident", "symbol"], ["Tpoly", "self"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "symbol"], ["Tpoly", "self"], ["Tvar", 0]]]],
+["constructor", "Alist0",
+["tuple",
+["Tconstr", ["Pident", "symbol"], ["Tpoly", "self"], ["Tpoly", "a"]]]],
+["constructor", "Alist0sep",
+["tuple",
+["Tconstr", ["Pident", "symbol"], ["Tpoly", "self"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "symbol"], ["Tpoly", "self"], ["Tvar", 1]]]],
+["constructor", "Aopt",
+["tuple",
+["Tconstr", ["Pident", "symbol"], ["Tpoly", "self"], ["Tpoly", "a"]]]],
+["constructor", "Aself", ["tuple"]], ["constructor", "Anext", ["tuple"]],
+["constructor", "Aentry",
+["tuple", ["Tconstr", ["Pident", "entry"], ["Tpoly", "a"]]]],
+["constructor", "Aentryl",
+["tuple", ["Tconstr", ["Pident", "entry"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "int"]]]],
+["constructor", "Arules",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "rules"], ["Tpoly", "a"]]]]]]],
+["Sig_type", "rule", 3,
+["Type_variant", ["constructor", "Stop", ["tuple"]],
+["constructor", "Next",
+["tuple",
+["Tconstr", ["Pident", "rule"], ["Tpoly", "self"], ["Tpoly", "a"],
+["Tpoly", "r"]],
+["Tconstr", ["Pident", "symbol"], ["Tpoly", "self"], ["Tpoly", "b"]]]]]],
+["Sig_type", "norec_rule", 2,
+["Type_record", ["label", "norec_rule", ["Tunknown"]]]],
+["Sig_type", "rules", 1,
+["Type_variant",
+["constructor", "Rules",
+["tuple",
+["Tconstr", ["Pident", "norec_rule"], ["Tpoly", "act"],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]], ["Tpoly", "a"]]],
+["Tpoly", "act"]]]]],
+["Sig_type", "production_rule", 1,
+["Type_variant",
+["constructor", "Rule",
+["tuple",
+["Tconstr", ["Pident", "rule"], ["Tpoly", "a"], ["Tpoly", "act"],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]], ["Tpoly", "a"]]],
+["Tpoly", "act"]]]]],
+["Sig_type", "single_extend_statment", 1,
+["Type_alias",
+["Ttuple",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "gram_assoc"]]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "production_rule"], ["Tpoly", "a"]]]]]],
+["Sig_type", "extend_statment", 1,
+["Type_alias",
+["Ttuple",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "gram_position"]]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "single_extend_statment"], ["Tpoly", "a"]]]]]]]]

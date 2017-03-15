@@ -1,155 +1,61 @@
-["module"; "Procord_process"; ["Mty_signature"; ["Sig_type"; "process"; 
-                                                1; ["Type_abstract"]]; 
-                              ["Sig_value"; "delegate"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Procord_task"]; 
-                                                                   "delegated_task"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]]; 
-                                                        ["Tarrow"; ["Tpoly"; 
-                                                                   "a"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "process"]; 
-                                                        ["Tpoly"; "b"]]]]]; 
-                              ["Sig_value"; "delegate_task_create_process"; 
-                              ["Tarrow"; ["Tconstr"; ["Pident"; "option"]; 
-                                         ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                              "Unix"]; 
-                                                     "file_descr"]]]; 
-                              ["Tarrow"; ["Tconstr"; ["Pident"; "string"]]; 
-                              ["Tarrow"; ["Tconstr"; ["Pident"; "array"]; 
-                                         ["Tconstr"; ["Pident"; "string"]]]; 
-                              ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                              "Procord_task"]; 
-                                                     "delegated_task"]; 
-                                         ["Tpoly"; "a"]; ["Tpoly"; "b"]]; 
-                              ["Tarrow"; ["Tpoly"; "a"]; ["Tconstr"; 
-                                                         ["Pident"; "process"]; 
-                                                         ["Tpoly"; "b"]]]]]]]]; 
-                              ["Sig_value"; "delegate_task_socket"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Procord_task"]; 
-                                                                    "delegated_task"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "process"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]]]]]; 
-                              ["Sig_type"; "execution_error"; 0; ["Type_variant"; 
-                                                                 ["constructor"; 
-                                                                 "Worker_unknown_exception"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "Worker_killed"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "Worker_disconnected"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "exn"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "No_worker_available"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]]]]; 
-                              ["Sig_unknown"]; ["Sig_value"; "error_message"; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "execution_error"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "string"]]]]; 
-                              ["Sig_type"; "status"; 1; ["Type_variant"; 
-                                                        ["constructor"; 
-                                                        "Working"; ["tuple"]]; 
-                                                        ["constructor"; 
-                                                        "Success"; ["tuple"; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]]; 
-                                                        ["constructor"; 
-                                                        "Exception"; 
-                                                        ["tuple"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "exn"]]]]; 
-                                                        ["constructor"; 
-                                                        "Error"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "execution_error"]]]]]]; 
-                              ["Sig_value"; "waiter"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "process"]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Procord_connection"]; 
-                                                                  "waiter"]]]]; 
-                              ["Sig_value"; "update"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "process"]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]; 
-                              ["Sig_value"; "status"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "process"]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "status"]; 
-                                                      ["Tpoly"; "a"]]]]; 
-                              ["Sig_value"; "run"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "process"]; 
-                                                              ["Tpoly"; "a"]]; 
-                                                   ["Tpoly"; "a"]]]; 
-                              ["Sig_value"; "kill"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "process"]; 
-                                                               ["Tpoly"; "a"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "unit"]]]]]]
+["module", "Procord_process",
+["Mty_signature", ["Sig_type", "process", 1, ["Type_abstract"]],
+["Sig_value", "delegate",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Procord_task"], "delegated_task"],
+["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tpoly", "a"],
+["Tconstr", ["Pident", "process"], ["Tpoly", "b"]]]]],
+["Sig_value", "delegate_task_create_process",
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Procord_task"], "delegated_task"],
+["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tpoly", "a"],
+["Tconstr", ["Pident", "process"], ["Tpoly", "b"]]]]]]]],
+["Sig_value", "delegate_task_socket",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Procord_task"], "delegated_task"],
+["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tpoly", "a"],
+["Tconstr", ["Pident", "process"], ["Tpoly", "b"]]]]]]],
+["Sig_type", "execution_error", 0,
+["Type_variant",
+["constructor", "Worker_unknown_exception",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Worker_killed", ["tuple"]],
+["constructor", "Worker_disconnected",
+["tuple", ["Tconstr", ["Pident", "exn"]]]],
+["constructor", "No_worker_available",
+["tuple", ["Tconstr", ["Pident", "string"]]]]]], ["Sig_unknown"],
+["Sig_value", "error_message",
+["Tarrow", ["Tconstr", ["Pident", "execution_error"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "status", 1,
+["Type_variant", ["constructor", "Working", ["tuple"]],
+["constructor", "Success", ["tuple", ["Tpoly", "a"]]],
+["constructor", "Exception", ["tuple", ["Tconstr", ["Pident", "exn"]]]],
+["constructor", "Error",
+["tuple", ["Tconstr", ["Pident", "execution_error"]]]]]],
+["Sig_value", "waiter",
+["Tarrow", ["Tconstr", ["Pident", "process"], ["Tpoly", "a"]],
+["Tconstr", ["Pdot", ["Pident", "Procord_connection"], "waiter"]]]],
+["Sig_value", "update",
+["Tarrow", ["Tconstr", ["Pident", "process"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "status",
+["Tarrow", ["Tconstr", ["Pident", "process"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "status"], ["Tpoly", "a"]]]],
+["Sig_value", "run",
+["Tarrow", ["Tconstr", ["Pident", "process"], ["Tpoly", "a"]],
+["Tpoly", "a"]]],
+["Sig_value", "kill",
+["Tarrow", ["Tconstr", ["Pident", "process"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "unit"]]]]]]

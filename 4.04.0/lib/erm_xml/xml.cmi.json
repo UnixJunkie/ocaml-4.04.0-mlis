@@ -1,624 +1,267 @@
-["module"; "Xml"; ["Mty_signature"; ["Sig_unknown"]; ["Sig_unknown"]; 
-                  ["Sig_type"; "namespace"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]]]; 
-                  ["Sig_type"; "prefix"; 0; ["Type_alias"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]; 
-                  ["Sig_type"; "ncname"; 0; ["Type_alias"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]; 
-                  ["Sig_type"; "name"; 0; ["Type_alias"; ["Tconstr"; 
-                                                         ["Pident"; "ncname"]]]]; 
-                  ["Sig_type"; "qname"; 0; ["Type_alias"; ["Ttuple"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "namespace"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "name"]]]]]; 
-                  ["Sig_type"; "cdata"; 0; ["Type_alias"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]; 
-                  ["Sig_type"; "attribute"; 0; ["Type_alias"; ["Ttuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "qname"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "cdata"]]]]]; 
-                  ["Sig_type"; "element"; 0; ["Type_variant"; ["constructor"; 
-                                                              "Xmlelement"; 
-                                                              ["tuple"; 
-                                                              ["Ttuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "qname"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "list"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "attribute"]]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "list"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "element"]]]]]]; 
-                                             ["constructor"; "Xmlcdata"; 
-                                             ["tuple"; ["Tconstr"; ["Pident"; 
-                                                                   "cdata"]]]]]]; 
-                  ["Sig_value"; "ns_xml"; ["Tconstr"; ["Pident"; "namespace"]]]; 
-                  ["Sig_value"; "no_ns"; ["Tconstr"; ["Pident"; "namespace"]]]; 
-                  ["Sig_value"; "encode"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                 "string"]]; 
-                                          ["Tconstr"; ["Pident"; "string"]]]]; 
-                  ["Sig_value"; "decode"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                 "string"]]; 
-                                          ["Tconstr"; ["Pident"; "string"]]]]; 
-                  ["Sig_module"; "Serialization"; ["Mty_signature"; [
-                                                                    "Sig_type"; 
-                                                                    "t"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "tmp_prefix"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "default_nss"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "namespace"]]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "bindings"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Hashtbl"]; 
-                                                                    "t"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]]]]; 
-                                                  ["Sig_value"; "get_default_nss"; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "list"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "namespace"]]]]]; 
-                                                  ["Sig_value"; "bind_prefix"; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "namespace"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "unit"]]]]]]; 
-                                                  ["Sig_value"; "create"; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "namespace"]]]; 
-                                                  ["Tconstr"; ["Pident"; "t"]]]]; 
-                                                  ["Sig_value"; "string_of_qname"; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "qname"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "string"]]]]]; 
-                                                  ["Sig_value"; "string_of_attr"; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "attribute"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "string"]]]]]; 
-                                                  ["Sig_value"; "string_of_list"; 
-                                                  ["Tarrow"; ["Tarrow"; 
-                                                             ["Tpoly"; "a"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tpoly"; "a"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "string"]]]]]]; 
-                                                  ["Sig_value"; "local_namespaces"; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "namespace"]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "qname"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "attribute"]]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "list"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "namespace"]]]]]]]]; 
-                                                  ["Sig_value"; "string_of_ns"; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "namespace"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "string"]]]]]; 
-                                                  ["Sig_value"; "aux_serialize"; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "namespace"]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                  ["Tarrow"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "element"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "unit"]]]]]]]; 
-                                                  ["Sig_value"; "serialize_document"; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                  ["Tarrow"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "element"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "unit"]]]]]]]]; 
-                  ["Sig_value"; "get_qname"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "element"]]; 
-                                             ["Tconstr"; ["Pident"; "qname"]]]]; 
-                  ["Sig_value"; "get_namespace"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "qname"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "namespace"]]]]; 
-                  ["Sig_value"; "get_name"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "qname"]]; 
-                                            ["Tconstr"; ["Pident"; "string"]]]]; 
-                  ["Sig_value"; "get_attrs"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "namespace"]]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "element"]]; 
-                                             ["Tconstr"; ["Pident"; "list"]; 
-                                             ["Tconstr"; ["Pident"; "attribute"]]]]]]; 
-                  ["Sig_value"; "get_attr_value"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "option"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "namespace"]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "name"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "attribute"]]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "cdata"]]]]]]; 
-                  ["Sig_value"; "safe_get_attr_value"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "option"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "namespace"]]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "name"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "list"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "attribute"]]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "string"]]]]]]; 
-                  ["Sig_value"; "get_element"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "qname"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "element"]]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "element"]]]]]; 
-                  ["Sig_value"; "get_elements"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "qname"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "element"]]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "list"]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "element"]]]]]]; 
-                  ["Sig_value"; "get_children"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "element"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "list"]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "element"]]]]]; 
-                  ["Sig_value"; "get_subelement"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "qname"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "element"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "element"]]]]]; 
-                  ["Sig_value"; "get_subelements"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "qname"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "element"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "list"]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "element"]]]]]]; 
-                  ["Sig_value"; "get_first_element"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "element"]]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "element"]]]]; 
-                  ["Sig_value"; "collect_cdata"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "element"]]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "string"]]]]; 
-                  ["Sig_value"; "get_cdata"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "element"]]; 
-                                             ["Tconstr"; ["Pident"; "string"]]]]; 
-                  ["Sig_value"; "remove_cdata"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "element"]]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "list"]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "element"]]]]]; 
-                  ["Sig_value"; "make_element"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "qname"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "attribute"]]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "element"]]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "element"]]]]]]; 
-                  ["Sig_value"; "make_attr"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "namespace"]]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "name"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "cdata"]]; 
-                                             ["Tconstr"; ["Pident"; "attribute"]]]]]]; 
-                  ["Sig_value"; "make_simple_cdata"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "qname"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "cdata"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "element"]]]]]; 
-                  ["Sig_value"; "mem_qname"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "qname"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "element"]]]; 
-                                             ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                  ["Sig_value"; "mem_child"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "qname"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "element"]]; 
-                                             ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                  ["Sig_value"; "iter"; ["Tarrow"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "element"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "unit"]]]; 
-                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                               "element"]]; 
-                                        ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                  ["Sig_value"; "split_name"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Ttuple"; ["Tconstr"; 
-                                                         ["Pident"; "prefix"]]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "ncname"]]]]]; 
-                  ["Sig_value"; "split_attrs"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Ttuple"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]; 
-                                               ["Ttuple"; ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Ttuple"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "namespace"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]; 
-                                               ["Tconstr"; ["Pident"; "list"]; 
-                                               ["Ttuple"; ["Ttuple"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "string"]]]]]]]; 
-                  ["Sig_value"; "add_namespaces"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Hashtbl"]; 
-                                                             "t"]; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "prefix"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "namespace"]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Ttuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "namespace"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "prefix"]]]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "unit"]]]]]; 
-                  ["Sig_value"; "remove_namespaces"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Hashtbl"]; 
-                                                                "t"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "prefix"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "namespace"]]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Ttuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "namespace"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "prefix"]]]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]]; 
-                  ["Sig_value"; "parse_qname"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Hashtbl"]; 
-                                                          "t"]; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "prefix"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "namespace"]]]; 
-                                               ["Tarrow"; ["Ttuple"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "prefix"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "qname"]]]]]; 
-                  ["Sig_value"; "parse_qname_attribute"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Hashtbl"]; 
-                                                                    "t"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "prefix"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "namespace"]]]; 
-                                                         ["Tarrow"; [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "prefix"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "qname"]]]]]; 
-                  ["Sig_value"; "parse_attrs"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Hashtbl"]; 
-                                                          "t"]; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "prefix"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "namespace"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Ttuple"; 
-                                                          ["Ttuple"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "prefix"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]; 
-                                               ["Tconstr"; ["Pident"; "list"]; 
-                                               ["Ttuple"; ["Tconstr"; 
-                                                          ["Pident"; "qname"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "string"]]]]]]]; 
-                  ["Sig_value"; "parse_element_head"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Hashtbl"]; 
-                                                                 "t"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "prefix"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "namespace"]]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "list"]; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]]; 
-                                                      ["Ttuple"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "qname"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Ttuple"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "namespace"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "prefix"]]]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "attribute"]]]]]]]]; 
-                  ["Sig_value"; "string_of_tag"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "qname"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "string"]]]]]]
+["module", "Xml",
+["Mty_signature", ["Sig_unknown"], ["Sig_unknown"],
+["Sig_type", "namespace", 0,
+["Type_alias",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]],
+["Sig_type", "prefix", 0, ["Type_alias", ["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "ncname", 0, ["Type_alias", ["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "name", 0, ["Type_alias", ["Tconstr", ["Pident", "ncname"]]]],
+["Sig_type", "qname", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "namespace"]],
+["Tconstr", ["Pident", "name"]]]]],
+["Sig_type", "cdata", 0, ["Type_alias", ["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "attribute", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "qname"]],
+["Tconstr", ["Pident", "cdata"]]]]],
+["Sig_type", "element", 0,
+["Type_variant",
+["constructor", "Xmlelement",
+["tuple",
+["Ttuple", ["Tconstr", ["Pident", "qname"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "attribute"]]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "element"]]]]]],
+["constructor", "Xmlcdata", ["tuple", ["Tconstr", ["Pident", "cdata"]]]]]],
+["Sig_value", "ns_xml", ["Tconstr", ["Pident", "namespace"]]],
+["Sig_value", "no_ns", ["Tconstr", ["Pident", "namespace"]]],
+["Sig_value", "encode",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "decode",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_module", "Serialization",
+["Mty_signature",
+["Sig_type", "t", 0,
+["Type_record", ["label", "tmp_prefix", ["Tconstr", ["Pident", "int"]]],
+["label", "default_nss",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "namespace"]]]],
+["label", "bindings",
+["Tconstr", ["Pdot", ["Pident", "Hashtbl"], "t"],
+["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "get_default_nss",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "namespace"]]]]],
+["Sig_value", "bind_prefix",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "namespace"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "create",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "namespace"]]],
+["Tconstr", ["Pident", "t"]]]],
+["Sig_value", "string_of_qname",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "qname"]],
+["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "string_of_attr",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "attribute"]],
+["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "string_of_list",
+["Tarrow", ["Tarrow", ["Tpoly", "a"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "list"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "local_namespaces",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "namespace"]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "qname"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "attribute"]]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "namespace"]]]]]]]],
+["Sig_value", "string_of_ns",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "namespace"]],
+["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "aux_serialize",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "namespace"]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]],
+["Tarrow", ["Tconstr", ["Pident", "element"]],
+["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "serialize_document",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]],
+["Tarrow", ["Tconstr", ["Pident", "element"]],
+["Tconstr", ["Pident", "unit"]]]]]]]],
+["Sig_value", "get_qname",
+["Tarrow", ["Tconstr", ["Pident", "element"]],
+["Tconstr", ["Pident", "qname"]]]],
+["Sig_value", "get_namespace",
+["Tarrow", ["Tconstr", ["Pident", "qname"]],
+["Tconstr", ["Pident", "namespace"]]]],
+["Sig_value", "get_name",
+["Tarrow", ["Tconstr", ["Pident", "qname"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "get_attrs",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "namespace"]]],
+["Tarrow", ["Tconstr", ["Pident", "element"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "attribute"]]]]]],
+["Sig_value", "get_attr_value",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "namespace"]]],
+["Tarrow", ["Tconstr", ["Pident", "name"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "attribute"]]],
+["Tconstr", ["Pident", "cdata"]]]]]],
+["Sig_value", "safe_get_attr_value",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "namespace"]]],
+["Tarrow", ["Tconstr", ["Pident", "name"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "attribute"]]],
+["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "get_element",
+["Tarrow", ["Tconstr", ["Pident", "qname"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "element"]]],
+["Tconstr", ["Pident", "element"]]]]],
+["Sig_value", "get_elements",
+["Tarrow", ["Tconstr", ["Pident", "qname"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "element"]]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "element"]]]]]],
+["Sig_value", "get_children",
+["Tarrow", ["Tconstr", ["Pident", "element"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "element"]]]]],
+["Sig_value", "get_subelement",
+["Tarrow", ["Tconstr", ["Pident", "qname"]],
+["Tarrow", ["Tconstr", ["Pident", "element"]],
+["Tconstr", ["Pident", "element"]]]]],
+["Sig_value", "get_subelements",
+["Tarrow", ["Tconstr", ["Pident", "qname"]],
+["Tarrow", ["Tconstr", ["Pident", "element"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "element"]]]]]],
+["Sig_value", "get_first_element",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "element"]]],
+["Tconstr", ["Pident", "element"]]]],
+["Sig_value", "collect_cdata",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "element"]]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "get_cdata",
+["Tarrow", ["Tconstr", ["Pident", "element"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "remove_cdata",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "element"]]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "element"]]]]],
+["Sig_value", "make_element",
+["Tarrow", ["Tconstr", ["Pident", "qname"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "attribute"]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "element"]]],
+["Tconstr", ["Pident", "element"]]]]]],
+["Sig_value", "make_attr",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "namespace"]]],
+["Tarrow", ["Tconstr", ["Pident", "name"]],
+["Tarrow", ["Tconstr", ["Pident", "cdata"]],
+["Tconstr", ["Pident", "attribute"]]]]]],
+["Sig_value", "make_simple_cdata",
+["Tarrow", ["Tconstr", ["Pident", "qname"]],
+["Tarrow", ["Tconstr", ["Pident", "cdata"]],
+["Tconstr", ["Pident", "element"]]]]],
+["Sig_value", "mem_qname",
+["Tarrow", ["Tconstr", ["Pident", "qname"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "element"]]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "mem_child",
+["Tarrow", ["Tconstr", ["Pident", "qname"]],
+["Tarrow", ["Tconstr", ["Pident", "element"]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "iter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "element"]],
+["Tconstr", ["Pident", "unit"]]],
+["Tarrow", ["Tconstr", ["Pident", "element"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "split_name",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Ttuple", ["Tconstr", ["Pident", "prefix"]],
+["Tconstr", ["Pident", "ncname"]]]]],
+["Sig_value", "split_attrs",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]]],
+["Ttuple",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "namespace"]],
+["Tconstr", ["Pident", "string"]]]],
+["Tconstr", ["Pident", "list"],
+["Ttuple",
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]], ["Tconstr", ["Pident", "string"]]]]]]],
+["Sig_value", "add_namespaces",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Hashtbl"], "t"],
+["Tconstr", ["Pident", "prefix"]], ["Tconstr", ["Pident", "namespace"]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "namespace"]],
+["Tconstr", ["Pident", "prefix"]]]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "remove_namespaces",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Hashtbl"], "t"],
+["Tconstr", ["Pident", "prefix"]], ["Tconstr", ["Pident", "namespace"]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "namespace"]],
+["Tconstr", ["Pident", "prefix"]]]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "parse_qname",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Hashtbl"], "t"],
+["Tconstr", ["Pident", "prefix"]], ["Tconstr", ["Pident", "namespace"]]],
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pident", "prefix"]],
+["Tconstr", ["Pident", "string"]]], ["Tconstr", ["Pident", "qname"]]]]],
+["Sig_value", "parse_qname_attribute",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Hashtbl"], "t"],
+["Tconstr", ["Pident", "prefix"]], ["Tconstr", ["Pident", "namespace"]]],
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pident", "prefix"]],
+["Tconstr", ["Pident", "string"]]], ["Tconstr", ["Pident", "qname"]]]]],
+["Sig_value", "parse_attrs",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Hashtbl"], "t"],
+["Tconstr", ["Pident", "prefix"]], ["Tconstr", ["Pident", "namespace"]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Ttuple",
+["Ttuple", ["Tconstr", ["Pident", "prefix"]],
+["Tconstr", ["Pident", "string"]]], ["Tconstr", ["Pident", "string"]]]],
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "qname"]],
+["Tconstr", ["Pident", "string"]]]]]]],
+["Sig_value", "parse_element_head",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Hashtbl"], "t"],
+["Tconstr", ["Pident", "prefix"]], ["Tconstr", ["Pident", "namespace"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]]],
+["Ttuple", ["Tconstr", ["Pident", "qname"]],
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "namespace"]],
+["Tconstr", ["Pident", "prefix"]]]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "attribute"]]]]]]]],
+["Sig_value", "string_of_tag",
+["Tarrow", ["Tconstr", ["Pident", "qname"]],
+["Tconstr", ["Pident", "string"]]]]]]

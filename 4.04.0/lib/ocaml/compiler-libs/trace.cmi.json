@@ -1,122 +1,39 @@
-["module"; "Trace"; ["Mty_signature"; ["Sig_type"; "codeptr"; 0; ["Type_abstract"]]; 
-                    ["Sig_type"; "traced_function"; 0; ["Type_record"; 
-                                                       ["label"; "path"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Path"]; 
-                                                                   "t"]]]; 
-                                                       ["label"; "closure"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Obj"]; 
-                                                                   "t"]]]; 
-                                                       ["label"; "actual_code"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "codeptr"]]]; 
-                                                       ["label"; "instrumented_fun"; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "codeptr"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Obj"]; 
-                                                                  "t"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Obj"]; 
-                                                                  "t"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Obj"]; 
-                                                                   "t"]]]]]]]]; 
-                    ["Sig_value"; "traced_functions"; ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Pervasives"]; 
-                                                                  "ref"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "traced_function"]]]]]; 
-                    ["Sig_value"; "is_traced"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Obj"]; 
-                                                          "t"]]; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Path"]; 
-                                                                 "t"]]]]]; 
-                    ["Sig_value"; "get_code_pointer"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Obj"]; 
-                                                                 "t"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "codeptr"]]]]; 
-                    ["Sig_value"; "set_code_pointer"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Obj"]; 
-                                                                 "t"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "codeptr"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]]; 
-                    ["Sig_value"; "instrument_closure"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Env"]; 
-                                                                   "t"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Longident"]; 
-                                                                   "t"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Format"]; 
-                                                                   "formatter"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Types"]; 
-                                                                   "type_expr"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "codeptr"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Obj"]; 
-                                                                   "t"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Obj"]; 
-                                                                   "t"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Obj"]; 
-                                                                    "t"]]]]]]]]]]; 
-                    ["Sig_value"; "print_trace"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; "Obj"]; 
-                                                            "t"]]; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Obj"]; 
-                                                                   "t"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Obj"]; 
-                                                                   "t"]]]]]]]
+["module", "Trace",
+["Mty_signature", ["Sig_type", "codeptr", 0, ["Type_abstract"]],
+["Sig_type", "traced_function", 0,
+["Type_record",
+["label", "path", ["Tconstr", ["Pdot", ["Pident", "Path"], "t"]]],
+["label", "closure", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]]],
+["label", "actual_code", ["Tconstr", ["Pident", "codeptr"]]],
+["label", "instrumented_fun",
+["Tarrow", ["Tconstr", ["Pident", "codeptr"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]]]]]]]],
+["Sig_value", "traced_functions",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "traced_function"]]]]],
+["Sig_value", "is_traced",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Path"], "t"]]]]],
+["Sig_value", "get_code_pointer",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tconstr", ["Pident", "codeptr"]]]],
+["Sig_value", "set_code_pointer",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "codeptr"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "instrument_closure",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Env"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Longident"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Types"], "type_expr"]],
+["Tarrow", ["Tconstr", ["Pident", "codeptr"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]]]]]]]]]],
+["Sig_value", "print_trace",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Obj"], "t"]]]]]]]

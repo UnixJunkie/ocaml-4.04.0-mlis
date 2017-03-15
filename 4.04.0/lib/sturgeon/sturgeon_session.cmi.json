@@ -1,120 +1,48 @@
-["module"; "Sturgeon_session"; ["Mty_signature"; ["Sig_type"; "reason"; 
-                                                 0; ["Type_alias"; ["Tunknown"]]]; 
-                               ["Sig_type"; "cont"; 1; ["Type_alias"; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Result"]; 
-                                                                  "result"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "reason"]]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]]; 
-                               ["Sig_type"; "remote"; 0; ["Type_variant"; 
-                                                         ["constructor"; 
-                                                         "Once"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "cont"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]]]]; 
-                                                         ["constructor"; 
-                                                         "Many"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "cont"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]]]]]]; 
-                               ["Sig_type"; "t"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Sturgeon_sexp"]; 
-                                                                   "sexp"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "remote"]]]]]; 
-                               ["Sig_type"; "error"; 1; ["Type_alias"; 
-                                                        ["Tunknown"]]]; 
-                               ["Sig_value"; "cancel"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "option"]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tunknown"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]]; 
-                               ["Sig_type"; "output"; 0; ["Type_alias"; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Sturgeon_sexp"]; 
-                                                                    "basic"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "unit"]]]]]; 
-                               ["Sig_type"; "status"; 0; ["Type_abstract"]]; 
-                               ["Sig_value"; "connect"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "t"]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "t"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "error"]; 
-                                                                   ["Tvar"; 
-                                                                   0]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "output"]]; 
-                                                        ["Ttuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "output"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "status"]]]]]]]]; 
-                               ["Sig_value"; "close"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "output"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]; 
-                               ["Sig_value"; "pending_continuations"; 
-                               ["Tarrow"; ["Tconstr"; ["Pident"; "status"]]; 
-                               ["Tconstr"; ["Pident"; "int"]]]]; ["Sig_value"; 
-                                                                 "is_closed"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "status"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bool"]]]]]]
+["module", "Sturgeon_session",
+["Mty_signature", ["Sig_type", "reason", 0, ["Type_alias", ["Tunknown"]]],
+["Sig_type", "cont", 1,
+["Type_alias",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Result"], "result"], ["Tpoly", "a"],
+["Tconstr", ["Pident", "reason"]]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_type", "remote", 0,
+["Type_variant",
+["constructor", "Once",
+["tuple", ["Tconstr", ["Pident", "cont"], ["Tconstr", ["Pident", "t"]]]]],
+["constructor", "Many",
+["tuple", ["Tconstr", ["Pident", "cont"], ["Tconstr", ["Pident", "t"]]]]]]],
+["Sig_type", "t", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Sturgeon_sexp"], "sexp"],
+["Tconstr", ["Pident", "remote"]]]]],
+["Sig_type", "error", 1, ["Type_alias", ["Tunknown"]]],
+["Sig_value", "cancel",
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tarrow", ["Tunknown"], ["Tconstr", ["Pident", "unit"]]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_type", "output", 0,
+["Type_alias",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Sturgeon_sexp"], "basic"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_type", "status", 0, ["Type_abstract"]],
+["Sig_value", "connect",
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "t"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tarrow", ["Tconstr", ["Pident", "error"], ["Tvar", 0]],
+["Tconstr", ["Pident", "unit"]]]],
+["Tarrow", ["Tconstr", ["Pident", "output"]],
+["Ttuple", ["Tconstr", ["Pident", "output"]],
+["Tconstr", ["Pident", "status"]]]]]]]],
+["Sig_value", "close",
+["Tarrow", ["Tconstr", ["Pident", "output"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "pending_continuations",
+["Tarrow", ["Tconstr", ["Pident", "status"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "is_closed",
+["Tarrow", ["Tconstr", ["Pident", "status"]],
+["Tconstr", ["Pident", "bool"]]]]]]

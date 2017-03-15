@@ -1,864 +1,233 @@
-["module"; "Cparser"; ["Mty_signature"; ["Sig_type"; "token"; 0; ["Type_variant"; 
-                                                                 ["constructor"; 
-                                                                 "IDENT"; 
-                                                                 ["tuple"; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]]; 
-                                                                 ["constructor"; 
-                                                                 "QUALIFIER"; 
-                                                                 ["tuple"; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]]; 
-                                                                 ["constructor"; 
-                                                                 "CST_CHAR"; 
-                                                                 ["tuple"; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "list"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int64"]]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]]; 
-                                                                 ["constructor"; 
-                                                                 "CST_WCHAR"; 
-                                                                 ["tuple"; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "list"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int64"]]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]]; 
-                                                                 ["constructor"; 
-                                                                 "CST_INT"; 
-                                                                 ["tuple"; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]]; 
-                                                                 ["constructor"; 
-                                                                 "CST_FLOAT"; 
-                                                                 ["tuple"; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]]; 
-                                                                 ["constructor"; 
-                                                                 "NAMED_TYPE"; 
-                                                                 ["tuple"; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]]; 
-                                                                 ["constructor"; 
-                                                                 "CST_STRING"; 
-                                                                 ["tuple"; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "list"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int64"]]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]]; 
-                                                                 ["constructor"; 
-                                                                 "CST_WSTRING"; 
-                                                                 ["tuple"; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "list"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int64"]]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]]; 
-                                                                 ["constructor"; 
-                                                                 "EOF"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "CHAR"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "INT"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "BOOL"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "DOUBLE"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "FLOAT"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "VOID"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "INT64"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "INT32"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "ENUM"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "STRUCT"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "TYPEDEF"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "UNION"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "SIGNED"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "UNSIGNED"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "LONG"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "SHORT"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "VOLATILE"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "EXTERN"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "STATIC"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "CONST"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "RESTRICT"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "AUTO"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "REGISTER"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "THREAD"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "SIZEOF"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "ALIGNOF"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "EQ"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "PLUS_EQ"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "MINUS_EQ"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "STAR_EQ"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "SLASH_EQ"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "PERCENT_EQ"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "AND_EQ"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "PIPE_EQ"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "CIRC_EQ"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "INF_INF_EQ"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "SUP_SUP_EQ"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "ARROW"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "DOT"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "EQ_EQ"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "EXCLAM_EQ"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "INF"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "SUP"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "INF_EQ"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "SUP_EQ"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "PLUS"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "MINUS"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "STAR"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "SLASH"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "PERCENT"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "TILDE"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "AND"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "PIPE"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "CIRC"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "EXCLAM"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "AND_AND"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "PIPE_PIPE"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "INF_INF"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "SUP_SUP"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "PLUS_PLUS"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "MINUS_MINUS"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "RPAREN"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "LPAREN"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "RBRACE"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "LBRACE"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "LBRACKET"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "RBRACKET"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "COLON"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "SEMICOLON"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "COMMA"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "ELLIPSIS"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "QUEST"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "BREAK"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "CONTINUE"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "GOTO"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "RETURN"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "SWITCH"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "CASE"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "DEFAULT"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "WHILE"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "DO"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "FOR"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "IF"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "TRY"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "EXCEPT"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "FINALLY"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "ELSE"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "ATTRIBUTE"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "INLINE"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "ASM"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "TYPEOF"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "FUNCTION__"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "PRETTY_FUNCTION__"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "LABEL__"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "BUILTIN_VA_ARG"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "ATTRIBUTE_USED"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "BUILTIN_VA_LIST"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "BLOCKATTRIBUTE"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "BUILTIN_TYPES_COMPAT"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "BUILTIN_OFFSETOF"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "DECLSPEC"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "MSASM"; 
-                                                                 ["tuple"; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]]; 
-                                                                 ["constructor"; 
-                                                                 "MSATTR"; 
-                                                                 ["tuple"; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]]; 
-                                                                 ["constructor"; 
-                                                                 "PRAGMA_LINE"; 
-                                                                 ["tuple"; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]]; 
-                                                                 ["constructor"; 
-                                                                 "PRAGMA"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "PRAGMA_EOL"; 
-                                                                 ["tuple"]]; 
-                                                                 ["constructor"; 
-                                                                 "AT_TRANSFORM"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "AT_TRANSFORMEXPR"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "AT_SPECIFIER"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "AT_EXPR"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Cabs"]; 
-                                                                 "cabsloc"]]]]; 
-                                                                 ["constructor"; 
-                                                                 "AT_NAME"; 
-                                                                 ["tuple"]]]]; 
-                      ["Sig_value"; "interpret"; ["Tarrow"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Lexing"]; 
-                                                            "lexbuf"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "token"]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Lexing"]; 
-                                                            "lexbuf"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "list"]; 
-                                                 ["Tconstr"; ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Cabs"]; 
-                                                             "definition"]]]]]]; 
-                      ["Sig_value"; "file"; ["Tarrow"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Lexing"]; 
-                                                                  "lexbuf"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "token"]]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Lexing"]; 
-                                                                   "lexbuf"]]; 
-                                            ["Tconstr"; ["Pident"; "list"]; 
-                                            ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                 "Cabs"]; 
-                                                        "definition"]]]]]]]]
+["module", "Cparser",
+["Mty_signature",
+["Sig_type", "token", 0,
+["Type_variant",
+["constructor", "IDENT",
+["tuple",
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]]],
+["constructor", "QUALIFIER",
+["tuple",
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]]],
+["constructor", "CST_CHAR",
+["tuple",
+["Ttuple", ["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "int64"]]],
+["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]]],
+["constructor", "CST_WCHAR",
+["tuple",
+["Ttuple", ["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "int64"]]],
+["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]]],
+["constructor", "CST_INT",
+["tuple",
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]]],
+["constructor", "CST_FLOAT",
+["tuple",
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]]],
+["constructor", "NAMED_TYPE",
+["tuple",
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]]],
+["constructor", "CST_STRING",
+["tuple",
+["Ttuple", ["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "int64"]]],
+["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]]],
+["constructor", "CST_WSTRING",
+["tuple",
+["Ttuple", ["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "int64"]]],
+["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]]],
+["constructor", "EOF", ["tuple"]],
+["constructor", "CHAR",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "INT",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "BOOL",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "DOUBLE",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "FLOAT",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "VOID",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "INT64",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "INT32",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "ENUM",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "STRUCT",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "TYPEDEF",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "UNION",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "SIGNED",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "UNSIGNED",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "LONG",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "SHORT",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "VOLATILE",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "EXTERN",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "STATIC",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "CONST",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "RESTRICT",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "AUTO",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "REGISTER",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "THREAD",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "SIZEOF",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "ALIGNOF",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "EQ", ["tuple"]], ["constructor", "PLUS_EQ", ["tuple"]],
+["constructor", "MINUS_EQ", ["tuple"]],
+["constructor", "STAR_EQ", ["tuple"]],
+["constructor", "SLASH_EQ", ["tuple"]],
+["constructor", "PERCENT_EQ", ["tuple"]],
+["constructor", "AND_EQ", ["tuple"]], ["constructor", "PIPE_EQ", ["tuple"]],
+["constructor", "CIRC_EQ", ["tuple"]],
+["constructor", "INF_INF_EQ", ["tuple"]],
+["constructor", "SUP_SUP_EQ", ["tuple"]],
+["constructor", "ARROW", ["tuple"]], ["constructor", "DOT", ["tuple"]],
+["constructor", "EQ_EQ", ["tuple"]], ["constructor", "EXCLAM_EQ", ["tuple"]],
+["constructor", "INF", ["tuple"]], ["constructor", "SUP", ["tuple"]],
+["constructor", "INF_EQ", ["tuple"]], ["constructor", "SUP_EQ", ["tuple"]],
+["constructor", "PLUS",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "MINUS",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "STAR",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "SLASH", ["tuple"]], ["constructor", "PERCENT", ["tuple"]],
+["constructor", "TILDE",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "AND",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "PIPE", ["tuple"]], ["constructor", "CIRC", ["tuple"]],
+["constructor", "EXCLAM",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "AND_AND",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "PIPE_PIPE", ["tuple"]],
+["constructor", "INF_INF", ["tuple"]], ["constructor", "SUP_SUP", ["tuple"]],
+["constructor", "PLUS_PLUS",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "MINUS_MINUS",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "RPAREN", ["tuple"]],
+["constructor", "LPAREN",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "RBRACE",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "LBRACE",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "LBRACKET", ["tuple"]],
+["constructor", "RBRACKET", ["tuple"]], ["constructor", "COLON", ["tuple"]],
+["constructor", "SEMICOLON",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "COMMA", ["tuple"]], ["constructor", "ELLIPSIS", ["tuple"]],
+["constructor", "QUEST", ["tuple"]],
+["constructor", "BREAK",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "CONTINUE",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "GOTO",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "RETURN",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "SWITCH",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "CASE",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "DEFAULT",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "WHILE",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "DO",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "FOR",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "IF",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "TRY",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "EXCEPT",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "FINALLY",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "ELSE", ["tuple"]],
+["constructor", "ATTRIBUTE",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "INLINE",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "ASM",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "TYPEOF",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "FUNCTION__",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "PRETTY_FUNCTION__",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "LABEL__", ["tuple"]],
+["constructor", "BUILTIN_VA_ARG",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "ATTRIBUTE_USED",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "BUILTIN_VA_LIST", ["tuple"]],
+["constructor", "BLOCKATTRIBUTE", ["tuple"]],
+["constructor", "BUILTIN_TYPES_COMPAT",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "BUILTIN_OFFSETOF",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "DECLSPEC",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "MSASM",
+["tuple",
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]]],
+["constructor", "MSATTR",
+["tuple",
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]]],
+["constructor", "PRAGMA_LINE",
+["tuple",
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]]],
+["constructor", "PRAGMA",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "PRAGMA_EOL", ["tuple"]],
+["constructor", "AT_TRANSFORM",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "AT_TRANSFORMEXPR",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "AT_SPECIFIER",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "AT_EXPR",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cabs"], "cabsloc"]]]],
+["constructor", "AT_NAME", ["tuple"]]]],
+["Sig_value", "interpret",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Lexing"], "lexbuf"]],
+["Tconstr", ["Pident", "token"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Lexing"], "lexbuf"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Cabs"], "definition"]]]]]],
+["Sig_value", "file",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Lexing"], "lexbuf"]],
+["Tconstr", ["Pident", "token"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Lexing"], "lexbuf"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Cabs"], "definition"]]]]]]]]

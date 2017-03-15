@@ -1,1439 +1,567 @@
-["module"; "Lambda"; ["Mty_signature"; ["Sig_type"; "compile_time_constant"; 
-                                       0; ["Type_variant"; ["constructor"; 
-                                                           "Big_endian"; 
-                                                           ["tuple"]]; 
-                                          ["constructor"; "Word_size"; 
-                                          ["tuple"]]; ["constructor"; 
-                                                      "Int_size"; ["tuple"]]; 
-                                          ["constructor"; "Max_wosize"; 
-                                          ["tuple"]]; ["constructor"; 
-                                                      "Ostype_unix"; 
-                                                      ["tuple"]]; ["constructor"; 
-                                                                  "Ostype_win32"; 
-                                                                  ["tuple"]]; 
-                                          ["constructor"; "Ostype_cygwin"; 
-                                          ["tuple"]]; ["constructor"; 
-                                                      "Backend_type"; 
-                                                      ["tuple"]]]]; [
-                                                                    "Sig_type"; 
-                                                                    "loc_kind"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_variant"; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "Loc_FILE"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "Loc_LINE"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "Loc_MODULE"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "Loc_LOC"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "Loc_POS"; 
-                                                                    ["tuple"]]]]; 
-                     ["Sig_type"; "immediate_or_pointer"; 0; ["Type_variant"; 
-                                                             ["constructor"; 
-                                                             "Immediate"; 
-                                                             ["tuple"]]; 
-                                                             ["constructor"; 
-                                                             "Pointer"; 
-                                                             ["tuple"]]]]; 
-                     ["Sig_type"; "initialization_or_assignment"; 0; 
-                     ["Type_variant"; ["constructor"; "Initialization"; 
-                                      ["tuple"]]; ["constructor"; "Assignment"; 
-                                                  ["tuple"]]]]; ["Sig_type"; 
-                                                                "is_safe"; 
-                                                                0; ["Type_variant"; 
-                                                                   ["constructor"; 
-                                                                   "Safe"; 
-                                                                   ["tuple"]]; 
-                                                                   ["constructor"; 
-                                                                   "Unsafe"; 
-                                                                   ["tuple"]]]]; 
-                     ["Sig_type"; "primitive"; 0; ["Type_variant"; ["constructor"; 
-                                                                   "Pidentity"; 
-                                                                   ["tuple"]]; 
-                                                  ["constructor"; "Pbytes_to_string"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Pbytes_of_string"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Pignore"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Prevapply"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Pdirapply"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Ploc"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "loc_kind"]]]]; 
-                                                  ["constructor"; "Pgetglobal"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Ident"]; 
-                                                            "t"]]]]; 
-                                                  ["constructor"; "Psetglobal"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Ident"]; 
-                                                            "t"]]]]; 
-                                                  ["constructor"; "Pmakeblock"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                  ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Asttypes"]; 
-                                                              "mutable_flag"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "block_shape"]]]]; 
-                                                  ["constructor"; "Pfield"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]]; 
-                                                  ["constructor"; "Psetfield"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "immediate_or_pointer"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "initialization_or_assignment"]]]]; 
-                                                  ["constructor"; "Pfloatfield"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]]; 
-                                                  ["constructor"; "Psetfloatfield"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "initialization_or_assignment"]]]]; 
-                                                  ["constructor"; "Pduprecord"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Types"]; 
-                                                            "record_representation"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "int"]]]]; 
-                                                  ["constructor"; "Plazyforce"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Pccall"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Primitive"]; 
-                                                              "description"]]]]; 
-                                                  ["constructor"; "Praise"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "raise_kind"]]]]; 
-                                                  ["constructor"; "Psequand"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Psequor"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Pnot"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Pnegint"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Paddint"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Psubint"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Pmulint"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Pdivint"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "is_safe"]]]]; 
-                                                  ["constructor"; "Pmodint"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "is_safe"]]]]; 
-                                                  ["constructor"; "Pandint"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Porint"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Pxorint"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Plslint"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Plsrint"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Pasrint"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Pintcomp"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "comparison"]]]]; 
-                                                  ["constructor"; "Poffsetint"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]]; 
-                                                  ["constructor"; "Poffsetref"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]]; 
-                                                  ["constructor"; "Pintoffloat"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Pfloatofint"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Pnegfloat"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Pabsfloat"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Paddfloat"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Psubfloat"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Pmulfloat"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Pdivfloat"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Pfloatcomp"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "comparison"]]]]; 
-                                                  ["constructor"; "Pstringlength"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Pstringrefu"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Pstringrefs"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Pbyteslength"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Pbytesrefu"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Pbytessetu"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Pbytesrefs"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Pbytessets"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Pmakearray"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array_kind"]]; 
-                                                  ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Asttypes"]; 
-                                                              "mutable_flag"]]]]; 
-                                                  ["constructor"; "Pduparray"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array_kind"]]; 
-                                                  ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Asttypes"]; 
-                                                              "mutable_flag"]]]]; 
-                                                  ["constructor"; "Parraylength"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array_kind"]]]]; 
-                                                  ["constructor"; "Parrayrefu"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array_kind"]]]]; 
-                                                  ["constructor"; "Parraysetu"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array_kind"]]]]; 
-                                                  ["constructor"; "Parrayrefs"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array_kind"]]]]; 
-                                                  ["constructor"; "Parraysets"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array_kind"]]]]; 
-                                                  ["constructor"; "Pisint"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Pisout"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "Pbittest"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Pbintofint"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "boxed_integer"]]]]; 
-                                                  ["constructor"; "Pintofbint"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "boxed_integer"]]]]; 
-                                                  ["constructor"; "Pcvtbint"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "boxed_integer"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "boxed_integer"]]]]; 
-                                                  ["constructor"; "Pnegbint"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "boxed_integer"]]]]; 
-                                                  ["constructor"; "Paddbint"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "boxed_integer"]]]]; 
-                                                  ["constructor"; "Psubbint"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "boxed_integer"]]]]; 
-                                                  ["constructor"; "Pmulbint"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "boxed_integer"]]]]; 
-                                                  ["constructor"; "Pdivbint"; 
-                                                  ["record"; ["field"; 
-                                                             "size"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "boxed_integer"]]]; 
-                                                  ["field"; "is_safe"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "is_safe"]]]]]; 
-                                                  ["constructor"; "Pmodbint"; 
-                                                  ["record"; ["field"; 
-                                                             "size"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "boxed_integer"]]]; 
-                                                  ["field"; "is_safe"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "is_safe"]]]]]; 
-                                                  ["constructor"; "Pandbint"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "boxed_integer"]]]]; 
-                                                  ["constructor"; "Porbint"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "boxed_integer"]]]]; 
-                                                  ["constructor"; "Pxorbint"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "boxed_integer"]]]]; 
-                                                  ["constructor"; "Plslbint"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "boxed_integer"]]]]; 
-                                                  ["constructor"; "Plsrbint"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "boxed_integer"]]]]; 
-                                                  ["constructor"; "Pasrbint"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "boxed_integer"]]]]; 
-                                                  ["constructor"; "Pbintcomp"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "boxed_integer"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "comparison"]]]]; 
-                                                  ["constructor"; "Pbigarrayref"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "int"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bigarray_kind"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bigarray_layout"]]]]; 
-                                                  ["constructor"; "Pbigarrayset"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "int"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bigarray_kind"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bigarray_layout"]]]]; 
-                                                  ["constructor"; "Pbigarraydim"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]]; 
-                                                  ["constructor"; "Pstring_load_16"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                  ["constructor"; "Pstring_load_32"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                  ["constructor"; "Pstring_load_64"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                  ["constructor"; "Pstring_set_16"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                  ["constructor"; "Pstring_set_32"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                  ["constructor"; "Pstring_set_64"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                  ["constructor"; "Pbigstring_load_16"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                  ["constructor"; "Pbigstring_load_32"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                  ["constructor"; "Pbigstring_load_64"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                  ["constructor"; "Pbigstring_set_16"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                  ["constructor"; "Pbigstring_set_32"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                  ["constructor"; "Pbigstring_set_64"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                  ["constructor"; "Pctconst"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "compile_time_constant"]]]]; 
-                                                  ["constructor"; "Pbswap16"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Pbbswap"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "boxed_integer"]]]]; 
-                                                  ["constructor"; "Pint_as_pointer"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Popaque"; 
-                                                              ["tuple"]]]]; 
-                     ["Sig_type"; "comparison"; 0; ["Type_variant"; [
-                                                                    "constructor"; 
-                                                                    "Ceq"; 
-                                                                    ["tuple"]]; 
-                                                   ["constructor"; "Cneq"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "Clt"; 
-                                                               ["tuple"]]; 
-                                                   ["constructor"; "Cgt"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "Cle"; 
-                                                               ["tuple"]]; 
-                                                   ["constructor"; "Cge"; 
-                                                   ["tuple"]]]]; ["Sig_type"; 
-                                                                 "array_kind"; 
-                                                                 0; [
-                                                                    "Type_variant"; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "Pgenarray"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "Paddrarray"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "Pintarray"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "Pfloatarray"; 
-                                                                    ["tuple"]]]]; 
-                     ["Sig_type"; "value_kind"; 0; ["Type_variant"; [
-                                                                    "constructor"; 
-                                                                    "Pgenval"; 
-                                                                    ["tuple"]]; 
-                                                   ["constructor"; "Pfloatval"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "Pboxedintval"; 
-                                                               ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "boxed_integer"]]]]; 
-                                                   ["constructor"; "Pintval"; 
-                                                   ["tuple"]]]]; ["Sig_type"; 
-                                                                 "block_shape"; 
-                                                                 0; [
-                                                                    "Type_alias"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "value_kind"]]]]]]; 
-                     ["Sig_type"; "boxed_integer"; 0; ["Type_variant"; 
-                                                      ["constructor"; 
-                                                      "Pnativeint"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Pint32"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Pint64"; ["tuple"]]]]; 
-                     ["Sig_type"; "bigarray_kind"; 0; ["Type_variant"; 
-                                                      ["constructor"; 
-                                                      "Pbigarray_unknown"; 
-                                                      ["tuple"]]; ["constructor"; 
-                                                                  "Pbigarray_float32"; 
-                                                                  ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Pbigarray_float64"; 
-                                                      ["tuple"]]; ["constructor"; 
-                                                                  "Pbigarray_sint8"; 
-                                                                  ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Pbigarray_uint8"; 
-                                                      ["tuple"]]; ["constructor"; 
-                                                                  "Pbigarray_sint16"; 
-                                                                  ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Pbigarray_uint16"; 
-                                                      ["tuple"]]; ["constructor"; 
-                                                                  "Pbigarray_int32"; 
-                                                                  ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Pbigarray_int64"; 
-                                                      ["tuple"]]; ["constructor"; 
-                                                                  "Pbigarray_caml_int"; 
-                                                                  ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Pbigarray_native_int"; 
-                                                      ["tuple"]]; ["constructor"; 
-                                                                  "Pbigarray_complex32"; 
-                                                                  ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Pbigarray_complex64"; 
-                                                      ["tuple"]]]]; [
-                                                                    "Sig_type"; 
-                                                                    "bigarray_layout"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_variant"; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "Pbigarray_unknown_layout"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "Pbigarray_c_layout"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "Pbigarray_fortran_layout"; 
-                                                                    ["tuple"]]]]; 
-                     ["Sig_type"; "raise_kind"; 0; ["Type_variant"; [
-                                                                    "constructor"; 
-                                                                    "Raise_regular"; 
-                                                                    ["tuple"]]; 
-                                                   ["constructor"; "Raise_reraise"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "Raise_notrace"; 
-                                                               ["tuple"]]]]; 
-                     ["Sig_type"; "structured_constant"; 0; ["Type_variant"; 
-                                                            ["constructor"; 
-                                                            "Const_base"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Asttypes"]; 
-                                                            "constant"]]]]; 
-                                                            ["constructor"; 
-                                                            "Const_pointer"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]]; 
-                                                            ["constructor"; 
-                                                            "Const_block"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "structured_constant"]]]]]; 
-                                                            ["constructor"; 
-                                                            "Const_float_array"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]]; 
-                                                            ["constructor"; 
-                                                            "Const_immstring"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]]]; 
-                     ["Sig_type"; "inline_attribute"; 0; ["Type_variant"; 
-                                                         ["constructor"; 
-                                                         "Always_inline"; 
-                                                         ["tuple"]]; 
-                                                         ["constructor"; 
-                                                         "Never_inline"; 
-                                                         ["tuple"]]; 
-                                                         ["constructor"; 
-                                                         "Unroll"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]; 
-                                                         ["constructor"; 
-                                                         "Default_inline"; 
-                                                         ["tuple"]]]]; 
-                     ["Sig_type"; "specialise_attribute"; 0; ["Type_variant"; 
-                                                             ["constructor"; 
-                                                             "Always_specialise"; 
-                                                             ["tuple"]]; 
-                                                             ["constructor"; 
-                                                             "Never_specialise"; 
-                                                             ["tuple"]]; 
-                                                             ["constructor"; 
-                                                             "Default_specialise"; 
-                                                             ["tuple"]]]]; 
-                     ["Sig_type"; "function_kind"; 0; ["Type_variant"; 
-                                                      ["constructor"; 
-                                                      "Curried"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Tupled"; ["tuple"]]]]; 
-                     ["Sig_type"; "let_kind"; 0; ["Type_variant"; ["constructor"; 
-                                                                  "Strict"; 
-                                                                  ["tuple"]]; 
-                                                 ["constructor"; "Alias"; 
-                                                 ["tuple"]]; ["constructor"; 
-                                                             "StrictOpt"; 
-                                                             ["tuple"]]; 
-                                                 ["constructor"; "Variable"; 
-                                                 ["tuple"]]]]; ["Sig_type"; 
-                                                               "meth_kind"; 
-                                                               0; ["Type_variant"; 
-                                                                  ["constructor"; 
-                                                                  "Self"; 
-                                                                  ["tuple"]]; 
-                                                                  ["constructor"; 
-                                                                  "Public"; 
-                                                                  ["tuple"]]; 
-                                                                  ["constructor"; 
-                                                                  "Cached"; 
-                                                                  ["tuple"]]]]; 
-                     ["Sig_type"; "shared_code"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Ttuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]]]; 
-                     ["Sig_type"; "function_attribute"; 0; ["Type_record"; 
-                                                           ["label"; 
-                                                           "inline"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "inline_attribute"]]]; 
-                                                           ["label"; 
-                                                           "specialise"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "specialise_attribute"]]]; 
-                                                           ["label"; 
-                                                           "is_a_functor"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "bool"]]]]]; 
-                     ["Sig_type"; "lambda"; 0; ["Type_variant"; ["constructor"; 
-                                                                "Lvar"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Ident"]; 
-                                                                "t"]]]]; 
-                                               ["constructor"; "Lconst"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "structured_constant"]]]]; 
-                                               ["constructor"; "Lapply"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "lambda_apply"]]]]; 
-                                               ["constructor"; "Lfunction"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "lfunction"]]]]; 
-                                               ["constructor"; "Llet"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "let_kind"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "value_kind"]]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Ident"]; 
-                                                           "t"]]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "lambda"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "lambda"]]]]; 
-                                               ["constructor"; "Lletrec"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "list"]; 
-                                                         ["Ttuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Ident"]; 
-                                                                    "t"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "lambda"]]]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "lambda"]]]]; 
-                                               ["constructor"; "Lprim"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "primitive"]]; 
-                                               ["Tconstr"; ["Pident"; "list"]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "lambda"]]]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Location"]; 
-                                                           "t"]]]]; [
-                                                                    "constructor"; 
-                                                                    "Lswitch"; 
-                                                                    [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lambda"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lambda_switch"]]]]; 
-                                               ["constructor"; "Lstringswitch"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "lambda"]]; 
-                                               ["Tconstr"; ["Pident"; "list"]; 
-                                               ["Ttuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "lambda"]]]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "option"]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "lambda"]]]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Location"]; 
-                                                           "t"]]]]; [
-                                                                    "constructor"; 
-                                                                    "Lstaticraise"; 
-                                                                    [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lambda"]]]]]; 
-                                               ["constructor"; "Lstaticcatch"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "lambda"]]; 
-                                               ["Ttuple"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                               ["Tconstr"; ["Pident"; "list"]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Ident"]; 
-                                                           "t"]]]]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lambda"]]]]; 
-                                               ["constructor"; "Ltrywith"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "lambda"]]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Ident"]; 
-                                                           "t"]]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "lambda"]]]]; 
-                                               ["constructor"; "Lifthenelse"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "lambda"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "lambda"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "lambda"]]]]; 
-                                               ["constructor"; "Lsequence"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "lambda"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "lambda"]]]]; 
-                                               ["constructor"; "Lwhile"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "lambda"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "lambda"]]]]; 
-                                               ["constructor"; "Lfor"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Ident"]; 
-                                                         "t"]]; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "lambda"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "lambda"]]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Asttypes"]; 
-                                                           "direction_flag"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "lambda"]]]]; 
-                                               ["constructor"; "Lassign"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Ident"]; 
-                                                         "t"]]; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "lambda"]]]]; 
-                                               ["constructor"; "Lsend"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "meth_kind"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "lambda"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "lambda"]]; 
-                                               ["Tconstr"; ["Pident"; "list"]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "lambda"]]]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Location"]; 
-                                                           "t"]]]]; [
-                                                                    "constructor"; 
-                                                                    "Levent"; 
-                                                                    [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lambda"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lambda_event"]]]]; 
-                                               ["constructor"; "Lifused"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Ident"]; 
-                                                         "t"]]; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "lambda"]]]]]]; 
-                     ["Sig_type"; "lfunction"; 0; ["Type_record"; ["label"; 
-                                                                  "kind"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "function_kind"]]]; 
-                                                  ["label"; "params"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "list"]; 
-                                                  ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Ident"]; 
-                                                              "t"]]]]; 
-                                                  ["label"; "body"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lambda"]]]; 
-                                                  ["label"; "attr"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "function_attribute"]]]; 
-                                                  ["label"; "loc"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Location"]; 
-                                                                   "t"]]]]]; 
-                     ["Sig_type"; "lambda_apply"; 0; ["Type_record"; 
-                                                     ["label"; "ap_func"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "lambda"]]]; 
-                                                     ["label"; "ap_args"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "list"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "lambda"]]]]; 
-                                                     ["label"; "ap_loc"; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Location"]; 
-                                                                 "t"]]]; 
-                                                     ["label"; "ap_should_be_tailcall"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "bool"]]]; 
-                                                     ["label"; "ap_inlined"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "inline_attribute"]]]; 
-                                                     ["label"; "ap_specialised"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "specialise_attribute"]]]]]; 
-                     ["Sig_type"; "lambda_switch"; 0; ["Type_record"; 
-                                                      ["label"; "sw_numconsts"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]; 
-                                                      ["label"; "sw_consts"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Ttuple"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "lambda"]]]]]; 
-                                                      ["label"; "sw_numblocks"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]; 
-                                                      ["label"; "sw_blocks"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Ttuple"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "lambda"]]]]]; 
-                                                      ["label"; "sw_failaction"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "option"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "lambda"]]]]]]; 
-                     ["Sig_type"; "lambda_event"; 0; ["Type_record"; 
-                                                     ["label"; "lev_loc"; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Location"]; 
-                                                                 "t"]]]; 
-                                                     ["label"; "lev_kind"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "lambda_event_kind"]]]; 
-                                                     ["label"; "lev_repr"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "option"]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Pervasives"]; 
-                                                                 "ref"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "int"]]]]]; 
-                                                     ["label"; "lev_env"; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Env"]; 
-                                                                 "summary"]]]]]; 
-                     ["Sig_type"; "lambda_event_kind"; 0; ["Type_variant"; 
-                                                          ["constructor"; 
-                                                          "Lev_before"; 
-                                                          ["tuple"]]; 
-                                                          ["constructor"; 
-                                                          "Lev_after"; 
-                                                          ["tuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Types"]; 
-                                                                    "type_expr"]]]]; 
-                                                          ["constructor"; 
-                                                          "Lev_function"; 
-                                                          ["tuple"]]; 
-                                                          ["constructor"; 
-                                                          "Lev_pseudo"; 
-                                                          ["tuple"]]]]; 
-                     ["Sig_type"; "program"; 0; ["Type_record"; ["label"; 
-                                                                "module_ident"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Ident"]; 
-                                                                "t"]]]; 
-                                                ["label"; "main_module_block_size"; 
-                                                ["Tconstr"; ["Pident"; "int"]]]; 
-                                                ["label"; "required_globals"; 
-                                                ["Tconstr"; ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Ident"]; 
-                                                            "Set"]; "t"]]]; 
-                                                ["label"; "code"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "lambda"]]]]]; 
-                     ["Sig_value"; "make_key"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "lambda"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "option"]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "lambda"]]]]]; 
-                     ["Sig_value"; "const_unit"; ["Tconstr"; ["Pident"; 
-                                                             "structured_constant"]]]; 
-                     ["Sig_value"; "lambda_unit"; ["Tconstr"; ["Pident"; 
-                                                              "lambda"]]]; 
-                     ["Sig_value"; "name_lambda"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "let_kind"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "lambda"]]; 
-                                                  ["Tarrow"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Ident"]; 
-                                                             "t"]]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lambda"]]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "lambda"]]]]]]; 
-                     ["Sig_value"; "name_lambda_list"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "list"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "lambda"]]]; 
-                                                       ["Tarrow"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "list"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "lambda"]]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "lambda"]]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "lambda"]]]]]; 
-                     ["Sig_value"; "iter"; ["Tarrow"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "lambda"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "lambda"]]; 
-                                           ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                     ["Sig_module"; "IdentSet"; ["Mty_signature"; ["Sig_type"; 
-                                                                  "elt"; 
-                                                                  0; 
-                                                                  ["Type_alias"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Ident"]; 
-                                                                  "t"]]]]; 
-                                                ["Sig_type"; "t"; 0; 
-                                                ["Type_abstract"]]; [
-                                                                    "Sig_value"; 
-                                                                    "empty"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "t"]]]; 
-                                                ["Sig_value"; "is_empty"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bool"]]]]; 
-                                                ["Sig_value"; "mem"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "elt"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bool"]]]]]; 
-                                                ["Sig_value"; "add"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "elt"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; "t"]]]]]; 
-                                                ["Sig_value"; "singleton"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "elt"]]; 
-                                                ["Tconstr"; ["Pident"; "t"]]]]; 
-                                                ["Sig_value"; "remove"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "elt"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; "t"]]]]]; 
-                                                ["Sig_value"; "union"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; "t"]]]]]; 
-                                                ["Sig_value"; "inter"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; "t"]]]]]; 
-                                                ["Sig_value"; "diff"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; "t"]]]]]; 
-                                                ["Sig_value"; "compare"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; "int"]]]]]; 
-                                                ["Sig_value"; "equal"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bool"]]]]]; 
-                                                ["Sig_value"; "subset"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bool"]]]]]; 
-                                                ["Sig_value"; "iter"; 
-                                                ["Tarrow"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "elt"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "unit"]]]]]; 
-                                                ["Sig_value"; "map"; 
-                                                ["Tarrow"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "elt"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "elt"]]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; "t"]]]]]; 
-                                                ["Sig_value"; "fold"; 
-                                                ["Tarrow"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "elt"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tpoly"; "a"]; 
-                                                           ["Tpoly"; "a"]]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tarrow"; ["Tpoly"; "a"]; 
-                                                ["Tpoly"; "a"]]]]]; [
-                                                                    "Sig_value"; 
-                                                                    "for_all"; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "elt"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "bool"]]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "bool"]]]]]; 
-                                                ["Sig_value"; "exists"; 
-                                                ["Tarrow"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "elt"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "bool"]]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bool"]]]]]; 
-                                                ["Sig_value"; "filter"; 
-                                                ["Tarrow"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "elt"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "bool"]]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; "t"]]]]]; 
-                                                ["Sig_value"; "partition"; 
-                                                ["Tarrow"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "elt"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "bool"]]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Ttuple"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; "t"]]]]]]; 
-                                                ["Sig_value"; "cardinal"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; "int"]]]]; 
-                                                ["Sig_value"; "elements"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "list"]; 
-                                                ["Tconstr"; ["Pident"; "elt"]]]]]; 
-                                                ["Sig_value"; "min_elt"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; "elt"]]]]; 
-                                                ["Sig_value"; "max_elt"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; "elt"]]]]; 
-                                                ["Sig_value"; "choose"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; "elt"]]]]; 
-                                                ["Sig_value"; "split"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "elt"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Ttuple"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bool"]]; 
-                                                ["Tconstr"; ["Pident"; "t"]]]]]]; 
-                                                ["Sig_value"; "find"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "elt"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; "elt"]]]]]; 
-                                                ["Sig_value"; "of_list"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "elt"]]]; 
-                                                ["Tconstr"; ["Pident"; "t"]]]]]]; 
-                     ["Sig_value"; "free_variables"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "lambda"]]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "IdentSet"]; 
-                                                                 "t"]]]]; 
-                     ["Sig_value"; "free_methods"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "lambda"]]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "IdentSet"]; 
-                                                               "t"]]]]; 
-                     ["Sig_value"; "transl_normal_path"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Path"]; 
-                                                                    "t"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "lambda"]]]]; 
-                     ["Sig_value"; "transl_path"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "option"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Location"]; 
-                                                             "t"]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Env"]; 
-                                                             "t"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Path"]; 
-                                                                    "t"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lambda"]]]]]]; 
-                     ["Sig_value"; "make_sequence"; ["Tarrow"; ["Tarrow"; 
-                                                               ["Tpoly"; "a"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "lambda"]]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tpoly"; "a"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "lambda"]]]]]; 
-                     ["Sig_value"; "subst_lambda"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Ident"]; 
-                                                              "tbl"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "lambda"]]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "lambda"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "lambda"]]]]]; 
-                     ["Sig_value"; "map"; ["Tarrow"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "lambda"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "lambda"]]]; 
-                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                 "lambda"]]; 
-                                          ["Tconstr"; ["Pident"; "lambda"]]]]]; 
-                     ["Sig_value"; "bind"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "let_kind"]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Ident"]; 
-                                                                  "t"]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "lambda"]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "lambda"]]; 
-                                           ["Tconstr"; ["Pident"; "lambda"]]]]]]]; 
-                     ["Sig_value"; "commute_comparison"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "comparison"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "comparison"]]]]; 
-                     ["Sig_value"; "negate_comparison"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "comparison"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "comparison"]]]]; 
-                     ["Sig_value"; "default_function_attribute"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "function_attribute"]]]; 
-                     ["Sig_value"; "next_raise_count"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "int"]]]]; 
-                     ["Sig_value"; "next_negative_raise_count"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]; 
-                     ["Sig_value"; "staticfail"; ["Tconstr"; ["Pident"; 
-                                                             "lambda"]]]; 
-                     ["Sig_value"; "is_guarded"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "lambda"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "bool"]]]]; 
-                     ["Sig_value"; "patch_guarded"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "lambda"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "lambda"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "lambda"]]]]]; 
-                     ["Sig_value"; "raise_kind"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "raise_kind"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "string"]]]]; 
-                     ["Sig_value"; "lam_of_loc"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "loc_kind"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Location"]; 
-                                                            "t"]]; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "lambda"]]]]]; 
-                     ["Sig_value"; "reset"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]; 
-                                            ["Tconstr"; ["Pident"; "unit"]]]]]]
+["module", "Lambda",
+["Mty_signature",
+["Sig_type", "compile_time_constant", 0,
+["Type_variant", ["constructor", "Big_endian", ["tuple"]],
+["constructor", "Word_size", ["tuple"]],
+["constructor", "Int_size", ["tuple"]],
+["constructor", "Max_wosize", ["tuple"]],
+["constructor", "Ostype_unix", ["tuple"]],
+["constructor", "Ostype_win32", ["tuple"]],
+["constructor", "Ostype_cygwin", ["tuple"]],
+["constructor", "Backend_type", ["tuple"]]]],
+["Sig_type", "loc_kind", 0,
+["Type_variant", ["constructor", "Loc_FILE", ["tuple"]],
+["constructor", "Loc_LINE", ["tuple"]],
+["constructor", "Loc_MODULE", ["tuple"]],
+["constructor", "Loc_LOC", ["tuple"]], ["constructor", "Loc_POS", ["tuple"]]]],
+["Sig_type", "immediate_or_pointer", 0,
+["Type_variant", ["constructor", "Immediate", ["tuple"]],
+["constructor", "Pointer", ["tuple"]]]],
+["Sig_type", "initialization_or_assignment", 0,
+["Type_variant", ["constructor", "Initialization", ["tuple"]],
+["constructor", "Assignment", ["tuple"]]]],
+["Sig_type", "is_safe", 0,
+["Type_variant", ["constructor", "Safe", ["tuple"]],
+["constructor", "Unsafe", ["tuple"]]]],
+["Sig_type", "primitive", 0,
+["Type_variant", ["constructor", "Pidentity", ["tuple"]],
+["constructor", "Pbytes_to_string", ["tuple"]],
+["constructor", "Pbytes_of_string", ["tuple"]],
+["constructor", "Pignore", ["tuple"]],
+["constructor", "Prevapply", ["tuple"]],
+["constructor", "Pdirapply", ["tuple"]],
+["constructor", "Ploc", ["tuple", ["Tconstr", ["Pident", "loc_kind"]]]],
+["constructor", "Pgetglobal",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]]]],
+["constructor", "Psetglobal",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]]]],
+["constructor", "Pmakeblock",
+["tuple", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "Asttypes"], "mutable_flag"]],
+["Tconstr", ["Pident", "block_shape"]]]],
+["constructor", "Pfield", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Psetfield",
+["tuple", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "immediate_or_pointer"]],
+["Tconstr", ["Pident", "initialization_or_assignment"]]]],
+["constructor", "Pfloatfield", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Psetfloatfield",
+["tuple", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "initialization_or_assignment"]]]],
+["constructor", "Pduprecord",
+["tuple",
+["Tconstr", ["Pdot", ["Pident", "Types"], "record_representation"]],
+["Tconstr", ["Pident", "int"]]]], ["constructor", "Plazyforce", ["tuple"]],
+["constructor", "Pccall",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Primitive"], "description"]]]],
+["constructor", "Praise", ["tuple", ["Tconstr", ["Pident", "raise_kind"]]]],
+["constructor", "Psequand", ["tuple"]],
+["constructor", "Psequor", ["tuple"]], ["constructor", "Pnot", ["tuple"]],
+["constructor", "Pnegint", ["tuple"]], ["constructor", "Paddint", ["tuple"]],
+["constructor", "Psubint", ["tuple"]], ["constructor", "Pmulint", ["tuple"]],
+["constructor", "Pdivint", ["tuple", ["Tconstr", ["Pident", "is_safe"]]]],
+["constructor", "Pmodint", ["tuple", ["Tconstr", ["Pident", "is_safe"]]]],
+["constructor", "Pandint", ["tuple"]], ["constructor", "Porint", ["tuple"]],
+["constructor", "Pxorint", ["tuple"]], ["constructor", "Plslint", ["tuple"]],
+["constructor", "Plsrint", ["tuple"]], ["constructor", "Pasrint", ["tuple"]],
+["constructor", "Pintcomp", ["tuple", ["Tconstr", ["Pident", "comparison"]]]],
+["constructor", "Poffsetint", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Poffsetref", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Pintoffloat", ["tuple"]],
+["constructor", "Pfloatofint", ["tuple"]],
+["constructor", "Pnegfloat", ["tuple"]],
+["constructor", "Pabsfloat", ["tuple"]],
+["constructor", "Paddfloat", ["tuple"]],
+["constructor", "Psubfloat", ["tuple"]],
+["constructor", "Pmulfloat", ["tuple"]],
+["constructor", "Pdivfloat", ["tuple"]],
+["constructor", "Pfloatcomp",
+["tuple", ["Tconstr", ["Pident", "comparison"]]]],
+["constructor", "Pstringlength", ["tuple"]],
+["constructor", "Pstringrefu", ["tuple"]],
+["constructor", "Pstringrefs", ["tuple"]],
+["constructor", "Pbyteslength", ["tuple"]],
+["constructor", "Pbytesrefu", ["tuple"]],
+["constructor", "Pbytessetu", ["tuple"]],
+["constructor", "Pbytesrefs", ["tuple"]],
+["constructor", "Pbytessets", ["tuple"]],
+["constructor", "Pmakearray",
+["tuple", ["Tconstr", ["Pident", "array_kind"]],
+["Tconstr", ["Pdot", ["Pident", "Asttypes"], "mutable_flag"]]]],
+["constructor", "Pduparray",
+["tuple", ["Tconstr", ["Pident", "array_kind"]],
+["Tconstr", ["Pdot", ["Pident", "Asttypes"], "mutable_flag"]]]],
+["constructor", "Parraylength",
+["tuple", ["Tconstr", ["Pident", "array_kind"]]]],
+["constructor", "Parrayrefu",
+["tuple", ["Tconstr", ["Pident", "array_kind"]]]],
+["constructor", "Parraysetu",
+["tuple", ["Tconstr", ["Pident", "array_kind"]]]],
+["constructor", "Parrayrefs",
+["tuple", ["Tconstr", ["Pident", "array_kind"]]]],
+["constructor", "Parraysets",
+["tuple", ["Tconstr", ["Pident", "array_kind"]]]],
+["constructor", "Pisint", ["tuple"]], ["constructor", "Pisout", ["tuple"]],
+["constructor", "Pbittest", ["tuple"]],
+["constructor", "Pbintofint",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]]]],
+["constructor", "Pintofbint",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]]]],
+["constructor", "Pcvtbint",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]],
+["Tconstr", ["Pident", "boxed_integer"]]]],
+["constructor", "Pnegbint",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]]]],
+["constructor", "Paddbint",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]]]],
+["constructor", "Psubbint",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]]]],
+["constructor", "Pmulbint",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]]]],
+["constructor", "Pdivbint",
+["record", ["field", "size", ["Tconstr", ["Pident", "boxed_integer"]]],
+["field", "is_safe", ["Tconstr", ["Pident", "is_safe"]]]]],
+["constructor", "Pmodbint",
+["record", ["field", "size", ["Tconstr", ["Pident", "boxed_integer"]]],
+["field", "is_safe", ["Tconstr", ["Pident", "is_safe"]]]]],
+["constructor", "Pandbint",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]]]],
+["constructor", "Porbint",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]]]],
+["constructor", "Pxorbint",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]]]],
+["constructor", "Plslbint",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]]]],
+["constructor", "Plsrbint",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]]]],
+["constructor", "Pasrbint",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]]]],
+["constructor", "Pbintcomp",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]],
+["Tconstr", ["Pident", "comparison"]]]],
+["constructor", "Pbigarrayref",
+["tuple", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "bigarray_kind"]],
+["Tconstr", ["Pident", "bigarray_layout"]]]],
+["constructor", "Pbigarrayset",
+["tuple", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "bigarray_kind"]],
+["Tconstr", ["Pident", "bigarray_layout"]]]],
+["constructor", "Pbigarraydim", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Pstring_load_16",
+["tuple", ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "Pstring_load_32",
+["tuple", ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "Pstring_load_64",
+["tuple", ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "Pstring_set_16", ["tuple", ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "Pstring_set_32", ["tuple", ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "Pstring_set_64", ["tuple", ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "Pbigstring_load_16",
+["tuple", ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "Pbigstring_load_32",
+["tuple", ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "Pbigstring_load_64",
+["tuple", ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "Pbigstring_set_16",
+["tuple", ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "Pbigstring_set_32",
+["tuple", ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "Pbigstring_set_64",
+["tuple", ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "Pctconst",
+["tuple", ["Tconstr", ["Pident", "compile_time_constant"]]]],
+["constructor", "Pbswap16", ["tuple"]],
+["constructor", "Pbbswap",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]]]],
+["constructor", "Pint_as_pointer", ["tuple"]],
+["constructor", "Popaque", ["tuple"]]]],
+["Sig_type", "comparison", 0,
+["Type_variant", ["constructor", "Ceq", ["tuple"]],
+["constructor", "Cneq", ["tuple"]], ["constructor", "Clt", ["tuple"]],
+["constructor", "Cgt", ["tuple"]], ["constructor", "Cle", ["tuple"]],
+["constructor", "Cge", ["tuple"]]]],
+["Sig_type", "array_kind", 0,
+["Type_variant", ["constructor", "Pgenarray", ["tuple"]],
+["constructor", "Paddrarray", ["tuple"]],
+["constructor", "Pintarray", ["tuple"]],
+["constructor", "Pfloatarray", ["tuple"]]]],
+["Sig_type", "value_kind", 0,
+["Type_variant", ["constructor", "Pgenval", ["tuple"]],
+["constructor", "Pfloatval", ["tuple"]],
+["constructor", "Pboxedintval",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]]]],
+["constructor", "Pintval", ["tuple"]]]],
+["Sig_type", "block_shape", 0,
+["Type_alias",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "value_kind"]]]]]],
+["Sig_type", "boxed_integer", 0,
+["Type_variant", ["constructor", "Pnativeint", ["tuple"]],
+["constructor", "Pint32", ["tuple"]], ["constructor", "Pint64", ["tuple"]]]],
+["Sig_type", "bigarray_kind", 0,
+["Type_variant", ["constructor", "Pbigarray_unknown", ["tuple"]],
+["constructor", "Pbigarray_float32", ["tuple"]],
+["constructor", "Pbigarray_float64", ["tuple"]],
+["constructor", "Pbigarray_sint8", ["tuple"]],
+["constructor", "Pbigarray_uint8", ["tuple"]],
+["constructor", "Pbigarray_sint16", ["tuple"]],
+["constructor", "Pbigarray_uint16", ["tuple"]],
+["constructor", "Pbigarray_int32", ["tuple"]],
+["constructor", "Pbigarray_int64", ["tuple"]],
+["constructor", "Pbigarray_caml_int", ["tuple"]],
+["constructor", "Pbigarray_native_int", ["tuple"]],
+["constructor", "Pbigarray_complex32", ["tuple"]],
+["constructor", "Pbigarray_complex64", ["tuple"]]]],
+["Sig_type", "bigarray_layout", 0,
+["Type_variant", ["constructor", "Pbigarray_unknown_layout", ["tuple"]],
+["constructor", "Pbigarray_c_layout", ["tuple"]],
+["constructor", "Pbigarray_fortran_layout", ["tuple"]]]],
+["Sig_type", "raise_kind", 0,
+["Type_variant", ["constructor", "Raise_regular", ["tuple"]],
+["constructor", "Raise_reraise", ["tuple"]],
+["constructor", "Raise_notrace", ["tuple"]]]],
+["Sig_type", "structured_constant", 0,
+["Type_variant",
+["constructor", "Const_base",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Asttypes"], "constant"]]]],
+["constructor", "Const_pointer", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Const_block",
+["tuple", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "structured_constant"]]]]],
+["constructor", "Const_float_array",
+["tuple", ["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]]]],
+["constructor", "Const_immstring",
+["tuple", ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_type", "inline_attribute", 0,
+["Type_variant", ["constructor", "Always_inline", ["tuple"]],
+["constructor", "Never_inline", ["tuple"]],
+["constructor", "Unroll", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Default_inline", ["tuple"]]]],
+["Sig_type", "specialise_attribute", 0,
+["Type_variant", ["constructor", "Always_specialise", ["tuple"]],
+["constructor", "Never_specialise", ["tuple"]],
+["constructor", "Default_specialise", ["tuple"]]]],
+["Sig_type", "function_kind", 0,
+["Type_variant", ["constructor", "Curried", ["tuple"]],
+["constructor", "Tupled", ["tuple"]]]],
+["Sig_type", "let_kind", 0,
+["Type_variant", ["constructor", "Strict", ["tuple"]],
+["constructor", "Alias", ["tuple"]], ["constructor", "StrictOpt", ["tuple"]],
+["constructor", "Variable", ["tuple"]]]],
+["Sig_type", "meth_kind", 0,
+["Type_variant", ["constructor", "Self", ["tuple"]],
+["constructor", "Public", ["tuple"]], ["constructor", "Cached", ["tuple"]]]],
+["Sig_type", "shared_code", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_type", "function_attribute", 0,
+["Type_record",
+["label", "inline", ["Tconstr", ["Pident", "inline_attribute"]]],
+["label", "specialise", ["Tconstr", ["Pident", "specialise_attribute"]]],
+["label", "is_a_functor", ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_type", "lambda", 0,
+["Type_variant",
+["constructor", "Lvar",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]]]],
+["constructor", "Lconst",
+["tuple", ["Tconstr", ["Pident", "structured_constant"]]]],
+["constructor", "Lapply", ["tuple", ["Tconstr", ["Pident", "lambda_apply"]]]],
+["constructor", "Lfunction", ["tuple", ["Tconstr", ["Pident", "lfunction"]]]],
+["constructor", "Llet",
+["tuple", ["Tconstr", ["Pident", "let_kind"]],
+["Tconstr", ["Pident", "value_kind"]],
+["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]],
+["Tconstr", ["Pident", "lambda"]], ["Tconstr", ["Pident", "lambda"]]]],
+["constructor", "Lletrec",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]],
+["Tconstr", ["Pident", "lambda"]]]], ["Tconstr", ["Pident", "lambda"]]]],
+["constructor", "Lprim",
+["tuple", ["Tconstr", ["Pident", "primitive"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "lambda"]]],
+["Tconstr", ["Pdot", ["Pident", "Location"], "t"]]]],
+["constructor", "Lswitch",
+["tuple", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pident", "lambda_switch"]]]],
+["constructor", "Lstringswitch",
+["tuple", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "lambda"]]]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "lambda"]]],
+["Tconstr", ["Pdot", ["Pident", "Location"], "t"]]]],
+["constructor", "Lstaticraise",
+["tuple", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "lambda"]]]]],
+["constructor", "Lstaticcatch",
+["tuple", ["Tconstr", ["Pident", "lambda"]],
+["Ttuple", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]]]],
+["Tconstr", ["Pident", "lambda"]]]],
+["constructor", "Ltrywith",
+["tuple", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]],
+["Tconstr", ["Pident", "lambda"]]]],
+["constructor", "Lifthenelse",
+["tuple", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pident", "lambda"]], ["Tconstr", ["Pident", "lambda"]]]],
+["constructor", "Lsequence",
+["tuple", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pident", "lambda"]]]],
+["constructor", "Lwhile",
+["tuple", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pident", "lambda"]]]],
+["constructor", "Lfor",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]],
+["Tconstr", ["Pident", "lambda"]], ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pdot", ["Pident", "Asttypes"], "direction_flag"]],
+["Tconstr", ["Pident", "lambda"]]]],
+["constructor", "Lassign",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]],
+["Tconstr", ["Pident", "lambda"]]]],
+["constructor", "Lsend",
+["tuple", ["Tconstr", ["Pident", "meth_kind"]],
+["Tconstr", ["Pident", "lambda"]], ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "lambda"]]],
+["Tconstr", ["Pdot", ["Pident", "Location"], "t"]]]],
+["constructor", "Levent",
+["tuple", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pident", "lambda_event"]]]],
+["constructor", "Lifused",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]],
+["Tconstr", ["Pident", "lambda"]]]]]],
+["Sig_type", "lfunction", 0,
+["Type_record", ["label", "kind", ["Tconstr", ["Pident", "function_kind"]]],
+["label", "params",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]]]],
+["label", "body", ["Tconstr", ["Pident", "lambda"]]],
+["label", "attr", ["Tconstr", ["Pident", "function_attribute"]]],
+["label", "loc", ["Tconstr", ["Pdot", ["Pident", "Location"], "t"]]]]],
+["Sig_type", "lambda_apply", 0,
+["Type_record", ["label", "ap_func", ["Tconstr", ["Pident", "lambda"]]],
+["label", "ap_args",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "lambda"]]]],
+["label", "ap_loc", ["Tconstr", ["Pdot", ["Pident", "Location"], "t"]]],
+["label", "ap_should_be_tailcall", ["Tconstr", ["Pident", "bool"]]],
+["label", "ap_inlined", ["Tconstr", ["Pident", "inline_attribute"]]],
+["label", "ap_specialised", ["Tconstr", ["Pident", "specialise_attribute"]]]]],
+["Sig_type", "lambda_switch", 0,
+["Type_record", ["label", "sw_numconsts", ["Tconstr", ["Pident", "int"]]],
+["label", "sw_consts",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "lambda"]]]]],
+["label", "sw_numblocks", ["Tconstr", ["Pident", "int"]]],
+["label", "sw_blocks",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "lambda"]]]]],
+["label", "sw_failaction",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "lambda"]]]]]],
+["Sig_type", "lambda_event", 0,
+["Type_record",
+["label", "lev_loc", ["Tconstr", ["Pdot", ["Pident", "Location"], "t"]]],
+["label", "lev_kind", ["Tconstr", ["Pident", "lambda_event_kind"]]],
+["label", "lev_repr",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "int"]]]]],
+["label", "lev_env", ["Tconstr", ["Pdot", ["Pident", "Env"], "summary"]]]]],
+["Sig_type", "lambda_event_kind", 0,
+["Type_variant", ["constructor", "Lev_before", ["tuple"]],
+["constructor", "Lev_after",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Types"], "type_expr"]]]],
+["constructor", "Lev_function", ["tuple"]],
+["constructor", "Lev_pseudo", ["tuple"]]]],
+["Sig_type", "program", 0,
+["Type_record",
+["label", "module_ident", ["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]]],
+["label", "main_module_block_size", ["Tconstr", ["Pident", "int"]]],
+["label", "required_globals",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Ident"], "Set"], "t"]]],
+["label", "code", ["Tconstr", ["Pident", "lambda"]]]]],
+["Sig_value", "make_key",
+["Tarrow", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "lambda"]]]]],
+["Sig_value", "const_unit", ["Tconstr", ["Pident", "structured_constant"]]],
+["Sig_value", "lambda_unit", ["Tconstr", ["Pident", "lambda"]]],
+["Sig_value", "name_lambda",
+["Tarrow", ["Tconstr", ["Pident", "let_kind"]],
+["Tarrow", ["Tconstr", ["Pident", "lambda"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]],
+["Tconstr", ["Pident", "lambda"]]], ["Tconstr", ["Pident", "lambda"]]]]]],
+["Sig_value", "name_lambda_list",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "lambda"]]],
+["Tarrow",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "lambda"]]],
+["Tconstr", ["Pident", "lambda"]]], ["Tconstr", ["Pident", "lambda"]]]]],
+["Sig_value", "iter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pident", "unit"]]],
+["Tarrow", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_module", "IdentSet",
+["Mty_signature",
+["Sig_type", "elt", 0,
+["Type_alias", ["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]]]],
+["Sig_type", "t", 0, ["Type_abstract"]],
+["Sig_value", "empty", ["Tconstr", ["Pident", "t"]]],
+["Sig_value", "is_empty",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "mem",
+["Tarrow", ["Tconstr", ["Pident", "elt"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "add",
+["Tarrow", ["Tconstr", ["Pident", "elt"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "singleton",
+["Tarrow", ["Tconstr", ["Pident", "elt"]], ["Tconstr", ["Pident", "t"]]]],
+["Sig_value", "remove",
+["Tarrow", ["Tconstr", ["Pident", "elt"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "union",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "inter",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "diff",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "compare",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "equal",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "subset",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "iter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "elt"]], ["Tconstr", ["Pident", "unit"]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "map",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "elt"]], ["Tconstr", ["Pident", "elt"]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "fold",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "elt"]],
+["Tarrow", ["Tpoly", "a"], ["Tpoly", "a"]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tpoly", "a"], ["Tpoly", "a"]]]]],
+["Sig_value", "for_all",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "elt"]], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "exists",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "elt"]], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "filter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "elt"]], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "partition",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "elt"]], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Ttuple", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]]],
+["Sig_value", "cardinal",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "elements",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "elt"]]]]],
+["Sig_value", "min_elt",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "elt"]]]],
+["Sig_value", "max_elt",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "elt"]]]],
+["Sig_value", "choose",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "elt"]]]],
+["Sig_value", "split",
+["Tarrow", ["Tconstr", ["Pident", "elt"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Ttuple", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]],
+["Tconstr", ["Pident", "t"]]]]]],
+["Sig_value", "find",
+["Tarrow", ["Tconstr", ["Pident", "elt"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "elt"]]]]],
+["Sig_value", "of_list",
+["Tarrow", ["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "elt"]]],
+["Tconstr", ["Pident", "t"]]]]]],
+["Sig_value", "free_variables",
+["Tarrow", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pdot", ["Pident", "IdentSet"], "t"]]]],
+["Sig_value", "free_methods",
+["Tarrow", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pdot", ["Pident", "IdentSet"], "t"]]]],
+["Sig_value", "transl_normal_path",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Path"], "t"]],
+["Tconstr", ["Pident", "lambda"]]]],
+["Sig_value", "transl_path",
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Location"], "t"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Env"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Path"], "t"]],
+["Tconstr", ["Pident", "lambda"]]]]]],
+["Sig_value", "make_sequence",
+["Tarrow", ["Tarrow", ["Tpoly", "a"], ["Tconstr", ["Pident", "lambda"]]],
+["Tarrow", ["Tconstr", ["Pident", "list"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "lambda"]]]]],
+["Sig_value", "subst_lambda",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Ident"], "tbl"],
+["Tconstr", ["Pident", "lambda"]]],
+["Tarrow", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pident", "lambda"]]]]],
+["Sig_value", "map",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pident", "lambda"]]],
+["Tarrow", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pident", "lambda"]]]]],
+["Sig_value", "bind",
+["Tarrow", ["Tconstr", ["Pident", "let_kind"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "lambda"]],
+["Tarrow", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pident", "lambda"]]]]]]],
+["Sig_value", "commute_comparison",
+["Tarrow", ["Tconstr", ["Pident", "comparison"]],
+["Tconstr", ["Pident", "comparison"]]]],
+["Sig_value", "negate_comparison",
+["Tarrow", ["Tconstr", ["Pident", "comparison"]],
+["Tconstr", ["Pident", "comparison"]]]],
+["Sig_value", "default_function_attribute",
+["Tconstr", ["Pident", "function_attribute"]]],
+["Sig_value", "next_raise_count",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "next_negative_raise_count",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "staticfail", ["Tconstr", ["Pident", "lambda"]]],
+["Sig_value", "is_guarded",
+["Tarrow", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "patch_guarded",
+["Tarrow", ["Tconstr", ["Pident", "lambda"]],
+["Tarrow", ["Tconstr", ["Pident", "lambda"]],
+["Tconstr", ["Pident", "lambda"]]]]],
+["Sig_value", "raise_kind",
+["Tarrow", ["Tconstr", ["Pident", "raise_kind"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "lam_of_loc",
+["Tarrow", ["Tconstr", ["Pident", "loc_kind"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Location"], "t"]],
+["Tconstr", ["Pident", "lambda"]]]]],
+["Sig_value", "reset",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]]]]

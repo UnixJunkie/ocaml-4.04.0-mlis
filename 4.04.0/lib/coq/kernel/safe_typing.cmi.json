@@ -1,844 +1,295 @@
-["module"; "Safe_typing"; ["Mty_signature"; ["Sig_type"; "vodigest"; 
-                                            0; ["Type_variant"; ["constructor"; 
-                                                                "Dvo_or_vi"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Digest"]; 
-                                                                "t"]]]]; 
-                                               ["constructor"; "Dvivo"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Digest"]; 
-                                                         "t"]]; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Digest"]; 
-                                                                "t"]]]]]]; 
-                          ["Sig_value"; "digest_match"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "vodigest"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "vodigest"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "bool"]]]]]; 
-                          ["Sig_type"; "safe_environment"; 0; ["Type_abstract"]]; 
-                          ["Sig_value"; "empty_environment"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "safe_environment"]]]; 
-                          ["Sig_value"; "is_initial"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "safe_environment"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "bool"]]]]; 
-                          ["Sig_value"; "env_of_safe_env"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "safe_environment"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                           "env"]]]]; 
-                          ["Sig_type"; "safe_transformer0"; 0; ["Type_alias"; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "safe_environment"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "safe_environment"]]]]]; 
-                          ["Sig_type"; "safe_transformer"; 1; ["Type_alias"; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "safe_environment"]]; 
-                                                              ["Ttuple"; 
-                                                              ["Tpoly"; "a"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "safe_environment"]]]]]]; 
-                          ["Sig_type"; "private_constant"; 0; ["Type_abstract"]]; 
-                          ["Sig_type"; "private_constants"; 0; ["Type_abstract"]]; 
-                          ["Sig_type"; "private_constant_role"; 0; ["Type_variant"; 
-                                                                   ["constructor"; 
-                                                                   "Subproof"; 
-                                                                   ["tuple"]]; 
-                                                                   ["constructor"; 
-                                                                   "Schema"; 
-                                                                   ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "inductive"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]]]]; 
-                          ["Sig_value"; "side_effects_of_private_constants"; 
-                          ["Tarrow"; ["Tconstr"; ["Pident"; "private_constants"]]; 
-                          ["Tconstr"; ["Pdot"; ["Pident"; "Entries"]; 
-                                      "side_effects"]]]]; ["Sig_value"; 
-                                                          "empty_private_constants"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "private_constants"]]]; 
-                          ["Sig_value"; "add_private"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "private_constant"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "private_constants"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "private_constants"]]]]]; 
-                          ["Sig_value"; "concat_private"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "private_constants"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "private_constants"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "private_constants"]]]]]; 
-                          ["Sig_value"; "private_con_of_con"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "safe_environment"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "constant"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "private_constant"]]]]]; 
-                          ["Sig_value"; "private_con_of_scheme"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "safe_environment"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "list"]; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Names"]; 
-                                                                 "inductive"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Names"]; 
-                                                                 "constant"]]]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "private_constant"]]]]]]; 
-                          ["Sig_value"; "mk_pure_proof"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Constr"]; 
-                                                                    "constr"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Entries"]; 
-                                                         "proof_output"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "private_constants"]]]]]; 
-                          ["Sig_value"; "inline_private_constants_in_constr"; 
-                          ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                          "Environ"]; 
-                                                 "env"]]; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Constr"]; 
-                                                          "constr"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "private_constants"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Constr"]; 
-                                                          "constr"]]]]]]; 
-                          ["Sig_value"; "inline_private_constants_in_definition_entry"; 
-                          ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                          "Environ"]; 
-                                                 "env"]]; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Entries"]; 
-                                                          "definition_entry"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "private_constants"]]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Entries"]; 
-                                                          "definition_entry"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "private_constants"]]]]]]; 
-                          ["Sig_value"; "universes_of_private"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "private_constants"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Univ"]; 
-                                                                "universe_context_set"]]]]]; 
-                          ["Sig_value"; "is_curmod_library"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "safe_environment"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bool"]]]]; 
-                          ["Sig_value"; "join_safe_environment"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Future"]; 
-                                                                 "UUIDSet"]; 
-                                                                 "t"]]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "safe_environment"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "safe_environment"]]]]]; 
-                          ["Sig_value"; "is_joined_environment"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "safe_environment"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bool"]]]]; 
-                          ["Sig_value"; "push_named_assum"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Univ"]; 
-                                                            "in_universe_context_set"]; 
-                                                            ["Ttuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Names"]; 
-                                                            "Id"]; "t"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Term"]; 
-                                                            "types"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "safe_transformer0"]]]]; 
-                          ["Sig_value"; "push_named_def"; ["Tarrow"; 
-                                                          ["Ttuple"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "Id"]; 
-                                                          "t"]]; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Entries"]; 
-                                                                 "definition_entry"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "private_constants"]]]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "safe_transformer"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Univ"]; 
-                                                          "universe_context_set"]]]]]; 
-                          ["Sig_type"; "global_declaration"; 0; ["Type_variant"; 
-                                                                ["constructor"; 
-                                                                "ConstantEntry"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Entries"]; 
-                                                                "constant_entry"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "private_constants"]]]]]; 
-                                                                ["constructor"; 
-                                                                "GlobalRecipe"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Cooking"]; 
-                                                                "recipe"]]]]]]; 
-                          ["Sig_type"; "exported_private_constant"; 0; 
-                          ["Type_alias"; ["Ttuple"; ["Tconstr"; ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Names"]; 
-                                                                "constant"]]; 
-                                         ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                              "Entries"]; 
-                                                     "constant_entry"]; 
-                                         ["Tconstr"; ["Pident"; "private_constants"]]]; 
-                                         ["Tconstr"; ["Pident"; "private_constant_role"]]]]]; 
-                          ["Sig_value"; "add_constant"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "DirPath"]; 
-                                                                   "t"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "Label"]; 
-                                                                   "t"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "global_declaration"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "safe_transformer"]; 
-                                                        ["Ttuple"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "constant"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "exported_private_constant"]]]]]]]]]; 
-                          ["Sig_value"; "add_mind"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Names"]; 
-                                                               "DirPath"]; 
-                                                               "t"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Names"]; 
-                                                               "Label"]; 
-                                                               "t"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Entries"]; 
-                                                               "mutual_inductive_entry"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "safe_transformer"]; 
-                                                    ["Tconstr"; ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Names"]; 
-                                                                "mutual_inductive"]]]]]]]; 
-                          ["Sig_value"; "add_module"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Names"]; 
-                                                                 "Label"]; 
-                                                                 "t"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Entries"]; 
-                                                                 "module_entry"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Declarations"]; 
-                                                                 "inline"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "safe_transformer"]; 
-                                                      ["Ttuple"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Names"]; 
-                                                                 "module_path"]]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Mod_subst"]; 
-                                                                  "delta_resolver"]]]]]]]]; 
-                          ["Sig_value"; "add_modtype"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "Label"]; 
-                                                                  "t"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Entries"]; 
-                                                                  "module_type_entry"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Declarations"]; 
-                                                                  "inline"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "safe_transformer"]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "module_path"]]]]]]]; 
-                          ["Sig_value"; "push_context_set"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Univ"]; 
-                                                            "universe_context_set"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "safe_transformer0"]]]]]; 
-                          ["Sig_value"; "push_context"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bool"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Univ"]; 
-                                                                   "universe_context"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "safe_transformer0"]]]]]; 
-                          ["Sig_value"; "add_constraints"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Univ"]; 
-                                                           "constraints"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "safe_transformer0"]]]]; 
-                          ["Sig_value"; "set_engagement"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Declarations"]; 
-                                                          "engagement"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "safe_transformer0"]]]]; 
-                          ["Sig_value"; "set_typing_flags"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Declarations"]; 
-                                                            "typing_flags"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "safe_transformer0"]]]]; 
-                          ["Sig_value"; "start_module"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "Label"]; 
-                                                                   "t"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "safe_transformer"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "module_path"]]]]]; 
-                          ["Sig_value"; "start_modtype"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Label"]; 
-                                                                    "t"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "safe_transformer"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Names"]; 
-                                                         "module_path"]]]]]; 
-                          ["Sig_value"; "add_module_parameter"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Names"]; 
-                                                                "MBId"]; 
-                                                                "t"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Entries"]; 
-                                                                "module_struct_entry"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Declarations"]; 
-                                                                "inline"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "safe_transformer"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Mod_subst"]; 
-                                                                "delta_resolver"]]]]]]]; 
-                          ["Sig_value"; "end_module"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Names"]; 
-                                                                 "Label"]; 
-                                                                 "t"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Entries"]; 
-                                                                 "module_struct_entry"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Declarations"]; 
-                                                                 "inline"]]]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "safe_transformer"]; 
-                                                      ["Ttuple"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Names"]; 
-                                                                 "module_path"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "MBId"]; 
-                                                                  "t"]]]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Mod_subst"]; 
-                                                                  "delta_resolver"]]]]]]]; 
-                          ["Sig_value"; "end_modtype"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "Label"]; 
-                                                                  "t"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "safe_transformer"]; 
-                                                       ["Ttuple"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "module_path"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "list"]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "MBId"]; 
-                                                                   "t"]]]]]]]; 
-                          ["Sig_value"; "add_include"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Entries"]; 
-                                                                  "module_struct_entry"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Declarations"]; 
-                                                                  "inline"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "safe_transformer"]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Mod_subst"]; 
-                                                                   "delta_resolver"]]]]]]]; 
-                          ["Sig_value"; "current_modpath"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "safe_environment"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                           "module_path"]]]]; 
-                          ["Sig_value"; "current_dirpath"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "safe_environment"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                           "dir_path"]]]]; 
-                          ["Sig_type"; "compiled_library"; 0; ["Type_abstract"]]; 
-                          ["Sig_type"; "native_library"; 0; ["Type_alias"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Nativecode"]; 
-                                                            "global"]]]]]; 
-                          ["Sig_value"; "get_library_native_symbols"; 
-                          ["Tarrow"; ["Tconstr"; ["Pident"; "safe_environment"]]; 
-                          ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pdot"; ["Pident"; 
-                                                                   "Names"]; 
-                                                          "DirPath"]; 
-                                                 "t"]]; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Nativecode"]; 
-                                                                    "symbols"]]]]]; 
-                          ["Sig_value"; "start_library"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "DirPath"]; 
-                                                                    "t"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "safe_transformer"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Names"]; 
-                                                         "module_path"]]]]]; 
-                          ["Sig_value"; "export"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "option"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Future"]; 
-                                                             "UUIDSet"]; 
-                                                             "t"]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "safe_environment"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Names"]; 
-                                                             "DirPath"]; 
-                                                             "t"]]; [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "module_path"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "compiled_library"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "native_library"]]]]]]]; 
-                          ["Sig_value"; "import"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "compiled_library"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Univ"]; 
-                                                             "universe_context_set"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "vodigest"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "safe_transformer"]; 
-                                                  ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "module_path"]]]]]]]; 
-                          ["Sig_type"; "judgment"; 0; ["Type_abstract"]]; 
-                          ["Sig_value"; "j_val"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "judgment"]]; 
-                                                 ["Tconstr"; ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Term"]; 
-                                                             "constr"]]]]; 
-                          ["Sig_value"; "j_type"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "judgment"]]; 
-                                                  ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]]]; 
-                          ["Sig_value"; "typing"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "safe_environment"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Term"]; 
-                                                             "constr"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "judgment"]]]]]; 
-                          ["Sig_value"; "exists_objlabel"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Label"]; 
-                                                           "t"]]; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "safe_environment"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]]]]; 
-                          ["Sig_value"; "delta_of_senv"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "safe_environment"]]; 
-                                                         ["Ttuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Mod_subst"]; 
-                                                                    "delta_resolver"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Mod_subst"]; 
-                                                         "delta_resolver"]]]]]; 
-                          ["Sig_value"; "retroknowledge"; ["Tarrow"; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Retroknowledge"]; 
-                                                          "retroknowledge"]]; 
-                                                          ["Tpoly"; "a"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "safe_environment"]]; 
-                                                          ["Tpoly"; "a"]]]]; 
-                          ["Sig_value"; "register"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Retroknowledge"]; 
-                                                               "field"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Retroknowledge"]; 
-                                                               "entry"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Term"]; 
-                                                               "constr"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "safe_transformer0"]]]]]]; 
-                          ["Sig_value"; "register_inline"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                           "constant"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "safe_transformer0"]]]]; 
-                          ["Sig_value"; "set_strategy"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "safe_environment"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "tableKey"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "constant"]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Conv_oracle"]; 
-                                                                   "level"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "safe_environment"]]]]]]]]
+["module", "Safe_typing",
+["Mty_signature",
+["Sig_type", "vodigest", 0,
+["Type_variant",
+["constructor", "Dvo_or_vi",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Digest"], "t"]]]],
+["constructor", "Dvivo",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Digest"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Digest"], "t"]]]]]],
+["Sig_value", "digest_match",
+["Tarrow", ["Tconstr", ["Pident", "vodigest"]],
+["Tarrow", ["Tconstr", ["Pident", "vodigest"]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_type", "safe_environment", 0, ["Type_abstract"]],
+["Sig_value", "empty_environment",
+["Tconstr", ["Pident", "safe_environment"]]],
+["Sig_value", "is_initial",
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "env_of_safe_env",
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]]]],
+["Sig_type", "safe_transformer0", 0,
+["Type_alias",
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Tconstr", ["Pident", "safe_environment"]]]]],
+["Sig_type", "safe_transformer", 1,
+["Type_alias",
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Ttuple", ["Tpoly", "a"], ["Tconstr", ["Pident", "safe_environment"]]]]]],
+["Sig_type", "private_constant", 0, ["Type_abstract"]],
+["Sig_type", "private_constants", 0, ["Type_abstract"]],
+["Sig_type", "private_constant_role", 0,
+["Type_variant", ["constructor", "Subproof", ["tuple"]],
+["constructor", "Schema",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "inductive"]],
+["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "side_effects_of_private_constants",
+["Tarrow", ["Tconstr", ["Pident", "private_constants"]],
+["Tconstr", ["Pdot", ["Pident", "Entries"], "side_effects"]]]],
+["Sig_value", "empty_private_constants",
+["Tconstr", ["Pident", "private_constants"]]],
+["Sig_value", "add_private",
+["Tarrow", ["Tconstr", ["Pident", "private_constant"]],
+["Tarrow", ["Tconstr", ["Pident", "private_constants"]],
+["Tconstr", ["Pident", "private_constants"]]]]],
+["Sig_value", "concat_private",
+["Tarrow", ["Tconstr", ["Pident", "private_constants"]],
+["Tarrow", ["Tconstr", ["Pident", "private_constants"]],
+["Tconstr", ["Pident", "private_constants"]]]]],
+["Sig_value", "private_con_of_con",
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Names"], "constant"]],
+["Tconstr", ["Pident", "private_constant"]]]]],
+["Sig_value", "private_con_of_scheme",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "inductive"]],
+["Tconstr", ["Pdot", ["Pident", "Names"], "constant"]]]],
+["Tconstr", ["Pident", "private_constant"]]]]]],
+["Sig_value", "mk_pure_proof",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constr"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Entries"], "proof_output"],
+["Tconstr", ["Pident", "private_constants"]]]]],
+["Sig_value", "inline_private_constants_in_constr",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constr"], "constr"]],
+["Tarrow", ["Tconstr", ["Pident", "private_constants"]],
+["Tconstr", ["Pdot", ["Pident", "Constr"], "constr"]]]]]],
+["Sig_value", "inline_private_constants_in_definition_entry",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Entries"], "definition_entry"],
+["Tconstr", ["Pident", "private_constants"]]],
+["Tconstr", ["Pdot", ["Pident", "Entries"], "definition_entry"],
+["Tconstr", ["Pident", "private_constants"]]]]]],
+["Sig_value", "universes_of_private",
+["Tarrow", ["Tconstr", ["Pident", "private_constants"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Univ"], "universe_context_set"]]]]],
+["Sig_value", "is_curmod_library",
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "join_safe_environment",
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Future"], "UUIDSet"], "t"]]],
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Tconstr", ["Pident", "safe_environment"]]]]],
+["Sig_value", "is_joined_environment",
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "push_named_assum",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Univ"], "in_universe_context_set"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "types"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tconstr", ["Pident", "safe_transformer0"]]]],
+["Sig_value", "push_named_def",
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Entries"], "definition_entry"],
+["Tconstr", ["Pident", "private_constants"]]]],
+["Tconstr", ["Pident", "safe_transformer"],
+["Tconstr", ["Pdot", ["Pident", "Univ"], "universe_context_set"]]]]],
+["Sig_type", "global_declaration", 0,
+["Type_variant",
+["constructor", "ConstantEntry",
+["tuple", ["Tconstr", ["Pident", "bool"]],
+["Tconstr", ["Pdot", ["Pident", "Entries"], "constant_entry"],
+["Tconstr", ["Pident", "private_constants"]]]]],
+["constructor", "GlobalRecipe",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cooking"], "recipe"]]]]]],
+["Sig_type", "exported_private_constant", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "constant"]],
+["Tconstr", ["Pdot", ["Pident", "Entries"], "constant_entry"],
+["Tconstr", ["Pident", "private_constants"]]],
+["Tconstr", ["Pident", "private_constant_role"]]]]],
+["Sig_value", "add_constant",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "DirPath"], "t"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Label"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "global_declaration"]],
+["Tconstr", ["Pident", "safe_transformer"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "constant"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "exported_private_constant"]]]]]]]]],
+["Sig_value", "add_mind",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "DirPath"], "t"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Label"], "t"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Entries"], "mutual_inductive_entry"]],
+["Tconstr", ["Pident", "safe_transformer"],
+["Tconstr", ["Pdot", ["Pident", "Names"], "mutual_inductive"]]]]]]],
+["Sig_value", "add_module",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Label"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Entries"], "module_entry"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Declarations"], "inline"]],
+["Tconstr", ["Pident", "safe_transformer"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]],
+["Tconstr", ["Pdot", ["Pident", "Mod_subst"], "delta_resolver"]]]]]]]],
+["Sig_value", "add_modtype",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Label"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Entries"], "module_type_entry"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Declarations"], "inline"]],
+["Tconstr", ["Pident", "safe_transformer"],
+["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]]]]]]],
+["Sig_value", "push_context_set",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Univ"], "universe_context_set"]],
+["Tconstr", ["Pident", "safe_transformer0"]]]]],
+["Sig_value", "push_context",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Univ"], "universe_context"]],
+["Tconstr", ["Pident", "safe_transformer0"]]]]],
+["Sig_value", "add_constraints",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Univ"], "constraints"]],
+["Tconstr", ["Pident", "safe_transformer0"]]]],
+["Sig_value", "set_engagement",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Declarations"], "engagement"]],
+["Tconstr", ["Pident", "safe_transformer0"]]]],
+["Sig_value", "set_typing_flags",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Declarations"], "typing_flags"]],
+["Tconstr", ["Pident", "safe_transformer0"]]]],
+["Sig_value", "start_module",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Label"], "t"]],
+["Tconstr", ["Pident", "safe_transformer"],
+["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]]]]],
+["Sig_value", "start_modtype",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Label"], "t"]],
+["Tconstr", ["Pident", "safe_transformer"],
+["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]]]]],
+["Sig_value", "add_module_parameter",
+["Tarrow", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "MBId"], "t"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Entries"], "module_struct_entry"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Declarations"], "inline"]],
+["Tconstr", ["Pident", "safe_transformer"],
+["Tconstr", ["Pdot", ["Pident", "Mod_subst"], "delta_resolver"]]]]]]],
+["Sig_value", "end_module",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Label"], "t"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Ttuple",
+["Tconstr", ["Pdot", ["Pident", "Entries"], "module_struct_entry"]],
+["Tconstr", ["Pdot", ["Pident", "Declarations"], "inline"]]]],
+["Tconstr", ["Pident", "safe_transformer"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "MBId"], "t"]]],
+["Tconstr", ["Pdot", ["Pident", "Mod_subst"], "delta_resolver"]]]]]]],
+["Sig_value", "end_modtype",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Label"], "t"]],
+["Tconstr", ["Pident", "safe_transformer"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "MBId"], "t"]]]]]]],
+["Sig_value", "add_include",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Entries"], "module_struct_entry"]],
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Declarations"], "inline"]],
+["Tconstr", ["Pident", "safe_transformer"],
+["Tconstr", ["Pdot", ["Pident", "Mod_subst"], "delta_resolver"]]]]]]],
+["Sig_value", "current_modpath",
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]]]],
+["Sig_value", "current_dirpath",
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Tconstr", ["Pdot", ["Pident", "Names"], "dir_path"]]]],
+["Sig_type", "compiled_library", 0, ["Type_abstract"]],
+["Sig_type", "native_library", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Nativecode"], "global"]]]]],
+["Sig_value", "get_library_native_symbols",
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "DirPath"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Nativecode"], "symbols"]]]]],
+["Sig_value", "start_library",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "DirPath"], "t"]],
+["Tconstr", ["Pident", "safe_transformer"],
+["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]]]]],
+["Sig_value", "export",
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Future"], "UUIDSet"], "t"]]],
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "DirPath"], "t"]],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]],
+["Tconstr", ["Pident", "compiled_library"]],
+["Tconstr", ["Pident", "native_library"]]]]]]],
+["Sig_value", "import",
+["Tarrow", ["Tconstr", ["Pident", "compiled_library"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Univ"], "universe_context_set"]],
+["Tarrow", ["Tconstr", ["Pident", "vodigest"]],
+["Tconstr", ["Pident", "safe_transformer"],
+["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]]]]]]],
+["Sig_type", "judgment", 0, ["Type_abstract"]],
+["Sig_value", "j_val",
+["Tarrow", ["Tconstr", ["Pident", "judgment"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]],
+["Sig_value", "j_type",
+["Tarrow", ["Tconstr", ["Pident", "judgment"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]],
+["Sig_value", "typing",
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pident", "judgment"]]]]],
+["Sig_value", "exists_objlabel",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Label"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "delta_of_senv",
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Mod_subst"], "delta_resolver"]],
+["Tconstr", ["Pdot", ["Pident", "Mod_subst"], "delta_resolver"]]]]],
+["Sig_value", "retroknowledge",
+["Tarrow",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Retroknowledge"], "retroknowledge"]],
+["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]], ["Tpoly", "a"]]]],
+["Sig_value", "register",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Retroknowledge"], "field"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Retroknowledge"], "entry"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pident", "safe_transformer0"]]]]]],
+["Sig_value", "register_inline",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Names"], "constant"]],
+["Tconstr", ["Pident", "safe_transformer0"]]]],
+["Sig_value", "set_strategy",
+["Tarrow", ["Tconstr", ["Pident", "safe_environment"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Names"], "tableKey"],
+["Tconstr", ["Pdot", ["Pident", "Names"], "constant"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Conv_oracle"], "level"]],
+["Tconstr", ["Pident", "safe_environment"]]]]]]]]

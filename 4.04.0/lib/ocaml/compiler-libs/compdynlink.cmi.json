@@ -1,175 +1,76 @@
-["module"; "Compdynlink"; ["Mty_signature"; ["Sig_value"; "is_native"; 
-                                            ["Tconstr"; ["Pident"; "bool"]]]; 
-                          ["Sig_value"; "loadfile"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "unit"]]]]; 
-                          ["Sig_value"; "loadfile_private"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]]]; 
-                          ["Sig_value"; "adapt_filename"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]; 
-                          ["Sig_value"; "allow_only"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "list"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]; 
-                          ["Sig_value"; "prohibit"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "unit"]]]]; 
-                          ["Sig_value"; "default_available_units"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]; 
-                          ["Sig_value"; "allow_unsafe_modules"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                          ["Sig_value"; "add_interfaces"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]]]]; 
-                          ["Sig_value"; "add_available_units"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Ttuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Digest"]; 
-                                                               "t"]]]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                          ["Sig_value"; "clear_available_units"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]; 
-                          ["Sig_value"; "init"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "unit"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "unit"]]]]; 
-                          ["Sig_type"; "linking_error"; 0; ["Type_variant"; 
-                                                           ["constructor"; 
-                                                           "Undefined_global"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]; 
-                                                           ["constructor"; 
-                                                           "Unavailable_primitive"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]; 
-                                                           ["constructor"; 
-                                                           "Uninitialized_global"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]]]; 
-                          ["Sig_type"; "error"; 0; ["Type_variant"; [
-                                                                    "constructor"; 
-                                                                    "Not_a_bytecode_file"; 
-                                                                    [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]]; 
-                                                   ["constructor"; "Inconsistent_import"; 
-                                                   ["tuple"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]; 
-                                                   ["constructor"; "Unavailable_unit"; 
-                                                   ["tuple"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]; 
-                                                   ["constructor"; "Unsafe_file"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "Linking_error"; 
-                                                               ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "linking_error"]]]]; 
-                                                   ["constructor"; "Corrupted_interface"; 
-                                                   ["tuple"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]; 
-                                                   ["constructor"; "File_not_found"; 
-                                                   ["tuple"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]; 
-                                                   ["constructor"; "Cannot_open_dll"; 
-                                                   ["tuple"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]; 
-                                                   ["constructor"; "Inconsistent_implementation"; 
-                                                   ["tuple"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]]]; 
-                          ["Sig_unknown"]; ["Sig_value"; "error_message"; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "error"]]; 
-                                           ["Tconstr"; ["Pident"; "string"]]]]; 
-                          ["Sig_value"; "digest_interface"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Digest"]; 
-                                                            "t"]]]]]]]
+["module", "Compdynlink",
+["Mty_signature",
+["Sig_value", "is_native", ["Tconstr", ["Pident", "bool"]]],
+["Sig_value", "loadfile",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "loadfile_private",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "adapt_filename",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "allow_only",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "prohibit",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "default_available_units",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "allow_unsafe_modules",
+["Tarrow", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "add_interfaces",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "add_available_units",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Digest"], "t"]]]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "clear_available_units",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "init",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_type", "linking_error", 0,
+["Type_variant",
+["constructor", "Undefined_global",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Unavailable_primitive",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Uninitialized_global",
+["tuple", ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_type", "error", 0,
+["Type_variant",
+["constructor", "Not_a_bytecode_file",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Inconsistent_import",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Unavailable_unit",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Unsafe_file", ["tuple"]],
+["constructor", "Linking_error",
+["tuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "linking_error"]]]],
+["constructor", "Corrupted_interface",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "File_not_found",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Cannot_open_dll",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Inconsistent_implementation",
+["tuple", ["Tconstr", ["Pident", "string"]]]]]], ["Sig_unknown"],
+["Sig_value", "error_message",
+["Tarrow", ["Tconstr", ["Pident", "error"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "digest_interface",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pdot", ["Pident", "Digest"], "t"]]]]]]]

@@ -1,412 +1,153 @@
-["module"; "Proof"; ["Mty_signature"; ["Sig_type"; "proof"; 0; ["Type_abstract"]]; 
-                    ["Sig_value"; "proof"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "proof"]]; 
-                                           ["Ttuple"; ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Goal"]; 
-                                                                  "goal"]]]; 
-                                           ["Tconstr"; ["Pident"; "list"]; 
-                                           ["Ttuple"; ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Goal"]; 
-                                                                  "goal"]]]; 
-                                           ["Tconstr"; ["Pident"; "list"]; 
-                                           ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                "Goal"]; 
-                                                       "goal"]]]]]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Goal"]; 
-                                                                    "goal"]]]; 
-                                           ["Tconstr"; ["Pident"; "list"]; 
-                                           ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                "Goal"]; 
-                                                       "goal"]]]; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Evd"]; 
-                                                                  "evar_map"]]]]]; 
-                    ["Sig_type"; "pre_goals"; 1; ["Type_record"; ["label"; 
-                                                                 "fg_goals"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "list"]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]]]; 
-                                                 ["label"; "bg_goals"; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "list"]; 
-                                                 ["Ttuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tpoly"; "a"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "list"]; 
-                                                 ["Tpoly"; "a"]]]]]; 
-                                                 ["label"; "shelved_goals"; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "list"]; 
-                                                 ["Tpoly"; "a"]]]; ["label"; 
-                                                                   "given_up_goals"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]]]]; 
-                    ["Sig_value"; "map_structured_proof"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "proof"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Evd"]; 
-                                                          "evar_map"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Goal"]; 
-                                                          "goal"]]; [
-                                                                    "Tpoly"; 
-                                                                    "a"]]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "pre_goals"]; 
-                                                          ["Tpoly"; "a"]]]]]; 
-                    ["Sig_value"; "start"; ["Tarrow"; ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Evd"]; 
-                                                                  "evar_map"]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Ttuple"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Environ"]; 
-                                                                 "env"]]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Term"]; 
-                                                                  "types"]]]]; 
-                                           ["Tconstr"; ["Pident"; "proof"]]]]]; 
-                    ["Sig_value"; "dependent_start"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Proofview"]; 
-                                                                "telescope"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "proof"]]]]; 
-                    ["Sig_value"; "initial_goals"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "proof"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "list"]; 
-                                                   ["Ttuple"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Term"]; 
-                                                               "types"]]]]]]; 
-                    ["Sig_value"; "initial_euctx"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "proof"]]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Evd"]; 
-                                                               "evar_universe_context"]]]]; 
-                    ["Sig_value"; "is_done"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "proof"]]; 
-                                             ["Tconstr"; ["Pident"; "bool"]]]]; 
-                    ["Sig_value"; "is_complete"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "proof"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "bool"]]]]; 
-                    ["Sig_value"; "partial_proof"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "proof"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "list"]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Term"]; 
-                                                               "constr"]]]]]; 
-                    ["Sig_value"; "compact"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "proof"]]; 
-                                             ["Tconstr"; ["Pident"; "proof"]]]]; 
-                    ["Sig_unknown"]; ["Sig_unknown"]; ["Sig_unknown"]; 
-                    ["Sig_unknown"]; ["Sig_value"; "return"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "proof"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Evd"]; 
-                                                             "evar_map"]]]]; 
-                    ["Sig_type"; "focus_kind"; 1; ["Type_abstract"]]; 
-                    ["Sig_value"; "new_focus_kind"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "focus_kind"]; 
-                                                    ["Tpoly"; "a"]]]]; 
-                    ["Sig_type"; "focus_condition"; 1; ["Type_abstract"]]; 
-                    ["Sig_value"; "no_cond"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "bool"]]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "focus_kind"]; 
-                                                        ["Tpoly"; "a"]]; 
-                                             ["Tconstr"; ["Pident"; "focus_condition"]; 
-                                             ["Tpoly"; "a"]]]]]; ["Sig_value"; 
-                                                                 "done_cond"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bool"]]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "focus_kind"]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "focus_condition"]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]]]]]; 
-                    ["Sig_value"; "focus"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "focus_condition"]; 
-                                                      ["Tpoly"; "a"]]; 
-                                           ["Tarrow"; ["Tpoly"; "a"]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "int"]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "proof"]]; 
-                                           ["Tconstr"; ["Pident"; "proof"]]]]]]]; 
-                    ["Sig_unknown"]; ["Sig_unknown"]; ["Sig_unknown"]; 
-                    ["Sig_value"; "unfocus"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "focus_kind"]; 
-                                                        ["Tpoly"; "a"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "proof"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]; 
-                                             ["Tconstr"; ["Pident"; "proof"]]]]]]; 
-                    ["Sig_value"; "unfocused"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "proof"]]; 
-                                               ["Tconstr"; ["Pident"; "bool"]]]]; 
-                    ["Sig_unknown"]; ["Sig_value"; "get_at_focus"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "focus_kind"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "proof"]]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]]]; 
-                    ["Sig_value"; "is_last_focus"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "focus_kind"]; 
-                                                              ["Tpoly"; "a"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "proof"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "bool"]]]]]; 
-                    ["Sig_value"; "no_focused_goal"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "proof"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "bool"]]]]; 
-                    ["Sig_value"; "run_tactic"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                           "env"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Proofview"]; 
-                                                                    "tactic"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "proof"]]; 
-                                                                    [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "proof"]]; 
-                                                                    [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "bool"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Proofview_monad"]; 
-                                                                    "Info"]; 
-                                                                    "tree"]]]]]]]]; 
-                    ["Sig_value"; "maximal_unfocus"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "focus_kind"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "proof"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "proof"]]]]]; 
-                    ["Sig_value"; "in_proof"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "proof"]]; 
-                                              ["Tarrow"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                         ["Tpoly"; "a"]]; 
-                                              ["Tpoly"; "a"]]]]; ["Sig_value"; 
-                                                                 "unshelve"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "proof"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "proof"]]]]; 
-                    ["Sig_module"; "V82"; ["Mty_signature"; ["Sig_value"; 
-                                                            "subgoals"; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "proof"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; "Evd"]; 
-                                                            "sigma"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Goal"]; 
-                                                            "goal"]]]]]]; 
-                                          ["Sig_value"; "background_subgoals"; 
-                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                 "proof"]]; 
-                                          ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                               "Evd"]; 
-                                                      "sigma"]; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Goal"]; 
-                                                                "goal"]]]]]]; 
-                                          ["Sig_value"; "top_goal"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "proof"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "sigma"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Goal"]; 
-                                                                    "goal"]]]]]; 
-                                          ["Sig_value"; "top_evars"; 
-                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                 "proof"]]; 
-                                          ["Tconstr"; ["Pident"; "list"]; 
-                                          ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                               "Evd"]; 
-                                                      "evar"]]]]]; ["Sig_value"; 
-                                                                   "grab_evars"; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "proof"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "proof"]]]]; 
-                                          ["Sig_value"; "instantiate_evar"; 
-                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                 "int"]]; 
-                                          ["Tarrow"; ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Constrexpr"]; 
-                                                                 "constr_expr"]]; 
-                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                 "proof"]]; 
-                                          ["Tconstr"; ["Pident"; "proof"]]]]]]]]]]
+["module", "Proof",
+["Mty_signature", ["Sig_type", "proof", 0, ["Type_abstract"]],
+["Sig_value", "proof",
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Ttuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Goal"], "goal"]]],
+["Tconstr", ["Pident", "list"],
+["Ttuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Goal"], "goal"]]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Goal"], "goal"]]]]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Goal"], "goal"]]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Goal"], "goal"]]],
+["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]]]]],
+["Sig_type", "pre_goals", 1,
+["Type_record",
+["label", "fg_goals", ["Tconstr", ["Pident", "list"], ["Tpoly", "a"]]],
+["label", "bg_goals",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "list"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "list"], ["Tpoly", "a"]]]]],
+["label", "shelved_goals", ["Tconstr", ["Pident", "list"], ["Tpoly", "a"]]],
+["label", "given_up_goals", ["Tconstr", ["Pident", "list"], ["Tpoly", "a"]]]]],
+["Sig_value", "map_structured_proof",
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Goal"], "goal"]], ["Tpoly", "a"]]],
+["Tconstr", ["Pident", "pre_goals"], ["Tpoly", "a"]]]]],
+["Sig_value", "start",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "types"]]]],
+["Tconstr", ["Pident", "proof"]]]]],
+["Sig_value", "dependent_start",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Proofview"], "telescope"]],
+["Tconstr", ["Pident", "proof"]]]],
+["Sig_value", "initial_goals",
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "types"]]]]]],
+["Sig_value", "initial_euctx",
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_universe_context"]]]],
+["Sig_value", "is_done",
+["Tarrow", ["Tconstr", ["Pident", "proof"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_complete",
+["Tarrow", ["Tconstr", ["Pident", "proof"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "partial_proof",
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]]],
+["Sig_value", "compact",
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tconstr", ["Pident", "proof"]]]], ["Sig_unknown"], ["Sig_unknown"],
+["Sig_unknown"], ["Sig_unknown"],
+["Sig_value", "return",
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]]]],
+["Sig_type", "focus_kind", 1, ["Type_abstract"]],
+["Sig_value", "new_focus_kind",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "focus_kind"], ["Tpoly", "a"]]]],
+["Sig_type", "focus_condition", 1, ["Type_abstract"]],
+["Sig_value", "no_cond",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "focus_kind"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "focus_condition"], ["Tpoly", "a"]]]]],
+["Sig_value", "done_cond",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "focus_kind"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "focus_condition"], ["Tpoly", "a"]]]]],
+["Sig_value", "focus",
+["Tarrow", ["Tconstr", ["Pident", "focus_condition"], ["Tpoly", "a"]],
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tconstr", ["Pident", "proof"]]]]]]], ["Sig_unknown"], ["Sig_unknown"],
+["Sig_unknown"],
+["Sig_value", "unfocus",
+["Tarrow", ["Tconstr", ["Pident", "focus_kind"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "proof"]]]]]],
+["Sig_value", "unfocused",
+["Tarrow", ["Tconstr", ["Pident", "proof"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_unknown"],
+["Sig_value", "get_at_focus",
+["Tarrow", ["Tconstr", ["Pident", "focus_kind"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "proof"]], ["Tpoly", "a"]]]],
+["Sig_value", "is_last_focus",
+["Tarrow", ["Tconstr", ["Pident", "focus_kind"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "proof"]], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "no_focused_goal",
+["Tarrow", ["Tconstr", ["Pident", "proof"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "run_tactic",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Proofview"], "tactic"],
+["Tconstr", ["Pident", "unit"]]],
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Ttuple", ["Tconstr", ["Pident", "proof"]],
+["Ttuple", ["Tconstr", ["Pident", "bool"]],
+["Tconstr",
+["Pdot", ["Pdot", ["Pident", "Proofview_monad"], "Info"], "tree"]]]]]]]],
+["Sig_value", "maximal_unfocus",
+["Tarrow", ["Tconstr", ["Pident", "focus_kind"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tconstr", ["Pident", "proof"]]]]],
+["Sig_value", "in_proof",
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tpoly", "a"]], ["Tpoly", "a"]]]],
+["Sig_value", "unshelve",
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tconstr", ["Pident", "proof"]]]],
+["Sig_module", "V82",
+["Mty_signature",
+["Sig_value", "subgoals",
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tconstr", ["Pdot", ["Pident", "Evd"], "sigma"],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Goal"], "goal"]]]]]],
+["Sig_value", "background_subgoals",
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tconstr", ["Pdot", ["Pident", "Evd"], "sigma"],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Goal"], "goal"]]]]]],
+["Sig_value", "top_goal",
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tconstr", ["Pdot", ["Pident", "Evd"], "sigma"],
+["Tconstr", ["Pdot", ["Pident", "Goal"], "goal"]]]]],
+["Sig_value", "top_evars",
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Evd"], "evar"]]]]],
+["Sig_value", "grab_evars",
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tconstr", ["Pident", "proof"]]]],
+["Sig_value", "instantiate_evar",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "constr_expr"]],
+["Tarrow", ["Tconstr", ["Pident", "proof"]],
+["Tconstr", ["Pident", "proof"]]]]]]]]]]

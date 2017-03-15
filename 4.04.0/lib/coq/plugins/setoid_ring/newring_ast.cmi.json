@@ -1,257 +1,86 @@
-["module"; "Newring_ast"; ["Mty_signature"; ["Sig_type"; "coeff_spec"; 
-                                            1; ["Type_variant"; ["constructor"; 
-                                                                "Computational"; 
-                                                                ["tuple"; 
-                                                                ["Tpoly"; 
-                                                                "constr"]]]; 
-                                               ["constructor"; "Abstract"; 
-                                               ["tuple"]]; ["constructor"; 
-                                                           "Morphism"; 
-                                                           ["tuple"; 
-                                                           ["Tpoly"; 
-                                                           "constr"]]]]]; 
-                          ["Sig_type"; "cst_tac_spec"; 0; ["Type_variant"; 
-                                                          ["constructor"; 
-                                                          "CstTac"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Tacexpr"]; 
-                                                                    "raw_tactic_expr"]]]]; 
-                                                          ["constructor"; 
-                                                          "Closed"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Libnames"]; 
-                                                                    "reference"]]]]]]]; 
-                          ["Sig_type"; "ring_mod"; 1; ["Type_variant"; 
-                                                      ["constructor"; 
-                                                      "Ring_kind"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "coeff_spec"]; 
-                                                                   ["Tpoly"; 
-                                                                   "constr"]]]]; 
-                                                      ["constructor"; 
-                                                      "Const_tac"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "cst_tac_spec"]]]]; 
-                                                      ["constructor"; 
-                                                      "Pre_tac"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Tacexpr"]; 
-                                                                 "raw_tactic_expr"]]]]; 
-                                                      ["constructor"; 
-                                                      "Post_tac"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Tacexpr"]; 
-                                                                  "raw_tactic_expr"]]]]; 
-                                                      ["constructor"; 
-                                                      "Setoid"; ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Constrexpr"]; 
-                                                                "constr_expr"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Constrexpr"]; 
-                                                                "constr_expr"]]]]; 
-                                                      ["constructor"; 
-                                                      "Pow_spec"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "cst_tac_spec"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Constrexpr"]; 
-                                                                  "constr_expr"]]]]; 
-                                                      ["constructor"; 
-                                                      "Sign_spec"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Constrexpr"]; 
-                                                                   "constr_expr"]]]]; 
-                                                      ["constructor"; 
-                                                      "Div_spec"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Constrexpr"]; 
-                                                                  "constr_expr"]]]]]]; 
-                          ["Sig_type"; "field_mod"; 1; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "Ring_mod"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "ring_mod"]; 
-                                                                   ["Tpoly"; 
-                                                                   "constr"]]]]; 
-                                                       ["constructor"; 
-                                                       "Inject"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Constrexpr"]; 
-                                                                 "constr_expr"]]]]]]; 
-                          ["Sig_type"; "ring_info"; 0; ["Type_record"; 
-                                                       ["label"; "ring_carrier"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Constr"]; 
-                                                                   "types"]]]; 
-                                                       ["label"; "ring_req"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Constr"]; 
-                                                                   "constr"]]]; 
-                                                       ["label"; "ring_setoid"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Constr"]; 
-                                                                   "constr"]]]; 
-                                                       ["label"; "ring_ext"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Constr"]; 
-                                                                   "constr"]]]; 
-                                                       ["label"; "ring_morph"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Constr"]; 
-                                                                   "constr"]]]; 
-                                                       ["label"; "ring_th"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Constr"]; 
-                                                                   "constr"]]]; 
-                                                       ["label"; "ring_cst_tac"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Tacexpr"]; 
-                                                                   "glob_tactic_expr"]]]; 
-                                                       ["label"; "ring_pow_tac"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Tacexpr"]; 
-                                                                   "glob_tactic_expr"]]]; 
-                                                       ["label"; "ring_lemma1"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Constr"]; 
-                                                                   "constr"]]]; 
-                                                       ["label"; "ring_lemma2"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Constr"]; 
-                                                                   "constr"]]]; 
-                                                       ["label"; "ring_pre_tac"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Tacexpr"]; 
-                                                                   "glob_tactic_expr"]]]; 
-                                                       ["label"; "ring_post_tac"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Tacexpr"]; 
-                                                                   "glob_tactic_expr"]]]]]; 
-                          ["Sig_type"; "field_info"; 0; ["Type_record"; 
-                                                        ["label"; "field_carrier"; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Constr"]; 
-                                                                    "types"]]]; 
-                                                        ["label"; "field_req"; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Constr"]; 
-                                                                    "constr"]]]; 
-                                                        ["label"; "field_cst_tac"; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Tacexpr"]; 
-                                                                    "glob_tactic_expr"]]]; 
-                                                        ["label"; "field_pow_tac"; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Tacexpr"]; 
-                                                                    "glob_tactic_expr"]]]; 
-                                                        ["label"; "field_ok"; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Constr"]; 
-                                                                    "constr"]]]; 
-                                                        ["label"; "field_simpl_eq_ok"; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Constr"]; 
-                                                                    "constr"]]]; 
-                                                        ["label"; "field_simpl_ok"; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Constr"]; 
-                                                                    "constr"]]]; 
-                                                        ["label"; "field_simpl_eq_in_ok"; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Constr"]; 
-                                                                    "constr"]]]; 
-                                                        ["label"; "field_cond"; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Constr"]; 
-                                                                    "constr"]]]; 
-                                                        ["label"; "field_pre_tac"; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Tacexpr"]; 
-                                                                    "glob_tactic_expr"]]]; 
-                                                        ["label"; "field_post_tac"; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Tacexpr"]; 
-                                                                    "glob_tactic_expr"]]]]]]]
+["module", "Newring_ast",
+["Mty_signature",
+["Sig_type", "coeff_spec", 1,
+["Type_variant",
+["constructor", "Computational", ["tuple", ["Tpoly", "constr"]]],
+["constructor", "Abstract", ["tuple"]],
+["constructor", "Morphism", ["tuple", ["Tpoly", "constr"]]]]],
+["Sig_type", "cst_tac_spec", 0,
+["Type_variant",
+["constructor", "CstTac",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "raw_tactic_expr"]]]],
+["constructor", "Closed",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Libnames"], "reference"]]]]]]],
+["Sig_type", "ring_mod", 1,
+["Type_variant",
+["constructor", "Ring_kind",
+["tuple", ["Tconstr", ["Pident", "coeff_spec"], ["Tpoly", "constr"]]]],
+["constructor", "Const_tac",
+["tuple", ["Tconstr", ["Pident", "cst_tac_spec"]]]],
+["constructor", "Pre_tac",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "raw_tactic_expr"]]]],
+["constructor", "Post_tac",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "raw_tactic_expr"]]]],
+["constructor", "Setoid",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "constr_expr"]],
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "constr_expr"]]]],
+["constructor", "Pow_spec",
+["tuple", ["Tconstr", ["Pident", "cst_tac_spec"]],
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "constr_expr"]]]],
+["constructor", "Sign_spec",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "constr_expr"]]]],
+["constructor", "Div_spec",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "constr_expr"]]]]]],
+["Sig_type", "field_mod", 1,
+["Type_variant",
+["constructor", "Ring_mod",
+["tuple", ["Tconstr", ["Pident", "ring_mod"], ["Tpoly", "constr"]]]],
+["constructor", "Inject",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "constr_expr"]]]]]],
+["Sig_type", "ring_info", 0,
+["Type_record",
+["label", "ring_carrier",
+["Tconstr", ["Pdot", ["Pident", "Constr"], "types"]]],
+["label", "ring_req", ["Tconstr", ["Pdot", ["Pident", "Constr"], "constr"]]],
+["label", "ring_setoid",
+["Tconstr", ["Pdot", ["Pident", "Constr"], "constr"]]],
+["label", "ring_ext", ["Tconstr", ["Pdot", ["Pident", "Constr"], "constr"]]],
+["label", "ring_morph",
+["Tconstr", ["Pdot", ["Pident", "Constr"], "constr"]]],
+["label", "ring_th", ["Tconstr", ["Pdot", ["Pident", "Constr"], "constr"]]],
+["label", "ring_cst_tac",
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_tactic_expr"]]],
+["label", "ring_pow_tac",
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_tactic_expr"]]],
+["label", "ring_lemma1",
+["Tconstr", ["Pdot", ["Pident", "Constr"], "constr"]]],
+["label", "ring_lemma2",
+["Tconstr", ["Pdot", ["Pident", "Constr"], "constr"]]],
+["label", "ring_pre_tac",
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_tactic_expr"]]],
+["label", "ring_post_tac",
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_tactic_expr"]]]]],
+["Sig_type", "field_info", 0,
+["Type_record",
+["label", "field_carrier",
+["Tconstr", ["Pdot", ["Pident", "Constr"], "types"]]],
+["label", "field_req", ["Tconstr", ["Pdot", ["Pident", "Constr"], "constr"]]],
+["label", "field_cst_tac",
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_tactic_expr"]]],
+["label", "field_pow_tac",
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_tactic_expr"]]],
+["label", "field_ok", ["Tconstr", ["Pdot", ["Pident", "Constr"], "constr"]]],
+["label", "field_simpl_eq_ok",
+["Tconstr", ["Pdot", ["Pident", "Constr"], "constr"]]],
+["label", "field_simpl_ok",
+["Tconstr", ["Pdot", ["Pident", "Constr"], "constr"]]],
+["label", "field_simpl_eq_in_ok",
+["Tconstr", ["Pdot", ["Pident", "Constr"], "constr"]]],
+["label", "field_cond",
+["Tconstr", ["Pdot", ["Pident", "Constr"], "constr"]]],
+["label", "field_pre_tac",
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_tactic_expr"]]],
+["label", "field_post_tac",
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_tactic_expr"]]]]]]]

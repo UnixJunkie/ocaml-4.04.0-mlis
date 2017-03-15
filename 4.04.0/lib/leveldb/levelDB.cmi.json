@@ -1,707 +1,316 @@
-["module"; "LevelDB"; ["Mty_signature"; ["Sig_unknown"]; ["Sig_type"; 
-                                                         "db"; 0; ["Type_abstract"]]; 
-                      ["Sig_type"; "iterator"; 0; ["Type_abstract"]]; 
-                      ["Sig_type"; "writebatch"; 0; ["Type_abstract"]]; 
-                      ["Sig_type"; "snapshot"; 0; ["Type_abstract"]]; 
-                      ["Sig_type"; "read_access"; 0; ["Type_abstract"]]; 
-                      ["Sig_type"; "comparator"; 0; ["Type_abstract"]]; 
-                      ["Sig_type"; "env"; 0; ["Type_abstract"]]; ["Sig_value"; 
-                                                                 "destroy"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bool"]]]]; 
-                      ["Sig_value"; "repair"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Tconstr"; ["Pident"; "bool"]]]]; 
-                      ["Sig_value"; "default_env"; ["Tconstr"; ["Pident"; 
-                                                               "env"]]]; 
-                      ["Sig_value"; "lexicographic_comparator"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "comparator"]]]; 
-                      ["Sig_value"; "open_db"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "comparator"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "env"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tconstr"; ["Pident"; "db"]]]]]]]]]]]; 
-                      ["Sig_value"; "close"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "db"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]; 
-                      ["Sig_value"; "read_access"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "db"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "read_access"]]]]; 
-                      ["Sig_value"; "iterator"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "db"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "iterator"]]]]; 
-                      ["Sig_value"; "get_approximate_size"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "db"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Int64"]; 
-                                                            "t"]]]]]]; 
-                      ["Sig_value"; "get_property"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "db"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "option"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "string"]]]]]]; 
-                      ["Sig_value"; "compact_range"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "db"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]]]; 
-                      ["Sig_value"; "get"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "db"]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "string"]]; 
-                                           ["Tconstr"; ["Pident"; "option"]; 
-                                           ["Tconstr"; ["Pident"; "string"]]]]]]; 
-                      ["Sig_value"; "get_exn"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "db"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "string"]]]]]; 
-                      ["Sig_value"; "mem"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "db"]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "string"]]; 
-                                           ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                      ["Sig_value"; "put"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "db"]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "option"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "bool"]]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "string"]]; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "string"]]; 
-                                           ["Tconstr"; ["Pident"; "unit"]]]]]]]; 
-                      ["Sig_value"; "delete"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "db"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "option"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "bool"]]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Tconstr"; ["Pident"; "unit"]]]]]]; 
-                      ["Sig_value"; "iter"; ["Tarrow"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "bool"]]]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "db"]]; 
-                                            ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                      ["Sig_value"; "rev_iter"; ["Tarrow"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "bool"]]]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "db"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "unit"]]]]]; 
-                      ["Sig_value"; "iter_from"; ["Tarrow"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "db"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]]]; 
-                      ["Sig_value"; "rev_iter_from"; ["Tarrow"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "db"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]]]; 
-                      ["Sig_module"; "Batch"; ["Mty_signature"; ["Sig_value"; 
-                                                                "make"; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "writebatch"]]]]; 
-                                              ["Sig_value"; "put"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "writebatch"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]]]; 
-                                              ["Sig_value"; "put_substring"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "writebatch"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                              ["Tconstr"; ["Pident"; "unit"]]]]]]]]]]; 
-                                              ["Sig_value"; "delete"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "writebatch"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                                              ["Sig_value"; "delete_substring"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "writebatch"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                              ["Tconstr"; ["Pident"; "unit"]]]]]]]; 
-                                              ["Sig_value"; "write"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "db"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "option"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "bool"]]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "writebatch"]]; 
-                                              ["Tconstr"; ["Pident"; "unit"]]]]]]]]; 
-                      ["Sig_module"; "Iterator"; ["Mty_signature"; ["Sig_value"; 
-                                                                   "make"; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bool"]]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "db"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "iterator"]]]]]; 
-                                                 ["Sig_value"; "close"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "iterator"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]; 
-                                                 ["Sig_value"; "seek_to_first"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "iterator"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]; 
-                                                 ["Sig_value"; "seek_to_last"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "iterator"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]; 
-                                                 ["Sig_value"; "seek"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "iterator"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]]]]; 
-                                                 ["Sig_value"; "next"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "iterator"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]; 
-                                                 ["Sig_value"; "prev"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "iterator"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]; 
-                                                 ["Sig_value"; "valid"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "iterator"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "bool"]]]]; 
-                                                 ["Sig_value"; "fill_key"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "iterator"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Pervasives"]; 
-                                                            "ref"]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "int"]]]]]; 
-                                                 ["Sig_value"; "fill_value"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "iterator"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Pervasives"]; 
-                                                            "ref"]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "int"]]]]]; 
-                                                 ["Sig_value"; "get_key"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "iterator"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "string"]]]]; 
-                                                 ["Sig_value"; "get_value"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "iterator"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "string"]]]]; 
-                                                 ["Sig_value"; "iter"; 
-                                                 ["Tarrow"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "iterator"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]]; 
-                                                 ["Sig_value"; "rev_iter"; 
-                                                 ["Tarrow"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "iterator"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]]; 
-                                                 ["Sig_value"; "iter_from"; 
-                                                 ["Tarrow"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "iterator"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]]]; 
-                                                 ["Sig_value"; "rev_iter_from"; 
-                                                 ["Tarrow"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "iterator"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]]]]]; 
-                      ["Sig_module"; "Snapshot"; ["Mty_signature"; ["Sig_value"; 
-                                                                   "make"; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "db"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "snapshot"]]]]; 
-                                                 ["Sig_value"; "release"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "snapshot"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]; 
-                                                 ["Sig_value"; "get"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "snapshot"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "option"]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "string"]]]]]]; 
-                                                 ["Sig_value"; "get_exn"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "snapshot"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "string"]]]]]; 
-                                                 ["Sig_value"; "mem"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "snapshot"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "bool"]]]]]; 
-                                                 ["Sig_value"; "iterator"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "snapshot"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "iterator"]]]]; 
-                                                 ["Sig_value"; "read_access"; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "snapshot"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "read_access"]]]]; 
-                                                 ["Sig_value"; "iter"; 
-                                                 ["Tarrow"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "snapshot"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]]; 
-                                                 ["Sig_value"; "rev_iter"; 
-                                                 ["Tarrow"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "snapshot"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]]; 
-                                                 ["Sig_value"; "iter_from"; 
-                                                 ["Tarrow"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "snapshot"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]]]; 
-                                                 ["Sig_value"; "rev_iter_from"; 
-                                                 ["Tarrow"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "snapshot"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]]]]]; 
-                      ["Sig_module"; "Read_access"; ["Mty_signature"; 
-                                                    ["Sig_value"; "get"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "read_access"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "option"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "string"]]]]]]; 
-                                                    ["Sig_value"; "get_exn"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "read_access"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "string"]]]]]; 
-                                                    ["Sig_value"; "mem"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "read_access"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "bool"]]]]]; 
-                                                    ["Sig_value"; "iterator"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "read_access"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "iterator"]]]]; 
-                                                    ["Sig_value"; "iter"; 
-                                                    ["Tarrow"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "bool"]]]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "read_access"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "unit"]]]]]; 
-                                                    ["Sig_value"; "rev_iter"; 
-                                                    ["Tarrow"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "bool"]]]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "read_access"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "unit"]]]]]; 
-                                                    ["Sig_value"; "iter_from"; 
-                                                    ["Tarrow"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "bool"]]]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "read_access"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "unit"]]]]]]; 
-                                                    ["Sig_value"; "rev_iter_from"; 
-                                                    ["Tarrow"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "bool"]]]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "read_access"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "unit"]]]]]]]]]]
+["module", "LevelDB",
+["Mty_signature", ["Sig_unknown"], ["Sig_type", "db", 0, ["Type_abstract"]],
+["Sig_type", "iterator", 0, ["Type_abstract"]],
+["Sig_type", "writebatch", 0, ["Type_abstract"]],
+["Sig_type", "snapshot", 0, ["Type_abstract"]],
+["Sig_type", "read_access", 0, ["Type_abstract"]],
+["Sig_type", "comparator", 0, ["Type_abstract"]],
+["Sig_type", "env", 0, ["Type_abstract"]],
+["Sig_value", "destroy",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "repair",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "default_env", ["Tconstr", ["Pident", "env"]]],
+["Sig_value", "lexicographic_comparator",
+["Tconstr", ["Pident", "comparator"]]],
+["Sig_value", "open_db",
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]],
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]],
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]],
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "comparator"]]],
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]],
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "env"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "db"]]]]]]]]]]],
+["Sig_value", "close",
+["Tarrow", ["Tconstr", ["Pident", "db"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "read_access",
+["Tarrow", ["Tconstr", ["Pident", "db"]],
+["Tconstr", ["Pident", "read_access"]]]],
+["Sig_value", "iterator",
+["Tarrow", ["Tconstr", ["Pident", "db"]],
+["Tconstr", ["Pident", "iterator"]]]],
+["Sig_value", "get_approximate_size",
+["Tarrow", ["Tconstr", ["Pident", "db"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Int64"], "t"]]]]]],
+["Sig_value", "get_property",
+["Tarrow", ["Tconstr", ["Pident", "db"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "compact_range",
+["Tarrow", ["Tconstr", ["Pident", "db"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "get",
+["Tarrow", ["Tconstr", ["Pident", "db"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "get_exn",
+["Tarrow", ["Tconstr", ["Pident", "db"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "mem",
+["Tarrow", ["Tconstr", ["Pident", "db"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "put",
+["Tarrow", ["Tconstr", ["Pident", "db"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "delete",
+["Tarrow", ["Tconstr", ["Pident", "db"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "iter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tconstr", ["Pident", "db"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "rev_iter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tconstr", ["Pident", "db"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "iter_from",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tconstr", ["Pident", "db"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "rev_iter_from",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tconstr", ["Pident", "db"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_module", "Batch",
+["Mty_signature",
+["Sig_value", "make",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "writebatch"]]]],
+["Sig_value", "put",
+["Tarrow", ["Tconstr", ["Pident", "writebatch"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "put_substring",
+["Tarrow", ["Tconstr", ["Pident", "writebatch"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]]]]]],
+["Sig_value", "delete",
+["Tarrow", ["Tconstr", ["Pident", "writebatch"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "delete_substring",
+["Tarrow", ["Tconstr", ["Pident", "writebatch"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "write",
+["Tarrow", ["Tconstr", ["Pident", "db"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "writebatch"]],
+["Tconstr", ["Pident", "unit"]]]]]]]],
+["Sig_module", "Iterator",
+["Mty_signature",
+["Sig_value", "make",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "db"]],
+["Tconstr", ["Pident", "iterator"]]]]],
+["Sig_value", "close",
+["Tarrow", ["Tconstr", ["Pident", "iterator"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "seek_to_first",
+["Tarrow", ["Tconstr", ["Pident", "iterator"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "seek_to_last",
+["Tarrow", ["Tconstr", ["Pident", "iterator"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "seek",
+["Tarrow", ["Tconstr", ["Pident", "iterator"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "next",
+["Tarrow", ["Tconstr", ["Pident", "iterator"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "prev",
+["Tarrow", ["Tconstr", ["Pident", "iterator"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "valid",
+["Tarrow", ["Tconstr", ["Pident", "iterator"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "fill_key",
+["Tarrow", ["Tconstr", ["Pident", "iterator"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "string"]]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "fill_value",
+["Tarrow", ["Tconstr", ["Pident", "iterator"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "string"]]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "get_key",
+["Tarrow", ["Tconstr", ["Pident", "iterator"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "get_value",
+["Tarrow", ["Tconstr", ["Pident", "iterator"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "iter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tconstr", ["Pident", "iterator"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "rev_iter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tconstr", ["Pident", "iterator"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "iter_from",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tconstr", ["Pident", "iterator"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "rev_iter_from",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tconstr", ["Pident", "iterator"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]]]]],
+["Sig_module", "Snapshot",
+["Mty_signature",
+["Sig_value", "make",
+["Tarrow", ["Tconstr", ["Pident", "db"]],
+["Tconstr", ["Pident", "snapshot"]]]],
+["Sig_value", "release",
+["Tarrow", ["Tconstr", ["Pident", "snapshot"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "get",
+["Tarrow", ["Tconstr", ["Pident", "snapshot"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "get_exn",
+["Tarrow", ["Tconstr", ["Pident", "snapshot"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "mem",
+["Tarrow", ["Tconstr", ["Pident", "snapshot"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "iterator",
+["Tarrow", ["Tconstr", ["Pident", "snapshot"]],
+["Tconstr", ["Pident", "iterator"]]]],
+["Sig_value", "read_access",
+["Tarrow", ["Tconstr", ["Pident", "snapshot"]],
+["Tconstr", ["Pident", "read_access"]]]],
+["Sig_value", "iter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tconstr", ["Pident", "snapshot"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "rev_iter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tconstr", ["Pident", "snapshot"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "iter_from",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tconstr", ["Pident", "snapshot"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "rev_iter_from",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tconstr", ["Pident", "snapshot"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]]]]],
+["Sig_module", "Read_access",
+["Mty_signature",
+["Sig_value", "get",
+["Tarrow", ["Tconstr", ["Pident", "read_access"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "get_exn",
+["Tarrow", ["Tconstr", ["Pident", "read_access"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "mem",
+["Tarrow", ["Tconstr", ["Pident", "read_access"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "iterator",
+["Tarrow", ["Tconstr", ["Pident", "read_access"]],
+["Tconstr", ["Pident", "iterator"]]]],
+["Sig_value", "iter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tconstr", ["Pident", "read_access"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "rev_iter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tconstr", ["Pident", "read_access"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "iter_from",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tconstr", ["Pident", "read_access"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "rev_iter_from",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Tarrow", ["Tconstr", ["Pident", "read_access"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]]]]]]]

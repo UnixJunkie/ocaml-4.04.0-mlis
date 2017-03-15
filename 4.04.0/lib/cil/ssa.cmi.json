@@ -1,164 +1,61 @@
-["module"; "Ssa"; ["Mty_signature"; ["Sig_type"; "cfgInfo"; 0; ["Type_record"; 
-                                                               ["label"; 
-                                                               "name"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]]; 
-                                                               ["label"; 
-                                                               "start"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]]; 
-                                                               ["label"; 
-                                                               "size"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]]; 
-                                                               ["label"; 
-                                                               "blocks"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "array"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "cfgBlock"]]]]; 
-                                                               ["label"; 
-                                                               "successors"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "array"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]]]]; 
-                                                               ["label"; 
-                                                               "predecessors"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "array"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]]]]; 
-                                                               ["label"; 
-                                                               "nrRegs"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]]; 
-                                                               ["label"; 
-                                                               "regToVarinfo"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "array"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Cil"]; 
-                                                               "varinfo"]]]]]]; 
-                  ["Sig_type"; "cfgBlock"; 0; ["Type_record"; ["label"; 
-                                                              "bstmt"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Cil"]; 
-                                                              "stmt"]]]; 
-                                              ["label"; "instrlist"; 
-                                              ["Tconstr"; ["Pident"; "list"]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "instruction"]]]]; 
-                                              ["label"; "livevars"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "reg"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                              ["label"; "reachable"; 
-                                              ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                  ["Sig_type"; "instruction"; 0; ["Type_alias"; ["Ttuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "reg"]]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "reg"]]]]]]; 
-                  ["Sig_type"; "reg"; 0; ["Type_alias"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                  ["Sig_type"; "idomInfo"; 0; ["Type_alias"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "array"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]]]; 
-                  ["Sig_type"; "dfInfo"; 0; ["Type_alias"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "array"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]]]]]; 
-                  ["Sig_type"; "oneSccInfo"; 0; ["Type_record"; ["label"; 
-                                                                "nodes"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]; 
-                                                ["label"; "headers"; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "list"]; 
-                                                ["Tconstr"; ["Pident"; "int"]]]]; 
-                                                ["label"; "backEdges"; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "list"]; 
-                                                ["Ttuple"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]; 
-                                                ["Tconstr"; ["Pident"; "int"]]]]]]]; 
-                  ["Sig_type"; "sccInfo"; 0; ["Type_alias"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "oneSccInfo"]]]]]; 
-                  ["Sig_value"; "add_ssa_info"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "cfgInfo"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "unit"]]]]; 
-                  ["Sig_value"; "stronglyConnectedComponents"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "cfgInfo"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "bool"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "sccInfo"]]]]]; 
-                  ["Sig_value"; "prune_cfg"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "cfgInfo"]]; 
-                                             ["Tconstr"; ["Pident"; "cfgInfo"]]]]]]
+["module", "Ssa",
+["Mty_signature",
+["Sig_type", "cfgInfo", 0,
+["Type_record", ["label", "name", ["Tconstr", ["Pident", "string"]]],
+["label", "start", ["Tconstr", ["Pident", "int"]]],
+["label", "size", ["Tconstr", ["Pident", "int"]]],
+["label", "blocks",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "cfgBlock"]]]],
+["label", "successors",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "int"]]]]],
+["label", "predecessors",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "int"]]]]],
+["label", "nrRegs", ["Tconstr", ["Pident", "int"]]],
+["label", "regToVarinfo",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pdot", ["Pident", "Cil"], "varinfo"]]]]]],
+["Sig_type", "cfgBlock", 0,
+["Type_record",
+["label", "bstmt", ["Tconstr", ["Pdot", ["Pident", "Cil"], "stmt"]]],
+["label", "instrlist",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "instruction"]]]],
+["label", "livevars",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "reg"]], ["Tconstr", ["Pident", "int"]]]]],
+["label", "reachable", ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_type", "instruction", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "reg"]]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "reg"]]]]]],
+["Sig_type", "reg", 0, ["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_type", "idomInfo", 0,
+["Type_alias",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "dfInfo", 0,
+["Type_alias",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_type", "oneSccInfo", 0,
+["Type_record",
+["label", "nodes",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "int"]]]],
+["label", "headers",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "int"]]]],
+["label", "backEdges",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]]]],
+["Sig_type", "sccInfo", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "oneSccInfo"]]]]],
+["Sig_value", "add_ssa_info",
+["Tarrow", ["Tconstr", ["Pident", "cfgInfo"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "stronglyConnectedComponents",
+["Tarrow", ["Tconstr", ["Pident", "cfgInfo"]],
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tconstr", ["Pident", "sccInfo"]]]]],
+["Sig_value", "prune_cfg",
+["Tarrow", ["Tconstr", ["Pident", "cfgInfo"]],
+["Tconstr", ["Pident", "cfgInfo"]]]]]]

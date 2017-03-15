@@ -1,541 +1,171 @@
-["module"; "Prettyp"; ["Mty_signature"; ["Sig_value"; "assumptions_for_print"; 
-                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                               "list"]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Names"]; 
-                                                               "Name"]; 
-                                                               "t"]]]; 
-                                        ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Termops"]; 
-                                                    "names_context"]]]]; 
-                      ["Sig_value"; "print_closed_sections"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Pervasives"]; 
-                                                             "ref"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bool"]]]]; 
-                      ["Sig_value"; "print_context"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Lib"]; 
-                                                                "library_segment"]]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Pp"]; 
-                                                                 "std_ppcmds"]]]]]]; 
-                      ["Sig_value"; "print_library_entry"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "bool"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Ttuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Libnames"]; 
-                                                           "object_name"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Lib"]; 
-                                                           "node"]]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "option"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Pp"]; 
-                                                           "std_ppcmds"]]]]]]; 
-                      ["Sig_value"; "print_full_context"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Pp"]; 
-                                                          "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_full_context_typ"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Pp"]; 
-                                                              "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_full_pure_context"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pp"]; 
-                                                               "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_sec_context"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Libnames"]; 
-                                                                    "reference"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Pp"]; 
-                                                         "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_sec_context_typ"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Libnames"]; 
-                                                             "reference"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; "Pp"]; 
-                                                             "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_judgment"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Environ"]; 
-                                                                 "env"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Evd"]; 
-                                                                 "evar_map"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Environ"]; 
-                                                                 "unsafe_judgment"]]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Pp"]; 
-                                                                  "std_ppcmds"]]]]]]; 
-                      ["Sig_value"; "print_safe_judgment"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                           "env"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Safe_typing"]; 
-                                                                    "judgment"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Pp"]; 
-                                                                    "std_ppcmds"]]]]]]; 
-                      ["Sig_value"; "print_eval"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Reductionops"]; 
-                                                             "reduction_function"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Environ"]; 
-                                                             "env"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Evd"]; 
-                                                             "evar_map"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Constrexpr"]; 
-                                                             "constr_expr"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Environ"]; 
-                                                             "unsafe_judgment"]]; 
-                                                  ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Pp"]; 
-                                                              "std_ppcmds"]]]]]]]]; 
-                      ["Sig_value"; "print_name"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Misctypes"]; 
-                                                             "or_by_notation"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Libnames"]; 
-                                                             "reference"]]]; 
-                                                  ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Pp"]; 
-                                                              "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_opaque_name"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Libnames"]; 
-                                                                    "reference"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Pp"]; 
-                                                         "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_about"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Misctypes"]; 
-                                                              "or_by_notation"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Libnames"]; 
-                                                              "reference"]]]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pp"]; 
-                                                               "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_impargs"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Misctypes"]; 
-                                                                "or_by_notation"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Libnames"]; 
-                                                                "reference"]]]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Pp"]; 
-                                                                 "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_graph"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pp"]; 
-                                                               "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_classes"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Pp"]; 
-                                                                 "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_coercions"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Pp"]; 
-                                                                   "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_path_between"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Classops"]; 
-                                                          "cl_typ"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Classops"]; 
-                                                          "cl_typ"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Pp"]; 
-                                                          "std_ppcmds"]]]]]; 
-                      ["Sig_value"; "print_canonical_projections"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Pp"]; 
-                                                                   "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_typeclasses"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Pp"]; 
-                                                         "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_instances"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Globnames"]; 
-                                                                  "global_reference"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Pp"]; 
-                                                                   "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_all_instances"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Pp"]; 
-                                                           "std_ppcmds"]]]]; 
-                      ["Sig_value"; "inspect"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Pp"]; 
-                                                           "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_located_qualid"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Libnames"]; 
-                                                            "reference"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; "Pp"]; 
-                                                            "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_located_term"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Libnames"]; 
-                                                          "reference"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Pp"]; 
-                                                          "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_located_tactic"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Libnames"]; 
-                                                            "reference"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; "Pp"]; 
-                                                            "std_ppcmds"]]]]; 
-                      ["Sig_value"; "print_located_module"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Libnames"]; 
-                                                            "reference"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; "Pp"]; 
-                                                            "std_ppcmds"]]]]; 
-                      ["Sig_type"; "object_pr"; 0; ["Type_record"; ["label"; 
-                                                                   "print_inductive"; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "mutual_inductive"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Pp"]; 
-                                                                   "std_ppcmds"]]]]; 
-                                                   ["label"; "print_constant_with_infos"; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "constant"]]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pp"]; 
-                                                               "std_ppcmds"]]]]; 
-                                                   ["label"; "print_section_variable"; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "variable"]]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pp"]; 
-                                                               "std_ppcmds"]]]]; 
-                                                   ["label"; "print_syntactic_def"; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "kernel_name"]]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pp"]; 
-                                                               "std_ppcmds"]]]]; 
-                                                   ["label"; "print_module"; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "bool"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "module_path"]]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pp"]; 
-                                                               "std_ppcmds"]]]]]; 
-                                                   ["label"; "print_modtype"; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "module_path"]]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pp"]; 
-                                                               "std_ppcmds"]]]]; 
-                                                   ["label"; "print_named_decl"; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Context"]; 
-                                                              "Named"]; 
-                                                              "Declaration"]; 
-                                                              "t"]]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pp"]; 
-                                                               "std_ppcmds"]]]]; 
-                                                   ["label"; "print_library_entry"; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "bool"]]; 
-                                                   ["Tarrow"; ["Ttuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Libnames"]; 
-                                                              "object_name"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Lib"]; 
-                                                              "node"]]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "option"]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pp"]; 
-                                                               "std_ppcmds"]]]]]]; 
-                                                   ["label"; "print_context"; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "bool"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Lib"]; 
-                                                              "library_segment"]]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pp"]; 
-                                                               "std_ppcmds"]]]]]]; 
-                                                   ["label"; "print_typed_value_in_env"; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Environ"]; 
-                                                              "env"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Evd"]; 
-                                                              "evar_map"]]; 
-                                                   ["Tarrow"; ["Ttuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "types"]]]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pp"]; 
-                                                               "std_ppcmds"]]]]]]; 
-                                                   ["label"; "print_eval"; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Reductionops"]; 
-                                                              "reduction_function"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Environ"]; 
-                                                              "env"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Evd"]; 
-                                                              "evar_map"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Constrexpr"]; 
-                                                              "constr_expr"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Environ"]; 
-                                                              "unsafe_judgment"]]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pp"]; 
-                                                               "std_ppcmds"]]]]]]]]]]; 
-                      ["Sig_value"; "set_object_pr"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "object_pr"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]; 
-                      ["Sig_value"; "default_object_pr"; ["Tconstr"; 
-                                                         ["Pident"; "object_pr"]]]]]
+["module", "Prettyp",
+["Mty_signature",
+["Sig_value", "assumptions_for_print",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Name"], "t"]]],
+["Tconstr", ["Pdot", ["Pident", "Termops"], "names_context"]]]],
+["Sig_value", "print_closed_sections",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "print_context",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Lib"], "library_segment"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]]],
+["Sig_value", "print_library_entry",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Libnames"], "object_name"]],
+["Tconstr", ["Pdot", ["Pident", "Lib"], "node"]]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]]],
+["Sig_value", "print_full_context",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_full_context_typ",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_full_pure_context",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_sec_context",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Libnames"], "reference"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_sec_context_typ",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Libnames"], "reference"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_judgment",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "unsafe_judgment"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]]],
+["Sig_value", "print_safe_judgment",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Safe_typing"], "judgment"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]]],
+["Sig_value", "print_eval",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Reductionops"], "reduction_function"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "constr_expr"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "unsafe_judgment"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]]]]],
+["Sig_value", "print_name",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_by_notation"],
+["Tconstr", ["Pdot", ["Pident", "Libnames"], "reference"]]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_opaque_name",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Libnames"], "reference"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_about",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_by_notation"],
+["Tconstr", ["Pdot", ["Pident", "Libnames"], "reference"]]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_impargs",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_by_notation"],
+["Tconstr", ["Pdot", ["Pident", "Libnames"], "reference"]]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_graph",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_classes",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_coercions",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_path_between",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Classops"], "cl_typ"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Classops"], "cl_typ"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]],
+["Sig_value", "print_canonical_projections",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_typeclasses",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_instances",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_all_instances",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "inspect",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_located_qualid",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Libnames"], "reference"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_located_term",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Libnames"], "reference"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_located_tactic",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Libnames"], "reference"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "print_located_module",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Libnames"], "reference"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_type", "object_pr", 0,
+["Type_record",
+["label", "print_inductive",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Names"], "mutual_inductive"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["label", "print_constant_with_infos",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Names"], "constant"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["label", "print_section_variable",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Names"], "variable"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["label", "print_syntactic_def",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Names"], "kernel_name"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["label", "print_module",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]],
+["label", "print_modtype",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["label", "print_named_decl",
+["Tarrow",
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Context"], "Named"], "Declaration"],
+"t"]], ["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["label", "print_library_entry",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Libnames"], "object_name"]],
+["Tconstr", ["Pdot", ["Pident", "Lib"], "node"]]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]]],
+["label", "print_context",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Lib"], "library_segment"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]]],
+["label", "print_typed_value_in_env",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "types"]]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]]],
+["label", "print_eval",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Reductionops"], "reduction_function"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "constr_expr"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "unsafe_judgment"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]]]]]]],
+["Sig_value", "set_object_pr",
+["Tarrow", ["Tconstr", ["Pident", "object_pr"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "default_object_pr", ["Tconstr", ["Pident", "object_pr"]]]]]

@@ -1,797 +1,288 @@
-["module"; "Miniml"; ["Mty_signature"; ["Sig_type"; "kill_reason"; 0; 
-                                       ["Type_variant"; ["constructor"; 
-                                                        "Ktype"; ["tuple"]]; 
-                                       ["constructor"; "Kprop"; ["tuple"]]; 
-                                       ["constructor"; "Kimplicit"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Globnames"]; 
-                                                                    "global_reference"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]]; 
-                     ["Sig_type"; "sign"; 0; ["Type_variant"; ["constructor"; 
-                                                              "Keep"; 
-                                                              ["tuple"]]; 
-                                             ["constructor"; "Kill"; 
-                                             ["tuple"; ["Tconstr"; ["Pident"; 
-                                                                   "kill_reason"]]]]]]; 
-                     ["Sig_type"; "signature"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "list"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "sign"]]]]]; 
-                     ["Sig_type"; "ml_type"; 0; ["Type_variant"; ["constructor"; 
-                                                                 "Tarr"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "ml_type"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "ml_type"]]]]; 
-                                                ["constructor"; "Tglob"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Globnames"]; 
-                                                          "global_reference"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "list"]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "ml_type"]]]]]; 
-                                                ["constructor"; "Tvar"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]]; 
-                                                ["constructor"; "Tvar'"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]]; 
-                                                ["constructor"; "Tmeta"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "ml_meta"]]]]; 
-                                                ["constructor"; "Tdummy"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "kill_reason"]]]]; 
-                                                ["constructor"; "Tunknown"; 
-                                                ["tuple"]]; ["constructor"; 
-                                                            "Taxiom"; 
-                                                            ["tuple"]]]]; 
-                     ["Sig_type"; "ml_meta"; 0; ["Type_record"; ["label"; 
-                                                                "id"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]; 
-                                                ["label"; "contents"; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "option"]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "ml_type"]]]]]]; 
-                     ["Sig_type"; "ml_schema"; 0; ["Type_alias"; ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "ml_type"]]]]]; 
-                     ["Sig_type"; "inductive_kind"; 0; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "Singleton"; ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "Coinductive"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "Standard"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "Record"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "list"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Globnames"]; 
-                                                                 "global_reference"]]]]]]]]; 
-                     ["Sig_type"; "ml_ind_packet"; 0; ["Type_record"; 
-                                                      ["label"; "ip_typename"; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "Id"]; 
-                                                                  "t"]]]; 
-                                                      ["label"; "ip_consnames"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "array"]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "Id"]; 
-                                                                  "t"]]]]; 
-                                                      ["label"; "ip_logical"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "bool"]]]; 
-                                                      ["label"; "ip_sign"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "signature"]]]; 
-                                                      ["label"; "ip_vars"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "Id"]; 
-                                                                  "t"]]]]; 
-                                                      ["label"; "ip_types"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "array"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "ml_type"]]]]]]]; 
-                     ["Sig_type"; "equiv"; 0; ["Type_variant"; ["constructor"; 
-                                                               "NoEquiv"; 
-                                                               ["tuple"]]; 
-                                              ["constructor"; "Equiv"; 
-                                              ["tuple"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "kernel_name"]]]]; 
-                                              ["constructor"; "RenEquiv"; 
-                                              ["tuple"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]]]]]; 
-                     ["Sig_type"; "ml_ind"; 0; ["Type_record"; ["label"; 
-                                                               "ind_kind"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "inductive_kind"]]]; 
-                                               ["label"; "ind_nparams"; 
-                                               ["Tconstr"; ["Pident"; "int"]]]; 
-                                               ["label"; "ind_packets"; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "array"]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "ml_ind_packet"]]]]; 
-                                               ["label"; "ind_equiv"; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "equiv"]]]]]; 
-                     ["Sig_type"; "ml_ident"; 0; ["Type_variant"; ["constructor"; 
-                                                                  "Dummy"; 
-                                                                  ["tuple"]]; 
-                                                 ["constructor"; "Id"; 
-                                                 ["tuple"; ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Id"]; 
-                                                           "t"]]]]; [
-                                                                    "constructor"; 
-                                                                    "Tmp"; 
-                                                                    [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Id"]; 
-                                                                    "t"]]]]]]; 
-                     ["Sig_type"; "ml_branch"; 0; ["Type_alias"; ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "list"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "ml_ident"]]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "ml_pattern"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "ml_ast"]]]]]; 
-                     ["Sig_type"; "ml_ast"; 0; ["Type_variant"; ["constructor"; 
-                                                                "MLrel"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]; 
-                                               ["constructor"; "MLapp"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "ml_ast"]]; 
-                                               ["Tconstr"; ["Pident"; "list"]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "ml_ast"]]]]]; 
-                                               ["constructor"; "MLlam"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "ml_ident"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "ml_ast"]]]]; 
-                                               ["constructor"; "MLletin"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "ml_ident"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "ml_ast"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "ml_ast"]]]]; 
-                                               ["constructor"; "MLglob"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Globnames"]; 
-                                                         "global_reference"]]]]; 
-                                               ["constructor"; "MLcons"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "ml_type"]]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Globnames"]; 
-                                                           "global_reference"]]; 
-                                               ["Tconstr"; ["Pident"; "list"]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "ml_ast"]]]]]; 
-                                               ["constructor"; "MLtuple"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "list"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "ml_ast"]]]]]; 
-                                               ["constructor"; "MLcase"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "ml_type"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "ml_ast"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "array"]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "ml_branch"]]]]]; 
-                                               ["constructor"; "MLfix"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "array"]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Id"]; 
-                                                           "t"]]]; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "array"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "ml_ast"]]]]]; 
-                                               ["constructor"; "MLexn"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]]]; 
-                                               ["constructor"; "MLdummy"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "kill_reason"]]]]; 
-                                               ["constructor"; "MLaxiom"; 
-                                               ["tuple"]]; ["constructor"; 
-                                                           "MLmagic"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "ml_ast"]]]]]]; 
-                     ["Sig_type"; "ml_pattern"; 0; ["Type_variant"; [
-                                                                    "constructor"; 
-                                                                    "Pcons"; 
-                                                                    [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Globnames"]; 
-                                                                    "global_reference"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "ml_pattern"]]]]]; 
-                                                   ["constructor"; "Ptuple"; 
-                                                   ["tuple"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "ml_pattern"]]]]]; 
-                                                   ["constructor"; "Prel"; 
-                                                   ["tuple"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]]; 
-                                                   ["constructor"; "Pwild"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "Pusual"; 
-                                                               ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Globnames"]; 
-                                                               "global_reference"]]]]]]; 
-                     ["Sig_type"; "ml_decl"; 0; ["Type_variant"; ["constructor"; 
-                                                                 "Dind"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Names"]; 
-                                                                 "mutual_inductive"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "ml_ind"]]]]; 
-                                                ["constructor"; "Dtype"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Globnames"]; 
-                                                          "global_reference"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "list"]; 
-                                                ["Tconstr"; ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Names"]; 
-                                                            "Id"]; "t"]]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "ml_type"]]]]; 
-                                                ["constructor"; "Dterm"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Globnames"]; 
-                                                          "global_reference"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "ml_ast"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "ml_type"]]]]; 
-                                                ["constructor"; "Dfix"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; "array"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Globnames"]; 
-                                                          "global_reference"]]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "array"]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "ml_ast"]]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "array"]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "ml_type"]]]]]]]; 
-                     ["Sig_type"; "ml_spec"; 0; ["Type_variant"; ["constructor"; 
-                                                                 "Sind"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Names"]; 
-                                                                 "mutual_inductive"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "ml_ind"]]]]; 
-                                                ["constructor"; "Stype"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Globnames"]; 
-                                                          "global_reference"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "list"]; 
-                                                ["Tconstr"; ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Names"]; 
-                                                            "Id"]; "t"]]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "option"]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "ml_type"]]]]]; 
-                                                ["constructor"; "Sval"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Globnames"]; 
-                                                          "global_reference"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "ml_type"]]]]]]; 
-                     ["Sig_type"; "ml_specif"; 0; ["Type_variant"; ["constructor"; 
-                                                                   "Spec"; 
-                                                                   ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "ml_spec"]]]]; 
-                                                  ["constructor"; "Smodule"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "ml_module_type"]]]]; 
-                                                  ["constructor"; "Smodtype"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "ml_module_type"]]]]]]; 
-                     ["Sig_type"; "ml_module_type"; 0; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "MTident"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "module_path"]]]]; 
-                                                       ["constructor"; 
-                                                       "MTfunsig"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "MBId"]; 
-                                                                   "t"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "ml_module_type"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "ml_module_type"]]]]; 
-                                                       ["constructor"; 
-                                                       "MTsig"; ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Names"]; 
-                                                                "module_path"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "ml_module_sig"]]]]; 
-                                                       ["constructor"; 
-                                                       "MTwith"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "ml_module_type"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "ml_with_declaration"]]]]]]; 
-                     ["Sig_type"; "ml_with_declaration"; 0; ["Type_variant"; 
-                                                            ["constructor"; 
-                                                            "ML_With_type"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Names"]; 
-                                                            "Id"]; "t"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Names"]; 
-                                                            "Id"]; "t"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "ml_type"]]]]; 
-                                                            ["constructor"; 
-                                                            "ML_With_module"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Names"]; 
-                                                            "Id"]; "t"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Names"]; 
-                                                            "module_path"]]]]]]; 
-                     ["Sig_type"; "ml_module_sig"; 0; ["Type_alias"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Ttuple"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Names"]; 
-                                                                 "Label"]; 
-                                                                 "t"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "ml_specif"]]]]]]; 
-                     ["Sig_type"; "ml_structure_elem"; 0; ["Type_variant"; 
-                                                          ["constructor"; 
-                                                          "SEdecl"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "ml_decl"]]]]; 
-                                                          ["constructor"; 
-                                                          "SEmodule"; 
-                                                          ["tuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "ml_module"]]]]; 
-                                                          ["constructor"; 
-                                                          "SEmodtype"; 
-                                                          ["tuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "ml_module_type"]]]]]]; 
-                     ["Sig_type"; "ml_module_expr"; 0; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "MEident"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "module_path"]]]]; 
-                                                       ["constructor"; 
-                                                       "MEfunctor"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "MBId"]; 
-                                                                    "t"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "ml_module_type"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "ml_module_expr"]]]]; 
-                                                       ["constructor"; 
-                                                       "MEstruct"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "module_path"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "ml_module_structure"]]]]; 
-                                                       ["constructor"; 
-                                                       "MEapply"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "ml_module_expr"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "ml_module_expr"]]]]]]; 
-                     ["Sig_type"; "ml_module_structure"; 0; ["Type_alias"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Ttuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Names"]; 
-                                                            "Label"]; 
-                                                            "t"]]; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "ml_structure_elem"]]]]]]; 
-                     ["Sig_type"; "ml_module"; 0; ["Type_record"; ["label"; 
-                                                                  "ml_mod_expr"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "ml_module_expr"]]]; 
-                                                  ["label"; "ml_mod_type"; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "ml_module_type"]]]]]; 
-                     ["Sig_type"; "ml_structure"; 0; ["Type_alias"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "module_path"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "ml_module_structure"]]]]]]; 
-                     ["Sig_type"; "ml_signature"; 0; ["Type_alias"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "module_path"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "ml_module_sig"]]]]]]; 
-                     ["Sig_type"; "ml_flat_structure"; 0; ["Type_alias"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "ml_structure_elem"]]]]]; 
-                     ["Sig_type"; "unsafe_needs"; 0; ["Type_record"; 
-                                                     ["label"; "mldummy"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "bool"]]]; 
-                                                     ["label"; "tdummy"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "bool"]]]; 
-                                                     ["label"; "tunknown"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "bool"]]]; 
-                                                     ["label"; "magic"; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "bool"]]]]]; 
-                     ["Sig_type"; "language_descr"; 0; ["Type_record"; 
-                                                       ["label"; "keywords"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "Id"]; 
-                                                                   "Set"]; 
-                                                                   "t"]]]; 
-                                                       ["label"; "file_suffix"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "string"]]]; 
-                                                       ["label"; "file_naming"; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "module_path"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "string"]]]]; 
-                                                       ["label"; "preamble"; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "Id"]; 
-                                                                  "t"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "option"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Pp"]; 
-                                                                  "std_ppcmds"]]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "list"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "module_path"]]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unsafe_needs"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Pp"]; 
-                                                                   "std_ppcmds"]]]]]]]; 
-                                                       ["label"; "pp_struct"; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "ml_structure"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Pp"]; 
-                                                                   "std_ppcmds"]]]]; 
-                                                       ["label"; "sig_suffix"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "option"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "string"]]]]; 
-                                                       ["label"; "sig_preamble"; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "Id"]; 
-                                                                  "t"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "option"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Pp"]; 
-                                                                  "std_ppcmds"]]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "list"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "module_path"]]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unsafe_needs"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Pp"]; 
-                                                                   "std_ppcmds"]]]]]]]; 
-                                                       ["label"; "pp_sig"; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "ml_signature"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Pp"]; 
-                                                                   "std_ppcmds"]]]]; 
-                                                       ["label"; "pp_decl"; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "ml_decl"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Pp"]; 
-                                                                   "std_ppcmds"]]]]]]]]
+["module", "Miniml",
+["Mty_signature",
+["Sig_type", "kill_reason", 0,
+["Type_variant", ["constructor", "Ktype", ["tuple"]],
+["constructor", "Kprop", ["tuple"]],
+["constructor", "Kimplicit",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tconstr", ["Pident", "int"]]]]]],
+["Sig_type", "sign", 0,
+["Type_variant", ["constructor", "Keep", ["tuple"]],
+["constructor", "Kill", ["tuple", ["Tconstr", ["Pident", "kill_reason"]]]]]],
+["Sig_type", "signature", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "sign"]]]]],
+["Sig_type", "ml_type", 0,
+["Type_variant",
+["constructor", "Tarr",
+["tuple", ["Tconstr", ["Pident", "ml_type"]],
+["Tconstr", ["Pident", "ml_type"]]]],
+["constructor", "Tglob",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "ml_type"]]]]],
+["constructor", "Tvar", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Tvar'", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Tmeta", ["tuple", ["Tconstr", ["Pident", "ml_meta"]]]],
+["constructor", "Tdummy", ["tuple", ["Tconstr", ["Pident", "kill_reason"]]]],
+["constructor", "Tunknown", ["tuple"]], ["constructor", "Taxiom", ["tuple"]]]],
+["Sig_type", "ml_meta", 0,
+["Type_record", ["label", "id", ["Tconstr", ["Pident", "int"]]],
+["label", "contents",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "ml_type"]]]]]],
+["Sig_type", "ml_schema", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "ml_type"]]]]],
+["Sig_type", "inductive_kind", 0,
+["Type_variant", ["constructor", "Singleton", ["tuple"]],
+["constructor", "Coinductive", ["tuple"]],
+["constructor", "Standard", ["tuple"]],
+["constructor", "Record",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]]]]]]]],
+["Sig_type", "ml_ind_packet", 0,
+["Type_record",
+["label", "ip_typename",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]],
+["label", "ip_consnames",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]],
+["label", "ip_logical", ["Tconstr", ["Pident", "bool"]]],
+["label", "ip_sign", ["Tconstr", ["Pident", "signature"]]],
+["label", "ip_vars",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]],
+["label", "ip_types",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "ml_type"]]]]]]],
+["Sig_type", "equiv", 0,
+["Type_variant", ["constructor", "NoEquiv", ["tuple"]],
+["constructor", "Equiv",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "kernel_name"]]]],
+["constructor", "RenEquiv", ["tuple", ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_type", "ml_ind", 0,
+["Type_record",
+["label", "ind_kind", ["Tconstr", ["Pident", "inductive_kind"]]],
+["label", "ind_nparams", ["Tconstr", ["Pident", "int"]]],
+["label", "ind_packets",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "ml_ind_packet"]]]],
+["label", "ind_equiv", ["Tconstr", ["Pident", "equiv"]]]]],
+["Sig_type", "ml_ident", 0,
+["Type_variant", ["constructor", "Dummy", ["tuple"]],
+["constructor", "Id",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]],
+["constructor", "Tmp",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]]]],
+["Sig_type", "ml_branch", 0,
+["Type_alias",
+["Ttuple",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "ml_ident"]]],
+["Tconstr", ["Pident", "ml_pattern"]], ["Tconstr", ["Pident", "ml_ast"]]]]],
+["Sig_type", "ml_ast", 0,
+["Type_variant",
+["constructor", "MLrel", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "MLapp",
+["tuple", ["Tconstr", ["Pident", "ml_ast"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "ml_ast"]]]]],
+["constructor", "MLlam",
+["tuple", ["Tconstr", ["Pident", "ml_ident"]],
+["Tconstr", ["Pident", "ml_ast"]]]],
+["constructor", "MLletin",
+["tuple", ["Tconstr", ["Pident", "ml_ident"]],
+["Tconstr", ["Pident", "ml_ast"]], ["Tconstr", ["Pident", "ml_ast"]]]],
+["constructor", "MLglob",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]]]],
+["constructor", "MLcons",
+["tuple", ["Tconstr", ["Pident", "ml_type"]],
+["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "ml_ast"]]]]],
+["constructor", "MLtuple",
+["tuple", ["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "ml_ast"]]]]],
+["constructor", "MLcase",
+["tuple", ["Tconstr", ["Pident", "ml_type"]],
+["Tconstr", ["Pident", "ml_ast"]],
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "ml_branch"]]]]],
+["constructor", "MLfix",
+["tuple", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]],
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "ml_ast"]]]]],
+["constructor", "MLexn", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "MLdummy", ["tuple", ["Tconstr", ["Pident", "kill_reason"]]]],
+["constructor", "MLaxiom", ["tuple"]],
+["constructor", "MLmagic", ["tuple", ["Tconstr", ["Pident", "ml_ast"]]]]]],
+["Sig_type", "ml_pattern", 0,
+["Type_variant",
+["constructor", "Pcons",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "ml_pattern"]]]]],
+["constructor", "Ptuple",
+["tuple",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "ml_pattern"]]]]],
+["constructor", "Prel", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Pwild", ["tuple"]],
+["constructor", "Pusual",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]]]]]],
+["Sig_type", "ml_decl", 0,
+["Type_variant",
+["constructor", "Dind",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "mutual_inductive"]],
+["Tconstr", ["Pident", "ml_ind"]]]],
+["constructor", "Dtype",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]],
+["Tconstr", ["Pident", "ml_type"]]]],
+["constructor", "Dterm",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tconstr", ["Pident", "ml_ast"]], ["Tconstr", ["Pident", "ml_type"]]]],
+["constructor", "Dfix",
+["tuple",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]]],
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "ml_ast"]]],
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "ml_type"]]]]]]],
+["Sig_type", "ml_spec", 0,
+["Type_variant",
+["constructor", "Sind",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "mutual_inductive"]],
+["Tconstr", ["Pident", "ml_ind"]]]],
+["constructor", "Stype",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "ml_type"]]]]],
+["constructor", "Sval",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tconstr", ["Pident", "ml_type"]]]]]],
+["Sig_type", "ml_specif", 0,
+["Type_variant",
+["constructor", "Spec", ["tuple", ["Tconstr", ["Pident", "ml_spec"]]]],
+["constructor", "Smodule",
+["tuple", ["Tconstr", ["Pident", "ml_module_type"]]]],
+["constructor", "Smodtype",
+["tuple", ["Tconstr", ["Pident", "ml_module_type"]]]]]],
+["Sig_type", "ml_module_type", 0,
+["Type_variant",
+["constructor", "MTident",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]]]],
+["constructor", "MTfunsig",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "MBId"], "t"]],
+["Tconstr", ["Pident", "ml_module_type"]],
+["Tconstr", ["Pident", "ml_module_type"]]]],
+["constructor", "MTsig",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]],
+["Tconstr", ["Pident", "ml_module_sig"]]]],
+["constructor", "MTwith",
+["tuple", ["Tconstr", ["Pident", "ml_module_type"]],
+["Tconstr", ["Pident", "ml_with_declaration"]]]]]],
+["Sig_type", "ml_with_declaration", 0,
+["Type_variant",
+["constructor", "ML_With_type",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]],
+["Tconstr", ["Pident", "ml_type"]]]],
+["constructor", "ML_With_module",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]],
+["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]]]]]],
+["Sig_type", "ml_module_sig", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Ttuple",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Label"], "t"]],
+["Tconstr", ["Pident", "ml_specif"]]]]]],
+["Sig_type", "ml_structure_elem", 0,
+["Type_variant",
+["constructor", "SEdecl", ["tuple", ["Tconstr", ["Pident", "ml_decl"]]]],
+["constructor", "SEmodule", ["tuple", ["Tconstr", ["Pident", "ml_module"]]]],
+["constructor", "SEmodtype",
+["tuple", ["Tconstr", ["Pident", "ml_module_type"]]]]]],
+["Sig_type", "ml_module_expr", 0,
+["Type_variant",
+["constructor", "MEident",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]]]],
+["constructor", "MEfunctor",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "MBId"], "t"]],
+["Tconstr", ["Pident", "ml_module_type"]],
+["Tconstr", ["Pident", "ml_module_expr"]]]],
+["constructor", "MEstruct",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]],
+["Tconstr", ["Pident", "ml_module_structure"]]]],
+["constructor", "MEapply",
+["tuple", ["Tconstr", ["Pident", "ml_module_expr"]],
+["Tconstr", ["Pident", "ml_module_expr"]]]]]],
+["Sig_type", "ml_module_structure", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Ttuple",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Label"], "t"]],
+["Tconstr", ["Pident", "ml_structure_elem"]]]]]],
+["Sig_type", "ml_module", 0,
+["Type_record",
+["label", "ml_mod_expr", ["Tconstr", ["Pident", "ml_module_expr"]]],
+["label", "ml_mod_type", ["Tconstr", ["Pident", "ml_module_type"]]]]],
+["Sig_type", "ml_structure", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]],
+["Tconstr", ["Pident", "ml_module_structure"]]]]]],
+["Sig_type", "ml_signature", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]],
+["Tconstr", ["Pident", "ml_module_sig"]]]]]],
+["Sig_type", "ml_flat_structure", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "ml_structure_elem"]]]]],
+["Sig_type", "unsafe_needs", 0,
+["Type_record", ["label", "mldummy", ["Tconstr", ["Pident", "bool"]]],
+["label", "tdummy", ["Tconstr", ["Pident", "bool"]]],
+["label", "tunknown", ["Tconstr", ["Pident", "bool"]]],
+["label", "magic", ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_type", "language_descr", 0,
+["Type_record",
+["label", "keywords",
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "Set"], "t"]]],
+["label", "file_suffix", ["Tconstr", ["Pident", "string"]]],
+["label", "file_naming",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]],
+["Tconstr", ["Pident", "string"]]]],
+["label", "preamble",
+["Tarrow", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]]],
+["Tarrow", ["Tconstr", ["Pident", "unsafe_needs"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]]]],
+["label", "pp_struct",
+["Tarrow", ["Tconstr", ["Pident", "ml_structure"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["label", "sig_suffix",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]],
+["label", "sig_preamble",
+["Tarrow", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Names"], "module_path"]]],
+["Tarrow", ["Tconstr", ["Pident", "unsafe_needs"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]]]],
+["label", "pp_sig",
+["Tarrow", ["Tconstr", ["Pident", "ml_signature"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["label", "pp_decl",
+["Tarrow", ["Tconstr", ["Pident", "ml_decl"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]]]]]

@@ -1,167 +1,65 @@
-["module"; "Locus"; ["Mty_signature"; ["Sig_type"; "occurrences_gen"; 
-                                      1; ["Type_variant"; ["constructor"; 
-                                                          "AllOccurrences"; 
-                                                          ["tuple"]]; 
-                                         ["constructor"; "AllOccurrencesBut"; 
-                                         ["tuple"; ["Tconstr"; ["Pident"; 
-                                                               "list"]; 
-                                                   ["Tpoly"; "a"]]]]; 
-                                         ["constructor"; "NoOccurrences"; 
-                                         ["tuple"]]; ["constructor"; 
-                                                     "OnlyOccurrences"; 
-                                                     ["tuple"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tpoly"; "a"]]]]]]; 
-                    ["Sig_type"; "occurrences_expr"; 0; ["Type_alias"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "occurrences_gen"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Misctypes"]; 
-                                                                    "or_var"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]]; 
-                    ["Sig_type"; "with_occurrences"; 1; ["Type_alias"; 
-                                                        ["Ttuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "occurrences_expr"]]; 
-                                                        ["Tpoly"; "a"]]]]; 
-                    ["Sig_type"; "occurrences"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "occurrences_gen"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]]]; 
-                    ["Sig_type"; "hyp_location_flag"; 0; ["Type_variant"; 
-                                                         ["constructor"; 
-                                                         "InHyp"; ["tuple"]]; 
-                                                         ["constructor"; 
-                                                         "InHypTypeOnly"; 
-                                                         ["tuple"]]; 
-                                                         ["constructor"; 
-                                                         "InHypValueOnly"; 
-                                                         ["tuple"]]]]; 
-                    ["Sig_type"; "hyp_location_expr"; 1; ["Type_alias"; 
-                                                         ["Ttuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "with_occurrences"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "hyp_location_flag"]]]]]; 
-                    ["Sig_type"; "clause_expr"; 1; ["Type_record"; ["label"; 
-                                                                   "onhyps"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "hyp_location_expr"]; 
-                                                                   ["Tpoly"; 
-                                                                   "id"]]]]]; 
-                                                   ["label"; "concl_occs"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "occurrences_expr"]]]]]; 
-                    ["Sig_type"; "clause"; 0; ["Type_alias"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "clause_expr"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Names"]; 
-                                                             "Id"]; "t"]]]]]; 
-                    ["Sig_type"; "clause_atom"; 0; ["Type_variant"; [
-                                                                    "constructor"; 
-                                                                    "OnHyp"; 
-                                                                    [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Id"]; 
-                                                                    "t"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "occurrences_expr"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "hyp_location_flag"]]]]; 
-                                                   ["constructor"; "OnConcl"; 
-                                                   ["tuple"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "occurrences_expr"]]]]]]; 
-                    ["Sig_type"; "concrete_clause"; 0; ["Type_alias"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "list"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "clause_atom"]]]]]; 
-                    ["Sig_type"; "hyp_location"; 0; ["Type_alias"; ["Ttuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "Id"]; 
-                                                                   "t"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "hyp_location_flag"]]]]]; 
-                    ["Sig_type"; "goal_location"; 0; ["Type_alias"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "hyp_location"]]]]]; 
-                    ["Sig_type"; "simple_clause"; 0; ["Type_alias"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Id"]; 
-                                                                    "t"]]]]]]; 
-                    ["Sig_type"; "or_like_first"; 1; ["Type_variant"; 
-                                                     ["constructor"; 
-                                                     "AtOccs"; ["tuple"; 
-                                                               ["Tpoly"; "a"]]]; 
-                                                     ["constructor"; 
-                                                     "LikeFirst"; ["tuple"]]]]]]
+["module", "Locus",
+["Mty_signature",
+["Sig_type", "occurrences_gen", 1,
+["Type_variant", ["constructor", "AllOccurrences", ["tuple"]],
+["constructor", "AllOccurrencesBut",
+["tuple", ["Tconstr", ["Pident", "list"], ["Tpoly", "a"]]]],
+["constructor", "NoOccurrences", ["tuple"]],
+["constructor", "OnlyOccurrences",
+["tuple", ["Tconstr", ["Pident", "list"], ["Tpoly", "a"]]]]]],
+["Sig_type", "occurrences_expr", 0,
+["Type_alias",
+["Tconstr", ["Pident", "occurrences_gen"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_var"],
+["Tconstr", ["Pident", "int"]]]]]],
+["Sig_type", "with_occurrences", 1,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "occurrences_expr"]], ["Tpoly", "a"]]]],
+["Sig_type", "occurrences", 0,
+["Type_alias",
+["Tconstr", ["Pident", "occurrences_gen"], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "hyp_location_flag", 0,
+["Type_variant", ["constructor", "InHyp", ["tuple"]],
+["constructor", "InHypTypeOnly", ["tuple"]],
+["constructor", "InHypValueOnly", ["tuple"]]]],
+["Sig_type", "hyp_location_expr", 1,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "with_occurrences"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "hyp_location_flag"]]]]],
+["Sig_type", "clause_expr", 1,
+["Type_record",
+["label", "onhyps",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "hyp_location_expr"], ["Tpoly", "id"]]]]],
+["label", "concl_occs", ["Tconstr", ["Pident", "occurrences_expr"]]]]],
+["Sig_type", "clause", 0,
+["Type_alias",
+["Tconstr", ["Pident", "clause_expr"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]]],
+["Sig_type", "clause_atom", 0,
+["Type_variant",
+["constructor", "OnHyp",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tconstr", ["Pident", "occurrences_expr"]],
+["Tconstr", ["Pident", "hyp_location_flag"]]]],
+["constructor", "OnConcl",
+["tuple", ["Tconstr", ["Pident", "occurrences_expr"]]]]]],
+["Sig_type", "concrete_clause", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "clause_atom"]]]]],
+["Sig_type", "hyp_location", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tconstr", ["Pident", "hyp_location_flag"]]]]],
+["Sig_type", "goal_location", 0,
+["Type_alias",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "hyp_location"]]]]],
+["Sig_type", "simple_clause", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]]]],
+["Sig_type", "or_like_first", 1,
+["Type_variant", ["constructor", "AtOccs", ["tuple", ["Tpoly", "a"]]],
+["constructor", "LikeFirst", ["tuple"]]]]]]

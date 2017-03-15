@@ -1,101 +1,39 @@
-["module"; "Dbus_connection"; ["Mty_signature"; ["Sig_type"; "error"; 
-                                                0; ["Type_variant"; [
-                                                                    "constructor"; 
-                                                                    "Connection_pending"; 
-                                                                    ["tuple"]]; 
-                                                   ["constructor"; "Authentication_pending"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "Authentication_failed"; 
-                                                               ["tuple"]]; 
-                                                   ["constructor"; "Disconnected_send"; 
-                                                   ["tuple"]]]]; ["Sig_unknown"]; 
-                              ["Sig_type"; "t"; 0; ["Type_abstract"]]; 
-                              ["Sig_type"; "callbacks"; 0; ["Type_record"; 
-                                                           ["label"; 
-                                                           "authenticated_callback"; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]]]; 
-                                                           ["label"; 
-                                                           "msg_received_callback"; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Dbus_message"]; 
-                                                           "t"]]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]]; 
-                                                           ["label"; 
-                                                           "shutdown_callback"; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]]]; 
-                                                           ["label"; 
-                                                           "error_callback"; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Eventloop"]; 
-                                                           "error"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]]]]; 
-                                                           ["label"; 
-                                                           "send_done_callback"; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]]]]]; 
-                              ["Sig_value"; "send"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Dbus_message"]; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "unit"]]]]]; 
-                              ["Sig_value"; "attach"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Eventloop"]; 
-                                                                 "t"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Unix"]; 
-                                                                 "file_descr"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bool"]]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "callbacks"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "t"]]]]]]]; 
-                              ["Sig_value"; "detach"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]; 
-                              ["Sig_value"; "close"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "t"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]]]
+["module", "Dbus_connection",
+["Mty_signature",
+["Sig_type", "error", 0,
+["Type_variant", ["constructor", "Connection_pending", ["tuple"]],
+["constructor", "Authentication_pending", ["tuple"]],
+["constructor", "Authentication_failed", ["tuple"]],
+["constructor", "Disconnected_send", ["tuple"]]]], ["Sig_unknown"],
+["Sig_type", "t", 0, ["Type_abstract"]],
+["Sig_type", "callbacks", 0,
+["Type_record",
+["label", "authenticated_callback",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]],
+["label", "msg_received_callback",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Dbus_message"], "t"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["label", "shutdown_callback",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]],
+["label", "error_callback",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Eventloop"], "error"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["label", "send_done_callback",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "send",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Dbus_message"], "t"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "attach",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Eventloop"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "callbacks"]],
+["Tconstr", ["Pident", "t"]]]]]]],
+["Sig_value", "detach",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "close",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]]]]

@@ -1,420 +1,119 @@
-["module"; "Instruct"; ["Mty_signature"; ["Sig_type"; "compilation_env"; 
-                                         0; ["Type_record"; ["label"; 
-                                                            "ce_stack"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Ident"]; 
-                                                            "tbl"]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                                            ["label"; "ce_heap"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Ident"]; 
-                                                                 "tbl"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]; 
-                                            ["label"; "ce_rec"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Ident"]; 
-                                                                "tbl"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]]]; 
-                       ["Sig_type"; "debug_event"; 0; ["Type_record"; 
-                                                      ["label"; "ev_pos"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]; 
-                                                      ["label"; "ev_module"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "string"]]]; 
-                                                      ["label"; "ev_loc"; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Location"]; 
-                                                                  "t"]]]; 
-                                                      ["label"; "ev_kind"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "debug_event_kind"]]]; 
-                                                      ["label"; "ev_info"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "debug_event_info"]]]; 
-                                                      ["label"; "ev_typenv"; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Env"]; 
-                                                                  "summary"]]]; 
-                                                      ["label"; "ev_typsubst"; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Subst"]; 
-                                                                  "t"]]]; 
-                                                      ["label"; "ev_compenv"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "compilation_env"]]]; 
-                                                      ["label"; "ev_stacksize"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]; 
-                                                      ["label"; "ev_repr"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "debug_event_repr"]]]]]; 
-                       ["Sig_type"; "debug_event_kind"; 0; ["Type_variant"; 
-                                                           ["constructor"; 
-                                                           "Event_before"; 
-                                                           ["tuple"]]; 
-                                                           ["constructor"; 
-                                                           "Event_after"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Types"]; 
-                                                           "type_expr"]]]]; 
-                                                           ["constructor"; 
-                                                           "Event_pseudo"; 
-                                                           ["tuple"]]]]; 
-                       ["Sig_type"; "debug_event_info"; 0; ["Type_variant"; 
-                                                           ["constructor"; 
-                                                           "Event_function"; 
-                                                           ["tuple"]]; 
-                                                           ["constructor"; 
-                                                           "Event_return"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]]]; 
-                                                           ["constructor"; 
-                                                           "Event_other"; 
-                                                           ["tuple"]]]]; 
-                       ["Sig_type"; "debug_event_repr"; 0; ["Type_variant"; 
-                                                           ["constructor"; 
-                                                           "Event_none"; 
-                                                           ["tuple"]]; 
-                                                           ["constructor"; 
-                                                           "Event_parent"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Pervasives"]; 
-                                                           "ref"]; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]]; 
-                                                           ["constructor"; 
-                                                           "Event_child"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Pervasives"]; 
-                                                           "ref"]; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]]]]; 
-                       ["Sig_type"; "label"; 0; ["Type_alias"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]]]; 
-                       ["Sig_type"; "instruction"; 0; ["Type_variant"; 
-                                                      ["constructor"; 
-                                                      "Klabel"; ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "label"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kacc"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kenvacc"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kpush"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Kpop"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kassign"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kpush_retaddr"; 
-                                                      ["tuple"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "label"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kapply"; ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kappterm"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kreturn"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Krestart"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Kgrab"; ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kclosure"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "label"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kclosurerec"; 
-                                                      ["tuple"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "label"]]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Koffsetclosure"; 
-                                                      ["tuple"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kgetglobal"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Ident"]; 
-                                                                    "t"]]]]; 
-                                                      ["constructor"; 
-                                                      "Ksetglobal"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Ident"]; 
-                                                                    "t"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kconst"; ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Lambda"]; 
-                                                                "structured_constant"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kmakeblock"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kmakefloatblock"; 
-                                                      ["tuple"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kgetfield"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Ksetfield"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kgetfloatfield"; 
-                                                      ["tuple"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Ksetfloatfield"; 
-                                                      ["tuple"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kvectlength"; 
-                                                      ["tuple"]]; ["constructor"; 
-                                                                  "Kgetvectitem"; 
-                                                                  ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Ksetvectitem"; 
-                                                      ["tuple"]]; ["constructor"; 
-                                                                  "Kgetstringchar"; 
-                                                                  ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Ksetstringchar"; 
-                                                      ["tuple"]]; ["constructor"; 
-                                                                  "Kbranch"; 
-                                                                  ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "label"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kbranchif"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "label"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kbranchifnot"; 
-                                                      ["tuple"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "label"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kstrictbranchif"; 
-                                                      ["tuple"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "label"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kstrictbranchifnot"; 
-                                                      ["tuple"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "label"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kswitch"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "array"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "label"]]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "array"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "label"]]]]]; 
-                                                      ["constructor"; 
-                                                      "Kboolnot"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Kpushtrap"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "label"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kpoptrap"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Kraise"; ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Lambda"]; 
-                                                                "raise_kind"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kcheck_signals"; 
-                                                      ["tuple"]]; ["constructor"; 
-                                                                  "Kccall"; 
-                                                                  ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Knegint"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Kaddint"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Ksubint"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Kmulint"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Kdivint"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Kmodint"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Kandint"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Korint"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Kxorint"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Klslint"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Klsrint"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Kasrint"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Kintcomp"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Lambda"]; 
-                                                                  "comparison"]]]]; 
-                                                      ["constructor"; 
-                                                      "Koffsetint"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Koffsetref"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kisint"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Kisout"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Kgetmethod"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Kgetpubmet"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kgetdynmet"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Kevent"; ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "debug_event"]]]]; 
-                                                      ["constructor"; 
-                                                      "Kstop"; ["tuple"]]]]; 
-                       ["Sig_value"; "immed_min"; ["Tconstr"; ["Pident"; 
-                                                              "int"]]]; 
-                       ["Sig_value"; "immed_max"; ["Tconstr"; ["Pident"; 
-                                                              "int"]]]]]
+["module", "Instruct",
+["Mty_signature",
+["Sig_type", "compilation_env", 0,
+["Type_record",
+["label", "ce_stack",
+["Tconstr", ["Pdot", ["Pident", "Ident"], "tbl"],
+["Tconstr", ["Pident", "int"]]]],
+["label", "ce_heap",
+["Tconstr", ["Pdot", ["Pident", "Ident"], "tbl"],
+["Tconstr", ["Pident", "int"]]]],
+["label", "ce_rec",
+["Tconstr", ["Pdot", ["Pident", "Ident"], "tbl"],
+["Tconstr", ["Pident", "int"]]]]]],
+["Sig_type", "debug_event", 0,
+["Type_record", ["label", "ev_pos", ["Tconstr", ["Pident", "int"]]],
+["label", "ev_module", ["Tconstr", ["Pident", "string"]]],
+["label", "ev_loc", ["Tconstr", ["Pdot", ["Pident", "Location"], "t"]]],
+["label", "ev_kind", ["Tconstr", ["Pident", "debug_event_kind"]]],
+["label", "ev_info", ["Tconstr", ["Pident", "debug_event_info"]]],
+["label", "ev_typenv", ["Tconstr", ["Pdot", ["Pident", "Env"], "summary"]]],
+["label", "ev_typsubst", ["Tconstr", ["Pdot", ["Pident", "Subst"], "t"]]],
+["label", "ev_compenv", ["Tconstr", ["Pident", "compilation_env"]]],
+["label", "ev_stacksize", ["Tconstr", ["Pident", "int"]]],
+["label", "ev_repr", ["Tconstr", ["Pident", "debug_event_repr"]]]]],
+["Sig_type", "debug_event_kind", 0,
+["Type_variant", ["constructor", "Event_before", ["tuple"]],
+["constructor", "Event_after",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Types"], "type_expr"]]]],
+["constructor", "Event_pseudo", ["tuple"]]]],
+["Sig_type", "debug_event_info", 0,
+["Type_variant", ["constructor", "Event_function", ["tuple"]],
+["constructor", "Event_return", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Event_other", ["tuple"]]]],
+["Sig_type", "debug_event_repr", 0,
+["Type_variant", ["constructor", "Event_none", ["tuple"]],
+["constructor", "Event_parent",
+["tuple",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "int"]]]]],
+["constructor", "Event_child",
+["tuple",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "int"]]]]]]],
+["Sig_type", "label", 0, ["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_type", "instruction", 0,
+["Type_variant",
+["constructor", "Klabel", ["tuple", ["Tconstr", ["Pident", "label"]]]],
+["constructor", "Kacc", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Kenvacc", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Kpush", ["tuple"]],
+["constructor", "Kpop", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Kassign", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Kpush_retaddr", ["tuple", ["Tconstr", ["Pident", "label"]]]],
+["constructor", "Kapply", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Kappterm",
+["tuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Kreturn", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Krestart", ["tuple"]],
+["constructor", "Kgrab", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Kclosure",
+["tuple", ["Tconstr", ["Pident", "label"]], ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Kclosurerec",
+["tuple", ["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "label"]]],
+["Tconstr", ["Pident", "int"]]]],
+["constructor", "Koffsetclosure", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Kgetglobal",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]]]],
+["constructor", "Ksetglobal",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Ident"], "t"]]]],
+["constructor", "Kconst",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Lambda"], "structured_constant"]]]],
+["constructor", "Kmakeblock",
+["tuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Kmakefloatblock", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Kgetfield", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Ksetfield", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Kgetfloatfield", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Ksetfloatfield", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Kvectlength", ["tuple"]],
+["constructor", "Kgetvectitem", ["tuple"]],
+["constructor", "Ksetvectitem", ["tuple"]],
+["constructor", "Kgetstringchar", ["tuple"]],
+["constructor", "Ksetstringchar", ["tuple"]],
+["constructor", "Kbranch", ["tuple", ["Tconstr", ["Pident", "label"]]]],
+["constructor", "Kbranchif", ["tuple", ["Tconstr", ["Pident", "label"]]]],
+["constructor", "Kbranchifnot", ["tuple", ["Tconstr", ["Pident", "label"]]]],
+["constructor", "Kstrictbranchif",
+["tuple", ["Tconstr", ["Pident", "label"]]]],
+["constructor", "Kstrictbranchifnot",
+["tuple", ["Tconstr", ["Pident", "label"]]]],
+["constructor", "Kswitch",
+["tuple", ["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "label"]]],
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "label"]]]]],
+["constructor", "Kboolnot", ["tuple"]],
+["constructor", "Kpushtrap", ["tuple", ["Tconstr", ["Pident", "label"]]]],
+["constructor", "Kpoptrap", ["tuple"]],
+["constructor", "Kraise",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Lambda"], "raise_kind"]]]],
+["constructor", "Kcheck_signals", ["tuple"]],
+["constructor", "Kccall",
+["tuple", ["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Knegint", ["tuple"]], ["constructor", "Kaddint", ["tuple"]],
+["constructor", "Ksubint", ["tuple"]], ["constructor", "Kmulint", ["tuple"]],
+["constructor", "Kdivint", ["tuple"]], ["constructor", "Kmodint", ["tuple"]],
+["constructor", "Kandint", ["tuple"]], ["constructor", "Korint", ["tuple"]],
+["constructor", "Kxorint", ["tuple"]], ["constructor", "Klslint", ["tuple"]],
+["constructor", "Klsrint", ["tuple"]], ["constructor", "Kasrint", ["tuple"]],
+["constructor", "Kintcomp",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Lambda"], "comparison"]]]],
+["constructor", "Koffsetint", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Koffsetref", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Kisint", ["tuple"]], ["constructor", "Kisout", ["tuple"]],
+["constructor", "Kgetmethod", ["tuple"]],
+["constructor", "Kgetpubmet", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Kgetdynmet", ["tuple"]],
+["constructor", "Kevent", ["tuple", ["Tconstr", ["Pident", "debug_event"]]]],
+["constructor", "Kstop", ["tuple"]]]],
+["Sig_value", "immed_min", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "immed_max", ["Tconstr", ["Pident", "int"]]]]]

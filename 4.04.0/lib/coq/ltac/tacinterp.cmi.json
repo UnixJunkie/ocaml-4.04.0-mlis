@@ -1,840 +1,246 @@
-["module"; "Tacinterp"; ["Mty_signature"; ["Sig_value"; "ltac_trace_info"; 
-                                          ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                               "Exninfo"]; 
-                                                      "t"]; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Tacexpr"]; 
-                                                            "ltac_trace"]]]]; 
-                        ["Sig_module"; "Value"; ["Mty_signature"; ["Sig_type"; 
-                                                                  "t"; 
-                                                                  0; 
-                                                                  ["Type_alias"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Geninterp"]; 
-                                                                  "Val"]; 
-                                                                  "t"]]]]; 
-                                                ["Sig_value"; "of_constr"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                           "constr"]]; 
-                                                ["Tconstr"; ["Pident"; "t"]]]]; 
-                                                ["Sig_value"; "to_constr"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "option"]; 
-                                                ["Tconstr"; ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Term"]; 
-                                                            "constr"]]]]]; 
-                                                ["Sig_value"; "of_int"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]; 
-                                                ["Tconstr"; ["Pident"; "t"]]]]; 
-                                                ["Sig_value"; "to_int"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "option"]; 
-                                                ["Tconstr"; ["Pident"; "int"]]]]]; 
-                                                ["Sig_value"; "to_list"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "option"]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "list"]; 
-                                                ["Tconstr"; ["Pident"; "t"]]]]]]; 
-                                                ["Sig_value"; "of_closure"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Geninterp"]; 
-                                                           "interp_sign"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Tacexpr"]; 
-                                                           "glob_tactic_expr"]]; 
-                                                ["Tconstr"; ["Pident"; "t"]]]]]; 
-                                                ["Sig_value"; "cast"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Genarg"]; 
-                                                           "typed_abstract_argument_type"]; 
-                                                           ["Tpoly"; "a"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Geninterp"]; 
-                                                                    "Val"]; 
-                                                           "t"]]; ["Tpoly"; 
-                                                                  "a"]]]]]]; 
-                        ["Sig_type"; "value"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Value"]; 
-                                                                "t"]]]]; 
-                        ["Sig_module"; "TacStore"; ["Mty_signature"; 
-                                                   ["Sig_type"; "t"; 
-                                                   0; ["Type_alias"; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Geninterp"]; 
-                                                                  "TacStore"]; 
-                                                                  "t"]]]]; 
-                                                   ["Sig_type"; "field"; 
-                                                   1; ["Type_alias"; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Geninterp"]; 
-                                                                  "TacStore"]; 
-                                                                  "field"]; 
-                                                      ["Tpoly"; "a"]]]]; 
-                                                   ["Sig_value"; "empty"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "t"]]]; 
-                                                   ["Sig_value"; "set"; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; "t"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "field"]; 
-                                                              ["Tpoly"; "a"]]; 
-                                                   ["Tarrow"; ["Tpoly"; "a"]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "t"]]]]]]; 
-                                                   ["Sig_value"; "get"; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; "t"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "field"]; 
-                                                              ["Tpoly"; "a"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "option"]; 
-                                                   ["Tpoly"; "a"]]]]]; 
-                                                   ["Sig_value"; "remove"; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; "t"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "field"]; 
-                                                              ["Tpoly"; "a"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "t"]]]]]; 
-                                                   ["Sig_value"; "merge"; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; "t"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; "t"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "t"]]]]]; 
-                                                   ["Sig_value"; "field"; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "field"]; 
-                                                   ["Tpoly"; "a"]]]]]]; 
-                        ["Sig_type"; "interp_sign"; 0; ["Type_record"; 
-                                                       ["label"; "lfun"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "Id"]; 
-                                                                   "Map"]; 
-                                                                   "t"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "value"]]]]; 
-                                                       ["label"; "extra"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "TacStore"]; 
-                                                                   "t"]]]]]; 
-                        ["Sig_value"; "f_avoid_ids"; ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "TacStore"]; 
-                                                                 "field"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "list"]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Names"]; 
-                                                                 "Id"]; 
-                                                                 "t"]]]]]; 
-                        ["Sig_value"; "f_debug"; ["Tconstr"; ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "TacStore"]; 
-                                                             "field"]; 
-                                                 ["Tconstr"; ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Tactic_debug"]; 
-                                                             "debug_info"]]]]; 
-                        ["Sig_value"; "extract_ltac_constr_values"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "interp_sign"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                                    "env"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Id"]; 
-                                                                    "Map"]; 
-                                                                    "t"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Pattern"]; 
-                                                                    "constr_under_binders"]]]]]]; 
-                        ["Sig_value"; "set_debug"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Tactic_debug"]; 
-                                                              "debug_info"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "unit"]]]]; 
-                        ["Sig_value"; "get_debug"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Tactic_debug"]; 
-                                                               "debug_info"]]]]; 
-                        ["Sig_value"; "interp_genarg"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "interp_sign"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Genarg"]; 
-                                                                  "glob_generic_argument"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Ftactic"]; 
-                                                                   "t"]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Value"]; 
-                                                                   "t"]]]]]]; 
-                        ["Sig_value"; "val_interp"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "interp_sign"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Tacexpr"]; 
-                                                               "glob_tactic_expr"]]; 
-                                                    ["Tarrow"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "value"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Proofview"]; 
-                                                               "tactic"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                                                    ["Tconstr"; ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Proofview"]; 
-                                                                "tactic"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "unit"]]]]]]]; 
-                        ["Sig_value"; "interp_ltac_constr"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "interp_sign"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Tacexpr"]; 
-                                                            "glob_tactic_expr"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Term"]; 
-                                                            "constr"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Proofview"]; 
-                                                            "tactic"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Proofview"]; 
-                                                            "tactic"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]]]]]]; 
-                        ["Sig_value"; "interp_redexp"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Environ"]; 
-                                                                  "env"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Evd"]; 
-                                                                  "evar_map"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Tacexpr"]; 
-                                                                  "raw_red_expr"]]; 
-                                                       ["Ttuple"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Evd"]; 
-                                                                  "evar_map"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Redexpr"]; 
-                                                                   "red_expr"]]]]]]]; 
-                        ["Sig_value"; "interp_hyp"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "interp_sign"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Environ"]; 
-                                                               "env"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Evd"]; 
-                                                               "evar_map"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Loc"]; 
-                                                               "located"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Names"]; 
-                                                               "Id"]; 
-                                                               "t"]]]; 
-                                                    ["Tconstr"; ["Pdot"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Names"]; 
-                                                                "Id"]; 
-                                                                "t"]]]]]]]; 
-                        ["Sig_value"; "interp_constr_gen"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Pretyping"]; 
-                                                           "typing_constraint"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "interp_sign"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                           "env"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Tacexpr"]; 
-                                                                    "glob_constr_and_expr"]]; 
-                                                                    [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]]]]]]]]; 
-                        ["Sig_value"; "interp_bindings"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "interp_sign"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                                    "env"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Misctypes"]; 
-                                                                    "bindings"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Tacexpr"]; 
-                                                                    "glob_constr_and_expr"]]]; 
-                                                         ["Ttuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Misctypes"]; 
-                                                         "bindings"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Term"]; 
-                                                         "constr"]]]]]]]]]; 
-                        ["Sig_value"; "interp_open_constr_with_bindings"; 
-                        ["Tarrow"; ["Tconstr"; ["Pident"; "interp_sign"]]; 
-                        ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; "Environ"]; 
-                                               "env"]]; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Evd"]; 
-                                                                   "evar_map"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Misctypes"]; 
-                                                                   "with_bindings"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Tacexpr"]; 
-                                                                   "glob_constr_and_expr"]]]; 
-                                                        ["Ttuple"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Evd"]; 
-                                                                   "evar_map"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Misctypes"]; 
-                                                                    "with_bindings"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]]]]]]]]; 
-                        ["Sig_value"; "eval_tactic"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Tacexpr"]; 
-                                                                "glob_tactic_expr"]]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Proofview"]; 
-                                                                 "tactic"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]]; 
-                        ["Sig_value"; "eval_tactic_ist"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "interp_sign"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Tacexpr"]; 
-                                                                    "glob_tactic_expr"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Proofview"]; 
-                                                         "tactic"]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]]; 
-                        ["Sig_value"; "tactic_of_value"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "interp_sign"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Value"]; 
-                                                                    "t"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Proofview"]; 
-                                                         "tactic"]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]]; 
-                        ["Sig_value"; "interp_tac_gen"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "Id"]; 
-                                                                   "Map"]; 
-                                                                   "t"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "value"]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "Id"]; 
-                                                                   "t"]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Tactic_debug"]; 
-                                                                   "debug_info"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Tacexpr"]; 
-                                                                   "raw_tactic_expr"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Proofview"]; 
-                                                                    "tactic"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]]]]; 
-                        ["Sig_value"; "interp"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Tacexpr"]; 
-                                                           "raw_tactic_expr"]]; 
-                                                ["Tconstr"; ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Proofview"]; 
-                                                            "tactic"]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "unit"]]]]]; 
-                        ["Sig_value"; "hide_interp"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Tacexpr"]; 
-                                                                "raw_tactic_expr"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Proofview"]; 
-                                                                "tactic"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Proofview"]; 
-                                                                 "tactic"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]]]]; 
-                        ["Sig_value"; "interp_ltac_var"; ["Tarrow"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "value"]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "interp_sign"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                                    [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                                    "env"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Loc"]; 
-                                                                    "located"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Id"]; 
-                                                                    "t"]]]; 
-                                                         ["Tpoly"; "a"]]]]]]; 
-                        ["Sig_value"; "interp_int"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "interp_sign"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Loc"]; 
-                                                               "located"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Names"]; 
-                                                               "Id"]; 
-                                                               "t"]]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]]; 
-                        ["Sig_value"; "interp_int_or_var"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "interp_sign"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Misctypes"]; 
-                                                           "or_var"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]]]]; 
-                        ["Sig_value"; "error_ltac_variable"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Loc"]; 
-                                                             "t"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Id"]; 
-                                                                    "t"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                                    [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                                    "env"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "value"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]]]]]]]; 
-                        ["Sig_value"; "lift_constr_tac_to_ml_tac"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "Id"]; 
-                                                                   "t"]]]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Term"]; 
-                                                                   "constr"]]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Geninterp"]; 
-                                                                   "interp_sign"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Proofview"]; 
-                                                                   "tactic"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Tacenv"]; 
-                                                                   "ml_tactic"]]]]]; 
-                        ["Sig_value"; "default_ist"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Geninterp"]; 
-                                                                 "interp_sign"]]]]]]
+["module", "Tacinterp",
+["Mty_signature",
+["Sig_value", "ltac_trace_info",
+["Tconstr", ["Pdot", ["Pident", "Exninfo"], "t"],
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "ltac_trace"]]]],
+["Sig_module", "Value",
+["Mty_signature",
+["Sig_type", "t", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Geninterp"], "Val"], "t"]]]],
+["Sig_value", "of_constr",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pident", "t"]]]],
+["Sig_value", "to_constr",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]]],
+["Sig_value", "of_int",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "t"]]]],
+["Sig_value", "to_int",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "to_list",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "t"]]]]]],
+["Sig_value", "of_closure",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Geninterp"], "interp_sign"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_tactic_expr"]],
+["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "cast",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Genarg"], "typed_abstract_argument_type"],
+["Tpoly", "a"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Geninterp"], "Val"], "t"]],
+["Tpoly", "a"]]]]]],
+["Sig_type", "value", 0,
+["Type_alias", ["Tconstr", ["Pdot", ["Pident", "Value"], "t"]]]],
+["Sig_module", "TacStore",
+["Mty_signature",
+["Sig_type", "t", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Geninterp"], "TacStore"], "t"]]]],
+["Sig_type", "field", 1,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Geninterp"], "TacStore"], "field"],
+["Tpoly", "a"]]]], ["Sig_value", "empty", ["Tconstr", ["Pident", "t"]]],
+["Sig_value", "set",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "field"], ["Tpoly", "a"]],
+["Tarrow", ["Tpoly", "a"], ["Tconstr", ["Pident", "t"]]]]]],
+["Sig_value", "get",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "field"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "option"], ["Tpoly", "a"]]]]],
+["Sig_value", "remove",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "field"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "merge",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "field",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "field"], ["Tpoly", "a"]]]]]],
+["Sig_type", "interp_sign", 0,
+["Type_record",
+["label", "lfun",
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "Map"], "t"],
+["Tconstr", ["Pident", "value"]]]],
+["label", "extra", ["Tconstr", ["Pdot", ["Pident", "TacStore"], "t"]]]]],
+["Sig_value", "f_avoid_ids",
+["Tconstr", ["Pdot", ["Pident", "TacStore"], "field"],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]]],
+["Sig_value", "f_debug",
+["Tconstr", ["Pdot", ["Pident", "TacStore"], "field"],
+["Tconstr", ["Pdot", ["Pident", "Tactic_debug"], "debug_info"]]]],
+["Sig_value", "extract_ltac_constr_values",
+["Tarrow", ["Tconstr", ["Pident", "interp_sign"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "Map"], "t"],
+["Tconstr", ["Pdot", ["Pident", "Pattern"], "constr_under_binders"]]]]]],
+["Sig_value", "set_debug",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Tactic_debug"], "debug_info"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "get_debug",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pdot", ["Pident", "Tactic_debug"], "debug_info"]]]],
+["Sig_value", "interp_genarg",
+["Tarrow", ["Tconstr", ["Pident", "interp_sign"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Genarg"], "glob_generic_argument"]],
+["Tconstr", ["Pdot", ["Pident", "Ftactic"], "t"],
+["Tconstr", ["Pdot", ["Pident", "Value"], "t"]]]]]],
+["Sig_value", "val_interp",
+["Tarrow", ["Tconstr", ["Pident", "interp_sign"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_tactic_expr"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "value"]],
+["Tconstr", ["Pdot", ["Pident", "Proofview"], "tactic"],
+["Tconstr", ["Pident", "unit"]]]],
+["Tconstr", ["Pdot", ["Pident", "Proofview"], "tactic"],
+["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "interp_ltac_constr",
+["Tarrow", ["Tconstr", ["Pident", "interp_sign"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_tactic_expr"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Proofview"], "tactic"],
+["Tconstr", ["Pident", "unit"]]]],
+["Tconstr", ["Pdot", ["Pident", "Proofview"], "tactic"],
+["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "interp_redexp",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "raw_red_expr"]],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tconstr", ["Pdot", ["Pident", "Redexpr"], "red_expr"]]]]]]],
+["Sig_value", "interp_hyp",
+["Tarrow", ["Tconstr", ["Pident", "interp_sign"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]]]]],
+["Sig_value", "interp_constr_gen",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Pretyping"], "typing_constraint"]],
+["Tarrow", ["Tconstr", ["Pident", "interp_sign"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_constr_and_expr"]],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]]]]]]],
+["Sig_value", "interp_bindings",
+["Tarrow", ["Tconstr", ["Pident", "interp_sign"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "bindings"],
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_constr_and_expr"]]],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "bindings"],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]]]]]]],
+["Sig_value", "interp_open_constr_with_bindings",
+["Tarrow", ["Tconstr", ["Pident", "interp_sign"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "with_bindings"],
+["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_constr_and_expr"]]],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "with_bindings"],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]]]]]]],
+["Sig_value", "eval_tactic",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_tactic_expr"]],
+["Tconstr", ["Pdot", ["Pident", "Proofview"], "tactic"],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "eval_tactic_ist",
+["Tarrow", ["Tconstr", ["Pident", "interp_sign"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "glob_tactic_expr"]],
+["Tconstr", ["Pdot", ["Pident", "Proofview"], "tactic"],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "tactic_of_value",
+["Tarrow", ["Tconstr", ["Pident", "interp_sign"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Value"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Proofview"], "tactic"],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "interp_tac_gen",
+["Tarrow",
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "Map"], "t"],
+["Tconstr", ["Pident", "value"]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Tactic_debug"], "debug_info"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "raw_tactic_expr"]],
+["Tconstr", ["Pdot", ["Pident", "Proofview"], "tactic"],
+["Tconstr", ["Pident", "unit"]]]]]]]],
+["Sig_value", "interp",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "raw_tactic_expr"]],
+["Tconstr", ["Pdot", ["Pident", "Proofview"], "tactic"],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "hide_interp",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Tacexpr"], "raw_tactic_expr"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Proofview"], "tactic"],
+["Tconstr", ["Pident", "unit"]]]],
+["Tconstr", ["Pdot", ["Pident", "Proofview"], "tactic"],
+["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "interp_ltac_var",
+["Tarrow", ["Tarrow", ["Tconstr", ["Pident", "value"]], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "interp_sign"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]]]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]],
+["Tpoly", "a"]]]]]],
+["Sig_value", "interp_int",
+["Tarrow", ["Tconstr", ["Pident", "interp_sign"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]],
+["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "interp_int_or_var",
+["Tarrow", ["Tconstr", ["Pident", "interp_sign"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_var"],
+["Tconstr", ["Pident", "int"]]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "error_ltac_variable",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]]]],
+["Tarrow", ["Tconstr", ["Pident", "value"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]], ["Tpoly", "a"]]]]]]],
+["Sig_value", "lift_constr_tac_to_ml_tac",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]],
+["Tarrow",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Geninterp"], "interp_sign"]],
+["Tconstr", ["Pdot", ["Pident", "Proofview"], "tactic"],
+["Tconstr", ["Pident", "unit"]]]]],
+["Tconstr", ["Pdot", ["Pident", "Tacenv"], "ml_tactic"]]]]],
+["Sig_value", "default_ist",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pdot", ["Pident", "Geninterp"], "interp_sign"]]]]]]

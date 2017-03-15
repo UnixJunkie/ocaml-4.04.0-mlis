@@ -1,931 +1,353 @@
-["module"; "Bindlib"; ["Mty_signature"; ["Sig_type"; "var"; 1; ["Type_abstract"]]; 
-                      ["Sig_type"; "mvar"; 1; ["Type_alias"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "array"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "var"]; 
-                                                             ["Tpoly"; "a"]]]]]; 
-                      ["Sig_type"; "binder"; 2; ["Type_abstract"]]; [
-                                                                    "Sig_type"; 
-                                                                    "mbinder"; 
-                                                                    2; 
-                                                                    [
-                                                                    "Type_abstract"]]; 
-                      ["Sig_value"; "subst"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "binder"]; 
-                                                        ["Tpoly"; "a"]; 
-                                                        ["Tpoly"; "b"]]; 
-                                             ["Tarrow"; ["Tpoly"; "a"]; 
-                                             ["Tpoly"; "b"]]]]; ["Sig_value"; 
-                                                                "msubst"; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "mbinder"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "array"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]]]; 
-                      ["Sig_value"; "new_var"; ["Tarrow"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "var"]; 
-                                                          ["Tpoly"; "a"]]; 
-                                                          ["Tpoly"; "a"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tconstr"; ["Pident"; "var"]; 
-                                               ["Tpoly"; "a"]]]]]; ["Sig_value"; 
-                                                                   "new_mvar"; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "var"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "array"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "mvar"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]]]]; 
-                      ["Sig_value"; "binder_name"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "binder"]; 
-                                                              ["Tpoly"; "a"]; 
-                                                              ["Tpoly"; "b"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]]; 
-                      ["Sig_value"; "binder_occur"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "binder"]; 
-                                                               ["Tpoly"; "a"]; 
-                                                               ["Tpoly"; "b"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "bool"]]]]; 
-                      ["Sig_value"; "binder_rank"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "binder"]; 
-                                                              ["Tpoly"; "a"]; 
-                                                              ["Tpoly"; "b"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int"]]]]; 
-                      ["Sig_value"; "binder_constant"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "binder"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "bool"]]]]; 
-                      ["Sig_value"; "binder_closed"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "binder"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "bool"]]]]; 
-                      ["Sig_value"; "binder_compose_left"; ["Tarrow"; 
-                                                           ["Tarrow"; 
-                                                           ["Tpoly"; "a"]; 
-                                                           ["Tpoly"; "b"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "binder"]; 
-                                                           ["Tpoly"; "b"]; 
-                                                           ["Tpoly"; "c"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "binder"]; 
-                                                           ["Tpoly"; "a"]; 
-                                                           ["Tpoly"; "c"]]]]]; 
-                      ["Sig_value"; "binder_compose_right"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "binder"]; 
-                                                            ["Tpoly"; "a"]; 
-                                                            ["Tpoly"; "b"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tarrow"; 
-                                                            ["Tpoly"; "b"]; 
-                                                            ["Tpoly"; "c"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "binder"]; 
-                                                            ["Tpoly"; "a"]; 
-                                                            ["Tpoly"; "c"]]]]]; 
-                      ["Sig_value"; "binder_from_fun"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                       ["Tarrow"; ["Tarrow"; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "binder"]; 
-                                                       ["Tpoly"; "a"]; 
-                                                       ["Tpoly"; "b"]]]]]; 
-                      ["Sig_value"; "mbinder_arity"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "mbinder"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "int"]]]]; 
-                      ["Sig_value"; "mbinder_names"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "mbinder"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "array"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "string"]]]]]; 
-                      ["Sig_value"; "mbinder_constant"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "mbinder"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "bool"]]]]; 
-                      ["Sig_value"; "mbinder_closed"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "mbinder"]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]; 
-                                                                 ["Tpoly"; 
-                                                                 "b"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "bool"]]]]; 
-                      ["Sig_value"; "name_of"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "var"]; 
-                                                          ["Tpoly"; "a"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "string"]]]]; 
-                      ["Sig_value"; "prefix_of"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "var"]; 
-                                                            ["Tpoly"; "a"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "string"]]]]; 
-                      ["Sig_value"; "free_of"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "var"]; 
-                                                          ["Tpoly"; "a"]]; 
-                                               ["Tpoly"; "a"]]]; ["Sig_value"; 
-                                                                 "hash_var"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "var"]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]; 
-                      ["Sig_value"; "compare_vars"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "var"]; 
-                                                               ["Tpoly"; "a"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "var"]; 
-                                                               ["Tpoly"; "b"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]]; 
-                      ["Sig_value"; "eq_vars"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "var"]; 
-                                                          ["Tpoly"; "a"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "var"]; 
-                                                          ["Tpoly"; "b"]]; 
-                                               ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                      ["Sig_value"; "copy_var"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "var"]; 
-                                                           ["Tpoly"; "b"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                ["Tarrow"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "var"]; 
-                                                           ["Tpoly"; "a"]]; 
-                                                           ["Tpoly"; "a"]]; 
-                                                ["Tconstr"; ["Pident"; "var"]; 
-                                                ["Tpoly"; "a"]]]]]]; 
-                      ["Sig_type"; "bindbox"; 1; ["Type_abstract"]]; 
-                      ["Sig_value"; "unbox"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "bindbox"]; 
-                                                        ["Tpoly"; "a"]]; 
-                                             ["Tpoly"; "a"]]]; ["Sig_value"; 
-                                                               "box_of_var"; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "var"]; 
-                                                               ["Tpoly"; "a"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "bindbox"]; 
-                                                               ["Tpoly"; "a"]]]]; 
-                      ["Sig_value"; "box"; ["Tarrow"; ["Tpoly"; "a"]; 
-                                           ["Tconstr"; ["Pident"; "bindbox"]; 
-                                           ["Tpoly"; "a"]]]]; ["Sig_value"; 
-                                                              "apply_box"; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "bindbox"]; 
-                                                              ["Tarrow"; 
-                                                              ["Tpoly"; "a"]; 
-                                                              ["Tpoly"; "b"]]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "bindbox"]; 
-                                                              ["Tpoly"; "a"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "bindbox"]; 
-                                                              ["Tpoly"; "b"]]]]]; 
-                      ["Sig_value"; "is_closed"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bindbox"]; 
-                                                            ["Tpoly"; "a"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "bool"]]]]; 
-                      ["Sig_value"; "occur"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "var"]; 
-                                                        ["Tpoly"; "a"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "bindbox"]; 
-                                                        ["Tpoly"; "b"]]; 
-                                             ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                      ["Sig_value"; "dummy_bindbox"; ["Tconstr"; ["Pident"; 
-                                                                 "bindbox"]; 
-                                                     ["Tpoly"; "a"]]]; 
-                      ["Sig_value"; "bind"; ["Tarrow"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "var"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]]; 
-                                                       ["Tpoly"; "a"]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "string"]]; 
-                                            ["Tarrow"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bindbox"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "bindbox"]; 
-                                                       ["Tpoly"; "b"]]]; 
-                                            ["Tconstr"; ["Pident"; "bindbox"]; 
-                                            ["Tconstr"; ["Pident"; "binder"]; 
-                                            ["Tpoly"; "a"]; ["Tpoly"; "b"]]]]]]]; 
-                      ["Sig_value"; "mbind"; ["Tarrow"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "var"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]; 
-                                                        ["Tpoly"; "a"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "array"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]]; 
-                                             ["Tarrow"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "array"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bindbox"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "bindbox"]; 
-                                                        ["Tpoly"; "b"]]]; 
-                                             ["Tconstr"; ["Pident"; "bindbox"]; 
-                                             ["Tconstr"; ["Pident"; "mbinder"]; 
-                                             ["Tpoly"; "a"]; ["Tpoly"; "b"]]]]]]]; 
-                      ["Sig_value"; "vbind"; ["Tarrow"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "var"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]; 
-                                                        ["Tpoly"; "a"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                             ["Tarrow"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "var"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "bindbox"]; 
-                                                        ["Tpoly"; "b"]]]; 
-                                             ["Tconstr"; ["Pident"; "bindbox"]; 
-                                             ["Tconstr"; ["Pident"; "binder"]; 
-                                             ["Tpoly"; "a"]; ["Tpoly"; "b"]]]]]]]; 
-                      ["Sig_value"; "mvbind"; ["Tarrow"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "var"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]]; 
-                                                         ["Tpoly"; "a"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "array"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "string"]]]; 
-                                              ["Tarrow"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "array"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "var"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "bindbox"]; 
-                                                         ["Tpoly"; "b"]]]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "bindbox"]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "mbinder"]; 
-                                              ["Tpoly"; "a"]; ["Tpoly"; "b"]]]]]]]; 
-                      ["Sig_value"; "unbind"; ["Tarrow"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "var"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]]; 
-                                                         ["Tpoly"; "a"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "binder"]; 
-                                                         ["Tpoly"; "a"]; 
-                                                         ["Tpoly"; "b"]]; 
-                                              ["Ttuple"; ["Tconstr"; 
-                                                         ["Pident"; "var"]; 
-                                                         ["Tpoly"; "a"]]; 
-                                              ["Tpoly"; "b"]]]]]; ["Sig_value"; 
-                                                                  "unmbind"; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "var"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "mbinder"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]; 
-                                                                  ["Ttuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "mvar"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]]]]; 
-                      ["Sig_value"; "bind_var"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "var"]; 
-                                                           ["Tpoly"; "a"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "bindbox"]; 
-                                                           ["Tpoly"; "b"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bindbox"]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "binder"]; 
-                                                ["Tpoly"; "a"]; ["Tpoly"; 
-                                                                "b"]]]]]]; 
-                      ["Sig_value"; "bind_mvar"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "mvar"]; 
-                                                            ["Tpoly"; "a"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bindbox"]; 
-                                                            ["Tpoly"; "b"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "bindbox"]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "mbinder"]; 
-                                                 ["Tpoly"; "a"]; ["Tpoly"; 
-                                                                 "b"]]]]]]; 
-                      ["Sig_value"; "box_apply"; ["Tarrow"; ["Tarrow"; 
-                                                            ["Tpoly"; "a"]; 
-                                                            ["Tpoly"; "b"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bindbox"]; 
-                                                            ["Tpoly"; "a"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "bindbox"]; 
-                                                 ["Tpoly"; "b"]]]]]; 
-                      ["Sig_value"; "box_apply2"; ["Tarrow"; ["Tarrow"; 
-                                                             ["Tpoly"; "a"]; 
-                                                             ["Tarrow"; 
-                                                             ["Tpoly"; "b"]; 
-                                                             ["Tpoly"; "c"]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bindbox"]; 
-                                                             ["Tpoly"; "a"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bindbox"]; 
-                                                             ["Tpoly"; "b"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bindbox"]; 
-                                                  ["Tpoly"; "c"]]]]]]; 
-                      ["Sig_value"; "box_apply3"; ["Tarrow"; ["Tarrow"; 
-                                                             ["Tpoly"; "a"]; 
-                                                             ["Tarrow"; 
-                                                             ["Tpoly"; "b"]; 
-                                                             ["Tarrow"; 
-                                                             ["Tpoly"; "c"]; 
-                                                             ["Tpoly"; "d"]]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bindbox"]; 
-                                                             ["Tpoly"; "a"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bindbox"]; 
-                                                             ["Tpoly"; "b"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bindbox"]; 
-                                                             ["Tpoly"; "c"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bindbox"]; 
-                                                  ["Tpoly"; "d"]]]]]]]; 
-                      ["Sig_value"; "box_apply4"; ["Tarrow"; ["Tarrow"; 
-                                                             ["Tpoly"; "a"]; 
-                                                             ["Tarrow"; 
-                                                             ["Tpoly"; "b"]; 
-                                                             ["Tarrow"; 
-                                                             ["Tpoly"; "c"]; 
-                                                             ["Tarrow"; 
-                                                             ["Tpoly"; "d"]; 
-                                                             ["Tpoly"; "e"]]]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bindbox"]; 
-                                                             ["Tpoly"; "a"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bindbox"]; 
-                                                             ["Tpoly"; "b"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bindbox"]; 
-                                                             ["Tpoly"; "c"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bindbox"]; 
-                                                             ["Tpoly"; "d"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bindbox"]; 
-                                                  ["Tpoly"; "e"]]]]]]]]; 
-                      ["Sig_value"; "box_pair"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "bindbox"]; 
-                                                           ["Tpoly"; "a"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "bindbox"]; 
-                                                           ["Tpoly"; "b"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bindbox"]; 
-                                                ["Ttuple"; ["Tpoly"; "a"]; 
-                                                ["Tpoly"; "b"]]]]]]; 
-                      ["Sig_value"; "box_triple"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bindbox"]; 
-                                                             ["Tpoly"; "a"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bindbox"]; 
-                                                             ["Tpoly"; "b"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bindbox"]; 
-                                                             ["Tpoly"; "c"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bindbox"]; 
-                                                  ["Ttuple"; ["Tpoly"; "a"]; 
-                                                  ["Tpoly"; "b"]; ["Tpoly"; 
-                                                                  "c"]]]]]]]; 
-                      ["Sig_value"; "box_opt"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "bindbox"]; 
-                                                          ["Tpoly"; "a"]]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "bindbox"]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "option"]; 
-                                               ["Tpoly"; "a"]]]]]; ["Sig_value"; 
-                                                                   "apply_in_box"; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bindbox"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bindbox"]; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]]]]]; 
-                      ["Sig_value"; "bind_apply"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bindbox"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "binder"]; 
-                                                             ["Tpoly"; "a"]; 
-                                                             ["Tpoly"; "b"]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bindbox"]; 
-                                                             ["Tpoly"; "a"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bindbox"]; 
-                                                  ["Tpoly"; "b"]]]]]; 
-                      ["Sig_value"; "mbind_apply"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "bindbox"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "mbinder"]; 
-                                                              ["Tpoly"; "a"]; 
-                                                              ["Tpoly"; "b"]]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "bindbox"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "array"]; 
-                                                              ["Tpoly"; "a"]]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "bindbox"]; 
-                                                   ["Tpoly"; "b"]]]]]; 
-                      ["Sig_value"; "fixpoint"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "bindbox"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "binder"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "binder"]; 
-                                                           ["Tpoly"; "a"]; 
-                                                           ["Tpoly"; "b"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "binder"]; 
-                                                           ["Tpoly"; "a"]; 
-                                                           ["Tpoly"; "b"]]]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bindbox"]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "binder"]; 
-                                                ["Tpoly"; "a"]; ["Tpoly"; 
-                                                                "b"]]]]]; 
-                      ["Sig_value"; "reset_counter"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]; 
-                      ["Sig_unknown"]; ["Sig_unknown"]; ["Sig_module"; 
-                                                        "Lift"; ["Mty_functor"; 
-                                                                "M"; 
-                                                                ["Some"; 
-                                                                ["Mty_unknown"]]; 
-                                                                ["Mty_signature"; 
-                                                                ["Sig_value"; 
-                                                                "f"; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "M"]; 
-                                                                "t"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bindbox"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bindbox"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "M"]; 
-                                                                "t"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]]]]]]]; 
-                      ["Sig_module"; "Lift2"; ["Mty_functor"; "M"; ["Some"; 
-                                                                   ["Mty_unknown"]]; 
-                                              ["Mty_signature"; ["Sig_value"; 
-                                                                "f"; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "M"]; 
-                                                                "t"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bindbox"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bindbox"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bindbox"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "M"]; 
-                                                                "t"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]]]]]]]; 
-                      ["Sig_value"; "box_list"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "bindbox"]; 
-                                                           ["Tpoly"; "a"]]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bindbox"]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "list"]; 
-                                                ["Tpoly"; "a"]]]]]; [
-                                                                    "Sig_value"; 
-                                                                    "box_rev_list"; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "bindbox"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "bindbox"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]]]]]; 
-                      ["Sig_value"; "box_array"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "array"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bindbox"]; 
-                                                            ["Tpoly"; "a"]]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "bindbox"]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "array"]; 
-                                                 ["Tpoly"; "a"]]]]]; 
-                      ["Sig_type"; "ctxt"; 0; ["Type_abstract"]]; ["Sig_value"; 
-                                                                  "empty_ctxt"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "ctxt"]]]; 
-                      ["Sig_value"; "new_var_in"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "ctxt"]]; 
-                                                  ["Tarrow"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "var"]; 
-                                                             ["Tpoly"; "a"]]; 
-                                                             ["Tpoly"; "a"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                  ["Ttuple"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "var"]; 
-                                                             ["Tpoly"; "a"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "ctxt"]]]]]]]; 
-                      ["Sig_value"; "new_mvar_in"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "ctxt"]]; 
-                                                   ["Tarrow"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "var"]; 
-                                                              ["Tpoly"; "a"]]; 
-                                                              ["Tpoly"; "a"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "array"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]; 
-                                                   ["Ttuple"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "mvar"]; 
-                                                              ["Tpoly"; "a"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "ctxt"]]]]]]]; 
-                      ["Sig_value"; "unbind_in"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "ctxt"]]; 
-                                                 ["Tarrow"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "var"]; 
-                                                            ["Tpoly"; "a"]]; 
-                                                            ["Tpoly"; "a"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "binder"]; 
-                                                            ["Tpoly"; "a"]; 
-                                                            ["Tpoly"; "b"]]; 
-                                                 ["Ttuple"; ["Tconstr"; 
-                                                            ["Pident"; "var"]; 
-                                                            ["Tpoly"; "a"]]; 
-                                                 ["Tpoly"; "b"]; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "ctxt"]]]]]]]; 
-                      ["Sig_value"; "unmbind_in"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "ctxt"]]; 
-                                                  ["Tarrow"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "var"]; 
-                                                             ["Tpoly"; "a"]]; 
-                                                             ["Tpoly"; "a"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "mbinder"]; 
-                                                             ["Tpoly"; "a"]; 
-                                                             ["Tpoly"; "b"]]; 
-                                                  ["Ttuple"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "mvar"]; 
-                                                             ["Tpoly"; "a"]]; 
-                                                  ["Tpoly"; "b"]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "ctxt"]]]]]]]; 
-                      ["Sig_value"; "bind_in"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "ctxt"]]; 
-                                               ["Tarrow"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "var"]; 
-                                                          ["Tpoly"; "a"]]; 
-                                                          ["Tpoly"; "a"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tarrow"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "bindbox"]; 
-                                                          ["Tpoly"; "a"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "ctxt"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "bindbox"]; 
-                                                          ["Tpoly"; "b"]]]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "bindbox"]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "binder"]; 
-                                               ["Tpoly"; "a"]; ["Tpoly"; "b"]]]]]]]]; 
-                      ["Sig_value"; "mbind_in"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "ctxt"]]; 
-                                                ["Tarrow"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "var"]; 
-                                                           ["Tpoly"; "a"]]; 
-                                                           ["Tpoly"; "a"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "array"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]; 
-                                                ["Tarrow"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "array"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "bindbox"]; 
-                                                           ["Tpoly"; "a"]]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "ctxt"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "bindbox"]; 
-                                                           ["Tpoly"; "b"]]]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bindbox"]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "mbinder"]; 
-                                                ["Tpoly"; "a"]; ["Tpoly"; 
-                                                                "b"]]]]]]]]; 
-                      ["Sig_value"; "list_vars"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bindbox"]; 
-                                                            ["Tpoly"; "a"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "list"]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "string"]]]]]]]
+["module", "Bindlib",
+["Mty_signature", ["Sig_type", "var", 1, ["Type_abstract"]],
+["Sig_type", "mvar", 1,
+["Type_alias",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "var"], ["Tpoly", "a"]]]]],
+["Sig_type", "binder", 2, ["Type_abstract"]],
+["Sig_type", "mbinder", 2, ["Type_abstract"]],
+["Sig_value", "subst",
+["Tarrow", ["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tpoly", "a"], ["Tpoly", "b"]]]],
+["Sig_value", "msubst",
+["Tarrow",
+["Tconstr", ["Pident", "mbinder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tconstr", ["Pident", "array"], ["Tpoly", "a"]], ["Tpoly", "b"]]]],
+["Sig_value", "new_var",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "var"], ["Tpoly", "a"]]]]],
+["Sig_value", "new_mvar",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "a"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pident", "mvar"], ["Tpoly", "a"]]]]],
+["Sig_value", "binder_name",
+["Tarrow", ["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "binder_occur",
+["Tarrow", ["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "binder_rank",
+["Tarrow", ["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "binder_constant",
+["Tarrow", ["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "binder_closed",
+["Tarrow", ["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "binder_compose_left",
+["Tarrow", ["Tarrow", ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tconstr", ["Pident", "binder"], ["Tpoly", "b"], ["Tpoly", "c"]],
+["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "c"]]]]],
+["Sig_value", "binder_compose_right",
+["Tarrow", ["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tarrow", ["Tpoly", "b"], ["Tpoly", "c"]],
+["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "c"]]]]],
+["Sig_value", "binder_from_fun",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tarrow", ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]]]]],
+["Sig_value", "mbinder_arity",
+["Tarrow",
+["Tconstr", ["Pident", "mbinder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "mbinder_names",
+["Tarrow",
+["Tconstr", ["Pident", "mbinder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "mbinder_constant",
+["Tarrow",
+["Tconstr", ["Pident", "mbinder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "mbinder_closed",
+["Tarrow",
+["Tconstr", ["Pident", "mbinder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "name_of",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "prefix_of",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "free_of",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "a"]]],
+["Sig_value", "hash_var",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "compare_vars",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "eq_vars",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "copy_var",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "b"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "var"], ["Tpoly", "a"]]]]]],
+["Sig_type", "bindbox", 1, ["Type_abstract"]],
+["Sig_value", "unbox",
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]],
+["Tpoly", "a"]]],
+["Sig_value", "box_of_var",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]]]],
+["Sig_value", "box",
+["Tarrow", ["Tpoly", "a"],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]]]],
+["Sig_value", "apply_box",
+["Tarrow",
+["Tconstr", ["Pident", "bindbox"],
+["Tarrow", ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]]]]],
+["Sig_value", "is_closed",
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "occur",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "dummy_bindbox",
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]]],
+["Sig_value", "bind",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]]],
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]]]]]]],
+["Sig_value", "mbind",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "a"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow",
+["Tarrow",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]]],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]]],
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "mbinder"], ["Tpoly", "a"], ["Tpoly", "b"]]]]]]],
+["Sig_value", "vbind",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]]],
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]]]]]]],
+["Sig_value", "mvbind",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "a"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow",
+["Tarrow",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "var"], ["Tpoly", "a"]]],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]]],
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "mbinder"], ["Tpoly", "a"], ["Tpoly", "b"]]]]]]],
+["Sig_value", "unbind",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Ttuple", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "b"]]]]],
+["Sig_value", "unmbind",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "a"]],
+["Tarrow",
+["Tconstr", ["Pident", "mbinder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Ttuple", ["Tconstr", ["Pident", "mvar"], ["Tpoly", "a"]], ["Tpoly", "b"]]]]],
+["Sig_value", "bind_var",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]]]]]],
+["Sig_value", "bind_mvar",
+["Tarrow", ["Tconstr", ["Pident", "mvar"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "mbinder"], ["Tpoly", "a"], ["Tpoly", "b"]]]]]],
+["Sig_value", "box_apply",
+["Tarrow", ["Tarrow", ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]]]]],
+["Sig_value", "box_apply2",
+["Tarrow",
+["Tarrow", ["Tpoly", "a"], ["Tarrow", ["Tpoly", "b"], ["Tpoly", "c"]]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "c"]]]]]],
+["Sig_value", "box_apply3",
+["Tarrow",
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tpoly", "b"], ["Tarrow", ["Tpoly", "c"], ["Tpoly", "d"]]]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "c"]],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "d"]]]]]]],
+["Sig_value", "box_apply4",
+["Tarrow",
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tpoly", "b"],
+["Tarrow", ["Tpoly", "c"], ["Tarrow", ["Tpoly", "d"], ["Tpoly", "e"]]]]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "c"]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "d"]],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "e"]]]]]]]],
+["Sig_value", "box_pair",
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "bindbox"],
+["Ttuple", ["Tpoly", "a"], ["Tpoly", "b"]]]]]],
+["Sig_value", "box_triple",
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "c"]],
+["Tconstr", ["Pident", "bindbox"],
+["Ttuple", ["Tpoly", "a"], ["Tpoly", "b"], ["Tpoly", "c"]]]]]]],
+["Sig_value", "box_opt",
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]]],
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "option"], ["Tpoly", "a"]]]]],
+["Sig_value", "apply_in_box",
+["Tarrow", ["Tarrow", ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]]]]],
+["Sig_value", "bind_apply",
+["Tarrow",
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]]]]],
+["Sig_value", "mbind_apply",
+["Tarrow",
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "mbinder"], ["Tpoly", "a"], ["Tpoly", "b"]]],
+["Tarrow",
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "array"], ["Tpoly", "a"]]],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]]]]],
+["Sig_value", "fixpoint",
+["Tarrow",
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "binder"],
+["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]]]],
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]]]]],
+["Sig_value", "reset_counter",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_unknown"], ["Sig_unknown"],
+["Sig_module", "Lift",
+["Mty_functor", "M", ["Some", ["Mty_unknown"]],
+["Mty_signature",
+["Sig_value", "f",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "M"], "t"],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]]],
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pdot", ["Pident", "M"], "t"], ["Tpoly", "a"]]]]]]]],
+["Sig_module", "Lift2",
+["Mty_functor", "M", ["Some", ["Mty_unknown"]],
+["Mty_signature",
+["Sig_value", "f",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "M"], "t"],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]]],
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pdot", ["Pident", "M"], "t"], ["Tpoly", "a"], ["Tpoly", "b"]]]]]]]],
+["Sig_value", "box_list",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]]],
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "list"], ["Tpoly", "a"]]]]],
+["Sig_value", "box_rev_list",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]]],
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "list"], ["Tpoly", "a"]]]]],
+["Sig_value", "box_array",
+["Tarrow",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]]],
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "array"], ["Tpoly", "a"]]]]],
+["Sig_type", "ctxt", 0, ["Type_abstract"]],
+["Sig_value", "empty_ctxt", ["Tconstr", ["Pident", "ctxt"]]],
+["Sig_value", "new_var_in",
+["Tarrow", ["Tconstr", ["Pident", "ctxt"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Ttuple", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "ctxt"]]]]]]],
+["Sig_value", "new_mvar_in",
+["Tarrow", ["Tconstr", ["Pident", "ctxt"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "a"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]],
+["Ttuple", ["Tconstr", ["Pident", "mvar"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "ctxt"]]]]]]],
+["Sig_value", "unbind_in",
+["Tarrow", ["Tconstr", ["Pident", "ctxt"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Ttuple", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "b"],
+["Tconstr", ["Pident", "ctxt"]]]]]]],
+["Sig_value", "unmbind_in",
+["Tarrow", ["Tconstr", ["Pident", "ctxt"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "a"]],
+["Tarrow",
+["Tconstr", ["Pident", "mbinder"], ["Tpoly", "a"], ["Tpoly", "b"]],
+["Ttuple", ["Tconstr", ["Pident", "mvar"], ["Tpoly", "a"]], ["Tpoly", "b"],
+["Tconstr", ["Pident", "ctxt"]]]]]]],
+["Sig_value", "bind_in",
+["Tarrow", ["Tconstr", ["Pident", "ctxt"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "ctxt"]],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]]]],
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "binder"], ["Tpoly", "a"], ["Tpoly", "b"]]]]]]]],
+["Sig_value", "mbind_in",
+["Tarrow", ["Tconstr", ["Pident", "ctxt"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "var"], ["Tpoly", "a"]], ["Tpoly", "a"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow",
+["Tarrow",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]]],
+["Tarrow", ["Tconstr", ["Pident", "ctxt"]],
+["Tconstr", ["Pident", "bindbox"], ["Tpoly", "b"]]]],
+["Tconstr", ["Pident", "bindbox"],
+["Tconstr", ["Pident", "mbinder"], ["Tpoly", "a"], ["Tpoly", "b"]]]]]]]],
+["Sig_value", "list_vars",
+["Tarrow", ["Tconstr", ["Pident", "bindbox"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]]]]]]

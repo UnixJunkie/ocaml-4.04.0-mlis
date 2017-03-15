@@ -1,488 +1,172 @@
-["module"; "Impargs"; ["Mty_signature"; ["Sig_value"; "make_implicit_args"; 
-                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                               "bool"]]; 
-                                        ["Tconstr"; ["Pident"; "unit"]]]]; 
-                      ["Sig_value"; "make_strict_implicit_args"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bool"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]; 
-                      ["Sig_value"; "make_strongly_strict_implicit_args"; 
-                      ["Tarrow"; ["Tconstr"; ["Pident"; "bool"]]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                      ["Sig_value"; "make_reversible_pattern_implicit_args"; 
-                      ["Tarrow"; ["Tconstr"; ["Pident"; "bool"]]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                      ["Sig_value"; "make_contextual_implicit_args"; 
-                      ["Tarrow"; ["Tconstr"; ["Pident"; "bool"]]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                      ["Sig_value"; "make_maximal_implicit_args"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                      ["Sig_value"; "is_implicit_args"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "bool"]]]]; 
-                      ["Sig_value"; "is_strict_implicit_args"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "bool"]]]]; 
-                      ["Sig_value"; "is_strongly_strict_implicit_args"; 
-                      ["Tarrow"; ["Tconstr"; ["Pident"; "unit"]]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]]]; 
-                      ["Sig_value"; "is_reversible_pattern_implicit_args"; 
-                      ["Tarrow"; ["Tconstr"; ["Pident"; "unit"]]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]]]; 
-                      ["Sig_value"; "is_contextual_implicit_args"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bool"]]]]; 
-                      ["Sig_value"; "is_maximal_implicit_args"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]]]; 
-                      ["Sig_value"; "with_implicit_protection"; ["Tarrow"; 
-                                                                ["Tarrow"; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tpoly"; 
-                                                                "a"]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]]]; 
-                      ["Sig_type"; "argument_position"; 0; ["Type_variant"; 
-                                                           ["constructor"; 
-                                                           "Conclusion"; 
-                                                           ["tuple"]]; 
-                                                           ["constructor"; 
-                                                           "Hyp"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]]]]; 
-                      ["Sig_type"; "implicit_explanation"; 0; ["Type_variant"; 
-                                                              ["constructor"; 
-                                                              "DepRigid"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "argument_position"]]]]; 
-                                                              ["constructor"; 
-                                                              "DepFlex"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "argument_position"]]]]; 
-                                                              ["constructor"; 
-                                                              "DepFlexAndRigid"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "argument_position"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "argument_position"]]]]; 
-                                                              ["constructor"; 
-                                                              "Manual"; 
-                                                              ["tuple"]]]]; 
-                      ["Sig_type"; "maximal_insertion"; 0; ["Type_alias"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "bool"]]]]; 
-                      ["Sig_type"; "force_inference"; 0; ["Type_alias"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "bool"]]]]; 
-                      ["Sig_type"; "implicit_status"; 0; ["Type_alias"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "option"]; 
-                                                         ["Ttuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Id"]; 
-                                                                    "t"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "implicit_explanation"]]; 
-                                                         ["Ttuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "maximal_insertion"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "force_inference"]]]]]]]; 
-                      ["Sig_type"; "implicit_side_condition"; 0; ["Type_abstract"]]; 
-                      ["Sig_type"; "implicits_list"; 0; ["Type_alias"; 
-                                                        ["Ttuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "implicit_side_condition"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "implicit_status"]]]]]]; 
-                      ["Sig_value"; "is_status_implicit"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "implicit_status"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "bool"]]]]; 
-                      ["Sig_value"; "is_inferable_implicit"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bool"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "implicit_status"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bool"]]]]]]; 
-                      ["Sig_value"; "name_of_implicit"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "implicit_status"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Id"]; 
-                                                                    "t"]]]]; 
-                      ["Sig_value"; "maximal_insertion_of"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "implicit_status"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]; 
-                      ["Sig_value"; "force_inference_of"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "implicit_status"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "bool"]]]]; 
-                      ["Sig_value"; "positions_of_implicits"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "implicits_list"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "list"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]]]; 
-                      ["Sig_type"; "manual_explicitation"; 0; ["Type_alias"; 
-                                                              ["Ttuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Constrexpr"]; 
-                                                              "explicitation"]]; 
-                                                              ["Ttuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "maximal_insertion"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "force_inference"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "bool"]]]]]]; 
-                      ["Sig_type"; "manual_implicits"; 0; ["Type_alias"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "manual_explicitation"]]]]]; 
-                      ["Sig_value"; "compute_implicits_with_manual"; 
-                      ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; "Environ"]; 
-                                             "env"]]; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Term"]; 
-                                                                 "types"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bool"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "manual_implicits"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "implicit_status"]]]]]]]]; 
-                      ["Sig_value"; "compute_implicits_names"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Environ"]; 
-                                                               "env"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Term"]; 
-                                                               "types"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Names"]; 
-                                                               "Name"]; 
-                                                               "t"]]]]]]; 
-                      ["Sig_value"; "declare_var_implicits"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Names"]; 
-                                                             "variable"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]]]; 
-                      ["Sig_value"; "declare_constant_implicits"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "constant"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                      ["Sig_value"; "declare_mib_implicits"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Names"]; 
-                                                             "mutual_inductive"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]]]; 
-                      ["Sig_value"; "declare_implicits"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "bool"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Globnames"]; 
-                                                                    "global_reference"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "unit"]]]]]; 
-                      ["Sig_value"; "declare_manual_implicits"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Globnames"]; 
-                                                                "global_reference"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "manual_implicits"]]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]]]]; 
-                      ["Sig_value"; "maybe_declare_manual_implicits"; 
-                      ["Tarrow"; ["Tconstr"; ["Pident"; "bool"]]; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Globnames"]; 
-                                                                  "global_reference"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "option"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "manual_implicits"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]]]]; 
-                      ["Sig_value"; "implicits_of_global"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Globnames"]; 
-                                                           "global_reference"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "implicits_list"]]]]]; 
-                      ["Sig_value"; "extract_impargs_data"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "implicits_list"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Ttuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Ttuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "implicit_status"]]]]]]]; 
-                      ["Sig_value"; "lift_implicits"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "manual_implicits"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "manual_implicits"]]]]]; 
-                      ["Sig_value"; "make_implicits_list"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "implicit_status"]]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "implicits_list"]]]]]; 
-                      ["Sig_value"; "drop_first_implicits"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "implicits_list"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "implicits_list"]]]]]; 
-                      ["Sig_value"; "projection_implicits"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Environ"]; 
-                                                            "env"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Names"]; 
-                                                            "projection"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "implicit_status"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "implicit_status"]]]]]]]; 
-                      ["Sig_value"; "select_impargs_size"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "implicits_list"]]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "implicit_status"]]]]]]; 
-                      ["Sig_value"; "select_stronger_impargs"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "implicits_list"]]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "implicit_status"]]]]]; 
-                      ["Sig_value"; "explicitation_eq"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Constrexpr"]; 
-                                                                   "explicitation"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Constrexpr"]; 
-                                                                   "explicitation"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "bool"]]]]]]]
+["module", "Impargs",
+["Mty_signature",
+["Sig_value", "make_implicit_args",
+["Tarrow", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "make_strict_implicit_args",
+["Tarrow", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "make_strongly_strict_implicit_args",
+["Tarrow", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "make_reversible_pattern_implicit_args",
+["Tarrow", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "make_contextual_implicit_args",
+["Tarrow", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "make_maximal_implicit_args",
+["Tarrow", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "is_implicit_args",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_strict_implicit_args",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_strongly_strict_implicit_args",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_reversible_pattern_implicit_args",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_contextual_implicit_args",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_maximal_implicit_args",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "with_implicit_protection",
+["Tarrow", ["Tarrow", ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tpoly", "a"], ["Tpoly", "b"]]]],
+["Sig_type", "argument_position", 0,
+["Type_variant", ["constructor", "Conclusion", ["tuple"]],
+["constructor", "Hyp", ["tuple", ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_type", "implicit_explanation", 0,
+["Type_variant",
+["constructor", "DepRigid",
+["tuple", ["Tconstr", ["Pident", "argument_position"]]]],
+["constructor", "DepFlex",
+["tuple", ["Tconstr", ["Pident", "argument_position"]]]],
+["constructor", "DepFlexAndRigid",
+["tuple", ["Tconstr", ["Pident", "argument_position"]],
+["Tconstr", ["Pident", "argument_position"]]]],
+["constructor", "Manual", ["tuple"]]]],
+["Sig_type", "maximal_insertion", 0,
+["Type_alias", ["Tconstr", ["Pident", "bool"]]]],
+["Sig_type", "force_inference", 0,
+["Type_alias", ["Tconstr", ["Pident", "bool"]]]],
+["Sig_type", "implicit_status", 0,
+["Type_alias",
+["Tconstr", ["Pident", "option"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tconstr", ["Pident", "implicit_explanation"]],
+["Ttuple", ["Tconstr", ["Pident", "maximal_insertion"]],
+["Tconstr", ["Pident", "force_inference"]]]]]]],
+["Sig_type", "implicit_side_condition", 0, ["Type_abstract"]],
+["Sig_type", "implicits_list", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "implicit_side_condition"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "implicit_status"]]]]]],
+["Sig_value", "is_status_implicit",
+["Tarrow", ["Tconstr", ["Pident", "implicit_status"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_inferable_implicit",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "implicit_status"]],
+["Tconstr", ["Pident", "bool"]]]]]],
+["Sig_value", "name_of_implicit",
+["Tarrow", ["Tconstr", ["Pident", "implicit_status"]],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]],
+["Sig_value", "maximal_insertion_of",
+["Tarrow", ["Tconstr", ["Pident", "implicit_status"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "force_inference_of",
+["Tarrow", ["Tconstr", ["Pident", "implicit_status"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "positions_of_implicits",
+["Tarrow", ["Tconstr", ["Pident", "implicits_list"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "manual_explicitation", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "explicitation"]],
+["Ttuple", ["Tconstr", ["Pident", "maximal_insertion"]],
+["Tconstr", ["Pident", "force_inference"]], ["Tconstr", ["Pident", "bool"]]]]]],
+["Sig_type", "manual_implicits", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "manual_explicitation"]]]]],
+["Sig_value", "compute_implicits_with_manual",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "types"]],
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow", ["Tconstr", ["Pident", "manual_implicits"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "implicit_status"]]]]]]]],
+["Sig_value", "compute_implicits_names",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "types"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Name"], "t"]]]]]],
+["Sig_value", "declare_var_implicits",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Names"], "variable"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "declare_constant_implicits",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Names"], "constant"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "declare_mib_implicits",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Names"], "mutual_inductive"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "declare_implicits",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "declare_manual_implicits",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "manual_implicits"]]],
+["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "maybe_declare_manual_implicits",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "manual_implicits"]],
+["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "implicits_of_global",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "implicits_list"]]]]],
+["Sig_value", "extract_impargs_data",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "implicits_list"]]],
+["Tconstr", ["Pident", "list"],
+["Ttuple",
+["Tconstr", ["Pident", "option"],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "implicit_status"]]]]]]],
+["Sig_value", "lift_implicits",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "manual_implicits"]],
+["Tconstr", ["Pident", "manual_implicits"]]]]],
+["Sig_value", "make_implicits_list",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "implicit_status"]]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "implicits_list"]]]]],
+["Sig_value", "drop_first_implicits",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "implicits_list"]],
+["Tconstr", ["Pident", "implicits_list"]]]]],
+["Sig_value", "projection_implicits",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Names"], "projection"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "implicit_status"]]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "implicit_status"]]]]]]],
+["Sig_value", "select_impargs_size",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "implicits_list"]]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "implicit_status"]]]]]],
+["Sig_value", "select_stronger_impargs",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "implicits_list"]]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "implicit_status"]]]]],
+["Sig_value", "explicitation_eq",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "explicitation"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "explicitation"]],
+["Tconstr", ["Pident", "bool"]]]]]]]

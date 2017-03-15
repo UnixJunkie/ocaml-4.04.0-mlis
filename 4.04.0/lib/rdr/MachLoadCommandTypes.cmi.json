@@ -1,2051 +1,474 @@
-["module"; "MachLoadCommandTypes"; ["Mty_signature"; ["Sig_type"; "load_command"; 
-                                                     0; ["Type_record"; 
-                                                        ["label"; "cmd"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                        ["label"; "cmdsize"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_load_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "lc_str"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "offset"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "str"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]]]; 
-                                   ["Sig_value"; "sizeof_lc_str"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]; 
-                                   ["Sig_type"; "section"; 0; ["Type_record"; 
-                                                              ["label"; 
-                                                              "sectname"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]; 
-                                                              ["label"; 
-                                                              "segname"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]; 
-                                                              ["label"; 
-                                                              "addr"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                                                              ["label"; 
-                                                              "size"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                                                              ["label"; 
-                                                              "offset"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                                                              ["label"; 
-                                                              "align"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                                                              ["label"; 
-                                                              "reloff"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                                                              ["label"; 
-                                                              "nreloc"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                                                              ["label"; 
-                                                              "flags"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                                                              ["label"; 
-                                                              "reserved1"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]; 
-                                                              ["label"; 
-                                                              "reserved2"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_section"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                   ["Sig_type"; "section_64"; 0; ["Type_record"; 
-                                                                 ["label"; 
-                                                                 "sectname"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]; 
-                                                                 ["label"; 
-                                                                 "segname"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]; 
-                                                                 ["label"; 
-                                                                 "addr"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                                                 ["label"; 
-                                                                 "size"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                                                 ["label"; 
-                                                                 "offset"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                                                 ["label"; 
-                                                                 "align"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                                                 ["label"; 
-                                                                 "reloff"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                                                 ["label"; 
-                                                                 "nreloc"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                                                 ["label"; 
-                                                                 "flags"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                                                 ["label"; 
-                                                                 "reserved1"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                                                 ["label"; 
-                                                                 "reserved2"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                                                 ["label"; 
-                                                                 "reserved3"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_section_64"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "segment_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "segname"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "vmaddr"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "vmsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "fileoff"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "filesize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "maxprot"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "initprot"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "nsects"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "flags"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "sections"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "section"]]]]]]; 
-                                   ["Sig_type"; "segment_command_64"; 
-                                   0; ["Type_record"; ["label"; "cmd"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]; 
-                                      ["label"; "cmdsize"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                                      ["label"; "segname"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]; 
-                                      ["label"; "vmaddr"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                      ["label"; "vmsize"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                      ["label"; "fileoff"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                                      ["label"; "filesize"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                                      ["label"; "maxprot"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                                      ["label"; "initprot"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                                      ["label"; "nsects"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                      ["label"; "flags"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]]; 
-                                      ["label"; "sections"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "section_64"]]]]]]; 
-                                   ["Sig_value"; "sizeof_segment_command_64"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "fvmlib"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "name"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lc_str"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "minor_version"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "header_addr"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_fvmlib"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]; 
-                                   ["Sig_type"; "fvmlib_command"; 0; 
-                                   ["Type_record"; ["label"; "cmd"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                   ["label"; "cmdsize"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                   ["label"; "fvmlib"; ["Tconstr"; ["Pident"; 
-                                                                   "fvmlib"]]]]]; 
-                                   ["Sig_value"; "sizeof_fvmlib_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "dylib"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "name"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lc_str"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "timestamp"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "current_version"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "compatibility_version"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_dylib"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                   ["Sig_type"; "dylib_command"; 0; [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "dylib"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "dylib"]]]]]; 
-                                   ["Sig_value"; "sizeof_dylib_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "sub_framework_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "umbrella"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lc_str"]]]]]; 
-                                   ["Sig_value"; "sizeof_sub_framework_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "sub_client_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "client"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lc_str"]]]]]; 
-                                   ["Sig_value"; "sizeof_sub_client_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "sub_umbrella_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "sub_umbrella"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lc_str"]]]]]; 
-                                   ["Sig_value"; "sizeof_sub_umbrella_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "sub_library_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "sub_library"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lc_str"]]]]]; 
-                                   ["Sig_value"; "sizeof_sub_library_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "prebound_dylib_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "name"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lc_str"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "nmodules"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "linked_modules"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lc_str"]]]]]; 
-                                   ["Sig_value"; "sizeof_prebound_dylib_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "dylinker_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "name"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lc_str"]]]]]; 
-                                   ["Sig_value"; "sizeof_dylinker_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "thread_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_type"; "routines_command"; 0; 
-                                   ["Type_record"; ["label"; "cmd"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                   ["label"; "cmdsize"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                   ["label"; "init_address"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]; 
-                                   ["label"; "init_module"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                                   ["label"; "reserved1"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                   ["label"; "reserved2"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                   ["label"; "reserved3"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                   ["label"; "reserved4"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                   ["label"; "reserved5"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                   ["label"; "reserved6"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]]]; 
-                                   ["Sig_type"; "routines_command_64"; 
-                                   0; ["Type_record"; ["label"; "cmd"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]; 
-                                      ["label"; "cmdsize"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                                      ["label"; "init_address"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]; 
-                                      ["label"; "init_module"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]]; 
-                                      ["label"; "reserved1"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]; 
-                                      ["label"; "reserved2"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]; 
-                                      ["label"; "reserved3"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]; 
-                                      ["label"; "reserved4"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]; 
-                                      ["label"; "reserved5"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]; 
-                                      ["label"; "reserved6"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]]]; 
-                                   ["Sig_type"; "symtab_command"; 0; 
-                                   ["Type_record"; ["label"; "cmd"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                   ["label"; "cmdsize"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                   ["label"; "symoff"; ["Tconstr"; ["Pident"; 
-                                                                   "int"]]]; 
-                                   ["label"; "nsyms"; ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]; 
-                                   ["label"; "stroff"; ["Tconstr"; ["Pident"; 
-                                                                   "int"]]]; 
-                                   ["label"; "strsize"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_symtab_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "dysymtab_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "ilocalsym"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "nlocalsym"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "iextdefsym"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "nextdefsym"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "iundefsym"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "nundefsym"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "tocoff"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "ntoc"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "modtaboff"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "nmodtab"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "extrefsymoff"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "nextrefsyms"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "indirectsymoff"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "nindirectsyms"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "extreloff"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "nextrel"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "locreloff"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "nlocrel"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_dysymtab_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "dylib_table_of_contents"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "symbol_index"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "module_index"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_type"; "dylib_module"; 0; ["Type_record"; 
-                                                                   ["label"; 
-                                                                   "module_name"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "iextdefsym"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "nextdefsym"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "irefsym"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "nrefsym"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "ilocalsym"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "nlocalsym"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "iextrel"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "nextrel"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "iinit_iterm"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "ninit_nterm"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "objc_module_info_addr"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "objc_module_info_size"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]]; 
-                                   ["Sig_type"; "dylib_module_64"; 0; 
-                                   ["Type_record"; ["label"; "module_name"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int"]]]; 
-                                   ["label"; "iextdefsym"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                                   ["label"; "nextdefsym"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                                   ["label"; "irefsym"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                   ["label"; "nrefsym"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                   ["label"; "ilocalsym"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                   ["label"; "nlocalsym"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                   ["label"; "iextrel"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                   ["label"; "nextrel"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                   ["label"; "iinit_iterm"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                                   ["label"; "ninit_nterm"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                                   ["label"; "objc_module_info_size"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "label"; 
-                                                                    "objc_module_info_addr"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_type"; "dylib_reference"; 0; 
-                                   ["Type_record"; ["label"; "isym"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int"]]]; 
-                                   ["label"; "flags"; ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]]]; 
-                                   ["Sig_type"; "twolevel_hints_command"; 
-                                   0; ["Type_record"; ["label"; "cmd"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]; 
-                                      ["label"; "cmdsize"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                                      ["label"; "offset"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                      ["label"; "nhints"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]]]; 
-                                   ["Sig_type"; "twolevel_hint"; 0; [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "isub_image"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "itoc"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_type"; "prebind_cksum_command"; 
-                                   0; ["Type_record"; ["label"; "cmd"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]; 
-                                      ["label"; "cmdsize"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                                      ["label"; "cksum"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]]]]; 
-                                   ["Sig_type"; "uuid_command"; 0; ["Type_record"; 
-                                                                   ["label"; 
-                                                                   "cmd"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "cmdsize"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "uuid"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bytes"]]]]]; 
-                                   ["Sig_value"; "sizeof_uuid_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "rpath_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "path"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lc_str"]]]]]; 
-                                   ["Sig_value"; "sizeof_rpath_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "linkedit_data_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "dataoff"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "datasize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_linkedit_data_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "encryption_info_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cryptoff"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cryptsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cryptid"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_encryption_info_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "encryption_info_command_64"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cryptoff"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cryptsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cryptid"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "pad"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_encryption_info_command_64"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "version_min_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "version"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "sdk"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_version_min_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "dyld_info_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "rebase_off"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "rebase_size"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "bind_off"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "bind_size"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "weak_bind_off"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "weak_bind_size"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "lazy_bind_off"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "lazy_bind_size"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "export_off"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "export_size"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_dylib_info_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "linker_option_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "count"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_linker_option_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "symseg_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "offset"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "size"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_symseg_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "ident_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_ident_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "fvmfile_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "name"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "lc_str"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "header_addr"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_fvmfile_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "entry_point_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "entryoff"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "stacksize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_value"; "sizeof_entry_point_command"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_type"; 
-                                                                    "source_version_command"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_record"; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmd"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "cmdsize"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "label"; 
-                                                                    "version"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_type"; "data_in_code_entry"; 
-                                   0; ["Type_record"; ["label"; "offset"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]; 
-                                      ["label"; "length"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                      ["label"; "kind"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                                   ["Sig_value"; "kLC_REQ_DYLD"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                   ["Sig_value"; "kLC_LOAD_WEAK_DYLIB"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_value"; 
-                                                                    "kLC_RPATH"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                   ["Sig_value"; "kLC_REEXPORT_DYLIB"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_value"; 
-                                                                    "kLC_DYLD_INFO_ONLY"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                   ["Sig_value"; "kLC_LOAD_UPWARD_DYLIB"; 
-                                   ["Tconstr"; ["Pident"; "int"]]]; [
-                                                                    "Sig_value"; 
-                                                                    "kLC_MAIN"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                   ["Sig_unknown"]; ["Sig_type"; "cmd"; 
-                                                    0; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "LC_SEGMENT"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_SYMTAB"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_SYMSEG"; ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_THREAD"; ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_UNIXTHREAD"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_LOADFVMLIB"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_IDFVMLIB"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_IDENT"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_FVMFILE"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_PREPAGE"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_DYSYMTAB"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_LOAD_DYLIB"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_ID_DYLIB"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_LOAD_DYLINKER"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_ID_DYLINKER"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_PREBOUND_DYLIB"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_ROUTINES"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_SUB_FRAMEWORK"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_SUB_UMBRELLA"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_SUB_CLIENT"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_SUB_LIBRARY"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_TWOLEVEL_HINTS"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_PREBIND_CKSUM"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_LOAD_WEAK_DYLIB"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_SEGMENT_64"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_ROUTINES_64"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_UUID"; ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_RPATH"; ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_CODE_SIGNATURE"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_SEGMENT_SPLIT_INFO"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_REEXPORT_DYLIB"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_LAZY_LOAD_DYLIB"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_ENCRYPTION_INFO"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_DYLD_INFO"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_DYLD_INFO_ONLY"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_LOAD_UPWARD_DYLIB"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_VERSION_MIN_MACOSX"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_VERSION_MIN_IPHONEOS"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_FUNCTION_STARTS"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_DYLD_ENVIRONMENT"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_MAIN"; ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_DATA_IN_CODE"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_SOURCE_VERSION"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_DYLIB_CODE_SIGN_DRS"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_ENCRYPTION_INFO_64"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "LC_LINKER_OPTION"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "LC_LINKER_OPTIMIZATION_HINT"; 
-                                                                   ["tuple"]]]]; 
-                                   ["Sig_value"; "cmd_int_to_string"; 
-                                   ["Tarrow"; ["Tconstr"; ["Pident"; "int"]]; 
-                                   ["Tconstr"; ["Pident"; "string"]]]]; 
-                                   ["Sig_value"; "to_cmd"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "cmd"]]]]; 
-                                   ["Sig_value"; "cmd_to_int"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "cmd"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]]]; 
-                                   ["Sig_value"; "cmd_to_string"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "cmd"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]; 
-                                   ["Sig_type"; "lc_t"; 0; ["Type_variant"; 
-                                                           ["constructor"; 
-                                                           "LC_SEGMENT"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "segment_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_SYMTAB"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "symtab_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_SYMSEG"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "symseg_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_THREAD"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "thread_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_UNIXTHREAD"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "thread_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_LOADFVMLIB"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "fvmlib_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_IDFVMLIB"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "fvmlib_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_IDENT"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "ident_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_FVMFILE"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "fvmfile_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_PREPAGE"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "load_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_DYSYMTAB"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "dysymtab_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_LOAD_DYLIB"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "dylib_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_ID_DYLIB"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "dylib_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_LOAD_DYLINKER"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "dylinker_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_ID_DYLINKER"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "dylinker_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_PREBOUND_DYLIB"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "prebound_dylib_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_ROUTINES"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "routines_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_SUB_FRAMEWORK"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "sub_framework_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_SUB_UMBRELLA"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "sub_umbrella_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_SUB_CLIENT"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "sub_client_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_SUB_LIBRARY"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "sub_library_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_TWOLEVEL_HINTS"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "twolevel_hints_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_PREBIND_CKSUM"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "prebind_cksum_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_LOAD_WEAK_DYLIB"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "dylib_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_SEGMENT_64"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "segment_command_64"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_ROUTINES_64"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "routines_command_64"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_UUID"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "uuid_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_RPATH"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "rpath_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_CODE_SIGNATURE"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "linkedit_data_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_SEGMENT_SPLIT_INFO"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "linkedit_data_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_REEXPORT_DYLIB"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "dylib_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_LAZY_LOAD_DYLIB"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "dylib_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_ENCRYPTION_INFO"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "encryption_info_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_DYLD_INFO"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "dyld_info_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_DYLD_INFO_ONLY"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "dyld_info_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_LOAD_UPWARD_DYLIB"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "dylib_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_VERSION_MIN_MACOSX"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "version_min_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_VERSION_MIN_IPHONEOS"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "version_min_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_FUNCTION_STARTS"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "linkedit_data_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_DYLD_ENVIRONMENT"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "dylinker_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_MAIN"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "entry_point_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_DATA_IN_CODE"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "linkedit_data_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_SOURCE_VERSION"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "source_version_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_DYLIB_CODE_SIGN_DRS"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "linkedit_data_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_ENCRYPTION_INFO_64"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "encryption_info_command_64"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_LINKER_OPTION"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "linkedit_data_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_LINKER_OPTIMIZATION_HINT"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "linkedit_data_command"]]]]; 
-                                                           ["constructor"; 
-                                                           "LC_UNIMPLEMENTED"; 
-                                                           ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "load_command"]]]]]]; 
-                                   ["Sig_type"; "lc"; 0; ["Type_record"; 
-                                                         ["label"; "cmd"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "cmd"]]]; 
-                                                         ["label"; "cmdsize"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "int"]]]; 
-                                                         ["label"; "t"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "lc_t"]]]]]]]
+["module", "MachLoadCommandTypes",
+["Mty_signature",
+["Sig_type", "load_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_load_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "lc_str", 0,
+["Type_record", ["label", "offset", ["Tconstr", ["Pident", "int"]]],
+["label", "str", ["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "sizeof_lc_str", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "section", 0,
+["Type_record", ["label", "sectname", ["Tconstr", ["Pident", "string"]]],
+["label", "segname", ["Tconstr", ["Pident", "string"]]],
+["label", "addr", ["Tconstr", ["Pident", "int"]]],
+["label", "size", ["Tconstr", ["Pident", "int"]]],
+["label", "offset", ["Tconstr", ["Pident", "int"]]],
+["label", "align", ["Tconstr", ["Pident", "int"]]],
+["label", "reloff", ["Tconstr", ["Pident", "int"]]],
+["label", "nreloc", ["Tconstr", ["Pident", "int"]]],
+["label", "flags", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved1", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved2", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_section", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "section_64", 0,
+["Type_record", ["label", "sectname", ["Tconstr", ["Pident", "string"]]],
+["label", "segname", ["Tconstr", ["Pident", "string"]]],
+["label", "addr", ["Tconstr", ["Pident", "int"]]],
+["label", "size", ["Tconstr", ["Pident", "int"]]],
+["label", "offset", ["Tconstr", ["Pident", "int"]]],
+["label", "align", ["Tconstr", ["Pident", "int"]]],
+["label", "reloff", ["Tconstr", ["Pident", "int"]]],
+["label", "nreloc", ["Tconstr", ["Pident", "int"]]],
+["label", "flags", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved1", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved2", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved3", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_section_64", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "segment_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "segname", ["Tconstr", ["Pident", "string"]]],
+["label", "vmaddr", ["Tconstr", ["Pident", "int"]]],
+["label", "vmsize", ["Tconstr", ["Pident", "int"]]],
+["label", "fileoff", ["Tconstr", ["Pident", "int"]]],
+["label", "filesize", ["Tconstr", ["Pident", "int"]]],
+["label", "maxprot", ["Tconstr", ["Pident", "int"]]],
+["label", "initprot", ["Tconstr", ["Pident", "int"]]],
+["label", "nsects", ["Tconstr", ["Pident", "int"]]],
+["label", "flags", ["Tconstr", ["Pident", "int"]]],
+["label", "sections",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "section"]]]]]],
+["Sig_type", "segment_command_64", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "segname", ["Tconstr", ["Pident", "string"]]],
+["label", "vmaddr", ["Tconstr", ["Pident", "int"]]],
+["label", "vmsize", ["Tconstr", ["Pident", "int"]]],
+["label", "fileoff", ["Tconstr", ["Pident", "int"]]],
+["label", "filesize", ["Tconstr", ["Pident", "int"]]],
+["label", "maxprot", ["Tconstr", ["Pident", "int"]]],
+["label", "initprot", ["Tconstr", ["Pident", "int"]]],
+["label", "nsects", ["Tconstr", ["Pident", "int"]]],
+["label", "flags", ["Tconstr", ["Pident", "int"]]],
+["label", "sections",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "section_64"]]]]]],
+["Sig_value", "sizeof_segment_command_64", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "fvmlib", 0,
+["Type_record", ["label", "name", ["Tconstr", ["Pident", "lc_str"]]],
+["label", "minor_version", ["Tconstr", ["Pident", "int"]]],
+["label", "header_addr", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_fvmlib", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "fvmlib_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "fvmlib", ["Tconstr", ["Pident", "fvmlib"]]]]],
+["Sig_value", "sizeof_fvmlib_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "dylib", 0,
+["Type_record", ["label", "name", ["Tconstr", ["Pident", "lc_str"]]],
+["label", "timestamp", ["Tconstr", ["Pident", "int"]]],
+["label", "current_version", ["Tconstr", ["Pident", "int"]]],
+["label", "compatibility_version", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_dylib", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "dylib_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "dylib", ["Tconstr", ["Pident", "dylib"]]]]],
+["Sig_value", "sizeof_dylib_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "sub_framework_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "umbrella", ["Tconstr", ["Pident", "lc_str"]]]]],
+["Sig_value", "sizeof_sub_framework_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "sub_client_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "client", ["Tconstr", ["Pident", "lc_str"]]]]],
+["Sig_value", "sizeof_sub_client_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "sub_umbrella_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "sub_umbrella", ["Tconstr", ["Pident", "lc_str"]]]]],
+["Sig_value", "sizeof_sub_umbrella_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "sub_library_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "sub_library", ["Tconstr", ["Pident", "lc_str"]]]]],
+["Sig_value", "sizeof_sub_library_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "prebound_dylib_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "name", ["Tconstr", ["Pident", "lc_str"]]],
+["label", "nmodules", ["Tconstr", ["Pident", "int"]]],
+["label", "linked_modules", ["Tconstr", ["Pident", "lc_str"]]]]],
+["Sig_value", "sizeof_prebound_dylib_command",
+["Tconstr", ["Pident", "int"]]],
+["Sig_type", "dylinker_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "name", ["Tconstr", ["Pident", "lc_str"]]]]],
+["Sig_value", "sizeof_dylinker_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "thread_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "routines_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "init_address", ["Tconstr", ["Pident", "int"]]],
+["label", "init_module", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved1", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved2", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved3", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved4", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved5", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved6", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "routines_command_64", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "init_address", ["Tconstr", ["Pident", "int"]]],
+["label", "init_module", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved1", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved2", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved3", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved4", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved5", ["Tconstr", ["Pident", "int"]]],
+["label", "reserved6", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "symtab_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "symoff", ["Tconstr", ["Pident", "int"]]],
+["label", "nsyms", ["Tconstr", ["Pident", "int"]]],
+["label", "stroff", ["Tconstr", ["Pident", "int"]]],
+["label", "strsize", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_symtab_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "dysymtab_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "ilocalsym", ["Tconstr", ["Pident", "int"]]],
+["label", "nlocalsym", ["Tconstr", ["Pident", "int"]]],
+["label", "iextdefsym", ["Tconstr", ["Pident", "int"]]],
+["label", "nextdefsym", ["Tconstr", ["Pident", "int"]]],
+["label", "iundefsym", ["Tconstr", ["Pident", "int"]]],
+["label", "nundefsym", ["Tconstr", ["Pident", "int"]]],
+["label", "tocoff", ["Tconstr", ["Pident", "int"]]],
+["label", "ntoc", ["Tconstr", ["Pident", "int"]]],
+["label", "modtaboff", ["Tconstr", ["Pident", "int"]]],
+["label", "nmodtab", ["Tconstr", ["Pident", "int"]]],
+["label", "extrefsymoff", ["Tconstr", ["Pident", "int"]]],
+["label", "nextrefsyms", ["Tconstr", ["Pident", "int"]]],
+["label", "indirectsymoff", ["Tconstr", ["Pident", "int"]]],
+["label", "nindirectsyms", ["Tconstr", ["Pident", "int"]]],
+["label", "extreloff", ["Tconstr", ["Pident", "int"]]],
+["label", "nextrel", ["Tconstr", ["Pident", "int"]]],
+["label", "locreloff", ["Tconstr", ["Pident", "int"]]],
+["label", "nlocrel", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_dysymtab_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "dylib_table_of_contents", 0,
+["Type_record", ["label", "symbol_index", ["Tconstr", ["Pident", "int"]]],
+["label", "module_index", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "dylib_module", 0,
+["Type_record", ["label", "module_name", ["Tconstr", ["Pident", "int"]]],
+["label", "iextdefsym", ["Tconstr", ["Pident", "int"]]],
+["label", "nextdefsym", ["Tconstr", ["Pident", "int"]]],
+["label", "irefsym", ["Tconstr", ["Pident", "int"]]],
+["label", "nrefsym", ["Tconstr", ["Pident", "int"]]],
+["label", "ilocalsym", ["Tconstr", ["Pident", "int"]]],
+["label", "nlocalsym", ["Tconstr", ["Pident", "int"]]],
+["label", "iextrel", ["Tconstr", ["Pident", "int"]]],
+["label", "nextrel", ["Tconstr", ["Pident", "int"]]],
+["label", "iinit_iterm", ["Tconstr", ["Pident", "int"]]],
+["label", "ninit_nterm", ["Tconstr", ["Pident", "int"]]],
+["label", "objc_module_info_addr", ["Tconstr", ["Pident", "int"]]],
+["label", "objc_module_info_size", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "dylib_module_64", 0,
+["Type_record", ["label", "module_name", ["Tconstr", ["Pident", "int"]]],
+["label", "iextdefsym", ["Tconstr", ["Pident", "int"]]],
+["label", "nextdefsym", ["Tconstr", ["Pident", "int"]]],
+["label", "irefsym", ["Tconstr", ["Pident", "int"]]],
+["label", "nrefsym", ["Tconstr", ["Pident", "int"]]],
+["label", "ilocalsym", ["Tconstr", ["Pident", "int"]]],
+["label", "nlocalsym", ["Tconstr", ["Pident", "int"]]],
+["label", "iextrel", ["Tconstr", ["Pident", "int"]]],
+["label", "nextrel", ["Tconstr", ["Pident", "int"]]],
+["label", "iinit_iterm", ["Tconstr", ["Pident", "int"]]],
+["label", "ninit_nterm", ["Tconstr", ["Pident", "int"]]],
+["label", "objc_module_info_size", ["Tconstr", ["Pident", "int"]]],
+["label", "objc_module_info_addr", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "dylib_reference", 0,
+["Type_record", ["label", "isym", ["Tconstr", ["Pident", "int"]]],
+["label", "flags", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "twolevel_hints_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "offset", ["Tconstr", ["Pident", "int"]]],
+["label", "nhints", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "twolevel_hint", 0,
+["Type_record", ["label", "isub_image", ["Tconstr", ["Pident", "int"]]],
+["label", "itoc", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "prebind_cksum_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "cksum", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "uuid_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "uuid", ["Tconstr", ["Pident", "bytes"]]]]],
+["Sig_value", "sizeof_uuid_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "rpath_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "path", ["Tconstr", ["Pident", "lc_str"]]]]],
+["Sig_value", "sizeof_rpath_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "linkedit_data_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "dataoff", ["Tconstr", ["Pident", "int"]]],
+["label", "datasize", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_linkedit_data_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "encryption_info_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "cryptoff", ["Tconstr", ["Pident", "int"]]],
+["label", "cryptsize", ["Tconstr", ["Pident", "int"]]],
+["label", "cryptid", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_encryption_info_command",
+["Tconstr", ["Pident", "int"]]],
+["Sig_type", "encryption_info_command_64", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "cryptoff", ["Tconstr", ["Pident", "int"]]],
+["label", "cryptsize", ["Tconstr", ["Pident", "int"]]],
+["label", "cryptid", ["Tconstr", ["Pident", "int"]]],
+["label", "pad", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_encryption_info_command_64",
+["Tconstr", ["Pident", "int"]]],
+["Sig_type", "version_min_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "version", ["Tconstr", ["Pident", "int"]]],
+["label", "sdk", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_version_min_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "dyld_info_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "rebase_off", ["Tconstr", ["Pident", "int"]]],
+["label", "rebase_size", ["Tconstr", ["Pident", "int"]]],
+["label", "bind_off", ["Tconstr", ["Pident", "int"]]],
+["label", "bind_size", ["Tconstr", ["Pident", "int"]]],
+["label", "weak_bind_off", ["Tconstr", ["Pident", "int"]]],
+["label", "weak_bind_size", ["Tconstr", ["Pident", "int"]]],
+["label", "lazy_bind_off", ["Tconstr", ["Pident", "int"]]],
+["label", "lazy_bind_size", ["Tconstr", ["Pident", "int"]]],
+["label", "export_off", ["Tconstr", ["Pident", "int"]]],
+["label", "export_size", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_dylib_info_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "linker_option_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "count", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_linker_option_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "symseg_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "offset", ["Tconstr", ["Pident", "int"]]],
+["label", "size", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_symseg_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "ident_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_ident_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "fvmfile_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "name", ["Tconstr", ["Pident", "lc_str"]]],
+["label", "header_addr", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_fvmfile_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "entry_point_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "entryoff", ["Tconstr", ["Pident", "int"]]],
+["label", "stacksize", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_entry_point_command", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "source_version_command", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "int"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "version", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "data_in_code_entry", 0,
+["Type_record", ["label", "offset", ["Tconstr", ["Pident", "int"]]],
+["label", "length", ["Tconstr", ["Pident", "int"]]],
+["label", "kind", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "kLC_REQ_DYLD", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "kLC_LOAD_WEAK_DYLIB", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "kLC_RPATH", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "kLC_REEXPORT_DYLIB", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "kLC_DYLD_INFO_ONLY", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "kLC_LOAD_UPWARD_DYLIB", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "kLC_MAIN", ["Tconstr", ["Pident", "int"]]], ["Sig_unknown"],
+["Sig_type", "cmd", 0,
+["Type_variant", ["constructor", "LC_SEGMENT", ["tuple"]],
+["constructor", "LC_SYMTAB", ["tuple"]],
+["constructor", "LC_SYMSEG", ["tuple"]],
+["constructor", "LC_THREAD", ["tuple"]],
+["constructor", "LC_UNIXTHREAD", ["tuple"]],
+["constructor", "LC_LOADFVMLIB", ["tuple"]],
+["constructor", "LC_IDFVMLIB", ["tuple"]],
+["constructor", "LC_IDENT", ["tuple"]],
+["constructor", "LC_FVMFILE", ["tuple"]],
+["constructor", "LC_PREPAGE", ["tuple"]],
+["constructor", "LC_DYSYMTAB", ["tuple"]],
+["constructor", "LC_LOAD_DYLIB", ["tuple"]],
+["constructor", "LC_ID_DYLIB", ["tuple"]],
+["constructor", "LC_LOAD_DYLINKER", ["tuple"]],
+["constructor", "LC_ID_DYLINKER", ["tuple"]],
+["constructor", "LC_PREBOUND_DYLIB", ["tuple"]],
+["constructor", "LC_ROUTINES", ["tuple"]],
+["constructor", "LC_SUB_FRAMEWORK", ["tuple"]],
+["constructor", "LC_SUB_UMBRELLA", ["tuple"]],
+["constructor", "LC_SUB_CLIENT", ["tuple"]],
+["constructor", "LC_SUB_LIBRARY", ["tuple"]],
+["constructor", "LC_TWOLEVEL_HINTS", ["tuple"]],
+["constructor", "LC_PREBIND_CKSUM", ["tuple"]],
+["constructor", "LC_LOAD_WEAK_DYLIB", ["tuple"]],
+["constructor", "LC_SEGMENT_64", ["tuple"]],
+["constructor", "LC_ROUTINES_64", ["tuple"]],
+["constructor", "LC_UUID", ["tuple"]],
+["constructor", "LC_RPATH", ["tuple"]],
+["constructor", "LC_CODE_SIGNATURE", ["tuple"]],
+["constructor", "LC_SEGMENT_SPLIT_INFO", ["tuple"]],
+["constructor", "LC_REEXPORT_DYLIB", ["tuple"]],
+["constructor", "LC_LAZY_LOAD_DYLIB", ["tuple"]],
+["constructor", "LC_ENCRYPTION_INFO", ["tuple"]],
+["constructor", "LC_DYLD_INFO", ["tuple"]],
+["constructor", "LC_DYLD_INFO_ONLY", ["tuple"]],
+["constructor", "LC_LOAD_UPWARD_DYLIB", ["tuple"]],
+["constructor", "LC_VERSION_MIN_MACOSX", ["tuple"]],
+["constructor", "LC_VERSION_MIN_IPHONEOS", ["tuple"]],
+["constructor", "LC_FUNCTION_STARTS", ["tuple"]],
+["constructor", "LC_DYLD_ENVIRONMENT", ["tuple"]],
+["constructor", "LC_MAIN", ["tuple"]],
+["constructor", "LC_DATA_IN_CODE", ["tuple"]],
+["constructor", "LC_SOURCE_VERSION", ["tuple"]],
+["constructor", "LC_DYLIB_CODE_SIGN_DRS", ["tuple"]],
+["constructor", "LC_ENCRYPTION_INFO_64", ["tuple"]],
+["constructor", "LC_LINKER_OPTION", ["tuple"]],
+["constructor", "LC_LINKER_OPTIMIZATION_HINT", ["tuple"]]]],
+["Sig_value", "cmd_int_to_string",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "to_cmd",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "cmd"]]]],
+["Sig_value", "cmd_to_int",
+["Tarrow", ["Tconstr", ["Pident", "cmd"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "cmd_to_string",
+["Tarrow", ["Tconstr", ["Pident", "cmd"]], ["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "lc_t", 0,
+["Type_variant",
+["constructor", "LC_SEGMENT",
+["tuple", ["Tconstr", ["Pident", "segment_command"]]]],
+["constructor", "LC_SYMTAB",
+["tuple", ["Tconstr", ["Pident", "symtab_command"]]]],
+["constructor", "LC_SYMSEG",
+["tuple", ["Tconstr", ["Pident", "symseg_command"]]]],
+["constructor", "LC_THREAD",
+["tuple", ["Tconstr", ["Pident", "thread_command"]]]],
+["constructor", "LC_UNIXTHREAD",
+["tuple", ["Tconstr", ["Pident", "thread_command"]]]],
+["constructor", "LC_LOADFVMLIB",
+["tuple", ["Tconstr", ["Pident", "fvmlib_command"]]]],
+["constructor", "LC_IDFVMLIB",
+["tuple", ["Tconstr", ["Pident", "fvmlib_command"]]]],
+["constructor", "LC_IDENT",
+["tuple", ["Tconstr", ["Pident", "ident_command"]]]],
+["constructor", "LC_FVMFILE",
+["tuple", ["Tconstr", ["Pident", "fvmfile_command"]]]],
+["constructor", "LC_PREPAGE",
+["tuple", ["Tconstr", ["Pident", "load_command"]]]],
+["constructor", "LC_DYSYMTAB",
+["tuple", ["Tconstr", ["Pident", "dysymtab_command"]]]],
+["constructor", "LC_LOAD_DYLIB",
+["tuple", ["Tconstr", ["Pident", "dylib_command"]]]],
+["constructor", "LC_ID_DYLIB",
+["tuple", ["Tconstr", ["Pident", "dylib_command"]]]],
+["constructor", "LC_LOAD_DYLINKER",
+["tuple", ["Tconstr", ["Pident", "dylinker_command"]]]],
+["constructor", "LC_ID_DYLINKER",
+["tuple", ["Tconstr", ["Pident", "dylinker_command"]]]],
+["constructor", "LC_PREBOUND_DYLIB",
+["tuple", ["Tconstr", ["Pident", "prebound_dylib_command"]]]],
+["constructor", "LC_ROUTINES",
+["tuple", ["Tconstr", ["Pident", "routines_command"]]]],
+["constructor", "LC_SUB_FRAMEWORK",
+["tuple", ["Tconstr", ["Pident", "sub_framework_command"]]]],
+["constructor", "LC_SUB_UMBRELLA",
+["tuple", ["Tconstr", ["Pident", "sub_umbrella_command"]]]],
+["constructor", "LC_SUB_CLIENT",
+["tuple", ["Tconstr", ["Pident", "sub_client_command"]]]],
+["constructor", "LC_SUB_LIBRARY",
+["tuple", ["Tconstr", ["Pident", "sub_library_command"]]]],
+["constructor", "LC_TWOLEVEL_HINTS",
+["tuple", ["Tconstr", ["Pident", "twolevel_hints_command"]]]],
+["constructor", "LC_PREBIND_CKSUM",
+["tuple", ["Tconstr", ["Pident", "prebind_cksum_command"]]]],
+["constructor", "LC_LOAD_WEAK_DYLIB",
+["tuple", ["Tconstr", ["Pident", "dylib_command"]]]],
+["constructor", "LC_SEGMENT_64",
+["tuple", ["Tconstr", ["Pident", "segment_command_64"]]]],
+["constructor", "LC_ROUTINES_64",
+["tuple", ["Tconstr", ["Pident", "routines_command_64"]]]],
+["constructor", "LC_UUID",
+["tuple", ["Tconstr", ["Pident", "uuid_command"]]]],
+["constructor", "LC_RPATH",
+["tuple", ["Tconstr", ["Pident", "rpath_command"]]]],
+["constructor", "LC_CODE_SIGNATURE",
+["tuple", ["Tconstr", ["Pident", "linkedit_data_command"]]]],
+["constructor", "LC_SEGMENT_SPLIT_INFO",
+["tuple", ["Tconstr", ["Pident", "linkedit_data_command"]]]],
+["constructor", "LC_REEXPORT_DYLIB",
+["tuple", ["Tconstr", ["Pident", "dylib_command"]]]],
+["constructor", "LC_LAZY_LOAD_DYLIB",
+["tuple", ["Tconstr", ["Pident", "dylib_command"]]]],
+["constructor", "LC_ENCRYPTION_INFO",
+["tuple", ["Tconstr", ["Pident", "encryption_info_command"]]]],
+["constructor", "LC_DYLD_INFO",
+["tuple", ["Tconstr", ["Pident", "dyld_info_command"]]]],
+["constructor", "LC_DYLD_INFO_ONLY",
+["tuple", ["Tconstr", ["Pident", "dyld_info_command"]]]],
+["constructor", "LC_LOAD_UPWARD_DYLIB",
+["tuple", ["Tconstr", ["Pident", "dylib_command"]]]],
+["constructor", "LC_VERSION_MIN_MACOSX",
+["tuple", ["Tconstr", ["Pident", "version_min_command"]]]],
+["constructor", "LC_VERSION_MIN_IPHONEOS",
+["tuple", ["Tconstr", ["Pident", "version_min_command"]]]],
+["constructor", "LC_FUNCTION_STARTS",
+["tuple", ["Tconstr", ["Pident", "linkedit_data_command"]]]],
+["constructor", "LC_DYLD_ENVIRONMENT",
+["tuple", ["Tconstr", ["Pident", "dylinker_command"]]]],
+["constructor", "LC_MAIN",
+["tuple", ["Tconstr", ["Pident", "entry_point_command"]]]],
+["constructor", "LC_DATA_IN_CODE",
+["tuple", ["Tconstr", ["Pident", "linkedit_data_command"]]]],
+["constructor", "LC_SOURCE_VERSION",
+["tuple", ["Tconstr", ["Pident", "source_version_command"]]]],
+["constructor", "LC_DYLIB_CODE_SIGN_DRS",
+["tuple", ["Tconstr", ["Pident", "linkedit_data_command"]]]],
+["constructor", "LC_ENCRYPTION_INFO_64",
+["tuple", ["Tconstr", ["Pident", "encryption_info_command_64"]]]],
+["constructor", "LC_LINKER_OPTION",
+["tuple", ["Tconstr", ["Pident", "linkedit_data_command"]]]],
+["constructor", "LC_LINKER_OPTIMIZATION_HINT",
+["tuple", ["Tconstr", ["Pident", "linkedit_data_command"]]]],
+["constructor", "LC_UNIMPLEMENTED",
+["tuple", ["Tconstr", ["Pident", "load_command"]]]]]],
+["Sig_type", "lc", 0,
+["Type_record", ["label", "cmd", ["Tconstr", ["Pident", "cmd"]]],
+["label", "cmdsize", ["Tconstr", ["Pident", "int"]]],
+["label", "t", ["Tconstr", ["Pident", "lc_t"]]]]]]]

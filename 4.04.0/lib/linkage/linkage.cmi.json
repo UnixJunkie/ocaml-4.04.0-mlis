@@ -1,66 +1,21 @@
-["module"; "Linkage"; ["Mty_signature"; ["Sig_type"; "plugin"; 0; ["Type_open"]]; 
-                      ["Sig_value"; "provide"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "plugin"]]; 
-                                               ["Tpoly"; "a"]]]; ["Sig_type"; 
-                                                                 "error"; 
-                                                                 0; [
-                                                                    "Type_variant"; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "Dynlink_error"; 
-                                                                    [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Dynlink"]; 
-                                                                    "error"]]]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "Not_a_linkage_plugin"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "Wrong_plugin_type"; 
-                                                                    [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "plugin"]]]]]]; 
-                      ["Sig_value"; "load"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "string"]]; 
-                                            ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                 "Pervasives"]; 
-                                                        "result"]; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "plugin"]]; 
-                                            ["Tconstr"; ["Pident"; "error"]]]]]; 
-                      ["Sig_unknown"]; ["Sig_value"; "raise_error"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Pervasives"]; 
-                                                                    "result"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "plugin"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "error"]]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]]]]]
+["module", "Linkage",
+["Mty_signature", ["Sig_type", "plugin", 0, ["Type_open"]],
+["Sig_value", "provide",
+["Tarrow", ["Tconstr", ["Pident", "plugin"]], ["Tpoly", "a"]]],
+["Sig_type", "error", 0,
+["Type_variant",
+["constructor", "Dynlink_error",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Dynlink"], "error"]]]],
+["constructor", "Not_a_linkage_plugin", ["tuple"]],
+["constructor", "Wrong_plugin_type",
+["tuple", ["Tconstr", ["Pident", "plugin"]]]]]],
+["Sig_value", "load",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "result"],
+["Tconstr", ["Pident", "plugin"]], ["Tconstr", ["Pident", "error"]]]]],
+["Sig_unknown"],
+["Sig_value", "raise_error",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "result"],
+["Tconstr", ["Pident", "plugin"]], ["Tconstr", ["Pident", "error"]]],
+["Tpoly", "a"]]]]]

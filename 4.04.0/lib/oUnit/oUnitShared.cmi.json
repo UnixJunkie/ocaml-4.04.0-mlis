@@ -1,173 +1,62 @@
-["module"; "OUnitShared"; ["Mty_signature"; ["Sig_unknown"]; ["Sig_type"; 
-                                                             "scope"; 
-                                                             0; ["Type_variant"; 
-                                                                ["constructor"; 
-                                                                "ScopeGlobal"; 
-                                                                ["tuple"]]; 
-                                                                ["constructor"; 
-                                                                "ScopeProcess"; 
-                                                                ["tuple"]]]]; 
-                          ["Sig_type"; "shared_noscope"; 1; ["Type_record"; 
-                                                            ["label"; 
-                                                            "lock"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]; 
-                                                            ["label"; 
-                                                            "unlock"; 
-                                                            ["Tarrow"; 
-                                                            ["Tpoly"; "a"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]]]; 
-                                                            ["label"; 
-                                                            "try_lock"; 
-                                                            ["Tarrow"; 
-                                                            ["Tpoly"; "a"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]]]]; 
-                          ["Sig_type"; "shared"; 0; ["Type_record"; [
-                                                                    "label"; 
-                                                                    "global"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "shared_noscope"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                                                    ["label"; "process"; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "shared_noscope"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]]]; 
-                          ["Sig_value"; "get_scoped"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "shared"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "scope"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "shared_noscope"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]]]]; 
-                          ["Sig_value"; "mutex_create"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Pervasives"]; 
-                                                                    "ref"]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "shared_noscope"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]]; 
-                          ["Sig_module"; "Mutex"; ["Mty_signature"; [
-                                                                    "Sig_type"; 
-                                                                    "t"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_alias"; 
-                                                                    [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "scope"]]]]]; 
-                                                  ["Sig_value"; "create"; 
-                                                  ["Tarrow"; ["Tvar"; 0]; 
-                                                  ["Ttuple"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]; 
-                                                  ["Tvar"; 0]]]]; ["Sig_value"; 
-                                                                  "lock"; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "shared"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Ttuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "scope"]]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]]; 
-                                                  ["Sig_value"; "try_lock"; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "shared"]]; 
-                                                  ["Tarrow"; ["Ttuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "scope"]]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bool"]]]]]; 
-                                                  ["Sig_value"; "unlock"; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "shared"]]; 
-                                                  ["Tarrow"; ["Ttuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "scope"]]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "unit"]]]]]; 
-                                                  ["Sig_value"; "with_lock"; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "shared"]]; 
-                                                  ["Tarrow"; ["Ttuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "scope"]]]; 
-                                                  ["Tarrow"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]; 
-                                                             ["Tvar"; 1]]; 
-                                                  ["Tvar"; 1]]]]]]]; 
-                          ["Sig_value"; "noscope_create"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "shared_noscope"]; 
-                                                          ["Tvar"; 2]]]]; 
-                          ["Sig_value"; "create"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "shared"]]]]]]
+["module", "OUnitShared",
+["Mty_signature", ["Sig_unknown"],
+["Sig_type", "scope", 0,
+["Type_variant", ["constructor", "ScopeGlobal", ["tuple"]],
+["constructor", "ScopeProcess", ["tuple"]]]],
+["Sig_type", "shared_noscope", 1,
+["Type_record",
+["label", "lock",
+["Tarrow", ["Tpoly", "a"], ["Tconstr", ["Pident", "unit"]]]],
+["label", "unlock",
+["Tarrow", ["Tpoly", "a"], ["Tconstr", ["Pident", "unit"]]]],
+["label", "try_lock",
+["Tarrow", ["Tpoly", "a"], ["Tconstr", ["Pident", "bool"]]]]]],
+["Sig_type", "shared", 0,
+["Type_record",
+["label", "global",
+["Tconstr", ["Pident", "shared_noscope"], ["Tconstr", ["Pident", "int"]]]],
+["label", "process",
+["Tconstr", ["Pident", "shared_noscope"], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_value", "get_scoped",
+["Tarrow", ["Tconstr", ["Pident", "shared"]],
+["Tarrow", ["Tconstr", ["Pident", "scope"]],
+["Tconstr", ["Pident", "shared_noscope"], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_value", "mutex_create",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "shared_noscope"], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_module", "Mutex",
+["Mty_signature",
+["Sig_type", "t", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "scope"]]]]],
+["Sig_value", "create",
+["Tarrow", ["Tvar", 0],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tvar", 0]]]],
+["Sig_value", "lock",
+["Tarrow", ["Tconstr", ["Pident", "shared"]],
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "scope"]]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "try_lock",
+["Tarrow", ["Tconstr", ["Pident", "shared"]],
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "scope"]]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "unlock",
+["Tarrow", ["Tconstr", ["Pident", "shared"]],
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "scope"]]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "with_lock",
+["Tarrow", ["Tconstr", ["Pident", "shared"]],
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "scope"]]],
+["Tarrow", ["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tvar", 1]],
+["Tvar", 1]]]]]]],
+["Sig_value", "noscope_create",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "shared_noscope"], ["Tvar", 2]]]],
+["Sig_value", "create",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "shared"]]]]]]

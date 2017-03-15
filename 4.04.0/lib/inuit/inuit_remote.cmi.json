@@ -1,55 +1,18 @@
-["module"; "Inuit_remote"; ["Mty_signature"; ["Sig_type"; "revision"; 
-                                             0; ["Type_record"; ["label"; 
-                                                                "remote"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]; 
-                                                ["label"; "local"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]]; 
-                           ["Sig_type"; "remote_patch"; 1; ["Type_variant"; 
-                                                           ["constructor"; 
-                                                           "Ack"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "revision"]]]]; 
-                                                           ["constructor"; 
-                                                           "Patch"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "revision"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Inuit_base"]; 
-                                                                    "patch"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "flag"]]]]]]; 
-                           ["Sig_value"; "make"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]; 
-                                                 ["Ttuple"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Inuit_base"]; 
-                                                            "socket"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "remote_patch"]; 
-                                                            ["Tpoly"; "flag"]]]; 
-                                                 ["Tconstr"; ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Inuit_base"]; 
-                                                             "socket"]; 
-                                                 ["Tconstr"; ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Inuit_base"]; 
-                                                             "patch"]; 
-                                                 ["Tpoly"; "flag"]]]]]]]]
+["module", "Inuit_remote",
+["Mty_signature",
+["Sig_type", "revision", 0,
+["Type_record", ["label", "remote", ["Tconstr", ["Pident", "int"]]],
+["label", "local", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "remote_patch", 1,
+["Type_variant",
+["constructor", "Ack", ["tuple", ["Tconstr", ["Pident", "revision"]]]],
+["constructor", "Patch",
+["tuple", ["Tconstr", ["Pident", "revision"]],
+["Tconstr", ["Pdot", ["Pident", "Inuit_base"], "patch"], ["Tpoly", "flag"]]]]]],
+["Sig_value", "make",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Ttuple",
+["Tconstr", ["Pdot", ["Pident", "Inuit_base"], "socket"],
+["Tconstr", ["Pident", "remote_patch"], ["Tpoly", "flag"]]],
+["Tconstr", ["Pdot", ["Pident", "Inuit_base"], "socket"],
+["Tconstr", ["Pdot", ["Pident", "Inuit_base"], "patch"], ["Tpoly", "flag"]]]]]]]]

@@ -1,90 +1,37 @@
-["module"; "LO"; ["Mty_signature"; ["Sig_unknown"]; ["Sig_unknown"]; 
-                 ["Sig_module"; "Address"; ["Mty_signature"; ["Sig_type"; 
-                                                             "t"; 0; 
-                                                             ["Type_abstract"]]; 
-                                           ["Sig_value"; "create"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "t"]]]]]; 
-                                           ["Sig_value"; "default"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "t"]]]]]]; 
-                 ["Sig_module"; "Message"; ["Mty_signature"; ["Sig_type"; 
-                                                             "timetag"; 
-                                                             0; ["Type_alias"; 
-                                                                ["Ttuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]]; 
-                                           ["Sig_type"; "data"; 0; ["Type_alias"; 
-                                                                   ["Tunknown"]]]; 
-                                           ["Sig_value"; "to_string"; 
-                                           ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "data"]]; 
-                                           ["Tconstr"; ["Pident"; "string"]]]]]]; 
-                 ["Sig_value"; "send"; ["Tarrow"; ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Address"]; 
-                                                              "t"]]; 
-                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                              "string"]]; 
-                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                              "list"]; 
-                                                  ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Message"]; 
-                                                              "data"]]]; 
-                                       ["Tconstr"; ["Pident"; "unit"]]]]]]; 
-                 ["Sig_module"; "Server"; ["Mty_signature"; ["Sig_type"; 
-                                                            "t"; 0; [
-                                                                    "Type_abstract"]]; 
-                                          ["Sig_value"; "create"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "array"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Message"]; 
-                                                                  "data"]]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]]]]; 
-                                          ["Sig_value"; "recv"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "t"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]]]]]
+["module", "LO",
+["Mty_signature", ["Sig_unknown"], ["Sig_unknown"],
+["Sig_module", "Address",
+["Mty_signature", ["Sig_type", "t", 0, ["Type_abstract"]],
+["Sig_value", "create",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "default",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "t"]]]]]],
+["Sig_module", "Message",
+["Mty_signature",
+["Sig_type", "timetag", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "data", 0, ["Type_alias", ["Tunknown"]]],
+["Sig_value", "to_string",
+["Tarrow", ["Tconstr", ["Pident", "data"]],
+["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "send",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Address"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Message"], "data"]]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_module", "Server",
+["Mty_signature", ["Sig_type", "t", 0, ["Type_abstract"]],
+["Sig_value", "create",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pdot", ["Pident", "Message"], "data"]]],
+["Tconstr", ["Pident", "unit"]]]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "recv",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]]]]]]

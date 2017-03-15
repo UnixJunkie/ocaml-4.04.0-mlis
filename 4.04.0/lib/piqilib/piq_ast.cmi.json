@@ -1,89 +1,35 @@
-["module"; "Piq_ast"; ["Mty_signature"; ["Sig_module"; "U"; ["Mty_alias"; 
-                                                            ["Pident"; 
-                                                            "Piqi_util"]]]; 
-                      ["Sig_module"; "Piq_ast"; ["Mty_signature"; ["Sig_type"; 
-                                                                  "ast"; 
-                                                                  0; 
-                                                                  ["Type_alias"; 
-                                                                  ["Tunknown"]]]; 
-                                                ["Sig_type"; "form_name"; 
-                                                0; ["Type_alias"; ["Tunknown"]]]]]; 
-                      ["Sig_module"; "Typed"; ["Mty_signature"; ["Sig_type"; 
-                                                                "t"; 
-                                                                0; ["Type_record"; 
-                                                                   ["label"; 
-                                                                   "typename"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                                   ["label"; 
-                                                                   "value"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Piq_ast"]; 
-                                                                   "ast"]]]]]]]; 
-                      ["Sig_module"; "Named"; ["Mty_signature"; ["Sig_type"; 
-                                                                "t"; 
-                                                                0; ["Type_record"; 
-                                                                   ["label"; 
-                                                                   "name"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                                   ["label"; 
-                                                                   "value"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Piq_ast"]; 
-                                                                   "ast"]]]]]]]; 
-                      ["Sig_type"; "ast"; 0; ["Type_alias"; ["Tunknown"]]]; 
-                      ["Sig_type"; "form_name"; 0; ["Type_alias"; ["Tunknown"]]]; 
-                      ["Sig_value"; "ast_of_bool"; ["Tarrow"; ["Tvar"; 0]; 
-                                                   ["Tunknown"]]]; ["Sig_value"; 
-                                                                   "ast_to_bool"; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tvar"; 
-                                                                   1]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bool"]]]]; 
-                      ["Sig_value"; "transform_ast"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]]; 
-                                                     ["Tarrow"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Piq_ast"]; 
-                                                                "ast"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Piq_ast"]; 
-                                                                "ast"]]]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "ast"]]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Piq_ast"]; 
-                                                                 "ast"]]]]]]; 
-                      ["Sig_value"; "map_words"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "ast"]]; 
-                                                 ["Tarrow"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "ast"]]]]]]]
+["module", "Piq_ast",
+["Mty_signature",
+["Sig_module", "U", ["Mty_alias", ["Pident", "Piqi_util"]]],
+["Sig_module", "Piq_ast",
+["Mty_signature", ["Sig_type", "ast", 0, ["Type_alias", ["Tunknown"]]],
+["Sig_type", "form_name", 0, ["Type_alias", ["Tunknown"]]]]],
+["Sig_module", "Typed",
+["Mty_signature",
+["Sig_type", "t", 0,
+["Type_record", ["label", "typename", ["Tconstr", ["Pident", "string"]]],
+["label", "value", ["Tconstr", ["Pdot", ["Pident", "Piq_ast"], "ast"]]]]]]],
+["Sig_module", "Named",
+["Mty_signature",
+["Sig_type", "t", 0,
+["Type_record", ["label", "name", ["Tconstr", ["Pident", "string"]]],
+["label", "value", ["Tconstr", ["Pdot", ["Pident", "Piq_ast"], "ast"]]]]]]],
+["Sig_type", "ast", 0, ["Type_alias", ["Tunknown"]]],
+["Sig_type", "form_name", 0, ["Type_alias", ["Tunknown"]]],
+["Sig_value", "ast_of_bool", ["Tarrow", ["Tvar", 0], ["Tunknown"]]],
+["Sig_value", "ast_to_bool",
+["Tarrow", ["Tvar", 1], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "transform_ast",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Piq_ast"], "ast"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Piq_ast"], "ast"]]]],
+["Tarrow", ["Tconstr", ["Pident", "ast"]],
+["Tconstr", ["Pdot", ["Pident", "Piq_ast"], "ast"]]]]]],
+["Sig_value", "map_words",
+["Tarrow", ["Tconstr", ["Pident", "ast"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]], ["Tconstr", ["Pident", "ast"]]]]]]]

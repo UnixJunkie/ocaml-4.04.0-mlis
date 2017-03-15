@@ -1,183 +1,68 @@
-["module"; "Cemitcodes"; ["Mty_signature"; ["Sig_type"; "reloc_info"; 
-                                           0; ["Type_variant"; ["constructor"; 
-                                                               "Reloc_annot"; 
-                                                               ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Cbytecodes"]; 
-                                                               "annot_switch"]]]]; 
-                                              ["constructor"; "Reloc_const"; 
-                                              ["tuple"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Cbytecodes"]; 
-                                                                    "structured_constant"]]]]; 
-                                              ["constructor"; "Reloc_getglobal"; 
-                                              ["tuple"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "constant"]]]]]]; 
-                         ["Sig_type"; "patch"; 0; ["Type_alias"; ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "reloc_info"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]]; 
-                         ["Sig_value"; "subst_patch"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Mod_subst"]; 
-                                                                 "substitution"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "patch"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "patch"]]]]]; 
-                         ["Sig_type"; "emitcodes"; 0; ["Type_abstract"]]; 
-                         ["Sig_value"; "length"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "emitcodes"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "int"]]]]; 
-                         ["Sig_value"; "patch_int"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "emitcodes"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Ttuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "emitcodes"]]]]]; 
-                         ["Sig_type"; "to_patch"; 0; ["Type_alias"; [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "emitcodes"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "patch"]]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Cbytecodes"]; 
-                                                                    "fv"]]]]]; 
-                         ["Sig_value"; "subst_to_patch"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Mod_subst"]; 
-                                                                    "substitution"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "to_patch"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "to_patch"]]]]]; 
-                         ["Sig_type"; "body_code"; 0; ["Type_variant"; 
-                                                      ["constructor"; 
-                                                      "BCdefined"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "to_patch"]]]]; 
-                                                      ["constructor"; 
-                                                      "BCalias"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Names"]; 
-                                                                 "constant"]]]]; 
-                                                      ["constructor"; 
-                                                      "BCconstant"; ["tuple"]]]]; 
-                         ["Sig_type"; "to_patch_substituted"; 0; ["Type_abstract"]]; 
-                         ["Sig_value"; "from_val"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "body_code"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "to_patch_substituted"]]]]; 
-                         ["Sig_value"; "force"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "to_patch_substituted"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "body_code"]]]]; 
-                         ["Sig_value"; "subst_to_patch_subst"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Mod_subst"]; 
-                                                               "substitution"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "to_patch_substituted"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "to_patch_substituted"]]]]]; 
-                         ["Sig_value"; "repr_body_code"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "to_patch_substituted"]]; 
-                                                         ["Ttuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Mod_subst"]; 
-                                                                    "substitution"]]]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "body_code"]]]]]; 
-                         ["Sig_value"; "to_memory"; ["Tarrow"; ["Ttuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Cbytecodes"]; 
-                                                               "bytecodes"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Cbytecodes"]; 
-                                                               "bytecodes"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Cbytecodes"]; 
-                                                               "fv"]]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "to_patch"]]]]]]
+["module", "Cemitcodes",
+["Mty_signature",
+["Sig_type", "reloc_info", 0,
+["Type_variant",
+["constructor", "Reloc_annot",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Cbytecodes"], "annot_switch"]]]],
+["constructor", "Reloc_const",
+["tuple",
+["Tconstr", ["Pdot", ["Pident", "Cbytecodes"], "structured_constant"]]]],
+["constructor", "Reloc_getglobal",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "constant"]]]]]],
+["Sig_type", "patch", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "reloc_info"]],
+["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "subst_patch",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Mod_subst"], "substitution"]],
+["Tarrow", ["Tconstr", ["Pident", "patch"]],
+["Tconstr", ["Pident", "patch"]]]]],
+["Sig_type", "emitcodes", 0, ["Type_abstract"]],
+["Sig_value", "length",
+["Tarrow", ["Tconstr", ["Pident", "emitcodes"]],
+["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "patch_int",
+["Tarrow", ["Tconstr", ["Pident", "emitcodes"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]],
+["Tconstr", ["Pident", "emitcodes"]]]]],
+["Sig_type", "to_patch", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "emitcodes"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "patch"]]],
+["Tconstr", ["Pdot", ["Pident", "Cbytecodes"], "fv"]]]]],
+["Sig_value", "subst_to_patch",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Mod_subst"], "substitution"]],
+["Tarrow", ["Tconstr", ["Pident", "to_patch"]],
+["Tconstr", ["Pident", "to_patch"]]]]],
+["Sig_type", "body_code", 0,
+["Type_variant",
+["constructor", "BCdefined", ["tuple", ["Tconstr", ["Pident", "to_patch"]]]],
+["constructor", "BCalias",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "constant"]]]],
+["constructor", "BCconstant", ["tuple"]]]],
+["Sig_type", "to_patch_substituted", 0, ["Type_abstract"]],
+["Sig_value", "from_val",
+["Tarrow", ["Tconstr", ["Pident", "body_code"]],
+["Tconstr", ["Pident", "to_patch_substituted"]]]],
+["Sig_value", "force",
+["Tarrow", ["Tconstr", ["Pident", "to_patch_substituted"]],
+["Tconstr", ["Pident", "body_code"]]]],
+["Sig_value", "subst_to_patch_subst",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Mod_subst"], "substitution"]],
+["Tarrow", ["Tconstr", ["Pident", "to_patch_substituted"]],
+["Tconstr", ["Pident", "to_patch_substituted"]]]]],
+["Sig_value", "repr_body_code",
+["Tarrow", ["Tconstr", ["Pident", "to_patch_substituted"]],
+["Ttuple",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Mod_subst"], "substitution"]]]],
+["Tconstr", ["Pident", "body_code"]]]]],
+["Sig_value", "to_memory",
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Cbytecodes"], "bytecodes"]],
+["Tconstr", ["Pdot", ["Pident", "Cbytecodes"], "bytecodes"]],
+["Tconstr", ["Pdot", ["Pident", "Cbytecodes"], "fv"]]],
+["Tconstr", ["Pident", "to_patch"]]]]]]

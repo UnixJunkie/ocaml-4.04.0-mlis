@@ -1,307 +1,132 @@
-["module"; "Frei0r"; ["Mty_signature"; ["Sig_unknown"]; ["Sig_unknown"]; 
-                     ["Sig_value"; "version"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "unit"]]; 
-                                              ["Ttuple"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                              ["Tconstr"; ["Pident"; "int"]]]]]; 
-                     ["Sig_type"; "plugin"; 0; ["Type_abstract"]]; ["Sig_value"; 
-                                                                   "default_paths"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]]; 
-                     ["Sig_value"; "load"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "string"]]; 
-                                           ["Tconstr"; ["Pident"; "plugin"]]]]; 
-                     ["Sig_type"; "plugin_type"; 0; ["Type_variant"; 
-                                                    ["constructor"; "Filter"; 
-                                                    ["tuple"]]; ["constructor"; 
-                                                                "Source"; 
-                                                                ["tuple"]]; 
-                                                    ["constructor"; "Mixer2"; 
-                                                    ["tuple"]]; ["constructor"; 
-                                                                "Mixer3"; 
-                                                                ["tuple"]]]]; 
-                     ["Sig_value"; "string_of_plugin_type"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "plugin_type"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]; 
-                     ["Sig_type"; "color_model"; 0; ["Type_variant"; 
-                                                    ["constructor"; "BGRA8888"; 
-                                                    ["tuple"]]; ["constructor"; 
-                                                                "RGBA8888"; 
-                                                                ["tuple"]]; 
-                                                    ["constructor"; "Packed32"; 
-                                                    ["tuple"]]]]; ["Sig_value"; 
-                                                                  "string_of_color_model"; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "color_model"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]; 
-                     ["Sig_type"; "info"; 0; ["Type_record"; ["label"; 
-                                                             "name"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]; 
-                                             ["label"; "author"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]; 
-                                             ["label"; "plugin_type"; 
-                                             ["Tconstr"; ["Pident"; "plugin_type"]]]; 
-                                             ["label"; "color_model"; 
-                                             ["Tconstr"; ["Pident"; "color_model"]]]; 
-                                             ["label"; "frei0r_version"; 
-                                             ["Tconstr"; ["Pident"; "int"]]]; 
-                                             ["label"; "major_version"; 
-                                             ["Tconstr"; ["Pident"; "int"]]]; 
-                                             ["label"; "minor_version"; 
-                                             ["Tconstr"; ["Pident"; "int"]]]; 
-                                             ["label"; "num_params"; 
-                                             ["Tconstr"; ["Pident"; "int"]]]; 
-                                             ["label"; "explanation"; 
-                                             ["Tconstr"; ["Pident"; "string"]]]]]; 
-                     ["Sig_value"; "info"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "plugin"]]; 
-                                           ["Tconstr"; ["Pident"; "info"]]]]; 
-                     ["Sig_type"; "param_type"; 0; ["Type_variant"; [
-                                                                    "constructor"; 
-                                                                    "Bool"; 
-                                                                    ["tuple"]]; 
-                                                   ["constructor"; "Double"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "Color"; 
-                                                               ["tuple"]]; 
-                                                   ["constructor"; "Position"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "String"; 
-                                                               ["tuple"]]]]; 
-                     ["Sig_value"; "string_of_param_type"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "param_type"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]; 
-                     ["Sig_type"; "param_info"; 0; ["Type_record"; ["label"; 
-                                                                   "param_name"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                   ["label"; "param_type"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "param_type"]]]; 
-                                                   ["label"; "param_explanation"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]]]; 
-                     ["Sig_value"; "param_info"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "plugin"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "param_info"]]]]]; 
-                     ["Sig_type"; "t"; 0; ["Type_abstract"]]; ["Sig_value"; 
-                                                              "create"; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "plugin"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; "t"]]]]]]; 
-                     ["Sig_type"; "color"; 0; ["Type_alias"; ["Ttuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "float"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "float"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "float"]]]]]; 
-                     ["Sig_type"; "position"; 0; ["Type_alias"; ["Ttuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "float"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "float"]]]]]; 
-                     ["Sig_value"; "get_param_bool"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "t"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "bool"]]]]]; 
-                     ["Sig_value"; "get_param_float"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "float"]]]]]; 
-                     ["Sig_value"; "get_param_color"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "color"]]]]]; 
-                     ["Sig_value"; "get_param_position"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "position"]]]]]; 
-                     ["Sig_value"; "get_param_string"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "string"]]]]]; 
-                     ["Sig_value"; "set_param_bool"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "t"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]]]; 
-                     ["Sig_value"; "set_param_float"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "float"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]]]; 
-                     ["Sig_value"; "set_param_color"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "color"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]]]; 
-                     ["Sig_value"; "set_param_position"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "position"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "unit"]]]]]]; 
-                     ["Sig_value"; "set_param_string"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]]]; 
-                     ["Sig_type"; "data"; 0; ["Type_alias"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Bigarray"]; 
-                                                            "Array1"]; 
-                                                            "t"]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Bigarray"]; 
-                                                            "int8_unsigned_elt"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Bigarray"]; 
-                                                            "c_layout"]]]]]; 
-                     ["Sig_value"; "update0"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "float"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "data"]]; 
-                                              ["Tconstr"; ["Pident"; "unit"]]]]]]; 
-                     ["Sig_value"; "update1"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "float"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "data"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "data"]]; 
-                                              ["Tconstr"; ["Pident"; "unit"]]]]]]]; 
-                     ["Sig_value"; "update2"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "float"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "data"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "data"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "data"]]; 
-                                              ["Tconstr"; ["Pident"; "unit"]]]]]]]]; 
-                     ["Sig_value"; "update3"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "float"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "data"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "data"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "data"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "data"]]; 
-                                              ["Tconstr"; ["Pident"; "unit"]]]]]]]]]]]
+["module", "Frei0r",
+["Mty_signature", ["Sig_unknown"], ["Sig_unknown"],
+["Sig_value", "version",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "plugin", 0, ["Type_abstract"]],
+["Sig_value", "default_paths",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "load",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "plugin"]]]],
+["Sig_type", "plugin_type", 0,
+["Type_variant", ["constructor", "Filter", ["tuple"]],
+["constructor", "Source", ["tuple"]], ["constructor", "Mixer2", ["tuple"]],
+["constructor", "Mixer3", ["tuple"]]]],
+["Sig_value", "string_of_plugin_type",
+["Tarrow", ["Tconstr", ["Pident", "plugin_type"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "color_model", 0,
+["Type_variant", ["constructor", "BGRA8888", ["tuple"]],
+["constructor", "RGBA8888", ["tuple"]],
+["constructor", "Packed32", ["tuple"]]]],
+["Sig_value", "string_of_color_model",
+["Tarrow", ["Tconstr", ["Pident", "color_model"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "info", 0,
+["Type_record", ["label", "name", ["Tconstr", ["Pident", "string"]]],
+["label", "author", ["Tconstr", ["Pident", "string"]]],
+["label", "plugin_type", ["Tconstr", ["Pident", "plugin_type"]]],
+["label", "color_model", ["Tconstr", ["Pident", "color_model"]]],
+["label", "frei0r_version", ["Tconstr", ["Pident", "int"]]],
+["label", "major_version", ["Tconstr", ["Pident", "int"]]],
+["label", "minor_version", ["Tconstr", ["Pident", "int"]]],
+["label", "num_params", ["Tconstr", ["Pident", "int"]]],
+["label", "explanation", ["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "info",
+["Tarrow", ["Tconstr", ["Pident", "plugin"]],
+["Tconstr", ["Pident", "info"]]]],
+["Sig_type", "param_type", 0,
+["Type_variant", ["constructor", "Bool", ["tuple"]],
+["constructor", "Double", ["tuple"]], ["constructor", "Color", ["tuple"]],
+["constructor", "Position", ["tuple"]], ["constructor", "String", ["tuple"]]]],
+["Sig_value", "string_of_param_type",
+["Tarrow", ["Tconstr", ["Pident", "param_type"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "param_info", 0,
+["Type_record", ["label", "param_name", ["Tconstr", ["Pident", "string"]]],
+["label", "param_type", ["Tconstr", ["Pident", "param_type"]]],
+["label", "param_explanation", ["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "param_info",
+["Tarrow", ["Tconstr", ["Pident", "plugin"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "param_info"]]]]],
+["Sig_type", "t", 0, ["Type_abstract"]],
+["Sig_value", "create",
+["Tarrow", ["Tconstr", ["Pident", "plugin"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "t"]]]]]],
+["Sig_type", "color", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "float"]],
+["Tconstr", ["Pident", "float"]], ["Tconstr", ["Pident", "float"]]]]],
+["Sig_type", "position", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "float"]],
+["Tconstr", ["Pident", "float"]]]]],
+["Sig_value", "get_param_bool",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "get_param_float",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "float"]]]]],
+["Sig_value", "get_param_color",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "color"]]]]],
+["Sig_value", "get_param_position",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "position"]]]]],
+["Sig_value", "get_param_string",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "set_param_bool",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "set_param_float",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "float"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "set_param_color",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "color"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "set_param_position",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "position"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "set_param_string",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_type", "data", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Bigarray"], "Array1"], "t"],
+["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "Bigarray"], "int8_unsigned_elt"]],
+["Tconstr", ["Pdot", ["Pident", "Bigarray"], "c_layout"]]]]],
+["Sig_value", "update0",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "float"]],
+["Tarrow", ["Tconstr", ["Pident", "data"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "update1",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "float"]],
+["Tarrow", ["Tconstr", ["Pident", "data"]],
+["Tarrow", ["Tconstr", ["Pident", "data"]], ["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "update2",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "float"]],
+["Tarrow", ["Tconstr", ["Pident", "data"]],
+["Tarrow", ["Tconstr", ["Pident", "data"]],
+["Tarrow", ["Tconstr", ["Pident", "data"]], ["Tconstr", ["Pident", "unit"]]]]]]]],
+["Sig_value", "update3",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "float"]],
+["Tarrow", ["Tconstr", ["Pident", "data"]],
+["Tarrow", ["Tconstr", ["Pident", "data"]],
+["Tarrow", ["Tconstr", ["Pident", "data"]],
+["Tarrow", ["Tconstr", ["Pident", "data"]], ["Tconstr", ["Pident", "unit"]]]]]]]]]]]

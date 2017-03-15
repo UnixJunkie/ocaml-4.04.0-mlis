@@ -1,101 +1,43 @@
-["module"; "Uri"; ["Mty_signature"; ["Sig_type"; "authority"; 0; ["Type_record"; 
-                                                                 ["label"; 
-                                                                 "userinfo"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]]; 
-                                                                 ["label"; 
-                                                                 "host"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]; 
-                                                                 ["label"; 
-                                                                 "port"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]]]; 
-                  ["Sig_type"; "scheme"; 0; ["Type_alias"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]; 
-                  ["Sig_type"; "t"; 0; ["Type_record"; ["label"; "scheme"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "option"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "scheme"]]]]; 
-                                       ["label"; "authority"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "authority"]]]]; 
-                                       ["label"; "path"; ["Tconstr"; 
-                                                         ["Pident"; "option"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "string"]]]]; 
-                                       ["label"; "query"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]; 
-                                       ["label"; "fragment"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "option"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]]]; 
-                  ["Sig_type"; "error"; 0; ["Type_variant"; ["constructor"; 
-                                                            "Invalid_uri"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]; 
-                                           ["constructor"; "Invalid_authority"; 
-                                           ["tuple"; ["Tconstr"; ["Pident"; 
-                                                                 "string"]]]]; 
-                                           ["constructor"; "Invalid_port"; 
-                                           ["tuple"; ["Tconstr"; ["Pident"; 
-                                                                 "string"]]]]; 
-                                           ["constructor"; "Missing_required_components"; 
-                                           ["tuple"; ["Tconstr"; ["Pident"; 
-                                                                 "string"]]]]]]; 
-                  ["Sig_unknown"]; ["Sig_value"; "string_of_error"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "error"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]]; 
-                  ["Sig_value"; "of_string"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                             ["Tconstr"; ["Pident"; "t"]]]]; 
-                  ["Sig_value"; "to_string"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "string"]]]]; 
-                  ["Sig_value"; "abspath_to_string"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "t"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "string"]]]]; 
-                  ["Sig_value"; "authority_to_string"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "string"]]]]; 
-                  ["Sig_value"; "normalize"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "t"]]]]]]
+["module", "Uri",
+["Mty_signature",
+["Sig_type", "authority", 0,
+["Type_record",
+["label", "userinfo",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]],
+["label", "host", ["Tconstr", ["Pident", "string"]]],
+["label", "port",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_type", "scheme", 0, ["Type_alias", ["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "t", 0,
+["Type_record",
+["label", "scheme",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "scheme"]]]],
+["label", "authority",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "authority"]]]],
+["label", "path",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]],
+["label", "query",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]],
+["label", "fragment",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_type", "error", 0,
+["Type_variant",
+["constructor", "Invalid_uri", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Invalid_authority",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Invalid_port", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Missing_required_components",
+["tuple", ["Tconstr", ["Pident", "string"]]]]]], ["Sig_unknown"],
+["Sig_value", "string_of_error",
+["Tarrow", ["Tconstr", ["Pident", "error"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "of_string",
+["Tarrow", ["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "t"]]]],
+["Sig_value", "to_string",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "abspath_to_string",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "authority_to_string",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "normalize",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]]]]]]

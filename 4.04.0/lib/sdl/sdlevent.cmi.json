@@ -1,533 +1,217 @@
-["module"; "Sdlevent"; ["Mty_signature"; ["Sig_unknown"]; ["Sig_type"; 
-                                                          "active_state"; 
-                                                          0; ["Type_variant"; 
-                                                             ["constructor"; 
-                                                             "MOUSEFOCUS"; 
-                                                             ["tuple"]]; 
-                                                             ["constructor"; 
-                                                             "INPUTFOCUS"; 
-                                                             ["tuple"]]; 
-                                                             ["constructor"; 
-                                                             "APPACTIVE"; 
-                                                             ["tuple"]]]]; 
-                       ["Sig_value"; "get_app_state"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "list"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "active_state"]]]]]; 
-                       ["Sig_type"; "active_event"; 0; ["Type_record"; 
-                                                       ["label"; "gain"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "bool"]]]; 
-                                                       ["label"; "ae_state"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "list"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "active_state"]]]]]]; 
-                       ["Sig_type"; "switch_state"; 0; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "RELEASED"; ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "PRESSED"; ["tuple"]]]]; 
-                       ["Sig_type"; "keyboard_event"; 0; ["Type_record"; 
-                                                         ["label"; "ke_which"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "int"]]]; 
-                                                         ["label"; "ke_state"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "switch_state"]]]; 
-                                                         ["label"; "keysym"; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Sdlkey"]; 
-                                                         "t"]]]; ["label"; 
-                                                                 "keymod"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Sdlkey"]; 
-                                                                 "mod_state"]]]; 
-                                                         ["label"; "keycode"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "char"]]]; 
-                                                         ["label"; "unicode"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "int"]]]]]; 
-                       ["Sig_type"; "mousemotion_event"; 0; ["Type_record"; 
-                                                            ["label"; 
-                                                            "mme_which"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                                                            ["label"; 
-                                                            "mme_state"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Sdlmouse"]; 
-                                                            "button"]]]]; 
-                                                            ["label"; 
-                                                            "mme_x"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                                                            ["label"; 
-                                                            "mme_y"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                                                            ["label"; 
-                                                            "mme_xrel"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                                                            ["label"; 
-                                                            "mme_yrel"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]]]; 
-                       ["Sig_type"; "mousebutton_event"; 0; ["Type_record"; 
-                                                            ["label"; 
-                                                            "mbe_which"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                                                            ["label"; 
-                                                            "mbe_button"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Sdlmouse"]; 
-                                                            "button"]]]; 
-                                                            ["label"; 
-                                                            "mbe_state"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "switch_state"]]]; 
-                                                            ["label"; 
-                                                            "mbe_x"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                                                            ["label"; 
-                                                            "mbe_y"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]]]; 
-                       ["Sig_type"; "joyaxis_event"; 0; ["Type_record"; 
-                                                        ["label"; "jae_which"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                        ["label"; "jae_axis"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                        ["label"; "jae_value"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                       ["Sig_type"; "joyball_event"; 0; ["Type_record"; 
-                                                        ["label"; "jle_which"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                        ["label"; "jle_ball"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                        ["label"; "jle_xrel"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                        ["label"; "jle_yrel"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]; 
-                       ["Sig_type"; "joyhat_event"; 0; ["Type_record"; 
-                                                       ["label"; "jhe_which"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "int"]]]; 
-                                                       ["label"; "jhe_hat"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "int"]]]; 
-                                                       ["label"; "jhe_value"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "int"]]]]]; 
-                       ["Sig_type"; "joybutton_event"; 0; ["Type_record"; 
-                                                          ["label"; "jbe_which"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                                          ["label"; "jbe_button"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                                          ["label"; "jbe_state"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "switch_state"]]]]]; 
-                       ["Sig_type"; "event"; 0; ["Type_variant"; ["constructor"; 
-                                                                 "ACTIVE"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "active_event"]]]]; 
-                                                ["constructor"; "KEYDOWN"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "keyboard_event"]]]]; 
-                                                ["constructor"; "KEYUP"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "keyboard_event"]]]]; 
-                                                ["constructor"; "MOUSEMOTION"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "mousemotion_event"]]]]; 
-                                                ["constructor"; "MOUSEBUTTONDOWN"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "mousebutton_event"]]]]; 
-                                                ["constructor"; "MOUSEBUTTONUP"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "mousebutton_event"]]]]; 
-                                                ["constructor"; "JOYAXISMOTION"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "joyaxis_event"]]]]; 
-                                                ["constructor"; "JOYBALLMOTION"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "joyball_event"]]]]; 
-                                                ["constructor"; "JOYHATMOTION"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "joyhat_event"]]]]; 
-                                                ["constructor"; "JOYBUTTONDOWN"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "joybutton_event"]]]]; 
-                                                ["constructor"; "JOYBUTTONUP"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "joybutton_event"]]]]; 
-                                                ["constructor"; "QUIT"; 
-                                                ["tuple"]]; ["constructor"; 
-                                                            "SYSWM"; 
-                                                            ["tuple"]]; 
-                                                ["constructor"; "VIDEORESIZE"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                                ["Tconstr"; ["Pident"; "int"]]]]; 
-                                                ["constructor"; "VIDEOEXPOSE"; 
-                                                ["tuple"]]; ["constructor"; 
-                                                            "USER"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]]; 
-                       ["Sig_value"; "string_of_event"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "event"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]]]; 
-                       ["Sig_type"; "event_mask"; 0; ["Type_alias"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                       ["Sig_value"; "active_mask"; ["Tconstr"; ["Pident"; 
-                                                                "event_mask"]]]; 
-                       ["Sig_value"; "keydown_mask"; ["Tconstr"; ["Pident"; 
-                                                                 "event_mask"]]]; 
-                       ["Sig_value"; "keyup_mask"; ["Tconstr"; ["Pident"; 
-                                                               "event_mask"]]]; 
-                       ["Sig_value"; "mousemotion_mask"; ["Tconstr"; 
-                                                         ["Pident"; "event_mask"]]]; 
-                       ["Sig_value"; "mousebuttondown_mask"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "event_mask"]]]; 
-                       ["Sig_value"; "mousebuttonup_mask"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "event_mask"]]]; 
-                       ["Sig_value"; "joyaxismotion_mask"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "event_mask"]]]; 
-                       ["Sig_value"; "joyballmotion_mask"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "event_mask"]]]; 
-                       ["Sig_value"; "joyhatmotion_mask"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "event_mask"]]]; 
-                       ["Sig_value"; "joybuttondown_mask"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "event_mask"]]]; 
-                       ["Sig_value"; "joybuttonup_mask"; ["Tconstr"; 
-                                                         ["Pident"; "event_mask"]]]; 
-                       ["Sig_value"; "quit_mask"; ["Tconstr"; ["Pident"; 
-                                                              "event_mask"]]]; 
-                       ["Sig_value"; "syswmevent_mask"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "event_mask"]]]; 
-                       ["Sig_value"; "videoresize_mask"; ["Tconstr"; 
-                                                         ["Pident"; "event_mask"]]]; 
-                       ["Sig_value"; "videoexpose_mask"; ["Tconstr"; 
-                                                         ["Pident"; "event_mask"]]]; 
-                       ["Sig_value"; "userevent_mask"; ["Tconstr"; ["Pident"; 
-                                                                   "event_mask"]]]; 
-                       ["Sig_value"; "keyboard_event_mask"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "event_mask"]]]; 
-                       ["Sig_value"; "mouse_event_mask"; ["Tconstr"; 
-                                                         ["Pident"; "event_mask"]]]; 
-                       ["Sig_value"; "joystick_event_mask"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "event_mask"]]]; 
-                       ["Sig_value"; "all_events_mask"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "event_mask"]]]; 
-                       ["Sig_type"; "event_kind"; 0; ["Type_variant"; 
-                                                     ["constructor"; 
-                                                     "ACTIVE_EVENT"; 
-                                                     ["tuple"]]; ["constructor"; 
-                                                                 "KEYDOWN_EVENT"; 
-                                                                 ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "KEYUP_EVENT"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "MOUSEMOTION_EVENT"; 
-                                                     ["tuple"]]; ["constructor"; 
-                                                                 "MOUSEBUTTONDOWN_EVENT"; 
-                                                                 ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "MOUSEBUTTONUP_EVENT"; 
-                                                     ["tuple"]]; ["constructor"; 
-                                                                 "JOYAXISMOTION_EVENT"; 
-                                                                 ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "JOYBALL_EVENT"; 
-                                                     ["tuple"]]; ["constructor"; 
-                                                                 "JOYHAT_EVENT"; 
-                                                                 ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "JOYBUTTONDOWN_EVENT"; 
-                                                     ["tuple"]]; ["constructor"; 
-                                                                 "JOYBUTTONUP_EVENT"; 
-                                                                 ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "QUIT_EVENT"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "SYSWM_EVENT"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "RESIZE_EVENT"; 
-                                                     ["tuple"]]; ["constructor"; 
-                                                                 "EXPOSE_EVENT"; 
-                                                                 ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "USER_EVENT"; ["tuple"]]]]; 
-                       ["Sig_value"; "make_mask"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "event_kind"]]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "event_mask"]]]]; 
-                       ["Sig_value"; "of_mask"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "event_mask"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "list"]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "event_kind"]]]]]; 
-                       ["Sig_value"; "enable_events"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "event_mask"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]; 
-                       ["Sig_value"; "disable_events"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "event_mask"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]; 
-                       ["Sig_value"; "get_enabled_events"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "event_mask"]]]]; 
-                       ["Sig_value"; "get_state"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "event_kind"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bool"]]]]; 
-                       ["Sig_value"; "set_state"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bool"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "event_kind"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "unit"]]]]]; 
-                       ["Sig_value"; "pump"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]; 
-                       ["Sig_value"; "wait_event"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "event"]]]]; 
-                       ["Sig_value"; "wait"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]; 
-                       ["Sig_value"; "poll"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]; 
-                                             ["Tconstr"; ["Pident"; "option"]; 
-                                             ["Tconstr"; ["Pident"; "event"]]]]]; 
-                       ["Sig_value"; "has_event"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bool"]]]]; 
-                       ["Sig_value"; "peek"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "event_mask"]]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                             ["Tconstr"; ["Pident"; "list"]; 
-                                             ["Tconstr"; ["Pident"; "event"]]]]]]; 
-                       ["Sig_value"; "get"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "option"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "event_mask"]]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "int"]]; 
-                                            ["Tconstr"; ["Pident"; "list"]; 
-                                            ["Tconstr"; ["Pident"; "event"]]]]]]; 
-                       ["Sig_value"; "add"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "list"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "event"]]]; 
-                                            ["Tconstr"; ["Pident"; "unit"]]]]; 
-                       ["Sig_module"; "Old"; ["Mty_signature"; ["Sig_type"; 
-                                                               "keyboard_event_func"; 
-                                                               0; ["Type_alias"; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Sdlkey"]; 
-                                                                  "t"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "switch_state"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]]]]]; 
-                                             ["Sig_type"; "mouse_event_func"; 
-                                             0; ["Type_alias"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Sdlmouse"]; 
-                                                               "button"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "switch_state"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]]]]; 
-                                             ["Sig_type"; "mousemotion_event_func"; 
-                                             0; ["Type_alias"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]]; 
-                                             ["Sig_type"; "idle_event_func"; 
-                                             0; ["Type_alias"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]; 
-                                             ["Sig_type"; "resize_event_func"; 
-                                             0; ["Type_alias"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]]; 
-                                             ["Sig_value"; "set_keyboard_event_func"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "keyboard_event_func"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]; 
-                                             ["Sig_value"; "set_mouse_event_func"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "mouse_event_func"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]; 
-                                             ["Sig_value"; "set_mousemotion_event_func"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "mousemotion_event_func"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]; 
-                                             ["Sig_value"; "set_idle_event_func"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "idle_event_func"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]; 
-                                             ["Sig_value"; "set_resize_event_func"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "resize_event_func"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]; 
-                                             ["Sig_value"; "start_event_loop"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]; 
-                                             ["Sig_value"; "exit_event_loop"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]]]; 
-                       ["Sig_value"; "link_me"; ["Tconstr"; ["Pident"; 
-                                                            "unit"]]]]]
+["module", "Sdlevent",
+["Mty_signature", ["Sig_unknown"],
+["Sig_type", "active_state", 0,
+["Type_variant", ["constructor", "MOUSEFOCUS", ["tuple"]],
+["constructor", "INPUTFOCUS", ["tuple"]],
+["constructor", "APPACTIVE", ["tuple"]]]],
+["Sig_value", "get_app_state",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "active_state"]]]]],
+["Sig_type", "active_event", 0,
+["Type_record", ["label", "gain", ["Tconstr", ["Pident", "bool"]]],
+["label", "ae_state",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "active_state"]]]]]],
+["Sig_type", "switch_state", 0,
+["Type_variant", ["constructor", "RELEASED", ["tuple"]],
+["constructor", "PRESSED", ["tuple"]]]],
+["Sig_type", "keyboard_event", 0,
+["Type_record", ["label", "ke_which", ["Tconstr", ["Pident", "int"]]],
+["label", "ke_state", ["Tconstr", ["Pident", "switch_state"]]],
+["label", "keysym", ["Tconstr", ["Pdot", ["Pident", "Sdlkey"], "t"]]],
+["label", "keymod", ["Tconstr", ["Pdot", ["Pident", "Sdlkey"], "mod_state"]]],
+["label", "keycode", ["Tconstr", ["Pident", "char"]]],
+["label", "unicode", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "mousemotion_event", 0,
+["Type_record", ["label", "mme_which", ["Tconstr", ["Pident", "int"]]],
+["label", "mme_state",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Sdlmouse"], "button"]]]],
+["label", "mme_x", ["Tconstr", ["Pident", "int"]]],
+["label", "mme_y", ["Tconstr", ["Pident", "int"]]],
+["label", "mme_xrel", ["Tconstr", ["Pident", "int"]]],
+["label", "mme_yrel", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "mousebutton_event", 0,
+["Type_record", ["label", "mbe_which", ["Tconstr", ["Pident", "int"]]],
+["label", "mbe_button",
+["Tconstr", ["Pdot", ["Pident", "Sdlmouse"], "button"]]],
+["label", "mbe_state", ["Tconstr", ["Pident", "switch_state"]]],
+["label", "mbe_x", ["Tconstr", ["Pident", "int"]]],
+["label", "mbe_y", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "joyaxis_event", 0,
+["Type_record", ["label", "jae_which", ["Tconstr", ["Pident", "int"]]],
+["label", "jae_axis", ["Tconstr", ["Pident", "int"]]],
+["label", "jae_value", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "joyball_event", 0,
+["Type_record", ["label", "jle_which", ["Tconstr", ["Pident", "int"]]],
+["label", "jle_ball", ["Tconstr", ["Pident", "int"]]],
+["label", "jle_xrel", ["Tconstr", ["Pident", "int"]]],
+["label", "jle_yrel", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "joyhat_event", 0,
+["Type_record", ["label", "jhe_which", ["Tconstr", ["Pident", "int"]]],
+["label", "jhe_hat", ["Tconstr", ["Pident", "int"]]],
+["label", "jhe_value", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "joybutton_event", 0,
+["Type_record", ["label", "jbe_which", ["Tconstr", ["Pident", "int"]]],
+["label", "jbe_button", ["Tconstr", ["Pident", "int"]]],
+["label", "jbe_state", ["Tconstr", ["Pident", "switch_state"]]]]],
+["Sig_type", "event", 0,
+["Type_variant",
+["constructor", "ACTIVE", ["tuple", ["Tconstr", ["Pident", "active_event"]]]],
+["constructor", "KEYDOWN",
+["tuple", ["Tconstr", ["Pident", "keyboard_event"]]]],
+["constructor", "KEYUP",
+["tuple", ["Tconstr", ["Pident", "keyboard_event"]]]],
+["constructor", "MOUSEMOTION",
+["tuple", ["Tconstr", ["Pident", "mousemotion_event"]]]],
+["constructor", "MOUSEBUTTONDOWN",
+["tuple", ["Tconstr", ["Pident", "mousebutton_event"]]]],
+["constructor", "MOUSEBUTTONUP",
+["tuple", ["Tconstr", ["Pident", "mousebutton_event"]]]],
+["constructor", "JOYAXISMOTION",
+["tuple", ["Tconstr", ["Pident", "joyaxis_event"]]]],
+["constructor", "JOYBALLMOTION",
+["tuple", ["Tconstr", ["Pident", "joyball_event"]]]],
+["constructor", "JOYHATMOTION",
+["tuple", ["Tconstr", ["Pident", "joyhat_event"]]]],
+["constructor", "JOYBUTTONDOWN",
+["tuple", ["Tconstr", ["Pident", "joybutton_event"]]]],
+["constructor", "JOYBUTTONUP",
+["tuple", ["Tconstr", ["Pident", "joybutton_event"]]]],
+["constructor", "QUIT", ["tuple"]], ["constructor", "SYSWM", ["tuple"]],
+["constructor", "VIDEORESIZE",
+["tuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]],
+["constructor", "VIDEOEXPOSE", ["tuple"]],
+["constructor", "USER", ["tuple", ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_value", "string_of_event",
+["Tarrow", ["Tconstr", ["Pident", "event"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "event_mask", 0, ["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "active_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "keydown_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "keyup_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "mousemotion_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "mousebuttondown_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "mousebuttonup_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "joyaxismotion_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "joyballmotion_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "joyhatmotion_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "joybuttondown_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "joybuttonup_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "quit_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "syswmevent_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "videoresize_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "videoexpose_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "userevent_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "keyboard_event_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "mouse_event_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "joystick_event_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_value", "all_events_mask", ["Tconstr", ["Pident", "event_mask"]]],
+["Sig_type", "event_kind", 0,
+["Type_variant", ["constructor", "ACTIVE_EVENT", ["tuple"]],
+["constructor", "KEYDOWN_EVENT", ["tuple"]],
+["constructor", "KEYUP_EVENT", ["tuple"]],
+["constructor", "MOUSEMOTION_EVENT", ["tuple"]],
+["constructor", "MOUSEBUTTONDOWN_EVENT", ["tuple"]],
+["constructor", "MOUSEBUTTONUP_EVENT", ["tuple"]],
+["constructor", "JOYAXISMOTION_EVENT", ["tuple"]],
+["constructor", "JOYBALL_EVENT", ["tuple"]],
+["constructor", "JOYHAT_EVENT", ["tuple"]],
+["constructor", "JOYBUTTONDOWN_EVENT", ["tuple"]],
+["constructor", "JOYBUTTONUP_EVENT", ["tuple"]],
+["constructor", "QUIT_EVENT", ["tuple"]],
+["constructor", "SYSWM_EVENT", ["tuple"]],
+["constructor", "RESIZE_EVENT", ["tuple"]],
+["constructor", "EXPOSE_EVENT", ["tuple"]],
+["constructor", "USER_EVENT", ["tuple"]]]],
+["Sig_value", "make_mask",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "event_kind"]]],
+["Tconstr", ["Pident", "event_mask"]]]],
+["Sig_value", "of_mask",
+["Tarrow", ["Tconstr", ["Pident", "event_mask"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "event_kind"]]]]],
+["Sig_value", "enable_events",
+["Tarrow", ["Tconstr", ["Pident", "event_mask"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "disable_events",
+["Tarrow", ["Tconstr", ["Pident", "event_mask"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "get_enabled_events",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "event_mask"]]]],
+["Sig_value", "get_state",
+["Tarrow", ["Tconstr", ["Pident", "event_kind"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "set_state",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow", ["Tconstr", ["Pident", "event_kind"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "pump",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "wait_event",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "event"]]]],
+["Sig_value", "wait",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "poll",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "event"]]]]],
+["Sig_value", "has_event",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "peek",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "event_mask"]]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "event"]]]]]],
+["Sig_value", "get",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "event_mask"]]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "event"]]]]]],
+["Sig_value", "add",
+["Tarrow", ["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "event"]]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_module", "Old",
+["Mty_signature",
+["Sig_type", "keyboard_event_func", 0,
+["Type_alias",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Sdlkey"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "switch_state"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]]]],
+["Sig_type", "mouse_event_func", 0,
+["Type_alias",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Sdlmouse"], "button"]],
+["Tarrow", ["Tconstr", ["Pident", "switch_state"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]]]],
+["Sig_type", "mousemotion_event_func", 0,
+["Type_alias",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_type", "idle_event_func", 0,
+["Type_alias",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_type", "resize_event_func", 0,
+["Type_alias",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "set_keyboard_event_func",
+["Tarrow", ["Tconstr", ["Pident", "keyboard_event_func"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "set_mouse_event_func",
+["Tarrow", ["Tconstr", ["Pident", "mouse_event_func"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "set_mousemotion_event_func",
+["Tarrow", ["Tconstr", ["Pident", "mousemotion_event_func"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "set_idle_event_func",
+["Tarrow", ["Tconstr", ["Pident", "idle_event_func"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "set_resize_event_func",
+["Tarrow", ["Tconstr", ["Pident", "resize_event_func"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "start_event_loop",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "exit_event_loop",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "link_me", ["Tconstr", ["Pident", "unit"]]]]]

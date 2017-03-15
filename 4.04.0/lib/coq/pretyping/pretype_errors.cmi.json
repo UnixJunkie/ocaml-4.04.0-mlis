@@ -1,1348 +1,307 @@
-["module"; "Pretype_errors"; ["Mty_signature"; ["Sig_type"; "unification_error"; 
-                                               0; ["Type_variant"; ["constructor"; 
-                                                                   "OccurCheck"; 
-                                                                   ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Term"]; 
-                                                                   "existential_key"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Term"]; 
-                                                                   "constr"]]]]; 
-                                                  ["constructor"; "NotClean"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Term"]; 
-                                                            "existential"]]; 
-                                                  ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Environ"]; 
-                                                              "env"]]; 
-                                                  ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]]]; 
-                                                  ["constructor"; "NotSameArgSize"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "NotSameHead"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "NoCanonicalStructure"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "ConversionFailed"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Environ"]; 
-                                                              "env"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]]]; 
-                                                  ["constructor"; "MetaOccurInBody"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Term"]; 
-                                                            "existential_key"]]]]; 
-                                                  ["constructor"; "InstanceNotSameType"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Term"]; 
-                                                            "existential_key"]]; 
-                                                  ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Environ"]; 
-                                                              "env"]]; 
-                                                  ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "types"]]; 
-                                                  ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "types"]]]]; 
-                                                  ["constructor"; "UnifUnivInconsistency"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Univ"]; 
-                                                            "univ_inconsistency"]]]]; 
-                                                  ["constructor"; "CannotSolveConstraint"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; "Evd"]; 
-                                                            "evar_constraint"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "unification_error"]]]]; 
-                                                  ["constructor"; "ProblemBeyondCapabilities"; 
-                                                  ["tuple"]]]]; ["Sig_type"; 
-                                                                "position"; 
-                                                                0; ["Type_alias"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Ttuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "Id"]; 
-                                                                   "t"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Locus"]; 
-                                                                   "hyp_location_flag"]]]]]]; 
-                             ["Sig_type"; "position_reporting"; 0; ["Type_alias"; 
-                                                                   ["Ttuple"; 
-                                                                   ["Ttuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "position"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Term"]; 
-                                                                   "constr"]]]]]; 
-                             ["Sig_type"; "subterm_unification_error"; 
-                             0; ["Type_alias"; ["Ttuple"; ["Tconstr"; 
-                                                          ["Pident"; "bool"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "position_reporting"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "position_reporting"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "option"]; 
-                                               ["Ttuple"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Term"]; 
-                                                          "constr"]]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                           "constr"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "unification_error"]]]]]]]; 
-                             ["Sig_type"; "pretype_error"; 0; ["Type_variant"; 
-                                                              ["constructor"; 
-                                                              "CantFindCaseType"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]]]; 
-                                                              ["constructor"; 
-                                                              "ActualTypeNotCoercible"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Environ"]; 
-                                                              "unsafe_judgment"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "types"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unification_error"]]]]; 
-                                                              ["constructor"; 
-                                                              "UnifOccurCheck"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "existential_key"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]]]; 
-                                                              ["constructor"; 
-                                                              "UnsolvableImplicit"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "existential_key"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Evd"]; 
-                                                              "unsolvability_explanation"]]]]]; 
-                                                              ["constructor"; 
-                                                              "CannotUnify"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unification_error"]]]]]; 
-                                                              ["constructor"; 
-                                                              "CannotUnifyLocal"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]]]; 
-                                                              ["constructor"; 
-                                                              "CannotUnifyBindingType"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]]]; 
-                                                              ["constructor"; 
-                                                              "CannotGeneralize"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]]]; 
-                                                              ["constructor"; 
-                                                              "NoOccurrenceFound"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "Id"]; 
-                                                              "t"]]]]]; 
-                                                              ["constructor"; 
-                                                              "CannotFindWellTypedAbstraction"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "list"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Ttuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Environ"]; 
-                                                              "env"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Type_errors"]; 
-                                                              "type_error"]]]]]]; 
-                                                              ["constructor"; 
-                                                              "WrongAbstractionType"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "Name"]; 
-                                                              "t"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "types"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "types"]]]]; 
-                                                              ["constructor"; 
-                                                              "AbstractionOverMeta"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "Name"]; 
-                                                              "t"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "Name"]; 
-                                                              "t"]]]]; 
-                                                              ["constructor"; 
-                                                              "NonLinearUnification"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "Name"]; 
-                                                              "t"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]]]; 
-                                                              ["constructor"; 
-                                                              "VarNotFound"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "Id"]; 
-                                                              "t"]]]]; 
-                                                              ["constructor"; 
-                                                              "UnexpectedType"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]]]; 
-                                                              ["constructor"; 
-                                                              "NotProduct"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]]]; 
-                                                              ["constructor"; 
-                                                              "TypingError"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Type_errors"]; 
-                                                              "type_error"]]]]; 
-                                                              ["constructor"; 
-                                                              "CannotUnifyOccurrences"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "subterm_unification_error"]]]]; 
-                                                              ["constructor"; 
-                                                              "UnsatisfiableConstraints"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Ttuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "existential_key"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Evar_kinds"]; 
-                                                              "t"]]]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Evar"]; 
-                                                              "Set"]; 
-                                                              "t"]]]]]]]; 
-                             ["Sig_unknown"]; ["Sig_value"; "precatchable_exception"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "exn"]]; 
-                                              ["Tconstr"; ["Pident"; "bool"]]]]; 
-                             ["Sig_value"; "error_actual_type_loc"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Loc"]; 
-                                                                    "t"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                                    "env"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                                    "unsafe_judgment"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unification_error"]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]]]]]]; 
-                             ["Sig_value"; "error_cant_apply_not_functional_loc"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Loc"]; 
-                                                    "t"]]; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                           "env"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                                    "unsafe_judgment"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                                    "unsafe_judgment"]]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]]]]]; 
-                             ["Sig_value"; "error_cant_apply_bad_type_loc"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Loc"]; 
-                                                    "t"]]; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                           "env"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                                    "unsafe_judgment"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                                    "unsafe_judgment"]]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]]]]]]; 
-                             ["Sig_value"; "error_case_not_inductive_loc"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Loc"]; 
-                                                    "t"]]; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                           "env"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                                    "unsafe_judgment"]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]]]]; 
-                             ["Sig_value"; "error_ill_formed_branch_loc"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Loc"]; 
-                                                    "t"]]; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                           "env"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "pconstructor"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]]]]]]]; 
-                             ["Sig_value"; "error_number_branches_loc"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Loc"]; 
-                                                    "t"]]; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                           "env"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                                    "unsafe_judgment"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]]]]]; 
-                             ["Sig_value"; "error_ill_typed_rec_body_loc"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Loc"]; 
-                                                    "t"]]; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                           "env"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "array"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Name"]; 
-                                                                    "t"]]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "array"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                                    "unsafe_judgment"]]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "array"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "types"]]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]]]]]]]; 
-                             ["Sig_value"; "error_not_a_type_loc"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Loc"]; 
-                                                                   "t"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Environ"]; 
-                                                                   "env"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Evd"]; 
-                                                                   "evar_map"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Environ"]; 
-                                                                   "unsafe_judgment"]]; 
-                                                                   ["Tpoly"; 
-                                                                   "b"]]]]]]; 
-                             ["Sig_value"; "error_cannot_coerce"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Environ"]; 
-                                                                  "env"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Evd"]; 
-                                                                  "evar_map"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Ttuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Term"]; 
-                                                                  "constr"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Term"]; 
-                                                                  "constr"]]]; 
-                                                                  ["Tpoly"; 
-                                                                  "b"]]]]]; 
-                             ["Sig_value"; "error_occur_check"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Environ"]; 
-                                                                "env"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Evd"]; 
-                                                                "evar_map"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Term"]; 
-                                                                "existential_key"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Term"]; 
-                                                                "constr"]]; 
-                                                                ["Tpoly"; 
-                                                                "b"]]]]]]; 
-                             ["Sig_value"; "error_unsolvable_implicit"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Loc"]; 
-                                                    "t"]]; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                           "env"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "existential_key"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "unsolvability_explanation"]]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]]]]]; 
-                             ["Sig_value"; "error_cannot_unify_loc"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Loc"]; 
-                                                    "t"]]; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                           "env"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unification_error"]]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]]]]]; 
-                             ["Sig_value"; "error_cannot_unify"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Environ"]; 
-                                                                 "env"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Evd"]; 
-                                                                 "evar_map"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unification_error"]]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Term"]; 
-                                                                 "constr"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Term"]; 
-                                                                 "constr"]]]; 
-                                                                 ["Tpoly"; 
-                                                                 "b"]]]]]]; 
-                             ["Sig_value"; "error_cannot_unify_local"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Environ"]; 
-                                                    "env"]]; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Evd"]; 
-                                                             "evar_map"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Ttuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Term"]; 
-                                                             "constr"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Term"]; 
-                                                             "constr"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Term"]; 
-                                                             "constr"]]]; 
-                                                             ["Tpoly"; "b"]]]]]; 
-                             ["Sig_value"; "error_cannot_find_well_typed_abstraction"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Environ"]; 
-                                                    "env"]]; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Evd"]; 
-                                                             "evar_map"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Term"]; 
-                                                             "constr"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Term"]; 
-                                                             "constr"]]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "option"]; 
-                                                             ["Ttuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Environ"]; 
-                                                             "env"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Type_errors"]; 
-                                                             "type_error"]]]]; 
-                                                             ["Tpoly"; "b"]]]]]]]; 
-                             ["Sig_value"; "error_wrong_abstraction_type"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Environ"]; 
-                                                    "env"]]; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Evd"]; 
-                                                             "evar_map"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Names"]; 
-                                                             "Name"]; 
-                                                             "t"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "types"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "types"]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]]]]]]; 
-                             ["Sig_value"; "error_abstraction_over_meta"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Environ"]; 
-                                                    "env"]]; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Evd"]; 
-                                                             "evar_map"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Term"]; 
-                                                             "metavariable"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Term"]; 
-                                                             "metavariable"]]; 
-                                                             ["Tpoly"; "b"]]]]]]; 
-                             ["Sig_value"; "error_non_linear_unification"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Environ"]; 
-                                                    "env"]]; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Evd"]; 
-                                                             "evar_map"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Term"]; 
-                                                             "metavariable"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Term"]; 
-                                                             "constr"]]; 
-                                                             ["Tpoly"; "b"]]]]]]; 
-                             ["Sig_value"; "error_cant_find_case_type_loc"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Loc"]; 
-                                                    "t"]]; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                           "env"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]]]]; 
-                             ["Sig_value"; "error_unexpected_type_loc"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Loc"]; 
-                                                    "t"]]; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                           "env"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]]]]]; 
-                             ["Sig_value"; "error_not_product_loc"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Loc"]; 
-                                                                    "t"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Environ"]; 
-                                                                    "env"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Evd"]; 
-                                                                    "evar_map"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "b"]]]]]]; 
-                             ["Sig_value"; "error_var_not_found_loc"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Loc"]; 
-                                                    "t"]]; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Id"]; 
-                                                           "t"]]; ["Tpoly"; 
-                                                                  "b"]]]]; 
-                             ["Sig_value"; "unsatisfiable_constraints"; 
-                             ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Environ"]; 
-                                                    "env"]]; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Evd"]; 
-                                                             "evar_map"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "option"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Evd"]; 
-                                                             "evar"]]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "option"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Evar"]; 
-                                                             "Set"]; 
-                                                             "t"]]]; 
-                                                             ["Tpoly"; "a"]]]]]]; 
-                             ["Sig_value"; "unsatisfiable_exception"; 
-                             ["Tarrow"; ["Tconstr"; ["Pident"; "exn"]]; 
-                             ["Tconstr"; ["Pident"; "bool"]]]]]]
+["module", "Pretype_errors",
+["Mty_signature",
+["Sig_type", "unification_error", 0,
+["Type_variant",
+["constructor", "OccurCheck",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "existential_key"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]],
+["constructor", "NotClean",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "existential"]],
+["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]],
+["constructor", "NotSameArgSize", ["tuple"]],
+["constructor", "NotSameHead", ["tuple"]],
+["constructor", "NoCanonicalStructure", ["tuple"]],
+["constructor", "ConversionFailed",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]],
+["constructor", "MetaOccurInBody",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "existential_key"]]]],
+["constructor", "InstanceNotSameType",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "existential_key"]],
+["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "types"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "types"]]]],
+["constructor", "UnifUnivInconsistency",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Univ"], "univ_inconsistency"]]]],
+["constructor", "CannotSolveConstraint",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_constraint"]],
+["Tconstr", ["Pident", "unification_error"]]]],
+["constructor", "ProblemBeyondCapabilities", ["tuple"]]]],
+["Sig_type", "position", 0,
+["Type_alias",
+["Tconstr", ["Pident", "option"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Locus"], "hyp_location_flag"]]]]]],
+["Sig_type", "position_reporting", 0,
+["Type_alias",
+["Ttuple",
+["Ttuple", ["Tconstr", ["Pident", "position"]],
+["Tconstr", ["Pident", "int"]]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]]],
+["Sig_type", "subterm_unification_error", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "bool"]],
+["Tconstr", ["Pident", "position_reporting"]],
+["Tconstr", ["Pident", "position_reporting"]],
+["Tconstr", ["Pident", "option"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pident", "unification_error"]]]]]]],
+["Sig_type", "pretype_error", 0,
+["Type_variant",
+["constructor", "CantFindCaseType",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]],
+["constructor", "ActualTypeNotCoercible",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Environ"], "unsafe_judgment"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "types"]],
+["Tconstr", ["Pident", "unification_error"]]]],
+["constructor", "UnifOccurCheck",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "existential_key"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]],
+["constructor", "UnsolvableImplicit",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "existential_key"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Evd"], "unsolvability_explanation"]]]]],
+["constructor", "CannotUnify",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "unification_error"]]]]],
+["constructor", "CannotUnifyLocal",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]],
+["constructor", "CannotUnifyBindingType",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]],
+["constructor", "CannotGeneralize",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]],
+["constructor", "NoOccurrenceFound",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]]],
+["constructor", "CannotFindWellTypedAbstraction",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]],
+["Tconstr", ["Pident", "option"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tconstr", ["Pdot", ["Pident", "Type_errors"], "type_error"]]]]]],
+["constructor", "WrongAbstractionType",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Name"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "types"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "types"]]]],
+["constructor", "AbstractionOverMeta",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Name"], "t"]],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Name"], "t"]]]],
+["constructor", "NonLinearUnification",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Name"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]],
+["constructor", "VarNotFound",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]],
+["constructor", "UnexpectedType",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]],
+["constructor", "NotProduct",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]],
+["constructor", "TypingError",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Type_errors"], "type_error"]]]],
+["constructor", "CannotUnifyOccurrences",
+["tuple", ["Tconstr", ["Pident", "subterm_unification_error"]]]],
+["constructor", "UnsatisfiableConstraints",
+["tuple",
+["Tconstr", ["Pident", "option"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "existential_key"]],
+["Tconstr", ["Pdot", ["Pident", "Evar_kinds"], "t"]]]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Evar"], "Set"], "t"]]]]]]],
+["Sig_unknown"],
+["Sig_value", "precatchable_exception",
+["Tarrow", ["Tconstr", ["Pident", "exn"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "error_actual_type_loc",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "unsafe_judgment"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tarrow", ["Tconstr", ["Pident", "unification_error"]], ["Tpoly", "b"]]]]]]]],
+["Sig_value", "error_cant_apply_not_functional_loc",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "unsafe_judgment"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Environ"], "unsafe_judgment"]]],
+["Tpoly", "b"]]]]]]],
+["Sig_value", "error_cant_apply_bad_type_loc",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "unsafe_judgment"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Environ"], "unsafe_judgment"]]],
+["Tpoly", "b"]]]]]]]],
+["Sig_value", "error_case_not_inductive_loc",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "unsafe_judgment"]],
+["Tpoly", "b"]]]]]],
+["Sig_value", "error_ill_formed_branch_loc",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "pconstructor"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tpoly", "b"]]]]]]]]],
+["Sig_value", "error_number_branches_loc",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "unsafe_judgment"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tpoly", "b"]]]]]]],
+["Sig_value", "error_ill_typed_rec_body_loc",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Name"], "t"]]],
+["Tarrow",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pdot", ["Pident", "Environ"], "unsafe_judgment"]]],
+["Tarrow",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pdot", ["Pident", "Term"], "types"]]], ["Tpoly", "b"]]]]]]]]],
+["Sig_value", "error_not_a_type_loc",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "unsafe_judgment"]],
+["Tpoly", "b"]]]]]],
+["Sig_value", "error_cannot_coerce",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]], ["Tpoly", "b"]]]]],
+["Sig_value", "error_occur_check",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "existential_key"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tpoly", "b"]]]]]],
+["Sig_value", "error_unsolvable_implicit",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "existential_key"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Evd"], "unsolvability_explanation"]]],
+["Tpoly", "b"]]]]]]],
+["Sig_value", "error_cannot_unify_loc",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "unification_error"]]],
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]], ["Tpoly", "b"]]]]]]],
+["Sig_value", "error_cannot_unify",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "unification_error"]]],
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]], ["Tpoly", "b"]]]]]],
+["Sig_value", "error_cannot_unify_local",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]], ["Tpoly", "b"]]]]],
+["Sig_value", "error_cannot_find_well_typed_abstraction",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tconstr", ["Pdot", ["Pident", "Type_errors"], "type_error"]]]],
+["Tpoly", "b"]]]]]]],
+["Sig_value", "error_wrong_abstraction_type",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Name"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "types"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "types"]],
+["Tpoly", "b"]]]]]]]],
+["Sig_value", "error_abstraction_over_meta",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "metavariable"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "metavariable"]],
+["Tpoly", "b"]]]]]],
+["Sig_value", "error_non_linear_unification",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "metavariable"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tpoly", "b"]]]]]],
+["Sig_value", "error_cant_find_case_type_loc",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tpoly", "b"]]]]]],
+["Sig_value", "error_unexpected_type_loc",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tpoly", "b"]]]]]]],
+["Sig_value", "error_not_product_loc",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]],
+["Tpoly", "b"]]]]]],
+["Sig_value", "error_var_not_found_loc",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tpoly", "b"]]]],
+["Sig_value", "unsatisfiable_constraints",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Environ"], "env"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Evd"], "evar_map"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Evd"], "evar"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Evar"], "Set"], "t"]]],
+["Tpoly", "a"]]]]]],
+["Sig_value", "unsatisfiable_exception",
+["Tarrow", ["Tconstr", ["Pident", "exn"]], ["Tconstr", ["Pident", "bool"]]]]]]

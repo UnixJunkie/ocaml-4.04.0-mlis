@@ -1,898 +1,369 @@
-["module"; "Http"; ["Mty_signature"; ["Sig_type"; "header_fields"; 0; 
-                                     ["Type_alias"; ["Tconstr"; ["Pident"; 
-                                                                "list"]; 
-                                                    ["Ttuple"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "list"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "string"]]]]]]]; 
-                   ["Sig_value"; "add_header"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "header_fields"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "header_fields"]]]]]]; 
-                   ["Sig_value"; "is_header_present"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "header_fields"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "bool"]]]]]; 
-                   ["Sig_value"; "lookup_header"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "header_fields"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "list"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "string"]]]]]]; 
-                   ["Sig_type"; "version"; 0; ["Type_variant"; ["constructor"; 
-                                                               "HTTP09"; 
-                                                               ["tuple"]]; 
-                                              ["constructor"; "HTTP10"; 
-                                              ["tuple"]]; ["constructor"; 
-                                                          "HTTP11"; ["tuple"]]]]; 
-                   ["Sig_value"; "string_of_version"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "version"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "string"]]]]; 
-                   ["Sig_type"; "meth"; 0; ["Type_variant"; ["constructor"; 
-                                                            "Get"; ["tuple"]]; 
-                                           ["constructor"; "Put"; ["tuple"]]; 
-                                           ["constructor"; "Head"; ["tuple"]]; 
-                                           ["constructor"; "Post"; ["tuple"]]; 
-                                           ["constructor"; "Trace"; ["tuple"]]; 
-                                           ["constructor"; "Delete"; 
-                                           ["tuple"]]; ["constructor"; 
-                                                       "Connect"; ["tuple"]]; 
-                                           ["constructor"; "Options"; 
-                                           ["tuple"]]; ["constructor"; 
-                                                       "Extension"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]]]]; 
-                   ["Sig_value"; "string_of_meth"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "meth"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]]; 
-                   ["Sig_type"; "status"; 0; ["Type_variant"; ["constructor"; 
-                                                              "Status_continue"; 
-                                                              ["tuple"]]; 
-                                             ["constructor"; "Status_switching_protocols"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_ok"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_created"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_accepted"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_non_authoritative"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_no_content"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_reset_content"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_partial_content"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_multiple_choices"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_moved_permanently"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_found"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_see_other"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_not_modified"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_use_proxy"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_temporary_redirect"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_bad_request"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_unauthorized"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_payment_required"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_forbidden"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_not_found"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_method_not_allowed"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_not_acceptable"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_proxy_authentication_required"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_request_timeout"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_conflict"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_gone"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_length_required"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_precondition_failed"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_request_entity_too_large"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_request_uri_too_large"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_unsupported_media_type"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_requested_range_not_satisfiable"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_expectation_failed"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_internal_server_error"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_not_implemented"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_bad_gateway"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_service_unavailable"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_gateway_timeout"; 
-                                                         ["tuple"]]; 
-                                             ["constructor"; "Status_version_not_supported"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Status_other"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "string"]]]]]]; 
-                   ["Sig_value"; "status_info"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "status"]]; 
-                                                ["Ttuple"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "string"]]]]]; 
-                   ["Sig_module"; "Headers"; ["Mty_signature"; ["Sig_type"; 
-                                                               "error"; 
-                                                               0; ["Type_abstract"]]; 
-                                             ["Sig_unknown"]; ["Sig_value"; 
-                                                              "string_of_error"; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "error"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]]; 
-                                             ["Sig_value"; "serialize"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Buffer"]; 
-                                                                    "t"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "header_fields"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]]]]; 
-                   ["Sig_module"; "Request_header"; ["Mty_signature"; 
-                                                    ["Sig_type"; "url"; 
-                                                    0; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "Star"; ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "Uri"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Uri"]; 
-                                                              "t"]]]]]]; 
-                                                    ["Sig_value"; "string_of_url"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "url"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "string"]]]]; 
-                                                    ["Sig_type"; "state"; 
-                                                    0; ["Type_abstract"]]; 
-                                                    ["Sig_value"; "init_state"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "state"]]]]; 
-                                                    ["Sig_value"; "num_bytes_parsed"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "state"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]; 
-                                                    ["Sig_type"; "t"; 
-                                                    0; ["Type_record"; 
-                                                       ["label"; "version"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "version"]]]; 
-                                                       ["label"; "meth"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "meth"]]]; 
-                                                       ["label"; "url"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "url"]]]; 
-                                                       ["label"; "headers"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "header_fields"]]]]]; 
-                                                    ["Sig_type"; "parse_result"; 
-                                                    0; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "Result"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]; 
-                                                       ["constructor"; 
-                                                       "Parse_incomplete"; 
-                                                       ["tuple"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "state"]]]]]]; 
-                                                    ["Sig_value"; "parse"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "state"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "parse_result"]]]]]; 
-                                                    ["Sig_value"; "parse_substring"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "state"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "parse_result"]]]]]]]; 
-                                                    ["Sig_type"; "error"; 
-                                                    0; ["Type_abstract"]]; 
-                                                    ["Sig_unknown"]; 
-                                                    ["Sig_value"; "string_of_error"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "error"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "string"]]]]; 
-                                                    ["Sig_value"; "serialize"; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Buffer"]; 
-                                                               "t"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "t"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "unit"]]]]]]]; 
-                   ["Sig_module"; "Response_header"; ["Mty_signature"; 
-                                                     ["Sig_type"; "state"; 
-                                                     0; ["Type_abstract"]]; 
-                                                     ["Sig_value"; "init_state"; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "state"]]]]; 
-                                                     ["Sig_value"; "num_bytes_parsed"; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "state"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "int"]]]]; 
-                                                     ["Sig_type"; "t"; 
-                                                     0; ["Type_record"; 
-                                                        ["label"; "version"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "version"]]]; 
-                                                        ["label"; "status_code"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                        ["label"; "reason_phrase"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]]; 
-                                                        ["label"; "headers"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "header_fields"]]]]]; 
-                                                     ["Sig_type"; "parse_result"; 
-                                                     0; ["Type_variant"; 
-                                                        ["constructor"; 
-                                                        "Result"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]]; 
-                                                        ["constructor"; 
-                                                        "Parse_incomplete"; 
-                                                        ["tuple"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "state"]]]]]]; 
-                                                     ["Sig_value"; "parse"; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "state"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "parse_result"]]]]]; 
-                                                     ["Sig_value"; "parse_substring"; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "state"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "parse_result"]]]]]]]; 
-                                                     ["Sig_type"; "error"; 
-                                                     0; ["Type_abstract"]]; 
-                                                     ["Sig_unknown"]; 
-                                                     ["Sig_value"; "string_of_error"; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "error"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "string"]]]]; 
-                                                     ["Sig_value"; "serialize"; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Buffer"]; 
-                                                                "t"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "t"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]]]]; 
-                   ["Sig_type"; "payload_callback"; 0; ["Type_alias"; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]]]]]; 
-                   ["Sig_module"; "Payload"; ["Mty_signature"; ["Sig_type"; 
-                                                               "state"; 
-                                                               0; ["Type_abstract"]]; 
-                                             ["Sig_value"; "num_bytes_parsed"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "state"]]; 
-                                             ["Tconstr"; ["Pident"; "int64"]]]]; 
-                                             ["Sig_type"; "payload_type"; 
-                                             0; ["Type_variant"; ["constructor"; 
-                                                                 "No_payload"; 
-                                                                 ["tuple"]]; 
-                                                ["constructor"; "Payload"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; "state"]]]]; 
-                                                ["constructor"; "Error"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]]]; 
-                                             ["Sig_value"; "init_from_response"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "payload_callback"]]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int64"]]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Response_header"]; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "payload_type"]]]]]]; 
-                                             ["Sig_value"; "init_from_request"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "payload_callback"]]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int64"]]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Request_header"]; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "payload_type"]]]]]]; 
-                                             ["Sig_type"; "error"; 0; 
-                                             ["Type_abstract"]]; ["Sig_value"; 
-                                                                 "string_of_error"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "error"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]]; 
-                                             ["Sig_unknown"]; ["Sig_type"; 
-                                                              "t"; 0; 
-                                                              ["Type_record"; 
-                                                              ["label"; 
-                                                              "content"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Buffer"]; 
-                                                              "t"]]]; 
-                                                              ["label"; 
-                                                              "trailers"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "header_fields"]]]]]; 
-                                             ["Sig_type"; "parse_result"; 
-                                             0; ["Type_variant"; ["constructor"; 
-                                                                 "Result"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]; 
-                                                ["constructor"; "Parse_incomplete"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; "state"]]]]]]; 
-                                             ["Sig_value"; "parse"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "state"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "parse_result"]]]]]; 
-                                             ["Sig_value"; "parse_substring"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "state"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                             ["Tconstr"; ["Pident"; "parse_result"]]]]]]]; 
-                                             ["Sig_value"; "get_parse_result"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "state"]]; 
-                                             ["Tconstr"; ["Pident"; "option"]; 
-                                             ["Tconstr"; ["Pident"; "t"]]]]]; 
-                                             ["Sig_value"; "connection_closed"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "state"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]; 
-                                             ["Sig_value"; "serialize_of_request"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Request_header"]; 
-                                                                    "t"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Buffer"]; 
-                                                                    "t"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]]]; 
-                                             ["Sig_value"; "serialize_of_response"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Response_header"]; 
-                                                                    "t"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Buffer"]; 
-                                                                    "t"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]]]]]; 
-                   ["Sig_module"; "Request"; ["Mty_signature"; ["Sig_type"; 
-                                                               "state"; 
-                                                               0; ["Type_abstract"]]; 
-                                             ["Sig_type"; "header_callback"; 
-                                             0; ["Type_alias"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Request_header"]; 
-                                                               "t"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Request_header"]; 
-                                                               "t"]]]]]; 
-                                             ["Sig_value"; "init_state"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "header_callback"]]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "payload_callback"]]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]; 
-                                             ["Tconstr"; ["Pident"; "state"]]]]]]; 
-                                             ["Sig_value"; "num_bytes_parsed"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "state"]]; 
-                                             ["Tconstr"; ["Pident"; "int64"]]]]; 
-                                             ["Sig_type"; "error"; 0; 
-                                             ["Type_abstract"]]; ["Sig_value"; 
-                                                                 "string_of_error"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "error"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]]; 
-                                             ["Sig_unknown"]; ["Sig_type"; 
-                                                              "t"; 0; 
-                                                              ["Type_record"; 
-                                                              ["label"; 
-                                                              "request"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Request_header"]; 
-                                                              "t"]]]; 
-                                                              ["label"; 
-                                                              "payload"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Payload"]; 
-                                                              "t"]]]]]]; 
-                                             ["Sig_type"; "parse_result"; 
-                                             0; ["Type_variant"; ["constructor"; 
-                                                                 "Result"; 
-                                                                 ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]; 
-                                                ["constructor"; "Parse_incomplete"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; "state"]]]]; 
-                                                ["constructor"; "Error"; 
-                                                ["tuple"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]]]; 
-                                             ["Sig_value"; "parse"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "state"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "parse_result"]]]]]; 
-                                             ["Sig_value"; "parse_substring"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "state"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                             ["Tconstr"; ["Pident"; "parse_result"]]]]]]]; 
-                                             ["Sig_value"; "get_parse_result"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "state"]]; 
-                                             ["Tconstr"; ["Pident"; "option"]; 
-                                             ["Tconstr"; ["Pident"; "t"]]]]]; 
-                                             ["Sig_value"; "connection_closed"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "state"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]; 
-                                             ["Sig_value"; "serialize"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Buffer"]; 
-                                                                    "t"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                                             ["Sig_value"; "version"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "version"]]]]; 
-                                             ["Sig_value"; "meth"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "t"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "meth"]]]]; 
-                                             ["Sig_value"; "headers"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "header_fields"]]]]; 
-                                             ["Sig_value"; "payload_buf"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "option"]; 
-                                             ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                  "Buffer"]; 
-                                                         "t"]]]]]]]; 
-                   ["Sig_module"; "Response"; ["Mty_signature"; ["Sig_type"; 
-                                                                "state"; 
-                                                                0; ["Type_abstract"]]; 
-                                              ["Sig_type"; "header_callback"; 
-                                              0; ["Type_alias"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Response_header"]; 
-                                                                "t"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Response_header"]; 
-                                                                "t"]]]]]; 
-                                              ["Sig_value"; "init_state"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "option"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "header_callback"]]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "option"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "payload_callback"]]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Request_header"]; 
-                                                         "t"]]; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "state"]]]]]]; 
-                                              ["Sig_value"; "num_bytes_parsed"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "state"]]; 
-                                              ["Tconstr"; ["Pident"; "int64"]]]]; 
-                                              ["Sig_type"; "error"; 0; 
-                                              ["Type_variant"; ["constructor"; 
-                                                               "Internal_error"; 
-                                                               ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]]]]]; 
-                                              ["Sig_value"; "string_of_error"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "error"]]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "string"]]]]; 
-                                              ["Sig_unknown"]; ["Sig_type"; 
-                                                               "t"; 0; 
-                                                               ["Type_record"; 
-                                                               ["label"; 
-                                                               "response"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Response_header"]; 
-                                                               "t"]]]; 
-                                                               ["label"; 
-                                                               "payload"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "option"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Payload"]; 
-                                                               "t"]]]]]]; 
-                                              ["Sig_type"; "parse_result"; 
-                                              0; ["Type_variant"; ["constructor"; 
-                                                                  "Result"; 
-                                                                  ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "t"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]]; 
-                                                 ["constructor"; "Parse_incomplete"; 
-                                                 ["tuple"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "state"]]]]; 
-                                                 ["constructor"; "Error"; 
-                                                 ["tuple"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]]]; 
-                                              ["Sig_value"; "parse"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "state"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "parse_result"]]]]]; 
-                                              ["Sig_value"; "parse_substring"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "state"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "parse_result"]]]]]]]; 
-                                              ["Sig_value"; "get_parse_result"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "state"]]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "option"]; 
-                                              ["Tconstr"; ["Pident"; "t"]]]]]; 
-                                              ["Sig_value"; "connection_closed"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "state"]]; 
-                                              ["Tconstr"; ["Pident"; "unit"]]]]; 
-                                              ["Sig_value"; "serialize"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Buffer"]; 
-                                                         "t"]]; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "t"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]]; 
-                                              ["Sig_value"; "make_response"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "option"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Payload"]; 
-                                                         "t"]]]; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "header_fields"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "status"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]]]]]; 
-                                              ["Sig_value"; "status_code"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; "int"]]]]; 
-                                              ["Sig_value"; "headers"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "header_fields"]]]]; 
-                                              ["Sig_value"; "payload_buf"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "option"]; 
-                                              ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                   "Buffer"]; 
-                                                          "t"]]]]]]]]]
+["module", "Http",
+["Mty_signature",
+["Sig_type", "header_fields", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]]]]]],
+["Sig_value", "add_header",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "header_fields"]],
+["Tconstr", ["Pident", "header_fields"]]]]]],
+["Sig_value", "is_header_present",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "header_fields"]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "lookup_header",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "header_fields"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_type", "version", 0,
+["Type_variant", ["constructor", "HTTP09", ["tuple"]],
+["constructor", "HTTP10", ["tuple"]], ["constructor", "HTTP11", ["tuple"]]]],
+["Sig_value", "string_of_version",
+["Tarrow", ["Tconstr", ["Pident", "version"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "meth", 0,
+["Type_variant", ["constructor", "Get", ["tuple"]],
+["constructor", "Put", ["tuple"]], ["constructor", "Head", ["tuple"]],
+["constructor", "Post", ["tuple"]], ["constructor", "Trace", ["tuple"]],
+["constructor", "Delete", ["tuple"]], ["constructor", "Connect", ["tuple"]],
+["constructor", "Options", ["tuple"]],
+["constructor", "Extension", ["tuple", ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "string_of_meth",
+["Tarrow", ["Tconstr", ["Pident", "meth"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "status", 0,
+["Type_variant", ["constructor", "Status_continue", ["tuple"]],
+["constructor", "Status_switching_protocols", ["tuple"]],
+["constructor", "Status_ok", ["tuple"]],
+["constructor", "Status_created", ["tuple"]],
+["constructor", "Status_accepted", ["tuple"]],
+["constructor", "Status_non_authoritative", ["tuple"]],
+["constructor", "Status_no_content", ["tuple"]],
+["constructor", "Status_reset_content", ["tuple"]],
+["constructor", "Status_partial_content", ["tuple"]],
+["constructor", "Status_multiple_choices", ["tuple"]],
+["constructor", "Status_moved_permanently", ["tuple"]],
+["constructor", "Status_found", ["tuple"]],
+["constructor", "Status_see_other", ["tuple"]],
+["constructor", "Status_not_modified", ["tuple"]],
+["constructor", "Status_use_proxy", ["tuple"]],
+["constructor", "Status_temporary_redirect", ["tuple"]],
+["constructor", "Status_bad_request", ["tuple"]],
+["constructor", "Status_unauthorized", ["tuple"]],
+["constructor", "Status_payment_required", ["tuple"]],
+["constructor", "Status_forbidden", ["tuple"]],
+["constructor", "Status_not_found", ["tuple"]],
+["constructor", "Status_method_not_allowed", ["tuple"]],
+["constructor", "Status_not_acceptable", ["tuple"]],
+["constructor", "Status_proxy_authentication_required", ["tuple"]],
+["constructor", "Status_request_timeout", ["tuple"]],
+["constructor", "Status_conflict", ["tuple"]],
+["constructor", "Status_gone", ["tuple"]],
+["constructor", "Status_length_required", ["tuple"]],
+["constructor", "Status_precondition_failed", ["tuple"]],
+["constructor", "Status_request_entity_too_large", ["tuple"]],
+["constructor", "Status_request_uri_too_large", ["tuple"]],
+["constructor", "Status_unsupported_media_type", ["tuple"]],
+["constructor", "Status_requested_range_not_satisfiable", ["tuple"]],
+["constructor", "Status_expectation_failed", ["tuple"]],
+["constructor", "Status_internal_server_error", ["tuple"]],
+["constructor", "Status_not_implemented", ["tuple"]],
+["constructor", "Status_bad_gateway", ["tuple"]],
+["constructor", "Status_service_unavailable", ["tuple"]],
+["constructor", "Status_gateway_timeout", ["tuple"]],
+["constructor", "Status_version_not_supported", ["tuple"]],
+["constructor", "Status_other",
+["tuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "status_info",
+["Tarrow", ["Tconstr", ["Pident", "status"]],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "string"]]]]],
+["Sig_module", "Headers",
+["Mty_signature", ["Sig_type", "error", 0, ["Type_abstract"]],
+["Sig_unknown"],
+["Sig_value", "string_of_error",
+["Tarrow", ["Tconstr", ["Pident", "error"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "serialize",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Buffer"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "header_fields"]],
+["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_module", "Request_header",
+["Mty_signature",
+["Sig_type", "url", 0,
+["Type_variant", ["constructor", "Star", ["tuple"]],
+["constructor", "Uri",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Uri"], "t"]]]]]],
+["Sig_value", "string_of_url",
+["Tarrow", ["Tconstr", ["Pident", "url"]], ["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "state", 0, ["Type_abstract"]],
+["Sig_value", "init_state",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "state"]]]],
+["Sig_value", "num_bytes_parsed",
+["Tarrow", ["Tconstr", ["Pident", "state"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_type", "t", 0,
+["Type_record", ["label", "version", ["Tconstr", ["Pident", "version"]]],
+["label", "meth", ["Tconstr", ["Pident", "meth"]]],
+["label", "url", ["Tconstr", ["Pident", "url"]]],
+["label", "headers", ["Tconstr", ["Pident", "header_fields"]]]]],
+["Sig_type", "parse_result", 0,
+["Type_variant",
+["constructor", "Result",
+["tuple", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Parse_incomplete",
+["tuple", ["Tconstr", ["Pident", "state"]]]]]],
+["Sig_value", "parse",
+["Tarrow", ["Tconstr", ["Pident", "state"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "parse_result"]]]]],
+["Sig_value", "parse_substring",
+["Tarrow", ["Tconstr", ["Pident", "state"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "parse_result"]]]]]]],
+["Sig_type", "error", 0, ["Type_abstract"]], ["Sig_unknown"],
+["Sig_value", "string_of_error",
+["Tarrow", ["Tconstr", ["Pident", "error"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "serialize",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Buffer"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_module", "Response_header",
+["Mty_signature", ["Sig_type", "state", 0, ["Type_abstract"]],
+["Sig_value", "init_state",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "state"]]]],
+["Sig_value", "num_bytes_parsed",
+["Tarrow", ["Tconstr", ["Pident", "state"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_type", "t", 0,
+["Type_record", ["label", "version", ["Tconstr", ["Pident", "version"]]],
+["label", "status_code", ["Tconstr", ["Pident", "int"]]],
+["label", "reason_phrase", ["Tconstr", ["Pident", "string"]]],
+["label", "headers", ["Tconstr", ["Pident", "header_fields"]]]]],
+["Sig_type", "parse_result", 0,
+["Type_variant",
+["constructor", "Result",
+["tuple", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Parse_incomplete",
+["tuple", ["Tconstr", ["Pident", "state"]]]]]],
+["Sig_value", "parse",
+["Tarrow", ["Tconstr", ["Pident", "state"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "parse_result"]]]]],
+["Sig_value", "parse_substring",
+["Tarrow", ["Tconstr", ["Pident", "state"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "parse_result"]]]]]]],
+["Sig_type", "error", 0, ["Type_abstract"]], ["Sig_unknown"],
+["Sig_value", "string_of_error",
+["Tarrow", ["Tconstr", ["Pident", "error"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "serialize",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Buffer"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_type", "payload_callback", 0,
+["Type_alias",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "unit"]]]]]]]],
+["Sig_module", "Payload",
+["Mty_signature", ["Sig_type", "state", 0, ["Type_abstract"]],
+["Sig_value", "num_bytes_parsed",
+["Tarrow", ["Tconstr", ["Pident", "state"]],
+["Tconstr", ["Pident", "int64"]]]],
+["Sig_type", "payload_type", 0,
+["Type_variant", ["constructor", "No_payload", ["tuple"]],
+["constructor", "Payload", ["tuple", ["Tconstr", ["Pident", "state"]]]],
+["constructor", "Error", ["tuple", ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "init_from_response",
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "payload_callback"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int64"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Response_header"], "t"]],
+["Tconstr", ["Pident", "payload_type"]]]]]],
+["Sig_value", "init_from_request",
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "payload_callback"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int64"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Request_header"], "t"]],
+["Tconstr", ["Pident", "payload_type"]]]]]],
+["Sig_type", "error", 0, ["Type_abstract"]],
+["Sig_value", "string_of_error",
+["Tarrow", ["Tconstr", ["Pident", "error"]],
+["Tconstr", ["Pident", "string"]]]], ["Sig_unknown"],
+["Sig_type", "t", 0,
+["Type_record",
+["label", "content", ["Tconstr", ["Pdot", ["Pident", "Buffer"], "t"]]],
+["label", "trailers", ["Tconstr", ["Pident", "header_fields"]]]]],
+["Sig_type", "parse_result", 0,
+["Type_variant",
+["constructor", "Result",
+["tuple", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Parse_incomplete",
+["tuple", ["Tconstr", ["Pident", "state"]]]]]],
+["Sig_value", "parse",
+["Tarrow", ["Tconstr", ["Pident", "state"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "parse_result"]]]]],
+["Sig_value", "parse_substring",
+["Tarrow", ["Tconstr", ["Pident", "state"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "parse_result"]]]]]]],
+["Sig_value", "get_parse_result",
+["Tarrow", ["Tconstr", ["Pident", "state"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "connection_closed",
+["Tarrow", ["Tconstr", ["Pident", "state"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "serialize_of_request",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Request_header"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Buffer"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "serialize_of_response",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Response_header"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Buffer"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]]]]]],
+["Sig_module", "Request",
+["Mty_signature", ["Sig_type", "state", 0, ["Type_abstract"]],
+["Sig_type", "header_callback", 0,
+["Type_alias",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Request_header"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Request_header"], "t"]]]]],
+["Sig_value", "init_state",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "header_callback"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "payload_callback"]]],
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "state"]]]]]],
+["Sig_value", "num_bytes_parsed",
+["Tarrow", ["Tconstr", ["Pident", "state"]],
+["Tconstr", ["Pident", "int64"]]]],
+["Sig_type", "error", 0, ["Type_abstract"]],
+["Sig_value", "string_of_error",
+["Tarrow", ["Tconstr", ["Pident", "error"]],
+["Tconstr", ["Pident", "string"]]]], ["Sig_unknown"],
+["Sig_type", "t", 0,
+["Type_record",
+["label", "request",
+["Tconstr", ["Pdot", ["Pident", "Request_header"], "t"]]],
+["label", "payload",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Payload"], "t"]]]]]],
+["Sig_type", "parse_result", 0,
+["Type_variant",
+["constructor", "Result",
+["tuple", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Parse_incomplete",
+["tuple", ["Tconstr", ["Pident", "state"]]]],
+["constructor", "Error", ["tuple", ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "parse",
+["Tarrow", ["Tconstr", ["Pident", "state"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "parse_result"]]]]],
+["Sig_value", "parse_substring",
+["Tarrow", ["Tconstr", ["Pident", "state"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "parse_result"]]]]]]],
+["Sig_value", "get_parse_result",
+["Tarrow", ["Tconstr", ["Pident", "state"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "connection_closed",
+["Tarrow", ["Tconstr", ["Pident", "state"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "serialize",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Buffer"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "version",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "version"]]]],
+["Sig_value", "meth",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "meth"]]]],
+["Sig_value", "headers",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "header_fields"]]]],
+["Sig_value", "payload_buf",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Buffer"], "t"]]]]]]],
+["Sig_module", "Response",
+["Mty_signature", ["Sig_type", "state", 0, ["Type_abstract"]],
+["Sig_type", "header_callback", 0,
+["Type_alias",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Response_header"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Response_header"], "t"]]]]],
+["Sig_value", "init_state",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "header_callback"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "payload_callback"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Request_header"], "t"]],
+["Tconstr", ["Pident", "state"]]]]]],
+["Sig_value", "num_bytes_parsed",
+["Tarrow", ["Tconstr", ["Pident", "state"]],
+["Tconstr", ["Pident", "int64"]]]],
+["Sig_type", "error", 0,
+["Type_variant",
+["constructor", "Internal_error",
+["tuple", ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "string_of_error",
+["Tarrow", ["Tconstr", ["Pident", "error"]],
+["Tconstr", ["Pident", "string"]]]], ["Sig_unknown"],
+["Sig_type", "t", 0,
+["Type_record",
+["label", "response",
+["Tconstr", ["Pdot", ["Pident", "Response_header"], "t"]]],
+["label", "payload",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Payload"], "t"]]]]]],
+["Sig_type", "parse_result", 0,
+["Type_variant",
+["constructor", "Result",
+["tuple", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Parse_incomplete",
+["tuple", ["Tconstr", ["Pident", "state"]]]],
+["constructor", "Error", ["tuple", ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "parse",
+["Tarrow", ["Tconstr", ["Pident", "state"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "parse_result"]]]]],
+["Sig_value", "parse_substring",
+["Tarrow", ["Tconstr", ["Pident", "state"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "parse_result"]]]]]]],
+["Sig_value", "get_parse_result",
+["Tarrow", ["Tconstr", ["Pident", "state"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "connection_closed",
+["Tarrow", ["Tconstr", ["Pident", "state"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "serialize",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Buffer"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "make_response",
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Payload"], "t"]]],
+["Tarrow", ["Tconstr", ["Pident", "header_fields"]],
+["Tarrow", ["Tconstr", ["Pident", "status"]], ["Tconstr", ["Pident", "t"]]]]]],
+["Sig_value", "status_code",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "headers",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "header_fields"]]]],
+["Sig_value", "payload_buf",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Buffer"], "t"]]]]]]]]]

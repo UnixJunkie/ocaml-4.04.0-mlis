@@ -1,242 +1,75 @@
-["module"; "Ppx_bench_lib"; ["Mty_signature"; ["Sig_module"; "Benchmark_accumulator"; 
-                                              ["Mty_signature"; ["Sig_module"; 
-                                                                "Current_libname"; 
-                                                                ["Mty_signature"; 
-                                                                ["Sig_value"; 
-                                                                "set"; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                                                ["Sig_value"; 
-                                                                "unset"; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]]]; 
-                                              ["Sig_module"; "Entry"; 
-                                              ["Mty_signature"; ["Sig_type"; 
-                                                                "indexed_spec"; 
-                                                                1; ["Type_record"; 
-                                                                   ["label"; 
-                                                                   "arg_name"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                                   ["label"; 
-                                                                   "arg_values"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]; 
-                                                                   ["label"; 
-                                                                   "thunk"; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]]]]]; 
-                                              ["Sig_type"; "test_spec"; 
-                                              0; ["Type_variant"; ["constructor"; 
-                                                                  "Regular_thunk"; 
-                                                                  ["tuple"; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]]]]]; 
-                                                 ["constructor"; "Indexed_thunk"; 
-                                                 ["tuple"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "indexed_spec"]; 
-                                                           ["Tpoly"; "a"]]]]]]; 
-                                              ["Sig_type"; "t"; 0; ["Type_record"; 
-                                                                   ["label"; 
-                                                                   "unique_id"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "code"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                                   ["label"; 
-                                                                   "type_conv_path"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                                   ["label"; 
-                                                                   "name"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                                   ["label"; 
-                                                                   "filename"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                                   ["label"; 
-                                                                   "line"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "startpos"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "endpos"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "test_spec"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "test_spec"]]]; 
-                                                                   ["label"; 
-                                                                   "bench_module_name"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]]]]; 
-                                              ["Sig_value"; "compare"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; "int"]]]]]; 
-                                              ["Sig_value"; "get_indexed_arg_name"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "option"]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "string"]]]]]; 
-                                              ["Sig_value"; "get_module_name_opt"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "option"]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "string"]]]]]]]; 
-                                              ["Sig_value"; "add_benchmarks_flag"; 
-                                              ["Tconstr"; ["Pident"; "bool"]]]; 
-                                              ["Sig_value"; "lookup_lib"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Tconstr"; ["Pident"; "list"]; 
-                                              ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                   "Entry"]; 
-                                                          "t"]]]]]; [
-                                                                    "Sig_value"; 
-                                                                    "add_bench"; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Entry"]; 
-                                                                    "test_spec"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]]]]]]]; 
-                                              ["Sig_value"; "add_bench_module"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]; 
-                                              ["Tarrow"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "unit"]]]; 
-                                              ["Tconstr"; ["Pident"; "unit"]]]]]]]]]]]]]]]
+["module", "Ppx_bench_lib",
+["Mty_signature",
+["Sig_module", "Benchmark_accumulator",
+["Mty_signature",
+["Sig_module", "Current_libname",
+["Mty_signature",
+["Sig_value", "set",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "unset",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_module", "Entry",
+["Mty_signature",
+["Sig_type", "indexed_spec", 1,
+["Type_record", ["label", "arg_name", ["Tconstr", ["Pident", "string"]]],
+["label", "arg_values",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "int"]]]],
+["label", "thunk",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tpoly", "a"]]]]]],
+["Sig_type", "test_spec", 0,
+["Type_variant",
+["constructor", "Regular_thunk",
+["tuple",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tpoly", "a"]]]]],
+["constructor", "Indexed_thunk",
+["tuple", ["Tconstr", ["Pident", "indexed_spec"], ["Tpoly", "a"]]]]]],
+["Sig_type", "t", 0,
+["Type_record", ["label", "unique_id", ["Tconstr", ["Pident", "int"]]],
+["label", "code", ["Tconstr", ["Pident", "string"]]],
+["label", "type_conv_path", ["Tconstr", ["Pident", "string"]]],
+["label", "name", ["Tconstr", ["Pident", "string"]]],
+["label", "filename", ["Tconstr", ["Pident", "string"]]],
+["label", "line", ["Tconstr", ["Pident", "int"]]],
+["label", "startpos", ["Tconstr", ["Pident", "int"]]],
+["label", "endpos", ["Tconstr", ["Pident", "int"]]],
+["label", "test_spec", ["Tconstr", ["Pident", "test_spec"]]],
+["label", "bench_module_name",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "compare",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "get_indexed_arg_name",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "get_module_name_opt",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]]],
+["Sig_value", "add_benchmarks_flag", ["Tconstr", ["Pident", "bool"]]],
+["Sig_value", "lookup_lib",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Entry"], "t"]]]]],
+["Sig_value", "add_bench",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Entry"], "test_spec"]],
+["Tconstr", ["Pident", "unit"]]]]]]]]]]],
+["Sig_value", "add_bench_module",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]],
+["Tconstr", ["Pident", "unit"]]]]]]]]]]]]]]]

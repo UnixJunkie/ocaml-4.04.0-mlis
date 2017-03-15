@@ -1,168 +1,65 @@
-["module"; "ElfHeader"; ["Mty_signature"; ["Sig_type"; "e_ident"; 0; 
-                                          ["Type_record"; ["label"; "ei_magic"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]; 
-                                          ["label"; "ei_class"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]; 
-                                          ["label"; "ei_data"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]]; 
-                                          ["label"; "ei_version"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]; 
-                                          ["label"; "ei_osabi"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]; 
-                                          ["label"; "ei_abiversion"; 
-                                          ["Tconstr"; ["Pident"; "int"]]]; 
-                                          ["label"; "ei_pad"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]]]; 
-                        ["Sig_value"; "sizeof_e_ident"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                        ["Sig_value"; "kMAGIC_ELF"; ["Tconstr"; ["Pident"; 
-                                                                "int"]]]; 
-                        ["Sig_value"; "kCIGAM_ELF"; ["Tconstr"; ["Pident"; 
-                                                                "int"]]]; 
-                        ["Sig_type"; "t"; 0; ["Type_record"; ["label"; 
-                                                             "e_ident"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "e_ident"]]]; 
-                                             ["label"; "e_type"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                             ["label"; "e_machine"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                             ["label"; "e_version"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                             ["label"; "e_entry"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]; 
-                                             ["label"; "e_phoff"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]; 
-                                             ["label"; "e_shoff"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]; 
-                                             ["label"; "e_flags"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]; 
-                                             ["label"; "e_ehsize"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                             ["label"; "e_phentsize"; 
-                                             ["Tconstr"; ["Pident"; "int"]]]; 
-                                             ["label"; "e_phnum"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]; 
-                                             ["label"; "e_shentsize"; 
-                                             ["Tconstr"; ["Pident"; "int"]]]; 
-                                             ["label"; "e_shnum"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]; 
-                                             ["label"; "e_shstrndx"; 
-                                             ["Tconstr"; ["Pident"; "int"]]]]]; 
-                        ["Sig_value"; "sizeof_elf_header64"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]]; 
-                        ["Sig_value"; "e_ident_to_string"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "e_ident"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]; 
-                        ["Sig_value"; "print_verbose_elf_header64"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]; 
-                        ["Sig_value"; "print_elf_header64"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "t"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]]]]; 
-                        ["Sig_value"; "check_64bit"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bytes"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "bool"]]]]; 
-                        ["Sig_value"; "is_lib"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "bool"]]]]; 
-                        ["Sig_value"; "is_supported"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "bool"]]]]; 
-                        ["Sig_value"; "get_e_ident"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bytes"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "e_ident"]]]]; 
-                        ["Sig_value"; "is_64bit"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "e_ident"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bool"]]]]; 
-                        ["Sig_value"; "get_elf_header64"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "bytes"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "t"]]]]; 
-                        ["Sig_value"; "set_e_ident"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bytes"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "e_ident"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "int"]]]]]]; 
-                        ["Sig_value"; "e_ident_to_bytes"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "e_ident"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "bytes"]]]]; 
-                        ["Sig_value"; "set"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "bytes"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                             ["Tconstr"; ["Pident"; "int"]]]]]]; 
-                        ["Sig_value"; "to_bytes"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bytes"]]]]]]
+["module", "ElfHeader",
+["Mty_signature",
+["Sig_type", "e_ident", 0,
+["Type_record", ["label", "ei_magic", ["Tconstr", ["Pident", "int"]]],
+["label", "ei_class", ["Tconstr", ["Pident", "int"]]],
+["label", "ei_data", ["Tconstr", ["Pident", "int"]]],
+["label", "ei_version", ["Tconstr", ["Pident", "int"]]],
+["label", "ei_osabi", ["Tconstr", ["Pident", "int"]]],
+["label", "ei_abiversion", ["Tconstr", ["Pident", "int"]]],
+["label", "ei_pad", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_e_ident", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "kMAGIC_ELF", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "kCIGAM_ELF", ["Tconstr", ["Pident", "int"]]],
+["Sig_type", "t", 0,
+["Type_record", ["label", "e_ident", ["Tconstr", ["Pident", "e_ident"]]],
+["label", "e_type", ["Tconstr", ["Pident", "int"]]],
+["label", "e_machine", ["Tconstr", ["Pident", "int"]]],
+["label", "e_version", ["Tconstr", ["Pident", "int"]]],
+["label", "e_entry", ["Tconstr", ["Pident", "int"]]],
+["label", "e_phoff", ["Tconstr", ["Pident", "int"]]],
+["label", "e_shoff", ["Tconstr", ["Pident", "int"]]],
+["label", "e_flags", ["Tconstr", ["Pident", "int"]]],
+["label", "e_ehsize", ["Tconstr", ["Pident", "int"]]],
+["label", "e_phentsize", ["Tconstr", ["Pident", "int"]]],
+["label", "e_phnum", ["Tconstr", ["Pident", "int"]]],
+["label", "e_shentsize", ["Tconstr", ["Pident", "int"]]],
+["label", "e_shnum", ["Tconstr", ["Pident", "int"]]],
+["label", "e_shstrndx", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "sizeof_elf_header64", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "e_ident_to_string",
+["Tarrow", ["Tconstr", ["Pident", "e_ident"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "print_verbose_elf_header64",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "print_elf_header64",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "check_64bit",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_lib",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_supported",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "get_e_ident",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tconstr", ["Pident", "e_ident"]]]],
+["Sig_value", "is_64bit",
+["Tarrow", ["Tconstr", ["Pident", "e_ident"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "get_elf_header64",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]], ["Tconstr", ["Pident", "t"]]]],
+["Sig_value", "set_e_ident",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "e_ident"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_value", "e_ident_to_bytes",
+["Tarrow", ["Tconstr", ["Pident", "e_ident"]],
+["Tconstr", ["Pident", "bytes"]]]],
+["Sig_value", "set",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_value", "to_bytes",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bytes"]]]]]]

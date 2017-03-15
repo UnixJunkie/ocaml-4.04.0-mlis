@@ -1,897 +1,266 @@
-["module"; "X86_ast"; ["Mty_signature"; ["Sig_type"; "condition"; 0; 
-                                        ["Type_variant"; ["constructor"; 
-                                                         "L"; ["tuple"]]; 
-                                        ["constructor"; "GE"; ["tuple"]]; 
-                                        ["constructor"; "LE"; ["tuple"]]; 
-                                        ["constructor"; "G"; ["tuple"]]; 
-                                        ["constructor"; "B"; ["tuple"]]; 
-                                        ["constructor"; "AE"; ["tuple"]]; 
-                                        ["constructor"; "BE"; ["tuple"]]; 
-                                        ["constructor"; "A"; ["tuple"]]; 
-                                        ["constructor"; "E"; ["tuple"]]; 
-                                        ["constructor"; "NE"; ["tuple"]]; 
-                                        ["constructor"; "O"; ["tuple"]]; 
-                                        ["constructor"; "NO"; ["tuple"]]; 
-                                        ["constructor"; "S"; ["tuple"]]; 
-                                        ["constructor"; "NS"; ["tuple"]]; 
-                                        ["constructor"; "P"; ["tuple"]]; 
-                                        ["constructor"; "NP"; ["tuple"]]]]; 
-                      ["Sig_type"; "rounding"; 0; ["Type_variant"; ["constructor"; 
-                                                                   "RoundUp"; 
-                                                                   ["tuple"]]; 
-                                                  ["constructor"; "RoundDown"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "RoundNearest"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "RoundTruncate"; 
-                                                  ["tuple"]]]]; ["Sig_type"; 
-                                                                "constant"; 
-                                                                0; ["Type_variant"; 
-                                                                   ["constructor"; 
-                                                                   "Const"; 
-                                                                   ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int64"]]]]; 
-                                                                   ["constructor"; 
-                                                                   "ConstThis"; 
-                                                                   ["tuple"]]; 
-                                                                   ["constructor"; 
-                                                                   "ConstLabel"; 
-                                                                   ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]]; 
-                                                                   ["constructor"; 
-                                                                   "ConstAdd"; 
-                                                                   ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "constant"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "constant"]]]]; 
-                                                                   ["constructor"; 
-                                                                   "ConstSub"; 
-                                                                   ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "constant"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "constant"]]]]]]; 
-                      ["Sig_type"; "data_type"; 0; ["Type_variant"; [
-                                                                    "constructor"; 
-                                                                    "NONE"; 
-                                                                    ["tuple"]]; 
-                                                   ["constructor"; "REAL4"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "REAL8"; 
-                                                               ["tuple"]]; 
-                                                   ["constructor"; "BYTE"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "WORD"; 
-                                                               ["tuple"]]; 
-                                                   ["constructor"; "DWORD"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "QWORD"; 
-                                                               ["tuple"]]; 
-                                                   ["constructor"; "OWORD"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "NEAR"; 
-                                                               ["tuple"]]; 
-                                                   ["constructor"; "PROC"; 
-                                                   ["tuple"]]]]; ["Sig_type"; 
-                                                                 "reg64"; 
-                                                                 0; [
-                                                                    "Type_variant"; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "RAX"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "RBX"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "RCX"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "RDX"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "RSP"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "RBP"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "RSI"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "RDI"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "R8"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "R9"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "R10"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "R11"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "R12"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "R13"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "R14"; 
-                                                                    ["tuple"]]; 
-                                                                    [
-                                                                    "constructor"; 
-                                                                    "R15"; 
-                                                                    ["tuple"]]]]; 
-                      ["Sig_type"; "reg8h"; 0; ["Type_variant"; ["constructor"; 
-                                                                "AH"; 
-                                                                ["tuple"]]; 
-                                               ["constructor"; "BH"; 
-                                               ["tuple"]]; ["constructor"; 
-                                                           "CH"; ["tuple"]]; 
-                                               ["constructor"; "DH"; 
-                                               ["tuple"]]]]; ["Sig_type"; 
-                                                             "registerf"; 
-                                                             0; ["Type_variant"; 
-                                                                ["constructor"; 
-                                                                "XMM"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]; 
-                                                                ["constructor"; 
-                                                                "TOS"; 
-                                                                ["tuple"]]; 
-                                                                ["constructor"; 
-                                                                "ST"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]]]; 
-                      ["Sig_type"; "arch"; 0; ["Type_variant"; ["constructor"; 
-                                                               "X64"; 
-                                                               ["tuple"]]; 
-                                              ["constructor"; "X86"; 
-                                              ["tuple"]]]]; ["Sig_type"; 
-                                                            "addr"; 0; 
-                                                            ["Type_record"; 
-                                                            ["label"; 
-                                                            "arch"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "arch"]]]; 
-                                                            ["label"; 
-                                                            "typ"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "data_type"]]]; 
-                                                            ["label"; 
-                                                            "idx"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "reg64"]]]; 
-                                                            ["label"; 
-                                                            "scale"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                                                            ["label"; 
-                                                            "base"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "reg64"]]]]; 
-                                                            ["label"; 
-                                                            "sym"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]]; 
-                                                            ["label"; 
-                                                            "displ"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]]]; 
-                      ["Sig_type"; "arg"; 0; ["Type_variant"; ["constructor"; 
-                                                              "Imm"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int64"]]]]; 
-                                             ["constructor"; "Sym"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]]; 
-                                             ["constructor"; "Reg8L"; 
-                                             ["tuple"; ["Tconstr"; ["Pident"; 
-                                                                   "reg64"]]]]; 
-                                             ["constructor"; "Reg8H"; 
-                                             ["tuple"; ["Tconstr"; ["Pident"; 
-                                                                   "reg8h"]]]]; 
-                                             ["constructor"; "Reg16"; 
-                                             ["tuple"; ["Tconstr"; ["Pident"; 
-                                                                   "reg64"]]]]; 
-                                             ["constructor"; "Reg32"; 
-                                             ["tuple"; ["Tconstr"; ["Pident"; 
-                                                                   "reg64"]]]]; 
-                                             ["constructor"; "Reg64"; 
-                                             ["tuple"; ["Tconstr"; ["Pident"; 
-                                                                   "reg64"]]]]; 
-                                             ["constructor"; "Regf"; 
-                                             ["tuple"; ["Tconstr"; ["Pident"; 
-                                                                   "registerf"]]]]; 
-                                             ["constructor"; "Mem"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "addr"]]]]; 
-                                             ["constructor"; "Mem64_RIP"; 
-                                             ["tuple"; ["Tconstr"; ["Pident"; 
-                                                                   "data_type"]]; 
-                                             ["Tconstr"; ["Pident"; "string"]]; 
-                                             ["Tconstr"; ["Pident"; "int"]]]]]]; 
-                      ["Sig_type"; "instruction"; 0; ["Type_variant"; 
-                                                     ["constructor"; 
-                                                     "ADD"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "ADDSD"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "AND"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "ANDPD"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "BSWAP"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "CALL"; ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "CDQ"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "CMOV"; ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "condition"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "CMP"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "COMISD"; ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "CQO"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "CVTSD2SI"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "CVTSD2SS"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "CVTSI2SD"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "CVTSS2SD"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "CVTTSD2SI"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "arg"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "DEC"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "DIVSD"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FABS"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "FADD"; ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FADDP"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FCHS"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "FCOMP"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FCOMPP"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "FCOS"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "FDIV"; ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FDIVP"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FDIVR"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FDIVRP"; ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FILD"; ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FISTP"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FLD"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FLD1"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "FLDCW"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FLDLG2"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "FLDLN2"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "FLDZ"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "FMUL"; ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FMULP"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FNSTCW"; ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FNSTSW"; ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FPATAN"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "FPTAN"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "FSIN"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "FSQRT"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "FSTP"; ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FSUB"; ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FSUBP"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FSUBR"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FSUBRP"; ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FXCH"; ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "FYL2X"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "HLT"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "IDIV"; ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "IMUL"; ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "option"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]]]]; 
-                                                     ["constructor"; 
-                                                     "INC"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "J"; ["tuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "condition"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "JMP"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "LEA"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "LEAVE"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "MOV"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "MOVAPD"; ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "MOVLPD"; ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "MOVSD"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "MOVSS"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "MOVSX"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "MOVSXD"; ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "MOVZX"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "MULSD"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "NEG"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "NOP"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "OR"; ["tuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "arg"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "POP"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "PUSH"; ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "RET"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "ROUNDSD"; ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "rounding"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "arg"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "SAL"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "SAR"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "SET"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "condition"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "SHR"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "SQRTSD"; ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "SUB"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "SUBSD"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "TEST"; ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "UCOMISD"; ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "arg"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "XCHG"; ["tuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "XOR"; ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "arg"]]]]; 
-                                                     ["constructor"; 
-                                                     "XORPD"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "arg"]]]]]]; 
-                      ["Sig_type"; "asm_line"; 0; ["Type_variant"; ["constructor"; 
-                                                                   "Ins"; 
-                                                                   ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "instruction"]]]]; 
-                                                  ["constructor"; "Align"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "int"]]]]; 
-                                                  ["constructor"; "Byte"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "constant"]]]]; 
-                                                  ["constructor"; "Bytes"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]; 
-                                                  ["constructor"; "Comment"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]; 
-                                                  ["constructor"; "Global"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]; 
-                                                  ["constructor"; "Long"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "constant"]]]]; 
-                                                  ["constructor"; "NewLabel"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "data_type"]]]]; 
-                                                  ["constructor"; "Quad"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "constant"]]]]; 
-                                                  ["constructor"; "Section"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "option"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "string"]]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "list"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "string"]]]]]; 
-                                                  ["constructor"; "Space"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]]; 
-                                                  ["constructor"; "Word"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "constant"]]]]; 
-                                                  ["constructor"; "External"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "data_type"]]]]; 
-                                                  ["constructor"; "Mode386"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Model"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]]; 
-                                                  ["constructor"; "Cfi_adjust_cfa_offset"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]]]; 
-                                                  ["constructor"; "Cfi_endproc"; 
-                                                  ["tuple"]]; ["constructor"; 
-                                                              "Cfi_startproc"; 
-                                                              ["tuple"]]; 
-                                                  ["constructor"; "File"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "string"]]]]; 
-                                                  ["constructor"; "Indirect_symbol"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]; 
-                                                  ["constructor"; "Loc"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "int"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "int"]]]]; 
-                                                  ["constructor"; "Private_extern"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]; 
-                                                  ["constructor"; "Set"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "constant"]]]]; 
-                                                  ["constructor"; "Size"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "constant"]]]]; 
-                                                  ["constructor"; "Type"; 
-                                                  ["tuple"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "string"]]]]]]; 
-                      ["Sig_type"; "asm_program"; 0; ["Type_alias"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "asm_line"]]]]]]]
+["module", "X86_ast",
+["Mty_signature",
+["Sig_type", "condition", 0,
+["Type_variant", ["constructor", "L", ["tuple"]],
+["constructor", "GE", ["tuple"]], ["constructor", "LE", ["tuple"]],
+["constructor", "G", ["tuple"]], ["constructor", "B", ["tuple"]],
+["constructor", "AE", ["tuple"]], ["constructor", "BE", ["tuple"]],
+["constructor", "A", ["tuple"]], ["constructor", "E", ["tuple"]],
+["constructor", "NE", ["tuple"]], ["constructor", "O", ["tuple"]],
+["constructor", "NO", ["tuple"]], ["constructor", "S", ["tuple"]],
+["constructor", "NS", ["tuple"]], ["constructor", "P", ["tuple"]],
+["constructor", "NP", ["tuple"]]]],
+["Sig_type", "rounding", 0,
+["Type_variant", ["constructor", "RoundUp", ["tuple"]],
+["constructor", "RoundDown", ["tuple"]],
+["constructor", "RoundNearest", ["tuple"]],
+["constructor", "RoundTruncate", ["tuple"]]]],
+["Sig_type", "constant", 0,
+["Type_variant",
+["constructor", "Const", ["tuple", ["Tconstr", ["Pident", "int64"]]]],
+["constructor", "ConstThis", ["tuple"]],
+["constructor", "ConstLabel", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "ConstAdd",
+["tuple", ["Tconstr", ["Pident", "constant"]],
+["Tconstr", ["Pident", "constant"]]]],
+["constructor", "ConstSub",
+["tuple", ["Tconstr", ["Pident", "constant"]],
+["Tconstr", ["Pident", "constant"]]]]]],
+["Sig_type", "data_type", 0,
+["Type_variant", ["constructor", "NONE", ["tuple"]],
+["constructor", "REAL4", ["tuple"]], ["constructor", "REAL8", ["tuple"]],
+["constructor", "BYTE", ["tuple"]], ["constructor", "WORD", ["tuple"]],
+["constructor", "DWORD", ["tuple"]], ["constructor", "QWORD", ["tuple"]],
+["constructor", "OWORD", ["tuple"]], ["constructor", "NEAR", ["tuple"]],
+["constructor", "PROC", ["tuple"]]]],
+["Sig_type", "reg64", 0,
+["Type_variant", ["constructor", "RAX", ["tuple"]],
+["constructor", "RBX", ["tuple"]], ["constructor", "RCX", ["tuple"]],
+["constructor", "RDX", ["tuple"]], ["constructor", "RSP", ["tuple"]],
+["constructor", "RBP", ["tuple"]], ["constructor", "RSI", ["tuple"]],
+["constructor", "RDI", ["tuple"]], ["constructor", "R8", ["tuple"]],
+["constructor", "R9", ["tuple"]], ["constructor", "R10", ["tuple"]],
+["constructor", "R11", ["tuple"]], ["constructor", "R12", ["tuple"]],
+["constructor", "R13", ["tuple"]], ["constructor", "R14", ["tuple"]],
+["constructor", "R15", ["tuple"]]]],
+["Sig_type", "reg8h", 0,
+["Type_variant", ["constructor", "AH", ["tuple"]],
+["constructor", "BH", ["tuple"]], ["constructor", "CH", ["tuple"]],
+["constructor", "DH", ["tuple"]]]],
+["Sig_type", "registerf", 0,
+["Type_variant",
+["constructor", "XMM", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "TOS", ["tuple"]],
+["constructor", "ST", ["tuple", ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_type", "arch", 0,
+["Type_variant", ["constructor", "X64", ["tuple"]],
+["constructor", "X86", ["tuple"]]]],
+["Sig_type", "addr", 0,
+["Type_record", ["label", "arch", ["Tconstr", ["Pident", "arch"]]],
+["label", "typ", ["Tconstr", ["Pident", "data_type"]]],
+["label", "idx", ["Tconstr", ["Pident", "reg64"]]],
+["label", "scale", ["Tconstr", ["Pident", "int"]]],
+["label", "base",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "reg64"]]]],
+["label", "sym",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]],
+["label", "displ", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "arg", 0,
+["Type_variant",
+["constructor", "Imm", ["tuple", ["Tconstr", ["Pident", "int64"]]]],
+["constructor", "Sym", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Reg8L", ["tuple", ["Tconstr", ["Pident", "reg64"]]]],
+["constructor", "Reg8H", ["tuple", ["Tconstr", ["Pident", "reg8h"]]]],
+["constructor", "Reg16", ["tuple", ["Tconstr", ["Pident", "reg64"]]]],
+["constructor", "Reg32", ["tuple", ["Tconstr", ["Pident", "reg64"]]]],
+["constructor", "Reg64", ["tuple", ["Tconstr", ["Pident", "reg64"]]]],
+["constructor", "Regf", ["tuple", ["Tconstr", ["Pident", "registerf"]]]],
+["constructor", "Mem", ["tuple", ["Tconstr", ["Pident", "addr"]]]],
+["constructor", "Mem64_RIP",
+["tuple", ["Tconstr", ["Pident", "data_type"]],
+["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_type", "instruction", 0,
+["Type_variant",
+["constructor", "ADD",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "ADDSD",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "AND",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "ANDPD",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "BSWAP", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "CALL", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "CDQ", ["tuple"]],
+["constructor", "CMOV",
+["tuple", ["Tconstr", ["Pident", "condition"]],
+["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "CMP",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "COMISD",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "CQO", ["tuple"]],
+["constructor", "CVTSD2SI",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "CVTSD2SS",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "CVTSI2SD",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "CVTSS2SD",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "CVTTSD2SI",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "DEC", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "DIVSD",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FABS", ["tuple"]],
+["constructor", "FADD", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FADDP",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FCHS", ["tuple"]],
+["constructor", "FCOMP", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FCOMPP", ["tuple"]], ["constructor", "FCOS", ["tuple"]],
+["constructor", "FDIV", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FDIVP",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FDIVR", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FDIVRP",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FILD", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FISTP", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FLD", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FLD1", ["tuple"]],
+["constructor", "FLDCW", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FLDLG2", ["tuple"]], ["constructor", "FLDLN2", ["tuple"]],
+["constructor", "FLDZ", ["tuple"]],
+["constructor", "FMUL", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FMULP",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FNSTCW", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FNSTSW", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FPATAN", ["tuple"]], ["constructor", "FPTAN", ["tuple"]],
+["constructor", "FSIN", ["tuple"]], ["constructor", "FSQRT", ["tuple"]],
+["constructor", "FSTP", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FSUB", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FSUBP",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FSUBR", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FSUBRP",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FXCH", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "FYL2X", ["tuple"]], ["constructor", "HLT", ["tuple"]],
+["constructor", "IDIV", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "IMUL",
+["tuple", ["Tconstr", ["Pident", "arg"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "arg"]]]]],
+["constructor", "INC", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "J",
+["tuple", ["Tconstr", ["Pident", "condition"]],
+["Tconstr", ["Pident", "arg"]]]],
+["constructor", "JMP", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "LEA",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "LEAVE", ["tuple"]],
+["constructor", "MOV",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "MOVAPD",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "MOVLPD",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "MOVSD",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "MOVSS",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "MOVSX",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "MOVSXD",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "MOVZX",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "MULSD",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "NEG", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "NOP", ["tuple"]],
+["constructor", "OR",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "POP", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "PUSH", ["tuple", ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "RET", ["tuple"]],
+["constructor", "ROUNDSD",
+["tuple", ["Tconstr", ["Pident", "rounding"]],
+["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "SAL",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "SAR",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "SET",
+["tuple", ["Tconstr", ["Pident", "condition"]],
+["Tconstr", ["Pident", "arg"]]]],
+["constructor", "SHR",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "SQRTSD",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "SUB",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "SUBSD",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "TEST",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "UCOMISD",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "XCHG",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "XOR",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]],
+["constructor", "XORPD",
+["tuple", ["Tconstr", ["Pident", "arg"]], ["Tconstr", ["Pident", "arg"]]]]]],
+["Sig_type", "asm_line", 0,
+["Type_variant",
+["constructor", "Ins", ["tuple", ["Tconstr", ["Pident", "instruction"]]]],
+["constructor", "Align",
+["tuple", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Byte", ["tuple", ["Tconstr", ["Pident", "constant"]]]],
+["constructor", "Bytes", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Comment", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Global", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Long", ["tuple", ["Tconstr", ["Pident", "constant"]]]],
+["constructor", "NewLabel",
+["tuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "data_type"]]]],
+["constructor", "Quad", ["tuple", ["Tconstr", ["Pident", "constant"]]]],
+["constructor", "Section",
+["tuple", ["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]]]],
+["constructor", "Space", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Word", ["tuple", ["Tconstr", ["Pident", "constant"]]]],
+["constructor", "External",
+["tuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "data_type"]]]],
+["constructor", "Mode386", ["tuple"]],
+["constructor", "Model", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Cfi_adjust_cfa_offset",
+["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Cfi_endproc", ["tuple"]],
+["constructor", "Cfi_startproc", ["tuple"]],
+["constructor", "File",
+["tuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Indirect_symbol",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Loc",
+["tuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "int"]]]],
+["constructor", "Private_extern",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Set",
+["tuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "constant"]]]],
+["constructor", "Size",
+["tuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "constant"]]]],
+["constructor", "Type",
+["tuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]]]]],
+["Sig_type", "asm_program", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "asm_line"]]]]]]]

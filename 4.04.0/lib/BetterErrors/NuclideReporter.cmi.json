@@ -1,99 +1,40 @@
-["module"; "NuclideReporter"; ["Mty_signature"; ["Sig_value"; "diagnosticMessage"; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Atom"]; 
-                                                                    "NuclideDiagnostic"]; 
-                                                           "diagnosticType"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Atom"]; 
-                                                                    "Range"]; 
-                                                           "t"]]; ["Tarrow"; 
-                                                                  ["Tvar"; 0]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Atom"]; 
-                                                                  "NuclideDiagnostic"]; 
-                                                                  "Message"]; 
-                                                                  "t"]; 
-                                                                  ["Tvar"; 0]]]]]]]]; 
-                              ["Sig_value"; "toNuclideList"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "BetterErrorsTypes"]; 
-                                                             "errorOrWarning"]]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pdot"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Atom"]; 
-                                                             "NuclideDiagnostic"]; 
-                                                             "Message"]; 
-                                                             "t"]; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "BetterErrorsTypes"]; 
-                                                                   "errorOrWarning"]]]]]]; 
-                              ["Sig_type"; "nuclideResult"; 0; ["Type_variant"; 
-                                                               ["constructor"; 
-                                                               "NoErrorNorWarning"; 
-                                                               ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]]]; 
-                                                               ["constructor"; 
-                                                               "Unparsable"; 
-                                                               ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]]]; 
-                                                               ["constructor"; 
-                                                               "ErrorsAndWarnings"; 
-                                                               ["tuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pdot"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Atom"]; 
-                                                               "NuclideDiagnostic"]; 
-                                                               "Message"]; 
-                                                               "t"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "BetterErrorsTypes"]; 
-                                                               "errorOrWarning"]]]]]]]]; 
-                              ["Sig_value"; "convert"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "BetterErrorsTypes"]; 
-                                                                  "result"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "nuclideResult"]]]]]]
+["module", "NuclideReporter",
+["Mty_signature",
+["Sig_value", "diagnosticMessage",
+["Tarrow",
+["Tconstr",
+["Pdot", ["Pdot", ["Pident", "Atom"], "NuclideDiagnostic"], "diagnosticType"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Atom"], "Range"], "t"]],
+["Tarrow", ["Tvar", 0],
+["Tconstr",
+["Pdot",
+["Pdot", ["Pdot", ["Pident", "Atom"], "NuclideDiagnostic"], "Message"], 
+"t"], ["Tvar", 0]]]]]]]],
+["Sig_value", "toNuclideList",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "BetterErrorsTypes"], "errorOrWarning"]]],
+["Tconstr", ["Pident", "list"],
+["Tconstr",
+["Pdot",
+["Pdot", ["Pdot", ["Pident", "Atom"], "NuclideDiagnostic"], "Message"], 
+"t"],
+["Tconstr", ["Pdot", ["Pident", "BetterErrorsTypes"], "errorOrWarning"]]]]]],
+["Sig_type", "nuclideResult", 0,
+["Type_variant",
+["constructor", "NoErrorNorWarning",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Unparsable", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "ErrorsAndWarnings",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr",
+["Pdot",
+["Pdot", ["Pdot", ["Pident", "Atom"], "NuclideDiagnostic"], "Message"], 
+"t"],
+["Tconstr", ["Pdot", ["Pident", "BetterErrorsTypes"], "errorOrWarning"]]]]]]]],
+["Sig_value", "convert",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "BetterErrorsTypes"], "result"]],
+["Tconstr", ["Pident", "nuclideResult"]]]]]]

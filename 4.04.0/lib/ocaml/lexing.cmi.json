@@ -1,228 +1,94 @@
-["module"; "Lexing"; ["Mty_signature"; ["Sig_type"; "position"; 0; ["Type_record"; 
-                                                                   ["label"; 
-                                                                   "pos_fname"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                                   ["label"; 
-                                                                   "pos_lnum"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "pos_bol"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                                   ["label"; 
-                                                                   "pos_cnum"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]]; 
-                     ["Sig_value"; "dummy_pos"; ["Tconstr"; ["Pident"; 
-                                                            "position"]]]; 
-                     ["Sig_type"; "lexbuf"; 0; ["Type_record"; ["label"; 
-                                                               "refill_buff"; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "lexbuf"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                                               ["label"; "lex_buffer"; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "bytes"]]]; 
-                                               ["label"; "lex_buffer_len"; 
-                                               ["Tconstr"; ["Pident"; "int"]]]; 
-                                               ["label"; "lex_abs_pos"; 
-                                               ["Tconstr"; ["Pident"; "int"]]]; 
-                                               ["label"; "lex_start_pos"; 
-                                               ["Tconstr"; ["Pident"; "int"]]]; 
-                                               ["label"; "lex_curr_pos"; 
-                                               ["Tconstr"; ["Pident"; "int"]]]; 
-                                               ["label"; "lex_last_pos"; 
-                                               ["Tconstr"; ["Pident"; "int"]]]; 
-                                               ["label"; "lex_last_action"; 
-                                               ["Tconstr"; ["Pident"; "int"]]]; 
-                                               ["label"; "lex_eof_reached"; 
-                                               ["Tconstr"; ["Pident"; "bool"]]]; 
-                                               ["label"; "lex_mem"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "array"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                                               ["label"; "lex_start_p"; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "position"]]]; 
-                                               ["label"; "lex_curr_p"; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "position"]]]]]; 
-                     ["Sig_value"; "from_channel"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Pervasives"]; 
-                                                              "in_channel"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "lexbuf"]]]]; 
-                     ["Sig_value"; "from_string"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "lexbuf"]]]]; 
-                     ["Sig_value"; "from_function"; ["Tarrow"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "bytes"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "lexbuf"]]]]; 
-                     ["Sig_value"; "lexeme"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "lexbuf"]]; 
-                                             ["Tconstr"; ["Pident"; "string"]]]]; 
-                     ["Sig_value"; "lexeme_char"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "lexbuf"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "char"]]]]]; 
-                     ["Sig_value"; "lexeme_start"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "lexbuf"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int"]]]]; 
-                     ["Sig_value"; "lexeme_end"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "lexbuf"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "int"]]]]; 
-                     ["Sig_value"; "lexeme_start_p"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "lexbuf"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "position"]]]]; 
-                     ["Sig_value"; "lexeme_end_p"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "lexbuf"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "position"]]]]; 
-                     ["Sig_value"; "new_line"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "lexbuf"]]; 
-                                               ["Tconstr"; ["Pident"; "unit"]]]]; 
-                     ["Sig_value"; "flush_input"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "lexbuf"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "unit"]]]]; 
-                     ["Sig_value"; "sub_lexeme"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "lexbuf"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "string"]]]]]]; 
-                     ["Sig_value"; "sub_lexeme_opt"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "lexbuf"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "option"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "string"]]]]]]]; 
-                     ["Sig_value"; "sub_lexeme_char"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "lexbuf"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "char"]]]]]; 
-                     ["Sig_value"; "sub_lexeme_char_opt"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "lexbuf"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "char"]]]]]]; 
-                     ["Sig_type"; "lex_tables"; 0; ["Type_record"; ["label"; 
-                                                                   "lex_base"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                   ["label"; "lex_backtrk"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]; 
-                                                   ["label"; "lex_default"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]; 
-                                                   ["label"; "lex_trans"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]; 
-                                                   ["label"; "lex_check"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]; 
-                                                   ["label"; "lex_base_code"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]; 
-                                                   ["label"; "lex_backtrk_code"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]; 
-                                                   ["label"; "lex_default_code"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]; 
-                                                   ["label"; "lex_trans_code"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]; 
-                                                   ["label"; "lex_check_code"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]; 
-                                                   ["label"; "lex_code"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]]]; 
-                     ["Sig_value"; "engine"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "lex_tables"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "lexbuf"]]; 
-                                             ["Tconstr"; ["Pident"; "int"]]]]]]; 
-                     ["Sig_value"; "new_engine"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "lex_tables"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "lexbuf"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "int"]]]]]]]]
+["module", "Lexing",
+["Mty_signature",
+["Sig_type", "position", 0,
+["Type_record", ["label", "pos_fname", ["Tconstr", ["Pident", "string"]]],
+["label", "pos_lnum", ["Tconstr", ["Pident", "int"]]],
+["label", "pos_bol", ["Tconstr", ["Pident", "int"]]],
+["label", "pos_cnum", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "dummy_pos", ["Tconstr", ["Pident", "position"]]],
+["Sig_type", "lexbuf", 0,
+["Type_record",
+["label", "refill_buff",
+["Tarrow", ["Tconstr", ["Pident", "lexbuf"]],
+["Tconstr", ["Pident", "unit"]]]],
+["label", "lex_buffer", ["Tconstr", ["Pident", "bytes"]]],
+["label", "lex_buffer_len", ["Tconstr", ["Pident", "int"]]],
+["label", "lex_abs_pos", ["Tconstr", ["Pident", "int"]]],
+["label", "lex_start_pos", ["Tconstr", ["Pident", "int"]]],
+["label", "lex_curr_pos", ["Tconstr", ["Pident", "int"]]],
+["label", "lex_last_pos", ["Tconstr", ["Pident", "int"]]],
+["label", "lex_last_action", ["Tconstr", ["Pident", "int"]]],
+["label", "lex_eof_reached", ["Tconstr", ["Pident", "bool"]]],
+["label", "lex_mem",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "int"]]]],
+["label", "lex_start_p", ["Tconstr", ["Pident", "position"]]],
+["label", "lex_curr_p", ["Tconstr", ["Pident", "position"]]]]],
+["Sig_value", "from_channel",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pervasives"], "in_channel"]],
+["Tconstr", ["Pident", "lexbuf"]]]],
+["Sig_value", "from_string",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "lexbuf"]]]],
+["Sig_value", "from_function",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]],
+["Tconstr", ["Pident", "lexbuf"]]]],
+["Sig_value", "lexeme",
+["Tarrow", ["Tconstr", ["Pident", "lexbuf"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "lexeme_char",
+["Tarrow", ["Tconstr", ["Pident", "lexbuf"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "char"]]]]],
+["Sig_value", "lexeme_start",
+["Tarrow", ["Tconstr", ["Pident", "lexbuf"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "lexeme_end",
+["Tarrow", ["Tconstr", ["Pident", "lexbuf"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "lexeme_start_p",
+["Tarrow", ["Tconstr", ["Pident", "lexbuf"]],
+["Tconstr", ["Pident", "position"]]]],
+["Sig_value", "lexeme_end_p",
+["Tarrow", ["Tconstr", ["Pident", "lexbuf"]],
+["Tconstr", ["Pident", "position"]]]],
+["Sig_value", "new_line",
+["Tarrow", ["Tconstr", ["Pident", "lexbuf"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "flush_input",
+["Tarrow", ["Tconstr", ["Pident", "lexbuf"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "sub_lexeme",
+["Tarrow", ["Tconstr", ["Pident", "lexbuf"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "sub_lexeme_opt",
+["Tarrow", ["Tconstr", ["Pident", "lexbuf"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]]],
+["Sig_value", "sub_lexeme_char",
+["Tarrow", ["Tconstr", ["Pident", "lexbuf"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "char"]]]]],
+["Sig_value", "sub_lexeme_char_opt",
+["Tarrow", ["Tconstr", ["Pident", "lexbuf"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "char"]]]]]],
+["Sig_type", "lex_tables", 0,
+["Type_record", ["label", "lex_base", ["Tconstr", ["Pident", "string"]]],
+["label", "lex_backtrk", ["Tconstr", ["Pident", "string"]]],
+["label", "lex_default", ["Tconstr", ["Pident", "string"]]],
+["label", "lex_trans", ["Tconstr", ["Pident", "string"]]],
+["label", "lex_check", ["Tconstr", ["Pident", "string"]]],
+["label", "lex_base_code", ["Tconstr", ["Pident", "string"]]],
+["label", "lex_backtrk_code", ["Tconstr", ["Pident", "string"]]],
+["label", "lex_default_code", ["Tconstr", ["Pident", "string"]]],
+["label", "lex_trans_code", ["Tconstr", ["Pident", "string"]]],
+["label", "lex_check_code", ["Tconstr", ["Pident", "string"]]],
+["label", "lex_code", ["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "engine",
+["Tarrow", ["Tconstr", ["Pident", "lex_tables"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "lexbuf"]], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_value", "new_engine",
+["Tarrow", ["Tconstr", ["Pident", "lex_tables"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "lexbuf"]], ["Tconstr", ["Pident", "int"]]]]]]]]

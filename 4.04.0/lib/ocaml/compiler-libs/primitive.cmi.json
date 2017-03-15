@@ -1,113 +1,55 @@
-["module"; "Primitive"; ["Mty_signature"; ["Sig_type"; "boxed_integer"; 
-                                          0; ["Type_variant"; ["constructor"; 
-                                                              "Pnativeint"; 
-                                                              ["tuple"]]; 
-                                             ["constructor"; "Pint32"; 
-                                             ["tuple"]]; ["constructor"; 
-                                                         "Pint64"; ["tuple"]]]]; 
-                        ["Sig_type"; "native_repr"; 0; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "Same_as_ocaml_repr"; 
-                                                       ["tuple"]]; ["constructor"; 
-                                                                   "Unboxed_float"; 
-                                                                   ["tuple"]]; 
-                                                       ["constructor"; 
-                                                       "Unboxed_integer"; 
-                                                       ["tuple"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "boxed_integer"]]]]; 
-                                                       ["constructor"; 
-                                                       "Untagged_int"; 
-                                                       ["tuple"]]]]; 
-                        ["Sig_type"; "description"; 0; ["Type_record"; 
-                                                       ["label"; "prim_name"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "string"]]]; 
-                                                       ["label"; "prim_arity"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "int"]]]; 
-                                                       ["label"; "prim_alloc"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "bool"]]]; 
-                                                       ["label"; "prim_native_name"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "string"]]]; 
-                                                       ["label"; "prim_native_repr_args"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "list"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "native_repr"]]]]; 
-                                                       ["label"; "prim_native_repr_res"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "native_repr"]]]]]; 
-                        ["Sig_value"; "simple"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "bool"]]; 
-                                                ["Tconstr"; ["Pident"; 
-                                                            "description"]]]]]]; 
-                        ["Sig_value"; "make"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "bool"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "list"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "native_repr"]]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "native_repr"]]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "description"]]]]]]]]; 
-                        ["Sig_value"; "parse_declaration"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Parsetree"]; 
-                                                           "value_description"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "native_repr"]]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "native_repr"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "description"]]]]]]; 
-                        ["Sig_value"; "print"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "description"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Outcometree"]; 
-                                                          "out_val_decl"]]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Outcometree"]; 
-                                                           "out_val_decl"]]]]]; 
-                        ["Sig_value"; "native_name"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "description"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "string"]]]]; 
-                        ["Sig_value"; "byte_name"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "description"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]]; 
-                        ["Sig_type"; "error"; 0; ["Type_variant"; ["constructor"; 
-                                                                  "Old_style_float_with_native_repr_attribute"; 
-                                                                  ["tuple"]]; 
-                                                 ["constructor"; "Old_style_noalloc_with_noalloc_attribute"; 
-                                                 ["tuple"]]; ["constructor"; 
-                                                             "No_native_primitive_with_repr_attribute"; 
-                                                             ["tuple"]]]]; 
-                        ["Sig_unknown"]]]
+["module", "Primitive",
+["Mty_signature",
+["Sig_type", "boxed_integer", 0,
+["Type_variant", ["constructor", "Pnativeint", ["tuple"]],
+["constructor", "Pint32", ["tuple"]], ["constructor", "Pint64", ["tuple"]]]],
+["Sig_type", "native_repr", 0,
+["Type_variant", ["constructor", "Same_as_ocaml_repr", ["tuple"]],
+["constructor", "Unboxed_float", ["tuple"]],
+["constructor", "Unboxed_integer",
+["tuple", ["Tconstr", ["Pident", "boxed_integer"]]]],
+["constructor", "Untagged_int", ["tuple"]]]],
+["Sig_type", "description", 0,
+["Type_record", ["label", "prim_name", ["Tconstr", ["Pident", "string"]]],
+["label", "prim_arity", ["Tconstr", ["Pident", "int"]]],
+["label", "prim_alloc", ["Tconstr", ["Pident", "bool"]]],
+["label", "prim_native_name", ["Tconstr", ["Pident", "string"]]],
+["label", "prim_native_repr_args",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "native_repr"]]]],
+["label", "prim_native_repr_res", ["Tconstr", ["Pident", "native_repr"]]]]],
+["Sig_value", "simple",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tconstr", ["Pident", "description"]]]]]],
+["Sig_value", "make",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "native_repr"]]],
+["Tarrow", ["Tconstr", ["Pident", "native_repr"]],
+["Tconstr", ["Pident", "description"]]]]]]]],
+["Sig_value", "parse_declaration",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Parsetree"], "value_description"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "native_repr"]]],
+["Tarrow", ["Tconstr", ["Pident", "native_repr"]],
+["Tconstr", ["Pident", "description"]]]]]],
+["Sig_value", "print",
+["Tarrow", ["Tconstr", ["Pident", "description"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Outcometree"], "out_val_decl"]],
+["Tconstr", ["Pdot", ["Pident", "Outcometree"], "out_val_decl"]]]]],
+["Sig_value", "native_name",
+["Tarrow", ["Tconstr", ["Pident", "description"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "byte_name",
+["Tarrow", ["Tconstr", ["Pident", "description"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "error", 0,
+["Type_variant",
+["constructor", "Old_style_float_with_native_repr_attribute", ["tuple"]],
+["constructor", "Old_style_noalloc_with_noalloc_attribute", ["tuple"]],
+["constructor", "No_native_primitive_with_repr_attribute", ["tuple"]]]],
+["Sig_unknown"]]]

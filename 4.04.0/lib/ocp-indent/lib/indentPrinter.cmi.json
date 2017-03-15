@@ -1,109 +1,37 @@
-["module"; "IndentPrinter"; ["Mty_signature"; ["Sig_type"; "output_elt"; 
-                                              0; ["Type_variant"; ["constructor"; 
-                                                                  "Newline"; 
-                                                                  ["tuple"]]; 
-                                                 ["constructor"; "Indent"; 
-                                                 ["tuple"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]]; 
-                                                 ["constructor"; "Whitespace"; 
-                                                 ["tuple"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]; 
-                                                 ["constructor"; "Text"; 
-                                                 ["tuple"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]]]; 
-                            ["Sig_type"; "output_kind"; 1; ["Type_variant"; 
-                                                           ["constructor"; 
-                                                           "Numeric"; 
-                                                           ["tuple"; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tpoly"; "a"]; 
-                                                           ["Tpoly"; "a"]]]]]; 
-                                                           ["constructor"; 
-                                                           "Print"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "a"]]]]]; 
-                                                           ["constructor"; 
-                                                           "Extended"; 
-                                                           ["tuple"; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "IndentBlock"]; 
-                                                           "t"]]; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "output_elt"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]]]]]]]]; 
-                            ["Sig_type"; "output"; 1; ["Type_record"; 
-                                                      ["label"; "debug"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "bool"]]]; 
-                                                      ["label"; "config"; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "IndentConfig"]; 
-                                                                  "t"]]]; 
-                                                      ["label"; "in_lines"; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "bool"]]]]; 
-                                                      ["label"; "adaptive"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "bool"]]]; 
-                                                      ["label"; "indent_empty"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "bool"]]]; 
-                                                      ["label"; "kind"; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "output_kind"]; 
-                                                      ["Tpoly"; "a"]]]]]; 
-                            ["Sig_value"; "std_output"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "output"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]; 
-                            ["Sig_value"; "proceed"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "output"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Nstream"]; 
-                                                                "t"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "IndentBlock"]; 
-                                                                "t"]]; 
-                                                     ["Tarrow"; ["Tpoly"; 
-                                                                "a"]; 
-                                                     ["Tpoly"; "a"]]]]]]]]
+["module", "IndentPrinter",
+["Mty_signature",
+["Sig_type", "output_elt", 0,
+["Type_variant", ["constructor", "Newline", ["tuple"]],
+["constructor", "Indent", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Whitespace", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Text", ["tuple", ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_type", "output_kind", 1,
+["Type_variant",
+["constructor", "Numeric",
+["tuple",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tpoly", "a"], ["Tpoly", "a"]]]]],
+["constructor", "Print",
+["tuple",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tpoly", "a"], ["Tpoly", "a"]]]]],
+["constructor", "Extended",
+["tuple",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "IndentBlock"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "output_elt"]],
+["Tarrow", ["Tpoly", "a"], ["Tpoly", "a"]]]]]]]],
+["Sig_type", "output", 1,
+["Type_record", ["label", "debug", ["Tconstr", ["Pident", "bool"]]],
+["label", "config", ["Tconstr", ["Pdot", ["Pident", "IndentConfig"], "t"]]],
+["label", "in_lines",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "bool"]]]],
+["label", "adaptive", ["Tconstr", ["Pident", "bool"]]],
+["label", "indent_empty", ["Tconstr", ["Pident", "bool"]]],
+["label", "kind", ["Tconstr", ["Pident", "output_kind"], ["Tpoly", "a"]]]]],
+["Sig_value", "std_output",
+["Tconstr", ["Pident", "output"], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "proceed",
+["Tarrow", ["Tconstr", ["Pident", "output"], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Nstream"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "IndentBlock"], "t"]],
+["Tarrow", ["Tpoly", "a"], ["Tpoly", "a"]]]]]]]]

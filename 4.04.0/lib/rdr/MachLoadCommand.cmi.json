@@ -1,396 +1,132 @@
-["module"; "MachLoadCommand"; ["Mty_signature"; ["Sig_module"; "Types"; 
-                                                ["Mty_alias"; ["Pident"; 
-                                                              "MachLoadCommandTypes"]]]; 
-                              ["Sig_type"; "t"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "list"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "MachLoadCommandTypes"]; 
-                                                                  "lc"]]]]]; 
-                              ["Sig_value"; "sections64_to_string"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "MachLoadCommandTypes"]; 
-                                                                    "section_64"]]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]]; 
-                              ["Sig_value"; "load_command_to_string"; 
-                              ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                              "MachLoadCommandTypes"]; 
-                                                     "lc"]]; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]; 
-                              ["Sig_value"; "print_load_command"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "MachLoadCommandTypes"]; 
-                                                                  "lc"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                              ["Sig_value"; "print_load_commands"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "MachLoadCommandTypes"]; 
-                                                                   "lc"]]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]; 
-                              ["Sig_value"; "get_load_command_header"; 
-                              ["Tarrow"; ["Tconstr"; ["Pident"; "bytes"]]; 
-                              ["Tarrow"; ["Tconstr"; ["Pident"; "int"]]; 
-                              ["Ttuple"; ["Tconstr"; ["Pident"; "int"]]; 
-                              ["Tconstr"; ["Pident"; "int"]]; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]]]]; 
-                              ["Sig_value"; "get_load_command_raw"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "bytes"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "bytes"]]]]]]; 
-                              ["Sig_value"; "get_segment_by_name"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "MachLoadCommandTypes"]; 
-                                                                   "segment_command_64"]]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "MachLoadCommandTypes"]; 
-                                                                   "segment_command_64"]]]]]]; 
-                              ["Sig_value"; "get_symtable"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bytes"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "MachLoadCommandTypes"]; 
-                                                            "symtab_command"]]]]]; 
-                              ["Sig_value"; "get_dysymtable"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "bytes"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "MachLoadCommandTypes"]; 
-                                                              "dysymtab_command"]]]]]; 
-                              ["Sig_value"; "get_dylib_command"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bytes"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "MachLoadCommandTypes"]; 
-                                                                 "dylib_command"]]]]]; 
-                              ["Sig_value"; "get_version"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "bytes"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "MachLoadCommandTypes"]; 
-                                                           "version_min_command"]]]]]; 
-                              ["Sig_value"; "get_main"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bytes"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "MachLoadCommandTypes"]; 
-                                                                    "entry_point_command"]]]]]; 
-                              ["Sig_value"; "get_dylinker"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bytes"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "MachLoadCommandTypes"]; 
-                                                            "dylinker_command"]]]]]; 
-                              ["Sig_value"; "get_section64"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bytes"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "MachLoadCommandTypes"]; 
-                                                             "section_64"]]]]]; 
-                              ["Sig_value"; "get_sections64"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "bytes"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "list"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "MachLoadCommandTypes"]; 
-                                                              "section_64"]]]]]]]; 
-                              ["Sig_value"; "get_segment64"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bytes"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "int"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "MachLoadCommandTypes"]; 
-                                                             "segment_command_64"]]]]]; 
-                              ["Sig_value"; "get_load_commands_it"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "bytes"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "MachLoadCommandTypes"]; 
-                                                                    "lc"]]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "MachLoadCommandTypes"]; 
-                                                                    "lc"]]]]]]]]; 
-                              ["Sig_value"; "get_load_commands"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bytes"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tvar"; 0]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]]]]]]; 
-                              ["Sig_value"; "get_load_command"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "MachLoadCommandTypes"]; 
-                                                                "cmd"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Types"]; 
-                                                                "lc"]]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Types"]; 
-                                                                "lc_t"]]]]]]; 
-                              ["Sig_value"; "get_segments"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "MachLoadCommandTypes"]; 
-                                                            "lc"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "MachLoadCommandTypes"]; 
-                                                            "segment_command_64"]]]]]; 
-                              ["Sig_value"; "get_dyld_info"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "MachLoadCommandTypes"]; 
-                                                             "lc"]]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "option"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "MachLoadCommandTypes"]; 
-                                                             "dyld_info_command"]]]]]; 
-                              ["Sig_value"; "get_lib_name"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "MachLoadCommandTypes"]; 
-                                                            "lc"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]; 
-                              ["Sig_value"; "print_libraries"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "array"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                              ["Sig_value"; "get_libraries"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "MachLoadCommandTypes"]; 
-                                                             "lc"]]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "array"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]]]]]
+["module", "MachLoadCommand",
+["Mty_signature",
+["Sig_module", "Types", ["Mty_alias", ["Pident", "MachLoadCommandTypes"]]],
+["Sig_type", "t", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "lc"]]]]],
+["Sig_value", "sections64_to_string",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "section_64"]]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "load_command_to_string",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "lc"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "print_load_command",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "lc"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "print_load_commands",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "lc"]]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "get_load_command_header",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "int"]]]]]],
+["Sig_value", "get_load_command_raw",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "bytes"]]]]]],
+["Sig_value", "get_segment_by_name",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr",
+["Pdot", ["Pident", "MachLoadCommandTypes"], "segment_command_64"]]],
+["Tconstr", ["Pident", "option"],
+["Tconstr",
+["Pdot", ["Pident", "MachLoadCommandTypes"], "segment_command_64"]]]]]],
+["Sig_value", "get_symtable",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "symtab_command"]]]]],
+["Sig_value", "get_dysymtable",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "dysymtab_command"]]]]],
+["Sig_value", "get_dylib_command",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "dylib_command"]]]]],
+["Sig_value", "get_version",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr",
+["Pdot", ["Pident", "MachLoadCommandTypes"], "version_min_command"]]]]],
+["Sig_value", "get_main",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr",
+["Pdot", ["Pident", "MachLoadCommandTypes"], "entry_point_command"]]]]],
+["Sig_value", "get_dylinker",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "dylinker_command"]]]]],
+["Sig_value", "get_section64",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "section_64"]]]]],
+["Sig_value", "get_sections64",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "section_64"]]]]]]],
+["Sig_value", "get_segment64",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr",
+["Pdot", ["Pident", "MachLoadCommandTypes"], "segment_command_64"]]]]],
+["Sig_value", "get_load_commands_it",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "lc"]]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "lc"]]]]]]]],
+["Sig_value", "get_load_commands",
+["Tarrow", ["Tconstr", ["Pident", "bytes"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tvar", 0], ["Tconstr", ["Pident", "t"]]]]]]],
+["Sig_value", "get_load_command",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "cmd"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Types"], "lc"]]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Types"], "lc_t"]]]]]],
+["Sig_value", "get_segments",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "lc"]]],
+["Tconstr", ["Pident", "list"],
+["Tconstr",
+["Pdot", ["Pident", "MachLoadCommandTypes"], "segment_command_64"]]]]],
+["Sig_value", "get_dyld_info",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "lc"]]],
+["Tconstr", ["Pident", "option"],
+["Tconstr",
+["Pdot", ["Pident", "MachLoadCommandTypes"], "dyld_info_command"]]]]],
+["Sig_value", "get_lib_name",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "lc"]]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "print_libraries",
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "get_libraries",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "MachLoadCommandTypes"], "lc"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]]]]]]]

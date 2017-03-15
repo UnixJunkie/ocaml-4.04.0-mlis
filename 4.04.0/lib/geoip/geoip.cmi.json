@@ -1,359 +1,140 @@
-["module"; "Geoip"; ["Mty_signature"; ["Sig_type"; "t"; 0; ["Type_abstract"]]; 
-                    ["Sig_type"; "charset"; 0; ["Type_variant"; ["constructor"; 
-                                                                "GEOIP_CHARSET_ISO_8859_1"; 
-                                                                ["tuple"]]; 
-                                               ["constructor"; "GEOIP_CHARSET_UTF8"; 
-                                               ["tuple"]]]]; ["Sig_type"; 
-                                                             "flags"; 
-                                                             0; ["Type_variant"; 
-                                                                ["constructor"; 
-                                                                "GEOIP_STANDARD"; 
-                                                                ["tuple"]]; 
-                                                                ["constructor"; 
-                                                                "GEOIP_MEMORY_CACHE"; 
-                                                                ["tuple"]]; 
-                                                                ["constructor"; 
-                                                                "GEOIP_CHECK_CACHE"; 
-                                                                ["tuple"]]; 
-                                                                ["constructor"; 
-                                                                "GEOIP_INDEX_CACHE"; 
-                                                                ["tuple"]]; 
-                                                                ["constructor"; 
-                                                                "GEOIP_MMAP_CACHE"; 
-                                                                ["tuple"]]]]; 
-                    ["Sig_type"; "db_type"; 0; ["Type_variant"; ["constructor"; 
-                                                                "GEOIP_COUNTRY_EDITION"; 
-                                                                ["tuple"]]; 
-                                               ["constructor"; "GEOIP_REGION_EDITION_REV0"; 
-                                               ["tuple"]]; ["constructor"; 
-                                                           "GEOIP_CITY_EDITION_REV0"; 
-                                                           ["tuple"]]; 
-                                               ["constructor"; "GEOIP_ORG_EDITION"; 
-                                               ["tuple"]]; ["constructor"; 
-                                                           "GEOIP_ISP_EDITION"; 
-                                                           ["tuple"]]; 
-                                               ["constructor"; "GEOIP_CITY_EDITION_REV1"; 
-                                               ["tuple"]]; ["constructor"; 
-                                                           "GEOIP_REGION_EDITION_REV1"; 
-                                                           ["tuple"]]; 
-                                               ["constructor"; "GEOIP_PROXY_EDITION"; 
-                                               ["tuple"]]; ["constructor"; 
-                                                           "GEOIP_ASNUM_EDITION"; 
-                                                           ["tuple"]]; 
-                                               ["constructor"; "GEOIP_NETSPEED_EDITION"; 
-                                               ["tuple"]]; ["constructor"; 
-                                                           "GEOIP_DOMAIN_EDITION"; 
-                                                           ["tuple"]]; 
-                                               ["constructor"; "GEOIP_COUNTRY_EDITION_V6"; 
-                                               ["tuple"]]; ["constructor"; 
-                                                           "GEOIP_LOCATIONA_EDITION"; 
-                                                           ["tuple"]]; 
-                                               ["constructor"; "GEOIP_ACCURACYRADIUS_EDITION"; 
-                                               ["tuple"]]; ["constructor"; 
-                                                           "GEOIP_CITYCONFIDENCE_EDITION"; 
-                                                           ["tuple"]]; 
-                                               ["constructor"; "GEOIP_CITYCONFIDENCEDIST_EDITION"; 
-                                               ["tuple"]]; ["constructor"; 
-                                                           "GEOIP_LARGE_COUNTRY_EDITION"; 
-                                                           ["tuple"]]; 
-                                               ["constructor"; "GEOIP_LARGE_COUNTRY_EDITION_V6"; 
-                                               ["tuple"]]]]; ["Sig_type"; 
-                                                             "proxy_type"; 
-                                                             0; ["Type_variant"; 
-                                                                ["constructor"; 
-                                                                "GEOIP_ANON_PROXY"; 
-                                                                ["tuple"]]; 
-                                                                ["constructor"; 
-                                                                "GEOIP_HTTP_X_FORWARDED_FOR_PROXY"; 
-                                                                ["tuple"]]; 
-                                                                ["constructor"; 
-                                                                "GEOIP_HTTP_CLIENT_IP_PROXY"; 
-                                                                ["tuple"]]]]; 
-                    ["Sig_type"; "netspeed"; 0; ["Type_variant"; ["constructor"; 
-                                                                 "GEOIP_UNKNOWN_SPEED"; 
-                                                                 ["tuple"]]; 
-                                                ["constructor"; "GEOIP_DIALUP_SPEED"; 
-                                                ["tuple"]]; ["constructor"; 
-                                                            "GEOIP_CABLEDSL_SPEED"; 
-                                                            ["tuple"]]; 
-                                                ["constructor"; "GEOIP_CORPORATE_SPEED"; 
-                                                ["tuple"]]]]; ["Sig_value"; 
-                                                              "setup_custom_directory"; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]]]; 
-                    ["Sig_value"; "is_db_avail"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "db_type"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "bool"]]]]; 
-                    ["Sig_value"; "init_exn"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "option"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "string"]]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "option"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "db_type"]]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "flags"]]; 
-                                              ["Tconstr"; ["Pident"; "t"]]]]]]; 
-                    ["Sig_value"; "close"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "t"]]; 
-                                           ["Tconstr"; ["Pident"; "unit"]]]]; 
-                    ["Sig_value"; "country_code_by_addr"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]]]; 
-                    ["Sig_value"; "country_code_by_name"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]]]; 
-                    ["Sig_value"; "country_code3_by_addr"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "option"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]]]; 
-                    ["Sig_value"; "country_code3_by_name"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "option"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]]]; 
-                    ["Sig_value"; "country_name_by_addr"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]]]; 
-                    ["Sig_value"; "country_name_by_name"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]]]; 
-                    ["Sig_value"; "country_name_by_ipnum"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "int32"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "option"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]]]; 
-                    ["Sig_value"; "country_code_by_ipnum"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "int32"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "option"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]]]; 
-                    ["Sig_value"; "country_code3_by_ipnum"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "t"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "int32"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]]]; 
-                    ["Sig_value"; "country_code_by_addr_v6"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "option"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]]]; 
-                    ["Sig_value"; "country_code_by_name_v6"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "option"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]]]; 
-                    ["Sig_value"; "country_code3_by_addr_v6"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; "t"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]]]]; 
-                    ["Sig_value"; "country_code3_by_name_v6"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; "t"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]]]]; 
-                    ["Sig_value"; "country_name_by_addr_v6"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "option"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]]]; 
-                    ["Sig_value"; "country_name_by_name_v6"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; "t"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "option"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]]]; 
-                    ["Sig_value"; "id_by_addr"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                ["Tconstr"; ["Pident"; "int"]]]]]; 
-                    ["Sig_value"; "id_by_name"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "t"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                ["Tconstr"; ["Pident"; "int"]]]]]; 
-                    ["Sig_value"; "id_by_ipnum"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "t"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "int"]]]]]; 
-                    ["Sig_value"; "id_by_addr_v6"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; "t"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int"]]]]]; 
-                    ["Sig_value"; "id_by_name_v6"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; "t"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int"]]]]]; 
-                    ["Sig_value"; "num_countries"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int"]]]]; 
-                    ["Sig_value"; "database_info"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; "t"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]]; 
-                    ["Sig_value"; "database_edition"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "t"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]]; 
-                    ["Sig_value"; "charset"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                             ["Tconstr"; ["Pident"; "charset"]]]]; 
-                    ["Sig_value"; "set_charset"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "t"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "charset"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "charset"]]]]]]]
+["module", "Geoip",
+["Mty_signature", ["Sig_type", "t", 0, ["Type_abstract"]],
+["Sig_type", "charset", 0,
+["Type_variant", ["constructor", "GEOIP_CHARSET_ISO_8859_1", ["tuple"]],
+["constructor", "GEOIP_CHARSET_UTF8", ["tuple"]]]],
+["Sig_type", "flags", 0,
+["Type_variant", ["constructor", "GEOIP_STANDARD", ["tuple"]],
+["constructor", "GEOIP_MEMORY_CACHE", ["tuple"]],
+["constructor", "GEOIP_CHECK_CACHE", ["tuple"]],
+["constructor", "GEOIP_INDEX_CACHE", ["tuple"]],
+["constructor", "GEOIP_MMAP_CACHE", ["tuple"]]]],
+["Sig_type", "db_type", 0,
+["Type_variant", ["constructor", "GEOIP_COUNTRY_EDITION", ["tuple"]],
+["constructor", "GEOIP_REGION_EDITION_REV0", ["tuple"]],
+["constructor", "GEOIP_CITY_EDITION_REV0", ["tuple"]],
+["constructor", "GEOIP_ORG_EDITION", ["tuple"]],
+["constructor", "GEOIP_ISP_EDITION", ["tuple"]],
+["constructor", "GEOIP_CITY_EDITION_REV1", ["tuple"]],
+["constructor", "GEOIP_REGION_EDITION_REV1", ["tuple"]],
+["constructor", "GEOIP_PROXY_EDITION", ["tuple"]],
+["constructor", "GEOIP_ASNUM_EDITION", ["tuple"]],
+["constructor", "GEOIP_NETSPEED_EDITION", ["tuple"]],
+["constructor", "GEOIP_DOMAIN_EDITION", ["tuple"]],
+["constructor", "GEOIP_COUNTRY_EDITION_V6", ["tuple"]],
+["constructor", "GEOIP_LOCATIONA_EDITION", ["tuple"]],
+["constructor", "GEOIP_ACCURACYRADIUS_EDITION", ["tuple"]],
+["constructor", "GEOIP_CITYCONFIDENCE_EDITION", ["tuple"]],
+["constructor", "GEOIP_CITYCONFIDENCEDIST_EDITION", ["tuple"]],
+["constructor", "GEOIP_LARGE_COUNTRY_EDITION", ["tuple"]],
+["constructor", "GEOIP_LARGE_COUNTRY_EDITION_V6", ["tuple"]]]],
+["Sig_type", "proxy_type", 0,
+["Type_variant", ["constructor", "GEOIP_ANON_PROXY", ["tuple"]],
+["constructor", "GEOIP_HTTP_X_FORWARDED_FOR_PROXY", ["tuple"]],
+["constructor", "GEOIP_HTTP_CLIENT_IP_PROXY", ["tuple"]]]],
+["Sig_type", "netspeed", 0,
+["Type_variant", ["constructor", "GEOIP_UNKNOWN_SPEED", ["tuple"]],
+["constructor", "GEOIP_DIALUP_SPEED", ["tuple"]],
+["constructor", "GEOIP_CABLEDSL_SPEED", ["tuple"]],
+["constructor", "GEOIP_CORPORATE_SPEED", ["tuple"]]]],
+["Sig_value", "setup_custom_directory",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "is_db_avail",
+["Tarrow", ["Tconstr", ["Pident", "db_type"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "init_exn",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "db_type"]]],
+["Tarrow", ["Tconstr", ["Pident", "flags"]], ["Tconstr", ["Pident", "t"]]]]]],
+["Sig_value", "close",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "country_code_by_addr",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "country_code_by_name",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "country_code3_by_addr",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "country_code3_by_name",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "country_name_by_addr",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "country_name_by_name",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "country_name_by_ipnum",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int32"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "country_code_by_ipnum",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int32"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "country_code3_by_ipnum",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int32"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "country_code_by_addr_v6",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "country_code_by_name_v6",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "country_code3_by_addr_v6",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "country_code3_by_name_v6",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "country_name_by_addr_v6",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "country_name_by_name_v6",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "id_by_addr",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "id_by_name",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "id_by_ipnum",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "id_by_addr_v6",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "id_by_name_v6",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "num_countries",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "database_info",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "database_edition",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "charset",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "charset"]]]],
+["Sig_value", "set_charset",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "charset"]],
+["Tconstr", ["Pident", "charset"]]]]]]]

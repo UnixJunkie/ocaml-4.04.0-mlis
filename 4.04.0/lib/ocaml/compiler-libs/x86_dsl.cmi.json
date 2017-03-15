@@ -1,1523 +1,452 @@
-["module"; "X86_dsl"; ["Mty_signature"; ["Sig_value"; "sym"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "X86_ast"]; 
-                                                             "arg"]]]]; 
-                      ["Sig_value"; "nat"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                  "nativeint"]]; 
-                                           ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                "X86_ast"]; 
-                                                       "arg"]]]]; ["Sig_value"; 
-                                                                  "int"; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                                  "arg"]]]]; 
-                      ["Sig_value"; "const_32"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "int32"]]; 
-                                                ["Tconstr"; ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "X86_ast"]; 
-                                                            "constant"]]]]; 
-                      ["Sig_value"; "const_nat"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "nativeint"]]; 
-                                                 ["Tconstr"; ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "X86_ast"]; 
-                                                             "constant"]]]]; 
-                      ["Sig_value"; "const"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                             ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                         "constant"]]]]; 
-                      ["Sig_value"; "al"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                               "X86_ast"]; 
-                                                      "arg"]]]; ["Sig_value"; 
-                                                                "ah"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]]; 
-                      ["Sig_value"; "cl"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                               "X86_ast"]; 
-                                                      "arg"]]]; ["Sig_value"; 
-                                                                "ax"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]]; 
-                      ["Sig_value"; "rax"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                "X86_ast"]; 
-                                                       "arg"]]]; ["Sig_value"; 
-                                                                 "r10"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]]; 
-                      ["Sig_value"; "r11"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                "X86_ast"]; 
-                                                       "arg"]]]; ["Sig_value"; 
-                                                                 "r13"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]]; 
-                      ["Sig_value"; "r14"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                "X86_ast"]; 
-                                                       "arg"]]]; ["Sig_value"; 
-                                                                 "r15"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]]; 
-                      ["Sig_value"; "rsp"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                "X86_ast"]; 
-                                                       "arg"]]]; ["Sig_value"; 
-                                                                 "rbp"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]]; 
-                      ["Sig_value"; "xmm15"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                         "arg"]]]; ["Sig_value"; 
-                                                                   "eax"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "X86_ast"]; 
-                                                                   "arg"]]]; 
-                      ["Sig_value"; "ebx"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                "X86_ast"]; 
-                                                       "arg"]]]; ["Sig_value"; 
-                                                                 "ecx"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]]; 
-                      ["Sig_value"; "edx"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                "X86_ast"]; 
-                                                       "arg"]]]; ["Sig_value"; 
-                                                                 "ebp"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]]; 
-                      ["Sig_value"; "esp"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                "X86_ast"]; 
-                                                       "arg"]]]; ["Sig_value"; 
-                                                                 "st0"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]]; 
-                      ["Sig_value"; "st1"; ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                "X86_ast"]; 
-                                                       "arg"]]]; ["Sig_value"; 
-                                                                 "mem32"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "data_type"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "reg64"]]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "reg64"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]]]]]]]]; 
-                      ["Sig_value"; "mem64"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "X86_ast"]; 
-                                                                    "data_type"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "X86_ast"]; 
-                                                                    "reg64"]]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "X86_ast"]; 
-                                                                    "reg64"]]; 
-                                             ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                         "arg"]]]]]]]]]; 
-                      ["Sig_value"; "mem64_rip"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "X86_ast"]; 
-                                                            "data_type"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                 ["Tconstr"; ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "X86_ast"]; 
-                                                             "arg"]]]]]]; 
-                      ["Sig_module"; "D"; ["Mty_signature"; ["Sig_value"; 
-                                                            "align"; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]]]; 
-                                          ["Sig_value"; "byte"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "constant"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "bytes"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]; 
-                                          ["Sig_value"; "cfi_adjust_cfa_offset"; 
-                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                 "int"]]; 
-                                          ["Tconstr"; ["Pident"; "unit"]]]]; 
-                                          ["Sig_value"; "cfi_endproc"; 
-                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]; 
-                                          ["Tconstr"; ["Pident"; "unit"]]]]; 
-                                          ["Sig_value"; "cfi_startproc"; 
-                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]; 
-                                          ["Tconstr"; ["Pident"; "unit"]]]]; 
-                                          ["Sig_value"; "comment"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]; 
-                                          ["Sig_value"; "data"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "extrn"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "data_type"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                          ["Sig_value"; "file"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]]; 
-                                          ["Sig_value"; "global"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                                          ["Sig_value"; "indirect_symbol"; 
-                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                 "string"]]; 
-                                          ["Tconstr"; ["Pident"; "unit"]]]]; 
-                                          ["Sig_value"; "label"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "data_type"]]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                          ["Sig_value"; "loc"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]]; 
-                                          ["Sig_value"; "long"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "constant"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "mode386"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]; 
-                                          ["Sig_value"; "model"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]; 
-                                          ["Sig_value"; "private_extern"; 
-                                          ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                 "string"]]; 
-                                          ["Tconstr"; ["Pident"; "unit"]]]]; 
-                                          ["Sig_value"; "qword"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "constant"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]; 
-                                          ["Sig_value"; "section"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]]]; 
-                                          ["Sig_value"; "setvar"; ["Tarrow"; 
-                                                                  ["Ttuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                                  "constant"]]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                                          ["Sig_value"; "size"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "constant"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]]; 
-                                          ["Sig_value"; "space"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]; 
-                                          ["Sig_value"; "text"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "type_"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                          ["Sig_value"; "word"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "constant"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]]]; 
-                      ["Sig_module"; "I"; ["Mty_signature"; ["Sig_value"; 
-                                                            "add"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "X86_ast"]; 
-                                                                   "arg"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "X86_ast"]; 
-                                                                   "arg"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]]; 
-                                          ["Sig_value"; "addsd"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                          ["Sig_value"; "and_"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]]; 
-                                          ["Sig_value"; "andpd"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                          ["Sig_value"; "bswap"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]; 
-                                          ["Sig_value"; "call"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "cdq"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                                          ["Sig_value"; "cmp"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]; 
-                                          ["Sig_value"; "comisd"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                                  "arg"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                                  "arg"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]]; 
-                                          ["Sig_value"; "cqo"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                                          ["Sig_value"; "cvtsd2ss"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "X86_ast"]; 
-                                                                    "arg"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "X86_ast"]; 
-                                                                    "arg"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]; 
-                                          ["Sig_value"; "cvtsi2sd"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "X86_ast"]; 
-                                                                    "arg"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "X86_ast"]; 
-                                                                    "arg"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]; 
-                                          ["Sig_value"; "cvtss2sd"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "X86_ast"]; 
-                                                                    "arg"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "X86_ast"]; 
-                                                                    "arg"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]; 
-                                          ["Sig_value"; "cvttsd2si"; 
-                                          ["Tarrow"; ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                          ["Tarrow"; ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                          ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                                          ["Sig_value"; "dec"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                                          ["Sig_value"; "divsd"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                          ["Sig_value"; "fabs"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "fadd"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "faddp"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                          ["Sig_value"; "fchs"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "fcomp"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]; 
-                                          ["Sig_value"; "fcompp"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                                          ["Sig_value"; "fcos"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "fdiv"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "fdivp"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                          ["Sig_value"; "fdivr"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]; 
-                                          ["Sig_value"; "fdivrp"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                                  "arg"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                                  "arg"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]]; 
-                                          ["Sig_value"; "fild"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "fistp"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]; 
-                                          ["Sig_value"; "fld1"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "fld"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                                          ["Sig_value"; "fldcw"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]; 
-                                          ["Sig_value"; "fldlg2"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                                          ["Sig_value"; "fldln2"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                                          ["Sig_value"; "fldz"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "fmul"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "fmulp"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                          ["Sig_value"; "fnstcw"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                                  "arg"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                                          ["Sig_value"; "fnstsw"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                                  "arg"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                                          ["Sig_value"; "fpatan"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]; 
-                                          ["Sig_value"; "fptan"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]; 
-                                          ["Sig_value"; "fsin"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "fsqrt"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]; 
-                                          ["Sig_value"; "fstp"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "fsub"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "fsubp"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                          ["Sig_value"; "fsubr"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]; 
-                                          ["Sig_value"; "fsubrp"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                                  "arg"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                                  "arg"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]]; 
-                                          ["Sig_value"; "fxch"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "fyl2x"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]; 
-                                          ["Sig_value"; "hlt"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                                          ["Sig_value"; "idiv"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "imul"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]]; 
-                                          ["Sig_value"; "inc"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                                          ["Sig_value"; "j"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "X86_ast"]; 
-                                                             "condition"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "X86_ast"]; 
-                                                             "arg"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]]]]; 
-                                          ["Sig_value"; "ja"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "X86_ast"]; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]]]; 
-                                          ["Sig_value"; "jae"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                                          ["Sig_value"; "jb"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "X86_ast"]; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]]]; 
-                                          ["Sig_value"; "jbe"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                                          ["Sig_value"; "je"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "X86_ast"]; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]]]; 
-                                          ["Sig_value"; "jg"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "X86_ast"]; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]]]; 
-                                          ["Sig_value"; "jmp"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                                          ["Sig_value"; "jne"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                                          ["Sig_value"; "jp"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "X86_ast"]; 
-                                                              "arg"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]]]; 
-                                          ["Sig_value"; "lea"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]; 
-                                          ["Sig_value"; "mov"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]; 
-                                          ["Sig_value"; "movapd"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                                  "arg"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                                  "arg"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]]; 
-                                          ["Sig_value"; "movsd"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                          ["Sig_value"; "movss"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                          ["Sig_value"; "movsx"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                          ["Sig_value"; "movsxd"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                                  "arg"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                                  "arg"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]]; 
-                                          ["Sig_value"; "movzx"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                          ["Sig_value"; "mulsd"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                          ["Sig_value"; "nop"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                                          ["Sig_value"; "or_"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]; 
-                                          ["Sig_value"; "pop"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                                          ["Sig_value"; "push"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                          ["Sig_value"; "ret"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                                          ["Sig_value"; "sal"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]; 
-                                          ["Sig_value"; "sar"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]; 
-                                          ["Sig_value"; "set"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "condition"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]; 
-                                          ["Sig_value"; "shr"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]; 
-                                          ["Sig_value"; "sqrtsd"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                                  "arg"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "X86_ast"]; 
-                                                                  "arg"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]]]; 
-                                          ["Sig_value"; "sub"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]; 
-                                          ["Sig_value"; "subsd"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                                          ["Sig_value"; "test"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]]; 
-                                          ["Sig_value"; "ucomisd"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "X86_ast"]; 
-                                                                   "arg"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "X86_ast"]; 
-                                                                   "arg"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]]; 
-                                          ["Sig_value"; "xchg"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "X86_ast"]; 
-                                                                "arg"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]]; 
-                                          ["Sig_value"; "xor"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "X86_ast"]; 
-                                                               "arg"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]; 
-                                          ["Sig_value"; "xorpd"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "X86_ast"]; 
-                                                                 "arg"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]]]]]
+["module", "X86_dsl",
+["Mty_signature",
+["Sig_value", "sym",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]]],
+["Sig_value", "nat",
+["Tarrow", ["Tconstr", ["Pident", "nativeint"]],
+["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]]],
+["Sig_value", "int",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]]],
+["Sig_value", "const_32",
+["Tarrow", ["Tconstr", ["Pident", "int32"]],
+["Tconstr", ["Pdot", ["Pident", "X86_ast"], "constant"]]]],
+["Sig_value", "const_nat",
+["Tarrow", ["Tconstr", ["Pident", "nativeint"]],
+["Tconstr", ["Pdot", ["Pident", "X86_ast"], "constant"]]]],
+["Sig_value", "const",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "X86_ast"], "constant"]]]],
+["Sig_value", "al", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "ah", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "cl", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "ax", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "rax", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "r10", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "r11", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "r13", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "r14", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "r15", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "rsp", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "rbp", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "xmm15", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "eax", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "ebx", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "ecx", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "edx", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "ebp", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "esp", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "st0", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "st1", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Sig_value", "mem32",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "data_type"]],
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "X86_ast"], "reg64"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "reg64"]],
+["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]]]]]]]],
+["Sig_value", "mem64",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "data_type"]],
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "X86_ast"], "reg64"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "reg64"]],
+["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]]]]]]]],
+["Sig_value", "mem64_rip",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "data_type"]],
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]]]]],
+["Sig_module", "D",
+["Mty_signature",
+["Sig_value", "align",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "byte",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "constant"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "bytes",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "cfi_adjust_cfa_offset",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "cfi_endproc",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "cfi_startproc",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "comment",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "data",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "extrn",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "data_type"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "file",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "global",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "indirect_symbol",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "label",
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "X86_ast"], "data_type"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "loc",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "long",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "constant"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "mode386",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "model",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "private_extern",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "qword",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "constant"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "section",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "setvar",
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "X86_ast"], "constant"]]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "size",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "constant"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "space",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "text",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "type_",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "word",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "constant"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_module", "I",
+["Mty_signature",
+["Sig_value", "add",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "addsd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "and_",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "andpd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "bswap",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "call",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "cdq",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "cmp",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "comisd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "cqo",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "cvtsd2ss",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "cvtsi2sd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "cvtss2sd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "cvttsd2si",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "dec",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "divsd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "fabs",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fadd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "faddp",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "fchs",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fcomp",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fcompp",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fcos",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fdiv",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fdivp",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "fdivr",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fdivrp",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "fild",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fistp",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fld1",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fld",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fldcw",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fldlg2",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fldln2",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fldz",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fmul",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fmulp",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "fnstcw",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fnstsw",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fpatan",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fptan",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fsin",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fsqrt",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fstp",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fsub",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fsubp",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "fsubr",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fsubrp",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "fxch",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "fyl2x",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "hlt",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "idiv",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "imul",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "inc",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "j",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "condition"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "ja",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "jae",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "jb",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "jbe",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "je",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "jg",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "jmp",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "jne",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "jp",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "lea",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "mov",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "movapd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "movsd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "movss",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "movsx",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "movsxd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "movzx",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "mulsd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "nop",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "or_",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "pop",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "push",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "ret",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "sal",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "sar",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "set",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "condition"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "shr",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "sqrtsd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "sub",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "subsd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "test",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "ucomisd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "xchg",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "xor",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "xorpd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "X86_ast"], "arg"]],
+["Tconstr", ["Pident", "unit"]]]]]]]]]

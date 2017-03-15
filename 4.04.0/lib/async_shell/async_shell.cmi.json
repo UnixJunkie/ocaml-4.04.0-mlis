@@ -1,582 +1,216 @@
-["module"; "Async_shell"; ["Mty_signature"; ["Sig_module"; "Process"; 
-                                            ["Mty_signature"; ["Sig_type"; 
-                                                              "t"; 0; 
-                                                              ["Type_alias"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Core_extended"]; 
-                                                              "Shell"]; 
-                                                              "Process"]; 
-                                                              "t"]]]]; 
-                                            ["Sig_type"; "status"; 0; 
-                                            ["Type_alias"; ["Tunknown"]]]; 
-                                            ["Sig_type"; "result"; 0; 
-                                            ["Type_record"; ["label"; 
-                                                            "command"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "t"]]]; 
-                                            ["label"; "status"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "status"]]]; 
-                                            ["label"; "stdout"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]]; 
-                                            ["label"; "stderr"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]]]]; 
-                                            ["Sig_unknown"]; ["Sig_value"; 
-                                                             "status_to_string"; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "status"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]]]; 
-                                            ["Sig_value"; "format_failed"; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "result"]]; 
-                                            ["Tconstr"; ["Pident"; "string"]]]]]]; 
-                          ["Sig_type"; "with_process_flags"; 1; ["Type_alias"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Core_extended"]; 
-                                                                "Shell"]; 
-                                                                "with_process_flags"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]]]; 
-                          ["Sig_type"; "with_run_flags"; 1; ["Type_alias"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Core_extended"]; 
-                                                            "Shell"]; 
-                                                            "with_run_flags"]; 
-                                                            ["Tpoly"; "a"]]]]; 
-                          ["Sig_type"; "with_test_flags"; 1; ["Type_alias"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Core_extended"]; 
-                                                             "Shell"]; 
-                                                             "with_test_flags"]; 
-                                                             ["Tpoly"; "a"]]]]; 
-                          ["Sig_type"; "with_ssh_flags"; 1; ["Type_alias"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Core_extended"]; 
-                                                            "Shell"]; 
-                                                            "with_ssh_flags"]; 
-                                                            ["Tpoly"; "a"]]]]; 
-                          ["Sig_type"; "cmd"; 1; ["Type_alias"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Core_extended"]; 
-                                                                "Shell"]; 
-                                                                "cmd"]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]]]; 
-                          ["Sig_type"; "sh_cmd"; 2; ["Type_alias"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Core_extended"]; 
-                                                                   "Shell"]; 
-                                                                   "sh_cmd"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]; 
-                                                                   ["Tpoly"; 
-                                                                   "ret"]]]]; 
-                          ["Sig_value"; "test"; ["Tconstr"; ["Pident"; 
-                                                            "with_test_flags"]; 
-                                                ["Tconstr"; ["Pident"; "cmd"]; 
-                                                ["Tconstr"; ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Async"]; 
-                                                            "Std"]; "Deferred"]; 
-                                                            "t"]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]]]]]; 
-                          ["Sig_value"; "sh_test"; ["Tconstr"; ["Pident"; 
-                                                               "with_test_flags"]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "sh_cmd"]; 
-                                                   ["Tpoly"; "a"]; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Async"]; 
-                                                                   "Std"]; 
-                                                                   "Deferred"]; 
-                                                                   "t"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bool"]]]]]]; 
-                          ["Sig_value"; "ssh_test"; ["Tconstr"; ["Pident"; 
-                                                                "with_ssh_flags"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "with_test_flags"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "sh_cmd"]; 
-                                                    ["Tpoly"; "a"]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Async"]; 
-                                                                    "Std"]; 
-                                                                    "Deferred"]; 
-                                                                    "t"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "bool"]]]]]]]; 
-                          ["Sig_value"; "run"; ["Tconstr"; ["Pident"; 
-                                                           "with_run_flags"]; 
-                                               ["Tconstr"; ["Pident"; "cmd"]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Async"]; 
-                                                                    "Std"]; 
-                                                                    "Deferred"]; 
-                                                           "t"]; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]]; 
-                          ["Sig_value"; "run_lines"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "char"]]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "with_run_flags"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "cmd"]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Async"]; 
-                                                                 "Std"]; 
-                                                                 "Deferred"]; 
-                                                                 "t"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "list"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "string"]]]]]]]]; 
-                          ["Sig_value"; "run_one"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "char"]]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "with_run_flags"]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "cmd"]; 
-                                                   ["Tconstr"; ["Pdot"; 
-                                                               ["Pdot"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Async"]; 
-                                                               "Std"]; 
-                                                               "Deferred"]; 
-                                                               "t"]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "option"]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "string"]]]]]]]]; 
-                          ["Sig_value"; "run_one_exn"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "option"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "char"]]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "with_run_flags"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "cmd"]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Async"]; 
-                                                                   "Std"]; 
-                                                                   "Deferred"]; 
-                                                                   "t"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "string"]]]]]]]; 
-                          ["Sig_value"; "run_full"; ["Tconstr"; ["Pident"; 
-                                                                "with_run_flags"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "cmd"]; 
-                                                    ["Tconstr"; ["Pdot"; 
-                                                                ["Pdot"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Async"]; 
-                                                                "Std"]; 
-                                                                "Deferred"]; 
-                                                                "t"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "string"]]]]]]; 
-                          ["Sig_value"; "run_full_and_error"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "with_run_flags"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "cmd"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Async"]; 
-                                                              "Std"]; 
-                                                              "Deferred"]; 
-                                                              "t"]; [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]]]]]; 
-                          ["Sig_value"; "run_lines_stream"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "with_run_flags"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "cmd"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Async"]; 
-                                                            "Std"]; "Stream"]; 
-                                                            "t"]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]]]; 
-                          ["Sig_value"; "sh"; ["Tconstr"; ["Pident"; 
-                                                          "with_run_flags"]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "sh_cmd"]; 
-                                              ["Tpoly"; "a"]; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Async"]; 
-                                                              "Std"]; 
-                                                              "Deferred"]; 
-                                                              "t"]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]]; 
-                          ["Sig_value"; "sh_lines"; ["Tconstr"; ["Pident"; 
-                                                                "with_run_flags"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "sh_cmd"]; 
-                                                    ["Tpoly"; "a"]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Async"]; 
-                                                                    "Std"]; 
-                                                                    "Deferred"]; 
-                                                                    "t"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]]]]]; 
-                          ["Sig_value"; "sh_one"; ["Tconstr"; ["Pident"; 
-                                                              "with_run_flags"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "sh_cmd"]; 
-                                                  ["Tpoly"; "a"]; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Async"]; 
-                                                                  "Std"]; 
-                                                                  "Deferred"]; 
-                                                                  "t"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "option"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]]]]; 
-                          ["Sig_value"; "sh_one_exn"; ["Tconstr"; ["Pident"; 
-                                                                  "with_run_flags"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "sh_cmd"]; 
-                                                      ["Tpoly"; "a"]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Async"]; 
-                                                                  "Std"]; 
-                                                                  "Deferred"]; 
-                                                                  "t"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "string"]]]]]]; 
-                          ["Sig_value"; "sh_full"; ["Tconstr"; ["Pident"; 
-                                                               "with_run_flags"]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "sh_cmd"]; 
-                                                   ["Tpoly"; "a"]; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Async"]; 
-                                                                   "Std"]; 
-                                                                   "Deferred"]; 
-                                                                   "t"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]]]]; 
-                          ["Sig_value"; "sh_lines_stream"; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "with_run_flags"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "sh_cmd"]; 
-                                                           ["Tpoly"; "a"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Async"]; 
-                                                                    "Std"]; 
-                                                                    "Stream"]; 
-                                                           "t"]; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]]]]; 
-                          ["Sig_value"; "ssh"; ["Tconstr"; ["Pident"; 
-                                                           "with_ssh_flags"]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "with_run_flags"]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "sh_cmd"]; 
-                                               ["Tpoly"; "a"]; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pdot"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Async"]; 
-                                                               "Std"]; 
-                                                               "Deferred"]; 
-                                                               "t"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]]]; 
-                          ["Sig_value"; "ssh_lines"; ["Tconstr"; ["Pident"; 
-                                                                 "with_ssh_flags"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "with_run_flags"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "sh_cmd"]; 
-                                                     ["Tpoly"; "a"]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Async"]; 
-                                                                 "Std"]; 
-                                                                 "Deferred"]; 
-                                                                 "t"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "list"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "string"]]]]]]]]; 
-                          ["Sig_value"; "ssh_full"; ["Tconstr"; ["Pident"; 
-                                                                "with_ssh_flags"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "with_run_flags"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "sh_cmd"]; 
-                                                    ["Tpoly"; "a"]; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Async"]; 
-                                                                    "Std"]; 
-                                                                    "Deferred"]; 
-                                                                    "t"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]]]]]; 
-                          ["Sig_value"; "ssh_one"; ["Tconstr"; ["Pident"; 
-                                                               "with_ssh_flags"]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "with_run_flags"]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "sh_cmd"]; 
-                                                   ["Tpoly"; "a"]; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Async"]; 
-                                                                   "Std"]; 
-                                                                   "Deferred"]; 
-                                                                   "t"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]]]]]]; 
-                          ["Sig_value"; "ssh_one_exn"; ["Tconstr"; ["Pident"; 
-                                                                   "with_ssh_flags"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "with_run_flags"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "sh_cmd"]; 
-                                                       ["Tpoly"; "a"]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Async"]; 
-                                                                   "Std"]; 
-                                                                   "Deferred"]; 
-                                                                   "t"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "string"]]]]]]]; 
-                          ["Sig_value"; "ssh_lines_stream"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "with_ssh_flags"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "with_run_flags"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "sh_cmd"]; 
-                                                            ["Tpoly"; "a"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Async"]; 
-                                                            "Std"]; "Stream"]; 
-                                                            "t"]; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]]]]; 
-                          ["Sig_value"; "mkdir"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                 ["Tconstr"; ["Pdot"; 
-                                                             ["Pdot"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Async"]; 
-                                                             "Std"]; 
-                                                             "Deferred"]; 
-                                                             "t"]; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]]]]; 
-                          ["Sig_value"; "scp"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "bool"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "bool"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Async"]; 
-                                                                    "Std"]; 
-                                                                    "Deferred"]; 
-                                                           "t"]; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]]]]]]]]
+["module", "Async_shell",
+["Mty_signature",
+["Sig_module", "Process",
+["Mty_signature",
+["Sig_type", "t", 0,
+["Type_alias",
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Core_extended"], "Shell"], "Process"],
+"t"]]]], ["Sig_type", "status", 0, ["Type_alias", ["Tunknown"]]],
+["Sig_type", "result", 0,
+["Type_record", ["label", "command", ["Tconstr", ["Pident", "t"]]],
+["label", "status", ["Tconstr", ["Pident", "status"]]],
+["label", "stdout", ["Tconstr", ["Pident", "string"]]],
+["label", "stderr", ["Tconstr", ["Pident", "string"]]]]], ["Sig_unknown"],
+["Sig_value", "status_to_string",
+["Tarrow", ["Tconstr", ["Pident", "status"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "format_failed",
+["Tarrow", ["Tconstr", ["Pident", "result"]],
+["Tconstr", ["Pident", "string"]]]]]],
+["Sig_type", "with_process_flags", 1,
+["Type_alias",
+["Tconstr",
+["Pdot", ["Pdot", ["Pident", "Core_extended"], "Shell"],
+"with_process_flags"], ["Tpoly", "a"]]]],
+["Sig_type", "with_run_flags", 1,
+["Type_alias",
+["Tconstr",
+["Pdot", ["Pdot", ["Pident", "Core_extended"], "Shell"], "with_run_flags"],
+["Tpoly", "a"]]]],
+["Sig_type", "with_test_flags", 1,
+["Type_alias",
+["Tconstr",
+["Pdot", ["Pdot", ["Pident", "Core_extended"], "Shell"], "with_test_flags"],
+["Tpoly", "a"]]]],
+["Sig_type", "with_ssh_flags", 1,
+["Type_alias",
+["Tconstr",
+["Pdot", ["Pdot", ["Pident", "Core_extended"], "Shell"], "with_ssh_flags"],
+["Tpoly", "a"]]]],
+["Sig_type", "cmd", 1,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Core_extended"], "Shell"], "cmd"],
+["Tpoly", "a"]]]],
+["Sig_type", "sh_cmd", 2,
+["Type_alias",
+["Tconstr",
+["Pdot", ["Pdot", ["Pident", "Core_extended"], "Shell"], "sh_cmd"],
+["Tpoly", "a"], ["Tpoly", "ret"]]]],
+["Sig_value", "test",
+["Tconstr", ["Pident", "with_test_flags"],
+["Tconstr", ["Pident", "cmd"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "bool"]]]]]],
+["Sig_value", "sh_test",
+["Tconstr", ["Pident", "with_test_flags"],
+["Tconstr", ["Pident", "sh_cmd"], ["Tpoly", "a"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "bool"]]]]]],
+["Sig_value", "ssh_test",
+["Tconstr", ["Pident", "with_ssh_flags"],
+["Tconstr", ["Pident", "with_test_flags"],
+["Tconstr", ["Pident", "sh_cmd"], ["Tpoly", "a"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "bool"]]]]]]],
+["Sig_value", "run",
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "cmd"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "run_lines",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "char"]]],
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "cmd"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]]]]]]],
+["Sig_value", "run_one",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "char"]]],
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "cmd"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]]]],
+["Sig_value", "run_one_exn",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "char"]]],
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "cmd"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "string"]]]]]]],
+["Sig_value", "run_full",
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "cmd"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "run_full_and_error",
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "cmd"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]]]]]],
+["Sig_value", "run_lines_stream",
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "cmd"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Stream"], "t"],
+["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "sh",
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "sh_cmd"], ["Tpoly", "a"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "sh_lines",
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "sh_cmd"], ["Tpoly", "a"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]]]]]],
+["Sig_value", "sh_one",
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "sh_cmd"], ["Tpoly", "a"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]]],
+["Sig_value", "sh_one_exn",
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "sh_cmd"], ["Tpoly", "a"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "sh_full",
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "sh_cmd"], ["Tpoly", "a"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "sh_lines_stream",
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "sh_cmd"], ["Tpoly", "a"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Stream"], "t"],
+["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "ssh",
+["Tconstr", ["Pident", "with_ssh_flags"],
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "sh_cmd"], ["Tpoly", "a"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "ssh_lines",
+["Tconstr", ["Pident", "with_ssh_flags"],
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "sh_cmd"], ["Tpoly", "a"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]]]]]]],
+["Sig_value", "ssh_full",
+["Tconstr", ["Pident", "with_ssh_flags"],
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "sh_cmd"], ["Tpoly", "a"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "string"]]]]]]],
+["Sig_value", "ssh_one",
+["Tconstr", ["Pident", "with_ssh_flags"],
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "sh_cmd"], ["Tpoly", "a"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]]]],
+["Sig_value", "ssh_one_exn",
+["Tconstr", ["Pident", "with_ssh_flags"],
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "sh_cmd"], ["Tpoly", "a"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "string"]]]]]]],
+["Sig_value", "ssh_lines_stream",
+["Tconstr", ["Pident", "with_ssh_flags"],
+["Tconstr", ["Pident", "with_run_flags"],
+["Tconstr", ["Pident", "sh_cmd"], ["Tpoly", "a"],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Stream"], "t"],
+["Tconstr", ["Pident", "string"]]]]]]],
+["Sig_value", "mkdir",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "unit"]]],
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "scp",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Async"], "Std"], "Deferred"], "t"],
+["Tconstr", ["Pident", "unit"]]]]]]]]]]]]

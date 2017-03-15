@@ -1,1629 +1,564 @@
-["module"; "Tacexpr"; ["Mty_signature"; ["Sig_type"; "direction_flag"; 
-                                        0; ["Type_alias"; ["Tconstr"; 
-                                                          ["Pident"; "bool"]]]]; 
-                      ["Sig_type"; "lazy_flag"; 0; ["Type_variant"; [
-                                                                    "constructor"; 
-                                                                    "General"; 
-                                                                    ["tuple"]]; 
-                                                   ["constructor"; "Select"; 
-                                                   ["tuple"]]; ["constructor"; 
-                                                               "Once"; 
-                                                               ["tuple"]]]]; 
-                      ["Sig_type"; "global_flag"; 0; ["Type_variant"; 
-                                                     ["constructor"; 
-                                                     "TacGlobal"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "TacLocal"; ["tuple"]]]]; 
-                      ["Sig_type"; "evars_flag"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bool"]]]]; 
-                      ["Sig_type"; "rec_flag"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bool"]]]]; 
-                      ["Sig_type"; "advanced_flag"; 0; ["Type_alias"; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "bool"]]]]; 
-                      ["Sig_type"; "letin_flag"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bool"]]]]; 
-                      ["Sig_type"; "clear_flag"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bool"]]]]]; 
-                      ["Sig_type"; "debug"; 0; ["Type_variant"; ["constructor"; 
-                                                                "Debug"; 
-                                                                ["tuple"]]; 
-                                               ["constructor"; "Info"; 
-                                               ["tuple"]]; ["constructor"; 
-                                                           "Off"; ["tuple"]]]]; 
-                      ["Sig_type"; "goal_selector"; 0; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "SelectNth"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                                                       ["constructor"; 
-                                                       "SelectList"; 
-                                                       ["tuple"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "list"]; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]]]; 
-                                                       ["constructor"; 
-                                                       "SelectId"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "Id"]; 
-                                                                   "t"]]]]; 
-                                                       ["constructor"; 
-                                                       "SelectAll"; ["tuple"]]]]; 
-                      ["Sig_type"; "core_destruction_arg"; 1; ["Type_variant"; 
-                                                              ["constructor"; 
-                                                              "ElimOnConstr"; 
-                                                              ["tuple"; 
-                                                              ["Tpoly"; "a"]]]; 
-                                                              ["constructor"; 
-                                                              "ElimOnIdent"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Loc"]; 
-                                                              "located"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "Id"]; 
-                                                              "t"]]]]]; 
-                                                              ["constructor"; 
-                                                              "ElimOnAnonHyp"; 
-                                                              ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]]]]; 
-                      ["Sig_type"; "destruction_arg"; 1; ["Type_alias"; 
-                                                         ["Ttuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "clear_flag"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "core_destruction_arg"]; 
-                                                         ["Tpoly"; "a"]]]]]; 
-                      ["Sig_type"; "inversion_kind"; 0; ["Type_variant"; 
-                                                        ["constructor"; 
-                                                        "SimpleInversion"; 
-                                                        ["tuple"]]; [
-                                                                    "constructor"; 
-                                                                    "FullInversion"; 
-                                                                    ["tuple"]]; 
-                                                        ["constructor"; 
-                                                        "FullInversionClear"; 
-                                                        ["tuple"]]]]; 
-                      ["Sig_type"; "inversion_strength"; 3; ["Type_variant"; 
-                                                            ["constructor"; 
-                                                            "NonDepInversion"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "inversion_kind"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tpoly"; "id"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Misctypes"]; 
-                                                            "or_var"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; "Loc"]; 
-                                                            "located"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Misctypes"]; 
-                                                            "or_and_intro_pattern_expr"]; 
-                                                            ["Tpoly"; "d"]]]]]]]; 
-                                                            ["constructor"; 
-                                                            "DepInversion"; 
-                                                            ["tuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "inversion_kind"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tpoly"; "c"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Misctypes"]; 
-                                                            "or_var"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; "Loc"]; 
-                                                            "located"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Misctypes"]; 
-                                                            "or_and_intro_pattern_expr"]; 
-                                                            ["Tpoly"; "d"]]]]]]]; 
-                                                            ["constructor"; 
-                                                            "InversionUsing"; 
-                                                            ["tuple"; 
-                                                            ["Tpoly"; "c"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tpoly"; "id"]]]]]]; 
-                      ["Sig_type"; "location"; 2; ["Type_variant"; ["constructor"; 
-                                                                   "HypLocation"; 
-                                                                   ["tuple"; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]]; 
-                                                  ["constructor"; "ConclLocation"; 
-                                                  ["tuple"; ["Tpoly"; "b"]]]]]; 
-                      ["Sig_type"; "message_token"; 1; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "MsgString"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]]; 
-                                                       ["constructor"; 
-                                                       "MsgInt"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]; 
-                                                       ["constructor"; 
-                                                       "MsgIdent"; ["tuple"; 
-                                                                   ["Tpoly"; 
-                                                                   "id"]]]]]; 
-                      ["Sig_type"; "induction_clause"; 2; ["Type_alias"; 
-                                                          ["Ttuple"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "destruction_arg"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Misctypes"]; 
-                                                          "with_bindings"]; 
-                                                          ["Tpoly"; "dconstr"]]]; 
-                                                          ["Ttuple"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Loc"]; 
-                                                          "located"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Misctypes"]; 
-                                                          "intro_pattern_naming_expr"]]]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Misctypes"]; 
-                                                          "or_var"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Loc"]; 
-                                                          "located"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Misctypes"]; 
-                                                          "or_and_intro_pattern_expr"]; 
-                                                          ["Tpoly"; "dconstr"]]]]]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Locus"]; 
-                                                          "clause_expr"]; 
-                                                          ["Tpoly"; "id"]]]]]]; 
-                      ["Sig_type"; "induction_clause_list"; 3; ["Type_alias"; 
-                                                               ["Ttuple"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "induction_clause"]; 
-                                                               ["Tpoly"; 
-                                                               "dconstr"]; 
-                                                               ["Tpoly"; 
-                                                               "id"]]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "option"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Misctypes"]; 
-                                                               "with_bindings"]; 
-                                                               ["Tpoly"; 
-                                                               "constr"]]]]]]; 
-                      ["Sig_type"; "with_bindings_arg"; 1; ["Type_alias"; 
-                                                           ["Ttuple"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "clear_flag"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Misctypes"]; 
-                                                           "with_bindings"]; 
-                                                           ["Tpoly"; "a"]]]]]; 
-                      ["Sig_type"; "multi"; 0; ["Type_variant"; ["constructor"; 
-                                                                "Precisely"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]; 
-                                               ["constructor"; "UpTo"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]]]; 
-                                               ["constructor"; "RepeatStar"; 
-                                               ["tuple"]]; ["constructor"; 
-                                                           "RepeatPlus"; 
-                                                           ["tuple"]]]]; 
-                      ["Sig_type"; "match_pattern"; 1; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "Term"; ["tuple"; 
-                                                               ["Tpoly"; "a"]]]; 
-                                                       ["constructor"; 
-                                                       "Subterm"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "option"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "Id"]; 
-                                                                  "t"]]]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]]]]]; 
-                      ["Sig_type"; "match_context_hyps"; 1; ["Type_variant"; 
-                                                            ["constructor"; 
-                                                            "Hyp"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Loc"]; 
-                                                                   "located"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "Name"]; 
-                                                                   "t"]]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "match_pattern"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]]]; 
-                                                            ["constructor"; 
-                                                            "Def"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Loc"]; 
-                                                                   "located"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "Name"]; 
-                                                                   "t"]]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "match_pattern"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "match_pattern"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]]]]]; 
-                      ["Sig_type"; "match_rule"; 2; ["Type_variant"; 
-                                                    ["constructor"; "Pat"; 
-                                                    ["tuple"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "list"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "match_context_hyps"]; 
-                                                              ["Tpoly"; "a"]]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "match_pattern"]; 
-                                                    ["Tpoly"; "a"]]; 
-                                                    ["Tpoly"; "t"]]]; 
-                                                    ["constructor"; "All"; 
-                                                    ["tuple"; ["Tpoly"; "t"]]]]]; 
-                      ["Sig_type"; "ml_tactic_name"; 0; ["Type_record"; 
-                                                        ["label"; "mltac_plugin"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]]; 
-                                                        ["label"; "mltac_tactic"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]]]]; 
-                      ["Sig_type"; "ml_tactic_entry"; 0; ["Type_record"; 
-                                                         ["label"; "mltac_name"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "ml_tactic_name"]]]; 
-                                                         ["label"; "mltac_index"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "int"]]]]]; 
-                      ["Sig_type"; "glob_constr_and_expr"; 0; ["Type_alias"; 
-                                                              ["Ttuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Glob_term"]; 
-                                                              "glob_constr"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Constrexpr"]; 
-                                                              "constr_expr"]]]]]]; 
-                      ["Sig_type"; "open_constr_expr"; 0; ["Type_alias"; 
-                                                          ["Ttuple"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Constrexpr"]; 
-                                                          "constr_expr"]]]]]; 
-                      ["Sig_type"; "open_glob_constr"; 0; ["Type_alias"; 
-                                                          ["Ttuple"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "glob_constr_and_expr"]]]]]; 
-                      ["Sig_type"; "binding_bound_vars"; 0; ["Type_alias"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Names"]; 
-                                                            "Id"]; "Set"]; 
-                                                            "t"]]]]; 
-                      ["Sig_type"; "glob_constr_pattern_and_expr"; 0; 
-                      ["Type_alias"; ["Ttuple"; ["Tconstr"; ["Pident"; 
-                                                            "binding_bound_vars"]]; 
-                                     ["Tconstr"; ["Pident"; "glob_constr_and_expr"]]; 
-                                     ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                          "Pattern"]; 
-                                                 "constr_pattern"]]]]]; 
-                      ["Sig_type"; "delayed_open"; 1; ["Type_record"; 
-                                                      ["label"; "delayed"; 
-                                                      ["Tunknown"]]]]; 
-                      ["Sig_type"; "delayed_open_constr_with_bindings"; 
-                      0; ["Type_alias"; ["Tconstr"; ["Pident"; "delayed_open"]; 
-                                        ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Misctypes"]; 
-                                                    "with_bindings"]; 
-                                        ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                             "Term"]; 
-                                                    "constr"]]]]]]; [
-                                                                    "Sig_type"; 
-                                                                    "delayed_open_constr"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_alias"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "delayed_open"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                                    "constr"]]]]]; 
-                      ["Sig_type"; "intro_pattern"; 0; ["Type_alias"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Loc"]; 
-                                                                   "located"]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Misctypes"]; 
-                                                                   "intro_pattern_expr"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "delayed_open_constr"]]]]]]; 
-                      ["Sig_type"; "intro_patterns"; 0; ["Type_alias"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Loc"]; 
-                                                                    "located"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Misctypes"]; 
-                                                                    "intro_pattern_expr"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "delayed_open_constr"]]]]]]]; 
-                      ["Sig_type"; "or_and_intro_pattern"; 0; ["Type_alias"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Loc"]; 
-                                                              "located"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Misctypes"]; 
-                                                              "or_and_intro_pattern_expr"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "delayed_open_constr"]]]]]]; 
-                      ["Sig_type"; "intro_pattern_naming"; 0; ["Type_alias"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Loc"]; 
-                                                              "located"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Misctypes"]; 
-                                                              "intro_pattern_naming_expr"]]]]]; 
-                      ["Sig_type"; "gen_atomic_tactic_expr"; 1; ["Type_variant"; 
-                                                                ["constructor"; 
-                                                                "TacIntroPattern"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "evars_flag"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Loc"]; 
-                                                                "located"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Misctypes"]; 
-                                                                "intro_pattern_expr"]; 
-                                                                ["Tpoly"; 
-                                                                "dtrm"]]]]]]; 
-                                                                ["constructor"; 
-                                                                "TacApply"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "advanced_flag"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "evars_flag"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "with_bindings_arg"]; 
-                                                                ["Tpoly"; 
-                                                                "trm"]]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Ttuple"; 
-                                                                ["Tpoly"; 
-                                                                "nam"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Loc"]; 
-                                                                "located"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Misctypes"]; 
-                                                                "intro_pattern_expr"]; 
-                                                                ["Tpoly"; 
-                                                                "dtrm"]]]]]]]]; 
-                                                                ["constructor"; 
-                                                                "TacElim"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "evars_flag"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "with_bindings_arg"]; 
-                                                                ["Tpoly"; 
-                                                                "trm"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Misctypes"]; 
-                                                                "with_bindings"]; 
-                                                                ["Tpoly"; 
-                                                                "trm"]]]]]; 
-                                                                ["constructor"; 
-                                                                "TacCase"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "evars_flag"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "with_bindings_arg"]; 
-                                                                ["Tpoly"; 
-                                                                "trm"]]]]; 
-                                                                ["constructor"; 
-                                                                "TacMutualFix"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Names"]; 
-                                                                "Id"]; 
-                                                                "t"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Ttuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Names"]; 
-                                                                "Id"]; 
-                                                                "t"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                                ["Tpoly"; 
-                                                                "trm"]]]]]; 
-                                                                ["constructor"; 
-                                                                "TacMutualCofix"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Names"]; 
-                                                                "Id"]; 
-                                                                "t"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Ttuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Names"]; 
-                                                                "Id"]; 
-                                                                "t"]]; 
-                                                                ["Tpoly"; 
-                                                                "trm"]]]]]; 
-                                                                ["constructor"; 
-                                                                "TacAssert"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tpoly"; 
-                                                                "tacexpr"]]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Loc"]; 
-                                                                "located"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Misctypes"]; 
-                                                                "intro_pattern_expr"]; 
-                                                                ["Tpoly"; 
-                                                                "dtrm"]]]]; 
-                                                                ["Tpoly"; 
-                                                                "trm"]]]; 
-                                                                ["constructor"; 
-                                                                "TacGeneralize"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Ttuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Locus"]; 
-                                                                "with_occurrences"]; 
-                                                                ["Tpoly"; 
-                                                                "trm"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Names"]; 
-                                                                "Name"]; 
-                                                                "t"]]]]]]; 
-                                                                ["constructor"; 
-                                                                "TacLetTac"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Names"]; 
-                                                                "Name"]; 
-                                                                "t"]]; 
-                                                                ["Tpoly"; 
-                                                                "trm"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Locus"]; 
-                                                                "clause_expr"]; 
-                                                                ["Tpoly"; 
-                                                                "nam"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "letin_flag"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Loc"]; 
-                                                                "located"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Misctypes"]; 
-                                                                "intro_pattern_naming_expr"]]]]]]; 
-                                                                ["constructor"; 
-                                                                "TacInductionDestruct"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "rec_flag"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "evars_flag"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "induction_clause_list"]; 
-                                                                ["Tpoly"; 
-                                                                "trm"]; 
-                                                                ["Tpoly"; 
-                                                                "dtrm"]; 
-                                                                ["Tpoly"; 
-                                                                "nam"]]]]; 
-                                                                ["constructor"; 
-                                                                "TacReduce"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Genredexpr"]; 
-                                                                "red_expr_gen"]; 
-                                                                ["Tpoly"; 
-                                                                "trm"]; 
-                                                                ["Tpoly"; 
-                                                                "cst"]; 
-                                                                ["Tpoly"; 
-                                                                "pat"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Locus"]; 
-                                                                "clause_expr"]; 
-                                                                ["Tpoly"; 
-                                                                "nam"]]]]; 
-                                                                ["constructor"; 
-                                                                "TacChange"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tpoly"; 
-                                                                "pat"]]; 
-                                                                ["Tpoly"; 
-                                                                "dtrm"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Locus"]; 
-                                                                "clause_expr"]; 
-                                                                ["Tpoly"; 
-                                                                "nam"]]]]; 
-                                                                ["constructor"; 
-                                                                "TacRewrite"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "evars_flag"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Ttuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "multi"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "with_bindings_arg"]; 
-                                                                ["Tpoly"; 
-                                                                "dtrm"]]]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Locus"]; 
-                                                                "clause_expr"]; 
-                                                                ["Tpoly"; 
-                                                                "nam"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tpoly"; 
-                                                                "tacexpr"]]]]; 
-                                                                ["constructor"; 
-                                                                "TacInversion"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "inversion_strength"]; 
-                                                                ["Tpoly"; 
-                                                                "trm"]; 
-                                                                ["Tpoly"; 
-                                                                "dtrm"]; 
-                                                                ["Tpoly"; 
-                                                                "nam"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Misctypes"]; 
-                                                                "quantified_hypothesis"]]]]]]; 
-                      ["Sig_type"; "gen_tactic_arg"; 1; ["Type_variant"; 
-                                                        ["constructor"; 
-                                                        "TacGeneric"; 
-                                                        ["tuple"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Genarg"]; 
-                                                                  "generic_argument"]; 
-                                                                  ["Tpoly"; 
-                                                                  "lev"]]]]; 
-                                                        ["constructor"; 
-                                                        "ConstrMayEval"; 
-                                                        ["tuple"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Genredexpr"]; 
-                                                                  "may_eval"]; 
-                                                                  ["Tpoly"; 
-                                                                  "trm"]; 
-                                                                  ["Tpoly"; 
-                                                                  "cst"]; 
-                                                                  ["Tpoly"; 
-                                                                  "pat"]]]]; 
-                                                        ["constructor"; 
-                                                        "Reference"; 
-                                                        ["tuple"; ["Tpoly"; 
-                                                                  "ref"]]]; 
-                                                        ["constructor"; 
-                                                        "TacCall"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Loc"]; 
-                                                                   "t"]]; 
-                                                                   ["Tpoly"; 
-                                                                   "ref"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_arg"]; 
-                                                                   ["Tobject"]]]]]; 
-                                                        ["constructor"; 
-                                                        "TacFreshId"; 
-                                                        ["tuple"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "list"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Misctypes"]; 
-                                                                  "or_var"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]]]; 
-                                                        ["constructor"; 
-                                                        "Tacexp"; ["tuple"; 
-                                                                  ["Tpoly"; 
-                                                                  "tacexpr"]]]; 
-                                                        ["constructor"; 
-                                                        "TacPretype"; 
-                                                        ["tuple"; ["Tpoly"; 
-                                                                  "trm"]]]; 
-                                                        ["constructor"; 
-                                                        "TacNumgoals"; 
-                                                        ["tuple"]]]]; 
-                      ["Sig_type"; "gen_tactic_expr"; 1; ["Type_variant"; 
-                                                         ["constructor"; 
-                                                         "TacAtom"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Loc"]; 
-                                                                    "t"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "gen_atomic_tactic_expr"]; 
-                                                                    [
-                                                                    "Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacThen"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "gen_tactic_expr"]; 
-                                                                    [
-                                                                    "Tobject"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "gen_tactic_expr"]; 
-                                                                    [
-                                                                    "Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacDispatch"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_expr"]; 
-                                                                   ["Tobject"]]]]]; 
-                                                         ["constructor"; 
-                                                         "TacExtendTac"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "array"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_expr"]; 
-                                                                   ["Tobject"]]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_expr"]; 
-                                                         ["Tobject"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "array"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_expr"]; 
-                                                         ["Tobject"]]]]]; 
-                                                         ["constructor"; 
-                                                         "TacThens"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_expr"]; 
-                                                                   ["Tobject"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "list"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_expr"]; 
-                                                         ["Tobject"]]]]]; 
-                                                         ["constructor"; 
-                                                         "TacThens3parts"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_expr"]; 
-                                                                   ["Tobject"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "array"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_expr"]; 
-                                                         ["Tobject"]]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_expr"]; 
-                                                         ["Tobject"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "array"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_expr"]; 
-                                                         ["Tobject"]]]]]; 
-                                                         ["constructor"; 
-                                                         "TacFirst"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_expr"]; 
-                                                                   ["Tobject"]]]]]; 
-                                                         ["constructor"; 
-                                                         "TacComplete"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_expr"]; 
-                                                                   ["Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacSolve"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_expr"]; 
-                                                                   ["Tobject"]]]]]; 
-                                                         ["constructor"; 
-                                                         "TacTry"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_expr"]; 
-                                                                   ["Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacOr"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "gen_tactic_expr"]; 
-                                                                  ["Tobject"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "gen_tactic_expr"]; 
-                                                                  ["Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacOnce"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "gen_tactic_expr"]; 
-                                                                    [
-                                                                    "Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacExactlyOnce"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_expr"]; 
-                                                                   ["Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacIfThenCatch"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_expr"]; 
-                                                                   ["Tobject"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_expr"]; 
-                                                         ["Tobject"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_expr"]; 
-                                                         ["Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacOrelse"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_expr"]; 
-                                                                   ["Tobject"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_expr"]; 
-                                                         ["Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacDo"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Misctypes"]; 
-                                                                  "or_var"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "gen_tactic_expr"]; 
-                                                                  ["Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacTimeout"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Misctypes"]; 
-                                                                   "or_var"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_expr"]; 
-                                                         ["Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacTime"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "gen_tactic_expr"]; 
-                                                                    [
-                                                                    "Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacRepeat"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_expr"]; 
-                                                                   ["Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacProgress"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_expr"]; 
-                                                                   ["Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacShowHyps"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_expr"]; 
-                                                                   ["Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacAbstract"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_expr"]; 
-                                                                   ["Tobject"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "option"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "Id"]; 
-                                                         "t"]]]]]; ["constructor"; 
-                                                                   "TacId"; 
-                                                                   ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "message_token"]; 
-                                                                   ["Tpoly"; 
-                                                                   "n"]]]]]; 
-                                                         ["constructor"; 
-                                                         "TacFail"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "global_flag"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Misctypes"]; 
-                                                                    "or_var"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "message_token"]; 
-                                                                    [
-                                                                    "Tpoly"; 
-                                                                    "n"]]]]]; 
-                                                         ["constructor"; 
-                                                         "TacInfo"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "gen_tactic_expr"]; 
-                                                                    [
-                                                                    "Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacLetIn"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "rec_flag"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "list"]; 
-                                                         ["Ttuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Loc"]; 
-                                                                    "located"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Id"]; 
-                                                                    "t"]]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_arg"]; 
-                                                         ["Tobject"]]]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_expr"]; 
-                                                         ["Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacMatch"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "lazy_flag"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_expr"]; 
-                                                         ["Tobject"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "list"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "match_rule"]; 
-                                                         ["Tpoly"; "p"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_expr"]; 
-                                                         ["Tobject"]]]]]]; 
-                                                         ["constructor"; 
-                                                         "TacMatchGoal"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "lazy_flag"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "direction_flag"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "list"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "match_rule"]; 
-                                                         ["Tpoly"; "p"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_expr"]; 
-                                                         ["Tobject"]]]]]]; 
-                                                         ["constructor"; 
-                                                         "TacFun"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_fun_ast"]; 
-                                                                   ["Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacArg"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Loc"]; 
-                                                                   "located"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "gen_tactic_arg"]; 
-                                                                   ["Tobject"]]]]]; 
-                                                         ["constructor"; 
-                                                         "TacSelect"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "goal_selector"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_expr"]; 
-                                                         ["Tobject"]]]]; 
-                                                         ["constructor"; 
-                                                         "TacML"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Loc"]; 
-                                                                  "t"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "ml_tactic_entry"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "list"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "gen_tactic_arg"]; 
-                                                                  ["Tobject"]]]]]; 
-                                                         ["constructor"; 
-                                                         "TacAlias"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Loc"]; 
-                                                                   "t"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "KerName"]; 
-                                                         "t"]]; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "gen_tactic_arg"]; 
-                                                                ["Tobject"]]]]]]]; 
-                      ["Sig_type"; "gen_tactic_fun_ast"; 1; ["Type_alias"; 
-                                                            ["Ttuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Names"]; 
-                                                            "Id"]; "t"]]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "gen_tactic_expr"]; 
-                                                            ["Tobject"]]]]]; 
-                      ["Sig_type"; "g_trm"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "glob_constr_and_expr"]]]]; 
-                      ["Sig_type"; "g_pat"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "glob_constr_pattern_and_expr"]]]]; 
-                      ["Sig_type"; "g_cst"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Misctypes"]; 
-                                                              "or_var"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Misctypes"]; 
-                                                              "and_short_name"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "evaluable_global_reference"]]]]]]; 
-                      ["Sig_type"; "g_ref"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Misctypes"]; 
-                                                              "or_var"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Loc"]; 
-                                                              "located"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Nametab"]; 
-                                                              "ltac_constant"]]]]]]; 
-                      ["Sig_type"; "g_nam"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Loc"]; 
-                                                              "located"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "Id"]; 
-                                                              "t"]]]]]; 
-                      ["Sig_type"; "g_dispatch"; 0; ["Type_alias"; ["Tobject"]]]; 
-                      ["Sig_type"; "glob_tactic_expr"; 0; ["Type_alias"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "gen_tactic_expr"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "g_dispatch"]]]]]; 
-                      ["Sig_type"; "glob_atomic_tactic_expr"; 0; ["Type_alias"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "gen_atomic_tactic_expr"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "g_dispatch"]]]]]; 
-                      ["Sig_type"; "glob_tactic_arg"; 0; ["Type_alias"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_arg"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "g_dispatch"]]]]]; 
-                      ["Sig_type"; "r_trm"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Constrexpr"]; 
-                                                              "constr_expr"]]]]; 
-                      ["Sig_type"; "r_pat"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Constrexpr"]; 
-                                                              "constr_pattern_expr"]]]]; 
-                      ["Sig_type"; "r_cst"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Misctypes"]; 
-                                                              "or_by_notation"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Libnames"]; 
-                                                              "reference"]]]]]; 
-                      ["Sig_type"; "r_ref"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Libnames"]; 
-                                                              "reference"]]]]; 
-                      ["Sig_type"; "r_nam"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Loc"]; 
-                                                              "located"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "Id"]; 
-                                                              "t"]]]]]; 
-                      ["Sig_type"; "r_lev"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Genarg"]; 
-                                                              "rlevel"]]]]; 
-                      ["Sig_type"; "r_dispatch"; 0; ["Type_alias"; ["Tobject"]]]; 
-                      ["Sig_type"; "raw_tactic_expr"; 0; ["Type_alias"; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "gen_tactic_expr"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "r_dispatch"]]]]]; 
-                      ["Sig_type"; "raw_atomic_tactic_expr"; 0; ["Type_alias"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "gen_atomic_tactic_expr"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "r_dispatch"]]]]]; 
-                      ["Sig_type"; "raw_tactic_arg"; 0; ["Type_alias"; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "gen_tactic_arg"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "r_dispatch"]]]]]; 
-                      ["Sig_type"; "t_trm"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Term"]; 
-                                                              "constr"]]]]; 
-                      ["Sig_type"; "t_pat"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Pattern"]; 
-                                                              "constr_pattern"]]]]; 
-                      ["Sig_type"; "t_cst"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "evaluable_global_reference"]]]]; 
-                      ["Sig_type"; "t_ref"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Loc"]; 
-                                                              "located"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Nametab"]; 
-                                                              "ltac_constant"]]]]]; 
-                      ["Sig_type"; "t_nam"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Names"]; 
-                                                              "Id"]; 
-                                                              "t"]]]]; 
-                      ["Sig_type"; "t_dispatch"; 0; ["Type_alias"; ["Tobject"]]]; 
-                      ["Sig_type"; "atomic_tactic_expr"; 0; ["Type_alias"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "gen_atomic_tactic_expr"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "t_dispatch"]]]]]; 
-                      ["Sig_type"; "raw_red_expr"; 0; ["Type_alias"; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Genredexpr"]; 
-                                                                  "red_expr_gen"]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "r_trm"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "r_cst"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "r_pat"]]]]]; 
-                      ["Sig_type"; "glob_red_expr"; 0; ["Type_alias"; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Genredexpr"]; 
-                                                                   "red_expr_gen"]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "g_trm"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "g_cst"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "g_pat"]]]]]; 
-                      ["Sig_type"; "ltac_call_kind"; 0; ["Type_variant"; 
-                                                        ["constructor"; 
-                                                        "LtacMLCall"; 
-                                                        ["tuple"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "glob_tactic_expr"]]]]; 
-                                                        ["constructor"; 
-                                                        "LtacNotationCall"; 
-                                                        ["tuple"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "KerName"]; 
-                                                                  "t"]]]]; 
-                                                        ["constructor"; 
-                                                        "LtacNameCall"; 
-                                                        ["tuple"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Nametab"]; 
-                                                                  "ltac_constant"]]]]; 
-                                                        ["constructor"; 
-                                                        "LtacAtomCall"; 
-                                                        ["tuple"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "glob_atomic_tactic_expr"]]]]; 
-                                                        ["constructor"; 
-                                                        "LtacVarCall"; 
-                                                        ["tuple"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Names"]; 
-                                                                  "Id"]; 
-                                                                  "t"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "glob_tactic_expr"]]]]; 
-                                                        ["constructor"; 
-                                                        "LtacConstrInterp"; 
-                                                        ["tuple"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Glob_term"]; 
-                                                                  "glob_constr"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Pretyping"]; 
-                                                                    "ltac_var_map"]]]]]]; 
-                      ["Sig_type"; "ltac_trace"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Ttuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Loc"]; 
-                                                                   "t"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "ltac_call_kind"]]]]]]]]
+["module", "Tacexpr",
+["Mty_signature",
+["Sig_type", "direction_flag", 0,
+["Type_alias", ["Tconstr", ["Pident", "bool"]]]],
+["Sig_type", "lazy_flag", 0,
+["Type_variant", ["constructor", "General", ["tuple"]],
+["constructor", "Select", ["tuple"]], ["constructor", "Once", ["tuple"]]]],
+["Sig_type", "global_flag", 0,
+["Type_variant", ["constructor", "TacGlobal", ["tuple"]],
+["constructor", "TacLocal", ["tuple"]]]],
+["Sig_type", "evars_flag", 0,
+["Type_alias", ["Tconstr", ["Pident", "bool"]]]],
+["Sig_type", "rec_flag", 0, ["Type_alias", ["Tconstr", ["Pident", "bool"]]]],
+["Sig_type", "advanced_flag", 0,
+["Type_alias", ["Tconstr", ["Pident", "bool"]]]],
+["Sig_type", "letin_flag", 0,
+["Type_alias", ["Tconstr", ["Pident", "bool"]]]],
+["Sig_type", "clear_flag", 0,
+["Type_alias",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_type", "debug", 0,
+["Type_variant", ["constructor", "Debug", ["tuple"]],
+["constructor", "Info", ["tuple"]], ["constructor", "Off", ["tuple"]]]],
+["Sig_type", "goal_selector", 0,
+["Type_variant",
+["constructor", "SelectNth", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "SelectList",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]]],
+["constructor", "SelectId",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]],
+["constructor", "SelectAll", ["tuple"]]]],
+["Sig_type", "core_destruction_arg", 1,
+["Type_variant", ["constructor", "ElimOnConstr", ["tuple", ["Tpoly", "a"]]],
+["constructor", "ElimOnIdent",
+["tuple",
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]]],
+["constructor", "ElimOnAnonHyp", ["tuple", ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_type", "destruction_arg", 1,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "clear_flag"]],
+["Tconstr", ["Pident", "core_destruction_arg"], ["Tpoly", "a"]]]]],
+["Sig_type", "inversion_kind", 0,
+["Type_variant", ["constructor", "SimpleInversion", ["tuple"]],
+["constructor", "FullInversion", ["tuple"]],
+["constructor", "FullInversionClear", ["tuple"]]]],
+["Sig_type", "inversion_strength", 3,
+["Type_variant",
+["constructor", "NonDepInversion",
+["tuple", ["Tconstr", ["Pident", "inversion_kind"]],
+["Tconstr", ["Pident", "list"], ["Tpoly", "id"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_var"],
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_and_intro_pattern_expr"],
+["Tpoly", "d"]]]]]]],
+["constructor", "DepInversion",
+["tuple", ["Tconstr", ["Pident", "inversion_kind"]],
+["Tconstr", ["Pident", "option"], ["Tpoly", "c"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_var"],
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_and_intro_pattern_expr"],
+["Tpoly", "d"]]]]]]],
+["constructor", "InversionUsing",
+["tuple", ["Tpoly", "c"], ["Tconstr", ["Pident", "list"], ["Tpoly", "id"]]]]]],
+["Sig_type", "location", 2,
+["Type_variant", ["constructor", "HypLocation", ["tuple", ["Tpoly", "a"]]],
+["constructor", "ConclLocation", ["tuple", ["Tpoly", "b"]]]]],
+["Sig_type", "message_token", 1,
+["Type_variant",
+["constructor", "MsgString", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "MsgInt", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "MsgIdent", ["tuple", ["Tpoly", "id"]]]]],
+["Sig_type", "induction_clause", 2,
+["Type_alias",
+["Ttuple",
+["Tconstr", ["Pident", "destruction_arg"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "with_bindings"],
+["Tpoly", "dconstr"]]],
+["Ttuple",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "intro_pattern_naming_expr"]]]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_var"],
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_and_intro_pattern_expr"],
+["Tpoly", "dconstr"]]]]]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Locus"], "clause_expr"], ["Tpoly", "id"]]]]]],
+["Sig_type", "induction_clause_list", 3,
+["Type_alias",
+["Ttuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "induction_clause"], ["Tpoly", "dconstr"],
+["Tpoly", "id"]]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "with_bindings"],
+["Tpoly", "constr"]]]]]],
+["Sig_type", "with_bindings_arg", 1,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "clear_flag"]],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "with_bindings"],
+["Tpoly", "a"]]]]],
+["Sig_type", "multi", 0,
+["Type_variant",
+["constructor", "Precisely", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "UpTo", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "RepeatStar", ["tuple"]],
+["constructor", "RepeatPlus", ["tuple"]]]],
+["Sig_type", "match_pattern", 1,
+["Type_variant", ["constructor", "Term", ["tuple", ["Tpoly", "a"]]],
+["constructor", "Subterm",
+["tuple", ["Tconstr", ["Pident", "bool"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]],
+["Tpoly", "a"]]]]],
+["Sig_type", "match_context_hyps", 1,
+["Type_variant",
+["constructor", "Hyp",
+["tuple",
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Name"], "t"]]],
+["Tconstr", ["Pident", "match_pattern"], ["Tpoly", "a"]]]],
+["constructor", "Def",
+["tuple",
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Name"], "t"]]],
+["Tconstr", ["Pident", "match_pattern"], ["Tpoly", "a"]],
+["Tconstr", ["Pident", "match_pattern"], ["Tpoly", "a"]]]]]],
+["Sig_type", "match_rule", 2,
+["Type_variant",
+["constructor", "Pat",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "match_context_hyps"], ["Tpoly", "a"]]],
+["Tconstr", ["Pident", "match_pattern"], ["Tpoly", "a"]], ["Tpoly", "t"]]],
+["constructor", "All", ["tuple", ["Tpoly", "t"]]]]],
+["Sig_type", "ml_tactic_name", 0,
+["Type_record", ["label", "mltac_plugin", ["Tconstr", ["Pident", "string"]]],
+["label", "mltac_tactic", ["Tconstr", ["Pident", "string"]]]]],
+["Sig_type", "ml_tactic_entry", 0,
+["Type_record",
+["label", "mltac_name", ["Tconstr", ["Pident", "ml_tactic_name"]]],
+["label", "mltac_index", ["Tconstr", ["Pident", "int"]]]]],
+["Sig_type", "glob_constr_and_expr", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Glob_term"], "glob_constr"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "constr_expr"]]]]]],
+["Sig_type", "open_constr_expr", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "constr_expr"]]]]],
+["Sig_type", "open_glob_constr", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "glob_constr_and_expr"]]]]],
+["Sig_type", "binding_bound_vars", 0,
+["Type_alias",
+["Tconstr",
+["Pdot", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "Set"], "t"]]]],
+["Sig_type", "glob_constr_pattern_and_expr", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "binding_bound_vars"]],
+["Tconstr", ["Pident", "glob_constr_and_expr"]],
+["Tconstr", ["Pdot", ["Pident", "Pattern"], "constr_pattern"]]]]],
+["Sig_type", "delayed_open", 1,
+["Type_record", ["label", "delayed", ["Tunknown"]]]],
+["Sig_type", "delayed_open_constr_with_bindings", 0,
+["Type_alias",
+["Tconstr", ["Pident", "delayed_open"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "with_bindings"],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]]]],
+["Sig_type", "delayed_open_constr", 0,
+["Type_alias",
+["Tconstr", ["Pident", "delayed_open"],
+["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]]],
+["Sig_type", "intro_pattern", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "intro_pattern_expr"],
+["Tconstr", ["Pident", "delayed_open_constr"]]]]]],
+["Sig_type", "intro_patterns", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "intro_pattern_expr"],
+["Tconstr", ["Pident", "delayed_open_constr"]]]]]]],
+["Sig_type", "or_and_intro_pattern", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_and_intro_pattern_expr"],
+["Tconstr", ["Pident", "delayed_open_constr"]]]]]],
+["Sig_type", "intro_pattern_naming", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "intro_pattern_naming_expr"]]]]],
+["Sig_type", "gen_atomic_tactic_expr", 1,
+["Type_variant",
+["constructor", "TacIntroPattern",
+["tuple", ["Tconstr", ["Pident", "evars_flag"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "intro_pattern_expr"],
+["Tpoly", "dtrm"]]]]]],
+["constructor", "TacApply",
+["tuple", ["Tconstr", ["Pident", "advanced_flag"]],
+["Tconstr", ["Pident", "evars_flag"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "with_bindings_arg"], ["Tpoly", "trm"]]],
+["Tconstr", ["Pident", "option"],
+["Ttuple", ["Tpoly", "nam"],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "intro_pattern_expr"],
+["Tpoly", "dtrm"]]]]]]]],
+["constructor", "TacElim",
+["tuple", ["Tconstr", ["Pident", "evars_flag"]],
+["Tconstr", ["Pident", "with_bindings_arg"], ["Tpoly", "trm"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "with_bindings"],
+["Tpoly", "trm"]]]]],
+["constructor", "TacCase",
+["tuple", ["Tconstr", ["Pident", "evars_flag"]],
+["Tconstr", ["Pident", "with_bindings_arg"], ["Tpoly", "trm"]]]],
+["constructor", "TacMutualFix",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tconstr", ["Pident", "int"]], ["Tpoly", "trm"]]]]],
+["constructor", "TacMutualCofix",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tpoly", "trm"]]]]],
+["constructor", "TacAssert",
+["tuple", ["Tconstr", ["Pident", "bool"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "option"], ["Tpoly", "tacexpr"]]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "intro_pattern_expr"],
+["Tpoly", "dtrm"]]]], ["Tpoly", "trm"]]],
+["constructor", "TacGeneralize",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Ttuple",
+["Tconstr", ["Pdot", ["Pident", "Locus"], "with_occurrences"],
+["Tpoly", "trm"]],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Name"], "t"]]]]]],
+["constructor", "TacLetTac",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Name"], "t"]],
+["Tpoly", "trm"],
+["Tconstr", ["Pdot", ["Pident", "Locus"], "clause_expr"], ["Tpoly", "nam"]],
+["Tconstr", ["Pident", "letin_flag"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "intro_pattern_naming_expr"]]]]]],
+["constructor", "TacInductionDestruct",
+["tuple", ["Tconstr", ["Pident", "rec_flag"]],
+["Tconstr", ["Pident", "evars_flag"]],
+["Tconstr", ["Pident", "induction_clause_list"], ["Tpoly", "trm"],
+["Tpoly", "dtrm"], ["Tpoly", "nam"]]]],
+["constructor", "TacReduce",
+["tuple",
+["Tconstr", ["Pdot", ["Pident", "Genredexpr"], "red_expr_gen"],
+["Tpoly", "trm"], ["Tpoly", "cst"], ["Tpoly", "pat"]],
+["Tconstr", ["Pdot", ["Pident", "Locus"], "clause_expr"], ["Tpoly", "nam"]]]],
+["constructor", "TacChange",
+["tuple", ["Tconstr", ["Pident", "option"], ["Tpoly", "pat"]],
+["Tpoly", "dtrm"],
+["Tconstr", ["Pdot", ["Pident", "Locus"], "clause_expr"], ["Tpoly", "nam"]]]],
+["constructor", "TacRewrite",
+["tuple", ["Tconstr", ["Pident", "evars_flag"]],
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "multi"]],
+["Tconstr", ["Pident", "with_bindings_arg"], ["Tpoly", "dtrm"]]]],
+["Tconstr", ["Pdot", ["Pident", "Locus"], "clause_expr"], ["Tpoly", "nam"]],
+["Tconstr", ["Pident", "option"], ["Tpoly", "tacexpr"]]]],
+["constructor", "TacInversion",
+["tuple",
+["Tconstr", ["Pident", "inversion_strength"], ["Tpoly", "trm"],
+["Tpoly", "dtrm"], ["Tpoly", "nam"]],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "quantified_hypothesis"]]]]]],
+["Sig_type", "gen_tactic_arg", 1,
+["Type_variant",
+["constructor", "TacGeneric",
+["tuple",
+["Tconstr", ["Pdot", ["Pident", "Genarg"], "generic_argument"],
+["Tpoly", "lev"]]]],
+["constructor", "ConstrMayEval",
+["tuple",
+["Tconstr", ["Pdot", ["Pident", "Genredexpr"], "may_eval"], ["Tpoly", "trm"],
+["Tpoly", "cst"], ["Tpoly", "pat"]]]],
+["constructor", "Reference", ["tuple", ["Tpoly", "ref"]]],
+["constructor", "TacCall",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]], ["Tpoly", "ref"],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "gen_tactic_arg"], ["Tobject"]]]]],
+["constructor", "TacFreshId",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_var"],
+["Tconstr", ["Pident", "string"]]]]]],
+["constructor", "Tacexp", ["tuple", ["Tpoly", "tacexpr"]]],
+["constructor", "TacPretype", ["tuple", ["Tpoly", "trm"]]],
+["constructor", "TacNumgoals", ["tuple"]]]],
+["Sig_type", "gen_tactic_expr", 1,
+["Type_variant",
+["constructor", "TacAtom",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tconstr", ["Pident", "gen_atomic_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacThen",
+["tuple", ["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacDispatch",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]]],
+["constructor", "TacExtendTac",
+["tuple",
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]],
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]]],
+["constructor", "TacThens",
+["tuple", ["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]]],
+["constructor", "TacThens3parts",
+["tuple", ["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]],
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]],
+["Tconstr", ["Pident", "array"],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]]],
+["constructor", "TacFirst",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]]],
+["constructor", "TacComplete",
+["tuple", ["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacSolve",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]]],
+["constructor", "TacTry",
+["tuple", ["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacOr",
+["tuple", ["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacOnce",
+["tuple", ["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacExactlyOnce",
+["tuple", ["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacIfThenCatch",
+["tuple", ["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacOrelse",
+["tuple", ["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacDo",
+["tuple",
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_var"],
+["Tconstr", ["Pident", "int"]]],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacTimeout",
+["tuple",
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_var"],
+["Tconstr", ["Pident", "int"]]],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacTime",
+["tuple",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacRepeat",
+["tuple", ["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacProgress",
+["tuple", ["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacShowHyps",
+["tuple", ["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacAbstract",
+["tuple", ["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]]],
+["constructor", "TacId",
+["tuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "message_token"], ["Tpoly", "n"]]]]],
+["constructor", "TacFail",
+["tuple", ["Tconstr", ["Pident", "global_flag"]],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_var"],
+["Tconstr", ["Pident", "int"]]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "message_token"], ["Tpoly", "n"]]]]],
+["constructor", "TacInfo",
+["tuple", ["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacLetIn",
+["tuple", ["Tconstr", ["Pident", "rec_flag"]],
+["Tconstr", ["Pident", "list"],
+["Ttuple",
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]],
+["Tconstr", ["Pident", "gen_tactic_arg"], ["Tobject"]]]],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacMatch",
+["tuple", ["Tconstr", ["Pident", "lazy_flag"]],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "match_rule"], ["Tpoly", "p"],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]]]],
+["constructor", "TacMatchGoal",
+["tuple", ["Tconstr", ["Pident", "lazy_flag"]],
+["Tconstr", ["Pident", "direction_flag"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "match_rule"], ["Tpoly", "p"],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]]]],
+["constructor", "TacFun",
+["tuple", ["Tconstr", ["Pident", "gen_tactic_fun_ast"], ["Tobject"]]]],
+["constructor", "TacArg",
+["tuple",
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pident", "gen_tactic_arg"], ["Tobject"]]]]],
+["constructor", "TacSelect",
+["tuple", ["Tconstr", ["Pident", "goal_selector"]],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]],
+["constructor", "TacML",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tconstr", ["Pident", "ml_tactic_entry"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "gen_tactic_arg"], ["Tobject"]]]]],
+["constructor", "TacAlias",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "KerName"], "t"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "gen_tactic_arg"], ["Tobject"]]]]]]],
+["Sig_type", "gen_tactic_fun_ast", 1,
+["Type_alias",
+["Ttuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]],
+["Tconstr", ["Pident", "gen_tactic_expr"], ["Tobject"]]]]],
+["Sig_type", "g_trm", 0,
+["Type_alias", ["Tconstr", ["Pident", "glob_constr_and_expr"]]]],
+["Sig_type", "g_pat", 0,
+["Type_alias", ["Tconstr", ["Pident", "glob_constr_pattern_and_expr"]]]],
+["Sig_type", "g_cst", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_var"],
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "and_short_name"],
+["Tconstr", ["Pdot", ["Pident", "Names"], "evaluable_global_reference"]]]]]],
+["Sig_type", "g_ref", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_var"],
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pident", "Nametab"], "ltac_constant"]]]]]],
+["Sig_type", "g_nam", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]]],
+["Sig_type", "g_dispatch", 0, ["Type_alias", ["Tobject"]]],
+["Sig_type", "glob_tactic_expr", 0,
+["Type_alias",
+["Tconstr", ["Pident", "gen_tactic_expr"],
+["Tconstr", ["Pident", "g_dispatch"]]]]],
+["Sig_type", "glob_atomic_tactic_expr", 0,
+["Type_alias",
+["Tconstr", ["Pident", "gen_atomic_tactic_expr"],
+["Tconstr", ["Pident", "g_dispatch"]]]]],
+["Sig_type", "glob_tactic_arg", 0,
+["Type_alias",
+["Tconstr", ["Pident", "gen_tactic_arg"],
+["Tconstr", ["Pident", "g_dispatch"]]]]],
+["Sig_type", "r_trm", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "constr_expr"]]]],
+["Sig_type", "r_pat", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "constr_pattern_expr"]]]],
+["Sig_type", "r_cst", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Misctypes"], "or_by_notation"],
+["Tconstr", ["Pdot", ["Pident", "Libnames"], "reference"]]]]],
+["Sig_type", "r_ref", 0,
+["Type_alias", ["Tconstr", ["Pdot", ["Pident", "Libnames"], "reference"]]]],
+["Sig_type", "r_nam", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]]],
+["Sig_type", "r_lev", 0,
+["Type_alias", ["Tconstr", ["Pdot", ["Pident", "Genarg"], "rlevel"]]]],
+["Sig_type", "r_dispatch", 0, ["Type_alias", ["Tobject"]]],
+["Sig_type", "raw_tactic_expr", 0,
+["Type_alias",
+["Tconstr", ["Pident", "gen_tactic_expr"],
+["Tconstr", ["Pident", "r_dispatch"]]]]],
+["Sig_type", "raw_atomic_tactic_expr", 0,
+["Type_alias",
+["Tconstr", ["Pident", "gen_atomic_tactic_expr"],
+["Tconstr", ["Pident", "r_dispatch"]]]]],
+["Sig_type", "raw_tactic_arg", 0,
+["Type_alias",
+["Tconstr", ["Pident", "gen_tactic_arg"],
+["Tconstr", ["Pident", "r_dispatch"]]]]],
+["Sig_type", "t_trm", 0,
+["Type_alias", ["Tconstr", ["Pdot", ["Pident", "Term"], "constr"]]]],
+["Sig_type", "t_pat", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Pattern"], "constr_pattern"]]]],
+["Sig_type", "t_cst", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Names"], "evaluable_global_reference"]]]],
+["Sig_type", "t_ref", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Loc"], "located"],
+["Tconstr", ["Pdot", ["Pident", "Nametab"], "ltac_constant"]]]]],
+["Sig_type", "t_nam", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]],
+["Sig_type", "t_dispatch", 0, ["Type_alias", ["Tobject"]]],
+["Sig_type", "atomic_tactic_expr", 0,
+["Type_alias",
+["Tconstr", ["Pident", "gen_atomic_tactic_expr"],
+["Tconstr", ["Pident", "t_dispatch"]]]]],
+["Sig_type", "raw_red_expr", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Genredexpr"], "red_expr_gen"],
+["Tconstr", ["Pident", "r_trm"]], ["Tconstr", ["Pident", "r_cst"]],
+["Tconstr", ["Pident", "r_pat"]]]]],
+["Sig_type", "glob_red_expr", 0,
+["Type_alias",
+["Tconstr", ["Pdot", ["Pident", "Genredexpr"], "red_expr_gen"],
+["Tconstr", ["Pident", "g_trm"]], ["Tconstr", ["Pident", "g_cst"]],
+["Tconstr", ["Pident", "g_pat"]]]]],
+["Sig_type", "ltac_call_kind", 0,
+["Type_variant",
+["constructor", "LtacMLCall",
+["tuple", ["Tconstr", ["Pident", "glob_tactic_expr"]]]],
+["constructor", "LtacNotationCall",
+["tuple",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "KerName"], "t"]]]],
+["constructor", "LtacNameCall",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Nametab"], "ltac_constant"]]]],
+["constructor", "LtacAtomCall",
+["tuple", ["Tconstr", ["Pident", "glob_atomic_tactic_expr"]]]],
+["constructor", "LtacVarCall",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tconstr", ["Pident", "glob_tactic_expr"]]]],
+["constructor", "LtacConstrInterp",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Glob_term"], "glob_constr"]],
+["Tconstr", ["Pdot", ["Pident", "Pretyping"], "ltac_var_map"]]]]]],
+["Sig_type", "ltac_trace", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tconstr", ["Pident", "ltac_call_kind"]]]]]]]]

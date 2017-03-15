@@ -1,1144 +1,366 @@
-["module"; "Notation"; ["Mty_signature"; ["Sig_type"; "level"; 0; ["Type_alias"; 
-                                                                  ["Ttuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Ppextend"]; 
-                                                                  "precedence"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "list"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Ppextend"]; 
-                                                                  "tolerability"]]]]]]; 
-                       ["Sig_type"; "delimiters"; 0; ["Type_alias"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]]; 
-                       ["Sig_type"; "scope"; 0; ["Type_abstract"]]; [
-                                                                    "Sig_type"; 
-                                                                    "scopes"; 
-                                                                    0; 
-                                                                    [
-                                                                    "Type_abstract"]]; 
-                       ["Sig_type"; "local_scopes"; 0; ["Type_alias"; 
-                                                       ["Ttuple"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "option"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Notation_term"]; 
-                                                                  "tmp_scope_name"]]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "list"]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Notation_term"]; 
-                                                                   "scope_name"]]]]]]; 
-                       ["Sig_value"; "declare_scope"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Notation_term"]; 
-                                                                 "scope_name"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]; 
-                       ["Sig_value"; "current_scopes"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "scopes"]]]]; 
-                       ["Sig_value"; "level_eq"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "level"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "level"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "bool"]]]]]; 
-                       ["Sig_value"; "scope_is_open_in_scopes"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Notation_term"]; 
-                                                                "scope_name"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "scopes"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]]]]; 
-                       ["Sig_value"; "scope_is_open"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Notation_term"]; 
-                                                                 "scope_name"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "bool"]]]]; 
-                       ["Sig_value"; "open_close_scope"; ["Tarrow"; [
-                                                                    "Ttuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "bool"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "bool"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Notation_term"]; 
-                                                                    "scope_name"]]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "unit"]]]]; 
-                       ["Sig_value"; "empty_scope_stack"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "scopes"]]]; 
-                       ["Sig_value"; "push_scope"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Notation_term"]; 
-                                                              "scope_name"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "scopes"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "scopes"]]]]]; 
-                       ["Sig_value"; "find_scope"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Notation_term"]; 
-                                                              "scope_name"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "scope"]]]]; 
-                       ["Sig_value"; "declare_delimiters"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Notation_term"]; 
-                                                           "scope_name"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "delimiters"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]]]]; 
-                       ["Sig_value"; "remove_delimiters"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Notation_term"]; 
-                                                          "scope_name"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]]]; 
-                       ["Sig_value"; "find_delimiters_scope"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Loc"]; 
-                                                              "t"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "delimiters"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Notation_term"]; 
-                                                              "scope_name"]]]]]; 
-                       ["Sig_type"; "notation_location"; 0; ["Type_alias"; 
-                                                            ["Ttuple"; 
-                                                            ["Ttuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Names"]; 
-                                                            "DirPath"]; 
-                                                            "t"]]; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Names"]; 
-                                                                   "DirPath"]; 
-                                                                   "t"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]]; 
-                       ["Sig_type"; "required_module"; 0; ["Type_alias"; 
-                                                          ["Ttuple"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Libnames"]; 
-                                                          "full_path"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]]]; 
-                       ["Sig_type"; "cases_pattern_status"; 0; ["Type_alias"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "bool"]]]]; 
-                       ["Sig_type"; "prim_token_interpreter"; 1; ["Type_alias"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Loc"]; 
-                                                                 "t"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Glob_term"]; 
-                                                                 "glob_constr"]]]]]]; 
-                       ["Sig_type"; "prim_token_uninterpreter"; 1; ["Type_alias"; 
-                                                                   ["Ttuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Glob_term"]; 
-                                                                   "glob_constr"]]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Glob_term"]; 
-                                                                   "glob_constr"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "cases_pattern_status"]]]]]; 
-                       ["Sig_value"; "declare_numeral_interpreter"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Notation_term"]; 
-                                                                    "scope_name"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "required_module"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "prim_token_interpreter"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Bigint"]; 
-                                                                    "bigint"]]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "prim_token_uninterpreter"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Bigint"]; 
-                                                                    "bigint"]]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]]]; 
-                       ["Sig_value"; "declare_string_interpreter"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Notation_term"]; 
-                                                                   "scope_name"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "required_module"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "prim_token_interpreter"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "prim_token_uninterpreter"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]]]]; 
-                       ["Sig_value"; "interp_prim_token"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Loc"]; 
-                                                          "t"]]; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Constrexpr"]; 
-                                                                 "prim_token"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "local_scopes"]]; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Glob_term"]; 
-                                                                 "glob_constr"]]; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "notation_location"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Notation_term"]; 
-                                                                 "scope_name"]]]]]]]]]; 
-                       ["Sig_value"; "interp_prim_token_cases_pattern_expr"; 
-                       ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; "Loc"]; 
-                                              "t"]]; ["Tarrow"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Globnames"]; 
-                                                                "global_reference"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Constrexpr"]; 
-                                                                "prim_token"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "local_scopes"]]; 
-                                                     ["Ttuple"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Constrexpr"]; 
-                                                                "raw_cases_pattern_expr"]]; 
-                                                     ["Ttuple"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "notation_location"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "option"]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Notation_term"]; 
-                                                                 "scope_name"]]]]]]]]]]; 
-                       ["Sig_value"; "uninterp_prim_token"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Glob_term"]; 
-                                                            "glob_constr"]]; 
-                                                            ["Ttuple"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Notation_term"]; 
-                                                            "scope_name"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Constrexpr"]; 
-                                                            "prim_token"]]]]]; 
-                       ["Sig_value"; "uninterp_prim_token_cases_pattern"; 
-                       ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; "Glob_term"]; 
-                                              "cases_pattern"]]; ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Names"]; 
-                                                                 "Name"]; 
-                                                                 "t"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Notation_term"]; 
-                                                                 "scope_name"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Constrexpr"]; 
-                                                                 "prim_token"]]]]]; 
-                       ["Sig_value"; "uninterp_prim_token_ind_pattern"; 
-                       ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; "Names"]; 
-                                              "inductive"]]; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Glob_term"]; 
-                                                             "cases_pattern"]]]; 
-                                                             ["Ttuple"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Notation_term"]; 
-                                                             "scope_name"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Constrexpr"]; 
-                                                             "prim_token"]]]]]]; 
-                       ["Sig_value"; "availability_of_prim_token"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Constrexpr"]; 
-                                                                   "prim_token"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Notation_term"]; 
-                                                                   "scope_name"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "local_scopes"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "delimiters"]]]]]]]]; 
-                       ["Sig_type"; "interp_rule"; 0; ["Type_variant"; 
-                                                      ["constructor"; 
-                                                      "NotationRule"; 
-                                                      ["tuple"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Notation_term"]; 
-                                                                "scope_name"]]]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Constrexpr"]; 
-                                                                  "notation"]]]]; 
-                                                      ["constructor"; 
-                                                      "SynDefRule"; [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "kernel_name"]]]]]]; 
-                       ["Sig_value"; "declare_notation_interpretation"; 
-                       ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; "Constrexpr"]; 
-                                              "notation"]]; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Notation_term"]; 
-                                                            "scope_name"]]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Notation_term"]; 
-                                                            "interpretation"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "notation_location"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "bool"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]]]]]]]; 
-                       ["Sig_value"; "declare_uninterpretation"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "interp_rule"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Notation_term"]; 
-                                                                 "interpretation"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "unit"]]]]]; 
-                       ["Sig_value"; "interp_notation"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Loc"]; 
-                                                                   "t"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Constrexpr"]; 
-                                                                   "notation"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "local_scopes"]]; 
-                                                        ["Ttuple"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Notation_term"]; 
-                                                                   "interpretation"]]; 
-                                                        ["Ttuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "notation_location"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Notation_term"]; 
-                                                                    "scope_name"]]]]]]]]]; 
-                       ["Sig_type"; "notation_rule"; 0; ["Type_alias"; 
-                                                        ["Ttuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "interp_rule"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Notation_term"]; 
-                                                                    "interpretation"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "option"]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]]; 
-                       ["Sig_value"; "uninterp_notations"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Glob_term"]; 
-                                                           "glob_constr"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "notation_rule"]]]]]; 
-                       ["Sig_value"; "uninterp_cases_pattern_notations"; 
-                       ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; "Glob_term"]; 
-                                              "cases_pattern"]]; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "list"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "notation_rule"]]]]]; 
-                       ["Sig_value"; "uninterp_ind_pattern_notations"; 
-                       ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; "Names"]; 
-                                              "inductive"]]; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "notation_rule"]]]]]; 
-                       ["Sig_value"; "availability_of_notation"; ["Tarrow"; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Notation_term"]; 
-                                                                 "scope_name"]]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Constrexpr"]; 
-                                                                 "notation"]]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "local_scopes"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Ttuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Notation_term"]; 
-                                                                 "scope_name"]]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "delimiters"]]]]]]]]; 
-                       ["Sig_value"; "declare_notation_level"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Constrexpr"]; 
-                                                               "notation"]]; 
-                                                               ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "level"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]]; 
-                       ["Sig_value"; "level_of_notation"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Constrexpr"]; 
-                                                          "notation"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "level"]]]]; 
-                       ["Sig_value"; "interp_notation_as_global_reference"; 
-                       ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; "Loc"]; 
-                                              "t"]]; ["Tarrow"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Globnames"]; 
-                                                                "global_reference"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Constrexpr"]; 
-                                                                "notation"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "delimiters"]]]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Globnames"]; 
-                                                                 "global_reference"]]]]]]]; 
-                       ["Sig_value"; "exists_notation_in_scope"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Notation_term"]; 
-                                                                 "scope_name"]]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Constrexpr"]; 
-                                                                 "notation"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Notation_term"]; 
-                                                                 "interpretation"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bool"]]]]]]; 
-                       ["Sig_value"; "declare_arguments_scope"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "bool"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Globnames"]; 
-                                                                "global_reference"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Notation_term"]; 
-                                                                "scope_name"]]]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]]]; 
-                       ["Sig_value"; "find_arguments_scope"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Globnames"]; 
-                                                             "global_reference"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "list"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "option"]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Notation_term"]; 
-                                                             "scope_name"]]]]]]; 
-                       ["Sig_type"; "scope_class"; 0; ["Type_abstract"]]; 
-                       ["Sig_value"; "scope_class_compare"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "scope_class"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "scope_class"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]]]]; 
-                       ["Sig_value"; "subst_scope_class"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Mod_subst"]; 
-                                                          "substitution"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "scope_class"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "scope_class"]]]]]]; 
-                       ["Sig_value"; "declare_scope_class"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Notation_term"]; 
-                                                            "scope_name"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "scope_class"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]]]]; 
-                       ["Sig_value"; "declare_ref_arguments_scope"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Globnames"]; 
-                                                                    "global_reference"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]; 
-                       ["Sig_value"; "compute_arguments_scope"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Term"]; 
-                                                                "types"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Notation_term"]; 
-                                                                "scope_name"]]]]]]; 
-                       ["Sig_value"; "compute_type_scope"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Term"]; 
-                                                           "types"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "option"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Notation_term"]; 
-                                                           "scope_name"]]]]]; 
-                       ["Sig_value"; "current_type_scope_name"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "option"]; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Notation_term"]; 
-                                                                "scope_name"]]]]]; 
-                       ["Sig_value"; "scope_class_of_class"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Classops"]; 
-                                                             "cl_typ"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "scope_class"]]]]; 
-                       ["Sig_type"; "symbol"; 0; ["Type_variant"; ["constructor"; 
-                                                                  "Terminal"; 
-                                                                  ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]; 
-                                                 ["constructor"; "NonTerminal"; 
-                                                 ["tuple"; ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Id"]; 
-                                                           "t"]]]]; [
-                                                                    "constructor"; 
-                                                                    "SProdList"; 
-                                                                    [
-                                                                    "tuple"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Names"]; 
-                                                                    "Id"]; 
-                                                                    "t"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "symbol"]]]]]; 
-                                                 ["constructor"; "Break"; 
-                                                 ["tuple"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]]]]]; 
-                       ["Sig_value"; "symbol_eq"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "symbol"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "symbol"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bool"]]]]]; 
-                       ["Sig_value"; "make_notation_key"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "symbol"]]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Constrexpr"]; 
-                                                          "notation"]]]]; 
-                       ["Sig_value"; "decompose_notation_key"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Constrexpr"]; 
-                                                               "notation"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "symbol"]]]]]; 
-                       ["Sig_value"; "pr_scope_class"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "scope_class"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Pp"]; 
-                                                                   "std_ppcmds"]]]]; 
-                       ["Sig_value"; "pr_scope"; ["Tarrow"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Glob_term"]; 
-                                                            "glob_constr"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; "Pp"]; 
-                                                            "std_ppcmds"]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Notation_term"]; 
-                                                            "scope_name"]]; 
-                                                 ["Tconstr"; ["Pdot"; 
-                                                             ["Pident"; "Pp"]; 
-                                                             "std_ppcmds"]]]]]; 
-                       ["Sig_value"; "pr_scopes"; ["Tarrow"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Glob_term"]; 
-                                                             "glob_constr"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; "Pp"]; 
-                                                             "std_ppcmds"]]]; 
-                                                  ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Pp"]; 
-                                                              "std_ppcmds"]]]]; 
-                       ["Sig_value"; "locate_notation"; ["Tarrow"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Glob_term"]; 
-                                                                   "glob_constr"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Pp"]; 
-                                                                   "std_ppcmds"]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Constrexpr"]; 
-                                                                   "notation"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "option"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Notation_term"]; 
-                                                                   "scope_name"]]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Pp"]; 
-                                                                    "std_ppcmds"]]]]]]; 
-                       ["Sig_value"; "pr_visibility"; ["Tarrow"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Glob_term"]; 
-                                                                 "glob_constr"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Pp"]; 
-                                                                 "std_ppcmds"]]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Notation_term"]; 
-                                                                 "scope_name"]]]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Pp"]; 
-                                                                  "std_ppcmds"]]]]]; 
-                       ["Sig_type"; "unparsing_rule"; 0; ["Type_alias"; 
-                                                         ["Ttuple"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "list"]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Ppextend"]; 
-                                                                    "unparsing"]]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Ppextend"]; 
-                                                         "precedence"]]]]]; 
-                       ["Sig_type"; "extra_unparsing_rules"; 0; ["Type_alias"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Ttuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]]]]]; 
-                       ["Sig_value"; "declare_notation_rule"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Constrexpr"]; 
-                                                              "notation"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "extra_unparsing_rules"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unparsing_rule"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Notation_term"]; 
-                                                              "notation_grammar"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]]]]]]; 
-                       ["Sig_value"; "find_notation_printing_rule"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Constrexpr"]; 
-                                                                    "notation"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unparsing_rule"]]]]; 
-                       ["Sig_value"; "find_notation_extra_printing_rules"; 
-                       ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; "Constrexpr"]; 
-                                              "notation"]]; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "extra_unparsing_rules"]]]]; 
-                       ["Sig_value"; "find_notation_parsing_rules"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Constrexpr"]; 
-                                                                    "notation"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Notation_term"]; 
-                                                                    "notation_grammar"]]]]; 
-                       ["Sig_value"; "add_notation_extra_printing_rule"; 
-                       ["Tarrow"; ["Tconstr"; ["Pdot"; ["Pident"; "Constrexpr"]; 
-                                              "notation"]]; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]]]]]; 
-                       ["Sig_value"; "get_defined_notations"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "list"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Constrexpr"]; 
-                                                              "notation"]]]]]; 
-                       ["Sig_value"; "with_notation_protection"; ["Tarrow"; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]; 
-                                                                 ["Tpoly"; 
-                                                                 "b"]]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]; 
-                                                                 ["Tpoly"; 
-                                                                 "b"]]]]]]
+["module", "Notation",
+["Mty_signature",
+["Sig_type", "level", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Ppextend"], "precedence"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Ppextend"], "tolerability"]]]]]],
+["Sig_type", "delimiters", 0,
+["Type_alias", ["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "scope", 0, ["Type_abstract"]],
+["Sig_type", "scopes", 0, ["Type_abstract"]],
+["Sig_type", "local_scopes", 0,
+["Type_alias",
+["Ttuple",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "tmp_scope_name"]]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]]]]],
+["Sig_value", "declare_scope",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "current_scopes",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "scopes"]]]],
+["Sig_value", "level_eq",
+["Tarrow", ["Tconstr", ["Pident", "level"]],
+["Tarrow", ["Tconstr", ["Pident", "level"]], ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "scope_is_open_in_scopes",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]],
+["Tarrow", ["Tconstr", ["Pident", "scopes"]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "scope_is_open",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "open_close_scope",
+["Tarrow",
+["Ttuple", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "bool"]],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "empty_scope_stack", ["Tconstr", ["Pident", "scopes"]]],
+["Sig_value", "push_scope",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]],
+["Tarrow", ["Tconstr", ["Pident", "scopes"]],
+["Tconstr", ["Pident", "scopes"]]]]],
+["Sig_value", "find_scope",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]],
+["Tconstr", ["Pident", "scope"]]]],
+["Sig_value", "declare_delimiters",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]],
+["Tarrow", ["Tconstr", ["Pident", "delimiters"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "remove_delimiters",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "find_delimiters_scope",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "delimiters"]],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]]]],
+["Sig_type", "notation_location", 0,
+["Type_alias",
+["Ttuple",
+["Ttuple",
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "DirPath"], "t"]],
+["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "DirPath"], "t"]]],
+["Tconstr", ["Pident", "string"]]]]],
+["Sig_type", "required_module", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Libnames"], "full_path"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_type", "cases_pattern_status", 0,
+["Type_alias", ["Tconstr", ["Pident", "bool"]]]],
+["Sig_type", "prim_token_interpreter", 1,
+["Type_alias",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tpoly", "a"],
+["Tconstr", ["Pdot", ["Pident", "Glob_term"], "glob_constr"]]]]]],
+["Sig_type", "prim_token_uninterpreter", 1,
+["Type_alias",
+["Ttuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Glob_term"], "glob_constr"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Glob_term"], "glob_constr"]],
+["Tconstr", ["Pident", "option"], ["Tpoly", "a"]]],
+["Tconstr", ["Pident", "cases_pattern_status"]]]]],
+["Sig_value", "declare_numeral_interpreter",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]],
+["Tarrow", ["Tconstr", ["Pident", "required_module"]],
+["Tarrow",
+["Tconstr", ["Pident", "prim_token_interpreter"],
+["Tconstr", ["Pdot", ["Pident", "Bigint"], "bigint"]]],
+["Tarrow",
+["Tconstr", ["Pident", "prim_token_uninterpreter"],
+["Tconstr", ["Pdot", ["Pident", "Bigint"], "bigint"]]],
+["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "declare_string_interpreter",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]],
+["Tarrow", ["Tconstr", ["Pident", "required_module"]],
+["Tarrow",
+["Tconstr", ["Pident", "prim_token_interpreter"],
+["Tconstr", ["Pident", "string"]]],
+["Tarrow",
+["Tconstr", ["Pident", "prim_token_uninterpreter"],
+["Tconstr", ["Pident", "string"]]], ["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "interp_prim_token",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "prim_token"]],
+["Tarrow", ["Tconstr", ["Pident", "local_scopes"]],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Glob_term"], "glob_constr"]],
+["Ttuple", ["Tconstr", ["Pident", "notation_location"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]]]]]]]],
+["Sig_value", "interp_prim_token_cases_pattern_expr",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tconstr", ["Pident", "unit"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "prim_token"]],
+["Tarrow", ["Tconstr", ["Pident", "local_scopes"]],
+["Ttuple",
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "raw_cases_pattern_expr"]],
+["Ttuple", ["Tconstr", ["Pident", "notation_location"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]]]]]]]]],
+["Sig_value", "uninterp_prim_token",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Glob_term"], "glob_constr"]],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]],
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "prim_token"]]]]],
+["Sig_value", "uninterp_prim_token_cases_pattern",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Glob_term"], "cases_pattern"]],
+["Ttuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Name"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]],
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "prim_token"]]]]],
+["Sig_value", "uninterp_prim_token_ind_pattern",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Names"], "inductive"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Glob_term"], "cases_pattern"]]],
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]],
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "prim_token"]]]]]],
+["Sig_value", "availability_of_prim_token",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "prim_token"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]],
+["Tarrow", ["Tconstr", ["Pident", "local_scopes"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "delimiters"]]]]]]]],
+["Sig_type", "interp_rule", 0,
+["Type_variant",
+["constructor", "NotationRule",
+["tuple",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]],
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]]]],
+["constructor", "SynDefRule",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Names"], "kernel_name"]]]]]],
+["Sig_value", "declare_notation_interpretation",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "interpretation"]],
+["Tarrow", ["Tconstr", ["Pident", "notation_location"]],
+["Tarrow", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "unit"]]]]]]]],
+["Sig_value", "declare_uninterpretation",
+["Tarrow", ["Tconstr", ["Pident", "interp_rule"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "interpretation"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "interp_notation",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]],
+["Tarrow", ["Tconstr", ["Pident", "local_scopes"]],
+["Ttuple",
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "interpretation"]],
+["Ttuple", ["Tconstr", ["Pident", "notation_location"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]]]]]]]],
+["Sig_type", "notation_rule", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pident", "interp_rule"]],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "interpretation"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_value", "uninterp_notations",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Glob_term"], "glob_constr"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "notation_rule"]]]]],
+["Sig_value", "uninterp_cases_pattern_notations",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Glob_term"], "cases_pattern"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "notation_rule"]]]]],
+["Sig_value", "uninterp_ind_pattern_notations",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Names"], "inductive"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "notation_rule"]]]]],
+["Sig_value", "availability_of_notation",
+["Tarrow",
+["Ttuple",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]],
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]]],
+["Tarrow", ["Tconstr", ["Pident", "local_scopes"]],
+["Tconstr", ["Pident", "option"],
+["Ttuple",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "delimiters"]]]]]]]],
+["Sig_value", "declare_notation_level",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]],
+["Tarrow", ["Tconstr", ["Pident", "level"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "level_of_notation",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]],
+["Tconstr", ["Pident", "level"]]]],
+["Sig_value", "interp_notation_as_global_reference",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Loc"], "t"]],
+["Tarrow",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "delimiters"]]],
+["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]]]]]]],
+["Sig_value", "exists_notation_in_scope",
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "interpretation"]],
+["Tconstr", ["Pident", "bool"]]]]]],
+["Sig_value", "declare_arguments_scope",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "find_arguments_scope",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]]]]],
+["Sig_type", "scope_class", 0, ["Type_abstract"]],
+["Sig_value", "scope_class_compare",
+["Tarrow", ["Tconstr", ["Pident", "scope_class"]],
+["Tarrow", ["Tconstr", ["Pident", "scope_class"]],
+["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "subst_scope_class",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Mod_subst"], "substitution"]],
+["Tarrow", ["Tconstr", ["Pident", "scope_class"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "scope_class"]]]]]],
+["Sig_value", "declare_scope_class",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]],
+["Tarrow", ["Tconstr", ["Pident", "scope_class"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "declare_ref_arguments_scope",
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Globnames"], "global_reference"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "compute_arguments_scope",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "types"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]]]]],
+["Sig_value", "compute_type_scope",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Term"], "types"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]]]],
+["Sig_value", "current_type_scope_name",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]]]],
+["Sig_value", "scope_class_of_class",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Classops"], "cl_typ"]],
+["Tconstr", ["Pident", "scope_class"]]]],
+["Sig_type", "symbol", 0,
+["Type_variant",
+["constructor", "Terminal", ["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "NonTerminal",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]]]],
+["constructor", "SProdList",
+["tuple", ["Tconstr", ["Pdot", ["Pdot", ["Pident", "Names"], "Id"], "t"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "symbol"]]]]],
+["constructor", "Break", ["tuple", ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_value", "symbol_eq",
+["Tarrow", ["Tconstr", ["Pident", "symbol"]],
+["Tarrow", ["Tconstr", ["Pident", "symbol"]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "make_notation_key",
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "symbol"]]],
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]]]],
+["Sig_value", "decompose_notation_key",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "symbol"]]]]],
+["Sig_value", "pr_scope_class",
+["Tarrow", ["Tconstr", ["Pident", "scope_class"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "pr_scope",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Glob_term"], "glob_constr"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]],
+["Sig_value", "pr_scopes",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Glob_term"], "glob_constr"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]],
+["Sig_value", "locate_notation",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Glob_term"], "glob_constr"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]]],
+["Sig_value", "pr_visibility",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Glob_term"], "glob_constr"]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "scope_name"]]],
+["Tconstr", ["Pdot", ["Pident", "Pp"], "std_ppcmds"]]]]],
+["Sig_type", "unparsing_rule", 0,
+["Type_alias",
+["Ttuple",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Ppextend"], "unparsing"]]],
+["Tconstr", ["Pdot", ["Pident", "Ppextend"], "precedence"]]]]],
+["Sig_type", "extra_unparsing_rules", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "declare_notation_rule",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]],
+["Tarrow", ["Tconstr", ["Pident", "extra_unparsing_rules"]],
+["Tarrow", ["Tconstr", ["Pident", "unparsing_rule"]],
+["Tarrow",
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "notation_grammar"]],
+["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "find_notation_printing_rule",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]],
+["Tconstr", ["Pident", "unparsing_rule"]]]],
+["Sig_value", "find_notation_extra_printing_rules",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]],
+["Tconstr", ["Pident", "extra_unparsing_rules"]]]],
+["Sig_value", "find_notation_parsing_rules",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]],
+["Tconstr", ["Pdot", ["Pident", "Notation_term"], "notation_grammar"]]]],
+["Sig_value", "add_notation_extra_printing_rule",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "get_defined_notations",
+["Tarrow", ["Tconstr", ["Pident", "unit"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Constrexpr"], "notation"]]]]],
+["Sig_value", "with_notation_protection",
+["Tarrow", ["Tarrow", ["Tpoly", "a"], ["Tpoly", "b"]],
+["Tarrow", ["Tpoly", "a"], ["Tpoly", "b"]]]]]]

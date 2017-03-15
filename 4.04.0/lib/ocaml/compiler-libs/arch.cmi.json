@@ -1,184 +1,76 @@
-["module"; "Arch"; ["Mty_signature"; ["Sig_value"; "command_line_options"; 
-                                     ["Tconstr"; ["Pident"; "list"]; 
-                                     ["Ttuple"; ["Tconstr"; ["Pident"; 
-                                                            "string"]]; 
-                                     ["Tconstr"; ["Pdot"; ["Pident"; "Arg"]; 
-                                                 "spec"]]; ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]]; 
-                   ["Sig_type"; "addressing_mode"; 0; ["Type_variant"; 
-                                                      ["constructor"; 
-                                                      "Ibased"; ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Iindexed"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Iindexed2"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Iscaled"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]; 
-                                                      ["constructor"; 
-                                                      "Iindexed2scaled"; 
-                                                      ["tuple"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "int"]]]]]]; 
-                   ["Sig_type"; "specific_operation"; 0; ["Type_variant"; 
-                                                         ["constructor"; 
-                                                         "Ilea"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "addressing_mode"]]]]; 
-                                                         ["constructor"; 
-                                                         "Istore_int"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "nativeint"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "addressing_mode"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "bool"]]]]; 
-                                                         ["constructor"; 
-                                                         "Istore_symbol"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "addressing_mode"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "bool"]]]]; 
-                                                         ["constructor"; 
-                                                         "Ioffset_loc"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "addressing_mode"]]]]; 
-                                                         ["constructor"; 
-                                                         "Ifloatarithmem"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "float_operation"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "addressing_mode"]]]]; 
-                                                         ["constructor"; 
-                                                         "Ibswap"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]; 
-                                                         ["constructor"; 
-                                                         "Isqrtf"; ["tuple"]]; 
-                                                         ["constructor"; 
-                                                         "Ifloatsqrtf"; 
-                                                         ["tuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "addressing_mode"]]]]]]; 
-                   ["Sig_type"; "float_operation"; 0; ["Type_variant"; 
-                                                      ["constructor"; 
-                                                      "Ifloatadd"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Ifloatsub"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Ifloatmul"; ["tuple"]]; 
-                                                      ["constructor"; 
-                                                      "Ifloatdiv"; ["tuple"]]]]; 
-                   ["Sig_value"; "spacetime_node_hole_pointer_is_live_before"; 
-                   ["Tarrow"; ["Tvar"; 0]; ["Tconstr"; ["Pident"; "bool"]]]]; 
-                   ["Sig_value"; "big_endian"; ["Tconstr"; ["Pident"; "bool"]]]; 
-                   ["Sig_value"; "size_addr"; ["Tconstr"; ["Pident"; "int"]]]; 
-                   ["Sig_value"; "size_int"; ["Tconstr"; ["Pident"; "int"]]]; 
-                   ["Sig_value"; "size_float"; ["Tconstr"; ["Pident"; "int"]]]; 
-                   ["Sig_value"; "allow_unaligned_access"; ["Tconstr"; 
-                                                           ["Pident"; "bool"]]]; 
-                   ["Sig_value"; "division_crashes_on_overflow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "bool"]]]; 
-                   ["Sig_value"; "identity_addressing"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "addressing_mode"]]]; 
-                   ["Sig_value"; "offset_addressing"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "addressing_mode"]]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "addressing_mode"]]]]]; 
-                   ["Sig_value"; "num_args_addressing"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "addressing_mode"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "int"]]]]; 
-                   ["Sig_value"; "print_addressing"; ["Tarrow"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Format"]; 
-                                                                "formatter"]]; 
-                                                                ["Tarrow"; 
-                                                                ["Tvar"; 1]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "addressing_mode"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Format"]; 
-                                                                "formatter"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "array"]; 
-                                                                ["Tvar"; 1]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]]]]; 
-                   ["Sig_value"; "print_specific_operation"; ["Tarrow"; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Format"]; 
-                                                             "formatter"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tvar"; 2]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "specific_operation"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Format"]; 
-                                                             "formatter"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "array"]; 
-                                                             ["Tvar"; 2]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]]]]]]]]
+["module", "Arch",
+["Mty_signature",
+["Sig_value", "command_line_options",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Arg"], "spec"]],
+["Tconstr", ["Pident", "string"]]]]],
+["Sig_type", "addressing_mode", 0,
+["Type_variant",
+["constructor", "Ibased",
+["tuple", ["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Iindexed", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Iindexed2", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Iscaled",
+["tuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Iindexed2scaled",
+["tuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]]],
+["Sig_type", "specific_operation", 0,
+["Type_variant",
+["constructor", "Ilea",
+["tuple", ["Tconstr", ["Pident", "addressing_mode"]]]],
+["constructor", "Istore_int",
+["tuple", ["Tconstr", ["Pident", "nativeint"]],
+["Tconstr", ["Pident", "addressing_mode"]], ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "Istore_symbol",
+["tuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "addressing_mode"]], ["Tconstr", ["Pident", "bool"]]]],
+["constructor", "Ioffset_loc",
+["tuple", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "addressing_mode"]]]],
+["constructor", "Ifloatarithmem",
+["tuple", ["Tconstr", ["Pident", "float_operation"]],
+["Tconstr", ["Pident", "addressing_mode"]]]],
+["constructor", "Ibswap", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Isqrtf", ["tuple"]],
+["constructor", "Ifloatsqrtf",
+["tuple", ["Tconstr", ["Pident", "addressing_mode"]]]]]],
+["Sig_type", "float_operation", 0,
+["Type_variant", ["constructor", "Ifloatadd", ["tuple"]],
+["constructor", "Ifloatsub", ["tuple"]],
+["constructor", "Ifloatmul", ["tuple"]],
+["constructor", "Ifloatdiv", ["tuple"]]]],
+["Sig_value", "spacetime_node_hole_pointer_is_live_before",
+["Tarrow", ["Tvar", 0], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "big_endian", ["Tconstr", ["Pident", "bool"]]],
+["Sig_value", "size_addr", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "size_int", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "size_float", ["Tconstr", ["Pident", "int"]]],
+["Sig_value", "allow_unaligned_access", ["Tconstr", ["Pident", "bool"]]],
+["Sig_value", "division_crashes_on_overflow",
+["Tconstr", ["Pident", "bool"]]],
+["Sig_value", "identity_addressing",
+["Tconstr", ["Pident", "addressing_mode"]]],
+["Sig_value", "offset_addressing",
+["Tarrow", ["Tconstr", ["Pident", "addressing_mode"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "addressing_mode"]]]]],
+["Sig_value", "num_args_addressing",
+["Tarrow", ["Tconstr", ["Pident", "addressing_mode"]],
+["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "print_addressing",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tvar", 1], ["Tconstr", ["Pident", "unit"]]]],
+["Tarrow", ["Tconstr", ["Pident", "addressing_mode"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pident", "array"], ["Tvar", 1]],
+["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "print_specific_operation",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tvar", 2], ["Tconstr", ["Pident", "unit"]]]],
+["Tarrow", ["Tconstr", ["Pident", "specific_operation"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Format"], "formatter"]],
+["Tarrow", ["Tconstr", ["Pident", "array"], ["Tvar", 2]],
+["Tconstr", ["Pident", "unit"]]]]]]]]]

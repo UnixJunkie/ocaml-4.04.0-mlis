@@ -1,966 +1,365 @@
-["module"; "Unixext"; ["Mty_signature"; ["Sig_value"; "_exit"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "unit"]]]]; 
-                      ["Sig_value"; "unlink_safe"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "unit"]]]]; 
-                      ["Sig_value"; "mkdir_safe"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Unix"]; 
-                                                             "file_perm"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "unit"]]]]]; 
-                      ["Sig_value"; "mkdir_rec"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Unix"]; 
-                                                            "file_perm"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]]; 
-                      ["Sig_value"; "pidfile_write"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]; 
-                      ["Sig_value"; "pidfile_read"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "option"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]]; 
-                      ["Sig_value"; "daemonize"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "unit"]]]]; 
-                      ["Sig_value"; "with_file"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Unix"]; 
-                                                            "open_flag"]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Unix"]; 
-                                                            "file_perm"]]; 
-                                                 ["Tarrow"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Unix"]; 
-                                                            "file_descr"]]; 
-                                                            ["Tpoly"; "a"]]; 
-                                                 ["Tpoly"; "a"]]]]]]; 
-                      ["Sig_value"; "with_input_channel"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Pervasives"]; 
-                                                          "in_channel"]]; 
-                                                          ["Tpoly"; "a"]]; 
-                                                          ["Tpoly"; "a"]]]]; 
-                      ["Sig_value"; "with_directory"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                      ["Tarrow"; ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Unix"]; 
-                                                                 "dir_handle"]]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]]; 
-                                                      ["Tpoly"; "a"]]]]; 
-                      ["Sig_unknown"]; ["Sig_value"; "lines_fold"; ["Tarrow"; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Pervasives"]; 
-                                                                   "in_channel"]]; 
-                                                                   ["Tpoly"; 
-                                                                   "a"]]]]]; 
-                      ["Sig_value"; "lines_iter"; ["Tarrow"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                             ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Pervasives"]; 
-                                                             "in_channel"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "unit"]]]]]; 
-                      ["Sig_value"; "file_lines_fold"; ["Tarrow"; ["Tarrow"; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                                  ["Tpoly"; 
-                                                                  "a"]]]; 
-                                                       ["Tarrow"; ["Tpoly"; 
-                                                                  "a"]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                       ["Tpoly"; "a"]]]]]; 
-                      ["Sig_value"; "read_lines"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "list"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "string"]]]]]; 
-                      ["Sig_value"; "file_lines_iter"; ["Tarrow"; ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "unit"]]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]]; 
-                      ["Sig_value"; "fd_blocks_fold"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                      ["Tarrow"; ["Tarrow"; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]; 
-                                                                 ["Tarrow"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                                 ["Tpoly"; 
-                                                                 "a"]]]; 
-                                                      ["Tarrow"; ["Tpoly"; 
-                                                                 "a"]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Unix"]; 
-                                                                 "file_descr"]]; 
-                                                      ["Tpoly"; "a"]]]]]]; 
-                      ["Sig_value"; "readfile_line"; ["Tarrow"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                                ["Tpoly"; 
-                                                                "a"]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]]; 
-                      ["Sig_value"; "buffer_of_fd"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Unix"]; 
-                                                               "file_descr"]]; 
-                                                    ["Tconstr"; ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Buffer"]; 
-                                                                "t"]]]]; 
-                      ["Sig_value"; "bigbuffer_of_fd"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Unix"]; 
-                                                                  "file_descr"]]; 
-                                                       ["Tconstr"; ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Bigbuffer"]; 
-                                                                   "t"]]]]; 
-                      ["Sig_value"; "string_of_fd"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Unix"]; 
-                                                               "file_descr"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "string"]]]]; 
-                      ["Sig_value"; "buffer_of_file"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Buffer"]; 
-                                                                  "t"]]]]; 
-                      ["Sig_value"; "bigbuffer_of_file"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Bigbuffer"]; 
-                                                         "t"]]]]; ["Sig_value"; 
-                                                                  "string_of_file"; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]; 
-                      ["Sig_value"; "atomic_write_to_file"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Unix"]; 
-                                                            "file_perm"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Unix"]; 
-                                                            "file_descr"]]; 
-                                                            ["Tpoly"; "a"]]; 
-                                                            ["Tpoly"; "a"]]]]]; 
-                      ["Sig_value"; "write_string_to_file"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]]]]; 
-                      ["Sig_value"; "execv_get_output"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "array"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]]; 
-                                                        ["Ttuple"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Unix"]; 
-                                                                    "file_descr"]]]]]]; 
-                      ["Sig_value"; "copy_file"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "option"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "int64"]]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Unix"]; 
-                                                            "file_descr"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Unix"]; 
-                                                            "file_descr"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "int64"]]]]]]; 
-                      ["Sig_value"; "file_exists"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "bool"]]]]; 
-                      ["Sig_value"; "touch_file"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "unit"]]]]; 
-                      ["Sig_value"; "is_empty_file"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "bool"]]]]; 
-                      ["Sig_value"; "delete_empty_file"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "bool"]]]]; 
-                      ["Sig_unknown"]; ["Sig_value"; "open_connection_fd"; 
-                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                              "string"]]; 
-                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                              "int"]]; 
-                                       ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                            "Unix"]; 
-                                                   "file_descr"]]]]]; 
-                      ["Sig_value"; "open_connection_unix_fd"; ["Tarrow"; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Unix"]; 
-                                                               "file_descr"]]]]; 
-                      ["Sig_unknown"]; ["Sig_value"; "kill_and_wait"; 
-                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                              "option"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "int"]]]; 
-                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                              "option"]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "float"]]]; 
-                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                              "int"]]; 
-                                       ["Tconstr"; ["Pident"; "unit"]]]]]]; 
-                      ["Sig_value"; "string_of_signal"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]]]; 
-                      ["Sig_value"; "proxy"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Unix"]; 
-                                                                    "file_descr"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Unix"]; 
-                                                                    "file_descr"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                      ["Sig_value"; "really_read"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Unix"]; 
-                                                              "file_descr"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]; 
-                                                   ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "unit"]]]]]]]; 
-                      ["Sig_value"; "really_read_string"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Unix"]; 
-                                                          "file_descr"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]]]; 
-                      ["Sig_value"; "really_read_bigbuffer"; ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Unix"]; 
-                                                             "file_descr"]]; 
-                                                             ["Tarrow"; 
-                                                             ["Tconstr"; 
-                                                             ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Bigbuffer"]; 
-                                                             "t"]]; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int64"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]]]; 
-                      ["Sig_value"; "really_write"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Unix"]; 
-                                                               "file_descr"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "unit"]]]]]]]; 
-                      ["Sig_value"; "really_write_string"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Unix"]; 
-                                                           "file_descr"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]]]]; 
-                      ["Sig_value"; "try_read_string"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "option"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Unix"]; 
-                                                                  "file_descr"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "string"]]]]]; 
-                      ["Sig_unknown"]; ["Sig_value"; "time_limited_write"; 
-                                       ["Tarrow"; ["Tconstr"; ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Unix"]; 
-                                                              "file_descr"]]; 
-                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                              "int"]]; 
-                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                              "string"]]; 
-                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                              "float"]]; 
-                                       ["Tconstr"; ["Pident"; "unit"]]]]]]]; 
-                      ["Sig_value"; "time_limited_read"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Unix"]; 
-                                                                    "file_descr"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                         ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "float"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "string"]]]]]]; 
-                      ["Sig_value"; "read_data_in_chunks"; ["Tarrow"; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "option"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "option"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Unix"]; 
-                                                           "file_descr"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]]]]]]; 
-                      ["Sig_value"; "spawnvp"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "unit"]]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "array"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Unix"]; 
-                                                           "process_status"]]]]]]; 
-                      ["Sig_value"; "double_fork"; ["Tarrow"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "unit"]]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "unit"]]]]; 
-                      ["Sig_value"; "set_tcp_nodelay"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Unix"]; 
-                                                                  "file_descr"]]; 
-                                                       ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "bool"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "unit"]]]]]; 
-                      ["Sig_value"; "set_sock_keepalives"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Unix"]; 
-                                                           "file_descr"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "int"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]]]]]]; 
-                      ["Sig_value"; "fsync"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Unix"]; 
-                                                                    "file_descr"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]; 
-                      ["Sig_value"; "get_max_fd"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "unit"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "int"]]]]; 
-                      ["Sig_value"; "blkgetsize64"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Unix"]; 
-                                                               "file_descr"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int64"]]]]; 
-                      ["Sig_value"; "int_of_file_descr"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Unix"]; 
-                                                                    "file_descr"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "int"]]]]; 
-                      ["Sig_value"; "file_descr_of_int"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Unix"]; 
-                                                         "file_descr"]]]]; 
-                      ["Sig_value"; "close_all_fds_except"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "list"]; 
-                                                            ["Tconstr"; 
-                                                            ["Pdot"; 
-                                                            ["Pident"; 
-                                                            "Unix"]; 
-                                                            "file_descr"]]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "unit"]]]]; 
-                      ["Sig_value"; "resolve_dot_and_dotdot"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]]; 
-                      ["Sig_value"; "seek_to"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Unix"]; 
-                                                          "file_descr"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                               ["Tconstr"; ["Pident"; "int"]]]]]; 
-                      ["Sig_value"; "seek_rel"; ["Tarrow"; ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Unix"]; 
-                                                           "file_descr"]]; 
-                                                ["Tarrow"; ["Tconstr"; 
-                                                           ["Pident"; "int"]]; 
-                                                ["Tconstr"; ["Pident"; "int"]]]]]; 
-                      ["Sig_value"; "current_cursor_pos"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Unix"]; 
-                                                          "file_descr"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int"]]]]; 
-                      ["Sig_module"; "Fdset"; ["Mty_signature"; ["Sig_type"; 
-                                                                "t"; 
-                                                                0; ["Type_abstract"]]; 
-                                              ["Sig_value"; "of_list"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "list"]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Unix"]; 
-                                                         "file_descr"]]]; 
-                                              ["Tconstr"; ["Pident"; "t"]]]]; 
-                                              ["Sig_value"; "is_set"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Unix"]; 
-                                                         "file_descr"]]; 
-                                              ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                                              ["Sig_value"; "is_set_and_clear"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Unix"]; 
-                                                         "file_descr"]]; 
-                                              ["Tconstr"; ["Pident"; "bool"]]]]]; 
-                                              ["Sig_value"; "is_empty"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; "bool"]]]]; 
-                                              ["Sig_value"; "set"; ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "t"]]; 
-                                                                   ["Tarrow"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Unix"]; 
-                                                                   "file_descr"]]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "unit"]]]]]; 
-                                              ["Sig_value"; "clear"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Unix"]; 
-                                                         "file_descr"]]; 
-                                              ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                                              ["Sig_value"; "select"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "float"]]; 
-                                              ["Ttuple"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; "t"]]; 
-                                              ["Tconstr"; ["Pident"; "t"]]]]]]]]; 
-                                              ["Sig_value"; "select_ro"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "float"]]; 
-                                              ["Tconstr"; ["Pident"; "t"]]]]]; 
-                                              ["Sig_value"; "select_wo"; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "t"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "float"]]; 
-                                              ["Tconstr"; ["Pident"; "t"]]]]]]]; 
-                      ["Sig_value"; "wait_for_path"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                     ["Tarrow"; ["Tarrow"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "float"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "unit"]]]; 
-                                                     ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "unit"]]]]]]; 
-                      ["Sig_value"; "send_fd"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Unix"]; 
-                                                          "file_descr"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Unix"]; 
-                                                          "msg_flag"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Unix"]; 
-                                                          "file_descr"]]; 
-                                               ["Tconstr"; ["Pident"; "int"]]]]]]]]]; 
-                      ["Sig_value"; "recv_fd"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Unix"]; 
-                                                          "file_descr"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Unix"]; 
-                                                          "msg_flag"]]]; 
-                                               ["Ttuple"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Unix"]; 
-                                                           "sockaddr"]]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Unix"]; 
-                                                           "file_descr"]]]]]]]]]; 
-                      ["Sig_type"; "statvfs_t"; 0; ["Type_record"; ["label"; 
-                                                                   "f_bsize"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int64"]]]; 
-                                                   ["label"; "f_frsize"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int64"]]]; 
-                                                   ["label"; "f_blocks"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int64"]]]; 
-                                                   ["label"; "f_bfree"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int64"]]]; 
-                                                   ["label"; "f_bavail"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int64"]]]; 
-                                                   ["label"; "f_files"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int64"]]]; 
-                                                   ["label"; "f_ffree"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int64"]]]; 
-                                                   ["label"; "f_favail"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int64"]]]; 
-                                                   ["label"; "f_fsid"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int64"]]]; 
-                                                   ["label"; "f_flag"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int64"]]]; 
-                                                   ["label"; "f_namemax"; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "int64"]]]]]; 
-                      ["Sig_value"; "statvfs"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "statvfs_t"]]]]; 
-                      ["Sig_value"; "domain_of_addr"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "option"]; 
-                                                      ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Unix"]; 
-                                                                  "socket_domain"]]]]]; 
-                      ["Sig_module"; "Direct"; ["Mty_signature"; ["Sig_type"; 
-                                                                 "t"; 
-                                                                 0; [
-                                                                    "Type_abstract"]]; 
-                                               ["Sig_value"; "openfile"; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Unix"]; 
-                                                          "open_flag"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Unix"]; 
-                                                          "file_perm"]]; 
-                                               ["Tconstr"; ["Pident"; "t"]]]]]]; 
-                                               ["Sig_value"; "close"; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                               ["Tconstr"; ["Pident"; "unit"]]]]; 
-                                               ["Sig_value"; "with_openfile"; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Unix"]; 
-                                                          "open_flag"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Unix"]; 
-                                                          "file_perm"]]; 
-                                               ["Tarrow"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                                          ["Tpoly"; "a"]]; 
-                                               ["Tpoly"; "a"]]]]]]; [
-                                                                    "Sig_value"; 
-                                                                    "write"; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "t"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                                    [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "int"]]]]]]]; 
-                                               ["Sig_value"; "copy_from_fd"; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "option"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "int64"]]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Unix"]; 
-                                                          "file_descr"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "int64"]]]]]]; 
-                                               ["Sig_value"; "fsync"; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                               ["Tconstr"; ["Pident"; "unit"]]]]; 
-                                               ["Sig_value"; "lseek"; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "t"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "int64"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Unix"]; 
-                                                          "seek_command"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "int64"]]]]]]]]]]
+["module", "Unixext",
+["Mty_signature",
+["Sig_value", "_exit",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "unlink_safe",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "mkdir_safe",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_perm"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "mkdir_rec",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_perm"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "pidfile_write",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "pidfile_read",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "daemonize",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "with_file",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "open_flag"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_perm"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tpoly", "a"]], ["Tpoly", "a"]]]]]],
+["Sig_value", "with_input_channel",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pervasives"], "in_channel"]],
+["Tpoly", "a"]], ["Tpoly", "a"]]]],
+["Sig_value", "with_directory",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "dir_handle"]],
+["Tpoly", "a"]], ["Tpoly", "a"]]]], ["Sig_unknown"],
+["Sig_value", "lines_fold",
+["Tarrow",
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tconstr", ["Pident", "string"]], ["Tpoly", "a"]]],
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pervasives"], "in_channel"]],
+["Tpoly", "a"]]]]],
+["Sig_value", "lines_iter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pervasives"], "in_channel"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "file_lines_fold",
+["Tarrow",
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tconstr", ["Pident", "string"]], ["Tpoly", "a"]]],
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tconstr", ["Pident", "string"]], ["Tpoly", "a"]]]]],
+["Sig_value", "read_lines",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "file_lines_iter",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "fd_blocks_fold",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow",
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tconstr", ["Pident", "string"]], ["Tpoly", "a"]]],
+["Tarrow", ["Tpoly", "a"],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tpoly", "a"]]]]]],
+["Sig_value", "readfile_line",
+["Tarrow", ["Tarrow", ["Tconstr", ["Pident", "string"]], ["Tpoly", "a"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "buffer_of_fd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tconstr", ["Pdot", ["Pident", "Buffer"], "t"]]]],
+["Sig_value", "bigbuffer_of_fd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tconstr", ["Pdot", ["Pident", "Bigbuffer"], "t"]]]],
+["Sig_value", "string_of_fd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "buffer_of_file",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Buffer"], "t"]]]],
+["Sig_value", "bigbuffer_of_file",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Bigbuffer"], "t"]]]],
+["Sig_value", "string_of_file",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "atomic_write_to_file",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_perm"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tpoly", "a"]], ["Tpoly", "a"]]]]],
+["Sig_value", "write_string_to_file",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "execv_get_output",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]],
+["Ttuple", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]]]]]],
+["Sig_value", "copy_file",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int64"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tconstr", ["Pident", "int64"]]]]]],
+["Sig_value", "file_exists",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "touch_file",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "is_empty_file",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "delete_empty_file",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "bool"]]]], ["Sig_unknown"],
+["Sig_value", "open_connection_fd",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]]]]],
+["Sig_value", "open_connection_unix_fd",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]]]], ["Sig_unknown"],
+["Sig_value", "kill_and_wait",
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "float"]]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "string_of_signal",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "proxy",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "really_read",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "really_read_string",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "really_read_bigbuffer",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Bigbuffer"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int64"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "really_write",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "really_write_string",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "try_read_string",
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tconstr", ["Pident", "string"]]]]], ["Sig_unknown"],
+["Sig_value", "time_limited_write",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "float"]], ["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "time_limited_read",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "float"]],
+["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "read_data_in_chunks",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]],
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]],
+["Tarrow", ["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tconstr", ["Pident", "int"]]]]]]],
+["Sig_value", "spawnvp",
+["Tarrow",
+["Tconstr", ["Pident", "option"],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "array"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "process_status"]]]]]],
+["Sig_value", "double_fork",
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "unit"]]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "set_tcp_nodelay",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "set_sock_keepalives",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "fsync",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "get_max_fd",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "blkgetsize64",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tconstr", ["Pident", "int64"]]]],
+["Sig_value", "int_of_file_descr",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "file_descr_of_int",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]]]],
+["Sig_value", "close_all_fds_except",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "resolve_dot_and_dotdot",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "seek_to",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "seek_rel",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "current_cursor_pos",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tconstr", ["Pident", "int"]]]],
+["Sig_module", "Fdset",
+["Mty_signature", ["Sig_type", "t", 0, ["Type_abstract"]],
+["Sig_value", "of_list",
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]]],
+["Tconstr", ["Pident", "t"]]]],
+["Sig_value", "is_set",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "is_set_and_clear",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tconstr", ["Pident", "bool"]]]]],
+["Sig_value", "is_empty",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "set",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "clear",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "select",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "float"]],
+["Ttuple", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "t"]],
+["Tconstr", ["Pident", "t"]]]]]]]],
+["Sig_value", "select_ro",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "float"]], ["Tconstr", ["Pident", "t"]]]]],
+["Sig_value", "select_wo",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "float"]], ["Tconstr", ["Pident", "t"]]]]]]],
+["Sig_value", "wait_for_path",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tarrow", ["Tconstr", ["Pident", "float"]], ["Tconstr", ["Pident", "unit"]]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "send_fd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "msg_flag"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tconstr", ["Pident", "int"]]]]]]]]],
+["Sig_value", "recv_fd",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "msg_flag"]]],
+["Ttuple", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "sockaddr"]],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]]]]]]]]],
+["Sig_type", "statvfs_t", 0,
+["Type_record", ["label", "f_bsize", ["Tconstr", ["Pident", "int64"]]],
+["label", "f_frsize", ["Tconstr", ["Pident", "int64"]]],
+["label", "f_blocks", ["Tconstr", ["Pident", "int64"]]],
+["label", "f_bfree", ["Tconstr", ["Pident", "int64"]]],
+["label", "f_bavail", ["Tconstr", ["Pident", "int64"]]],
+["label", "f_files", ["Tconstr", ["Pident", "int64"]]],
+["label", "f_ffree", ["Tconstr", ["Pident", "int64"]]],
+["label", "f_favail", ["Tconstr", ["Pident", "int64"]]],
+["label", "f_fsid", ["Tconstr", ["Pident", "int64"]]],
+["label", "f_flag", ["Tconstr", ["Pident", "int64"]]],
+["label", "f_namemax", ["Tconstr", ["Pident", "int64"]]]]],
+["Sig_value", "statvfs",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "statvfs_t"]]]],
+["Sig_value", "domain_of_addr",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "socket_domain"]]]]],
+["Sig_module", "Direct",
+["Mty_signature", ["Sig_type", "t", 0, ["Type_abstract"]],
+["Sig_value", "openfile",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "open_flag"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_perm"]],
+["Tconstr", ["Pident", "t"]]]]]],
+["Sig_value", "close",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "with_openfile",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "open_flag"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_perm"]],
+["Tarrow", ["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tpoly", "a"]],
+["Tpoly", "a"]]]]]],
+["Sig_value", "write",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]]]],
+["Sig_value", "copy_from_fd",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int64"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "int64"]]]]]],
+["Sig_value", "fsync",
+["Tarrow", ["Tconstr", ["Pident", "t"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "lseek",
+["Tarrow", ["Tconstr", ["Pident", "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int64"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "seek_command"]],
+["Tconstr", ["Pident", "int64"]]]]]]]]]]

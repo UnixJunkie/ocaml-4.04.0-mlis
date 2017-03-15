@@ -1,241 +1,106 @@
-["module"; "Jobpack"; ["Mty_signature"; ["Sig_type"; "data_size"; 0; 
-                                        ["Type_alias"; ["Tconstr"; ["Pident"; 
-                                                                   "int"]]]]; 
-                      ["Sig_type"; "job_input"; 0; ["Type_alias"; ["Ttuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Pipeline"]; 
-                                                                  "label"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "data_size"]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "list"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Uri"]; 
-                                                                  "t"]]]]]]; 
-                      ["Sig_value"; "job_input_of_string"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "job_input"]]]]; 
-                      ["Sig_value"; "job_input_of_json"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Json"]; 
-                                                                    "t"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "job_input"]]]]; 
-                      ["Sig_value"; "json_of_job_input"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "job_input"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pdot"; ["Pident"; 
-                                                                  "Json"]; 
-                                                         "t"]]]]; ["Sig_type"; 
-                                                                  "job_input_error"; 
-                                                                  0; 
-                                                                  ["Type_variant"; 
-                                                                  ["constructor"; 
-                                                                  "Invalid_job_input_json"; 
-                                                                  ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Json"]; 
-                                                                  "t"]]]]; 
-                                                                  ["constructor"; 
-                                                                  "Invalid_job_input_string"; 
-                                                                  ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]; 
-                                                                  ["constructor"; 
-                                                                  "Invalid_job_input_label"; 
-                                                                  ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]; 
-                                                                  ["constructor"; 
-                                                                  "Invalid_job_input_size"; 
-                                                                  ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]; 
-                                                                  ["constructor"; 
-                                                                  "Invalid_job_input_url"; 
-                                                                  ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]; 
-                                                                  ["constructor"; 
-                                                                  "Invalid_job_input"; 
-                                                                  ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "string"]]]]]]; 
-                      ["Sig_unknown"]; ["Sig_value"; "string_of_job_input_error"; 
-                                       ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                              "job_input_error"]]; 
-                                       ["Tconstr"; ["Pident"; "string"]]]]; 
-                      ["Sig_type"; "error"; 0; ["Type_variant"; ["constructor"; 
-                                                                "Invalid_magic"; 
-                                                                ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]; 
-                                               ["constructor"; "Unsupported_version"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]]]; 
-                                               ["constructor"; "Invalid_header"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]]]; 
-                                               ["constructor"; "Invalid_jobdict_ofs"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]]]; 
-                                               ["constructor"; "Invalid_jobenvs_ofs"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]]]; 
-                                               ["constructor"; "Invalid_jobhome_ofs"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]]]; 
-                                               ["constructor"; "Invalid_jobdata_ofs"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "int"]]]]; 
-                                               ["constructor"; "Invalid_jobdict"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]]]; 
-                                               ["constructor"; "Invalid_jobenvs"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]]]; 
-                                               ["constructor"; "Invalid_pipeline"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]]]; 
-                                               ["constructor"; "Missing_jobdict_key"; 
-                                               ["tuple"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]]]]]; 
-                      ["Sig_unknown"]; ["Sig_type"; "header"; 0; ["Type_abstract"]]; 
-                      ["Sig_type"; "jobdict"; 0; ["Type_record"; ["label"; 
-                                                                 "name"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "string"]]]; 
-                                                 ["label"; "owner"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]]; 
-                                                 ["label"; "worker"; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "string"]]]; 
-                                                 ["label"; "pipeline"; 
-                                                 ["Tconstr"; ["Pdot"; 
-                                                             ["Pident"; 
-                                                             "Pipeline"]; 
-                                                             "pipeline"]]]; 
-                                                 ["label"; "inputs"; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "list"]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "job_input"]]]]; 
-                                                 ["label"; "save_results"; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "bool"]]]]]; 
-                      ["Sig_type"; "jobpack"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]]]; 
-                      ["Sig_type"; "jobenvs"; 0; ["Type_alias"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "list"]; 
-                                                                ["Ttuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]]]]]; 
-                      ["Sig_value"; "header_of"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "header"]]]]; 
-                      ["Sig_value"; "jobdict_of"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "header"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "jobdict"]]]]]; 
-                      ["Sig_value"; "jobenvs_of"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "header"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "jobenvs"]]]]]; 
-                      ["Sig_value"; "jobdata_of"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "header"]]; 
-                                                  ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "string"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "string"]]]]]; 
-                      ["Sig_value"; "make_jobpack"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "option"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "jobenvs"]]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "option"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "option"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "bool"]]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pipeline"]; 
-                                                               "pipeline"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "list"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "job_input"]]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "jobpack"]]]]]]]]]]]; 
-                      ["Sig_value"; "string_of_error"; ["Tarrow"; ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "error"]]; 
-                                                       ["Tconstr"; ["Pident"; 
-                                                                   "string"]]]]]]
+["module", "Jobpack",
+["Mty_signature",
+["Sig_type", "data_size", 0, ["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_type", "job_input", 0,
+["Type_alias",
+["Ttuple", ["Tconstr", ["Pdot", ["Pident", "Pipeline"], "label"]],
+["Tconstr", ["Pident", "data_size"]],
+["Tconstr", ["Pident", "list"],
+["Tconstr", ["Pdot", ["Pident", "Uri"], "t"]]]]]],
+["Sig_value", "job_input_of_string",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "job_input"]]]],
+["Sig_value", "job_input_of_json",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Json"], "t"]],
+["Tconstr", ["Pident", "job_input"]]]],
+["Sig_value", "json_of_job_input",
+["Tarrow", ["Tconstr", ["Pident", "job_input"]],
+["Tconstr", ["Pdot", ["Pident", "Json"], "t"]]]],
+["Sig_type", "job_input_error", 0,
+["Type_variant",
+["constructor", "Invalid_job_input_json",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Json"], "t"]]]],
+["constructor", "Invalid_job_input_string",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Invalid_job_input_label",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Invalid_job_input_size",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Invalid_job_input_url",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Invalid_job_input",
+["tuple", ["Tconstr", ["Pident", "string"]]]]]], ["Sig_unknown"],
+["Sig_value", "string_of_job_input_error",
+["Tarrow", ["Tconstr", ["Pident", "job_input_error"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "error", 0,
+["Type_variant",
+["constructor", "Invalid_magic", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Unsupported_version",
+["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Invalid_header",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Invalid_jobdict_ofs",
+["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Invalid_jobenvs_ofs",
+["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Invalid_jobhome_ofs",
+["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Invalid_jobdata_ofs",
+["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Invalid_jobdict",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Invalid_jobenvs",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Invalid_pipeline",
+["tuple", ["Tconstr", ["Pident", "string"]]]],
+["constructor", "Missing_jobdict_key",
+["tuple", ["Tconstr", ["Pident", "string"]]]]]], ["Sig_unknown"],
+["Sig_type", "header", 0, ["Type_abstract"]],
+["Sig_type", "jobdict", 0,
+["Type_record", ["label", "name", ["Tconstr", ["Pident", "string"]]],
+["label", "owner", ["Tconstr", ["Pident", "string"]]],
+["label", "worker", ["Tconstr", ["Pident", "string"]]],
+["label", "pipeline",
+["Tconstr", ["Pdot", ["Pident", "Pipeline"], "pipeline"]]],
+["label", "inputs",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "job_input"]]]],
+["label", "save_results", ["Tconstr", ["Pident", "bool"]]]]],
+["Sig_type", "jobpack", 0, ["Type_alias", ["Tconstr", ["Pident", "string"]]]],
+["Sig_type", "jobenvs", 0,
+["Type_alias",
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "header_of",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "header"]]]],
+["Sig_value", "jobdict_of",
+["Tarrow", ["Tconstr", ["Pident", "header"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "jobdict"]]]]],
+["Sig_value", "jobenvs_of",
+["Tarrow", ["Tconstr", ["Pident", "header"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "jobenvs"]]]]],
+["Sig_value", "jobdata_of",
+["Tarrow", ["Tconstr", ["Pident", "header"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "string"]]]]],
+["Sig_value", "make_jobpack",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "jobenvs"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pipeline"], "pipeline"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "job_input"]]],
+["Tconstr", ["Pident", "jobpack"]]]]]]]]]]],
+["Sig_value", "string_of_error",
+["Tarrow", ["Tconstr", ["Pident", "error"]],
+["Tconstr", ["Pident", "string"]]]]]]

@@ -1,116 +1,55 @@
-["module"; "Ocs_port"; ["Mty_signature"; ["Sig_type"; "port"; 0; ["Type_abstract"]]; 
-                       ["Sig_type"; "port_flag"; 0; ["Type_variant"; 
-                                                    ["constructor"; "Pf_input"; 
-                                                    ["tuple"]]; ["constructor"; 
-                                                                "Pf_output"; 
-                                                                ["tuple"]]; 
-                                                    ["constructor"; "Pf_close"; 
-                                                    ["tuple"]]]]; ["Sig_value"; 
-                                                                  "fd_port"; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Unix"]; 
-                                                                  "file_descr"]]; 
-                                                                  ["Tarrow"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "list"]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "port_flag"]]]; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "port"]]]]]; 
-                       ["Sig_value"; "input_port"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Pervasives"]; 
-                                                              "in_channel"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "port"]]]]; 
-                       ["Sig_value"; "output_port"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pervasives"]; 
-                                                               "out_channel"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "port"]]]]; 
-                       ["Sig_value"; "open_input_port"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "port"]]]]; 
-                       ["Sig_value"; "open_output_port"; ["Tarrow"; [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                                         ["Tconstr"; 
-                                                         ["Pident"; "port"]]]]; 
-                       ["Sig_value"; "string_input_port"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "port"]]]]; 
-                       ["Sig_value"; "string_output_port"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "unit"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "port"]]]]; 
-                       ["Sig_value"; "is_input"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "port"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "bool"]]]]; 
-                       ["Sig_value"; "is_output"; ["Tarrow"; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "port"]]; 
-                                                  ["Tconstr"; ["Pident"; 
-                                                              "bool"]]]]; 
-                       ["Sig_value"; "getc"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "port"]]; 
-                                             ["Tconstr"; ["Pident"; "option"]; 
-                                             ["Tconstr"; ["Pident"; "char"]]]]]; 
-                       ["Sig_value"; "ungetc"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "port"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "char"]]; 
-                                               ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                       ["Sig_value"; "char_ready"; ["Tarrow"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "port"]]; 
-                                                   ["Tconstr"; ["Pident"; 
-                                                               "bool"]]]]; 
-                       ["Sig_value"; "putc"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "port"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "char"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                       ["Sig_value"; "puts"; ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "port"]]; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                             ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                       ["Sig_value"; "get_fd"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "port"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "option"]; 
-                                               ["Tconstr"; ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Unix"]; 
-                                                           "file_descr"]]]]]; 
-                       ["Sig_value"; "flush"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "port"]]; 
-                                              ["Tconstr"; ["Pident"; "unit"]]]]; 
-                       ["Sig_value"; "close"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "port"]]; 
-                                              ["Tconstr"; ["Pident"; "unit"]]]]]]
+["module", "Ocs_port",
+["Mty_signature", ["Sig_type", "port", 0, ["Type_abstract"]],
+["Sig_type", "port_flag", 0,
+["Type_variant", ["constructor", "Pf_input", ["tuple"]],
+["constructor", "Pf_output", ["tuple"]],
+["constructor", "Pf_close", ["tuple"]]]],
+["Sig_value", "fd_port",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "port_flag"]]],
+["Tconstr", ["Pident", "port"]]]]],
+["Sig_value", "input_port",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pervasives"], "in_channel"]],
+["Tconstr", ["Pident", "port"]]]],
+["Sig_value", "output_port",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pervasives"], "out_channel"]],
+["Tconstr", ["Pident", "port"]]]],
+["Sig_value", "open_input_port",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "port"]]]],
+["Sig_value", "open_output_port",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "port"]]]],
+["Sig_value", "string_input_port",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "port"]]]],
+["Sig_value", "string_output_port",
+["Tarrow", ["Tconstr", ["Pident", "unit"]], ["Tconstr", ["Pident", "port"]]]],
+["Sig_value", "is_input",
+["Tarrow", ["Tconstr", ["Pident", "port"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "is_output",
+["Tarrow", ["Tconstr", ["Pident", "port"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "getc",
+["Tarrow", ["Tconstr", ["Pident", "port"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "char"]]]]],
+["Sig_value", "ungetc",
+["Tarrow", ["Tconstr", ["Pident", "port"]],
+["Tarrow", ["Tconstr", ["Pident", "char"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "char_ready",
+["Tarrow", ["Tconstr", ["Pident", "port"]], ["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "putc",
+["Tarrow", ["Tconstr", ["Pident", "port"]],
+["Tarrow", ["Tconstr", ["Pident", "char"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "puts",
+["Tarrow", ["Tconstr", ["Pident", "port"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "get_fd",
+["Tarrow", ["Tconstr", ["Pident", "port"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]]]]],
+["Sig_value", "flush",
+["Tarrow", ["Tconstr", ["Pident", "port"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "close",
+["Tarrow", ["Tconstr", ["Pident", "port"]], ["Tconstr", ["Pident", "unit"]]]]]]

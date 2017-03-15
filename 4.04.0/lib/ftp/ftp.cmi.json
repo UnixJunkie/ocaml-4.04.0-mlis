@@ -1,179 +1,93 @@
-["module"; "Ftp"; ["Mty_signature"; ["Sig_type"; "ftp_connection"; 0; 
-                                    ["Type_abstract"]]; ["Sig_type"; 
-                                                        "file_kind"; 
-                                                        0; ["Type_variant"; 
-                                                           ["constructor"; 
-                                                           "S_REG"; ["tuple"]]; 
-                                                           ["constructor"; 
-                                                           "S_DIR"; ["tuple"]]; 
-                                                           ["constructor"; 
-                                                           "S_CHR"; ["tuple"]]; 
-                                                           ["constructor"; 
-                                                           "S_BLK"; ["tuple"]]; 
-                                                           ["constructor"; 
-                                                           "S_LNK"; ["tuple"]]; 
-                                                           ["constructor"; 
-                                                           "S_FIFO"; 
-                                                           ["tuple"]]; 
-                                                           ["constructor"; 
-                                                           "S_SOCK"; 
-                                                           ["tuple"]]]]; 
-                  ["Sig_type"; "file_perm"; 0; ["Type_alias"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]]; 
-                  ["Sig_type"; "stats"; 0; ["Type_record"; ["label"; 
-                                                           "st_kind"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "file_kind"]]]; 
-                                           ["label"; "st_perm"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "file_perm"]]]; 
-                                           ["label"; "st_nlink"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]; 
-                                           ["label"; "st_un"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]; 
-                                           ["label"; "st_gn"; ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]; 
-                                           ["label"; "st_size"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]; 
-                                           ["label"; "st_mtime"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "float"]]]]]; 
-                  ["Sig_unknown"]; ["Sig_value"; "connect"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "ftp_connection"]]]]]]]; 
-                  ["Sig_value"; "disconnect"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "ftp_connection"]]; 
-                                              ["Tconstr"; ["Pident"; "unit"]]]]; 
-                  ["Sig_value"; "set_passive"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "ftp_connection"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "bool"]]; 
-                                               ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                  ["Sig_value"; "get_cur_dir"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "ftp_connection"]]; 
-                                               ["Tconstr"; ["Pident"; 
-                                                           "string"]]]]; 
-                  ["Sig_value"; "chdir"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                "ftp_connection"]]; 
-                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                "string"]]; 
-                                         ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                  ["Sig_value"; "chdir_up"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "ftp_connection"]]; 
-                                            ["Tconstr"; ["Pident"; "unit"]]]]; 
-                  ["Sig_value"; "list_files"; ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "ftp_connection"]]; 
-                                              ["Tarrow"; ["Tconstr"; 
-                                                         ["Pident"; "string"]]; 
-                                              ["Tconstr"; ["Pident"; "list"]; 
-                                              ["Tconstr"; ["Pident"; 
-                                                          "string"]]]]]]; 
-                  ["Sig_value"; "get_file_size"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "ftp_connection"]]; 
-                                                 ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "int"]]]]]; 
-                  ["Sig_value"; "ls"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                             "ftp_connection"]]; 
-                                      ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                             "string"]]; 
-                                      ["Tconstr"; ["Pident"; "list"]; 
-                                      ["Ttuple"; ["Tconstr"; ["Pident"; 
-                                                             "string"]]; 
-                                      ["Tconstr"; ["Pident"; "stats"]]]]]]]; 
-                  ["Sig_value"; "stat"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                               "ftp_connection"]]; 
-                                        ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                               "string"]]; 
-                                        ["Tconstr"; ["Pident"; "stats"]]]]]; 
-                  ["Sig_value"; "get_file"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "ftp_connection"]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "string"]]; 
-                                            ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                   "string"]]; 
-                                            ["Tconstr"; ["Pident"; "unit"]]]]]]; 
-                  ["Sig_value"; "resume_file"; ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "ftp_connection"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                               ["Tarrow"; ["Tconstr"; 
-                                                          ["Pident"; "int"]]; 
-                                               ["Tconstr"; ["Pident"; "unit"]]]]]]]; 
-                  ["Sig_value"; "get_file_portion"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "ftp_connection"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]]]]]]; 
-                  ["Sig_value"; "mv"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                             "ftp_connection"]]; 
-                                      ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                             "string"]]; 
-                                      ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                             "string"]]; 
-                                      ["Tconstr"; ["Pident"; "unit"]]]]]]; 
-                  ["Sig_value"; "rm"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                             "ftp_connection"]]; 
-                                      ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                             "string"]]; 
-                                      ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                  ["Sig_value"; "rmdir"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                "ftp_connection"]]; 
-                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                "string"]]; 
-                                         ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                  ["Sig_value"; "mkdir"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                "ftp_connection"]]; 
-                                         ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                                "string"]]; 
-                                         ["Tconstr"; ["Pident"; "unit"]]]]]; 
-                  ["Sig_value"; "nop"; ["Tarrow"; ["Tconstr"; ["Pident"; 
-                                                              "ftp_connection"]]; 
-                                       ["Tconstr"; ["Pident"; "unit"]]]]; 
-                  ["Sig_unknown"]; ["Sig_module"; "File"; ["Mty_unknown"]]]]
+["module", "Ftp",
+["Mty_signature", ["Sig_type", "ftp_connection", 0, ["Type_abstract"]],
+["Sig_type", "file_kind", 0,
+["Type_variant", ["constructor", "S_REG", ["tuple"]],
+["constructor", "S_DIR", ["tuple"]], ["constructor", "S_CHR", ["tuple"]],
+["constructor", "S_BLK", ["tuple"]], ["constructor", "S_LNK", ["tuple"]],
+["constructor", "S_FIFO", ["tuple"]], ["constructor", "S_SOCK", ["tuple"]]]],
+["Sig_type", "file_perm", 0, ["Type_alias", ["Tconstr", ["Pident", "int"]]]],
+["Sig_type", "stats", 0,
+["Type_record", ["label", "st_kind", ["Tconstr", ["Pident", "file_kind"]]],
+["label", "st_perm", ["Tconstr", ["Pident", "file_perm"]]],
+["label", "st_nlink", ["Tconstr", ["Pident", "int"]]],
+["label", "st_un", ["Tconstr", ["Pident", "string"]]],
+["label", "st_gn", ["Tconstr", ["Pident", "string"]]],
+["label", "st_size", ["Tconstr", ["Pident", "int"]]],
+["label", "st_mtime", ["Tconstr", ["Pident", "float"]]]]], ["Sig_unknown"],
+["Sig_value", "connect",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "ftp_connection"]]]]]]],
+["Sig_value", "disconnect",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "set_passive",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tarrow", ["Tconstr", ["Pident", "bool"]], ["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "get_cur_dir",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "chdir",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "chdir_up",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "list_files",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "get_file_size",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "ls",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "list"],
+["Ttuple", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "stats"]]]]]]],
+["Sig_value", "stat",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "stats"]]]]],
+["Sig_value", "get_file",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "resume_file",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]]]]],
+["Sig_value", "get_file_portion",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]]]]]]],
+["Sig_value", "mv",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]]],
+["Sig_value", "rm",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "rmdir",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "mkdir",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "unit"]]]]],
+["Sig_value", "nop",
+["Tarrow", ["Tconstr", ["Pident", "ftp_connection"]],
+["Tconstr", ["Pident", "unit"]]]], ["Sig_unknown"],
+["Sig_module", "File", ["Mty_unknown"]]]]

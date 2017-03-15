@@ -1,313 +1,98 @@
-["module"; "Pdfcrypt"; ["Mty_signature"; ["Sig_value"; "crypt_debug"; 
-                                         ["Tconstr"; ["Pdot"; ["Pident"; 
-                                                              "Pervasives"]; 
-                                                     "ref"]; ["Tconstr"; 
-                                                             ["Pident"; 
-                                                             "bool"]]]]; 
-                       ["Sig_type"; "permission"; 0; ["Type_variant"; 
-                                                     ["constructor"; 
-                                                     "NoEdit"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "NoPrint"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "NoCopy"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "NoAnnot"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "NoForms"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "NoExtract"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "NoAssemble"; ["tuple"]]; 
-                                                     ["constructor"; 
-                                                     "NoHqPrint"; ["tuple"]]]]; 
-                       ["Sig_value"; "decrypt_pdf"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "option"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pdf"]; 
-                                                               "t"]]; 
-                                                    ["Ttuple"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "option"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pdf"]; 
-                                                               "t"]]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "list"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "permission"]]]]]]]]; 
-                       ["Sig_value"; "decrypt_pdf_owner"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Pdf"]; 
-                                                          "t"]]; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "option"]; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Pdf"]; 
-                                                                 "t"]]]]]]; 
-                       ["Sig_value"; "is_encrypted"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Pdf"]; 
-                                                                "t"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "bool"]]]]; 
-                       ["Sig_value"; "recrypt_pdf"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "option"]; 
-                                                               ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "bool"]]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pdot"; 
-                                                               ["Pident"; 
-                                                               "Pdf"]; 
-                                                               "t"]]; 
-                                                    ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "string"]]; 
-                                                    ["Tconstr"; ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Pdf"]; 
-                                                                "t"]]]]]]; 
-                       ["Sig_value"; "encrypt_pdf_40bit"; ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "string"]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; "list"]; 
-                                                          ["Tconstr"; 
-                                                          ["Pident"; 
-                                                          "permission"]]]; 
-                                                          ["Tarrow"; 
-                                                          ["Tconstr"; 
-                                                          ["Pdot"; ["Pident"; 
-                                                                   "Pdf"]; 
-                                                          "t"]]; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Pdf"]; 
-                                                                 "t"]]]]]]]; 
-                       ["Sig_value"; "encrypt_pdf_128bit"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "permission"]]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Pdf"]; 
-                                                           "t"]]; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Pdf"]; 
-                                                                  "t"]]]]]]]; 
-                       ["Sig_value"; "encrypt_pdf_AES"; ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "bool"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "string"]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "list"]; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "permission"]]]; 
-                                                        ["Tarrow"; ["Tconstr"; 
-                                                                   ["Pdot"; 
-                                                                   ["Pident"; 
-                                                                   "Pdf"]; 
-                                                                   "t"]]; 
-                                                        ["Tconstr"; [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Pdf"]; 
-                                                                    "t"]]]]]]]]; 
-                       ["Sig_value"; "encrypt_pdf_AES256"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "bool"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; "list"]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "permission"]]]; 
-                                                           ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pdot"; [
-                                                                    "Pident"; 
-                                                                    "Pdf"]; 
-                                                           "t"]]; ["Tconstr"; 
-                                                                  ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Pdf"]; 
-                                                                  "t"]]]]]]]]; 
-                       ["Sig_value"; "encrypt_pdf_AES256ISO"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "bool"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "list"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "permission"]]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Pdf"]; 
-                                                              "t"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Pdf"]; 
-                                                              "t"]]]]]]]]; 
-                       ["Sig_value"; "decrypt_single_stream"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Pdf"]; 
-                                                              "t"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]; 
-                                                              ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Pdf"]; 
-                                                              "pdfobject"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Pdf"]; 
-                                                              "pdfobject"]]]]]]]]]; 
-                       ["Sig_value"; "get_encryption_values"; ["Tarrow"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Pdf"]; 
-                                                              "t"]]; 
-                                                              ["Ttuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pdot"; 
-                                                              ["Pident"; 
-                                                              "Pdfcryptprimitives"]; 
-                                                              "encryption"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int32"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "option"]; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "string"]]]]]]; 
-                       ["Sig_value"; "banlist_of_p"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int32"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "list"]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "permission"]]]]]; 
-                       ["Sig_value"; "string_of_pdf"; ["Tconstr"; ["Pdot"; 
-                                                                  ["Pident"; 
-                                                                  "Pervasives"]; 
-                                                                  "ref"]; 
-                                                      ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Pdf"]; 
-                                                                 "pdfobject"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "string"]]]]]]]
+["module", "Pdfcrypt",
+["Mty_signature",
+["Sig_value", "crypt_debug",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_type", "permission", 0,
+["Type_variant", ["constructor", "NoEdit", ["tuple"]],
+["constructor", "NoPrint", ["tuple"]], ["constructor", "NoCopy", ["tuple"]],
+["constructor", "NoAnnot", ["tuple"]], ["constructor", "NoForms", ["tuple"]],
+["constructor", "NoExtract", ["tuple"]],
+["constructor", "NoAssemble", ["tuple"]],
+["constructor", "NoHqPrint", ["tuple"]]]],
+["Sig_value", "decrypt_pdf",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]],
+["Ttuple",
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "permission"]]]]]]]],
+["Sig_value", "decrypt_pdf_owner",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]]]]]],
+["Sig_value", "is_encrypted",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]],
+["Tconstr", ["Pident", "bool"]]]],
+["Sig_value", "recrypt_pdf",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "bool"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]]]]]],
+["Sig_value", "encrypt_pdf_40bit",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "permission"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]]]]]]],
+["Sig_value", "encrypt_pdf_128bit",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "permission"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]]]]]]],
+["Sig_value", "encrypt_pdf_AES",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "permission"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]]]]]]]],
+["Sig_value", "encrypt_pdf_AES256",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "permission"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]]]]]]]],
+["Sig_value", "encrypt_pdf_AES256ISO",
+["Tarrow", ["Tconstr", ["Pident", "bool"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tarrow",
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "permission"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]],
+["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]]]]]]]],
+["Sig_value", "decrypt_single_stream",
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow",
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pdf"], "pdfobject"]],
+["Tconstr", ["Pdot", ["Pident", "Pdf"], "pdfobject"]]]]]]]]],
+["Sig_value", "get_encryption_values",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pdf"], "t"]],
+["Ttuple",
+["Tconstr", ["Pdot", ["Pident", "Pdfcryptprimitives"], "encryption"]],
+["Tconstr", ["Pident", "string"]], ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "int32"]], ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "string"]]]]]],
+["Sig_value", "banlist_of_p",
+["Tarrow", ["Tconstr", ["Pident", "int32"]],
+["Tconstr", ["Pident", "list"], ["Tconstr", ["Pident", "permission"]]]]],
+["Sig_value", "string_of_pdf",
+["Tconstr", ["Pdot", ["Pident", "Pervasives"], "ref"],
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Pdf"], "pdfobject"]],
+["Tconstr", ["Pident", "string"]]]]]]]

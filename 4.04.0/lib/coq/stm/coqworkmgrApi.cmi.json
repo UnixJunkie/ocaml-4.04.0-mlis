@@ -1,110 +1,43 @@
-["module"; "CoqworkmgrApi"; ["Mty_signature"; ["Sig_value"; "init"; [
-                                                                    "Tarrow"; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pdot"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "Flags"]; 
-                                                                    "priority"]]; 
-                                                                    [
-                                                                    "Tconstr"; 
-                                                                    [
-                                                                    "Pident"; 
-                                                                    "unit"]]]]; 
-                            ["Sig_value"; "get"; ["Tarrow"; ["Tconstr"; 
-                                                            ["Pident"; "int"]]; 
-                                                 ["Tconstr"; ["Pident"; 
-                                                             "int"]]]]; 
-                            ["Sig_value"; "tryget"; ["Tarrow"; ["Tconstr"; 
-                                                               ["Pident"; 
-                                                               "int"]]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "option"]; 
-                                                    ["Tconstr"; ["Pident"; 
-                                                                "int"]]]]]; 
-                            ["Sig_value"; "giveback"; ["Tarrow"; ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]; 
-                                                      ["Tconstr"; ["Pident"; 
-                                                                  "unit"]]]]; 
-                            ["Sig_type"; "request"; 0; ["Type_variant"; 
-                                                       ["constructor"; 
-                                                       "Hello"; ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pdot"; 
-                                                                ["Pident"; 
-                                                                "Flags"]; 
-                                                                "priority"]]]]; 
-                                                       ["constructor"; 
-                                                       "Get"; ["tuple"; 
-                                                              ["Tconstr"; 
-                                                              ["Pident"; 
-                                                              "int"]]]]; 
-                                                       ["constructor"; 
-                                                       "TryGet"; ["tuple"; 
-                                                                 ["Tconstr"; 
-                                                                 ["Pident"; 
-                                                                 "int"]]]]; 
-                                                       ["constructor"; 
-                                                       "GiveBack"; ["tuple"; 
-                                                                   ["Tconstr"; 
-                                                                   ["Pident"; 
-                                                                   "int"]]]]; 
-                                                       ["constructor"; 
-                                                       "Ping"; ["tuple"]]]]; 
-                            ["Sig_type"; "response"; 0; ["Type_variant"; 
-                                                        ["constructor"; 
-                                                        "Tokens"; ["tuple"; 
-                                                                  ["Tconstr"; 
-                                                                  ["Pident"; 
-                                                                  "int"]]]]; 
-                                                        ["constructor"; 
-                                                        "Noluck"; ["tuple"]]; 
-                                                        ["constructor"; 
-                                                        "Pong"; ["tuple"; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]; 
-                                                                ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "int"]]]]]]; 
-                            ["Sig_value"; "connect"; ["Tarrow"; ["Tconstr"; 
-                                                                ["Pident"; 
-                                                                "string"]]; 
-                                                     ["Tconstr"; ["Pident"; 
-                                                                 "option"]; 
-                                                     ["Tconstr"; ["Pdot"; 
-                                                                 ["Pident"; 
-                                                                 "Unix"]; 
-                                                                 "file_descr"]]]]]; 
-                            ["Sig_unknown"]; ["Sig_value"; "parse_request"; 
-                                             ["Tarrow"; ["Tconstr"; [
-                                                                    "Pident"; 
-                                                                    "string"]]; 
-                                             ["Tconstr"; ["Pident"; "request"]]]]; 
-                            ["Sig_value"; "parse_response"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "response"]]]]; 
-                            ["Sig_value"; "print_request"; ["Tarrow"; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "request"]]; 
-                                                           ["Tconstr"; 
-                                                           ["Pident"; 
-                                                           "string"]]]]; 
-                            ["Sig_value"; "print_response"; ["Tarrow"; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "response"]]; 
-                                                            ["Tconstr"; 
-                                                            ["Pident"; 
-                                                            "string"]]]]]]
+["module", "CoqworkmgrApi",
+["Mty_signature",
+["Sig_value", "init",
+["Tarrow", ["Tconstr", ["Pdot", ["Pident", "Flags"], "priority"]],
+["Tconstr", ["Pident", "unit"]]]],
+["Sig_value", "get",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]]]],
+["Sig_value", "tryget",
+["Tarrow", ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "option"], ["Tconstr", ["Pident", "int"]]]]],
+["Sig_value", "giveback",
+["Tarrow", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "unit"]]]],
+["Sig_type", "request", 0,
+["Type_variant",
+["constructor", "Hello",
+["tuple", ["Tconstr", ["Pdot", ["Pident", "Flags"], "priority"]]]],
+["constructor", "Get", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "TryGet", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "GiveBack", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Ping", ["tuple"]]]],
+["Sig_type", "response", 0,
+["Type_variant",
+["constructor", "Tokens", ["tuple", ["Tconstr", ["Pident", "int"]]]],
+["constructor", "Noluck", ["tuple"]],
+["constructor", "Pong",
+["tuple", ["Tconstr", ["Pident", "int"]], ["Tconstr", ["Pident", "int"]],
+["Tconstr", ["Pident", "int"]]]]]],
+["Sig_value", "connect",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "option"],
+["Tconstr", ["Pdot", ["Pident", "Unix"], "file_descr"]]]]], ["Sig_unknown"],
+["Sig_value", "parse_request",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "request"]]]],
+["Sig_value", "parse_response",
+["Tarrow", ["Tconstr", ["Pident", "string"]],
+["Tconstr", ["Pident", "response"]]]],
+["Sig_value", "print_request",
+["Tarrow", ["Tconstr", ["Pident", "request"]],
+["Tconstr", ["Pident", "string"]]]],
+["Sig_value", "print_response",
+["Tarrow", ["Tconstr", ["Pident", "response"]],
+["Tconstr", ["Pident", "string"]]]]]]
